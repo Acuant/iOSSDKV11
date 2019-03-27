@@ -1,0 +1,4 @@
+framework module AcuantHGLiveliness {
+  header "AcuantHGLiveliness-Swift.h"
+  requires objc
+}

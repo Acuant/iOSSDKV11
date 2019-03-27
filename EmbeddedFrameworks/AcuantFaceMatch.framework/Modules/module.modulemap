@@ -1,0 +1,11 @@
+framework module AcuantFaceMatch {
+  umbrella header "AcuantFaceMatch.h"
+
+  export *
+  module * { export * }
+}
+
+module AcuantFaceMatch.Swift {
+    header "AcuantFaceMatch-Swift.h"
+    requires objc
+}
