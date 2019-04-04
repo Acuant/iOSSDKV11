@@ -1,7 +1,7 @@
 # Acuant iOS Mobile SDK v11
 
 
-**Last updated  March 2019**
+**Last updated  April 2019**
 
 Copyright <sup>@</sup> 2003-2019 Acuant Inc. All rights reserved.
 
@@ -21,7 +21,7 @@ designation appears in initial capital or all capital letters. However,
 you should contact the appropriate companies for more complete
 information regarding such designations and their registration status.
 
-**March 2019**
+**April 2019**
 
 <p>Acuant Inc.</p>
 <p>6080 Center Drive, Suite 850</p>

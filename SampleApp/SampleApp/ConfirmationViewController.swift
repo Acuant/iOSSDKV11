@@ -50,7 +50,7 @@ class ConfirmationViewController: UIViewController {
             text = text + "Has Glare : \(image!.hasGlare)\n"
             
         }
-        text = text + "DPI : \(image!.dpi)\n"
+        text = text + "DPI : \(String(describing: image!.dpi))\n"
         if(barcodeCaptured && barcodeString != nil){
             let len = (barcodeString?.count)!*25/100
             let index = barcodeString?.index((barcodeString?.startIndex)!, offsetBy: len)

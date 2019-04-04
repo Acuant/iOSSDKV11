@@ -1,4 +1,0 @@
-framework module AcuantCamera {
-  header "AcuantCamera-Swift.h"
-  requires objc
-}
