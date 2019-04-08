@@ -19,5 +19,6 @@ SDK broken down in to small different modules so that developers can include onl
   }
   s.author             = { "Acuant Inc" => "tbehera@acuantcorp.com" }
   s.source       = { :git => "https://github.com/Acuant/iOSSDKV11.git", :tag => "#{s.version}" }
-  s.vendored_frameworks = 'EmbeddedFrameworks/AcuantCommon.framework'
+  s.ios.vendored_frameworks = "EmbeddedFrameworks/AcuantCommon.framework" , "EmbeddedFrameworks/AcuantDocumentProcessing.framework",
+  "EmbeddedFrameworks/AcuantFaceMatch.framework","EmbeddedFrameworks/AcuantHGLiveliness.framework","EmbeddedFrameworks/AcuantImagePreparation.framework"
 end
