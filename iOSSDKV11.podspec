@@ -21,4 +21,5 @@ SDK broken down in to small different modules so that developers can include onl
   s.source       = { :git => "https://github.com/Acuant/iOSSDKV11.git", :tag => "#{s.version}" }
   s.ios.vendored_frameworks = "EmbeddedFrameworks/AcuantCommon.framework" , "EmbeddedFrameworks/AcuantDocumentProcessing.framework",
   "EmbeddedFrameworks/AcuantFaceMatch.framework","EmbeddedFrameworks/AcuantHGLiveliness.framework","EmbeddedFrameworks/AcuantImagePreparation.framework"
+  s.resources = "SampleApp/SampleApp/AcuantConfig.plist"
 end
