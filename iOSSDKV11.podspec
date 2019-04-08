@@ -1,4 +1,5 @@
 Pod::Spec.new do |s|
+  s.swift_versions = ['5.0']
   s.platform = :ios
   s.ios.deployment_target = '11.0'
   s.name         = "iOSSDKV11"
@@ -19,7 +20,9 @@ SDK broken down in to small different modules so that developers can include onl
   }
   s.author             = { "Acuant Inc" => "tbehera@acuantcorp.com" }
   s.source       = { :git => "https://github.com/Acuant/iOSSDKV11.git", :tag => "#{s.version}" }
+  s.source_files = "AcuantCamera/AcuantCamera/*.{h,swift}"
   s.ios.vendored_frameworks = "EmbeddedFrameworks/AcuantCommon.framework" , "EmbeddedFrameworks/AcuantDocumentProcessing.framework",
   "EmbeddedFrameworks/AcuantFaceMatch.framework","EmbeddedFrameworks/AcuantHGLiveliness.framework","EmbeddedFrameworks/AcuantImagePreparation.framework"
   s.resources = "SampleApp/SampleApp/AcuantConfig.plist"
+
 end
