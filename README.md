@@ -211,7 +211,7 @@ This module is used to match two facial images:
  -	**AcuantHGLiveliness**
  -	**AcuantFaceMatch**
  
-		![](document_images/embeded_framework.png)
+![](document_images/embeded_framework.png)
 
 
 1. Create a **plist** file named **AcuantConfig** which includes the following details:
@@ -280,7 +280,7 @@ This module is used to match two facial images:
     	public static let ERROR_CouldNotAccessLivelinessData = -26
 	}
 
-###Error descriptions###
+### Error descriptions ###
 
 	public struct AcuantErrorDescriptions {
     	public static let ERROR_DESC_InvalidCredentials = "Invalid credentials"
@@ -309,7 +309,7 @@ This module is used to match two facial images:
     	public static let ERROR_DESC_CouldNotAccessLivelinessData = "Could not access liveliness data"
 	}
 	
-###Image###
+### Image ###
 
 	public class Image {
     	public var image : UIImage? = nil
@@ -325,9 +325,9 @@ This module is used to match two facial images:
     }
 
 
-##Frequently Asked Questions##
+## Frequently Asked Questions ##
 
-####While publishing the app in the Apple App store we are getting an "Unsupported Architecture" error?####
+#### While publishing the app in the Apple App store we are getting an "Unsupported Architecture" error? ####
 
 All frameworks are “fat” (multi-architecture) binaries that contain *slices* for **armv7**, **arm64**, **i386**, and **x86(64)**  CPU architectures. ARM slices are used by physical iOS devices, while i386 and x86(64) are used by the simulator. 
 
