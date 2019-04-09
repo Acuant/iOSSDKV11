@@ -44,14 +44,14 @@ The iOS SDK includes the following modules:
 -	**AcuantHGLiveliness**
 -	**AcuantFaceMatch**
 
-### AcuantCommon###
+### AcuantCommon ###
 
 This module contails all of the common classes required by other modules.
 
 
 ----------
 
-### AcuantImagePreparation###
+### AcuantImagePreparation ###
 
 This module contains all image preparation functionality.
 
@@ -93,7 +93,7 @@ This module contains all image preparation functionality.
 
 ----------
 
-### AcuantCamera###
+### AcuantCamera ###
 
 This is a completely open source project that customer can customize according to their needs. The objective of this library is to demonstrate how to capture an image using **AcuantImagePreparation**.
 
@@ -153,7 +153,7 @@ After a document image is captured, it can be processed using the following step
 ----------
 
 
-### AcuantHGLiveliness###
+### AcuantHGLiveliness ###
 
 This module checks for liveliness (whether the subject is a live person) by using blink detection. The user interface code for this is contained in the Sample application (**FaceLivelinessCameraController.swift**) which customers may modify for their specific requirements.
 
@@ -180,7 +180,7 @@ This module checks for liveliness (whether the subject is a live person) by usin
 
 ----------
 		
-### AcuantFaceMatch###
+### AcuantFaceMatch ###
 
 This module is used to match two facial images:
 
@@ -238,7 +238,16 @@ This module is used to match two facial images:
     	</dict>
     	</plist>
 
+### Using COCOAPOD to Integrate the AcuantiOSSDKV11 ###
 
+1. If you are using COCOAPOD then add the following Podfile
+
+			platform :ios, '11.0'
+			
+			pod 'AcuantiOSSDKV11', '~> 11.1'
+
+
+2. Make sure you have added the AcuantConfig.plist file to the project.
 
 ### Error codes ###
 
