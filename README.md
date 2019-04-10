@@ -1,9 +1,9 @@
-# Acuant iOS Mobile SDK v11
+# Acuant iOS Mobile SDK v11.1
 
 
 **Last updated  April 2019**
 
-Copyright <sup>@</sup> 2003-2019 Acuant Inc. All rights reserved.
+*Copyright 2019 Acuant Inc. All rights reserved.*
 
 This document contains proprietary and confidential information and creative works owned by Acuant and its respective licensors, if any. Any use, copying, publication, distribution, display, modification, or transmission of such technology, in whole or in part, in any form or by any means, without the prior express written permission of Acuant is strictly prohibited. Except where expressly provided by Acuant in writing, possession of this information shall not be construed to confer any license or rights under any Acuant intellectual property rights, whether by estoppel, implication, or otherwise.
 
@@ -11,7 +11,7 @@ AssureID and *i-D*entify are trademarks of Acuant Inc. Other Acuant product or s
 
 All 3M trademarks are trademarks of Gemalto Inc.
 
-Windows<sup>@</sup> is a registered trademark of Microsoft Corporation.
+Windows<sup></sup> is a registered trademark of Microsoft Corporation.
 
 Certain product, service, or company designations for companies other
 than Acuant may be mentioned in this document for identification
@@ -238,16 +238,6 @@ This module is used to match two facial images:
     	</dict>
     	</plist>
 
-### Using COCOAPOD to Integrate the AcuantiOSSDKV11 ###
-
-1. If you are using COCOAPOD then add the following Podfile
-
-			platform :ios, '11.0'
-			
-			pod 'AcuantiOSSDKV11', '~> 11.1'
-
-
-2. Make sure you have added the AcuantConfig.plist file to the project.
 
 ### Error codes ###
 
@@ -324,10 +314,17 @@ This module is used to match two facial images:
     	public init(){}
     }
 
+###Using COCOAPOD to Integrate the AcuantiOSSDKV11 ###
+1. If you are using COCOAPOD, then add the following podfile:
+
+		platform :ios, '11.0'
+		pod 'AcuantiOSSDKV11', '~> 11.1'
+
+2. Make sure you have added the **AcuantConfig.plist** file to the project.
 
 ## Frequently Asked Questions ##
 
-#### While publishing the app in the Apple App store we are getting an "Unsupported Architecture" error? ####
+#### What causes an "Unsupported Architecture" error when publishing the app in the Apple App store? ####
 
 All frameworks are “fat” (multi-architecture) binaries that contain *slices* for **armv7**, **arm64**, **i386**, and **x86(64)**  CPU architectures. ARM slices are used by physical iOS devices, while i386 and x86(64) are used by the simulator. 
 
