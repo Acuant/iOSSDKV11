@@ -314,7 +314,7 @@ This module is used to match two facial images:
     	public init(){}
     }
 
-###Using COCOAPOD to Integrate the AcuantiOSSDKV11 ###
+### Using COCOAPOD to Integrate the AcuantiOSSDKV11 ###
 1. If you are using COCOAPOD, then add the following podfile:
 
 		platform :ios, '11.0'
