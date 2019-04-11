@@ -1,4 +1,4 @@
-# Acuant iOS Mobile SDK v11.1
+# Acuant iOS SDK v11.1
 
 
 **Last updated  April 2019**
@@ -28,178 +28,44 @@ information regarding such designations and their registration status.
 <p>Los Angeles, CA 90045</p>
 <p>==================</p>
 
+----------
 
 # Introduction #
 
-This document provides detailed information about the Acuant iOS SDK v11.
+This document provides detailed information about the Acuant's iOS SDK.
 
+----------
 ## Modules ##
 
-The iOS SDK includes the following modules:
+The SDK includes the following modules:
 
--	**AcuantCommon**
--	**AcuantImagePreparation**
--	**AcuantCamera**
--	**AcuantDocumentProcessing**
--	**AcuantHGLiveliness**
--	**AcuantFaceMatch**
+**Acuant Common Library (AcuantCommon) :**
 
-### AcuantCommon ###
+- Contains all shared internal models and supporting classes.
 
-This module contails all of the common classes required by other modules.
+**Acuant Camera Library (AcuantCamera) :**
 
+- Implemented using iOS native camera library.
+- Uses AcuantImagePreparation for cropping.
 
-----------
+**Acuant Image Preparation Library (AcuantImagePreparation) :**
 
-### AcuantImagePreparation ###
+- Contains all image processing such as cropping, calculation of sharpness and glare.	
 
-This module contains all image preparation functionality.
+**Acuant Document Processing Library (AcuantDocumentProcessing) :**
 
+- Contains all the methods to upload the document images, process and get results. 
 
--	**Initialization**
+**Acuant Face Match Library (AcuantFaceMatch) :**
 
-		AcuantImagePreparation.initialize(delegate: InitializationDelegate)
-	
-		public protocol InitializationDelegate {
-    		func initializationFinished(error: AcuantError?);
-		}
+- Contains a method to match two face images. 
 
-- **Crop**
+**Acuant HG Liveliness Library (AcuantHGLiveliness):**
 
-		public class func crop(options: CroppingOptions, data: CroppingData)->Image
-		
-		// CroppingOptions, and CroppingData & Image are part of AcuantCommon
-		// Sample
-		
-		let croppingData  = CroppingData()
-        croppingData.image = image // UIImage
-        
-   
-        let croppingOptions = CroppingOptions()
-        croppingOptions.isHealthCard = false
-        
-        let croppedImage = AcuantImagePreparation.crop(options: croppingOptions, data: croppingData)
-        
-        
-- **Sharpness**
-
-		public class func sharpness(image: UIImage)->Int
-		
-- **Glare**
-
-		public class func glare(image: UIImage)->Int
-				
-
+- Uses iOS native camera library to capture facial liveliness using a proprietary algorithm.
 
 ----------
-
-### AcuantCamera ###
-
-This is a completely open source project that customer can customize according to their needs. The objective of this library is to demonstrate how to capture an image using **AcuantImagePreparation**.
-
-----------
-
-**Note:**   **AcuantCamera** is depdendent on **AcuantImagePreparation** and  **AcuantCommon**.
-
-----------
-
-### AcuantDocumentProcessing ###
-
-After a document image is captured, it can be processed using the following steps.
-
-----------
-		
-**Note:**  If an upload fails with an error, retry the image upload using a better image.
-
-----------
-
-1. Create an instance:
-
-		public class func createInstance(processingMode:ProcessingMode,options:IdOptions,delegate:CreateInstanceDelegate)
-		
-		public protocol CreateInstanceDelegate{
-    		func instanceCreated(instanceId : String?,error:AcuantError?);
-		}
-
-1. Upload an image:
-	
-		public class func uploadImage(processingMode:ProcessingMode,instancdId:String,data:IdData,options:IdOptions,delegate:UploadImageDelegate)
-		
-		public protocol UploadImageDelegate{
-    		func imageUploaded(error: AcuantError?,classification:Classification?);
-		}
-
-1. Get the data:
-
-		public class func getData(instanceId:String,isHealthCard:Bool,delegate:GetDataDelegate?)
-		
-		public protocol UploadImageDelegate{
-    		func imageUploaded(error: AcuantError?,classification:Classification?);
-		}
-		
-1. Delete the instance:
-
-		public class func deleteInstance(instanceId : String,type:DeleteType, delegate:DeleteDelegate)
-		
-		public protocol DeleteDelegate {
-    		func instanceDeleted(success : Bool)
-		}
-
-
-----------
-
-**Note:** There is currently no user interface (UI) customization available for this module.
-
-----------
-
-
-### AcuantHGLiveliness ###
-
-This module checks for liveliness (whether the subject is a live person) by using blink detection. The user interface code for this is contained in the Sample application (**FaceLivelinessCameraController.swift**) which customers may modify for their specific requirements.
-
-- Create a face live capture session
-
-		public class func getFaceCaptureSession(delegate:AcuantHGLiveFaceCaptureDelegate?,captureDevice: AVCaptureDevice?,previewSize:CGSize?)->FaceCaptureSession
-		
-		public protocol AcuantHGLiveFaceCaptureDelegate {
-    		func liveFaceDetailsCaptured(liveFaceDetails: LiveFaceDetails?)
-		}
-
-
-----------
-		
-**Example**
-
-		self.captureSession = AcuantHGLiveliness.getFaceCaptureSession(delegate: self,captureDevice: captureDevice,previewSize:self.view.layer.bounds.size)
-		
-		// Code for HG Live controller
-		let liveFaceViewController = FaceLivelinessCameraController()
-		liveFaceViewController.delegate = self
-		AppDelegate.navigationController?.pushViewController(liveFaceViewController, animated: true)
-
-
-----------
-		
-### AcuantFaceMatch ###
-
-This module is used to match two facial images:
-
-		public class func processFacialMatch(facialData : FacialMatchData, delegate : FacialMatchDelegate?)
-		
-		public protocol FacialMatchDelegate {
-    		func facialMatchFinished(result:FacialMatchResult?)
-		}
-		
-		public class FacialMatchData{
-    		public var faceImageOne : UIImage? = nil // Face Image from ID Card
-    		public var faceImageTwo : UIImage? = nil // Face Image from Selfie Capture during liveliness check. This image gets compressed by 50%
-   
-		}
-
-
-----------
-		
-### Using the sample application ###
+### Setup ###
 
 1. Add the following dependent embedded frameworks:
 
@@ -238,6 +104,164 @@ This module is used to match two facial images:
     	</dict>
     	</plist>
 
+### Using COCOAPODS ###
+1. If you are using COCOAPODS, then add the following podfile:
+
+		platform :ios, '11.0'
+		pod 'AcuantiOSSDKV11', '~> 11.1'
+
+2. Make sure you have added the **AcuantConfig.plist** file to the project.
+
+----------
+### Capture an Image using AcuantCamera :###
+
+To open the camera :
+
+	let documentCameraController = DocumentCameraController.getCameraController(delegate:self,
+	captureWaitTime:captureWaitTime)
+	
+   	AppDelegate.navigationController?.pushViewController(documentCameraController, animated: false)
+   	
+To get the captured image :
+
+	public protocol CameraCaptureDelegate {
+    	func setCapturedImage(image:Image, barcodeString:String?)
+	}
+
+**Note:**   **AcuantCamera** is depdendent on **AcuantImagePreparation** and  **AcuantCommon**.
+
+
+----------
+### AcuantImagePreparation ###
+
+This module contains all image preparation functionality.
+
+
+-	**Initialization**
+
+		AcuantImagePreparation.initialize(delegate: InitializationDelegate)
+	
+		public protocol InitializationDelegate {
+    		func initializationFinished(error: AcuantError?);
+		}
+
+- **Crop** 
+
+Once image is captured, its sent to the cropping library for cropping.
+
+		public class func crop(options: CroppingOptions, data: CroppingData)->Image
+		
+		// CroppingOptions, and CroppingData & Image are part of AcuantCommon
+		// Sample
+		
+		let croppingData  = CroppingData()
+        croppingData.image = image // UIImage
+        
+   
+        let croppingOptions = CroppingOptions()
+        croppingOptions.isHealthCard = false
+        
+        let croppedImage = AcuantImagePreparation.crop(options: croppingOptions, data: croppingData)
+        
+        
+- **Sharpness**
+
+This method returns sharpness value of an image. If sharpness value is greater than 50, then the image is considered sharp otherwise blurry.
+
+		public class func sharpness(image: UIImage)->Int
+		
+- **Glare**
+
+This method returns glare value of an image. If glare value is greater than 50, then the image does not have glare  otherwise it has glare.
+
+		public class func glare(image: UIImage)->Int
+			
+----------
+
+
+### AcuantDocumentProcessing ###
+
+After a document image is captured, it can be processed using the following steps.
+		
+**Note:**  If an upload fails with an error, retry the image upload using a better image.
+
+1. Create an instance:
+
+		public class func createInstance(processingMode:ProcessingMode,options:IdOptions,delegate:CreateInstanceDelegate)
+		
+		public protocol CreateInstanceDelegate{
+    		func instanceCreated(instanceId : String?,error:AcuantError?);
+		}
+
+1. Upload an image:
+	
+		public class func uploadImage(processingMode:ProcessingMode,instancdId:String,data:IdData,options:IdOptions,delegate:UploadImageDelegate)
+		
+		public protocol UploadImageDelegate{
+    		func imageUploaded(error: AcuantError?,classification:Classification?);
+		}
+
+1. Get the data:
+
+		public class func getData(instanceId:String,isHealthCard:Bool,delegate:GetDataDelegate?)
+		
+		public protocol UploadImageDelegate{
+    		func imageUploaded(error: AcuantError?,classification:Classification?);
+		}
+		
+1. Delete the instance:
+
+		public class func deleteInstance(instanceId : String,type:DeleteType, delegate:DeleteDelegate)
+		
+		public protocol DeleteDelegate {
+    		func instanceDeleted(success : Bool)
+		}
+
+----------
+
+### AcuantHGLiveliness ###
+
+This module checks for liveliness (whether the subject is a live person) by using blink detection. The user interface code for this is contained in the Sample application (**FaceLivelinessCameraController.swift**) which customers may modify for their specific requirements.
+
+Create a face live capture session
+
+		public class func getFaceCaptureSession(delegate:AcuantHGLiveFaceCaptureDelegate?,captureDevice: AVCaptureDevice?,previewSize:CGSize?)->FaceCaptureSession
+		
+		public protocol AcuantHGLiveFaceCaptureDelegate {
+    		func liveFaceDetailsCaptured(liveFaceDetails: LiveFaceDetails?)
+		}
+
+**Example**
+
+		self.captureSession = AcuantHGLiveliness.getFaceCaptureSession(delegate: self,captureDevice: captureDevice,previewSize:self.view.layer.bounds.size)
+		
+		// Code for HG Live controller
+		let liveFaceViewController = FaceLivelinessCameraController()
+		liveFaceViewController.delegate = self
+		AppDelegate.navigationController?.pushViewController(liveFaceViewController, animated: true)
+
+
+----------
+		
+### AcuantFaceMatch ###
+
+This module is used to match two facial images:
+
+		public class func processFacialMatch(facialData : FacialMatchData, delegate : FacialMatchDelegate?)
+		
+		public protocol FacialMatchDelegate {
+    		func facialMatchFinished(result:FacialMatchResult?)
+		}
+		
+		public class FacialMatchData{
+    		public var faceImageOne : UIImage? = nil // Face Image from ID Card
+    		public var faceImageTwo : UIImage? = nil // Face Image from Selfie Capture during liveliness check. This image gets compressed by 50%
+   
+		}
+
+
+----------
+	
 
 ### Error codes ###
 
@@ -303,24 +327,11 @@ This module is used to match two facial images:
 
 	public class Image {
     	public var image : UIImage? = nil
-    	public var hasImageMetrics : Bool = false
-    	public var isBlurry : Bool = false
-    	public var hasGlare : Bool = false
-    	public var sharpnessGrade : Int = 0
-    	public var glareGrade : Int = 0
-    	public var dpi : Int = 0
+    	public var dpi : Int = 0 // dpi value of the captured image
     	public var error : AcuantError? = nil
-    	public var isCorrectAspectRatio = false
+    	public var isCorrectAspectRatio = false // If the captured image has the correct aspect ratiopublic var aspectRatio : Float = 0.0 // Aspect ratio of the captured image
     	public init(){}
     }
-
-### Using COCOAPOD to Integrate the AcuantiOSSDKV11 ###
-1. If you are using COCOAPOD, then add the following podfile:
-
-		platform :ios, '11.0'
-		pod 'AcuantiOSSDKV11', '~> 11.1'
-
-2. Make sure you have added the **AcuantConfig.plist** file to the project.
 
 ## Frequently Asked Questions ##
 
