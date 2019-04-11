@@ -113,7 +113,7 @@ The SDK includes the following modules:
 2. Make sure you have added the **AcuantConfig.plist** file to the project.
 
 ----------
-### Capture an Image using AcuantCamera :###
+### Capture an Image using AcuantCamera : ###
 
 To open the camera :
 
