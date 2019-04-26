@@ -21,7 +21,7 @@ SDK broken down in to small different modules so that developers can include onl
   s.author             = { "Acuant Inc" => "tbehera@acuantcorp.com" }
   s.source       = { :git => "https://github.com/Acuant/iOSSDKV11.git", :tag => "#{s.version}" }
   s.ios.vendored_frameworks = "EmbeddedFrameworks/AcuantCommon.framework" , "EmbeddedFrameworks/AcuantDocumentProcessing.framework",
-  "EmbeddedFrameworks/AcuantFaceMatch.framework","EmbeddedFrameworks/AcuantHGLiveliness.framework","EmbeddedFrameworks/AcuantImagePreparation.framework"
+  "EmbeddedFrameworks/AcuantFaceMatch.framework","EmbeddedFrameworks/AcuantHGLiveness.framework","EmbeddedFrameworks/AcuantImagePreparation.framework"
   s.source_files = ['SampleApp/SampleApp/AcuantConfig.plist']
   s.subspec 'AcuantCamera' do |acuantcamera|
     acuantcamera.source_files = "AcuantCamera/AcuantCamera/*.{h,swift}"
