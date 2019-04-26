@@ -11,7 +11,7 @@ AssureID and *i-D*entify are trademarks of Acuant Inc. Other Acuant product or s
 
 All 3M trademarks are trademarks of Gemalto Inc.
 
-Windows<sup></sup> is a registered trademark of Microsoft Corporation.
+Windows is a registered trademark of Microsoft Corporation.
 
 Certain product, service, or company designations for companies other
 than Acuant may be mentioned in this document for identification
@@ -32,7 +32,7 @@ information regarding such designations and their registration status.
 
 # Introduction #
 
-This document provides detailed information about the Acuant's iOS SDK.
+This document provides detailed information about the Acuant iOS SDK.
 
 ----------
 ## Modules ##
@@ -41,28 +41,32 @@ The SDK includes the following modules:
 
 **Acuant Common Library (AcuantCommon) :**
 
-- Contains all shared internal models and supporting classes.
+- Contains all shared internal models and supporting classes
 
 **Acuant Camera Library (AcuantCamera) :**
 
-- Implemented using iOS native camera library.
-- Uses AcuantImagePreparation for cropping.
+- Implemented using iOS native camera library
+- Uses AcuantImagePreparation for cropping
 
 **Acuant Image Preparation Library (AcuantImagePreparation) :**
 
-- Contains all image processing such as cropping, calculation of sharpness and glare.	
+- Contains all image processing such as cropping, calculation of sharpness and glare	
 
 **Acuant Document Processing Library (AcuantDocumentProcessing) :**
 
-- Contains all the methods to upload the document images, process and get results. 
+- Contains all the methods to upload the document images, process and get results
 
 **Acuant Face Match Library (AcuantFaceMatch) :**
 
-- Contains a method to match two face images. 
+- Contains a method to match two face images
 
-**Acuant HG Liveliness Library (AcuantHGLiveliness):**
+**Acuant HG Liveness Library (AcuantHGLiveness):**
 
-- Uses iOS native camera library to capture facial liveliness using a proprietary algorithm.
+- Uses iOS native camera library to capture facial liveliness using a proprietary algorithm
+
+**Acuant IP Liveliness Library (AcuantIPLiveness):**
+
+- Uses proprietory algorithm to detect a live person
 
 ----------
 ### Setup ###
@@ -74,7 +78,8 @@ The SDK includes the following modules:
  -	**AcuantImagePreparation**
  -	**AcuantCamera**
  -	**AcuantDocumentProcessing**
- -	**AcuantHGLiveliness**
+ -	**AcuantHGLiveness**
+ - **AcuantIPLiveness**
  -	**AcuantFaceMatch**
  
 ![](document_images/embeded_framework.png)
@@ -99,7 +104,7 @@ The SDK includes the following modules:
     		<string>https://medicscan.acuant.net/api/v1</string>
     		<key>assureid_endpoint</key>
     		<string>https://test.services.acuant-dev.net</string>
-    		<key>liveliness_endpoint</key>
+    		<key>liveness_endpoint</key>
     		<string>https://test.frm.acuant-dev.net/api/v2</string>
     	</dict>
     	</plist>
@@ -113,16 +118,16 @@ The SDK includes the following modules:
 2. Make sure you have added the **AcuantConfig.plist** file to the project.
 
 ----------
-### Capture an Image using AcuantCamera : ###
+### Capture an Image using AcuantCamera :###
 
-To open the camera :
+Open the camera:
 
 	let documentCameraController = DocumentCameraController.getCameraController(delegate:self,
 	captureWaitTime:captureWaitTime)
 	
    	AppDelegate.navigationController?.pushViewController(documentCameraController, animated: false)
    	
-To get the captured image :
+Get the captured image:
 
 	public protocol CameraCaptureDelegate {
     	func setCapturedImage(image:Image, barcodeString:String?)
@@ -140,14 +145,14 @@ This module contains all image preparation functionality.
 -	**Initialization**
 
 		AcuantImagePreparation.initialize(delegate: InitializationDelegate)
-	
+	 
 		public protocol InitializationDelegate {
     		func initializationFinished(error: AcuantError?);
 		}
 
 - **Crop** 
 
-Once image is captured, its sent to the cropping library for cropping.
+After the image is captured, it is sent to the cropping library for cropping.
 
 		public class func crop(options: CroppingOptions, data: CroppingData)->Image
 		
@@ -166,13 +171,13 @@ Once image is captured, its sent to the cropping library for cropping.
         
 - **Sharpness**
 
-This method returns sharpness value of an image. If sharpness value is greater than 50, then the image is considered sharp otherwise blurry.
+This method returns a sharpness value of an image. If sharpness value is greater than 50, then the image is considered sharp (not blurry).
 
 		public class func sharpness(image: UIImage)->Int
 		
 - **Glare**
 
-This method returns glare value of an image. If glare value is greater than 50, then the image does not have glare  otherwise it has glare.
+This method returns glare value of an image. If glare value is greater than 50, then the image does not have glare.
 
 		public class func glare(image: UIImage)->Int
 			
@@ -219,9 +224,9 @@ After a document image is captured, it can be processed using the following step
 
 ----------
 
-### AcuantHGLiveliness ###
+### AcuantHGLiveness ###
 
-This module checks for liveliness (whether the subject is a live person) by using blink detection. The user interface code for this is contained in the Sample application (**FaceLivelinessCameraController.swift**) which customers may modify for their specific requirements.
+This module checks for liveness (whether the subject is a live person) by using blink detection. The user interface code for this is contained in the Sample application (**FaceLivenessCameraController.swift**) which customers may modify for their specific requirements.
 
 Create a face live capture session
 
@@ -233,13 +238,38 @@ Create a face live capture session
 
 **Example**
 
-		self.captureSession = AcuantHGLiveliness.getFaceCaptureSession(delegate: self,captureDevice: captureDevice,previewSize:self.view.layer.bounds.size)
+		self.captureSession = AcuantHGLiveness.getFaceCaptureSession(delegate: self,captureDevice: captureDevice,previewSize:self.view.layer.bounds.size)
 		
 		// Code for HG Live controller
-		let liveFaceViewController = FaceLivelinessCameraController()
+		let liveFaceViewController = FaceLivenessCameraController()
 		liveFaceViewController.delegate = self
 		AppDelegate.navigationController?.pushViewController(liveFaceViewController, animated: true)
 
+
+----------
+
+### AcuantIPLiveness ###
+
+This module checks for liveness (whether the subject is a live person):
+
+    public class func showLiveFaceCaptureInterface(del : LivenessTestDelegate )
+
+    public protocol LivenessTestDelegate {
+    	func livenessSetupdone()      // Called back when internal set up is done to start the liveness test UI
+    	func livenessTestdone()       // Called hen liveness test is done and the the download process to get the facial image has started
+    	func livenessTestSucceeded(image:UIImage?)  // Called in case of liveness test passed. image has the downloaded facial image
+    	func livenessTestFailed(error:AcuantError)  // Called in case of liveness test failed
+	}
+    
+Following is list of dependencies:
+
+- Alamofire.framework
+- AlamofireImage.framework
+- GPUImage.framework
+- iProov.framework
+- KeychainAccess.framework
+- MBProgressHUD.framework
+- SocketIO.framework
 
 ----------
 		
@@ -254,8 +284,8 @@ This module is used to match two facial images:
 		}
 		
 		public class FacialMatchData{
-    		public var faceImageOne : UIImage? = nil // Face Image from ID Card
-    		public var faceImageTwo : UIImage? = nil // Face Image from Selfie Capture during liveliness check. This image gets compressed by 50%
+    		public var faceImageOne : UIImage? = nil // Facial image from ID Card
+    		public var faceImageTwo : UIImage? = nil // Facial image from selfie capture during liveness check (image gets compressed by 50%)
    
 		}
 
@@ -289,9 +319,9 @@ This module is used to match two facial images:
     	public static let ERROR_LowResolutionImage = -21
     	public static let ERROR_BlurryImage = -22
     	public static let ERROR_ImageWithGlare = -23
-    	public static let ERROR_CouldNotGetIPLivelinessToken = -24
+    	public static let ERROR_CouldNotGetIPLivenessToken = -24
     	public static let ERROR_NotALiveFace = -25
-    	public static let ERROR_CouldNotAccessLivelinessData = -26
+    	public static let ERROR_CouldNotAccessLivenessData = -26
 	}
 
 ### Error descriptions ###
@@ -318,9 +348,9 @@ This module is used to match two facial images:
     	public static let ERROR_DESC_LowResolutionImage = "Low resolution image"
     	public static let ERROR_DESC_BlurryImage = "Blurry image"
     	public static let ERROR_DESC_ImageWithGlare = "Image has glare"
-    	public static let ERROR_DESC_CouldNotGetIPLivelinessToken = "Could not get face liveliness token"
+    	public static let ERROR_DESC_CouldNotGetIPLivenessToken = "Could not get face liveness token"
     	public static let ERROR_DESC_NotALiveFace = "Not a live face"
-    	public static let ERROR_DESC_CouldNotAccessLivelinessData = "Could not access liveliness data"
+    	public static let ERROR_DESC_CouldNotAccessLivenessData = "Could not access liveness data"
 	}
 	
 ### Image ###
@@ -337,7 +367,7 @@ This module is used to match two facial images:
 
 #### What causes an "Unsupported Architecture" error when publishing the app in the Apple App store? ####
 
-All frameworks are “fat” (multi-architecture) binaries that contain *slices* for **armv7**, **arm64**, **i386**, and **x86(64)**  CPU architectures. ARM slices are used by physical iOS devices, while i386 and x86(64) are used by the simulator. 
+All frameworks are �fat� (multi-architecture) binaries that contain *slices* for **armv7**, **arm64**, **i386**, and **x86(64)**  CPU architectures. ARM slices are used by physical iOS devices, while i386 and x86(64) are used by the simulator. 
 
 Use the **lipo** command to check which slices are contained in the binaries:
 

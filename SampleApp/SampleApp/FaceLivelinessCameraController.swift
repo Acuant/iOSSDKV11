@@ -9,11 +9,11 @@
 import Foundation
 import UIKit
 import AVFoundation
-import AcuantHGLiveliness
+import AcuantHGLiveness
 
-class FaceLivelinessCameraController : UIViewController,AcuantHGLiveFaceCaptureDelegate{
+class FaceLivenessCameraController : UIViewController,AcuantHGLiveFaceCaptureDelegate{
     
-    public var delegate : AcuantHGLivelinessDelegate?
+    public var delegate : AcuantHGLivenessDelegate?
     
     private var overlayView : UIView?
     
@@ -91,7 +91,7 @@ class FaceLivelinessCameraController : UIViewController,AcuantHGLiveFaceCaptureD
         if let frontCameraDevice = AVCaptureDevice.default(.builtInWideAngleCamera, for: AVMediaType.video, position: .front) {
             captureDevice = frontCameraDevice
         }
-        captureSession = AcuantHGLiveliness.getFaceCaptureSession(delegate: self,captureDevice: captureDevice,previewSize:self.view.layer.bounds.size)
+        captureSession = AcuantHGLiveness.getFaceCaptureSession(delegate: self,captureDevice: captureDevice,previewSize:self.view.layer.bounds.size)
         videoPreviewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
         videoPreviewLayer.videoGravity = AVLayerVideoGravity.resizeAspectFill
         videoPreviewLayer.frame = self.view.layer.bounds
@@ -271,7 +271,7 @@ class FaceLivelinessCameraController : UIViewController,AcuantHGLiveFaceCaptureD
             if let frontCameraDevice = AVCaptureDevice.default(.builtInWideAngleCamera, for: AVMediaType.video, position: .front) {
                 captureDevice = frontCameraDevice
             }
-            self.captureSession = AcuantHGLiveliness.getFaceCaptureSession(delegate: self,captureDevice: captureDevice,previewSize:self.view.layer.bounds.size)
+            self.captureSession = AcuantHGLiveness.getFaceCaptureSession(delegate: self,captureDevice: captureDevice,previewSize:self.view.layer.bounds.size)
             self.videoPreviewLayer = AVCaptureVideoPreviewLayer(session: self.captureSession)
             self.videoPreviewLayer.videoGravity = AVLayerVideoGravity.resizeAspectFill
             self.videoPreviewLayer.frame = self.view.layer.bounds

@@ -12,10 +12,11 @@ import AcuantCamera
 import AcuantCommon
 import AcuantDocumentProcessing
 import AcuantFaceMatch
-import AcuantHGLiveliness
+import AcuantHGLiveness
+import AcuantIPLiveness
 
-class RootViewController: UIViewController , InitializationDelegate,CreateInstanceDelegate,UploadImageDelegate,GetDataDelegate, FacialMatchDelegate,DeleteDelegate,AcuantHGLivelinessDelegate,CameraCaptureDelegate{
-
+class RootViewController: UIViewController , InitializationDelegate,CreateInstanceDelegate,UploadImageDelegate,GetDataDelegate, FacialMatchDelegate,DeleteDelegate,AcuantHGLivenessDelegate,LivenessTestDelegate,CameraCaptureDelegate{
+    
     public var capturedFrontImage : UIImage?
     public var capturedBackImage : UIImage?
     public var capturedLiveFace : UIImage?
@@ -78,10 +79,11 @@ class RootViewController: UIViewController , InitializationDelegate,CreateInstan
     
     func showFacialCaptureInterface(){
         self.isProcessingFacialMatch = true
+        //Code for IP liveness
+        //AcuantIPLiveness.showLiveFaceCaptureInterface(del: self)
         
-        
-        // Code for HG Live controller
-        let liveFaceViewController = FaceLivelinessCameraController()
+         //Code for HG Live controller
+        let liveFaceViewController = FaceLivenessCameraController()
         liveFaceViewController.delegate = self
         AppDelegate.navigationController?.pushViewController(liveFaceViewController, animated: true)
     }
@@ -149,12 +151,20 @@ class RootViewController: UIViewController , InitializationDelegate,CreateInstan
         processFacialMatch(image: image!)
     }
     
+    func livenessSetupdone() {
+        
+    }
+    
+    func livenessTestdone() {
+        
+    }
+    
     // Delegate if LiveFaceSDK is used
-    func livelinessTestSucceeded(image: UIImage?) {
+    func livenessTestSucceeded(image: UIImage?) {
         processFacialMatch(image: image!)
     }
     
-    func livelinessTestFailed(error:AcuantError) {
+    func livenessTestFailed(error:AcuantError) {
         capturedLiveFace = nil
         isLiveFace = false
         self.isProcessingFacialMatch = false
@@ -263,15 +273,12 @@ class RootViewController: UIViewController , InitializationDelegate,CreateInstan
                 else{
                     let sharpness = AcuantImagePreparation.sharpness(image:croppedImage!.image!)
                     let glare = AcuantImagePreparation.glare(image:croppedImage!.image!)
-                    croppedImage!.hasImageMetrics=true
-                    croppedImage!.isBlurry = (sharpness < CaptureConstants.SHARPNESS_THRESHOLD)
-                    croppedImage!.sharpnessGrade=sharpness
-                    croppedImage!.hasGlare = ( glare < CaptureConstants.GLARE_THRESHOLD );
-                    croppedImage!.glareGrade=glare
                     self.vcUtil.hideActivityIndicator(uiView: self.view)
                     
                     let storyBoard = UIStoryboard.init(name: "Main", bundle: nil)
                     let confirmController = storyBoard.instantiateViewController(withIdentifier: "ConfirmationViewController") as! ConfirmationViewController
+                    confirmController.sharpness = sharpness
+                    confirmController.glare = glare
                     if(self.side==CardSide.Front){
                         confirmController.side = CardSide.Front
                     }else{
@@ -540,13 +547,6 @@ class RootViewController: UIViewController , InitializationDelegate,CreateInstan
     let vcUtil = ViewControllerUtils()
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        var configDictionay: NSDictionary?
-        if let path = Bundle.main.path(forResource: "Config", ofType: "plist") {
-            configDictionay = NSDictionary(contentsOfFile: path)
-        }
-        
-
         vcUtil.showActivityIndicator(uiView: self.view, text: "Initializing...")
         AcuantImagePreparation.initialize(delegate:self)
     }

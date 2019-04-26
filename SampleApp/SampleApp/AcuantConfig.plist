@@ -3,18 +3,18 @@
 <plist version="1.0">
 <dict>
 	<key>acuant_username</key>
-	<string>xxxxxxx@acuantcorp.com</string>
+	<string>xxxxxx@acuantcorp.com</string>
 	<key>acuant_password</key>
-	<string>xxxxxxxxx</string>
+	<string>xxxxxxxx</string>
 	<key>acuant_subscription</key>
-	<string>xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</string>
+	<string>xxxxxxxxxxxxx</string>
 	<key>frm_endpoint</key>
 	<string>https://frm.acuant.net/api/v1</string>
 	<key>med_endpoint</key>
 	<string>https://medicscan.acuant.net/api/v1</string>
 	<key>assureid_endpoint</key>
 	<string>https://services.assureid.net</string>
-	<key>liveliness_endpoint</key>
+	<key>liveness_endpoint</key>
 	<string>https://frm.acuant.net/api/v1</string>
 </dict>
 </plist>

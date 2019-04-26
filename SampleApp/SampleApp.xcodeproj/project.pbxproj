@@ -18,18 +18,37 @@
 		13AC66BC20EECE0400F0D494 /* ViewControllerUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13AC66BB20EECE0400F0D494 /* ViewControllerUtils.swift */; };
 		13AC66BE20EED36D00F0D494 /* CustomAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13AC66BD20EED36D00F0D494 /* CustomAlert.swift */; };
 		13D13F1420F6AC000052B1D7 /* ConfirmationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D13F1320F6AC000052B1D7 /* ConfirmationViewController.swift */; };
-		C20804BD2226E0E8004FA5BE /* AcuantCamera.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C208049D2226E049004FA5BE /* AcuantCamera.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C229E7B62224520700FFAC6F /* AcuantConfig.plist in Resources */ = {isa = PBXBuildFile; fileRef = C229E7B52224520700FFAC6F /* AcuantConfig.plist */; };
-		C2D8FDF5223FD317007D4C23 /* AcuantCommon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2D8FDDD223FD2E0007D4C23 /* AcuantCommon.framework */; };
-		C2D8FDF6223FD317007D4C23 /* AcuantCommon.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C2D8FDDD223FD2E0007D4C23 /* AcuantCommon.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		C2D8FDF7223FD317007D4C23 /* AcuantDocumentProcessing.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2D8FDE1223FD2E1007D4C23 /* AcuantDocumentProcessing.framework */; };
-		C2D8FDF8223FD317007D4C23 /* AcuantDocumentProcessing.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C2D8FDE1223FD2E1007D4C23 /* AcuantDocumentProcessing.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		C2D8FDF9223FD317007D4C23 /* AcuantFaceMatch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2D8FDE4223FD2E1007D4C23 /* AcuantFaceMatch.framework */; };
-		C2D8FDFA223FD317007D4C23 /* AcuantFaceMatch.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C2D8FDE4223FD2E1007D4C23 /* AcuantFaceMatch.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		C2D8FDFB223FD317007D4C23 /* AcuantHGLiveliness.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2D8FDDE223FD2E0007D4C23 /* AcuantHGLiveliness.framework */; };
-		C2D8FDFC223FD317007D4C23 /* AcuantHGLiveliness.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C2D8FDDE223FD2E0007D4C23 /* AcuantHGLiveliness.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		C2D8FDFD223FD317007D4C23 /* AcuantImagePreparation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2D8FDDC223FD2E0007D4C23 /* AcuantImagePreparation.framework */; };
-		C2D8FDFE223FD317007D4C23 /* AcuantImagePreparation.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C2D8FDDC223FD2E0007D4C23 /* AcuantImagePreparation.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		C2AD3A8C2273B8B200088F0A /* AcuantFaceMatch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C29FDC8022738FDA00707EF8 /* AcuantFaceMatch.framework */; };
+		C2AD3A8D2273B8B200088F0A /* AcuantFaceMatch.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C29FDC8022738FDA00707EF8 /* AcuantFaceMatch.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		C2AD3A8E2273B8B200088F0A /* KeychainAccess.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C29FDC8122738FDA00707EF8 /* KeychainAccess.framework */; };
+		C2AD3A8F2273B8B200088F0A /* KeychainAccess.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C29FDC8122738FDA00707EF8 /* KeychainAccess.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		C2AD3A902273B8B200088F0A /* AcuantIPLiveness.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C29FDC8222738FDA00707EF8 /* AcuantIPLiveness.framework */; };
+		C2AD3A912273B8B200088F0A /* AcuantIPLiveness.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C29FDC8222738FDA00707EF8 /* AcuantIPLiveness.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		C2AD3A922273B8B200088F0A /* AcuantDocumentProcessing.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C29FDC8322738FDA00707EF8 /* AcuantDocumentProcessing.framework */; };
+		C2AD3A932273B8B200088F0A /* AcuantDocumentProcessing.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C29FDC8322738FDA00707EF8 /* AcuantDocumentProcessing.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		C2AD3A942273B8B200088F0A /* AlamofireImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C29FDC8422738FDA00707EF8 /* AlamofireImage.framework */; };
+		C2AD3A952273B8B200088F0A /* AlamofireImage.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C29FDC8422738FDA00707EF8 /* AlamofireImage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		C2AD3A962273B8B200088F0A /* AcuantHGLiveness.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C29FDC8522738FDA00707EF8 /* AcuantHGLiveness.framework */; };
+		C2AD3A972273B8B200088F0A /* AcuantHGLiveness.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C29FDC8522738FDA00707EF8 /* AcuantHGLiveness.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		C2AD3A982273B8B200088F0A /* SocketIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C29FDC8622738FDA00707EF8 /* SocketIO.framework */; };
+		C2AD3A992273B8B200088F0A /* SocketIO.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C29FDC8622738FDA00707EF8 /* SocketIO.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		C2AD3A9A2273B8B200088F0A /* AcuantImagePreparation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C29FDC8722738FDA00707EF8 /* AcuantImagePreparation.framework */; };
+		C2AD3A9B2273B8B200088F0A /* AcuantImagePreparation.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C29FDC8722738FDA00707EF8 /* AcuantImagePreparation.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		C2AD3A9C2273B8B200088F0A /* Starscream.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C29FDC8822738FDA00707EF8 /* Starscream.framework */; };
+		C2AD3A9D2273B8B200088F0A /* Starscream.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C29FDC8822738FDA00707EF8 /* Starscream.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		C2AD3A9E2273B8B200088F0A /* AcuantCommon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C29FDC8922738FDA00707EF8 /* AcuantCommon.framework */; };
+		C2AD3A9F2273B8B200088F0A /* AcuantCommon.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C29FDC8922738FDA00707EF8 /* AcuantCommon.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		C2AD3AA02273B8B200088F0A /* MBProgressHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C29FDC8A22738FDA00707EF8 /* MBProgressHUD.framework */; };
+		C2AD3AA12273B8B200088F0A /* MBProgressHUD.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C29FDC8A22738FDA00707EF8 /* MBProgressHUD.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		C2AD3AA22273B8B200088F0A /* GPUImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C29FDC8B22738FDA00707EF8 /* GPUImage.framework */; };
+		C2AD3AA32273B8B200088F0A /* GPUImage.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C29FDC8B22738FDA00707EF8 /* GPUImage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		C2AD3AA42273B8B200088F0A /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C29FDC8C22738FDA00707EF8 /* Alamofire.framework */; };
+		C2AD3AA52273B8B200088F0A /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C29FDC8C22738FDA00707EF8 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		C2AD3AA62273B8B200088F0A /* iProov.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C29FDC8D22738FDA00707EF8 /* iProov.framework */; };
+		C2AD3AA72273B8B200088F0A /* iProov.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C29FDC8D22738FDA00707EF8 /* iProov.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		C2AD3AA92273B8F200088F0A /* AcuantCamera.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C208049D2226E049004FA5BE /* AcuantCamera.framework */; };
+		C2AD3AAA2273B8F200088F0A /* AcuantCamera.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C208049D2226E049004FA5BE /* AcuantCamera.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C2F69D472225B40700724EDB /* FaceLivelinessCameraController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2F69D3F2225B40700724EDB /* FaceLivelinessCameraController.swift */; };
 /* End PBXBuildFile section */
 
@@ -41,7 +60,7 @@
 			remoteGlobalIDString = 134F59D221FA0BA600CEDBFC;
 			remoteInfo = AcuantCamera;
 		};
-		C20804BE2226E0E8004FA5BE /* PBXContainerItemProxy */ = {
+		C2AD3AAB2273B8F200088F0A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = C20804982226E048004FA5BE /* AcuantCamera.xcodeproj */;
 			proxyType = 1;
@@ -51,18 +70,27 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		13AC667320EE9D4900F0D494 /* Embed Frameworks */ = {
+		C2AD3AA82273B8B200088F0A /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				C2D8FDFE223FD317007D4C23 /* AcuantImagePreparation.framework in Embed Frameworks */,
-				C20804BD2226E0E8004FA5BE /* AcuantCamera.framework in Embed Frameworks */,
-				C2D8FDFA223FD317007D4C23 /* AcuantFaceMatch.framework in Embed Frameworks */,
-				C2D8FDF6223FD317007D4C23 /* AcuantCommon.framework in Embed Frameworks */,
-				C2D8FDF8223FD317007D4C23 /* AcuantDocumentProcessing.framework in Embed Frameworks */,
-				C2D8FDFC223FD317007D4C23 /* AcuantHGLiveliness.framework in Embed Frameworks */,
+				C2AD3A9B2273B8B200088F0A /* AcuantImagePreparation.framework in Embed Frameworks */,
+				C2AD3A972273B8B200088F0A /* AcuantHGLiveness.framework in Embed Frameworks */,
+				C2AD3AA52273B8B200088F0A /* Alamofire.framework in Embed Frameworks */,
+				C2AD3A8F2273B8B200088F0A /* KeychainAccess.framework in Embed Frameworks */,
+				C2AD3A992273B8B200088F0A /* SocketIO.framework in Embed Frameworks */,
+				C2AD3A9D2273B8B200088F0A /* Starscream.framework in Embed Frameworks */,
+				C2AD3AA32273B8B200088F0A /* GPUImage.framework in Embed Frameworks */,
+				C2AD3AA12273B8B200088F0A /* MBProgressHUD.framework in Embed Frameworks */,
+				C2AD3A952273B8B200088F0A /* AlamofireImage.framework in Embed Frameworks */,
+				C2AD3AA72273B8B200088F0A /* iProov.framework in Embed Frameworks */,
+				C2AD3A912273B8B200088F0A /* AcuantIPLiveness.framework in Embed Frameworks */,
+				C2AD3A9F2273B8B200088F0A /* AcuantCommon.framework in Embed Frameworks */,
+				C2AD3AAA2273B8F200088F0A /* AcuantCamera.framework in Embed Frameworks */,
+				C2AD3A932273B8B200088F0A /* AcuantDocumentProcessing.framework in Embed Frameworks */,
+				C2AD3A8D2273B8B200088F0A /* AcuantFaceMatch.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -85,11 +113,20 @@
 		13D13F1320F6AC000052B1D7 /* ConfirmationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmationViewController.swift; sourceTree = "<group>"; };
 		C20804982226E048004FA5BE /* AcuantCamera.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = AcuantCamera.xcodeproj; path = ../AcuantCamera/AcuantCamera.xcodeproj; sourceTree = "<group>"; };
 		C229E7B52224520700FFAC6F /* AcuantConfig.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = AcuantConfig.plist; sourceTree = "<group>"; };
-		C2D8FDDC223FD2E0007D4C23 /* AcuantImagePreparation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AcuantImagePreparation.framework; path = ../EmbeddedFrameworks/AcuantImagePreparation.framework; sourceTree = "<group>"; };
-		C2D8FDDD223FD2E0007D4C23 /* AcuantCommon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AcuantCommon.framework; path = ../EmbeddedFrameworks/AcuantCommon.framework; sourceTree = "<group>"; };
-		C2D8FDDE223FD2E0007D4C23 /* AcuantHGLiveliness.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AcuantHGLiveliness.framework; path = ../EmbeddedFrameworks/AcuantHGLiveliness.framework; sourceTree = "<group>"; };
-		C2D8FDE1223FD2E1007D4C23 /* AcuantDocumentProcessing.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AcuantDocumentProcessing.framework; path = ../EmbeddedFrameworks/AcuantDocumentProcessing.framework; sourceTree = "<group>"; };
-		C2D8FDE4223FD2E1007D4C23 /* AcuantFaceMatch.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AcuantFaceMatch.framework; path = ../EmbeddedFrameworks/AcuantFaceMatch.framework; sourceTree = "<group>"; };
+		C29FDC8022738FDA00707EF8 /* AcuantFaceMatch.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AcuantFaceMatch.framework; sourceTree = "<group>"; };
+		C29FDC8122738FDA00707EF8 /* KeychainAccess.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = KeychainAccess.framework; sourceTree = "<group>"; };
+		C29FDC8222738FDA00707EF8 /* AcuantIPLiveness.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AcuantIPLiveness.framework; sourceTree = "<group>"; };
+		C29FDC8322738FDA00707EF8 /* AcuantDocumentProcessing.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AcuantDocumentProcessing.framework; sourceTree = "<group>"; };
+		C29FDC8422738FDA00707EF8 /* AlamofireImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AlamofireImage.framework; sourceTree = "<group>"; };
+		C29FDC8522738FDA00707EF8 /* AcuantHGLiveness.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AcuantHGLiveness.framework; sourceTree = "<group>"; };
+		C29FDC8622738FDA00707EF8 /* SocketIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SocketIO.framework; sourceTree = "<group>"; };
+		C29FDC8722738FDA00707EF8 /* AcuantImagePreparation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AcuantImagePreparation.framework; sourceTree = "<group>"; };
+		C29FDC8822738FDA00707EF8 /* Starscream.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Starscream.framework; sourceTree = "<group>"; };
+		C29FDC8922738FDA00707EF8 /* AcuantCommon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AcuantCommon.framework; sourceTree = "<group>"; };
+		C29FDC8A22738FDA00707EF8 /* MBProgressHUD.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MBProgressHUD.framework; sourceTree = "<group>"; };
+		C29FDC8B22738FDA00707EF8 /* GPUImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GPUImage.framework; sourceTree = "<group>"; };
+		C29FDC8C22738FDA00707EF8 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Alamofire.framework; sourceTree = "<group>"; };
+		C29FDC8D22738FDA00707EF8 /* iProov.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = iProov.framework; sourceTree = "<group>"; };
 		C2F69D3F2225B40700724EDB /* FaceLivelinessCameraController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FaceLivelinessCameraController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -98,11 +135,21 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C2D8FDF7223FD317007D4C23 /* AcuantDocumentProcessing.framework in Frameworks */,
-				C2D8FDFB223FD317007D4C23 /* AcuantHGLiveliness.framework in Frameworks */,
-				C2D8FDF9223FD317007D4C23 /* AcuantFaceMatch.framework in Frameworks */,
-				C2D8FDFD223FD317007D4C23 /* AcuantImagePreparation.framework in Frameworks */,
-				C2D8FDF5223FD317007D4C23 /* AcuantCommon.framework in Frameworks */,
+				C2AD3A9A2273B8B200088F0A /* AcuantImagePreparation.framework in Frameworks */,
+				C2AD3A962273B8B200088F0A /* AcuantHGLiveness.framework in Frameworks */,
+				C2AD3AA42273B8B200088F0A /* Alamofire.framework in Frameworks */,
+				C2AD3A8E2273B8B200088F0A /* KeychainAccess.framework in Frameworks */,
+				C2AD3A982273B8B200088F0A /* SocketIO.framework in Frameworks */,
+				C2AD3A9C2273B8B200088F0A /* Starscream.framework in Frameworks */,
+				C2AD3AA22273B8B200088F0A /* GPUImage.framework in Frameworks */,
+				C2AD3AA02273B8B200088F0A /* MBProgressHUD.framework in Frameworks */,
+				C2AD3A942273B8B200088F0A /* AlamofireImage.framework in Frameworks */,
+				C2AD3AA62273B8B200088F0A /* iProov.framework in Frameworks */,
+				C2AD3A902273B8B200088F0A /* AcuantIPLiveness.framework in Frameworks */,
+				C2AD3A9E2273B8B200088F0A /* AcuantCommon.framework in Frameworks */,
+				C2AD3AA92273B8F200088F0A /* AcuantCamera.framework in Frameworks */,
+				C2AD3A922273B8B200088F0A /* AcuantDocumentProcessing.framework in Frameworks */,
+				C2AD3A8C2273B8B200088F0A /* AcuantFaceMatch.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -150,11 +197,7 @@
 		13AC662620EE954900F0D494 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				C2D8FDDD223FD2E0007D4C23 /* AcuantCommon.framework */,
-				C2D8FDE1223FD2E1007D4C23 /* AcuantDocumentProcessing.framework */,
-				C2D8FDE4223FD2E1007D4C23 /* AcuantFaceMatch.framework */,
-				C2D8FDDE223FD2E0007D4C23 /* AcuantHGLiveliness.framework */,
-				C2D8FDDC223FD2E0007D4C23 /* AcuantImagePreparation.framework */,
+				C29FDC7F22738FDA00707EF8 /* EmbeddedFrameworks */,
 				C20804982226E048004FA5BE /* AcuantCamera.xcodeproj */,
 			);
 			name = Frameworks;
@@ -168,6 +211,28 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		C29FDC7F22738FDA00707EF8 /* EmbeddedFrameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C29FDC8022738FDA00707EF8 /* AcuantFaceMatch.framework */,
+				C29FDC8122738FDA00707EF8 /* KeychainAccess.framework */,
+				C29FDC8222738FDA00707EF8 /* AcuantIPLiveness.framework */,
+				C29FDC8322738FDA00707EF8 /* AcuantDocumentProcessing.framework */,
+				C29FDC8422738FDA00707EF8 /* AlamofireImage.framework */,
+				C29FDC8522738FDA00707EF8 /* AcuantHGLiveness.framework */,
+				C29FDC8622738FDA00707EF8 /* SocketIO.framework */,
+				C29FDC8722738FDA00707EF8 /* AcuantImagePreparation.framework */,
+				C29FDC8822738FDA00707EF8 /* Starscream.framework */,
+				C29FDC8922738FDA00707EF8 /* AcuantCommon.framework */,
+				C29FDC8A22738FDA00707EF8 /* MBProgressHUD.framework */,
+				C29FDC8B22738FDA00707EF8 /* GPUImage.framework */,
+				C29FDC8C22738FDA00707EF8 /* Alamofire.framework */,
+				C29FDC8D22738FDA00707EF8 /* iProov.framework */,
+			);
+			name = EmbeddedFrameworks;
+			path = ../EmbeddedFrameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -178,12 +243,12 @@
 				13AC65D420EE8F8F00F0D494 /* Sources */,
 				13AC65D520EE8F8F00F0D494 /* Frameworks */,
 				13AC65D620EE8F8F00F0D494 /* Resources */,
-				13AC667320EE9D4900F0D494 /* Embed Frameworks */,
+				C2AD3AA82273B8B200088F0A /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				C20804BF2226E0E8004FA5BE /* PBXTargetDependency */,
+				C2AD3AAC2273B8F200088F0A /* PBXTargetDependency */,
 			);
 			name = SampleApp;
 			productName = SampleApp;
@@ -273,10 +338,10 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		C20804BF2226E0E8004FA5BE /* PBXTargetDependency */ = {
+		C2AD3AAC2273B8F200088F0A /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = AcuantCamera;
-			targetProxy = C20804BE2226E0E8004FA5BE /* PBXContainerItemProxy */;
+			targetProxy = C2AD3AAB2273B8F200088F0A /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 

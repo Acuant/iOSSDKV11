@@ -10,11 +10,14 @@ import UIKit
 import AcuantImagePreparation
 import AcuantDocumentProcessing
 import AcuantCommon
+import AcuantCamera
 
 class ConfirmationViewController: UIViewController {
     
     public var side : CardSide = CardSide.Front
     public var image : Image? = nil
+    public var sharpness : Int = 0
+    public var glare : Int = 0
     public var barcodeCaptured : Bool = false
     public var barcodeString : String? = nil
     
@@ -43,11 +46,11 @@ class ConfirmationViewController: UIViewController {
         if(image?.image == nil){
             text = "Could not crop image\nPlease hold steady and retry\nPlease make sure there is enough ambient light and retry\n"
         }
-        if(image?.hasImageMetrics == true){
-            text = text + "Sharpness Grade : \(image!.sharpnessGrade)\n"
-            text = text + "Is Blurry : \(image!.isBlurry)\n"
-            text = text + "Glare Grade : \(image!.glareGrade)\n"
-            text = text + "Has Glare : \(image!.hasGlare)\n"
+        if(image?.image != nil){
+            text = text + "Sharpness Grade : \(sharpness)\n"
+            text = text + "Is Blurry : \(sharpness < CaptureConstants.SHARPNESS_THRESHOLD)\n"
+            text = text + "Glare Grade : \(glare)\n"
+            text = text + "Has Glare : \(glare < CaptureConstants.GLARE_THRESHOLD)\n"
             
         }
         text = text + "DPI : \(String(describing: image!.dpi))\n"
