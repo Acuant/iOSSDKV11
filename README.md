@@ -50,7 +50,7 @@ The SDK includes the following modules:
 
 **Acuant Image Preparation Library (AcuantImagePreparation) :**
 
-- Contains all image processing such as cropping, calculation of sharpness and glare	
+- Contains all image processing such as cropping, calculation of sharpness and glare
 
 **Acuant Document Processing Library (AcuantDocumentProcessing) :**
 
@@ -73,7 +73,7 @@ The SDK includes the following modules:
 
 1. Add the following dependent embedded frameworks:
 
-	
+
  -	**AcuantCommon**
  -	**AcuantImagePreparation**
  -	**AcuantCamera**
@@ -81,7 +81,7 @@ The SDK includes the following modules:
  -	**AcuantHGLiveness**
  - **AcuantIPLiveness**
  -	**AcuantFaceMatch**
- 
+
 ![](document_images/embeded_framework.png)
 
 
@@ -113,7 +113,8 @@ The SDK includes the following modules:
 1. If you are using COCOAPODS, then add the following podfile:
 
 		platform :ios, '11.0'
-		pod 'AcuantiOSSDKV11', '~> 11.1'
+		pod 'AcuantiOSSDKV11', '~> 11.2'
+		pod 'iProov', :git => 'https://github.com/iProov/ios.git', :tag => '6.3.0'
 
 2. Make sure you have added the **AcuantConfig.plist** file to the project.
 
@@ -124,9 +125,9 @@ Open the camera:
 
 	let documentCameraController = DocumentCameraController.getCameraController(delegate:self,
 	captureWaitTime:captureWaitTime)
-	
+
    	AppDelegate.navigationController?.pushViewController(documentCameraController, animated: false)
-   	
+
 Get the captured image:
 
 	public protocol CameraCaptureDelegate {
@@ -145,63 +146,63 @@ This module contains all image preparation functionality.
 -	**Initialization**
 
 		AcuantImagePreparation.initialize(delegate: InitializationDelegate)
-	 
+
 		public protocol InitializationDelegate {
     		func initializationFinished(error: AcuantError?);
 		}
 
-- **Crop** 
+- **Crop**
 
 After the image is captured, it is sent to the cropping library for cropping.
 
 		public class func crop(options: CroppingOptions, data: CroppingData)->Image
-		
+
 		// CroppingOptions, and CroppingData & Image are part of AcuantCommon
 		// Sample
-		
+
 		let croppingData  = CroppingData()
         croppingData.image = image // UIImage
-        
-   
+
+
         let croppingOptions = CroppingOptions()
         croppingOptions.isHealthCard = false
-        
+
         let croppedImage = AcuantImagePreparation.crop(options: croppingOptions, data: croppingData)
-        
-        
+
+
 - **Sharpness**
 
 This method returns a sharpness value of an image. If sharpness value is greater than 50, then the image is considered sharp (not blurry).
 
 		public class func sharpness(image: UIImage)->Int
-		
+
 - **Glare**
 
 This method returns glare value of an image. If glare value is greater than 50, then the image does not have glare.
 
 		public class func glare(image: UIImage)->Int
-			
+
 ----------
 
 
 ### AcuantDocumentProcessing ###
 
 After a document image is captured, it can be processed using the following steps.
-		
+
 **Note:**  If an upload fails with an error, retry the image upload using a better image.
 
 1. Create an instance:
 
 		public class func createInstance(processingMode:ProcessingMode,options:IdOptions,delegate:CreateInstanceDelegate)
-		
+
 		public protocol CreateInstanceDelegate{
     		func instanceCreated(instanceId : String?,error:AcuantError?);
 		}
 
 1. Upload an image:
-	
+
 		public class func uploadImage(processingMode:ProcessingMode,instancdId:String,data:IdData,options:IdOptions,delegate:UploadImageDelegate)
-		
+
 		public protocol UploadImageDelegate{
     		func imageUploaded(error: AcuantError?,classification:Classification?);
 		}
@@ -209,15 +210,15 @@ After a document image is captured, it can be processed using the following step
 1. Get the data:
 
 		public class func getData(instanceId:String,isHealthCard:Bool,delegate:GetDataDelegate?)
-		
+
 		public protocol UploadImageDelegate{
     		func imageUploaded(error: AcuantError?,classification:Classification?);
 		}
-		
+
 1. Delete the instance:
 
 		public class func deleteInstance(instanceId : String,type:DeleteType, delegate:DeleteDelegate)
-		
+
 		public protocol DeleteDelegate {
     		func instanceDeleted(success : Bool)
 		}
@@ -231,7 +232,7 @@ This module checks for liveness (whether the subject is a live person) by using 
 Create a face live capture session
 
 		public class func getFaceCaptureSession(delegate:AcuantHGLiveFaceCaptureDelegate?,captureDevice: AVCaptureDevice?,previewSize:CGSize?)->FaceCaptureSession
-		
+
 		public protocol AcuantHGLiveFaceCaptureDelegate {
     		func liveFaceDetailsCaptured(liveFaceDetails: LiveFaceDetails?)
 		}
@@ -239,7 +240,7 @@ Create a face live capture session
 **Example**
 
 		self.captureSession = AcuantHGLiveness.getFaceCaptureSession(delegate: self,captureDevice: captureDevice,previewSize:self.view.layer.bounds.size)
-		
+
 		// Code for HG Live controller
 		let liveFaceViewController = FaceLivenessCameraController()
 		liveFaceViewController.delegate = self
@@ -260,7 +261,7 @@ This module checks for liveness (whether the subject is a live person):
     	func livenessTestSucceeded(image:UIImage?)  // Called in case of liveness test passed. image has the downloaded facial image
     	func livenessTestFailed(error:AcuantError)  // Called in case of liveness test failed
 	}
-    
+
 Following is list of dependencies:
 
 - Alamofire.framework
@@ -272,26 +273,26 @@ Following is list of dependencies:
 - SocketIO.framework
 
 ----------
-		
+
 ### AcuantFaceMatch ###
 
 This module is used to match two facial images:
 
 		public class func processFacialMatch(facialData : FacialMatchData, delegate : FacialMatchDelegate?)
-		
+
 		public protocol FacialMatchDelegate {
     		func facialMatchFinished(result:FacialMatchResult?)
 		}
-		
+
 		public class FacialMatchData{
     		public var faceImageOne : UIImage? = nil // Facial image from ID Card
     		public var faceImageTwo : UIImage? = nil // Facial image from selfie capture during liveness check (image gets compressed by 50%)
-   
+
 		}
 
 
 ----------
-	
+
 
 ### Error codes ###
 
@@ -352,7 +353,7 @@ This module is used to match two facial images:
     	public static let ERROR_DESC_NotALiveFace = "Not a live face"
     	public static let ERROR_DESC_CouldNotAccessLivenessData = "Could not access liveness data"
 	}
-	
+
 ### Image ###
 
 	public class Image {
@@ -367,7 +368,7 @@ This module is used to match two facial images:
 
 #### What causes an "Unsupported Architecture" error when publishing the app in the Apple App store? ####
 
-All frameworks are �fat� (multi-architecture) binaries that contain *slices* for **armv7**, **arm64**, **i386**, and **x86(64)**  CPU architectures. ARM slices are used by physical iOS devices, while i386 and x86(64) are used by the simulator. 
+All frameworks are �fat� (multi-architecture) binaries that contain *slices* for **armv7**, **arm64**, **i386**, and **x86(64)**  CPU architectures. ARM slices are used by physical iOS devices, while i386 and x86(64) are used by the simulator.
 
 Use the **lipo** command to check which slices are contained in the binaries:
 
