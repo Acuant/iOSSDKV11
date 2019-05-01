@@ -80,12 +80,13 @@ class RootViewController: UIViewController , InitializationDelegate,CreateInstan
     func showFacialCaptureInterface(){
         self.isProcessingFacialMatch = true
         //Code for IP liveness
-        //AcuantIPLiveness.showLiveFaceCaptureInterface(del: self)
+        self.vcUtil.showActivityIndicator(uiView: self.view, text: "Setting up...")
+        AcuantIPLiveness.showLiveFaceCaptureInterface(del: self)
         
          //Code for HG Live controller
-        let liveFaceViewController = FaceLivenessCameraController()
+        /*let liveFaceViewController = FaceLivenessCameraController()
         liveFaceViewController.delegate = self
-        AppDelegate.navigationController?.pushViewController(liveFaceViewController, animated: true)
+        AppDelegate.navigationController?.pushViewController(liveFaceViewController, animated: true)*/
     }
 
     
@@ -151,16 +152,19 @@ class RootViewController: UIViewController , InitializationDelegate,CreateInstan
         processFacialMatch(image: image!)
     }
     
+    
+    // IPLiveness
     func livenessSetupdone() {
-        
+        self.vcUtil.showActivityIndicator(uiView: self.view, text: "Processing...")
     }
     
     func livenessTestdone() {
-        
+        self.vcUtil.showActivityIndicator(uiView: self.view, text: "Downloading...")
     }
     
     // Delegate if LiveFaceSDK is used
     func livenessTestSucceeded(image: UIImage?) {
+        self.vcUtil.showActivityIndicator(uiView: self.view, text: "Processing...")
         processFacialMatch(image: image!)
     }
     

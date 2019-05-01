@@ -99,13 +99,11 @@ The SDK includes the following modules:
     		<key>acuant_subscription</key>
     		<string>XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXX</string>
     		<key>frm_endpoint</key>
-    		<string>https://test.frm.acuant-dev.net/api/v2</string>
+    		<string>https://test.frm.acuant-dev.net</string>
     		<key>med_endpoint</key>
-    		<string>https://medicscan.acuant.net/api/v1</string>
+    		<string>https://medicscan.acuant.net</string>
     		<key>assureid_endpoint</key>
     		<string>https://test.services.acuant-dev.net</string>
-    		<key>liveness_endpoint</key>
-    		<string>https://test.frm.acuant-dev.net/api/v2</string>
     	</dict>
     	</plist>
 
