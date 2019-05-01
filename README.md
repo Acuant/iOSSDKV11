@@ -89,23 +89,24 @@ The SDK includes the following modules:
 
 
     	<?xml version="1.0" encoding="UTF-8"?>
-    	<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-    	<plist version="1.0">
-    	<dict>
-    		<key>acuant_username</key>
-    		<string>username</string>
-    		<key>acuant_password</key>
-    		<string>password</string>
-    		<key>acuant_subscription</key>
-    		<string>XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXX</string>
-    		<key>frm_endpoint</key>
-    		<string>https://test.frm.acuant-dev.net</string>
-    		<key>med_endpoint</key>
-    		<string>https://medicscan.acuant.net</string>
-    		<key>assureid_endpoint</key>
-    		<string>https://test.services.acuant-dev.net</string>
-    	</dict>
-    	</plist>
+		<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+		<plist version="1.0">
+			<dict>
+				<key>acuant_username</key>
+				<string>xxxxxx@acuantcorp.com</string>
+				<key>acuant_password</key>
+				<string>xxxxxxxxxx</string>
+				<key>acuant_subscription</key>
+				<string>xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</string>
+				<key>frm_endpoint</key>
+				<string>https://frm.acuant.net</string>
+				<key>med_endpoint</key>
+				<string>https://medicscan.acuant.net</string>
+				<key>assureid_endpoint</key>
+				<string>https://services.assureid.net</string>
+			</dict>
+		</plist>
+
 
 ### Using COCOAPODS ###
 1. If you are using COCOAPODS, then add the following podfile:
