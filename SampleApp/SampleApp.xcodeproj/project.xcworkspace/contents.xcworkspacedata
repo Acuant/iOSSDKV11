@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:/Users/jmoonlocal/Desktop/AcuantGithub/iOS/v11.2.1/iOSSDKV11/SampleApp/SampleApp/FaceLivenessCameraController.swift">
+   </FileRef>
+   <FileRef
       location = "self:">
    </FileRef>
 </Workspace>

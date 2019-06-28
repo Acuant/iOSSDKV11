@@ -15,7 +15,10 @@ import AcuantFaceMatch
 import AcuantHGLiveness
 import AcuantIPLiveness
 
-class RootViewController: UIViewController , InitializationDelegate,CreateInstanceDelegate,UploadImageDelegate,GetDataDelegate, FacialMatchDelegate,DeleteDelegate,AcuantHGLivenessDelegate,LivenessTestDelegate,CameraCaptureDelegate{
+class RootViewController: UIViewController , InitializationDelegate,CreateInstanceDelegate,UploadImageDelegate,GetDataDelegate, FacialMatchDelegate,DeleteDelegate,AcuantHGLivenessDelegate,CameraCaptureDelegate,LivenessSetupDelegate,LivenessTestDelegate,LivenessTestResultDelegate, AppOrientationDelegate{
+    
+
+    @IBOutlet var autoCaptureSwitch : UISwitch!
     
     public var capturedFrontImage : UIImage?
     public var capturedBackImage : UIImage?
@@ -29,32 +32,106 @@ class RootViewController: UIViewController , InitializationDelegate,CreateInstan
     public var capturedFaceImageUrl : String? = nil
     public var isHealthCard : Bool = false
     public var isRetrying : Bool = false
+    private var isInitialized = false
     
     public var idOptions : IdOptions? = nil
     public var idData : IdData? = nil
+    
+    public var ipLivenessSetupResult : LivenessSetupResult? = nil
     
     var side : CardSide = CardSide.Front
     var captureWaitTime = 0
     var minimumNumberOfClassificationAttemptsRequired = 1
     var numerOfClassificationAttempts = 0
     
+    var autoCapture = true
+    
     @IBOutlet var medicalCardButton: UIButton!
     @IBOutlet var idPassportButton: UIButton!
     
     @IBAction func idPassportTapped(_ sender: UIButton) {
-        resetData()
-        showDocumentCaptureCamera()
+        if(CheckConnection.isConnectedToNetwork() == false){
+            CustomAlerts.displayError(message: CheckConnection.ERROR_INTERNET_UNAVAILABLE)
+        }
+        else{
+            if(!isInitialized){
+                let retryCallback = ReinitializeHelper(callback: { isInitialized in
+                    if(isInitialized){
+                        self.isInitialized = true
+                        self.resetData()
+                        self.showDocumentCaptureCamera()
+                    }
+                    self.vcUtil.hideActivityIndicator(uiView: self.view)
+                })
+                
+                AcuantImagePreparation.initialize( delegate:retryCallback)
+                vcUtil.showActivityIndicator(uiView: self.view, text: "Initializing...")
+            }
+            else{
+                resetData()
+                showDocumentCaptureCamera()
+            }
+        }
     }
     
     @IBAction func healthCardTapped(_ sender: UIButton) {
-        resetData()
-        isHealthCard = true
-        showDocumentCaptureCamera()
+        if(CheckConnection.isConnectedToNetwork() == false){
+            CustomAlerts.displayError(message: CheckConnection.ERROR_INTERNET_UNAVAILABLE)
+        }
+        else{
+            if(!isInitialized){
+                let retryCallback = ReinitializeHelper(callback: { isInitialized in
+                    if(isInitialized){
+                        self.isInitialized = true
+                        self.resetData()
+                        self.isHealthCard = true
+                        self.showDocumentCaptureCamera()
+                    }
+                    self.vcUtil.hideActivityIndicator(uiView: self.view)
+                })
+                
+                AcuantImagePreparation.initialize( delegate:retryCallback)
+                vcUtil.showActivityIndicator(uiView: self.view, text: "Initializing...")
+            }
+            else{
+                resetData()
+                isHealthCard = true
+                showDocumentCaptureCamera()
+            }
+        }
+    }
+    
+    @IBAction func autocaptureSwitched(_ sender: UISwitch) {
+        if sender.isOn {
+            autoCapture =  true
+        } else {
+            autoCapture =  false
+        }
+    }
+    
+    func onAppOrientationLockChanged(mode: UIInterfaceOrientationMask){
+        (UIApplication.shared.delegate as! AppDelegate).orientationLock = mode
     }
     
     func showDocumentCaptureCamera(){
-        let documentCameraController = DocumentCameraController.getCameraController(delegate:self,captureWaitTime:captureWaitTime)
+        let documentCameraController = DocumentCameraController.getCameraController(delegate:self,captureWaitTime:captureWaitTime,autoCapture:autoCapture, appDelegate: self)
         AppDelegate.navigationController?.pushViewController(documentCameraController, animated: false)
+    }
+    
+    class ReinitializeHelper:InitializationDelegate{
+        init(callback: @escaping (_ isInitalized: Bool) -> ()){
+            completion = callback
+        }
+        var completion: (_ isInitalized: Bool)->()
+        func initializationFinished(error: AcuantError?) {
+            if(error != nil){
+                CustomAlerts.displayError(message: error!.errorDescription!)
+                self.completion(false)
+            }
+            else{
+                self.completion(true)
+            }
+        }
     }
     
     func resetData(){
@@ -75,15 +152,15 @@ class RootViewController: UIViewController , InitializationDelegate,CreateInstan
         documentInstance = nil
         idOptions = nil
         idData = nil
+        ipLivenessSetupResult = nil
     }
     
     func showFacialCaptureInterface(){
         self.isProcessingFacialMatch = true
         //Code for IP liveness
-        self.vcUtil.showActivityIndicator(uiView: self.view, text: "Setting up...")
-        AcuantIPLiveness.showLiveFaceCaptureInterface(del: self)
+        AcuantIPLiveness.performLivenessSetup(delegate: self)
         
-         //Code for HG Live controller
+        // Code for HG Live controller
         /*let liveFaceViewController = FaceLivenessCameraController()
         liveFaceViewController.delegate = self
         AppDelegate.navigationController?.pushViewController(liveFaceViewController, animated: true)*/
@@ -147,25 +224,36 @@ class RootViewController: UIViewController , InitializationDelegate,CreateInstan
     }
     
     
-    // Delegate if MiniLiveFaceSDK is used
+    // Delegate if HG Liveness is used
     func liveFaceCaptured(image: UIImage?) {
         processFacialMatch(image: image!)
     }
+
     
-    
-    // IPLiveness
-    func livenessSetupdone() {
-        self.vcUtil.showActivityIndicator(uiView: self.view, text: "Processing...")
+    // IP Liveness
+    func livenessSetupSucceeded(result: LivenessSetupResult) {
+        ipLivenessSetupResult = result
+        AcuantIPLiveness.performLivenessTest(setupResult: result, delegate: self)
     }
     
-    func livenessTestdone() {
-        self.vcUtil.showActivityIndicator(uiView: self.view, text: "Downloading...")
+    func livenessSetupFailed(error: AcuantError) {
+        livenessTestFailed(error:error)
+    }
+    func livenessTestCompleted() {
+        AcuantIPLiveness.getLivenessTestResult(token: ipLivenessSetupResult!.token!, userId: ipLivenessSetupResult!.userId!, delegate: self)
     }
     
-    // Delegate if LiveFaceSDK is used
-    func livenessTestSucceeded(image: UIImage?) {
-        self.vcUtil.showActivityIndicator(uiView: self.view, text: "Processing...")
-        processFacialMatch(image: image!)
+    func livenessTestCompletedWithError(error: AcuantError?) {
+        AcuantIPLiveness.getLivenessTestResult(token: ipLivenessSetupResult!.token!, userId: ipLivenessSetupResult!.userId!, delegate: self)
+    }
+    
+    func livenessTestResultReceived(result: LivenessTestResult) {
+        isLiveFace = result.passedLivenessTest
+        processFacialMatch(image: result.image!)
+    }
+    
+    func livenessTestResultReceiveFailed(error: AcuantError) {
+        livenessTestFailed(error:error)
     }
     
     func livenessTestFailed(error:AcuantError) {
@@ -173,10 +261,9 @@ class RootViewController: UIViewController , InitializationDelegate,CreateInstan
         isLiveFace = false
         self.isProcessingFacialMatch = false
     }
-    
+
     func processFacialMatch(image:UIImage){
         capturedLiveFace = image
-        isLiveFace = true
         self.vcUtil.showActivityIndicator(uiView: self.view, text: "Processing...")
         DispatchQueue.global().async {
             while(self.isProcessing == true){
@@ -266,7 +353,6 @@ class RootViewController: UIViewController , InitializationDelegate,CreateInstan
             capturedBarcodeString = barcodeString
         }
         let croppedImage = cropImage(image: image.image!)
-            
         DispatchQueue.global().async {
             DispatchQueue.main.async {
                 if(croppedImage?.image == nil || (croppedImage?.error != nil && croppedImage?.error?.errorCode != AcuantErrorCodes.ERROR_LowResolutionImage)){
@@ -304,10 +390,7 @@ class RootViewController: UIViewController , InitializationDelegate,CreateInstan
         let croppingData  = CroppingData()
         croppingData.image = image
         
-        let croppingOptions = CroppingOptions()
-        croppingOptions.isHealthCard = false
-        
-        let croppedImage = AcuantImagePreparation.crop(options: croppingOptions, data: croppingData)
+        let croppedImage = AcuantImagePreparation.crop(data: croppingData)
         return croppedImage
     }
     
@@ -340,9 +423,9 @@ class RootViewController: UIViewController , InitializationDelegate,CreateInstan
                 idData?.image = capturedFrontImage
                 if(isRetrying){
                     numerOfClassificationAttempts = numerOfClassificationAttempts + 1
-                    AcuantDocumentProcessing.uploadImage(processingMode: ProcessingMode.Authentication,instancdId: documentInstance!, data: idData!, options: idOptions!, delegate: self)
+                    AcuantDocumentProcessing.uploadImage( instancdId: documentInstance!, data: idData!, options: idOptions!, delegate: self)
                 }else{
-                    AcuantDocumentProcessing.createInstance(processingMode: ProcessingMode.Authentication,options: idOptions!, delegate:self)
+                    AcuantDocumentProcessing.createInstance(options: idOptions!, delegate:self)
                 }
                 
             }
@@ -361,7 +444,7 @@ class RootViewController: UIViewController , InitializationDelegate,CreateInstan
                 
                 idData = IdData()
                 idData?.image = capturedBackImage
-                AcuantDocumentProcessing.uploadImage(processingMode: ProcessingMode.Authentication,instancdId: documentInstance!, data: idData!, options: idOptions!, delegate: self)
+                AcuantDocumentProcessing.uploadImage( instancdId: documentInstance!, data: idData!, options: idOptions!, delegate: self)
             }
             
         }
@@ -379,13 +462,14 @@ class RootViewController: UIViewController , InitializationDelegate,CreateInstan
                 idOptions?.isHealthCard = true
                 idOptions?.cardSide = CardSide.Front
                 idOptions?.isRetrying = false
-                AcuantDocumentProcessing.uploadImage(processingMode: ProcessingMode.Authentication,instancdId: documentInstance!, data: idData!, options: idOptions!, delegate: self)
+                AcuantDocumentProcessing.uploadImage( instancdId: documentInstance!, data: idData!, options: idOptions!, delegate: self)
                 
             }else{
                 // Upload and Classify ID/Passport image
-                AcuantDocumentProcessing.uploadImage( processingMode: ProcessingMode.Authentication,instancdId: documentInstance!, data: idData!, options: idOptions!, delegate: self)
+                AcuantDocumentProcessing.uploadImage( instancdId: documentInstance!, data: idData!, options: idOptions!, delegate: self)
             }
         }else{
+            self.vcUtil.hideActivityIndicator(uiView: self.view)
             CustomAlerts.displayError(message: "\(error!.errorCode!) : " + (error?.errorDescription)!)
         }
     }
@@ -405,7 +489,7 @@ class RootViewController: UIViewController , InitializationDelegate,CreateInstan
                         idOptions?.isHealthCard = true
                         idOptions?.cardSide = CardSide.Back
                         idOptions?.isRetrying = false
-                        AcuantDocumentProcessing.uploadImage( processingMode: ProcessingMode.Authentication,instancdId: documentInstance!, data: idData!, options: idOptions!, delegate: self)
+                        AcuantDocumentProcessing.uploadImage( instancdId: documentInstance!, data: idData!, options: idOptions!, delegate: self)
                     }
                 }else{
                     // Get Data
@@ -551,6 +635,15 @@ class RootViewController: UIViewController , InitializationDelegate,CreateInstan
     let vcUtil = ViewControllerUtils()
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        autoCaptureSwitch.setOn(true, animated: false)
+        
+        var configDictionay: NSDictionary?
+        if let path = Bundle.main.path(forResource: "Config", ofType: "plist") {
+            configDictionay = NSDictionary(contentsOfFile: path)
+        }
+        
+
         vcUtil.showActivityIndicator(uiView: self.view, text: "Initializing...")
         AcuantImagePreparation.initialize(delegate:self)
     }
@@ -563,7 +656,7 @@ class RootViewController: UIViewController , InitializationDelegate,CreateInstan
     func initializationFinished(error: AcuantError?) {
         vcUtil.hideActivityIndicator(uiView: self.view)
         if(error == nil){
-            medicalCardButton.isHidden = false
+            isInitialized = true
         }else{
             if let msg = error?.errorDescription {
                 CustomAlerts.displayError(message: "\(error!.errorCode!) : " + msg)
@@ -582,7 +675,7 @@ class RootViewController: UIViewController , InitializationDelegate,CreateInstan
         idData = IdData()
         idData?.image = capturedFrontImage
         
-        AcuantDocumentProcessing.createInstance( processingMode: ProcessingMode.DataCapture, options: idOptions!, delegate:self)
+        AcuantDocumentProcessing.createInstance(options: idOptions!, delegate:self)
     }
     
     func facialMatchFinished(result: FacialMatchResult?) {

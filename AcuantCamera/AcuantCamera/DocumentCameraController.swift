@@ -11,6 +11,7 @@ import UIKit
 import AVFoundation
 import AcuantImagePreparation
 import AcuantCommon
+
 public class DocumentCameraController : UIViewController, DocumentCaptureDelegate , FrameAnalysisDelegate{
     private let context = CIContext()
     private var cameraCaptureDelegate : CameraCaptureDelegate? = nil
@@ -18,35 +19,47 @@ public class DocumentCameraController : UIViewController, DocumentCaptureDelegat
     var captureWaitTime = 2
     
     let vcUtil = ViewControllerUtils()
-    
+    var appDelegate : AppOrientationDelegate? = nil
     var captureSession: DocumentCaptureSession!
     var lastDeviceOrientation : UIDeviceOrientation!
     var videoPreviewLayer: AVCaptureVideoPreviewLayer!
     let messageLayer = CATextLayer()
-    
+
+    let shapeLayer = CAShapeLayer()
     var rightBorder : CALayer?
     var leftBorder : CALayer?
     var topBorder : CALayer?
     var bottomBorder : CALayer?
-    
     var captured : Bool = false
     
-    public class func getCameraController(delegate:CameraCaptureDelegate,captureWaitTime:Int)->DocumentCameraController{
+    var autoCapture = true
+    
+    public class func getCameraController(delegate:CameraCaptureDelegate, captureWaitTime:Int,autoCapture:Bool, appDelegate: AppOrientationDelegate)->DocumentCameraController{
         let c = DocumentCameraController()
         c.cameraCaptureDelegate = delegate
         c.captureWaitTime = captureWaitTime
+        c.appDelegate = appDelegate
+        c.autoCapture = autoCapture
         return c
     }
 
     override public func viewDidLoad() {
         super.viewDidLoad()
+        UIDevice.current.setValue(UIInterfaceOrientation.portrait.rawValue, forKey: "orientation")
+        self.appDelegate?.onAppOrientationLockChanged(mode: UIInterfaceOrientationMask.portrait)
         self.navigationController?.setNavigationBarHidden(true, animated: false)
         UIDevice.current.beginGeneratingDeviceOrientationNotifications()
         NotificationCenter.default.addObserver(self, selector: #selector(self.deviceDidRotate(notification:)), name: UIDevice.orientationDidChangeNotification, object: nil)
-        
+        UIDevice.current.setValue(UIInterfaceOrientation.portrait.rawValue, forKey: "orientation")
         self.lastDeviceOrientation = UIDevice.current.orientation
+        
+        let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(touchAction(_:)))
+        self.view.addGestureRecognizer(gestureRecognizer)
     }
     
+    @objc func touchAction(_ sender:UITapGestureRecognizer){
+        self.captureSession.enableCapture()
+    }
     
     override public func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
@@ -67,11 +80,12 @@ public class DocumentCameraController : UIViewController, DocumentCaptureDelegat
         super.viewWillDisappear(animated)
         
         if (captureSession?.isRunning == true) {
-            captureSession.stopRunning()
+            captureSession?.stopRunning()
         }
-        self.videoPreviewLayer.removeFromSuperlayer()
+        self.videoPreviewLayer?.removeFromSuperlayer()
         
         NotificationCenter.default.removeObserver(self)
+        self.appDelegate?.onAppOrientationLockChanged(mode: UIInterfaceOrientationMask.all)
     }
     
     private func updatePreviewLayer(layer: AVCaptureConnection, orientation: AVCaptureVideoOrientation) {
@@ -114,7 +128,7 @@ public class DocumentCameraController : UIViewController, DocumentCaptureDelegat
     func startCameraView() {
         let captureDevice: AVCaptureDevice = AVCaptureDevice.default(.builtInWideAngleCamera, for: AVMediaType.video, position: .back)!
             self.view.backgroundColor = UIColor.white
-        self.captureSession = DocumentCaptureSession.getDocumentCaptureSession(delegate: self, frameDelegate: self, captureDevice: captureDevice)
+        self.captureSession = DocumentCaptureSession.getDocumentCaptureSession(delegate: self, frameDelegate: self,autoCapture:autoCapture, captureDevice: captureDevice)
             self.captureSession?.startRunning()
             UIView.animate(withDuration: 0.1, delay: 0.0, options: .curveEaseOut, animations: {
                 self.view.alpha = 0.3
@@ -144,14 +158,22 @@ public class DocumentCameraController : UIViewController, DocumentCaptureDelegat
         self.addBottomBorder(color: color, width: lWidth)
         
         // Add Center Message
-        self.messageLayer.backgroundColor = UIColor.gray.cgColor
+        self.messageLayer.opacity = 0.6
+        self.messageLayer.backgroundColor = UIColor.black.cgColor
         self.messageLayer.fontSize = 30
-        self.messageLayer.string = "ALLIGN"
+        self.messageLayer.string = "ALIGN"
         self.messageLayer.alignmentMode = CATextLayerAlignmentMode.center
         self.messageLayer.foregroundColor = UIColor.white.cgColor
         self.messageLayer.transform = CATransform3DMakeAffineTransform(CGAffineTransform(rotationAngle: CGFloat(Double.pi/2)));
         self.messageLayer.frame = CGRect(x: self.view.center.x-25, y: self.view.center.y-150, width: 50, height: 300)
         self.videoPreviewLayer.addSublayer(self.messageLayer)
+        shapeLayer.lineWidth = 2.0
+        shapeLayer.fillColor = nil
+        shapeLayer.path = UIBezierPath(rect: shapeLayer.bounds).cgPath
+        shapeLayer.strokeColor = UIColor.red.cgColor
+
+        self.videoPreviewLayer.addSublayer(self.shapeLayer)
+        
         self.view.layer.addSublayer(self.videoPreviewLayer)
     }
     
@@ -162,28 +184,59 @@ public class DocumentCameraController : UIViewController, DocumentCaptureDelegat
         self.cameraCaptureDelegate?.setCapturedImage(image: result, barcodeString: barcodeString)
     }
     
-    public func onFrameAvailable(frameResult: FrameResult) {
+    public func onFrameAvailable(frameResult: FrameResult, points: Array<CGPoint>?) {
+        if(points != nil && points?.count == 4){
+            let openSquarePath = UIBezierPath()
+            
+            let cornerPoint1 = self.videoPreviewLayer.layerPointConverted(fromCaptureDevicePoint: points![0])
+            let cornerPoint2 = self.videoPreviewLayer.layerPointConverted(fromCaptureDevicePoint: points![1])
+            let cornerPoint3 = self.videoPreviewLayer.layerPointConverted(fromCaptureDevicePoint: points![2])
+            let cornerPoint4 = self.videoPreviewLayer.layerPointConverted(fromCaptureDevicePoint: points![3])
+            
+            openSquarePath.move(to: cornerPoint1)
+            openSquarePath.addLine(to: cornerPoint2)
+            openSquarePath.addLine(to: cornerPoint3)
+            openSquarePath.addLine(to: cornerPoint4)
+            openSquarePath.addLine(to: cornerPoint1)
+
+            shapeLayer.path = openSquarePath.cgPath
+        }
+        else{
+            shapeLayer.path = nil
+        }
+        
         switch(frameResult){
             case FrameResult.NO_DOCUMENT:
-                self.messageLayer.backgroundColor = UIColor.gray.cgColor
+                shapeLayer.strokeColor = UIColor.red.cgColor
+                self.messageLayer.backgroundColor = UIColor.black.cgColor
                 animateMessage(message: "ALIGN")
                 break;
             case FrameResult.SMALL_DOCUMENT:
-                self.messageLayer.backgroundColor = UIColor.gray.cgColor
+                shapeLayer.strokeColor = UIColor.red.cgColor
+                self.messageLayer.backgroundColor = UIColor.black.cgColor
                 animateMessage(message: "MOVE CLOSER")
                 break;
             case FrameResult.BAD_ASPECT_RATIO:
-                self.messageLayer.backgroundColor = UIColor.gray.cgColor
+                shapeLayer.strokeColor = UIColor.red.cgColor
+                self.messageLayer.backgroundColor = UIColor.black.cgColor
                 animateMessage(message: "ALIGN")
                 break;
             case FrameResult.GOOD_DOCUMENT:
-                self.messageLayer.backgroundColor = UIColor.red.cgColor
-                animateMessage(message: "HOLD STEADY")
+                if(autoCapture){
+                    shapeLayer.strokeColor = UIColor.red.cgColor
+                    self.messageLayer.backgroundColor = UIColor.red.cgColor
+                    animateMessage(message: "HOLD STEADY")
+                }else{
+                    shapeLayer.strokeColor = UIColor.green.cgColor
+                    self.messageLayer.backgroundColor = UIColor.green.cgColor
+                    animateMessage(message: "TAP")
+                }
                 break;
             }
     }
     
     public func readyToCapture(){
+        shapeLayer.strokeColor = UIColor.green.cgColor
         self.messageLayer.backgroundColor = UIColor.green.cgColor
         self.messageLayer.fontSize = 30
         self.messageLayer.string = "CAPTURING"
@@ -256,7 +309,7 @@ public class DocumentCameraController : UIViewController, DocumentCaptureDelegat
             self.bottomBorder?.isHidden=true
             self.leftBorder?.isHidden=true
             self.rightBorder?.isHidden=true
-            self.videoPreviewLayer.isHidden=true
+            self.videoPreviewLayer?.isHidden=true
             let orient = UIApplication.shared.statusBarOrientation
             
             switch orient {
@@ -275,12 +328,14 @@ public class DocumentCameraController : UIViewController, DocumentCaptureDelegat
             }
             
         }, completion: { (UIViewControllerTransitionCoordinatorContext) -> Void in
-            self.videoPreviewLayer.isHidden=false
-            self.captureSession.stopRunning()
+            self.videoPreviewLayer?.isHidden=false
+            self.captureSession?.stopRunning()
             self.startCameraView()
         })
         super.viewWillTransition(to: size, with: coordinator)
         
     }
+    
+    
 }
 

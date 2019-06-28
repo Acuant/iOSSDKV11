@@ -3,11 +3,11 @@
 <plist version="1.0">
 <dict>
 	<key>acuant_username</key>
-	<string>xxxxxx@acuantcorp.com</string>
+	<string>xxx</string>
 	<key>acuant_password</key>
-	<string>xxxxxxxxxx</string>
+	<string>xxx</string>
 	<key>acuant_subscription</key>
-	<string>xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</string>
+	<string>xxx</string>
 	<key>frm_endpoint</key>
 	<string>https://frm.acuant.net</string>
 	<key>med_endpoint</key>

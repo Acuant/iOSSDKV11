@@ -18,6 +18,8 @@
 		13AC66BC20EECE0400F0D494 /* ViewControllerUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13AC66BB20EECE0400F0D494 /* ViewControllerUtils.swift */; };
 		13AC66BE20EED36D00F0D494 /* CustomAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13AC66BD20EED36D00F0D494 /* CustomAlert.swift */; };
 		13D13F1420F6AC000052B1D7 /* ConfirmationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D13F1320F6AC000052B1D7 /* ConfirmationViewController.swift */; };
+		83C977F422C69D6700FC8C53 /* FaceLivenessCameraController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83C977F322C69D6700FC8C53 /* FaceLivenessCameraController.swift */; };
+		83C977F622C69D9A00FC8C53 /* CheckConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83C977F522C69D9A00FC8C53 /* CheckConnection.swift */; };
 		C229E7B62224520700FFAC6F /* AcuantConfig.plist in Resources */ = {isa = PBXBuildFile; fileRef = C229E7B52224520700FFAC6F /* AcuantConfig.plist */; };
 		C2AD3A8C2273B8B200088F0A /* AcuantFaceMatch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C29FDC8022738FDA00707EF8 /* AcuantFaceMatch.framework */; };
 		C2AD3A8D2273B8B200088F0A /* AcuantFaceMatch.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C29FDC8022738FDA00707EF8 /* AcuantFaceMatch.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -49,7 +51,6 @@
 		C2AD3AA72273B8B200088F0A /* iProov.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C29FDC8D22738FDA00707EF8 /* iProov.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C2AD3AA92273B8F200088F0A /* AcuantCamera.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C208049D2226E049004FA5BE /* AcuantCamera.framework */; };
 		C2AD3AAA2273B8F200088F0A /* AcuantCamera.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C208049D2226E049004FA5BE /* AcuantCamera.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		C2F69D472225B40700724EDB /* FaceLivelinessCameraController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2F69D3F2225B40700724EDB /* FaceLivelinessCameraController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -111,6 +112,8 @@
 		13AC66BB20EECE0400F0D494 /* ViewControllerUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerUtils.swift; sourceTree = "<group>"; };
 		13AC66BD20EED36D00F0D494 /* CustomAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlert.swift; sourceTree = "<group>"; };
 		13D13F1320F6AC000052B1D7 /* ConfirmationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmationViewController.swift; sourceTree = "<group>"; };
+		83C977F322C69D6700FC8C53 /* FaceLivenessCameraController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FaceLivenessCameraController.swift; path = /Users/jmoonlocal/Desktop/AcuantGithub/iOS/v11.2.1/iOSSDKV11/SampleApp/SampleApp/FaceLivenessCameraController.swift; sourceTree = "<absolute>"; };
+		83C977F522C69D9A00FC8C53 /* CheckConnection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckConnection.swift; sourceTree = "<group>"; };
 		C20804982226E048004FA5BE /* AcuantCamera.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = AcuantCamera.xcodeproj; path = ../AcuantCamera/AcuantCamera.xcodeproj; sourceTree = "<group>"; };
 		C229E7B52224520700FFAC6F /* AcuantConfig.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = AcuantConfig.plist; sourceTree = "<group>"; };
 		C29FDC8022738FDA00707EF8 /* AcuantFaceMatch.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AcuantFaceMatch.framework; sourceTree = "<group>"; };
@@ -127,7 +130,6 @@
 		C29FDC8B22738FDA00707EF8 /* GPUImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GPUImage.framework; sourceTree = "<group>"; };
 		C29FDC8C22738FDA00707EF8 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Alamofire.framework; sourceTree = "<group>"; };
 		C29FDC8D22738FDA00707EF8 /* iProov.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = iProov.framework; sourceTree = "<group>"; };
-		C2F69D3F2225B40700724EDB /* FaceLivelinessCameraController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FaceLivelinessCameraController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -176,7 +178,8 @@
 		13AC65DA20EE8F8F00F0D494 /* SampleApp */ = {
 			isa = PBXGroup;
 			children = (
-				C2F69D3F2225B40700724EDB /* FaceLivelinessCameraController.swift */,
+				83C977F522C69D9A00FC8C53 /* CheckConnection.swift */,
+				83C977F322C69D6700FC8C53 /* FaceLivenessCameraController.swift */,
 				13AC65DB20EE8F8F00F0D494 /* AppDelegate.swift */,
 				13AC65DD20EE8F8F00F0D494 /* RootViewController.swift */,
 				13AC65DF20EE8F8F00F0D494 /* Main.storyboard */,
@@ -327,11 +330,12 @@
 				138EA90520F7CFC9002FC333 /* Utils.swift in Sources */,
 				13750BB62125FC35009B29AA /* ClassificationErrorViewController.swift in Sources */,
 				13AC65DE20EE8F8F00F0D494 /* RootViewController.swift in Sources */,
+				83C977F422C69D6700FC8C53 /* FaceLivenessCameraController.swift in Sources */,
 				138EA90320F7BF9B002FC333 /* ResultViewController.swift in Sources */,
+				83C977F622C69D9A00FC8C53 /* CheckConnection.swift in Sources */,
 				13AC65DC20EE8F8F00F0D494 /* AppDelegate.swift in Sources */,
 				13AC66BC20EECE0400F0D494 /* ViewControllerUtils.swift in Sources */,
 				13AC66BE20EED36D00F0D494 /* CustomAlert.swift in Sources */,
-				C2F69D472225B40700724EDB /* FaceLivelinessCameraController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

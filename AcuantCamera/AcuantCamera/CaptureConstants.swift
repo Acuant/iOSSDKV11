@@ -15,9 +15,10 @@ public class CaptureConstants{
     public static let ASPECT_RATIO_ID1 = 1.59
     public static let ASPECT_RATIO_ID3 = 1.42
     public static let ASPECT_RATIO_THRESHOLD = 5.0 // 5%
-    
     public static let MANDATORY_RESOLUTION_THRESHOLD_DEFAULT = 600
     public static let MANDATORY_RESOLUTION_THRESHOLD_SMALL = 400
+    public static let MANDATORY_RESOLUTION_THRESHOLD_DEFAULT_OLD_PHONES = 170
+    public static let MANDATORY_RESOLUTION_THRESHOLD_SMALL_OLD_PHONES = 120
     public static let NO_DOCUMENT_DPI_THRESHOLD = 20
     public static let SMALL_DOCUMENT_DPI_THRESHOLD = 20
     public static let SHARPNESS_THRESHOLD = 50

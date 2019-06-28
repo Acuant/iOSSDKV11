@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -25,26 +25,49 @@
                                     <action selector="idPassportTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="194-fM-c8h"/>
                                 </connections>
                             </button>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9sA-2d-9CD">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9sA-2d-9CD">
                                 <rect key="frame" x="0.0" y="384" width="375" height="30"/>
                                 <state key="normal" title="Health Insurance Card"/>
                                 <connections>
                                     <action selector="healthCardTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="LL2-UN-N3Z"/>
                                 </connections>
                             </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="76" translatesAutoresizingMaskIntoConstraints="NO" id="HHD-pp-BrI">
+                                <rect key="frame" x="74.5" y="480" width="226.5" height="31"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Auto Capture" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2L4-ec-plx">
+                                        <rect key="frame" x="0.0" y="0.0" width="101.5" height="31"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Iwp-Pu-c4C">
+                                        <rect key="frame" x="177.5" y="0.0" width="51" height="31"/>
+                                        <connections>
+                                            <action selector="autocaptureSwitched:" destination="BYZ-38-t0r" eventType="valueChanged" id="KaC-pZ-LtB"/>
+                                        </connections>
+                                    </switch>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="2L4-ec-plx" firstAttribute="height" secondItem="Iwp-Pu-c4C" secondAttribute="height" id="nVD-ls-uIf"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="9sA-2d-9CD" secondAttribute="trailing" id="063-Hc-Uu0"/>
+                            <constraint firstItem="HHD-pp-BrI" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="Bgy-HF-jSf"/>
                             <constraint firstItem="UWo-um-OZM" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="F7R-4X-MUu"/>
                             <constraint firstItem="UWo-um-OZM" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="P4R-U7-uBV"/>
                             <constraint firstItem="9sA-2d-9CD" firstAttribute="top" secondItem="UWo-um-OZM" secondAttribute="bottom" constant="25.5" id="Wad-sL-Een"/>
+                            <constraint firstItem="HHD-pp-BrI" firstAttribute="top" secondItem="UWo-um-OZM" secondAttribute="bottom" constant="121.5" id="aJM-I2-9vU"/>
                             <constraint firstItem="UWo-um-OZM" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="jeo-Ez-QM0"/>
                             <constraint firstItem="9sA-2d-9CD" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="slM-Dk-NSG"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="autoCaptureSwitch" destination="Iwp-Pu-c4C" id="Vcn-JV-F28"/>
                         <outlet property="idPassportButton" destination="UWo-um-OZM" id="TML-6j-Bhh"/>
                         <outlet property="medicalCardButton" destination="9sA-2d-9CD" id="WPU-fH-feu"/>
                     </connections>
