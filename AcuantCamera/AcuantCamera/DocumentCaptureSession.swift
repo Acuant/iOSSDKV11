@@ -12,12 +12,12 @@ import AVFoundation
 import AcuantCommon
 import AcuantImagePreparation
 
-public class DocumentCaptureSession :AVCaptureSession,AVCaptureMetadataOutputObjectsDelegate,AVCaptureVideoDataOutputSampleBufferDelegate,AVCapturePhotoCaptureDelegate{
+@objcMembers public class DocumentCaptureSession :AVCaptureSession,AVCaptureMetadataOutputObjectsDelegate,AVCaptureVideoDataOutputSampleBufferDelegate,AVCapturePhotoCaptureDelegate{
     private let context = CIContext()
     var frame : UIImage? = nil
     var croppedFrame : Image? = nil
     var stringValue : String? = nil
-    var delegate : DocumentCaptureDelegate? = nil
+    weak var delegate : DocumentCaptureDelegate? = nil
     var captureDevice: AVCaptureDevice?
     var shouldShowBorder = true
     private var autoCapture = true
@@ -27,7 +27,7 @@ public class DocumentCaptureSession :AVCaptureSession,AVCaptureMetadataOutputObj
     private var input : AVCaptureDeviceInput? = nil
     private var videoOutput : AVCaptureVideoDataOutput? = nil
     private var captureMetadataOutput : AVCaptureMetadataOutput? = nil
-    private var frameDelegate:FrameAnalysisDelegate? = nil
+    weak private var frameDelegate:FrameAnalysisDelegate? = nil
     let stillImageOutput = AVCapturePhotoOutput()
     private var devicePreviewResolutionLongerSide = CaptureConstants.CAMERA_PREVIEW_LONGER_SIDE_STANDARD
     
@@ -41,14 +41,16 @@ public class DocumentCaptureSession :AVCaptureSession,AVCaptureMetadataOutputObj
         self.captureDevice = captureDevice
         self.frameDelegate = frameDelegate
         self.autoCapture = autoCapture
-        if(self.autoCapture == false){
-            self.captureEnabled = false
-        }
         return self;
     }
     
     public func enableCapture(){
         self.captureEnabled = true
+        self.captured = true
+        self.capturePhoto()
+        DispatchQueue.main.async{
+            self.delegate?.readyToCapture()
+        }
     }
     
     override public func startRunning() {
@@ -132,9 +134,12 @@ public class DocumentCaptureSession :AVCaptureSession,AVCaptureMetadataOutputObj
                 if(self.cropping || self.captured){
                     return
                 }
+                if(self.autoCapture == false){
+                    return
+                }
                 self.cropping = true
                 let startTime = CFAbsoluteTimeGetCurrent()
-                self.croppedFrame = self.cropImage(image: self.frame!)
+                self.croppedFrame = self.detectImage(image: self.frame!)
                 let cropDuration = CFAbsoluteTimeGetCurrent() - startTime
                 let frameSize = self.frame!.size
                 
@@ -144,7 +149,7 @@ public class DocumentCaptureSession :AVCaptureSession,AVCaptureMetadataOutputObj
                     var scaledPoints : Array<CGPoint> = Array<CGPoint>()
                     var MANDATORY_RESOLUTION_THRESHOLD = CaptureConstants.MANDATORY_RESOLUTION_THRESHOLD_DEFAULT
                     
-                    if(croppedImage != nil && croppedImage?.image != nil){
+                    if(croppedImage != nil){
                         if(croppedImage!.points.count == 4 && self.shouldShowBorder){
                             croppedImage!.points.forEach{ point in
                                 var scaled: CGPoint = CGPoint()
@@ -265,11 +270,11 @@ public class DocumentCaptureSession :AVCaptureSession,AVCaptureMetadataOutputObj
         }
     }
     
-    func cropImage(image:UIImage)->Image?{
+    func detectImage(image:UIImage)->Image?{
         let croppingData  = CroppingData()
         croppingData.image = image
         
-        let croppedImage = AcuantImagePreparation.crop(data: croppingData)
+        let croppedImage = AcuantImagePreparation.detect(data: croppingData)
         return croppedImage
     }
     

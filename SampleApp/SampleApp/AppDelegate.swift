@@ -12,18 +12,16 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    static var navigationController : UINavigationController?
     var orientationLock = UIInterfaceOrientationMask.all
 
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        let rootViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "RootViewController") as! RootViewController
+//        let rootViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "RootViewController") as! RootViewController
 
         //let viewController = ViewController(nibName: nil, bundle: nil)
-        AppDelegate.navigationController = UINavigationController(rootViewController: rootViewController)
-        self.window = UIWindow(frame: UIScreen.main.bounds)
-        self.window?.rootViewController = AppDelegate.navigationController
-        self.window?.makeKeyAndVisible()
+        //AppDelegate.navigationController = UINavigationController(rootViewController: rootViewController)
+//        self.window = UIWindow(frame: UIScreen.main.bounds)
+//        self.window?.rootViewController = AppDelegate.navigationController
+//        self.window?.makeKeyAndVisible()
         return true
     }
 

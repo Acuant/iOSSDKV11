@@ -166,6 +166,7 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 #if __has_warning("-Watimport-in-framework-header")
 #pragma clang diagnostic ignored "-Watimport-in-framework-header"
 #endif
+@import ObjectiveC;
 #endif
 
 #pragma clang diagnostic ignored "-Wproperty-attribute-mismatch"
@@ -182,6 +183,45 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 # pragma clang attribute push(__attribute__((external_source_symbol(language="Swift", defined_in="AcuantFaceMatch",generated_declaration))), apply_to=any(function,enum,objc_interface,objc_category,objc_protocol))
 # pragma pop_macro("any")
 #endif
+
+@class FacialMatchData;
+@protocol FacialMatchDelegate;
+
+SWIFT_CLASS("_TtC15AcuantFaceMatch15AcuantFaceMatch")
+@interface AcuantFaceMatch : NSObject
++ (void)processFacialMatchWithFacialData:(FacialMatchData * _Nonnull)facialData delegate:(id <FacialMatchDelegate> _Nullable)delegate;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+@class UIImage;
+
+SWIFT_CLASS("_TtC15AcuantFaceMatch15FacialMatchData")
+@interface FacialMatchData : NSObject
+@property (nonatomic, strong) UIImage * _Nullable faceImageOne;
+@property (nonatomic, strong) UIImage * _Nullable faceImageTwo;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
++ (FacialMatchData * _Nonnull)newInstance SWIFT_WARN_UNUSED_RESULT;
+@end
+
+@class FacialMatchResult;
+
+SWIFT_PROTOCOL("_TtP15AcuantFaceMatch19FacialMatchDelegate_")
+@protocol FacialMatchDelegate
+- (void)facialMatchFinishedWithResult:(FacialMatchResult * _Nullable)result;
+@end
+
+@class AcuantError;
+
+SWIFT_CLASS("_TtC15AcuantFaceMatch17FacialMatchResult")
+@interface FacialMatchResult : NSObject
+@property (nonatomic) BOOL isMatch;
+@property (nonatomic, copy) NSString * _Nullable transactionId;
+@property (nonatomic) NSInteger score;
+@property (nonatomic, strong) AcuantError * _Nullable error;
++ (FacialMatchResult * _Nullable)initWithJSONDictWithJsonDict:(NSDictionary<NSString *, id> * _Nullable)jsonDict SWIFT_METHOD_FAMILY(none) SWIFT_WARN_UNUSED_RESULT;
++ (FacialMatchResult * _Nonnull)createInstance SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
 
 #if __has_attribute(external_source_symbol)
 # pragma clang attribute pop

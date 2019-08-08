@@ -8,7 +8,7 @@
 
 import UIKit
 
-public extension UIDevice {
+@objc public extension UIDevice {
     
     static let modelName: String = {
         var systemInfo = utsname()

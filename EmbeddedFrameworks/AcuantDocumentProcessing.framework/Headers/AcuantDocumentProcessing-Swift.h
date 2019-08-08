@@ -166,6 +166,8 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 #if __has_warning("-Watimport-in-framework-header")
 #pragma clang diagnostic ignored "-Watimport-in-framework-header"
 #endif
+@import AcuantCommon;
+@import ObjectiveC;
 #endif
 
 #pragma clang diagnostic ignored "-Wproperty-attribute-mismatch"
@@ -182,6 +184,404 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 # pragma clang attribute push(__attribute__((external_source_symbol(language="Swift", defined_in="AcuantDocumentProcessing",generated_declaration))), apply_to=any(function,enum,objc_interface,objc_category,objc_protocol))
 # pragma pop_macro("any")
 #endif
+
+
+SWIFT_CLASS("_TtC24AcuantDocumentProcessing6Action")
+@interface Action : NSObject
+@property (nonatomic, copy) NSString * _Nullable actions;
+@property (nonatomic, copy) NSString * _Nullable actionDescription;
+@property (nonatomic, copy) NSString * _Nullable disposition;
+@property (nonatomic, copy) NSString * _Nullable Id;
+@property (nonatomic, copy) NSString * _Nullable information;
+@property (nonatomic, copy) NSString * _Nullable key;
+@property (nonatomic, copy) NSString * _Nullable name;
+@property (nonatomic, copy) NSString * _Nullable result;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
++ (Action * _Nullable)initWithJSONObjectWithJsonDict:(NSDictionary<NSString *, id> * _Nullable)jsonDict SWIFT_METHOD_FAMILY(none) SWIFT_WARN_UNUSED_RESULT;
+@end
+
+@class IdOptions;
+@protocol CreateInstanceDelegate;
+@class IdData;
+@protocol UploadImageDelegate;
+@protocol GetDataDelegate;
+@protocol DeleteDelegate;
+
+SWIFT_CLASS("_TtC24AcuantDocumentProcessing24AcuantDocumentProcessing")
+@interface AcuantDocumentProcessing : NSObject
++ (void)createInstanceWithOptions:(IdOptions * _Nonnull)options delegate:(id <CreateInstanceDelegate> _Nonnull)delegate;
++ (void)uploadImageWithInstancdId:(NSString * _Nonnull)instancdId data:(IdData * _Nonnull)data options:(IdOptions * _Nonnull)options delegate:(id <UploadImageDelegate> _Nonnull)delegate;
++ (void)getDataWithInstanceId:(NSString * _Nonnull)instanceId isHealthCard:(BOOL)isHealthCard delegate:(id <GetDataDelegate> _Nullable)delegate;
++ (void)deleteInstanceWithInstanceId:(NSString * _Nonnull)instanceId type:(enum DeleteType)type delegate:(id <DeleteDelegate> _Nonnull)delegate;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+SWIFT_CLASS("_TtC24AcuantDocumentProcessing6Alerts")
+@interface Alerts : NSObject
+@property (nonatomic, copy) NSArray<Action *> * _Nullable actions;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
++ (Alerts * _Nullable)initWithJsonArrayWithJsonArray:(NSArray<NSDictionary<NSString *, id> *> * _Nullable)jsonArray SWIFT_METHOD_FAMILY(none) SWIFT_WARN_UNUSED_RESULT;
+@end
+
+
+SWIFT_CLASS("_TtC24AcuantDocumentProcessing13AssureIDImage")
+@interface AssureIDImage : NSObject
+@property (nonatomic) NSInteger horizontalResolution;
+@property (nonatomic) NSInteger verticalResolution;
+@property (nonatomic) NSInteger side;
+@property (nonatomic) NSInteger light;
+@property (nonatomic) BOOL isCropped;
+@property (nonatomic) BOOL isTampered;
+@property (nonatomic, copy) NSString * _Nullable Id;
+@property (nonatomic, copy) NSString * _Nullable mimeType;
+@property (nonatomic, copy) NSString * _Nullable uri;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
++ (AssureIDImage * _Nullable)initWithJSONObjectWithJsonDict:(NSDictionary<NSString *, id> * _Nullable)jsonDict SWIFT_METHOD_FAMILY(none) SWIFT_WARN_UNUSED_RESULT;
+@end
+
+
+SWIFT_CLASS("_TtC24AcuantDocumentProcessing10Biographic")
+@interface Biographic : NSObject
+@property (nonatomic) NSInteger age;
+@property (nonatomic, copy) NSString * _Nullable birthDate;
+@property (nonatomic, copy) NSString * _Nullable expirationDate;
+@property (nonatomic, copy) NSString * _Nullable fullName;
+@property (nonatomic) NSInteger gender;
+@property (nonatomic, copy) NSString * _Nullable photo;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
++ (Biographic * _Nonnull)initWithJsonObjectWithJsonDict:(NSDictionary<NSString *, id> * _Nullable)jsonDict SWIFT_METHOD_FAMILY(none) SWIFT_WARN_UNUSED_RESULT;
+@end
+
+typedef SWIFT_ENUM(NSInteger, CardSide, closed) {
+  CardSideFront = 0,
+  CardSideBack = 1,
+};
+
+@class Type;
+
+SWIFT_CLASS("_TtC24AcuantDocumentProcessing14Classification")
+@interface Classification : NSObject
+@property (nonatomic) NSInteger mode;
+@property (nonatomic) BOOL orientationChanged;
+@property (nonatomic) BOOL presentationChanged;
+@property (nonatomic, strong) Type * _Nullable type;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
++ (Classification * _Nonnull)initWithJsonObjectWithJsonDict:(NSDictionary<NSString *, id> * _Nullable)jsonDict SWIFT_METHOD_FAMILY(none) SWIFT_WARN_UNUSED_RESULT;
+@end
+
+@class AcuantError;
+
+SWIFT_PROTOCOL("_TtP24AcuantDocumentProcessing22CreateInstanceDelegate_")
+@protocol CreateInstanceDelegate
+- (void)instanceCreatedWithInstanceId:(NSString * _Nullable)instanceId error:(AcuantError * _Nullable)error;
+@end
+
+@class RegionOfInterest;
+
+SWIFT_CLASS("_TtC24AcuantDocumentProcessing9DataField")
+@interface DataField : NSObject
+@property (nonatomic) NSInteger dataSource;
+@property (nonatomic, copy) NSString * _Nullable fieldDescrption;
+@property (nonatomic, copy) NSString * _Nullable Id;
+@property (nonatomic) BOOL isImage;
+@property (nonatomic, copy) NSString * _Nullable key;
+@property (nonatomic, strong) RegionOfInterest * _Nullable regionOfInterest;
+@property (nonatomic, copy) NSString * _Nullable regionReference;
+@property (nonatomic) double reliability;
+@property (nonatomic, copy) NSString * _Nullable type;
+@property (nonatomic, copy) NSString * _Nullable value;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
++ (DataField * _Nullable)initWithJSONObjectWithJsonDict:(NSDictionary<NSString *, id> * _Nullable)jsonDict SWIFT_METHOD_FAMILY(none) SWIFT_WARN_UNUSED_RESULT;
+@end
+
+
+SWIFT_CLASS("_TtC24AcuantDocumentProcessing10DataFields")
+@interface DataFields : NSObject
+@property (nonatomic, copy) NSArray<DataField *> * _Nullable dataFields;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
++ (DataFields * _Nullable)initWithJsonArrayWithJsonArray:(NSArray<NSDictionary<NSString *, id> *> * _Nullable)jsonArray SWIFT_METHOD_FAMILY(none) SWIFT_WARN_UNUSED_RESULT;
+@end
+
+
+SWIFT_PROTOCOL("_TtP24AcuantDocumentProcessing14DeleteDelegate_")
+@protocol DeleteDelegate
+- (void)instanceDeletedWithSuccess:(BOOL)success;
+@end
+
+@class DeviceType;
+
+SWIFT_CLASS("_TtC24AcuantDocumentProcessing6Device")
+@interface Device : NSObject
+@property (nonatomic) BOOL hasContactlessChipReader;
+@property (nonatomic) BOOL hasMagneticStripeReader;
+@property (nonatomic, copy) NSString * _Nullable serialNumber;
+@property (nonatomic, strong) DeviceType * _Nullable type;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
++ (Device * _Nullable)initWithJsonObjectWithJsonDict:(NSDictionary<NSString *, id> * _Nullable)jsonDict SWIFT_METHOD_FAMILY(none) SWIFT_WARN_UNUSED_RESULT;
+@end
+
+
+SWIFT_CLASS("_TtC24AcuantDocumentProcessing10DeviceType")
+@interface DeviceType : NSObject
+@property (nonatomic, copy) NSString * _Nullable manufacturer;
+@property (nonatomic, copy) NSString * _Nullable model;
+@property (nonatomic) NSInteger sensorType;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
++ (DeviceType * _Nullable)initWithJsonObjectWithJsonDict:(NSDictionary<NSString *, id> * _Nullable)jsonDict SWIFT_METHOD_FAMILY(none) SWIFT_WARN_UNUSED_RESULT;
+@end
+
+
+SWIFT_PROTOCOL("_TtP24AcuantDocumentProcessing30DocumentClassificationDelegate_")
+@protocol DocumentClassificationDelegate
+- (void)documentClassifiedWithSuccess:(BOOL)success classification:(Classification * _Nullable)classification error:(AcuantError * _Nullable)error;
+@end
+
+@class RegionRectangle;
+
+SWIFT_CLASS("_TtC24AcuantDocumentProcessing15DocumentElement")
+@interface DocumentElement : NSObject
+@property (nonatomic) NSInteger documentElement;
+@property (nonatomic, copy) NSString * _Nullable imageReference;
+@property (nonatomic, copy) NSString * _Nullable key;
+@property (nonatomic, copy) NSString * _Nullable Id;
+@property (nonatomic, strong) RegionRectangle * _Nullable rectangle;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
++ (DocumentElement * _Nullable)initWithJSONObjectWithJsonDict:(NSDictionary<NSString *, id> * _Nullable)jsonDict SWIFT_METHOD_FAMILY(none) SWIFT_WARN_UNUSED_RESULT;
+@end
+
+
+SWIFT_CLASS("_TtC24AcuantDocumentProcessing13DocumentField")
+@interface DocumentField : NSObject
+@property (nonatomic) NSInteger dataSource;
+@property (nonatomic, copy) NSString * _Nullable fieldDescription;
+@property (nonatomic, copy) NSString * _Nullable Id;
+@property (nonatomic) BOOL isImage;
+@property (nonatomic, copy) NSString * _Nullable key;
+@property (nonatomic, copy) NSString * _Nullable name;
+@property (nonatomic, copy) NSString * _Nullable regionReference;
+@property (nonatomic, copy) NSString * _Nullable type;
+@property (nonatomic, copy) NSString * _Nullable value;
+@property (nonatomic, copy) NSArray<NSString *> * _Nullable dataFieldReference;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
++ (DocumentField * _Nullable)initWithJsonObjectWithJsonDict:(NSDictionary<NSString *, id> * _Nullable)jsonDict SWIFT_METHOD_FAMILY(none) SWIFT_WARN_UNUSED_RESULT;
+@end
+
+
+SWIFT_CLASS("_TtC24AcuantDocumentProcessing6Fields")
+@interface Fields : NSObject
+@property (nonatomic, copy) NSArray<DocumentField *> * _Nullable documentFields;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
++ (Fields * _Nullable)initWithJsonArrayWithJsonArray:(NSArray<NSDictionary<NSString *, id> *> * _Nullable)jsonArray SWIFT_METHOD_FAMILY(none) SWIFT_WARN_UNUSED_RESULT;
+@end
+
+@class ProcessingResult;
+
+SWIFT_PROTOCOL("_TtP24AcuantDocumentProcessing15GetDataDelegate_")
+@protocol GetDataDelegate
+- (void)processingResultReceivedWithProcessingResult:(ProcessingResult * _Nonnull)processingResult;
+@end
+
+
+SWIFT_CLASS("_TtC24AcuantDocumentProcessing16ProcessingResult")
+@interface ProcessingResult : NSObject
+@property (nonatomic, strong) AcuantError * _Nullable error;
++ (ProcessingResult * _Nonnull)createInstance SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+@class UIImage;
+
+SWIFT_CLASS("_TtC24AcuantDocumentProcessing25HealthInsuranceCardResult")
+@interface HealthInsuranceCardResult : ProcessingResult
+@property (nonatomic, copy) NSString * _Nullable copayOv;
+@property (nonatomic, copy) NSString * _Nullable copaySp;
+@property (nonatomic, copy) NSString * _Nullable copayUc;
+@property (nonatomic, copy) NSString * _Nullable coverage;
+@property (nonatomic, copy) NSString * _Nullable contractCode;
+@property (nonatomic, copy) NSString * _Nullable dateOfBirth;
+@property (nonatomic, copy) NSString * _Nullable deductible;
+@property (nonatomic, copy) NSString * _Nullable effectiveDate;
+@property (nonatomic, copy) NSString * _Nullable employer;
+@property (nonatomic, copy) NSString * _Nullable expirationDate;
+@property (nonatomic, copy) NSString * _Nullable firstName;
+@property (nonatomic, copy) NSString * _Nullable groupName;
+@property (nonatomic, copy) NSString * _Nullable groupNumber;
+@property (nonatomic, copy) NSString * _Nullable issuerNumber;
+@property (nonatomic, copy) NSString * _Nullable lastName;
+@property (nonatomic, copy) NSString * _Nullable memberId;
+@property (nonatomic, copy) NSString * _Nullable memberName;
+@property (nonatomic, copy) NSString * _Nullable middlename;
+@property (nonatomic, copy) NSString * _Nullable namePrefix;
+@property (nonatomic, copy) NSString * _Nullable nameSuffix;
+@property (nonatomic, copy) NSString * _Nullable other;
+@property (nonatomic, copy) NSString * _Nullable payerId;
+@property (nonatomic, copy) NSString * _Nullable planAdmin;
+@property (nonatomic, copy) NSString * _Nullable planProvider;
+@property (nonatomic, copy) NSString * _Nullable planType;
+@property (nonatomic, strong) UIImage * _Nullable frontImage;
+@property (nonatomic, copy) NSString * _Nullable rxBin;
+@property (nonatomic, copy) NSString * _Nullable rxGroup;
+@property (nonatomic, copy) NSString * _Nullable rxId;
+@property (nonatomic, copy) NSString * _Nullable rxPcn;
+@property (nonatomic, strong) UIImage * _Nullable backImage;
+@property (nonatomic, copy) NSString * _Nullable fullAddress;
+@property (nonatomic, copy) NSString * _Nullable state;
+@property (nonatomic, copy) NSString * _Nullable street;
+@property (nonatomic, copy) NSString * _Nullable zip;
+@property (nonatomic, copy) NSString * _Nullable city;
+@property (nonatomic, copy) NSString * _Nullable planCode;
+@property (nonatomic, copy) NSString * _Nullable phoneNumber;
+@property (nonatomic, copy) NSString * _Nullable email;
+@property (nonatomic, copy) NSString * _Nullable webAddress;
+@property (nonatomic, copy) NSString * _Nullable transactionId;
+@property (nonatomic, copy) NSString * _Nullable instanceID;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
++ (HealthInsuranceCardResult * _Nullable)initWithJsonStringWithJsonString:(NSString * _Nullable)jsonString instanceID:(NSString * _Nullable)instanceID SWIFT_METHOD_FAMILY(none) SWIFT_WARN_UNUSED_RESULT;
+@end
+
+@class Subscription;
+@class Images;
+@class Regions;
+
+SWIFT_CLASS("_TtC24AcuantDocumentProcessing8IDResult")
+@interface IDResult : ProcessingResult
+@property (nonatomic, copy) NSString * _Nullable instanceID;
+@property (nonatomic) NSInteger authenticationSensitivity;
+@property (nonatomic, copy) NSString * _Nullable engineVersion;
+@property (nonatomic, copy) NSString * _Nullable libraryVersion;
+@property (nonatomic) NSInteger processMode;
+@property (nonatomic) NSInteger result;
+@property (nonatomic, strong) Subscription * _Nullable subscription;
+@property (nonatomic, strong) Biographic * _Nullable biographic;
+@property (nonatomic, strong) Classification * _Nullable classification;
+@property (nonatomic, strong) Device * _Nullable device;
+@property (nonatomic, strong) Alerts * _Nullable alerts;
+@property (nonatomic, strong) DataFields * _Nullable dataFields;
+@property (nonatomic, strong) Fields * _Nullable fields;
+@property (nonatomic, strong) Images * _Nullable images;
+@property (nonatomic, strong) Regions * _Nullable regions;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
++ (IDResult * _Nullable)initWithJsonStringWithJsonString:(NSString * _Nullable)jsonString SWIFT_METHOD_FAMILY(none) SWIFT_WARN_UNUSED_RESULT;
+@end
+
+
+SWIFT_CLASS("_TtC24AcuantDocumentProcessing6IdData")
+@interface IdData : NSObject
+@property (nonatomic, strong) UIImage * _Nullable image;
+@property (nonatomic, copy) NSString * _Nullable barcodeString;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
++ (IdData * _Nonnull)createInstance SWIFT_WARN_UNUSED_RESULT;
+@end
+
+
+SWIFT_CLASS("_TtC24AcuantDocumentProcessing9IdOptions")
+@interface IdOptions : NSObject
+@property (nonatomic) enum CardSide cardSide;
+@property (nonatomic) BOOL isHealthCard;
+@property (nonatomic) BOOL isRetrying;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
++ (IdOptions * _Nonnull)createInstance SWIFT_WARN_UNUSED_RESULT;
+@end
+
+
+SWIFT_CLASS("_TtC24AcuantDocumentProcessing6Images")
+@interface Images : NSObject
+@property (nonatomic, copy) NSArray<AssureIDImage *> * _Nullable images;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
++ (Images * _Nullable)initWithJsonArrayWithJsonArray:(NSArray<NSDictionary<NSString *, id> *> * _Nullable)jsonArray SWIFT_METHOD_FAMILY(none) SWIFT_WARN_UNUSED_RESULT;
+@end
+
+
+
+SWIFT_CLASS("_TtC24AcuantDocumentProcessing16RegionOfInterest")
+@interface RegionOfInterest : NSObject
+@property (nonatomic) NSInteger height;
+@property (nonatomic) NSInteger width;
+@property (nonatomic) NSInteger x;
+@property (nonatomic) NSInteger y;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
++ (RegionOfInterest * _Nullable)initWithJSONObjectWithJsonDict:(NSDictionary<NSString *, id> * _Nullable)jsonDict SWIFT_METHOD_FAMILY(none) SWIFT_WARN_UNUSED_RESULT;
+@end
+
+
+SWIFT_CLASS("_TtC24AcuantDocumentProcessing15RegionRectangle")
+@interface RegionRectangle : NSObject
+@property (nonatomic) NSInteger height;
+@property (nonatomic) NSInteger width;
+@property (nonatomic) NSInteger x;
+@property (nonatomic) NSInteger y;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
++ (RegionRectangle * _Nullable)initWithJSONObjectWithJsonDict:(NSDictionary<NSString *, id> * _Nullable)jsonDict SWIFT_METHOD_FAMILY(none) SWIFT_WARN_UNUSED_RESULT;
+@end
+
+
+SWIFT_CLASS("_TtC24AcuantDocumentProcessing7Regions")
+@interface Regions : NSObject
+@property (nonatomic, copy) NSArray<DocumentElement *> * _Nullable regions;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
++ (Regions * _Nullable)initWithJsonArrayWithJsonArray:(NSArray<NSDictionary<NSString *, id> *> * _Nullable)jsonArray SWIFT_METHOD_FAMILY(none) SWIFT_WARN_UNUSED_RESULT;
+@end
+
+
+SWIFT_CLASS("_TtC24AcuantDocumentProcessing12Subscription")
+@interface Subscription : NSObject
+@property (nonatomic) NSInteger documentProcessMode;
+@property (nonatomic, copy) NSString * _Nullable Id;
+@property (nonatomic) BOOL isActive;
+@property (nonatomic) BOOL isDevelopment;
+@property (nonatomic) BOOL isTrial;
+@property (nonatomic, copy) NSString * _Nullable name;
+@property (nonatomic) BOOL storePII;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
++ (Subscription * _Nonnull)initWithJsonObjectWithJsonDict:(NSDictionary<NSString *, id> * _Nonnull)jsonDict SWIFT_METHOD_FAMILY(none) SWIFT_WARN_UNUSED_RESULT;
+@end
+
+
+SWIFT_CLASS("_TtC24AcuantDocumentProcessing4Type")
+@interface Type : NSObject
+@property (nonatomic) NSInteger Class;
+@property (nonatomic, copy) NSString * _Nullable classCode;
+@property (nonatomic, copy) NSString * _Nullable className;
+@property (nonatomic, copy) NSString * _Nullable Id;
+@property (nonatomic) BOOL isGeneric;
+@property (nonatomic, copy) NSString * _Nullable issue;
+@property (nonatomic, copy) NSString * _Nullable issueType;
+@property (nonatomic, copy) NSString * _Nullable issuerCode;
+@property (nonatomic, copy) NSString * _Nullable issuerName;
+@property (nonatomic, copy) NSString * _Nullable keesingCode;
+@property (nonatomic, copy) NSString * _Nullable name;
+@property (nonatomic) NSInteger size;
+@property (nonatomic, copy) NSArray<NSDictionary<NSString *, id> *> * _Nullable supportedImages;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
++ (Type * _Nullable)initWithJsonObjectWithJsonDict:(NSDictionary<NSString *, id> * _Nullable)jsonDict SWIFT_METHOD_FAMILY(none) SWIFT_WARN_UNUSED_RESULT;
+@end
+
+
+SWIFT_PROTOCOL("_TtP24AcuantDocumentProcessing19UploadImageDelegate_")
+@protocol UploadImageDelegate
+- (void)imageUploadedWithError:(AcuantError * _Nullable)error classification:(Classification * _Nullable)classification;
+@end
 
 #if __has_attribute(external_source_symbol)
 # pragma clang attribute pop

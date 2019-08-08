@@ -166,6 +166,7 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 #if __has_warning("-Watimport-in-framework-header")
 #pragma clang diagnostic ignored "-Watimport-in-framework-header"
 #endif
+@import ObjectiveC;
 @import UIKit;
 #endif
 
@@ -183,6 +184,28 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 # pragma clang attribute push(__attribute__((external_source_symbol(language="Swift", defined_in="AcuantImagePreparation",generated_declaration))), apply_to=any(function,enum,objc_interface,objc_category,objc_protocol))
 # pragma pop_macro("any")
 #endif
+
+@protocol InitializationDelegate;
+@class CroppingData;
+@class Image;
+@class UIImage;
+
+SWIFT_CLASS("_TtC22AcuantImagePreparation22AcuantImagePreparation")
+@interface AcuantImagePreparation : NSObject
++ (void)initializeWithDelegate:(id <InitializationDelegate> _Nullable)delegate;
++ (Image * _Nonnull)cropWithData:(CroppingData * _Nonnull)data SWIFT_WARN_UNUSED_RESULT;
++ (Image * _Nonnull)detectWithData:(CroppingData * _Nonnull)data SWIFT_WARN_UNUSED_RESULT;
++ (NSInteger)sharpnessWithImage:(UIImage * _Nonnull)image SWIFT_WARN_UNUSED_RESULT;
++ (NSInteger)glareWithImage:(UIImage * _Nonnull)image SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+@class AcuantError;
+
+SWIFT_PROTOCOL("_TtP22AcuantImagePreparation22InitializationDelegate_")
+@protocol InitializationDelegate
+- (void)initializationFinishedWithError:(AcuantError * _Nullable)error;
+@end
 
 
 

@@ -30,6 +30,11 @@ class FaceLivenessCameraController : UIViewController,AcuantHGLiveFaceCaptureDel
         self.navigationController?.setNavigationBarHidden(true, animated: false)
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        (UIApplication.shared.delegate as! AppDelegate).orientationLock = .portrait
+    }
+    
     
     override func viewDidAppear(_ animated: Bool) {
         captured = false

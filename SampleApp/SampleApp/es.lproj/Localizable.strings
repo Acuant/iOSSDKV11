@@ -1,0 +1,189 @@
+// SampleApp
+"Back Side?" = "Reverso?";
+"Scan the back side of the health insurance card" = "Escanee el reverso de la tarjeta de seguro de salud";
+"Scan the back side of the ID document" = "Escanee el reverso del documento de identificación";
+
+// Acuant Camera
+"acuant_camera_align" = "ALINEAR";
+"acuant_camera_manual_capture" = "ALINEAR Y TOCAR";
+"acuant_camera_move_closer" = "MUÉVETE MAS CERCA";
+"acuant_camera_hold_steady" = "MANTENER ESTABLE";
+"acuant_camera_capturing" = "CAPTURA";
+
+/* loco:5b56f1d17ec8ae43575e40f3
+ * ok */
+"IProov_OK" = "OK";
+
+/* loco:5b56f1d17ec8ae43575e40f4
+ * error */
+"IProov_Error" = "Error";
+
+/* loco:5b56f1d17ec8ae43575e40f5
+ * prompt_hold_still */
+"IProov_PromptHoldStill" = "Pon tu cara en el óvalo";
+
+/* loco:5b56f1d17ec8ae43575e40f6
+ * prompt_loading */
+"IProov_PromptLoading" = "por favor espera…";
+
+/* loco:5b56f1d17ec8ae43575e40f7
+ * prompt_loading_slow */
+"IProov_PromptLoadingSlow" = "Conectando, la red es lenta…";
+
+/* loco:5b56f1d17ec8ae43575e40f8
+ * prompt_connecting */
+"IProov_PromptConnecting" = "Conectando…";
+
+/* loco:5b56f1d17ec8ae43575e40f9
+ * prompt_connecting_slow */
+"IProov_PromptConnectingSlow" = "Conectando, la red es lenta…";
+
+/* loco:5b56f1d17ec8ae43575e40fa
+ * prompt_tap_to_begin */
+"IProov_PromptTapToBegin" = "Toca la pantalla para comenzar";
+
+/* loco:5b56f1d17ec8ae43575e40fb
+ * prompt_move_closer */
+"IProov_PromptMoveCloser" = "Muévete mas cerca";
+
+/* loco:5b56f1d17ec8ae43575e40fc
+ * prompt_too_bright */
+"IProov_PromptTooBright" = "Ve a un lugar más sombrío";
+
+/* loco:5b56f1d17ec8ae43575e40fd
+ * prompt_too_backlit */
+"IProov_PromptTooBacklit" = "Estás retroiluminado, gira ligeramente";
+
+/* loco:5b56f1d17ec8ae43575e40fe
+ * prompt_too_backlit_short */
+"IProov_PromptTooBacklitShort" = "Estás retroiluminado, gira ligeramente";
+
+/* loco:5b56f1d17ec8ae43575e40ff
+ * prompt_beginning_in */
+
+"IProov_PromptBeginningIn" = "Comenzando en…";
+/* loco:5b56f1d17ec8ae43575e4100
+ * too_many_faces */
+
+"IProov_TooManyFaces" = "Demasiadas caras";
+/* loco:5b56f1d17ec8ae43575e4101
+ * open_your_eyes */
+"IProov_OpenYourEyes" = "Abre tus ojos";
+
+/* loco:5b56f1d17ec8ae43575e4102
+ * connected */
+"IProov_Connected" = "Conectada";
+
+/* loco:5b56f1d17ec8ae43575e4104
+ * face_camera */
+"IProov_FaceCamera" = "Mira a la cámara directamente";
+
+/* loco:5b56f1d17ec8ae43575e4105
+ * streamer_finished */
+"IProov_StreamerFinished" = "Terminada";
+
+/* loco:5b56f1d17ec8ae43575e4106
+ * hold_still */
+"IProov_HoldStill" = "Quédate quieto";
+
+/* loco:5b56f1d17ec8ae43575e4107
+ * progress_streaming */
+"IProov_ProgressStreaming" = "Transmisión…";
+
+/* loco:5b56f1d17ec8ae43575e4108
+ * progress_streaming_slow */
+"IProov_ProgressStreamingSlow" = "Streaming, la red es lenta…";
+
+/* loco:5b56f1d17ec8ae43575e4109
+ * progress_processing */
+"IProov_ProgressProcessing" = "Tratamiento…";
+
+/* loco:5b56f1d17ec8ae43575e410a
+ * dialog_instructions_title */
+"IProov_DialogInstructionsTitle" = "Instrucciones iProov";
+
+/* loco:5b56f1d17ec8ae43575e410b
+ * dialog_instructions_message */
+"IProov_DialogInstructionsMessage" = "• Llena el óvalo con tu cara \ n \ n • Toca o espera la cuenta regresiva \ n \ n • Permanece quieto durante el parpadeo";
+
+/* loco:5b56f1d17ec8ae43575e410c
+ * dialog_instructions_skip */
+"IProov_DialogInstructionsSkip" = "No muestres esto otra vez";
+
+/* loco:5b56f1d17ec8ae43575e410d
+ * agree */
+"IProov_Agree" = "De acuerdo";
+
+/* loco:5b56f1d17ec8ae43575e410e
+ * disagree */
+"IProov_Disagree" = "Discrepar";
+
+/* loco:5b56f1d17ec8ae43575e410f
+ * dialog_privacy_disagree_title */
+"IProov_DialogPrivacyDisagreeTitle" = "Lo siento";
+
+/* loco:5b56f1d17ec8ae43575e4110
+ * dialog_privacy_disagree_message */
+"IProov_DialogPrivacyDisagreeMessage" = "Debe aceptar la política de privacidad para usar iProov";
+
+/* loco:5b56f1d17ec8ae43575e4111
+ * iproov_success */
+"IProov_IProovSuccess" = "Has iProoved con éxito";
+
+/* loco:5b56f1d17ec8ae43575e4112
+ * scanning */
+"IProov_Scanning" = "Exploración…";
+
+/* loco:5b56f1d17ec8ae43575e4113
+ * network_problem_cant_connect */
+"IProov_NetworkProblemCantConnect" = "Problema de red, no se puede conectar";
+
+/* loco:5b56f1d17ec8ae43575e4114
+ * lost_internet_link */
+
+"IProov_LostInternetLink" = "Perdió la conexión a Internet, intente nuevamente";
+
+/* loco:5b56f1d17ec8ae43575e4115
+ * cannot_stream_video */
+"IProov_CannotStreamVideo" = "No se puede transmitir video, por favor intente nuevamente";
+
+/* loco:5b56f1d17ec8ae43575e4116
+ * device_not_supported */
+"IProov_DeviceNotSupported" = "Lo sentimos, tu dispositivo no es compatible actualmente";
+
+/* loco:5b56f1d17ec8ae43575e4117
+ * username_already_enrolled */
+"IProov_UsernameAlreadyEnrolled" = "Este nombre de usuario ya ha sido inscrito";
+
+/* loco:5b56f1d17ec8ae43575e4118
+ * unknown_identity */
+
+"IProov_UnknownIdentity" = "Este nombre de usuario no está inscrito, regístrese primero";
+
+/* loco:5b56f1d17ec8ae43575e4119
+ * camera_permission_denied */
+"IProov_CameraPermissionDenied" = "Permiso de cámara denegado";
+
+/* loco:5b56f1d17ec8ae43575e411a
+ * unknown_error */
+"IProov_UnknownError" = "Error desconocido";
+
+/* loco:5b56f1d17ec8ae43575e411b
+ * starting_detector */
+"IProov_StartingDetector" = "Detector de arranque…";
+
+/* loco:5b56f1d17ec8ae43575e411c
+ * ssl_exception */
+"IProov_SSLException" = "Excepción SSL";
+
+/* loco:5b56f1d17ec8ae43575e411d
+ * too_close */
+"IProov_TooClose" = "Demasiado cerca";
+
+/* loco:5b5714bb7ec8ae4b51446623
+ * not_you */
+"IProov_NotYou" = "¿No tú?";
+
+/* loco:5b5715247ec8ae4b9a53f972
+ * go_back */
+"IProov_GoBack" = "Regresa";

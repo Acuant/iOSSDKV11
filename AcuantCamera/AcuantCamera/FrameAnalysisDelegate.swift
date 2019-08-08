@@ -6,11 +6,12 @@
 //  Copyright © 2019 Tapas Behera. All rights reserved.
 //
 import UIKit
+import Foundation
 
-public protocol FrameAnalysisDelegate{
+@objc public protocol FrameAnalysisDelegate{
     func onFrameAvailable(frameResult: FrameResult, points: Array<CGPoint>?)
 }
 
-public enum FrameResult{
+@objc public enum FrameResult : Int{
     case NO_DOCUMENT, SMALL_DOCUMENT, BAD_ASPECT_RATIO, GOOD_DOCUMENT
 }

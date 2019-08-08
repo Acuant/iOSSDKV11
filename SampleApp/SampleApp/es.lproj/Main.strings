@@ -1,0 +1,27 @@
+
+/* Class = "UILabel"; text = "IPLiveness Enabled"; ObjectID = "2FC-0f-szG"; */
+"2FC-0f-szG.text" = "IPLiveness Enabled";
+
+/* Class = "UILabel"; text = "Auto Capture"; ObjectID = "2L4-ec-plx"; */
+"2L4-ec-plx.text" = "Auto Capture";
+
+/* Class = "UIButton"; normalTitle = "Health Insurance Card"; ObjectID = "9sA-2d-9CD"; */
+"9sA-2d-9CD.normalTitle" = "Health Insurance Card";
+
+/* Class = "UIButton"; normalTitle = "Back"; ObjectID = "LCY-ix-IzS"; */
+"LCY-ix-IzS.normalTitle" = "Back";
+
+/* Class = "UIButton"; normalTitle = "Retry"; ObjectID = "LIf-1j-4Yd"; */
+"LIf-1j-4Yd.normalTitle" = "Retry";
+
+/* Class = "UIButton"; normalTitle = "ID/Passport"; ObjectID = "UWo-um-OZM"; */
+"UWo-um-OZM.normalTitle" = "ID/Passport";
+
+/* Class = "UIButton"; normalTitle = "Retry"; ObjectID = "Xux-Bm-Hn7"; */
+"Xux-Bm-Hn7.normalTitle" = "Retry";
+
+/* Class = "UITextView"; text = "Could not classify the image"; ObjectID = "eeU-cz-tYc"; */
+"eeU-cz-tYc.text" = "Could not classify the image";
+
+/* Class = "UIButton"; normalTitle = "Confirm"; ObjectID = "elp-B2-bZ2"; */
+"elp-B2-bZ2.normalTitle" = "Confirm";

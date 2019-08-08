@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="I0c-68-3Fo">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -18,55 +18,101 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UWo-um-OZM">
-                                <rect key="frame" x="0.0" y="328.5" width="375" height="30"/>
-                                <state key="normal" title="ID/Passport"/>
-                                <connections>
-                                    <action selector="idPassportTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="194-fM-c8h"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9sA-2d-9CD">
-                                <rect key="frame" x="0.0" y="384" width="375" height="30"/>
-                                <state key="normal" title="Health Insurance Card"/>
-                                <connections>
-                                    <action selector="healthCardTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="LL2-UN-N3Z"/>
-                                </connections>
-                            </button>
-                            <stackView opaque="NO" contentMode="scaleToFill" spacing="76" translatesAutoresizingMaskIntoConstraints="NO" id="HHD-pp-BrI">
-                                <rect key="frame" x="74.5" y="480" width="226.5" height="31"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="104" translatesAutoresizingMaskIntoConstraints="NO" id="WrJ-vO-eqx">
+                                <rect key="frame" x="46" y="242" width="276.5" height="272"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Auto Capture" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2L4-ec-plx">
-                                        <rect key="frame" x="0.0" y="0.0" width="101.5" height="31"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Iwp-Pu-c4C">
-                                        <rect key="frame" x="177.5" y="0.0" width="51" height="31"/>
-                                        <connections>
-                                            <action selector="autocaptureSwitched:" destination="BYZ-38-t0r" eventType="valueChanged" id="KaC-pZ-LtB"/>
-                                        </connections>
-                                    </switch>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="mXN-8s-DWT">
+                                        <rect key="frame" x="62" y="0.0" width="153" height="85"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UWo-um-OZM">
+                                                <rect key="frame" x="0.0" y="0.0" width="153" height="30"/>
+                                                <state key="normal" title="ID/Passport"/>
+                                                <connections>
+                                                    <action selector="idPassportTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="194-fM-c8h"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9sA-2d-9CD">
+                                                <rect key="frame" x="0.0" y="55" width="153" height="30"/>
+                                                <state key="normal" title="Health Insurance Card"/>
+                                                <connections>
+                                                    <action selector="healthCardTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="LL2-UN-N3Z"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="UWo-um-OZM" firstAttribute="width" secondItem="mXN-8s-DWT" secondAttribute="width" constant="-40" id="WZq-LO-oTB"/>
+                                        </constraints>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="21" translatesAutoresizingMaskIntoConstraints="NO" id="xDe-A1-eVa">
+                                        <rect key="frame" x="0.0" y="189" width="276.5" height="83"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="126" translatesAutoresizingMaskIntoConstraints="NO" id="HHD-pp-BrI">
+                                                <rect key="frame" x="0.0" y="0.0" width="276.5" height="31"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Auto Capture" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2L4-ec-plx">
+                                                        <rect key="frame" x="0.0" y="0.0" width="101.5" height="31"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Iwp-Pu-c4C">
+                                                        <rect key="frame" x="227.5" y="0.0" width="51" height="31"/>
+                                                        <connections>
+                                                            <action selector="autocaptureSwitched:" destination="BYZ-38-t0r" eventType="valueChanged" id="KaC-pZ-LtB"/>
+                                                        </connections>
+                                                    </switch>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="276.5" id="B9L-VM-i4q"/>
+                                                    <constraint firstAttribute="height" constant="31" id="XJu-5t-jQI"/>
+                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="31" id="v05-tW-Dnf"/>
+                                                    <constraint firstAttribute="width" constant="276.5" id="vEi-tN-6rz"/>
+                                                </constraints>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="76" translatesAutoresizingMaskIntoConstraints="NO" id="NeM-nG-kjk">
+                                                <rect key="frame" x="0.0" y="52" width="276.5" height="31"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="IPLiveness Enabled" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" enabled="NO" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2FC-0f-szG">
+                                                        <rect key="frame" x="0.0" y="0.0" width="151.5" height="31"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Bmq-q8-pcK">
+                                                        <rect key="frame" x="227.5" y="0.0" width="51" height="31"/>
+                                                        <connections>
+                                                            <action selector="iPLivenessTapped:" destination="BYZ-38-t0r" eventType="valueChanged" id="2ey-On-GvH"/>
+                                                        </connections>
+                                                    </switch>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstItem="2FC-0f-szG" firstAttribute="height" secondItem="Bmq-q8-pcK" secondAttribute="height" id="0Rs-8N-UKt"/>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="276.5" id="8XR-Fs-zkC"/>
+                                                    <constraint firstAttribute="height" constant="31" id="Udi-yq-IbT"/>
+                                                    <constraint firstAttribute="width" constant="277" id="aIk-8k-VVr"/>
+                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="31" id="fbh-ZB-POF"/>
+                                                </constraints>
+                                            </stackView>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="NeM-nG-kjk" firstAttribute="height" secondItem="HHD-pp-BrI" secondAttribute="height" id="EoI-L5-Hor"/>
+                                            <constraint firstItem="NeM-nG-kjk" firstAttribute="width" secondItem="HHD-pp-BrI" secondAttribute="width" id="TkR-8O-mq1"/>
+                                        </constraints>
+                                    </stackView>
                                 </subviews>
-                                <constraints>
-                                    <constraint firstItem="2L4-ec-plx" firstAttribute="height" secondItem="Iwp-Pu-c4C" secondAttribute="height" id="nVD-ls-uIf"/>
-                                </constraints>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="9sA-2d-9CD" secondAttribute="trailing" id="063-Hc-Uu0"/>
-                            <constraint firstItem="HHD-pp-BrI" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="Bgy-HF-jSf"/>
-                            <constraint firstItem="UWo-um-OZM" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="F7R-4X-MUu"/>
-                            <constraint firstItem="UWo-um-OZM" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="P4R-U7-uBV"/>
-                            <constraint firstItem="9sA-2d-9CD" firstAttribute="top" secondItem="UWo-um-OZM" secondAttribute="bottom" constant="25.5" id="Wad-sL-Een"/>
-                            <constraint firstItem="HHD-pp-BrI" firstAttribute="top" secondItem="UWo-um-OZM" secondAttribute="bottom" constant="121.5" id="aJM-I2-9vU"/>
-                            <constraint firstItem="UWo-um-OZM" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="jeo-Ez-QM0"/>
-                            <constraint firstItem="9sA-2d-9CD" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="slM-Dk-NSG"/>
+                            <constraint firstItem="WrJ-vO-eqx" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="bottom" constant="-425" id="4M8-9w-heS"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="leading" secondItem="WrJ-vO-eqx" secondAttribute="trailing" constant="-322.5" id="xzF-QU-2x3"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" id="bwg-Bu-cai"/>
                     <connections>
+                        <outlet property="IPLivenessLabel" destination="2FC-0f-szG" id="rUV-kD-f9E"/>
+                        <outlet property="IPLivenessSwitch" destination="Bmq-q8-pcK" id="IAP-Lq-G5x"/>
                         <outlet property="autoCaptureSwitch" destination="Iwp-Pu-c4C" id="Vcn-JV-F28"/>
                         <outlet property="idPassportButton" destination="UWo-um-OZM" id="TML-6j-Bhh"/>
                         <outlet property="medicalCardButton" destination="9sA-2d-9CD" id="WPU-fH-feu"/>
@@ -74,7 +120,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1026" y="-330"/>
+            <point key="canvasLocation" x="-87.200000000000003" y="-330.58470764617692"/>
         </scene>
         <!--Confirmation View Controller-->
         <scene sceneID="UKe-J6-0VC">
@@ -139,7 +185,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rux-cu-SRf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-263" y="-330"/>
+            <point key="canvasLocation" x="676" y="-330.58470764617692"/>
         </scene>
         <!--Result View Controller-->
         <scene sceneID="vYW-x7-xeS">
@@ -233,7 +279,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d2U-PV-m5d" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="878" y="-197"/>
+            <point key="canvasLocation" x="1816.8" y="-197.45127436281859"/>
         </scene>
         <!--Classification Error View Controller-->
         <scene sceneID="1MO-k6-dnm">
@@ -287,6 +333,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4vg-GT-fh4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1026" y="345"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="b6r-l3-ARp">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="I0c-68-3Fo" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="G0S-WV-sIx">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="3yO-Gn-ywL"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZBs-mv-Bdr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1026.4000000000001" y="-330.58470764617692"/>
         </scene>
     </scenes>
 </document>

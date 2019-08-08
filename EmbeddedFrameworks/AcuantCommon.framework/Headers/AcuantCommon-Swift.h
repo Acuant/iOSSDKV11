@@ -166,6 +166,8 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 #if __has_warning("-Watimport-in-framework-header")
 #pragma clang diagnostic ignored "-Watimport-in-framework-header"
 #endif
+@import CoreGraphics;
+@import ObjectiveC;
 #endif
 
 #pragma clang diagnostic ignored "-Wproperty-attribute-mismatch"
@@ -182,6 +184,222 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 # pragma clang attribute push(__attribute__((external_source_symbol(language="Swift", defined_in="AcuantCommon",generated_declaration))), apply_to=any(function,enum,objc_interface,objc_category,objc_protocol))
 # pragma pop_macro("any")
 #endif
+
+
+SWIFT_CLASS("_TtC12AcuantCommon11AcuantError")
+@interface AcuantError : NSObject
+@property (nonatomic) NSInteger errorCode;
+@property (nonatomic, copy) NSString * _Nullable errorDescription;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
++ (AcuantError * _Nonnull)newInstance SWIFT_WARN_UNUSED_RESULT;
+@end
+
+
+SWIFT_CLASS("_TtC12AcuantCommon16AcuantErrorCodes")
+@interface AcuantErrorCodes : NSObject
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) NSInteger ERROR_InvalidCredentials;)
++ (NSInteger)ERROR_InvalidCredentials SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) NSInteger ERROR_InvalidLicenseKey;)
++ (NSInteger)ERROR_InvalidLicenseKey SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) NSInteger ERROR_InvalidEndpoint;)
++ (NSInteger)ERROR_InvalidEndpoint SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) NSInteger ERROR_InitializationNotFinished;)
++ (NSInteger)ERROR_InitializationNotFinished SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) NSInteger ERROR_Network;)
++ (NSInteger)ERROR_Network SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) NSInteger ERROR_InvalidJson;)
++ (NSInteger)ERROR_InvalidJson SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) NSInteger ERROR_CouldNotCrop;)
++ (NSInteger)ERROR_CouldNotCrop SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) NSInteger ERROR_NotEnoughMemory;)
++ (NSInteger)ERROR_NotEnoughMemory SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) NSInteger ERROR_BarcodeCaptureFailed;)
++ (NSInteger)ERROR_BarcodeCaptureFailed SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) NSInteger ERROR_BarcodeCaptureTimedOut;)
++ (NSInteger)ERROR_BarcodeCaptureTimedOut SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) NSInteger ERROR_BarcodeCaptureNotAuthorized;)
++ (NSInteger)ERROR_BarcodeCaptureNotAuthorized SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) NSInteger ERROR_LiveFaceCaptureNotAuthorized;)
++ (NSInteger)ERROR_LiveFaceCaptureNotAuthorized SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) NSInteger ERROR_CouldNotCreateConnectInstance;)
++ (NSInteger)ERROR_CouldNotCreateConnectInstance SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) NSInteger ERROR_CouldNotUploadConnectImage;)
++ (NSInteger)ERROR_CouldNotUploadConnectImage SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) NSInteger ERROR_CouldNotUploadConnectBarcode;)
++ (NSInteger)ERROR_CouldNotUploadConnectBarcode SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) NSInteger ERROR_CouldNotGetConnectData;)
++ (NSInteger)ERROR_CouldNotGetConnectData SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) NSInteger ERROR_CouldNotProcessFacialMatch;)
++ (NSInteger)ERROR_CouldNotProcessFacialMatch SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) NSInteger ERROR_CardWidthNotSet;)
++ (NSInteger)ERROR_CardWidthNotSet SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) NSInteger ERROR_CouldNotGetHealthCardData;)
++ (NSInteger)ERROR_CouldNotGetHealthCardData SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) NSInteger ERROR_CouldNotClassifyDocument;)
++ (NSInteger)ERROR_CouldNotClassifyDocument SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) NSInteger ERROR_LowResolutionImage;)
++ (NSInteger)ERROR_LowResolutionImage SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) NSInteger ERROR_BlurryImage;)
++ (NSInteger)ERROR_BlurryImage SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) NSInteger ERROR_ImageWithGlare;)
++ (NSInteger)ERROR_ImageWithGlare SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) NSInteger ERROR_CouldNotGetIPLivenessToken;)
++ (NSInteger)ERROR_CouldNotGetIPLivenessToken SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) NSInteger ERROR_NotALiveFace;)
++ (NSInteger)ERROR_NotALiveFace SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) NSInteger ERROR_CouldNotAccessLivenessData;)
++ (NSInteger)ERROR_CouldNotAccessLivenessData SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) NSInteger ERROR_CouldNotAccessCredential;)
++ (NSInteger)ERROR_CouldNotAccessCredential SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) NSInteger ERROR_USER_CANCELED_ACTIVITY;)
++ (NSInteger)ERROR_USER_CANCELED_ACTIVITY SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+SWIFT_CLASS("_TtC12AcuantCommon23AcuantErrorDescriptions")
+@interface AcuantErrorDescriptions : NSObject
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull ERROR_DESC_InvalidCredentials;)
++ (NSString * _Nonnull)ERROR_DESC_InvalidCredentials SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull ERROR_DESC_InvalidLicenseKey;)
++ (NSString * _Nonnull)ERROR_DESC_InvalidLicenseKey SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull ERROR_DESC_InvalidEndpoint;)
++ (NSString * _Nonnull)ERROR_DESC_InvalidEndpoint SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull ERROR_DESC_Network;)
++ (NSString * _Nonnull)ERROR_DESC_Network SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull ERROR_DESC_InitializationNotFinished;)
++ (NSString * _Nonnull)ERROR_DESC_InitializationNotFinished SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull ERROR_DESC_InvalidJson;)
++ (NSString * _Nonnull)ERROR_DESC_InvalidJson SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull ERROR_DESC_CouldNotCrop;)
++ (NSString * _Nonnull)ERROR_DESC_CouldNotCrop SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull ERROR_DESC_BarcodeCaptureFailed;)
++ (NSString * _Nonnull)ERROR_DESC_BarcodeCaptureFailed SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull ERROR_DESC_BarcodeCaptureTimedOut;)
++ (NSString * _Nonnull)ERROR_DESC_BarcodeCaptureTimedOut SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull ERROR_DESC_BarcodeCaptureNotAuthorized;)
++ (NSString * _Nonnull)ERROR_DESC_BarcodeCaptureNotAuthorized SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull ERROR_DESC_LiveFaceCaptureNotAuthorized;)
++ (NSString * _Nonnull)ERROR_DESC_LiveFaceCaptureNotAuthorized SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull ERROR_DESC_CouldNotCreateConnectInstance;)
++ (NSString * _Nonnull)ERROR_DESC_CouldNotCreateConnectInstance SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull ERROR_DESC_CouldNotUploadConnectImage;)
++ (NSString * _Nonnull)ERROR_DESC_CouldNotUploadConnectImage SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull ERROR_DESC_CouldNotUploadConnectBarcode;)
++ (NSString * _Nonnull)ERROR_DESC_CouldNotUploadConnectBarcode SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull ERROR_DESC_CouldNotGetConnectData;)
++ (NSString * _Nonnull)ERROR_DESC_CouldNotGetConnectData SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull ERROR_DESC_CardWidthNotSet;)
++ (NSString * _Nonnull)ERROR_DESC_CardWidthNotSet SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull ERROR_DESC_CouldNotGetHealthCardData;)
++ (NSString * _Nonnull)ERROR_DESC_CouldNotGetHealthCardData SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull ERROR_DESC_CouldNotClassifyDocument;)
++ (NSString * _Nonnull)ERROR_DESC_CouldNotClassifyDocument SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull ERROR_DESC_LowResolutionImage;)
++ (NSString * _Nonnull)ERROR_DESC_LowResolutionImage SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull ERROR_DESC_BlurryImage;)
++ (NSString * _Nonnull)ERROR_DESC_BlurryImage SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull ERROR_DESC_ImageWithGlare;)
++ (NSString * _Nonnull)ERROR_DESC_ImageWithGlare SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull ERROR_DESC_CouldNotGetIPLivenessToken;)
++ (NSString * _Nonnull)ERROR_DESC_CouldNotGetIPLivenessToken SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull ERROR_DESC_NotALiveFace;)
++ (NSString * _Nonnull)ERROR_DESC_NotALiveFace SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull ERROR_DESC_CouldNotAccessLivenessData;)
++ (NSString * _Nonnull)ERROR_DESC_CouldNotAccessLivenessData SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull ERROR_DESC_ERROR_CouldNotAccessCredential;)
++ (NSString * _Nonnull)ERROR_DESC_ERROR_CouldNotAccessCredential SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull ERROR_DESC_USER_CANCELED_ACTIVITY;)
++ (NSString * _Nonnull)ERROR_DESC_USER_CANCELED_ACTIVITY SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+@class Endpoints;
+
+SWIFT_CLASS("_TtC12AcuantCommon10Credential")
+@interface Credential : NSObject
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
++ (NSString * _Nonnull)username SWIFT_WARN_UNUSED_RESULT;
++ (NSString * _Nonnull)password SWIFT_WARN_UNUSED_RESULT;
++ (NSString * _Nonnull)subscription SWIFT_WARN_UNUSED_RESULT;
++ (Endpoints * _Nonnull)endpoints SWIFT_WARN_UNUSED_RESULT;
++ (void)setUsernameWithUsername:(NSString * _Null_unspecified)username;
++ (void)setPasswordWithPassword:(NSString * _Null_unspecified)password;
++ (void)setSubscriptionWithSubscription:(NSString * _Null_unspecified)subscription;
++ (void)setEndpointsWithEndpoints:(Endpoints * _Nonnull)endpoints;
+@end
+
+@class UIImage;
+
+SWIFT_CLASS("_TtC12AcuantCommon12CroppingData")
+@interface CroppingData : NSObject
+@property (nonatomic, strong) UIImage * _Nullable image;
++ (CroppingData * _Nonnull)newInstance SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+typedef SWIFT_ENUM(NSInteger, DeleteType, closed) {
+  DeleteTypeID = 0,
+  DeleteTypeMedicalCard = 1,
+};
+
+enum ProcessingMode : NSInteger;
+
+SWIFT_CLASS("_TtC12AcuantCommon22DocumentProcessingMode")
+@interface DocumentProcessingMode : NSObject
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
++ (enum ProcessingMode)processingMode SWIFT_WARN_UNUSED_RESULT;
++ (void)setDataCaptureProcessingMode;
+@end
+
+
+SWIFT_CLASS("_TtC12AcuantCommon9Endpoints")
+@interface Endpoints : NSObject
+@property (nonatomic, copy) NSString * _Nullable frmEndpoint;
+@property (nonatomic, copy) NSString * _Nullable idEndpoint;
+@property (nonatomic, copy) NSString * _Nullable healthInsuranceEndpoint;
++ (Endpoints * _Nonnull)newInstance SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+SWIFT_CLASS("_TtC12AcuantCommon5Image")
+@interface Image : NSObject
+@property (nonatomic, strong) UIImage * _Nullable image;
+@property (nonatomic) NSInteger dpi;
+@property (nonatomic, strong) AcuantError * _Nullable error;
+@property (nonatomic) BOOL isCorrectAspectRatio;
+@property (nonatomic) float aspectRatio;
+@property (nonatomic, copy) NSArray<NSValue *> * _Nonnull points;
++ (Image * _Nonnull)newInstance SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+typedef SWIFT_ENUM(NSInteger, ProcessingMode, closed) {
+  ProcessingModeDefault = 0,
+  ProcessingModeDataCapture = 1,
+  ProcessingModeAuthentication = 2,
+};
+
+
+SWIFT_CLASS("_TtC12AcuantCommon5Utils")
+@interface Utils : NSObject
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class) CGFloat SENT_IMAGE_QUALITY_JPEG_COMPRESSION;)
++ (CGFloat)SENT_IMAGE_QUALITY_JPEG_COMPRESSION SWIFT_WARN_UNUSED_RESULT;
++ (void)setSENT_IMAGE_QUALITY_JPEG_COMPRESSION:(CGFloat)value;
++ (NSDictionary<NSString *, id> * _Nullable)convertToDictionaryWithText:(NSString * _Nullable)text SWIFT_WARN_UNUSED_RESULT;
++ (NSArray * _Nullable)getArrayValueFromJsonWithJsonDict:(NSDictionary<NSString *, id> * _Nullable)jsonDict key:(NSString * _Nonnull)key SWIFT_WARN_UNUSED_RESULT;
++ (NSInteger)getIntValueWithJsonDict:(NSDictionary<NSString *, id> * _Nullable)jsonDict key:(NSString * _Nonnull)key SWIFT_WARN_UNUSED_RESULT;
++ (double)getDoubleValueWithJsonDict:(NSDictionary<NSString *, id> * _Nullable)jsonDict key:(NSString * _Nonnull)key SWIFT_WARN_UNUSED_RESULT;
++ (NSString * _Nonnull)getStringValueWithJsonDict:(NSDictionary<NSString *, id> * _Nullable)jsonDict key:(NSString * _Nonnull)key SWIFT_WARN_UNUSED_RESULT;
++ (NSDictionary<NSString *, id> * _Nullable)getObjectValueWithJsonDict:(NSDictionary<NSString *, id> * _Nullable)jsonDict key:(NSString * _Nonnull)key SWIFT_WARN_UNUSED_RESULT;
++ (NSArray * _Nullable)getArrayValueWithJsonDict:(NSDictionary<NSString *, id> * _Nullable)jsonDict key:(NSString * _Nonnull)key SWIFT_WARN_UNUSED_RESULT;
++ (BOOL)getBooleanValueWithJsonDict:(NSDictionary<NSString *, id> * _Nullable)jsonDict key:(NSString * _Nonnull)key SWIFT_WARN_UNUSED_RESULT;
++ (NSString * _Nullable)dateFieldToDateStringWithDateStr:(NSString * _Nullable)dateStr SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
 
 #if __has_attribute(external_source_symbol)
 # pragma clang attribute pop

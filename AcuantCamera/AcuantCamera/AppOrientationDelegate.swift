@@ -9,6 +9,6 @@
 import Foundation
 import UIKit
 
-public protocol AppOrientationDelegate{
+@objc public protocol AppOrientationDelegate{
     func onAppOrientationLockChanged(mode: UIInterfaceOrientationMask)
 }

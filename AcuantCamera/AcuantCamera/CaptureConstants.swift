@@ -8,10 +8,9 @@
 
 import Foundation
 
-public class CaptureConstants{
+@objcMembers public class CaptureConstants : NSObject{
     
     public static let CAMERA_PREVIEW_LONGER_SIDE_STANDARD = 3840
-    
     public static let ASPECT_RATIO_ID1 = 1.59
     public static let ASPECT_RATIO_ID3 = 1.42
     public static let ASPECT_RATIO_THRESHOLD = 5.0 // 5%

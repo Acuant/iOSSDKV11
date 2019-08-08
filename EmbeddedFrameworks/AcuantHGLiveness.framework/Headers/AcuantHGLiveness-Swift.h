@@ -168,6 +168,7 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 #endif
 @import AVFoundation;
 @import CoreMedia;
+@import ObjectiveC;
 @import UIKit;
 #endif
 
@@ -186,6 +187,26 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 # pragma pop_macro("any")
 #endif
 
+@class LiveFaceDetails;
+
+SWIFT_PROTOCOL("_TtP16AcuantHGLiveness31AcuantHGLiveFaceCaptureDelegate_")
+@protocol AcuantHGLiveFaceCaptureDelegate
+- (void)liveFaceDetailsCapturedWithLiveFaceDetails:(LiveFaceDetails * _Nullable)liveFaceDetails;
+@end
+
+
+SWIFT_CLASS("_TtC16AcuantHGLiveness16AcuantHGLiveness")
+@interface AcuantHGLiveness : NSObject
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+@class UIImage;
+
+SWIFT_PROTOCOL("_TtP16AcuantHGLiveness24AcuantHGLivenessDelegate_")
+@protocol AcuantHGLivenessDelegate
+- (void)liveFaceCapturedWithImage:(UIImage * _Nullable)image;
+@end
+
 @class AVCaptureOutput;
 @class AVCaptureConnection;
 
@@ -193,6 +214,17 @@ SWIFT_CLASS("_TtC16AcuantHGLiveness18FaceCaptureSession")
 @interface FaceCaptureSession : AVCaptureSession <AVCaptureVideoDataOutputSampleBufferDelegate>
 - (void)startRunning;
 - (void)captureOutput:(AVCaptureOutput * _Nonnull)output didOutputSampleBuffer:(CMSampleBufferRef _Nonnull)sampleBuffer fromConnection:(AVCaptureConnection * _Nonnull)connection;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+@class AcuantError;
+
+SWIFT_CLASS("_TtC16AcuantHGLiveness15LiveFaceDetails")
+@interface LiveFaceDetails : NSObject
+@property (nonatomic) BOOL isLiveFace;
+@property (nonatomic, strong) UIImage * _Nullable image;
+@property (nonatomic, strong) AcuantError * _Nullable error;
++ (LiveFaceDetails * _Nonnull)createInstance SWIFT_WARN_UNUSED_RESULT;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 

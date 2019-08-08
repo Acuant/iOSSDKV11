@@ -1,32 +1,7 @@
-# Acuant iOS SDK v11.2.1
+# Acuant iOS SDK v11.2.2
 
 
-**Last updated  June 2019**
-
-*Copyright 2019 Acuant Inc. All rights reserved.*
-
-This document contains proprietary and confidential information and creative works owned by Acuant and its respective licensors, if any. Any use, copying, publication, distribution, display, modification, or transmission of such technology, in whole or in part, in any form or by any means, without the prior express written permission of Acuant is strictly prohibited. Except where expressly provided by Acuant in writing, possession of this information shall not be construed to confer any license or rights under any Acuant intellectual property rights, whether by estoppel, implication, or otherwise.
-
-AssureID and *i-D*entify are trademarks of Acuant Inc. Other Acuant product or service names or logos referenced this document are either trademarks or registered trademarks of Acuant.
-
-All 3M trademarks are trademarks of Gemalto Inc.
-
-Windows is a registered trademark of Microsoft Corporation.
-
-Certain product, service, or company designations for companies other
-than Acuant may be mentioned in this document for identification
-purposes only. Such designations are often claimed as trademarks or
-service marks. In all instances where Acuant is aware of a claim, the
-designation appears in initial capital or all capital letters. However,
-you should contact the appropriate companies for more complete
-information regarding such designations and their registration status.
-
-**June 2019**
-
-<p>Acuant Inc.</p>
-<p>6080 Center Drive, Suite 850</p>
-<p>Los Angeles, CA 90045</p>
-<p>==================</p>
+**July 2019**
 
 ----------
 
@@ -70,7 +45,7 @@ The SDK includes the following modules:
 
 **Acuant IP Liveliness Library (AcuantIPLiveness):**
 
-- Uses proprietory algorithm to detect a live person
+- Uses proprietary algorithm to detect a live person
 
 ----------
 ### Setup ###
@@ -145,10 +120,9 @@ The SDK includes the following modules:
 		
 1. Open the camera:
 
-		let documentCameraController = DocumentCameraController.getCameraController(delegate: CameraCaptureDelegate, captureWaitTime:captureWaitTime, appDelegate: AppOrientationDelegate)
-	
-	   	AppDelegate.navigationController?.pushViewController(documentCameraController, animated: false)
-
+		let documentCameraController = DocumentCameraController.getCameraController(delegate: CameraCaptureDelegate,captureWaitTime:captureWaitTime,autoCapture:autoCapture,hideNavigationBar: true, appDelegate: AppOrientationDelegate)
+		
+		AppDelegate.navigationController?.pushViewController(documentCameraController, animated: false)
 
 
 1. Get the captured image:
@@ -173,6 +147,39 @@ This module contains all image preparation functionality.
 		public protocol InitializationDelegate {
     		func initializationFinished(error: AcuantError?);
 		}
+
+	**Note:** If you are *not* using a configuration file for initialization, then use the following statement (providing appropriate credentials for *username*, *password*, and *subscription ID*):
+	
+		Credential.setUsername(username: "xxx")
+		Credential.setPassword(password: "xxxx")
+		Credential.setSubscription(subscription: "xxxxxx")
+
+		let endpoints = Endpoints()
+		endpoints.frmEndpoint = "https://frm.acuant.net"
+		endpoints.healthInsuranceEndpoint = "https://medicscan.acuant.net"
+		endpoints.idEndpoint = "https://services.assureid.net"
+
+		Credential.setEndpoints(endpoints: endpoints)
+
+		AcuantImagePreparation.initialize(delegate:self)
+		
+
+#### **Initialization without a Subscription ID** ####
+
+**AcuantImagePreparation** may be initialized by providing only a username and a password. However, without providing a Subscription ID, the application can only capture an image and get the image. 
+Without a Subscription ID:
+
+1. Only the **AcuantCamera**, **AcuantImagePreparation**, and **AcuantHGLiveness** modules may be used.
+1. The SDK can be used to capture the identity documents.
+1. The captured images can be exported from the SDK. See the **DocumentCaptureDelegate** protocol in the **AcuantCamera** project.
+
+		public protocol DocumentCaptureDelegate {
+    		func readyToCapture()
+    		func documentCaptured(image:UIImage, barcodeString:String?)
+    		func didStartCaptureSession()
+		}
+		
+#
 
 - **Crop**
 
@@ -200,6 +207,7 @@ This method returns a sharpness value of an image. If sharpness value is greater
 This method returns glare value of an image. If glare value is greater than 50, then the image does not have glare.
 
 		public class func glare(image: UIImage)->Int
+		
 
 ----------
 
@@ -296,13 +304,31 @@ The process can be completed in three steps:
 		
 -	Test	
 
-	Call this to perform the Liveness test
+	Call this to perform the Liveness test. User can customize UI as needed by using the LivenessSetupResult.
 		
+
+		// Adjust various colors for the camera preview:
+		setupResult.ui.lineColor = .white
+		setupResult.ui.backgroundColor = .black
+		setupResult.ui.loadingTintColor = .lightGray
+		setupResult.ui.notReadyTintColor = .orange
+		setupResult.ui.readyTintColor = .green
+
+		setupResult.ui.title = "title"// Specify a custom title to be shown. Defaults to nil which will show an auto generated message. Set to empty string ("") to hide the message entirely.
+		setupResult.ui.regularFont = "SomeFont"
+		setupResult.ui.boldFont = "SomeFont-Bold"
+		setupResult.ui.fonts = ["SomeFont", "SomeFont-Bold"] // If using custom fonts, specify them here (don't forget to add them to your Info.plist!)
+		setupResult.ui.logoImage = UIImage(named: "foo")
+		setupResult.ui.scanLineDisabled = false // Disables the vertical sweeping scanline while flashing
+		setupResult.ui.autoStartDisabled = false // Disable the "auto start" countdown functionality. The user will have to tap the screen to start liveness test
+
 		AcuantIPLiveness.performLivenessTest(setupResult:LivenessSetupResult, delegate:LivenessTestDelegate)
 		
 		public protocol LivenessTestDelegate{
-    		func livenessTestCompleted() // This is for the test; called when Enroll is complete
-    		func livenessTestCompletedWithError(error:AcuantError?) // This is for the test; called when Enroll is complete and error occured
+			func livenessTestCompleted() // This is for the test; called when Enroll is complete
+			func livenessTestCompletedWithError(error:AcuantError?) // This is for the test; called when Enroll is complete and error occured
+			func livenessTestProcessing(progress: Double, message: String) // This is for real-time notifications of progress of liveness test. It will be called after user captures live face. It is intended to be used for custom UI progress notification.
+
 		}
 		
 - Get Result
@@ -325,13 +351,11 @@ The process can be completed in three steps:
 
 Following is list of dependencies:
 
-- Alamofire.framework
-- AlamofireImage.framework
-- GPUImage.framework
 - iProov.framework
 - KeychainAccess.framework
-- MBProgressHUD.framework
 - SocketIO.framework
+- Startscream.framework
+- SwiftyJSON.framework
 
 ----------
 
@@ -357,7 +381,7 @@ This module is used to match two facial images:
 
 ### Error codes ###
 
-	public struct AcuantErrorCodes{
+	public class AcuantErrorCodes{
     	public static let ERROR_InvalidCredentials = -1
     	public static let ERROR_InvalidLicenseKey = -2
     	public static let ERROR_InvalidEndpoint = -3
@@ -388,7 +412,7 @@ This module is used to match two facial images:
 
 ### Error descriptions ###
 
-	public struct AcuantErrorDescriptions {
+	public class AcuantErrorDescriptions {
     	public static let ERROR_DESC_InvalidCredentials = "Invalid credentials"
     	public static let ERROR_DESC_InvalidLicenseKey = "Invalid License Key"
     	public static let ERROR_DESC_InvalidEndpoint = "Invalid endpoint"
@@ -449,3 +473,33 @@ Acuant provides support for all CPU architectures that are required by simulator
 
 1. Archive the application. 
 2. Select the archive and then click **Distribute app> App store > Export**.
+
+####How do I obfuscate my iOS application?
+
+Acuant does not provide obfuscation tools, however several third-party tools, including iXGuard or Arxan, are available.
+
+-------------------------------------------------------------
+
+**Copyright 2019 Acuant Inc. All rights reserved.**
+
+This document contains proprietary and confidential information and creative works owned by Acuant and its respective licensors, if any. Any use, copying, publication, distribution, display, modification, or transmission of such technology, in whole or in part, in any form or by any means, without the prior express written permission of Acuant is strictly prohibited. Except where expressly provided by Acuant in writing, possession of this information shall not be construed to confer any license or rights under any Acuant intellectual property rights, whether by estoppel, implication, or otherwise.
+
+AssureID and *i-D*entify are trademarks of Acuant Inc. Other Acuant product or service names or logos referenced this document are either trademarks or registered trademarks of Acuant.
+
+All 3M trademarks are trademarks of Gemalto Inc.
+
+Windows is a registered trademark of Microsoft Corporation.
+
+Certain product, service, or company designations for companies other
+than Acuant may be mentioned in this document for identification
+purposes only. Such designations are often claimed as trademarks or
+service marks. In all instances where Acuant is aware of a claim, the
+designation appears in initial capital or all capital letters. However,
+you should contact the appropriate companies for more complete
+information regarding such designations and their registration status.
+
+[https://support.acuant.com](https://support.acuant.com)
+
+**Acuant Inc. 6080 Center Drive, Suite 850, Los Angeles, CA 90045**
+
+----------------------------------------------------------

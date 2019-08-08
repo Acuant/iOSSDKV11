@@ -15,7 +15,3 @@ FOUNDATION_EXPORT double iProovVersionNumber;
 FOUNDATION_EXPORT const unsigned char iProovVersionString[];
 
 // In this header, you should import all the public headers of your framework using statements like #import <iProov/PublicHeader.h>
-
-#import <AudioToolbox/AudioToolbox.h>
-#import <iProov/Encoder.h>
-#import <iProov/FlashingFilter.h>

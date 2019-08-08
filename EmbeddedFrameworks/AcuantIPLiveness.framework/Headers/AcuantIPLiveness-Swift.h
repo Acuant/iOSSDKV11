@@ -166,6 +166,8 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 #if __has_warning("-Watimport-in-framework-header")
 #pragma clang diagnostic ignored "-Watimport-in-framework-header"
 #endif
+@import Foundation;
+@import ObjectiveC;
 #endif
 
 #pragma clang diagnostic ignored "-Wproperty-attribute-mismatch"
@@ -182,6 +184,91 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 # pragma clang attribute push(__attribute__((external_source_symbol(language="Swift", defined_in="AcuantIPLiveness",generated_declaration))), apply_to=any(function,enum,objc_interface,objc_category,objc_protocol))
 # pragma pop_macro("any")
 #endif
+
+@protocol LivenessSetupDelegate;
+@class LivenessSetupResult;
+@protocol LivenessTestDelegate;
+@protocol LivenessTestResultDelegate;
+
+SWIFT_CLASS("_TtC16AcuantIPLiveness16AcuantIPLiveness")
+@interface AcuantIPLiveness : NSObject
++ (void)performLivenessSetupWithDelegate:(id <LivenessSetupDelegate> _Nonnull)delegate;
++ (void)performLivenessTestWithSetupResult:(LivenessSetupResult * _Nonnull)setupResult delegate:(id <LivenessTestDelegate> _Nonnull)delegate;
++ (void)getLivenessTestResultWithToken:(NSString * _Nonnull)token userId:(NSString * _Nonnull)userId delegate:(id <LivenessTestResultDelegate> _Nonnull)delegate;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+typedef SWIFT_ENUM(NSInteger, IpFilter, closed) {
+  IpFilterClassic = 0,
+  IpFilterShaded = 1,
+  IpFilterVibrant = 2,
+};
+
+@class AcuantError;
+
+SWIFT_PROTOCOL("_TtP16AcuantIPLiveness21LivenessSetupDelegate_")
+@protocol LivenessSetupDelegate
+- (void)livenessSetupSucceededWithResult:(LivenessSetupResult * _Nonnull)result;
+- (void)livenessSetupFailedWithError:(AcuantError * _Nonnull)error;
+@end
+
+@class LivenessUiOptions;
+
+SWIFT_CLASS("_TtC16AcuantIPLiveness19LivenessSetupResult")
+@interface LivenessSetupResult : NSObject
+@property (nonatomic, copy) NSString * _Nullable apiKey;
+@property (nonatomic, copy) NSString * _Nullable token;
+@property (nonatomic, copy) NSString * _Nullable userId;
+@property (nonatomic, copy) NSString * _Nullable apiEndpoint;
+@property (nonatomic, strong) LivenessUiOptions * _Nonnull ui;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
++ (LivenessSetupResult * _Nonnull)createInstance SWIFT_WARN_UNUSED_RESULT;
+@end
+
+
+SWIFT_PROTOCOL("_TtP16AcuantIPLiveness20LivenessTestDelegate_")
+@protocol LivenessTestDelegate
+- (void)livenessTestCompleted;
+- (void)livenessTestProcessingWithProgress:(double)progress message:(NSString * _Nonnull)message;
+- (void)livenessTestCompletedWithErrorWithError:(AcuantError * _Nullable)error;
+@end
+
+@class UIImage;
+
+SWIFT_CLASS("_TtC16AcuantIPLiveness18LivenessTestResult")
+@interface LivenessTestResult : NSObject
+@property (nonatomic) BOOL passedLivenessTest;
+@property (nonatomic, strong) UIImage * _Nullable image;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
++ (LivenessTestResult * _Nonnull)createInstance SWIFT_WARN_UNUSED_RESULT;
+@end
+
+
+SWIFT_PROTOCOL("_TtP16AcuantIPLiveness26LivenessTestResultDelegate_")
+@protocol LivenessTestResultDelegate
+- (void)livenessTestResultReceivedWithResult:(LivenessTestResult * _Nonnull)result;
+- (void)livenessTestResultReceiveFailedWithError:(AcuantError * _Nonnull)error;
+@end
+
+@class UIColor;
+@class Options;
+
+SWIFT_CLASS("_TtC16AcuantIPLiveness17LivenessUiOptions")
+@interface LivenessUiOptions : NSObject
+@property (nonatomic, copy) NSLocale * _Nullable locale;
+@property (nonatomic, strong) UIColor * _Nullable lineColor;
+@property (nonatomic, strong) UIColor * _Nullable backgroundColor;
+@property (nonatomic, strong) UIColor * _Nullable loadingTintColor;
+@property (nonatomic, strong) UIColor * _Nullable notReadyTintColor;
+@property (nonatomic, strong) UIColor * _Nullable readyTintColor;
+@property (nonatomic, copy) NSString * _Nullable title;
+@property (nonatomic, copy) NSString * _Nullable regularFont;
+@property (nonatomic, copy) NSString * _Nullable boldFont;
+@property (nonatomic, copy) NSArray<NSString *> * _Nullable fonts;
+@property (nonatomic, strong) UIImage * _Nullable logoImage;
+- (Options * _Nonnull)toIProovOptions SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
 
 #if __has_attribute(external_source_symbol)
 # pragma clang attribute pop

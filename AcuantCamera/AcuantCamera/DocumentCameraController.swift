@@ -12,14 +12,14 @@ import AVFoundation
 import AcuantImagePreparation
 import AcuantCommon
 
-public class DocumentCameraController : UIViewController, DocumentCaptureDelegate , FrameAnalysisDelegate{
+@objcMembers public class DocumentCameraController : UIViewController, DocumentCaptureDelegate , FrameAnalysisDelegate{
     private let context = CIContext()
-    private var cameraCaptureDelegate : CameraCaptureDelegate? = nil
-    
+    weak private var cameraCaptureDelegate : CameraCaptureDelegate? = nil
+    weak private var appDelegate : AppOrientationDelegate? = nil
+
     var captureWaitTime = 2
     
-    let vcUtil = ViewControllerUtils()
-    var appDelegate : AppOrientationDelegate? = nil
+    //let vcUtil = ViewControllerUtils.createInstance()
     var captureSession: DocumentCaptureSession!
     var lastDeviceOrientation : UIDeviceOrientation!
     var videoPreviewLayer: AVCaptureVideoPreviewLayer!
@@ -31,15 +31,18 @@ public class DocumentCameraController : UIViewController, DocumentCaptureDelegat
     var topBorder : CALayer?
     var bottomBorder : CALayer?
     var captured : Bool = false
+    var hideNavBar : Bool = true
     
     var autoCapture = true
+        var backButton : UIButton!
     
-    public class func getCameraController(delegate:CameraCaptureDelegate, captureWaitTime:Int,autoCapture:Bool, appDelegate: AppOrientationDelegate)->DocumentCameraController{
+    public class func getCameraController(delegate:CameraCaptureDelegate, captureWaitTime:Int,autoCapture:Bool,hideNavigationBar:Bool, appDelegate: AppOrientationDelegate)->DocumentCameraController{
         let c = DocumentCameraController()
         c.cameraCaptureDelegate = delegate
         c.captureWaitTime = captureWaitTime
         c.appDelegate = appDelegate
         c.autoCapture = autoCapture
+        c.hideNavBar = hideNavigationBar
         return c
     }
 
@@ -47,7 +50,7 @@ public class DocumentCameraController : UIViewController, DocumentCaptureDelegat
         super.viewDidLoad()
         UIDevice.current.setValue(UIInterfaceOrientation.portrait.rawValue, forKey: "orientation")
         self.appDelegate?.onAppOrientationLockChanged(mode: UIInterfaceOrientationMask.portrait)
-        self.navigationController?.setNavigationBarHidden(true, animated: false)
+        self.navigationController?.setNavigationBarHidden(hideNavBar, animated: false)
         UIDevice.current.beginGeneratingDeviceOrientationNotifications()
         NotificationCenter.default.addObserver(self, selector: #selector(self.deviceDidRotate(notification:)), name: UIDevice.orientationDidChangeNotification, object: nil)
         UIDevice.current.setValue(UIInterfaceOrientation.portrait.rawValue, forKey: "orientation")
@@ -58,13 +61,15 @@ public class DocumentCameraController : UIViewController, DocumentCaptureDelegat
     }
     
     @objc func touchAction(_ sender:UITapGestureRecognizer){
-        self.captureSession.enableCapture()
+        if(autoCapture == false){
+            self.captureSession.enableCapture()
+        }
     }
     
     override public func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         startCameraView()
-        vcUtil.showActivityIndicator(uiView: self.view, text: "Camera..")
+        //vcUtil.showActivityIndicator(uiView: self.view, text: NSLocalizedString("Camera", comment: ""))
     }
     
     override public func viewWillAppear(_ animated: Bool) {
@@ -98,25 +103,7 @@ public class DocumentCameraController : UIViewController, DocumentCaptureDelegat
             let currentDevice: UIDevice = UIDevice.current
             let orientation: UIDeviceOrientation = currentDevice.orientation
             let previewLayerConnection : AVCaptureConnection = connection
-            if previewLayerConnection.isVideoOrientationSupported {
-                
-                switch (orientation) {
-                case .portrait: updatePreviewLayer(layer: previewLayerConnection, orientation: .portrait)
-                    break
-                    
-                case .landscapeRight: updatePreviewLayer(layer: previewLayerConnection, orientation: .landscapeLeft)
-                    break
-                    
-                case .landscapeLeft: updatePreviewLayer(layer: previewLayerConnection, orientation: .landscapeRight)
-                    break
-                    
-                case .portraitUpsideDown: updatePreviewLayer(layer: previewLayerConnection, orientation: .portraitUpsideDown)
-                    break
-                    
-                default: updatePreviewLayer(layer: previewLayerConnection, orientation: .portrait)
-                    break
-                }
-            }
+            updatePreviewLayer(layer: previewLayerConnection, orientation: .portrait)
         }
     }
 
@@ -136,7 +123,7 @@ public class DocumentCameraController : UIViewController, DocumentCaptureDelegat
     }
     
     public func didStartCaptureSession() {
-        vcUtil.hideActivityIndicator(uiView: self.view)
+        //vcUtil.hideActivityIndicator(uiView: self.view)
         UIView.animate(withDuration: 0.1, delay: 0.0, options: .curveEaseOut, animations: {
             self.view.alpha = 1.0
         }, completion: nil)
@@ -161,7 +148,11 @@ public class DocumentCameraController : UIViewController, DocumentCaptureDelegat
         self.messageLayer.opacity = 0.6
         self.messageLayer.backgroundColor = UIColor.black.cgColor
         self.messageLayer.fontSize = 30
-        self.messageLayer.string = "ALIGN"
+        if(autoCapture){
+            self.messageLayer.string = NSLocalizedString("acuant_camera_align", value: "ALIGN" ,comment: "")
+        }else{
+            self.messageLayer.string = NSLocalizedString("acuant_camera_manual_capture", value: "ALIGN & TAP", comment: "")
+        }
         self.messageLayer.alignmentMode = CATextLayerAlignmentMode.center
         self.messageLayer.foregroundColor = UIColor.white.cgColor
         self.messageLayer.transform = CATransform3DMakeAffineTransform(CGAffineTransform(rotationAngle: CGFloat(Double.pi/2)));
@@ -175,6 +166,7 @@ public class DocumentCameraController : UIViewController, DocumentCaptureDelegat
         self.videoPreviewLayer.addSublayer(self.shapeLayer)
         
         self.view.layer.addSublayer(self.videoPreviewLayer)
+        addNavigationBackButton()
     }
     
     public func documentCaptured(image: UIImage, barcodeString: String?) {
@@ -185,7 +177,7 @@ public class DocumentCameraController : UIViewController, DocumentCaptureDelegat
     }
     
     public func onFrameAvailable(frameResult: FrameResult, points: Array<CGPoint>?) {
-        if(points != nil && points?.count == 4){
+        if(points != nil && points?.count == 4 && self.videoPreviewLayer != nil && autoCapture){
             let openSquarePath = UIBezierPath()
             
             let cornerPoint1 = self.videoPreviewLayer.layerPointConverted(fromCaptureDevicePoint: points![0])
@@ -209,28 +201,22 @@ public class DocumentCameraController : UIViewController, DocumentCaptureDelegat
             case FrameResult.NO_DOCUMENT:
                 shapeLayer.strokeColor = UIColor.red.cgColor
                 self.messageLayer.backgroundColor = UIColor.black.cgColor
-                animateMessage(message: "ALIGN")
+                animateMessage(message: NSLocalizedString("acuant_camera_align", value: "ALIGN", comment: ""))
                 break;
             case FrameResult.SMALL_DOCUMENT:
                 shapeLayer.strokeColor = UIColor.red.cgColor
                 self.messageLayer.backgroundColor = UIColor.black.cgColor
-                animateMessage(message: "MOVE CLOSER")
+                animateMessage(message: NSLocalizedString("acuant_camera_move_closer", value: "MOVE CLOSER", comment: ""))
                 break;
             case FrameResult.BAD_ASPECT_RATIO:
                 shapeLayer.strokeColor = UIColor.red.cgColor
                 self.messageLayer.backgroundColor = UIColor.black.cgColor
-                animateMessage(message: "ALIGN")
+                animateMessage(message: NSLocalizedString("acuant_camera_align", value: "ALIGN", comment: ""))
                 break;
             case FrameResult.GOOD_DOCUMENT:
-                if(autoCapture){
-                    shapeLayer.strokeColor = UIColor.red.cgColor
-                    self.messageLayer.backgroundColor = UIColor.red.cgColor
-                    animateMessage(message: "HOLD STEADY")
-                }else{
-                    shapeLayer.strokeColor = UIColor.green.cgColor
-                    self.messageLayer.backgroundColor = UIColor.green.cgColor
-                    animateMessage(message: "TAP")
-                }
+                shapeLayer.strokeColor = UIColor.red.cgColor
+                self.messageLayer.backgroundColor = UIColor.red.cgColor
+                animateMessage(message: NSLocalizedString("acuant_camera_hold_steady", value: "HOLD STEADY", comment: ""))
                 break;
             }
     }
@@ -239,7 +225,7 @@ public class DocumentCameraController : UIViewController, DocumentCaptureDelegat
         shapeLayer.strokeColor = UIColor.green.cgColor
         self.messageLayer.backgroundColor = UIColor.green.cgColor
         self.messageLayer.fontSize = 30
-        self.messageLayer.string = "CAPTURING"
+        self.messageLayer.string = NSLocalizedString("acuant_camera_capturing", value: "CAPTURING", comment: "")
         captured = true
     }
     
@@ -333,6 +319,39 @@ public class DocumentCameraController : UIViewController, DocumentCaptureDelegat
             self.startCameraView()
         })
         super.viewWillTransition(to: size, with: coordinator)
+        
+    }
+    
+    func addNavigationBackButton(){
+        backButton = UIButton(frame: CGRect(x: 10, y: UIScreen.main.heightOfSafeArea()*0.065, width: 100, height: 21))
+        
+        let fullString = NSMutableAttributedString(string: "")
+        // create our NSTextAttachment
+        let image1Attachment = NSTextAttachment()
+        
+        // wrap the attachment in its own attributed string so we can append it
+        let image1String = NSAttributedString(attachment: image1Attachment)
+        
+        // add the NSTextAttachment wrapper to our full string, then add some more text.
+        fullString.append(image1String)
+        
+        var attribs : [NSAttributedString.Key : Any?] = [:]
+        attribs[NSAttributedString.Key.font]=UIFont.systemFont(ofSize: 18)
+        attribs[NSAttributedString.Key.foregroundColor]=UIColor.white
+        attribs[NSAttributedString.Key.baselineOffset]=4
+        let str = NSMutableAttributedString.init(string: "BACK", attributes: attribs as [NSAttributedString.Key : Any])
+        fullString.append(str)
+        
+        backButton.setAttributedTitle(fullString, for: .normal)
+        
+        backButton.addTarget(self, action: #selector(backTapped(_:)), for: .touchUpInside)
+        backButton.isOpaque=true
+        backButton.imageView?.contentMode = .scaleAspectFit
+        self.view.addSubview(backButton)
+    }
+    
+    @objc func backTapped(_ sender: Any){
+        self.navigationController?.popViewController(animated: true)
         
     }
     
