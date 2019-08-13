@@ -92,7 +92,7 @@ The SDK includes the following modules:
 
 		platform :ios, '11.0'
 		pod 'AcuantiOSSDKV11', '~> 11.2.2'
-		pod 'iProov', :git => 'https://github.com/iProov/ios.git', :tag => '7.3.0'
+		pod 'iProov', :git => 'https://github.com/iProov/ios.git', :tag => '7.0.0'
 
 2. Make sure you have added the **AcuantConfig.plist** file to the project.
 
