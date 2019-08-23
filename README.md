@@ -1,7 +1,7 @@
 # Acuant iOS SDK v11.2.3
 
 
-**July 2019**
+**August 2019**
 
 ----------
 
