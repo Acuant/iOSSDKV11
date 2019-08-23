@@ -92,7 +92,7 @@ The SDK includes the following modules:
 
 		platform :ios, '11.0'
 		pod 'AcuantiOSSDKV11', '~> 11.2.3'
-		pod 'iProov', :git => 'https://github.com/iProov/ios.git', :tag => '7.3.0'
+		pod 'iProov', :git => 'https://github.com/iProov/ios.git', :tag => '7.0.0'
 
 2. Make sure you have added the **AcuantConfig.plist** file to the project.
 
@@ -204,7 +204,7 @@ This method returns a sharpness value of an image. If sharpness value is greater
 
 - **Glare**
 
-This method returns glare value of an image. If glare value is greater than 50, then the image does not have glare.
+This method returns glare value of an image. If glare value is 100, then the image does not have glare. If the glare value is 0, then image has glare.
 
 		public class func glare(image: UIImage)->Int
 		
