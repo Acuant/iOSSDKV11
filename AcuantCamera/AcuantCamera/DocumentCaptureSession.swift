@@ -73,14 +73,8 @@ import AcuantImagePreparation
                     return
                 }
                 
-                if(self.canSetSessionPreset(AVCaptureSession.Preset.hd4K3840x2160)){
-                    self.sessionPreset = AVCaptureSession.Preset.hd4K3840x2160
-                }else if(self.canSetSessionPreset(AVCaptureSession.Preset.photo)){
-                    self.sessionPreset = AVCaptureSession.Preset.photo
-                }else if(self.canSetSessionPreset(AVCaptureSession.Preset.high)){
-                    self.sessionPreset = AVCaptureSession.Preset.high
-                }
-                
+                self.sessionPreset = AVCaptureSession.Preset.photo
+
                 if let formatDescription = self.captureDevice?.activeFormat.formatDescription {
                     let dimensions = CMVideoFormatDescriptionGetDimensions(formatDescription)
                     self.devicePreviewResolutionLongerSide = max(Int(dimensions.width),Int(dimensions.height))
@@ -142,7 +136,7 @@ import AcuantImagePreparation
                 self.croppedFrame = self.detectImage(image: self.frame!)
                 let cropDuration = CFAbsoluteTimeGetCurrent() - startTime
                 let frameSize = self.frame!.size
-                
+
                 DispatchQueue.main.async{
                     let croppedImage = self.croppedFrame
                     var frameResult: FrameResult
@@ -161,20 +155,10 @@ import AcuantImagePreparation
                         
                         let aspectRatio = croppedImage!.aspectRatio
                         if(aspectRatio >= Float((1.0-CaptureConstants.ASPECT_RATIO_THRESHOLD/100.0)*CaptureConstants.ASPECT_RATIO_ID3) && aspectRatio<=Float((1.0+CaptureConstants.ASPECT_RATIO_THRESHOLD/100.0)*CaptureConstants.ASPECT_RATIO_ID3)){
-                            MANDATORY_RESOLUTION_THRESHOLD = Int((Float(self.devicePreviewResolutionLongerSide)/Float(CaptureConstants.CAMERA_PREVIEW_LONGER_SIDE_STANDARD))*Float(CaptureConstants.MANDATORY_RESOLUTION_THRESHOLD_SMALL))
-                            
-                            // Special Case
-                            if(UIDevice.modelName == "iPhone 5s"){
-                                MANDATORY_RESOLUTION_THRESHOLD = CaptureConstants.MANDATORY_RESOLUTION_THRESHOLD_SMALL_OLD_PHONES
-                            }
+                            MANDATORY_RESOLUTION_THRESHOLD = Int(Double(frameSize.width) * CaptureConstants.CAMERA_PRIVEW_LARGER_DOCUMENT_DPI_RATIO)
                             
                         }else{
-                            MANDATORY_RESOLUTION_THRESHOLD = Int((Float(self.devicePreviewResolutionLongerSide)/Float(CaptureConstants.CAMERA_PREVIEW_LONGER_SIDE_STANDARD))*Float(CaptureConstants.MANDATORY_RESOLUTION_THRESHOLD_DEFAULT))
-                            
-                            // Special Case
-                            if(UIDevice.modelName == "iPhone 5s"){
-                                MANDATORY_RESOLUTION_THRESHOLD = CaptureConstants.MANDATORY_RESOLUTION_THRESHOLD_DEFAULT_OLD_PHONES
-                            }
+                            MANDATORY_RESOLUTION_THRESHOLD = Int(Double(frameSize.width) * CaptureConstants.CAMERA_PRIVEW_SMALLER_DOCUMENT_DPI_RATIO)
                         }
                     }
                     
