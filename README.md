@@ -236,10 +236,10 @@ After a document image is captured, it can be processed using the following step
 
 1. Get the data:
 
-		public class func getData(instanceId:String,isHealthCard:Bool,delegate:GetDataDelegate?)
+		public class func getData(instanceId: String, isHealthCard: Bool, delegate: GetDataDelegate?)
 
-		public protocol UploadImageDelegate{
-    		func imageUploaded(error: AcuantError?,classification:Classification?);
+		public protocol GetDataDelegate{
+    		func processingResultReceived(result: ProcessingResult);
 		}
 
 1. Delete the instance:
