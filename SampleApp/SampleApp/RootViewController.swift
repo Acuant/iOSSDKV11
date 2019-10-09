@@ -502,7 +502,7 @@ class RootViewController: UIViewController , InitializationDelegate,CreateInstan
                 alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default)
                 { action -> Void in
                     self.side = CardSide.Back
-                    self.captureWaitTime = 0
+                    self.captureWaitTime = 2
                     self.showDocumentCaptureCamera()
                 })
                 alert.addAction(UIAlertAction(title: "SKIP", style: UIAlertAction.Style.default)
