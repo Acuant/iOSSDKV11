@@ -24,7 +24,7 @@ SDK broken down in to small different modules so that developers can include onl
   "EmbeddedFrameworks/AcuantFaceMatch.framework","EmbeddedFrameworks/AcuantHGLiveness.framework","EmbeddedFrameworks/AcuantImagePreparation.framework","EmbeddedFrameworks/AcuantIPLiveness.framework"
   s.source_files = ['SampleApp/SampleApp/AcuantConfig.plist']
   s.subspec 'AcuantCamera' do |acuantcamera|
-    acuantcamera.source_files = "AcuantCamera/AcuantCamera/*.{h,swift}"
+    acuantcamera.source_files = "AcuantCamera/AcuantCamera/*.{h,swift}", "AcuantCamera/AcuantCamera/View/*.{h,swift}"
     acuantcamera.ios.vendored_frameworks  = "EmbeddedFrameworks/AcuantCommon.framework","EmbeddedFrameworks/AcuantImagePreparation.framework"
   end
 end
