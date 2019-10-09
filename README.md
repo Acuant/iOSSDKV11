@@ -169,7 +169,7 @@ Without a Subscription ID:
     		func didStartCaptureSession()
 		}
 
-####Cropping####
+#### Cropping ####
 
 After the image is captured, it is sent to the cropping library for cropping.
 
@@ -183,13 +183,13 @@ After the image is captured, it is sent to the cropping library for cropping.
 
         let croppedImage = AcuantImagePreparation.crop(data: croppingData)
 
-####Sharpness####
+#### Sharpness ####
 
 The **sharpness** method returns a sharpness value of an image. If the sharpness value is greater than 50, then the image is considered sharp (not blurry).
 
 		public class func sharpness(image: UIImage)->Int
 
-####Glare####
+#### Glare ####
 
 The **glare** method returns the glare value of an image. If the glare value is 100, then the image does not contain glare. If the glare value is 0, then image contains glare.
 
@@ -461,7 +461,7 @@ This module is used to match two facial images:
 
 ## Frequently Asked Questions ##
 
-###What causes an "Unsupported Architecture" error when publishing the app in the Apple App store?####
+### What causes an "Unsupported Architecture" error when publishing the app in the Apple App store? ####
 
 All frameworks are *fat* (multi-architecture) binaries that contain *slices* for **armv7**, **arm64**, **i386**, and **x86(64)**  CPU architectures. ARM slices are used by physical iOS devices, while i386 and x86(64) are used by the simulator.
 
@@ -475,14 +475,14 @@ You can also use the **lipo** command to remove unwanted slices:
 
 		lipo -remove x86_64 <Path to the file> -o <Output file path>
 
-###Why does the Code signing “AcuantCommon.framework” error occur when I archive the sample application?###
+### Why does the Code signing “AcuantCommon.framework” error occur when I archive the sample application? ###
 
 Acuant provides support for all CPU architectures that are required by simulators and devices. However, when exporting or publishing to the Test Flight/App Store, the simulator architectures (i386 and x86(64)) should be removed from the framework binaries. 
 
 1. Archive the application. 
 2. Select the archive and then click **Distribute app> App store > Export**.
 
-###How do I obfuscate my iOS application?###
+### How do I obfuscate my iOS application? ###
 
 Acuant does not provide obfuscation tools, however several third-party tools, including **iXGuard** and **Arxan**, are available.
 
