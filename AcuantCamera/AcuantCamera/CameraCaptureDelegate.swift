@@ -12,4 +12,3 @@ import AcuantCommon
 @objc public protocol CameraCaptureDelegate {
     func setCapturedImage(image:Image, barcodeString:String?)
 }
-

@@ -1,7 +1,6 @@
-# Acuant iOS SDK v11.2.3
+# Acuant iOS SDK v11.2.4
 
-
-**August 2019**
+**October 2019**
 
 ----------
 
@@ -14,28 +13,32 @@ This document provides detailed information about the Acuant iOS SDK. The Acuant
 **Note** The accceptable quality image is well-cropped, sharp and with no glare present, has a resolution of at least 300 dpi (for data capture) or 600 dpi (for authentication). The aspect ratio should be acceptable and matches an ID document.
 
 ----------
+## Prerequisites ##
+
+- iOS version 11.0 or later
+
 ## Modules ##
 
 The SDK includes the following modules:
 
-**Acuant Common Library (AcuantCommon) :**
+**Acuant Common Library (AcuantCommon):**
 
 - Contains all shared internal models and supporting classes
 
-**Acuant Camera Library (AcuantCamera) :**
+**Acuant Camera Library (AcuantCamera):**
 
 - Implemented using iOS native camera library
 - Uses AcuantImagePreparation for cropping
 
-**Acuant Image Preparation Library (AcuantImagePreparation) :**
+**Acuant Image Preparation Library (AcuantImagePreparation):**
 
 - Contains all image processing such as cropping, calculation of sharpness and glare
 
-**Acuant Document Processing Library (AcuantDocumentProcessing) :**
+**Acuant Document Processing Library (AcuantDocumentProcessing):**
 
 - Contains all the methods to upload the document images, process and get results
 
-**Acuant Face Match Library (AcuantFaceMatch) :**
+**Acuant Face Match Library (AcuantFaceMatch):**
 
 - Contains a method to match two face images
 
@@ -58,14 +61,13 @@ The SDK includes the following modules:
  -	**AcuantCamera**
  -	**AcuantDocumentProcessing**
  -	**AcuantHGLiveness**
- - **AcuantIPLiveness**
+ -	**AcuantIPLiveness**
  -	**AcuantFaceMatch**
 
-![](document_images/embeded_framework.png)
+	![](document_images/embeded_framework.png)
 
 
-1. Create a **plist** file named **AcuantConfig** which includes the following details:
-
+2. Create a **plist** file named **AcuantConfig** which includes the following details:
 
     	<?xml version="1.0" encoding="UTF-8"?>
 		<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
@@ -91,16 +93,15 @@ The SDK includes the following modules:
 1. If you are using COCOAPODS, then add the following podfile:
 
 		platform :ios, '11.0'
-		pod 'AcuantiOSSDKV11', '~> 11.2.3'
-		pod 'iProov', :git => 'https://github.com/iProov/ios.git', :tag => '7.0.0'
+		pod 'AcuantiOSSDKV11', '~> 11.2.4'
+		pod 'iProov', :git => 'https://github.com/iProov/ios.git', :tag => '7.1.0'
 
 2. Make sure you have added the **AcuantConfig.plist** file to the project.
 
 ----------
 ### Capture an Image using AcuantCamera ###
 
-
-
+1. AcuantCamera is best used in portrait mode. Please lock the orientation of the app before using Camera.
 1. Set up callbacks:
 		
 		//Returns the image and barcodeString captured from device
@@ -108,31 +109,20 @@ The SDK includes the following modules:
 	    	func setCapturedImage(image:Image, barcodeString:String?)
 		}
 		
-		//Restricts controller from rotating portrait to landscape
-		public protocol AppOrientationDelegate{
-			func onAppOrientationLockChanged(mode: UIInterfaceOrientationMask)
-		}
+2. Open the camera. Options are now defined through an options object, see AcuantCameraOptions for all configurable fields:
 		
-		func onAppOrientationLockChanged(mode: UIInterfaceOrientationMask){
-			(UIApplication.shared.delegate as! AppDelegate).orientationLock = mode
-		}
-		
-		
-1. Open the camera:
+        let options = AcuantCameraOptions(autoCapture: true, hideNavigationBar: true)
+        let documentCameraController = DocumentCameraController.getCameraController(delegate:self!, cameraOptions: options)
+        
+        navigationController.pushViewController(documentCameraController, animated: false)
 
-		let documentCameraController = DocumentCameraController.getCameraController(delegate: CameraCaptureDelegate,captureWaitTime:captureWaitTime,autoCapture:autoCapture,hideNavigationBar: true, appDelegate: AppOrientationDelegate)
-		
-		AppDelegate.navigationController?.pushViewController(documentCameraController, animated: false)
-
-
-1. Get the captured image:
+3. Get the captured image:
 
 		public protocol CameraCaptureDelegate {
 	    	func setCapturedImage(image:Image, barcodeString:String?)
 		}
 
-**Note:**   **AcuantCamera** is depdendent on **AcuantImagePreparation** and  **AcuantCommon**.
-
+**Note:**   **AcuantCamera** is dependent on **AcuantImagePreparation** and  **AcuantCommon**.
 
 ----------
 ### AcuantImagePreparation ###
@@ -164,24 +154,22 @@ This module contains all image preparation functionality.
 		AcuantImagePreparation.initialize(delegate:self)
 		
 
-#### **Initialization without a Subscription ID** ####
+##### **Initialization without a Subscription ID** #####
 
 **AcuantImagePreparation** may be initialized by providing only a username and a password. However, without providing a Subscription ID, the application can only capture an image and get the image. 
 Without a Subscription ID:
 
-1. Only the **AcuantCamera**, **AcuantImagePreparation**, and **AcuantHGLiveness** modules may be used.
-1. The SDK can be used to capture the identity documents.
-1. The captured images can be exported from the SDK. See the **DocumentCaptureDelegate** protocol in the **AcuantCamera** project.
+-	Only the **AcuantCamera**, **AcuantImagePreparation**, and **AcuantHGLiveness** modules may be used.
+-	The SDK can be used to capture the identity documents.
+-	The captured images can be exported from the SDK. See the **DocumentCaptureDelegate** protocol in the **AcuantCamera** project.
 
 		public protocol DocumentCaptureDelegate {
     		func readyToCapture()
     		func documentCaptured(image:UIImage, barcodeString:String?)
     		func didStartCaptureSession()
 		}
-		
-#
 
-- **Crop**
+####Cropping####
 
 After the image is captured, it is sent to the cropping library for cropping.
 
@@ -195,22 +183,20 @@ After the image is captured, it is sent to the cropping library for cropping.
 
         let croppedImage = AcuantImagePreparation.crop(data: croppingData)
 
+####Sharpness####
 
-- **Sharpness**
-
-This method returns a sharpness value of an image. If sharpness value is greater than 50, then the image is considered sharp (not blurry).
+The **sharpness** method returns a sharpness value of an image. If the sharpness value is greater than 50, then the image is considered sharp (not blurry).
 
 		public class func sharpness(image: UIImage)->Int
 
-- **Glare**
+####Glare####
 
-This method returns glare value of an image. If glare value is 100, then the image does not have glare. If the glare value is 0, then image has glare.
+The **glare** method returns the glare value of an image. If the glare value is 100, then the image does not contain glare. If the glare value is 0, then image contains glare.
 
 		public class func glare(image: UIImage)->Int
 		
 
 ----------
-
 
 ### AcuantDocumentProcessing ###
 
@@ -226,7 +212,7 @@ After a document image is captured, it can be processed using the following step
     		func instanceCreated(instanceId : String?,error:AcuantError?);
 		}
 
-1. Upload an image:
+2. Upload an image:
 
 		public class func uploadImage(instancdId:String,data:IdData,options:IdOptions,delegate:UploadImageDelegate)
 
@@ -234,7 +220,7 @@ After a document image is captured, it can be processed using the following step
     		func imageUploaded(error: AcuantError?,classification:Classification?);
 		}
 
-1. Get the data:
+3. Get the data:
 
 		public class func getData(instanceId:String,isHealthCard:Bool,delegate:GetDataDelegate?)
 
@@ -242,7 +228,7 @@ After a document image is captured, it can be processed using the following step
     		func imageUploaded(error: AcuantError?,classification:Classification?);
 		}
 
-1. Delete the instance:
+4. Delete the instance:
 
 		public class func deleteInstance(instanceId : String,type:DeleteType, delegate:DeleteDelegate)
 
@@ -273,22 +259,18 @@ Create a face live capture session:
 		liveFaceViewController.delegate = self
 		AppDelegate.navigationController?.pushViewController(liveFaceViewController, animated: true)
 
-
 ----------
 
 ### AcuantIPLiveness ###
 
-This module checks for liveness (whether the subject is a live person):
+The **AcuantIPLiveness** module checks whether the subject is a live person. 
 
-The process can be completed in three steps:
+1. **Setup**
 
--	Set Up
-
-	Call this to perform the set up step
+	Run the setup:
     
     	AcuantIPLiveness.performLivenessSetup(delegate:LivenessSetupDelegate)
-    	
-    	
+
     	public protocol LivenessSetupDelegate{
     		func livenessSetupSucceeded(result:LivenessSetupResult) // Called when setup succeeds
     		func livenessSetupFailed(error:AcuantError) // Called when setup failed
@@ -302,10 +284,11 @@ The process can be completed in three steps:
    
 		}
 		
--	Test	
+2. **Test**
 
-	Call this to perform the Liveness test. User can customize UI as needed by using the LivenessSetupResult.
+	Perform the Liveness test: 
 		
+	**Note** You can customize the UI as needed by using **LivenessSetupResult**.
 
 		// Adjust various colors for the camera preview:
 		setupResult.ui.lineColor = .white
@@ -331,9 +314,9 @@ The process can be completed in three steps:
 
 		}
 		
-- Get Result
+3. **Get Result**
 
-	Call to get the liveness test result
+	Get the liveness test result:
 	
 		AcuantIPLiveness.getLivenessTestResult(token:String,userId:String,delegate:LivenessTestResultDelegate)
 		
@@ -348,8 +331,7 @@ The process can be completed in three steps:
     	
 		}
 
-
-Following is list of dependencies:
+The following is a list of dependencies:
 
 - iProov.framework
 - KeychainAccess.framework
@@ -372,12 +354,9 @@ This module is used to match two facial images:
 		public class FacialMatchData{
     		public var faceImageOne : UIImage? = nil // Facial image from ID Card
     		public var faceImageTwo : UIImage? = nil // Facial image from selfie capture during liveness check (image gets compressed by 50%)
-
 		}
 
-
 ----------
-
 
 ### Error codes ###
 
@@ -442,18 +421,47 @@ This module is used to match two facial images:
 ### Image ###
 
 	public class Image {
-    	public var image : UIImage? = nil
-    	public var dpi : Int = 0 // dpi value of the captured image
-    	public var error : AcuantError? = nil
+    	public var image: UIImage? = nil
+    	public var dpi: Int = 0 // dpi value of the captured image
+    	public var error: AcuantError? = nil
     	public var isCorrectAspectRatio = false // If the captured image has the correct aspect ratio
-    	public var aspectRatio : Float = 0.0 // Aspect ratio of the captured image
+    	public var aspectRatio: Float = 0.0 // Aspect ratio of the captured image
     	public var points: Array<CGPoint> = []
+    	public var isPassport = false
     	public init(){}
+    }
+    
+### AcuantCameraOptions ###
+
+    public class AcuantCameraOptions {
+        timeInMsPerDigit: Int = 900,
+        digitsToShow: Int = 2,
+        allowBox: Bool = true,
+        autoCapture: Bool = true,
+        hideNavigationBar: Bool = true,
+        bracketLengthInHorizontal: Int = 80,
+        bracketLengthInVertical: Int = 50,
+        defaultBracketMarginWidth: CGFloat = 0.5,
+        defaultBracketMarginHeight: CGFloat = 0.6,
+        colorHold: CGColor = UIColor.yellow.cgColor,
+        colorCapturing: CGColor = UIColor.green.cgColor,
+        colorBracketAlign: CGColor = UIColor.black.cgColor,
+        colorBracketCloser: CGColor = UIColor.red.cgColor,
+        colorBracketHold: CGColor = UIColor.yellow.cgColor,
+        colorBracketCapture: CGColor = UIColor.green.cgColor
+    }
+    
+### IdOptions ###
+    public class IdOptions {
+        public var cardSide: CardSide = CardSide.Front
+        public var isHealthCard: Bool = false
+        public var isRetrying: Bool = false
+        public var authenticationSensitivity: AuthenticationSensitivity = AuthenticationSensitivity.Normal
     }
 
 ## Frequently Asked Questions ##
 
-#### What causes an "Unsupported Architecture" error when publishing the app in the Apple App store? ####
+###What causes an "Unsupported Architecture" error when publishing the app in the Apple App store?####
 
 All frameworks are *fat* (multi-architecture) binaries that contain *slices* for **armv7**, **arm64**, **i386**, and **x86(64)**  CPU architectures. ARM slices are used by physical iOS devices, while i386 and x86(64) are used by the simulator.
 
@@ -467,16 +475,16 @@ You can also use the **lipo** command to remove unwanted slices:
 
 		lipo -remove x86_64 <Path to the file> -o <Output file path>
 
-####Why does the Code signing “AcuantCommon.framework” error occur when I archive the sample application?
+###Why does the Code signing “AcuantCommon.framework” error occur when I archive the sample application?###
 
 Acuant provides support for all CPU architectures that are required by simulators and devices. However, when exporting or publishing to the Test Flight/App Store, the simulator architectures (i386 and x86(64)) should be removed from the framework binaries. 
 
 1. Archive the application. 
 2. Select the archive and then click **Distribute app> App store > Export**.
 
-####How do I obfuscate my iOS application?
+###How do I obfuscate my iOS application?###
 
-Acuant does not provide obfuscation tools, however several third-party tools, including iXGuard or Arxan, are available.
+Acuant does not provide obfuscation tools, however several third-party tools, including **iXGuard** and **Arxan**, are available.
 
 -------------------------------------------------------------
 
@@ -498,7 +506,7 @@ designation appears in initial capital or all capital letters. However,
 you should contact the appropriate companies for more complete
 information regarding such designations and their registration status.
 
-[https://support.acuant.com](https://support.acuant.com)
+For technical support, go to: [https://support.acuant.com](https://support.acuant.com)
 
 **Acuant Inc. 6080 Center Drive, Suite 850, Los Angeles, CA 90045**
 

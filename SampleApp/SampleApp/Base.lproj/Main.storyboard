@@ -18,94 +18,94 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="104" translatesAutoresizingMaskIntoConstraints="NO" id="WrJ-vO-eqx">
-                                <rect key="frame" x="46" y="242" width="276.5" height="272"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UWo-um-OZM">
+                                <rect key="frame" x="46" y="268.5" width="283" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Obf-gW-QdO"/>
+                                </constraints>
+                                <state key="normal" title="ID/Passport"/>
+                                <connections>
+                                    <action selector="idPassportTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="194-fM-c8h"/>
+                                </connections>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="21" translatesAutoresizingMaskIntoConstraints="NO" id="xDe-A1-eVa">
+                                <rect key="frame" x="26" y="484" width="323" height="83"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="mXN-8s-DWT">
-                                        <rect key="frame" x="62" y="0.0" width="153" height="85"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="126" translatesAutoresizingMaskIntoConstraints="NO" id="HHD-pp-BrI">
+                                        <rect key="frame" x="0.0" y="0.0" width="323" height="31"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UWo-um-OZM">
-                                                <rect key="frame" x="0.0" y="0.0" width="153" height="30"/>
-                                                <state key="normal" title="ID/Passport"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Auto Capture" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2L4-ec-plx">
+                                                <rect key="frame" x="0.0" y="0.0" width="148" height="31"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Iwp-Pu-c4C">
+                                                <rect key="frame" x="274" y="0.0" width="51" height="31"/>
                                                 <connections>
-                                                    <action selector="idPassportTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="194-fM-c8h"/>
+                                                    <action selector="autocaptureSwitched:" destination="BYZ-38-t0r" eventType="valueChanged" id="KaC-pZ-LtB"/>
                                                 </connections>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9sA-2d-9CD">
-                                                <rect key="frame" x="0.0" y="55" width="153" height="30"/>
-                                                <state key="normal" title="Health Insurance Card"/>
-                                                <connections>
-                                                    <action selector="healthCardTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="LL2-UN-N3Z"/>
-                                                </connections>
-                                            </button>
+                                            </switch>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstItem="UWo-um-OZM" firstAttribute="width" secondItem="mXN-8s-DWT" secondAttribute="width" constant="-40" id="WZq-LO-oTB"/>
+                                            <constraint firstItem="Iwp-Pu-c4C" firstAttribute="leading" secondItem="2L4-ec-plx" secondAttribute="trailing" constant="126" id="RdD-uF-BA6"/>
+                                            <constraint firstItem="2L4-ec-plx" firstAttribute="leading" secondItem="HHD-pp-BrI" secondAttribute="leading" id="tav-Hw-8gC"/>
+                                            <constraint firstAttribute="trailing" secondItem="Iwp-Pu-c4C" secondAttribute="trailing" id="yJS-EV-j2c"/>
                                         </constraints>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="21" translatesAutoresizingMaskIntoConstraints="NO" id="xDe-A1-eVa">
-                                        <rect key="frame" x="0.0" y="189" width="276.5" height="83"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="76" translatesAutoresizingMaskIntoConstraints="NO" id="NeM-nG-kjk">
+                                        <rect key="frame" x="0.0" y="52" width="323" height="31"/>
                                         <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="126" translatesAutoresizingMaskIntoConstraints="NO" id="HHD-pp-BrI">
-                                                <rect key="frame" x="0.0" y="0.0" width="276.5" height="31"/>
-                                                <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Auto Capture" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2L4-ec-plx">
-                                                        <rect key="frame" x="0.0" y="0.0" width="101.5" height="31"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                        <nil key="textColor"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Iwp-Pu-c4C">
-                                                        <rect key="frame" x="227.5" y="0.0" width="51" height="31"/>
-                                                        <connections>
-                                                            <action selector="autocaptureSwitched:" destination="BYZ-38-t0r" eventType="valueChanged" id="KaC-pZ-LtB"/>
-                                                        </connections>
-                                                    </switch>
-                                                </subviews>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="276.5" id="B9L-VM-i4q"/>
-                                                    <constraint firstAttribute="height" constant="31" id="XJu-5t-jQI"/>
-                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="31" id="v05-tW-Dnf"/>
-                                                    <constraint firstAttribute="width" constant="276.5" id="vEi-tN-6rz"/>
-                                                </constraints>
-                                            </stackView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="76" translatesAutoresizingMaskIntoConstraints="NO" id="NeM-nG-kjk">
-                                                <rect key="frame" x="0.0" y="52" width="276.5" height="31"/>
-                                                <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="IPLiveness Enabled" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" enabled="NO" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2FC-0f-szG">
-                                                        <rect key="frame" x="0.0" y="0.0" width="151.5" height="31"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                        <nil key="textColor"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Bmq-q8-pcK">
-                                                        <rect key="frame" x="227.5" y="0.0" width="51" height="31"/>
-                                                        <connections>
-                                                            <action selector="iPLivenessTapped:" destination="BYZ-38-t0r" eventType="valueChanged" id="2ey-On-GvH"/>
-                                                        </connections>
-                                                    </switch>
-                                                </subviews>
-                                                <constraints>
-                                                    <constraint firstItem="2FC-0f-szG" firstAttribute="height" secondItem="Bmq-q8-pcK" secondAttribute="height" id="0Rs-8N-UKt"/>
-                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="276.5" id="8XR-Fs-zkC"/>
-                                                    <constraint firstAttribute="height" constant="31" id="Udi-yq-IbT"/>
-                                                    <constraint firstAttribute="width" constant="277" id="aIk-8k-VVr"/>
-                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="31" id="fbh-ZB-POF"/>
-                                                </constraints>
-                                            </stackView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="IPLiveness Enabled" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="11" enabled="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2FC-0f-szG">
+                                                <rect key="frame" x="0.0" y="0.0" width="198" height="31"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Bmq-q8-pcK">
+                                                <rect key="frame" x="274" y="0.0" width="51" height="31"/>
+                                                <connections>
+                                                    <action selector="iPLivenessTapped:" destination="BYZ-38-t0r" eventType="valueChanged" id="2ey-On-GvH"/>
+                                                </connections>
+                                            </switch>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstItem="NeM-nG-kjk" firstAttribute="height" secondItem="HHD-pp-BrI" secondAttribute="height" id="EoI-L5-Hor"/>
-                                            <constraint firstItem="NeM-nG-kjk" firstAttribute="width" secondItem="HHD-pp-BrI" secondAttribute="width" id="TkR-8O-mq1"/>
+                                            <constraint firstAttribute="trailing" secondItem="Bmq-q8-pcK" secondAttribute="trailing" id="9Zv-fh-Chp"/>
+                                            <constraint firstItem="Bmq-q8-pcK" firstAttribute="leading" secondItem="2FC-0f-szG" secondAttribute="trailing" constant="76" id="xyo-Wu-Dh3"/>
+                                            <constraint firstItem="2FC-0f-szG" firstAttribute="leading" secondItem="NeM-nG-kjk" secondAttribute="leading" id="yOO-qY-3Mc"/>
                                         </constraints>
                                     </stackView>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstItem="NeM-nG-kjk" firstAttribute="height" secondItem="HHD-pp-BrI" secondAttribute="height" id="EoI-L5-Hor"/>
+                                    <constraint firstItem="NeM-nG-kjk" firstAttribute="width" secondItem="HHD-pp-BrI" secondAttribute="width" id="TkR-8O-mq1"/>
+                                    <constraint firstAttribute="height" constant="83" id="mZL-IH-JWh"/>
+                                </constraints>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9sA-2d-9CD">
+                                <rect key="frame" x="46" y="328" width="283" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="m7g-O8-z3D"/>
+                                </constraints>
+                                <state key="normal" title="Health Insurance Card"/>
+                                <connections>
+                                    <action selector="healthCardTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="LL2-UN-N3Z"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="WrJ-vO-eqx" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="bottom" constant="-425" id="4M8-9w-heS"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="leading" secondItem="WrJ-vO-eqx" secondAttribute="trailing" constant="-322.5" id="xzF-QU-2x3"/>
+                            <constraint firstItem="9sA-2d-9CD" firstAttribute="top" secondItem="UWo-um-OZM" secondAttribute="bottom" constant="29.5" id="2IX-IA-qZt"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="xDe-A1-eVa" secondAttribute="bottom" constant="100" id="WN5-qF-UFh"/>
+                            <constraint firstItem="UWo-um-OZM" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="30" id="X4v-5M-VDR"/>
+                            <constraint firstItem="UWo-um-OZM" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="byJ-LV-tAm"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="UWo-um-OZM" secondAttribute="trailing" constant="30" id="hhQ-7j-R06"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="9sA-2d-9CD" secondAttribute="trailing" constant="30" id="igZ-WE-Xvk"/>
+                            <constraint firstItem="UWo-um-OZM" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-50" id="lDC-0R-eRj"/>
+                            <constraint firstItem="xDe-A1-eVa" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="10" id="m5g-SO-2LW"/>
+                            <constraint firstItem="9sA-2d-9CD" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="30" id="sif-ka-Fg4"/>
+                            <constraint firstItem="9sA-2d-9CD" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="t8n-20-CXD"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="xDe-A1-eVa" secondAttribute="trailing" constant="10" id="uSu-vv-EdY"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>

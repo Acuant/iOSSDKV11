@@ -13,13 +13,18 @@ import AcuantCommon
 import AcuantImagePreparation
 
 @objcMembers public class DocumentCaptureSession :AVCaptureSession,AVCaptureMetadataOutputObjectsDelegate,AVCaptureVideoDataOutputSampleBufferDelegate,AVCapturePhotoCaptureDelegate{
-    private let context = CIContext()
-    var frame : UIImage? = nil
+
+    let stillImageOutput = AVCapturePhotoOutput()
     var croppedFrame : Image? = nil
     var stringValue : String? = nil
-    weak var delegate : DocumentCaptureDelegate? = nil
     var captureDevice: AVCaptureDevice?
     var shouldShowBorder = true
+    weak var delegate : DocumentCaptureDelegate? = nil
+    
+    private let context = CIContext()
+    private let DEFAULT_FRAME_THRESHOLD = 1
+    private let FAST_FRAME_THRESHOLD = 3
+    private var frameCounter = 0
     private var autoCapture = true
     private var captureEnabled = true
     private var captured = false
@@ -27,9 +32,8 @@ import AcuantImagePreparation
     private var input : AVCaptureDeviceInput? = nil
     private var videoOutput : AVCaptureVideoDataOutput? = nil
     private var captureMetadataOutput : AVCaptureMetadataOutput? = nil
-    weak private var frameDelegate:FrameAnalysisDelegate? = nil
-    let stillImageOutput = AVCapturePhotoOutput()
     private var devicePreviewResolutionLongerSide = CaptureConstants.CAMERA_PREVIEW_LONGER_SIDE_STANDARD
+    weak private var frameDelegate:FrameAnalysisDelegate? = nil
     
     
     public class func getDocumentCaptureSession(delegate:DocumentCaptureDelegate?, frameDelegate: FrameAnalysisDelegate,autoCapture:Bool, captureDevice:AVCaptureDevice?)-> DocumentCaptureSession{
@@ -114,17 +118,13 @@ import AcuantImagePreparation
         guard let cgImage = context.createCGImage(ciImage, from: ciImage.extent) else { return nil }
         return UIImage(cgImage: cgImage)
     }
-    
-    private var frameCounter = 0
-    private let DEFAULT_FRAME_THRESHOLD = 1
-    private let FAST_FRAME_THRESHOLD = 3
 
     // MARK: AVCaptureVideoDataOutputSampleBufferDelegate
     public func captureOutput(_ output: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
         let frameQueue = DispatchQueue(label: "com.acuant.image.queue",attributes:.concurrent)
         frameQueue.async {
-            self.frame = self.imageFromSampleBuffer(sampleBuffer: sampleBuffer)
-            if(self.frame != nil && self.captured == false){
+            let frame = self.imageFromSampleBuffer(sampleBuffer: sampleBuffer)
+            if(frame != nil && self.captured == false){
                 if(self.cropping || self.captured){
                     return
                 }
@@ -132,60 +132,49 @@ import AcuantImagePreparation
                     return
                 }
                 self.cropping = true
-                let startTime = CFAbsoluteTimeGetCurrent()
-                self.croppedFrame = self.detectImage(image: self.frame!)
-                let cropDuration = CFAbsoluteTimeGetCurrent() - startTime
-                let frameSize = self.frame!.size
+                self.croppedFrame = self.detectImage(image: frame!)
+                let frameSize = frame!.size
 
-                DispatchQueue.main.async{
-                    let croppedImage = self.croppedFrame
-                    var frameResult: FrameResult
-                    var scaledPoints : Array<CGPoint> = Array<CGPoint>()
-                    var MANDATORY_RESOLUTION_THRESHOLD = CaptureConstants.MANDATORY_RESOLUTION_THRESHOLD_DEFAULT
-                    
-                    if(croppedImage != nil){
-                        if(croppedImage!.points.count == 4 && self.shouldShowBorder){
-                            croppedImage!.points.forEach{ point in
-                                var scaled: CGPoint = CGPoint()
-                                scaled.x = point.x/frameSize.width as CGFloat
-                                scaled.y = point.y/frameSize.height  as CGFloat
-                                scaledPoints.append(scaled)
-                            }
-                        }
+                DispatchQueue.main.async{ [weak self] in
+                    if(self != nil) {
+                        let croppedImage = self!.croppedFrame
+                        var frameResult: FrameResult
+                        var scaledPoints : Array<CGPoint> = Array<CGPoint>()
+                        var MANDATORY_RESOLUTION_THRESHOLD = CaptureConstants.MANDATORY_RESOLUTION_THRESHOLD_DEFAULT
                         
-                        let aspectRatio = croppedImage!.aspectRatio
-                        if(aspectRatio >= Float((1.0-CaptureConstants.ASPECT_RATIO_THRESHOLD/100.0)*CaptureConstants.ASPECT_RATIO_ID3) && aspectRatio<=Float((1.0+CaptureConstants.ASPECT_RATIO_THRESHOLD/100.0)*CaptureConstants.ASPECT_RATIO_ID3)){
-                            MANDATORY_RESOLUTION_THRESHOLD = Int(Double(frameSize.width) * CaptureConstants.CAMERA_PRIVEW_LARGER_DOCUMENT_DPI_RATIO)
+                        if(croppedImage != nil){
+                            if(croppedImage!.points.count == 4 && self!.shouldShowBorder){
+                                croppedImage!.points.forEach{ point in
+                                    var scaled: CGPoint = CGPoint()
+                                    scaled.x = point.x/frameSize.width as CGFloat
+                                    scaled.y = point.y/frameSize.height  as CGFloat
+                                    scaledPoints.append(scaled)
+                                }
+                            }
                             
-                        }else{
-                            MANDATORY_RESOLUTION_THRESHOLD = Int(Double(frameSize.width) * CaptureConstants.CAMERA_PRIVEW_SMALLER_DOCUMENT_DPI_RATIO)
-                        }
-                    }
-                    
-                    if(croppedImage == nil || croppedImage!.error?.errorCode == AcuantErrorCodes.ERROR_CouldNotCrop || (croppedImage!.dpi) < CaptureConstants.NO_DOCUMENT_DPI_THRESHOLD ){
-                        frameResult = FrameResult.NO_DOCUMENT
-                        self.frameCounter = 0
-                    }else if(croppedImage!.error?.errorCode == AcuantErrorCodes.ERROR_LowResolutionImage && (croppedImage!.dpi) < MANDATORY_RESOLUTION_THRESHOLD){
-                        frameResult = FrameResult.SMALL_DOCUMENT
-                        self.frameCounter = 0
-                    }else if(croppedImage!.isCorrectAspectRatio == false){
-                        frameResult = FrameResult.BAD_ASPECT_RATIO
-                        self.frameCounter = 0
-                    }else{
-                        let threshold = self.getFrameMatchThreshold(cropDuration: cropDuration)
-                        frameResult = FrameResult.GOOD_DOCUMENT
-                        self.frameCounter += 1
-                        
-                        if(self.frameCounter > threshold && self.captureEnabled){
-                            self.captured = true
-                            self.capturePhoto()             
-                            DispatchQueue.main.async{
-                                self.delegate?.readyToCapture()
+                            if(croppedImage!.isPassport){
+                                MANDATORY_RESOLUTION_THRESHOLD = Int(Double(frameSize.width) * CaptureConstants.CAMERA_PRIVEW_LARGER_DOCUMENT_DPI_RATIO)
+                                
+                            }else{
+                                MANDATORY_RESOLUTION_THRESHOLD = Int(Double(frameSize.width) * CaptureConstants.CAMERA_PRIVEW_SMALLER_DOCUMENT_DPI_RATIO)
                             }
                         }
+                        
+                        if(croppedImage == nil || croppedImage!.error?.errorCode == AcuantErrorCodes.ERROR_CouldNotCrop || (croppedImage!.dpi) < CaptureConstants.NO_DOCUMENT_DPI_THRESHOLD ){
+                            frameResult = FrameResult.NO_DOCUMENT
+                            self!.frameCounter = 0
+                        }else if(croppedImage!.error?.errorCode == AcuantErrorCodes.ERROR_LowResolutionImage && (croppedImage!.dpi) < MANDATORY_RESOLUTION_THRESHOLD){
+                            frameResult = FrameResult.SMALL_DOCUMENT
+                            self!.frameCounter = 0
+                        }else if(croppedImage!.isCorrectAspectRatio == false){
+                            frameResult = FrameResult.BAD_ASPECT_RATIO
+                            self!.frameCounter = 0
+                        }else{
+                            frameResult = FrameResult.GOOD_DOCUMENT
+                        }
+                        self!.frameDelegate?.onFrameAvailable(frameResult: frameResult, points: scaledPoints)
+                        self!.cropping = false
                     }
-                    self.frameDelegate?.onFrameAvailable(frameResult: frameResult, points: scaledPoints)
-                    self.cropping = false
                 }
             }
         }
@@ -241,7 +230,6 @@ import AcuantImagePreparation
             self.stopRunning()
             self.delegate?.documentCaptured(image: capturedImage, barcodeString:self.stringValue)
             self.delegate = nil
-            self.frame = nil
         }
     }
     
@@ -261,5 +249,4 @@ import AcuantImagePreparation
         let croppedImage = AcuantImagePreparation.detect(data: croppingData)
         return croppedImage
     }
-    
 }

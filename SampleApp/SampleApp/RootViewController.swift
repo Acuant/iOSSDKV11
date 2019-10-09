@@ -16,7 +16,7 @@ import AcuantHGLiveness
 import AcuantIPLiveness
 import AVFoundation
 
-class RootViewController: UIViewController , InitializationDelegate,CreateInstanceDelegate,UploadImageDelegate,GetDataDelegate, FacialMatchDelegate,DeleteDelegate,AcuantHGLivenessDelegate,CameraCaptureDelegate,LivenessSetupDelegate,LivenessTestDelegate,LivenessTestResultDelegate, AppOrientationDelegate, LivenessTestCredentialDelegate{
+class RootViewController: UIViewController , InitializationDelegate,CreateInstanceDelegate,UploadImageDelegate,GetDataDelegate, FacialMatchDelegate,DeleteDelegate,AcuantHGLivenessDelegate,CameraCaptureDelegate,LivenessSetupDelegate,LivenessTestDelegate,LivenessTestResultDelegate, LivenessTestCredentialDelegate{
     
 
     @IBOutlet var autoCaptureSwitch : UISwitch!
@@ -42,7 +42,7 @@ class RootViewController: UIViewController , InitializationDelegate,CreateInstan
     public var ipLivenessSetupResult : LivenessSetupResult? = nil
     
     var side : CardSide = CardSide.Front
-    var captureWaitTime = 0
+    var captureWaitTime = 2
     var minimumNumberOfClassificationAttemptsRequired = 1
     var numerOfClassificationAttempts = 0
     
@@ -59,13 +59,18 @@ class RootViewController: UIViewController , InitializationDelegate,CreateInstan
         isIPLivenessEnabled = IPLivenessSwitch.isOn
     }
     private func showProgressView(text:String = ""){
-        self.progressView.messageView.text = text
-        self.progressView.startAnimation()
-        self.view.addSubview(self.progressView)
+        DispatchQueue.main.async {
+            self.progressView.messageView.text = text
+            self.progressView.startAnimation()
+            self.view.addSubview(self.progressView)
+        }
+
     }
     private func hideProgressView(){
-        self.progressView.stopAnimation()
-        self.progressView.removeFromSuperview()
+        DispatchQueue.main.async {
+            self.progressView.stopAnimation()
+            self.progressView.removeFromSuperview()
+        }
     }
     
     @IBAction func idPassportTapped(_ sender: UIButton) {
@@ -82,23 +87,31 @@ class RootViewController: UIViewController , InitializationDelegate,CreateInstan
                     self.hideProgressView()
                     self.showDocumentCaptureCamera()
                     
-                    self.IPLivenessSwitch.isOn = isEnabled
-                    if(isEnabled){
-                        self.IPLivenessLabel.isEnabled = true
-                        self.IPLivenessSwitch.isEnabled = true
+                    DispatchQueue.main.async {
+                        self.IPLivenessSwitch.isOn = isEnabled
+                        if(isEnabled){
+                            self.IPLivenessLabel.isEnabled = true
+                            self.IPLivenessSwitch.isEnabled = true
+                        }
                     }
+                
                     
                 }, onError: {
                     error in
-                    self.hideProgressView()
-                    CustomAlerts.displayError(message: error.errorDescription!)
+                    DispatchQueue.main.async {
+                        self.hideProgressView()
+                        CustomAlerts.displayError(message: error.errorDescription!)
+                    }
+                    
                 })
                 let retryCallback = ReinitializeHelper(callback: { isInitialized in
-                    if(isInitialized){
-                        AcuantIPLiveness.getLivenessTestCredential(delegate: ipLivenessCallback)
-                    }
-                    else{
-                        self.hideProgressView()
+                    DispatchQueue.main.async {
+                        if(isInitialized){
+                            AcuantIPLiveness.getLivenessTestCredential(delegate: ipLivenessCallback)
+                        }
+                        else{
+                            self.hideProgressView()
+                        }
                     }
                 })
                 
@@ -189,16 +202,13 @@ class RootViewController: UIViewController , InitializationDelegate,CreateInstan
         CustomAlerts.displayError(message: "\(error.errorCode) : \(error.errorDescription)" )
     }
     
-    func onAppOrientationLockChanged(mode: UIInterfaceOrientationMask){
-        (UIApplication.shared.delegate as! AppDelegate).orientationLock = mode
-    }
-    
     func showDocumentCaptureCamera(){
         // handler in .requestAccess is needed to process user's answer to our request
         AVCaptureDevice.requestAccess(for: .video) { [weak self] success in
             if success { // if request is granted (success is true)
                 DispatchQueue.main.async {
-                    let documentCameraController = DocumentCameraController.getCameraController(delegate:self!,captureWaitTime:self!.captureWaitTime,autoCapture:self!.autoCapture,hideNavigationBar: true, appDelegate: self!)
+                    let options = AcuantCameraOptions(digitsToShow:self!.captureWaitTime, autoCapture:self!.autoCapture, hideNavigationBar: true)
+                    let documentCameraController = DocumentCameraController.getCameraController(delegate:self!, cameraOptions: options)
                     self!.navigationController?.pushViewController(documentCameraController, animated: false)
                 }
             } else { // if request is denied (success is false)
@@ -249,7 +259,7 @@ class RootViewController: UIViewController , InitializationDelegate,CreateInstan
     
     func resetData(){
         side = CardSide.Front
-        captureWaitTime = 0
+        captureWaitTime = 2
         numerOfClassificationAttempts = 0
         isProcessing = false
         isLiveFace = false
@@ -563,7 +573,7 @@ class RootViewController: UIViewController , InitializationDelegate,CreateInstan
     }
     
     func imageUploaded(error: AcuantError?,classification:Classification?) {
-        if(error == nil || (error?.errorCode == AcuantErrorCodes.ERROR_CouldNotClassifyDocument && self.numerOfClassificationAttempts>=self.minimumNumberOfClassificationAttemptsRequired)){
+        if(error == nil){
             if(self.isHealthCard){
                 if(self.idOptions?.cardSide == CardSide.Front){
                     if(self.capturedBackImage == nil){
@@ -592,7 +602,7 @@ class RootViewController: UIViewController , InitializationDelegate,CreateInstan
                         alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default)
                         { action -> Void in
                             self.side = CardSide.Back
-                            self.captureWaitTime = 1
+                            self.captureWaitTime = 2
                             self.showDocumentCaptureCamera()
                         })
                         self.present(alert, animated: true, completion: nil)
@@ -819,5 +829,3 @@ class RootViewController: UIViewController , InitializationDelegate,CreateInstan
         return isBackSideRequired
     }
 }
-
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
