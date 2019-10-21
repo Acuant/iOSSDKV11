@@ -101,7 +101,11 @@ The SDK includes the following modules:
 ----------
 ### Capture an Image using AcuantCamera ###
 
-1. AcuantCamera is best used in portrait mode. Please lock the orientation of the app before using Camera.
+1. AcuantCamera is best used in portrait mode. Please lock the orientation of the app before using Camera. 
+
+	*Note: If using DocumentCaptureSession with a custom Controller, it is mandatory to trigger the capture by calling captureSession.enableCapture().*
+
+
 1. Set up callbacks:
 		
 		//Returns the image and barcodeString captured from device
