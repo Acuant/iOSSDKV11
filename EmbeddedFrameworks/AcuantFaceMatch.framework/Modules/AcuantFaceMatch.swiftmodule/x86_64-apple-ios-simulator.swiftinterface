@@ -1,0 +1,33 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.1.2 (swiftlang-1100.0.278 clang-1100.0.33.9)
+// swift-module-flags: -target x86_64-apple-ios11.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name AcuantFaceMatch
+import AcuantCommon
+@_exported import AcuantFaceMatch
+import Foundation
+import Swift
+import UIKit
+@objc public protocol FacialMatchDelegate {
+  @objc func facialMatchFinished(result: AcuantFaceMatch.FacialMatchResult?)
+}
+@objc @objcMembers public class FacialMatchResult : ObjectiveC.NSObject {
+  @objc public var isMatch: Swift.Bool
+  @objc public var transactionId: Swift.String?
+  @objc public var score: Swift.Int
+  @objc public var error: AcuantCommon.AcuantError?
+  @objc public static func initWithJSONDict(jsonDict: [Swift.String : Any]?) -> AcuantFaceMatch.FacialMatchResult?
+  @objc public class func createInstance() -> AcuantFaceMatch.FacialMatchResult
+  @objc override dynamic public init()
+  @objc deinit
+}
+@objc @objcMembers public class AcuantFaceMatch : ObjectiveC.NSObject {
+  @objc public class func processFacialMatch(facialData: AcuantFaceMatch.FacialMatchData, delegate: AcuantFaceMatch.FacialMatchDelegate?)
+  @objc override dynamic public init()
+  @objc deinit
+}
+@objc @objcMembers public class FacialMatchData : ObjectiveC.NSObject {
+  @objc public var faceImageOne: UIKit.UIImage?
+  @objc public var faceImageTwo: UIKit.UIImage?
+  @objc override dynamic public init()
+  @objc public class func newInstance() -> AcuantFaceMatch.FacialMatchData
+  @objc deinit
+}

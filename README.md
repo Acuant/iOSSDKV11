@@ -1,6 +1,8 @@
-# Acuant iOS SDK v11.2.4
+# Acuant iOS SDK v11.2.5
 
-**October 2019**
+**November 2019**
+
+See [https://github.com/Acuant/iOSSDKV11/releases](https://github.com/Acuant/iOSSDKV11/releases) for release notes.
 
 ----------
 
@@ -28,7 +30,7 @@ The SDK includes the following modules:
 **Acuant Camera Library (AcuantCamera):**
 
 - Implemented using iOS native camera library
-- Uses AcuantImagePreparation for cropping
+- Uses **AcuantImagePreparation** for cropping
 
 **Acuant Image Preparation Library (AcuantImagePreparation):**
 
@@ -51,7 +53,7 @@ The SDK includes the following modules:
 - Uses proprietary algorithm to detect a live person
 
 ----------
-### Setup ###
+### Manual Setup ###
 
 1. Add the following dependent embedded frameworks:
 
@@ -61,13 +63,59 @@ The SDK includes the following modules:
  -	**AcuantCamera**
  -	**AcuantDocumentProcessing**
  -	**AcuantHGLiveness**
- -	**AcuantIPLiveness**
  -	**AcuantFaceMatch**
+ - **AcuantIPLiveness**
+	 	- iProov.framework
+ 		- KeychainAccess.framework
+ 		- SocketIO.framework
+ 		- Starscream.framework
+ 		- SwiftyJSON.framework
 
 	![](document_images/embeded_framework.png)
 
+1. Open your project in Xcode and navigate to Build Phases tab in application project settings. Add a "New Run Script".
 
-2. Create a **plist** file named **AcuantConfig** which includes the following details:
+1.  Add the following to the script.
+
+		/usr/local/bin/carthage copy-frameworks
+
+1. Create new inputFileList.xcfilelist and outputFileList.xcfilelist. Add necessary frameworks to both files. Example in repository.
+
+1. Add the .xcfilelist to your run script. For additional information, please visit [https://github.com/Carthage/Carthage](https://github.com/Carthage/Carthage).
+
+----------
+
+### Using COCOAPODS ###
+1. If you are using COCOAPODS, then add the following podfile:
+
+		platform :ios, '11.0'
+		pod 'AcuantiOSSDKV11', '~> 11.2.5'
+		
+		
+1. 	Enable "BUILD\_FOR\_DISTRIBUTION" for all Acuant pod frameworks in Build Settings.
+
+	- Using Cocoapods. Add to your Podfile.
+		
+			post_install do |installer|
+				installer.pods_project.targets.each do |target|
+					if ['AcuantiOSSDKV11', 'KeychainAccess', 'Socket.IO-Client-Swift', 'Starscream' 'SwiftyJSON'].include? target.name
+						target.build_configurations.each do |config|
+							config.build_settings['BUILD_LIBRARY_FOR_DISTRIBUTION'] = 'YES'
+						end
+					end
+				end
+			end
+	
+	- Manually
+	
+		![](document_images/cocoapodsetup.png)
+		
+
+
+----------
+
+### Required Setup ###
+1. Create a **plist** file named **AcuantConfig** which includes the following details:
 
     	<?xml version="1.0" encoding="UTF-8"?>
 		<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
@@ -89,21 +137,13 @@ The SDK includes the following modules:
 		</plist>
 
 
-### Using COCOAPODS ###
-1. If you are using COCOAPODS, then add the following podfile:
-
-		platform :ios, '11.0'
-		pod 'AcuantiOSSDKV11', '~> 11.2.4'
-		pod 'iProov', :git => 'https://github.com/iProov/ios.git', :tag => '7.1.0'
-
-2. Make sure you have added the **AcuantConfig.plist** file to the project.
 
 ----------
 ### Capture an Image using AcuantCamera ###
 
 1. AcuantCamera is best used in portrait mode. Please lock the orientation of the app before using Camera. 
 
-	*Note: If using DocumentCaptureSession with a custom Controller, it is mandatory to trigger the capture by calling captureSession.enableCapture().*
+	**Note:**   If you are using **DocumentCaptureSession** with a custom Controller, you must trigger the capture by calling **captureSession.enableCapture()**.
 
 
 1. Set up callbacks:
@@ -113,7 +153,9 @@ The SDK includes the following modules:
 	    	func setCapturedImage(image:Image, barcodeString:String?)
 		}
 		
-2. Open the camera. Options are now defined through an options object, see AcuantCameraOptions for all configurable fields:
+2. Open the camera: 
+
+	**Note:**   Options are now defined through an options object. See **AcuantCameraOptions** for all configurable fields.
 		
         let options = AcuantCameraOptions(autoCapture: true, hideNavigationBar: true)
         let documentCameraController = DocumentCameraController.getCameraController(delegate:self!, cameraOptions: options)
@@ -126,7 +168,7 @@ The SDK includes the following modules:
 	    	func setCapturedImage(image:Image, barcodeString:String?)
 		}
 
-**Note:**   **AcuantCamera** is dependent on **AcuantImagePreparation** and  **AcuantCommon**.
+	**Note:**   **AcuantCamera** is dependent on **AcuantImagePreparation** and  **AcuantCommon**.
 
 ----------
 ### AcuantImagePreparation ###
@@ -158,7 +200,7 @@ This module contains all image preparation functionality.
 		AcuantImagePreparation.initialize(delegate:self)
 		
 
-##### **Initialization without a Subscription ID** #####
+#### **Initialization without a Subscription ID** ####
 
 **AcuantImagePreparation** may be initialized by providing only a username and a password. However, without providing a Subscription ID, the application can only capture an image and get the image. 
 Without a Subscription ID:
@@ -246,7 +288,7 @@ After a document image is captured, it can be processed using the following step
 
 This module checks for liveness (whether the subject is a live person) by using blink detection. The user interface code for this is contained in the Sample application (**FaceLivenessCameraController.swift**) which customers may modify for their specific requirements.
 
-Create a face live capture session:
+**Create a face live capture session:**
 
 		public class func getFaceCaptureSession(delegate:AcuantHGLiveFaceCaptureDelegate?,captureDevice: AVCaptureDevice?,previewSize:CGSize?)->FaceCaptureSession
 
@@ -269,10 +311,9 @@ Create a face live capture session:
 
 The **AcuantIPLiveness** module checks whether the subject is a live person. 
 
-1. **Setup**
+1. Run the setup:
 
-	Run the setup:
-    
+
     	AcuantIPLiveness.performLivenessSetup(delegate:LivenessSetupDelegate)
 
     	public protocol LivenessSetupDelegate{
@@ -288,9 +329,7 @@ The **AcuantIPLiveness** module checks whether the subject is a live person.
    
 		}
 		
-2. **Test**
-
-	Perform the Liveness test: 
+2. Perform the Liveness test: 
 		
 	**Note** You can customize the UI as needed by using **LivenessSetupResult**.
 
@@ -318,9 +357,7 @@ The **AcuantIPLiveness** module checks whether the subject is a live person.
 
 		}
 		
-3. **Get Result**
-
-	Get the liveness test result:
+3. Get the liveness test result:
 	
 		AcuantIPLiveness.getLivenessTestResult(token:String,userId:String,delegate:LivenessTestResultDelegate)
 		
@@ -337,11 +374,11 @@ The **AcuantIPLiveness** module checks whether the subject is a live person.
 
 The following is a list of dependencies:
 
-- iProov.framework
-- KeychainAccess.framework
-- SocketIO.framework
-- Startscream.framework
-- SwiftyJSON.framework
+- **iProov.framework**
+- **KeychainAccess.framework**
+- **SocketIO.framework**
+- **Startscream.framework**
+- **SwiftyJSON.framework**
 
 ----------
 

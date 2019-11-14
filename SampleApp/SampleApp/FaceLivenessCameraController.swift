@@ -110,9 +110,9 @@ class FaceLivenessCameraController : UIViewController,AcuantHGLiveFaceCaptureDel
     
     func liveFaceDetailsCaptured(liveFaceDetails: LiveFaceDetails?) {
         
-        if(liveFaceDetails?.faceRect != nil && liveFaceDetails?.image != nil){
+        if(liveFaceDetails?.faceRect != nil && liveFaceDetails?.image != nil && liveFaceDetails?.cleanAperture != nil){
             
-            let translatedFaceRect = self.calculateFaceRect(faceBounds: (liveFaceDetails?.faceRect)!, clearAperture:(liveFaceDetails?.cleanAperture)!)
+            let translatedFaceRect = self.calculateFaceRect(faceBounds: liveFaceDetails!.faceRect!.toCGRect(), clearAperture:(liveFaceDetails!.cleanAperture!.toCGRect()))
             
             let topPadding = view.safeAreaInsets.top
             let bottomPadding = view.safeAreaInsets.bottom

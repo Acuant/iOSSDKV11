@@ -1,0 +1,21 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.1.2 (swiftlang-1100.0.278 clang-1100.0.33.9)
+// swift-module-flags: -target x86_64-apple-ios11.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name AcuantImagePreparation
+import AVFoundation
+import AcuantCommon
+@_exported import AcuantImagePreparation
+import Foundation
+import Swift
+import UIKit
+@objc public protocol InitializationDelegate {
+  @objc func initializationFinished(error: AcuantCommon.AcuantError?)
+}
+@objc @objcMembers public class AcuantImagePreparation : ObjectiveC.NSObject {
+  @objc public class func initialize(delegate: AcuantImagePreparation.InitializationDelegate?)
+  @objc public class func crop(data: AcuantCommon.CroppingData) -> AcuantCommon.Image
+  @objc public class func detect(data: AcuantCommon.CroppingData) -> AcuantCommon.Image
+  @objc public class func sharpness(image: UIKit.UIImage) -> Swift.Int
+  @objc public class func glare(image: UIKit.UIImage) -> Swift.Int
+  @objc override dynamic public init()
+  @objc deinit
+}

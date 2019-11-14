@@ -1,0 +1,83 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.1.2 (swiftlang-1100.0.278 clang-1100.0.33.9)
+// swift-module-flags: -target arm64-apple-ios11.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name AcuantIPLiveness
+import AcuantCommon
+import Foundation
+import Swift
+import UIKit
+import iProov
+@objc @objcMembers public class LivenessSetupResult : ObjectiveC.NSObject {
+  @objc public var apiKey: Swift.String?
+  @objc public var token: Swift.String?
+  @objc public var userId: Swift.String?
+  @objc public var apiEndpoint: Swift.String?
+  @objc public var ui: AcuantIPLiveness.LivenessUiOptions
+  @objc override dynamic public init()
+  @objc public class func createInstance() -> AcuantIPLiveness.LivenessSetupResult
+  @objc deinit
+}
+@objc public protocol LivenessSetupDelegate {
+  @objc func livenessSetupSucceeded(result: AcuantIPLiveness.LivenessSetupResult)
+  @objc func livenessSetupFailed(error: AcuantCommon.AcuantError)
+}
+@objc public protocol LivenessTestDelegate {
+  @objc func livenessTestCompleted()
+  @objc func livenessTestProcessing(progress: Swift.Double, message: Swift.String)
+  @objc func livenessTestCompletedWithError(error: AcuantCommon.AcuantError?)
+}
+@objc public protocol LivenessTestResultDelegate {
+  @objc func livenessTestResultReceived(result: AcuantIPLiveness.LivenessTestResult)
+  @objc func livenessTestResultReceiveFailed(error: AcuantCommon.AcuantError)
+}
+@objc public protocol LivenessTestCredentialDelegate {
+  @objc func livenessTestCredentialReceived(result: Swift.Bool)
+  @objc func livenessTestCredentialReceiveFailed(error: AcuantCommon.AcuantError)
+}
+@objc @objcMembers public class AcuantIPLiveness : ObjectiveC.NSObject {
+  @objc public class func performLivenessSetup(delegate: AcuantIPLiveness.LivenessSetupDelegate)
+  @objc public class func performLivenessTest(setupResult: AcuantIPLiveness.LivenessSetupResult, delegate: AcuantIPLiveness.LivenessTestDelegate)
+  @objc public class func getLivenessTestResult(token: Swift.String, userId: Swift.String, delegate: AcuantIPLiveness.LivenessTestResultDelegate)
+  @objc public class func getLivenessTestCredential(delegate: AcuantIPLiveness.LivenessTestCredentialDelegate)
+  @objc override dynamic public init()
+  @objc deinit
+}
+@objc @objcMembers public class LivenessUiOptions : ObjectiveC.NSObject {
+  public var autoStartDisabled: Swift.Bool?
+  @objc public var locale: Foundation.Locale?
+  public var filter: AcuantIPLiveness.IpFilter?
+  @objc public var lineColor: UIKit.UIColor?
+  @objc public var backgroundColor: UIKit.UIColor?
+  @objc public var loadingTintColor: UIKit.UIColor?
+  @objc public var notReadyTintColor: UIKit.UIColor?
+  @objc public var readyTintColor: UIKit.UIColor?
+  @objc public var title: Swift.String?
+  @objc public var regularFont: Swift.String?
+  @objc public var boldFont: Swift.String?
+  @objc public var fonts: [Swift.String]?
+  @objc public var logoImage: UIKit.UIImage?
+  public var scanLineDisabled: Swift.Bool?
+  weak public var delegate: iProov.IProovPresentationDelegate?
+  @objc public func toIProovOptions() -> iProov.Options
+  @objc override dynamic public init()
+  @objc deinit
+}
+@objc public enum IpFilter : Swift.Int {
+  case classic
+  case shaded
+  case vibrant
+  public typealias RawValue = Swift.Int
+  public init?(rawValue: Swift.Int)
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@objc @objcMembers public class LivenessTestResult : ObjectiveC.NSObject {
+  @objc public var passedLivenessTest: Swift.Bool
+  @objc public var image: UIKit.UIImage?
+  @objc override dynamic public init()
+  @objc public class func createInstance() -> AcuantIPLiveness.LivenessTestResult
+  @objc deinit
+}
+extension AcuantIPLiveness.IpFilter : Swift.Equatable {}
+extension AcuantIPLiveness.IpFilter : Swift.Hashable {}
+extension AcuantIPLiveness.IpFilter : Swift.RawRepresentable {}

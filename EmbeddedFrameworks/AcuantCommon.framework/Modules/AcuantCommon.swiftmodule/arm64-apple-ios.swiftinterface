@@ -1,0 +1,158 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.1.2 (swiftlang-1100.0.278 clang-1100.0.33.9)
+// swift-module-flags: -target arm64-apple-ios11.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name AcuantCommon
+import Foundation
+import MobileCoreServices
+import Swift
+import UIKit
+@objc public enum DeleteType : Swift.Int {
+  case ID
+  case MedicalCard
+  public typealias RawValue = Swift.Int
+  public init?(rawValue: Swift.Int)
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@objc @objcMembers public class Image : ObjectiveC.NSObject {
+  @objc public var image: UIKit.UIImage?
+  @objc public var dpi: Swift.Int
+  @objc public var error: AcuantCommon.AcuantError?
+  @objc public var isCorrectAspectRatio: Swift.Bool
+  @objc public var aspectRatio: Swift.Float
+  @objc public var points: Swift.Array<CoreGraphics.CGPoint>
+  @objc public var isPassport: Swift.Bool
+  @objc public class func newInstance() -> AcuantCommon.Image
+  @objc override dynamic public init()
+  @objc deinit
+}
+@objc @objcMembers public class AcuantError : ObjectiveC.NSObject {
+  @objc public var errorCode: Swift.Int
+  @objc public var errorDescription: Swift.String?
+  @objc override dynamic public init()
+  @objc public class func newInstance() -> AcuantCommon.AcuantError
+  @objc deinit
+}
+@objc @objcMembers public class AcuantErrorCodes : ObjectiveC.NSObject {
+  @objc public static let ERROR_InvalidCredentials: Swift.Int
+  @objc public static let ERROR_InvalidLicenseKey: Swift.Int
+  @objc public static let ERROR_InvalidEndpoint: Swift.Int
+  @objc public static let ERROR_InitializationNotFinished: Swift.Int
+  @objc public static let ERROR_Network: Swift.Int
+  @objc public static let ERROR_InvalidJson: Swift.Int
+  @objc public static let ERROR_CouldNotCrop: Swift.Int
+  @objc public static let ERROR_NotEnoughMemory: Swift.Int
+  @objc public static let ERROR_BarcodeCaptureFailed: Swift.Int
+  @objc public static let ERROR_BarcodeCaptureTimedOut: Swift.Int
+  @objc public static let ERROR_BarcodeCaptureNotAuthorized: Swift.Int
+  @objc public static let ERROR_LiveFaceCaptureNotAuthorized: Swift.Int
+  @objc public static let ERROR_CouldNotCreateConnectInstance: Swift.Int
+  @objc public static let ERROR_CouldNotUploadConnectImage: Swift.Int
+  @objc public static let ERROR_CouldNotUploadConnectBarcode: Swift.Int
+  @objc public static let ERROR_CouldNotGetConnectData: Swift.Int
+  @objc public static let ERROR_CouldNotProcessFacialMatch: Swift.Int
+  @objc public static let ERROR_CardWidthNotSet: Swift.Int
+  @objc public static let ERROR_CouldNotGetHealthCardData: Swift.Int
+  @objc public static let ERROR_CouldNotClassifyDocument: Swift.Int
+  @objc public static let ERROR_LowResolutionImage: Swift.Int
+  @objc public static let ERROR_BlurryImage: Swift.Int
+  @objc public static let ERROR_ImageWithGlare: Swift.Int
+  @objc public static let ERROR_CouldNotGetIPLivenessToken: Swift.Int
+  @objc public static let ERROR_NotALiveFace: Swift.Int
+  @objc public static let ERROR_CouldNotAccessLivenessData: Swift.Int
+  @objc public static let ERROR_CouldNotAccessCredential: Swift.Int
+  @objc public static let ERROR_USER_CANCELED_ACTIVITY: Swift.Int
+  @objc override dynamic public init()
+  @objc deinit
+}
+@objc @objcMembers public class Credential : ObjectiveC.NSObject {
+  @objc public class func username() -> Swift.String
+  @objc public class func password() -> Swift.String
+  @objc public class func subscription() -> Swift.String
+  @objc public class func endpoints() -> AcuantCommon.Endpoints
+  @objc public class func setUsername(username: Swift.String!)
+  @objc public class func setPassword(password: Swift.String!)
+  @objc public class func setSubscription(subscription: Swift.String!)
+  @objc public class func setEndpoints(endpoints: AcuantCommon.Endpoints)
+  @objc deinit
+}
+@objc @objcMembers public class AcuantErrorDescriptions : ObjectiveC.NSObject {
+  @objc public static let ERROR_DESC_InvalidCredentials: Swift.String
+  @objc public static let ERROR_DESC_InvalidLicenseKey: Swift.String
+  @objc public static let ERROR_DESC_InvalidEndpoint: Swift.String
+  @objc public static let ERROR_DESC_Network: Swift.String
+  @objc public static let ERROR_DESC_InitializationNotFinished: Swift.String
+  @objc public static let ERROR_DESC_InvalidJson: Swift.String
+  @objc public static let ERROR_DESC_CouldNotCrop: Swift.String
+  @objc public static let ERROR_DESC_BarcodeCaptureFailed: Swift.String
+  @objc public static let ERROR_DESC_BarcodeCaptureTimedOut: Swift.String
+  @objc public static let ERROR_DESC_BarcodeCaptureNotAuthorized: Swift.String
+  @objc public static let ERROR_DESC_LiveFaceCaptureNotAuthorized: Swift.String
+  @objc public static let ERROR_DESC_CouldNotCreateConnectInstance: Swift.String
+  @objc public static let ERROR_DESC_CouldNotUploadConnectImage: Swift.String
+  @objc public static let ERROR_DESC_CouldNotUploadConnectBarcode: Swift.String
+  @objc public static let ERROR_DESC_CouldNotGetConnectData: Swift.String
+  @objc public static let ERROR_DESC_CardWidthNotSet: Swift.String
+  @objc public static let ERROR_DESC_CouldNotGetHealthCardData: Swift.String
+  @objc public static let ERROR_DESC_CouldNotClassifyDocument: Swift.String
+  @objc public static let ERROR_DESC_LowResolutionImage: Swift.String
+  @objc public static let ERROR_DESC_BlurryImage: Swift.String
+  @objc public static let ERROR_DESC_ImageWithGlare: Swift.String
+  @objc public static let ERROR_DESC_CouldNotGetIPLivenessToken: Swift.String
+  @objc public static let ERROR_DESC_NotALiveFace: Swift.String
+  @objc public static let ERROR_DESC_CouldNotAccessLivenessData: Swift.String
+  @objc public static let ERROR_DESC_ERROR_CouldNotAccessCredential: Swift.String
+  @objc public static let ERROR_DESC_USER_CANCELED_ACTIVITY: Swift.String
+  @objc override dynamic public init()
+  @objc deinit
+}
+@objc @objcMembers public class CroppingData : ObjectiveC.NSObject {
+  @objc public var image: UIKit.UIImage?
+  @objc public class func newInstance() -> AcuantCommon.CroppingData
+  @objc override dynamic public init()
+  @objc deinit
+}
+@objc @objcMembers public class DocumentProcessingMode : ObjectiveC.NSObject {
+  @objc public class func processingMode() -> AcuantCommon.ProcessingMode
+  @objc public class func setDataCaptureProcessingMode()
+  @objc deinit
+}
+@objc public enum ProcessingMode : Swift.Int {
+  case Default
+  case DataCapture
+  case Authentication
+  public typealias RawValue = Swift.Int
+  public init?(rawValue: Swift.Int)
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@objc @objcMembers public class Endpoints : ObjectiveC.NSObject {
+  @objc public var frmEndpoint: Swift.String?
+  @objc public var idEndpoint: Swift.String?
+  @objc public var healthInsuranceEndpoint: Swift.String?
+  @objc public class func newInstance() -> AcuantCommon.Endpoints
+  @objc override dynamic public init()
+  @objc deinit
+}
+@objc @objcMembers public class Utils : ObjectiveC.NSObject {
+  @objc public static var SENT_IMAGE_QUALITY_JPEG_COMPRESSION: CoreGraphics.CGFloat
+  @objc public static var SDK_VERSION_CODE: Swift.String
+  @objc public static func convertToDictionary(text: Swift.String?) -> [Swift.String : Any]?
+  @objc public static func getArrayValueFromJson(jsonDict: [Swift.String : Any]?, key: Swift.String) -> Swift.Array<Any>?
+  @objc public static func getIntValue(jsonDict: [Swift.String : Any]?, key: Swift.String) -> Swift.Int
+  @objc public static func getDoubleValue(jsonDict: [Swift.String : Any]?, key: Swift.String) -> Swift.Double
+  @objc public static func getStringValue(jsonDict: [Swift.String : Any]?, key: Swift.String) -> Swift.String
+  @objc public static func getObjectValue(jsonDict: [Swift.String : Any]?, key: Swift.String) -> [Swift.String : Any]?
+  @objc public static func getArrayValue(jsonDict: [Swift.String : Any]?, key: Swift.String) -> Swift.Array<Any>?
+  @objc public static func getBooleanValue(jsonDict: [Swift.String : Any]?, key: Swift.String) -> Swift.Bool
+  @objc public static func dateFieldToDateString(dateStr: Swift.String?) -> Swift.String?
+  @objc override dynamic public init()
+  @objc deinit
+}
+extension AcuantCommon.DeleteType : Swift.Equatable {}
+extension AcuantCommon.DeleteType : Swift.Hashable {}
+extension AcuantCommon.DeleteType : Swift.RawRepresentable {}
+extension AcuantCommon.ProcessingMode : Swift.Equatable {}
+extension AcuantCommon.ProcessingMode : Swift.Hashable {}
+extension AcuantCommon.ProcessingMode : Swift.RawRepresentable {}

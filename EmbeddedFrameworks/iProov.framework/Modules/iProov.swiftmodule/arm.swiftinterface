@@ -1,0 +1,115 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.1.2 (swiftlang-1100.0.278 clang-1100.0.33.9)
+// swift-module-flags: -target armv7-apple-ios9.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name iProov
+import AVFoundation
+import Accelerate
+import AudioToolbox
+import CoreImage
+import CoreMedia
+import CoreVideo
+import Dispatch
+import Foundation
+import ImageIO
+import KeychainAccess
+import OpenGLES
+import QuartzCore
+import SocketIO
+import Starscream
+import Swift
+import SwiftyJSON
+import UIKit
+import VideoToolbox
+import Vision
+@_exported import iProov
+@objc public class IProov : ObjectiveC.NSObject {
+  @objc deinit
+}
+public enum IProovError : Foundation.LocalizedError {
+  case captureAlreadyActive
+  case streamingError(Swift.String?)
+  case encoderError(code: Swift.Int32?)
+  case lightingModelError
+  case cameraError(Swift.String?)
+  case cameraPermissionDenied
+  case serverError(Swift.String?)
+  public var errorDescription: Swift.String? {
+    get
+  }
+}
+public protocol IProovPresentationDelegate : AnyObject {
+  func present(iProovViewController: UIKit.UIViewController)
+  func dismiss(iProovViewController: UIKit.UIViewController)
+}
+extension IProov {
+  @available(swift, obsoleted: 1.0)
+  @objc public static func launch(streamingURL: Swift.String, token: Swift.String, options: iProov.Options, processing: @escaping (Swift.Double, Swift.String) -> Swift.Void, success: @escaping (Swift.String) -> Swift.Void, cancelled: @escaping () -> Swift.Void, failure: @escaping (Swift.String) -> Swift.Void, error: @escaping (Foundation.NSError) -> Swift.Void)
+}
+@objc public class Options : ObjectiveC.NSObject {
+  public var ui: iProov.UIOptions
+  public var network: iProov.NetworkOptions
+  public var capture: iProov.CaptureOptions
+  @objc override dynamic public init()
+  @objc deinit
+}
+@objc public class UIOptions : ObjectiveC.NSObject {
+  public var autoStartDisabled: Swift.Bool
+  public var filter: iProov.Filter
+  public var stringsBundle: Foundation.Bundle?
+  public var lineColor: UIKit.UIColor
+  public var backgroundColor: UIKit.UIColor
+  public var loadingTintColor: UIKit.UIColor
+  public var notReadyTintColor: UIKit.UIColor
+  public var readyTintColor: UIKit.UIColor
+  public var title: Swift.String?
+  public var font: Swift.String
+  public var logoImage: UIKit.UIImage?
+  public var scanLineDisabled: Swift.Bool
+  weak public var presentationDelegate: iProov.IProovPresentationDelegate?
+  @objc deinit
+}
+@objc public class NetworkOptions : ObjectiveC.NSObject {
+  public var certificates: [Swift.String]
+  public var certificatePinningDisabled: Swift.Bool
+  public var timeout: Foundation.TimeInterval
+  public var path: Swift.String
+  @objc override dynamic public init()
+  @objc deinit
+}
+@objc public class CaptureOptions : ObjectiveC.NSObject {
+  public var maxYaw: CoreGraphics.CGFloat?
+  public var maxRoll: CoreGraphics.CGFloat?
+  public var maxPitch: CoreGraphics.CGFloat?
+  @objc override dynamic public init()
+  @objc deinit
+}
+@objc public enum Filter : Swift.Int {
+  case classic, shaded, vibrant
+  public typealias RawValue = Swift.Int
+  public init?(rawValue: Swift.Int)
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+infix operator --> : AdditionPrecedence
+public typealias Callback = (iProov.Status) -> Swift.Void
+public let defaultStreamingURL: Swift.String
+public enum Status {
+  case processing(progress: Swift.Double, message: Swift.String)
+  case success(token: Swift.String)
+  case cancelled
+  case failure(reason: Swift.String, feedbackCode: Swift.String)
+  case error(iProov.IProovError)
+  public var isFinished: Swift.Bool {
+    get
+  }
+}
+extension IProov {
+  public static var deviceID: Swift.String {
+    get
+  }
+  public static func clearKeychain()
+  public static func launch(streamingURL: Swift.String = defaultStreamingURL, token: Swift.String, options: iProov.Options = Options(), callback: @escaping iProov.Callback)
+}
+extension iProov.Filter : Swift.Equatable {}
+extension iProov.Filter : Swift.Hashable {}
+extension iProov.Filter : Swift.RawRepresentable {}

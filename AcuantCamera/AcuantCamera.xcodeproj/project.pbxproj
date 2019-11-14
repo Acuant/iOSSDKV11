@@ -7,49 +7,47 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		134F59D721FA0BA600CEDBFC /* CameraSDK.h in Headers */ = {isa = PBXBuildFile; fileRef = 134F59D521FA0BA600CEDBFC /* CameraSDK.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		134F59E621FA0C2B00CEDBFC /* DocumentCameraController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 134F59E421FA0C2B00CEDBFC /* DocumentCameraController.swift */; };
-		134F59E921FA0C8700CEDBFC /* CameraCaptureDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 134F59E821FA0C8700CEDBFC /* CameraCaptureDelegate.swift */; };
-		833800AB234CF274006A12C0 /* UIImageExtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833800A9234CF274006A12C0 /* UIImageExtn.swift */; };
-		833800AC234CF274006A12C0 /* AcuantCameraOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833800AA234CF274006A12C0 /* AcuantCameraOptions.swift */; };
-		833800BC234CF4D4006A12C0 /* CameraDocumentOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833800B8234CF4D4006A12C0 /* CameraDocumentOverlayView.swift */; };
-		833800BD234CF4D4006A12C0 /* AcuantCameraTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833800B9234CF4D4006A12C0 /* AcuantCameraTextView.swift */; };
-		833800BE234CF4D4006A12C0 /* CameraCornerOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833800BA234CF4D4006A12C0 /* CameraCornerOverlayView.swift */; };
-		833800BF234CF4D4006A12C0 /* CameraCornerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833800BB234CF4D4006A12C0 /* CameraCornerView.swift */; };
 		833800C8234CF66C006A12C0 /* AcuantImagePreparation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 833800C7234CF66C006A12C0 /* AcuantImagePreparation.framework */; };
 		835108F222FA449100CC8329 /* AcuantCommon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2D8FDD4223FD2BE007D4C23 /* AcuantCommon.framework */; };
-		835108F522FA44B200CC8329 /* UIScreenExtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 835108F422FA44B200CC8329 /* UIScreenExtn.swift */; };
-		83C977FB22C69EDB00FC8C53 /* AppOrientationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83C977F922C69EDB00FC8C53 /* AppOrientationDelegate.swift */; };
-		83C977FC22C69EDB00FC8C53 /* UIDeviceExtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83C977FA22C69EDB00FC8C53 /* UIDeviceExtn.swift */; };
-		C25D3BA9220B29BF003F3027 /* DocumentCaptureSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = C25D3BA8220B29BF003F3027 /* DocumentCaptureSession.swift */; };
-		C25D3BAB220B29EE003F3027 /* DocumentCaptureDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C25D3BAA220B29EE003F3027 /* DocumentCaptureDelegate.swift */; };
-		C2743A26222DE2E700302CE7 /* CaptureConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2743A25222DE2E700302CE7 /* CaptureConstants.swift */; };
-		C2DC4950224BC7F70003C0CA /* FrameAnalysisDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2DC494E224BC7F70003C0CA /* FrameAnalysisDelegate.swift */; };
-		C2DC4951224BC7F70003C0CA /* DocumentFeedbackDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2DC494F224BC7F70003C0CA /* DocumentFeedbackDelegate.swift */; };
+		83B34282237B291700AB2834 /* DocumentCameraController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83B34274237B291600AB2834 /* DocumentCameraController.swift */; };
+		83B34283237B291700AB2834 /* DocumentCaptureDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83B34275237B291600AB2834 /* DocumentCaptureDelegate.swift */; };
+		83B34284237B291700AB2834 /* CaptureConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83B34276237B291600AB2834 /* CaptureConstants.swift */; };
+		83B34285237B291700AB2834 /* FrameAnalysisDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83B34277237B291600AB2834 /* FrameAnalysisDelegate.swift */; };
+		83B34286237B291700AB2834 /* CameraSDK.h in Headers */ = {isa = PBXBuildFile; fileRef = 83B34278237B291600AB2834 /* CameraSDK.h */; };
+		83B34288237B291700AB2834 /* CameraCaptureDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83B3427A237B291600AB2834 /* CameraCaptureDelegate.swift */; };
+		83B34289237B291700AB2834 /* UIDeviceExtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83B3427B237B291600AB2834 /* UIDeviceExtn.swift */; };
+		83B3428A237B291700AB2834 /* DocumentFeedbackDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83B3427C237B291600AB2834 /* DocumentFeedbackDelegate.swift */; };
+		83B3428B237B291700AB2834 /* UIScreenExtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83B3427D237B291700AB2834 /* UIScreenExtn.swift */; };
+		83B3428D237B291700AB2834 /* DocumentCaptureSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83B3427F237B291700AB2834 /* DocumentCaptureSession.swift */; };
+		83B3428E237B291700AB2834 /* UIImageExtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83B34280237B291700AB2834 /* UIImageExtn.swift */; };
+		83B3428F237B291700AB2834 /* AcuantCameraOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83B34281237B291700AB2834 /* AcuantCameraOptions.swift */; };
+		83B34297237B299E00AB2834 /* CameraCornerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83B34293237B299E00AB2834 /* CameraCornerView.swift */; };
+		83B34298237B299E00AB2834 /* CameraCornerOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83B34294237B299E00AB2834 /* CameraCornerOverlayView.swift */; };
+		83B34299237B299E00AB2834 /* AcuantCameraTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83B34295237B299E00AB2834 /* AcuantCameraTextView.swift */; };
+		83B3429A237B299E00AB2834 /* CameraDocumentOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83B34296237B299E00AB2834 /* CameraDocumentOverlayView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		134F59D221FA0BA600CEDBFC /* AcuantCamera.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AcuantCamera.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		134F59D521FA0BA600CEDBFC /* CameraSDK.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CameraSDK.h; sourceTree = "<group>"; };
-		134F59D621FA0BA600CEDBFC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		134F59E421FA0C2B00CEDBFC /* DocumentCameraController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DocumentCameraController.swift; sourceTree = "<group>"; };
-		134F59E821FA0C8700CEDBFC /* CameraCaptureDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraCaptureDelegate.swift; sourceTree = "<group>"; };
-		833800A9234CF274006A12C0 /* UIImageExtn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageExtn.swift; sourceTree = "<group>"; };
-		833800AA234CF274006A12C0 /* AcuantCameraOptions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AcuantCameraOptions.swift; sourceTree = "<group>"; };
-		833800B8234CF4D4006A12C0 /* CameraDocumentOverlayView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraDocumentOverlayView.swift; sourceTree = "<group>"; };
-		833800B9234CF4D4006A12C0 /* AcuantCameraTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AcuantCameraTextView.swift; sourceTree = "<group>"; };
-		833800BA234CF4D4006A12C0 /* CameraCornerOverlayView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraCornerOverlayView.swift; sourceTree = "<group>"; };
-		833800BB234CF4D4006A12C0 /* CameraCornerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraCornerView.swift; sourceTree = "<group>"; };
 		833800C7234CF66C006A12C0 /* AcuantImagePreparation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AcuantImagePreparation.framework; path = ../EmbeddedFrameworks/AcuantImagePreparation.framework; sourceTree = "<group>"; };
-		835108F422FA44B200CC8329 /* UIScreenExtn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIScreenExtn.swift; sourceTree = "<group>"; };
-		83C977F922C69EDB00FC8C53 /* AppOrientationDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppOrientationDelegate.swift; sourceTree = "<group>"; };
-		83C977FA22C69EDB00FC8C53 /* UIDeviceExtn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIDeviceExtn.swift; sourceTree = "<group>"; };
-		C25D3BA8220B29BF003F3027 /* DocumentCaptureSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DocumentCaptureSession.swift; sourceTree = "<group>"; };
-		C25D3BAA220B29EE003F3027 /* DocumentCaptureDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DocumentCaptureDelegate.swift; sourceTree = "<group>"; };
-		C2743A25222DE2E700302CE7 /* CaptureConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptureConstants.swift; sourceTree = "<group>"; };
+		83B34274237B291600AB2834 /* DocumentCameraController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DocumentCameraController.swift; sourceTree = "<group>"; };
+		83B34275237B291600AB2834 /* DocumentCaptureDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DocumentCaptureDelegate.swift; sourceTree = "<group>"; };
+		83B34276237B291600AB2834 /* CaptureConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CaptureConstants.swift; sourceTree = "<group>"; };
+		83B34277237B291600AB2834 /* FrameAnalysisDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FrameAnalysisDelegate.swift; sourceTree = "<group>"; };
+		83B34278237B291600AB2834 /* CameraSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraSDK.h; sourceTree = "<group>"; };
+		83B34279237B291600AB2834 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		83B3427A237B291600AB2834 /* CameraCaptureDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraCaptureDelegate.swift; sourceTree = "<group>"; };
+		83B3427B237B291600AB2834 /* UIDeviceExtn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIDeviceExtn.swift; sourceTree = "<group>"; };
+		83B3427C237B291600AB2834 /* DocumentFeedbackDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DocumentFeedbackDelegate.swift; sourceTree = "<group>"; };
+		83B3427D237B291700AB2834 /* UIScreenExtn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIScreenExtn.swift; sourceTree = "<group>"; };
+		83B3427F237B291700AB2834 /* DocumentCaptureSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DocumentCaptureSession.swift; sourceTree = "<group>"; };
+		83B34280237B291700AB2834 /* UIImageExtn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageExtn.swift; sourceTree = "<group>"; };
+		83B34281237B291700AB2834 /* AcuantCameraOptions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AcuantCameraOptions.swift; sourceTree = "<group>"; };
+		83B34293237B299E00AB2834 /* CameraCornerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CameraCornerView.swift; path = View/CameraCornerView.swift; sourceTree = "<group>"; };
+		83B34294237B299E00AB2834 /* CameraCornerOverlayView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CameraCornerOverlayView.swift; path = View/CameraCornerOverlayView.swift; sourceTree = "<group>"; };
+		83B34295237B299E00AB2834 /* AcuantCameraTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AcuantCameraTextView.swift; path = View/AcuantCameraTextView.swift; sourceTree = "<group>"; };
+		83B34296237B299E00AB2834 /* CameraDocumentOverlayView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CameraDocumentOverlayView.swift; path = View/CameraDocumentOverlayView.swift; sourceTree = "<group>"; };
 		C2D8FDD4223FD2BE007D4C23 /* AcuantCommon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AcuantCommon.framework; path = ../EmbeddedFrameworks/AcuantCommon.framework; sourceTree = "<group>"; };
-		C2DC494E224BC7F70003C0CA /* FrameAnalysisDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FrameAnalysisDelegate.swift; sourceTree = "<group>"; };
-		C2DC494F224BC7F70003C0CA /* DocumentFeedbackDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DocumentFeedbackDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,21 +83,23 @@
 		134F59D421FA0BA600CEDBFC /* AcuantCamera */ = {
 			isa = PBXGroup;
 			children = (
-				833800B7234CF4D4006A12C0 /* View */,
-				833800AA234CF274006A12C0 /* AcuantCameraOptions.swift */,
-				833800A9234CF274006A12C0 /* UIImageExtn.swift */,
-				835108F422FA44B200CC8329 /* UIScreenExtn.swift */,
-				83C977F922C69EDB00FC8C53 /* AppOrientationDelegate.swift */,
-				83C977FA22C69EDB00FC8C53 /* UIDeviceExtn.swift */,
-				C2DC494F224BC7F70003C0CA /* DocumentFeedbackDelegate.swift */,
-				C2DC494E224BC7F70003C0CA /* FrameAnalysisDelegate.swift */,
-				C25D3BAA220B29EE003F3027 /* DocumentCaptureDelegate.swift */,
-				C25D3BA8220B29BF003F3027 /* DocumentCaptureSession.swift */,
-				134F59E421FA0C2B00CEDBFC /* DocumentCameraController.swift */,
-				134F59D521FA0BA600CEDBFC /* CameraSDK.h */,
-				134F59D621FA0BA600CEDBFC /* Info.plist */,
-				134F59E821FA0C8700CEDBFC /* CameraCaptureDelegate.swift */,
-				C2743A25222DE2E700302CE7 /* CaptureConstants.swift */,
+				83B34295237B299E00AB2834 /* AcuantCameraTextView.swift */,
+				83B34294237B299E00AB2834 /* CameraCornerOverlayView.swift */,
+				83B34293237B299E00AB2834 /* CameraCornerView.swift */,
+				83B34296237B299E00AB2834 /* CameraDocumentOverlayView.swift */,
+				83B34281237B291700AB2834 /* AcuantCameraOptions.swift */,
+				83B3427A237B291600AB2834 /* CameraCaptureDelegate.swift */,
+				83B34278237B291600AB2834 /* CameraSDK.h */,
+				83B34276237B291600AB2834 /* CaptureConstants.swift */,
+				83B34274237B291600AB2834 /* DocumentCameraController.swift */,
+				83B34275237B291600AB2834 /* DocumentCaptureDelegate.swift */,
+				83B3427F237B291700AB2834 /* DocumentCaptureSession.swift */,
+				83B3427C237B291600AB2834 /* DocumentFeedbackDelegate.swift */,
+				83B34277237B291600AB2834 /* FrameAnalysisDelegate.swift */,
+				83B34279237B291600AB2834 /* Info.plist */,
+				83B3427B237B291600AB2834 /* UIDeviceExtn.swift */,
+				83B34280237B291700AB2834 /* UIImageExtn.swift */,
+				83B3427D237B291700AB2834 /* UIScreenExtn.swift */,
 			);
 			path = AcuantCamera;
 			sourceTree = "<group>";
@@ -113,17 +113,6 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		833800B7234CF4D4006A12C0 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				833800B8234CF4D4006A12C0 /* CameraDocumentOverlayView.swift */,
-				833800B9234CF4D4006A12C0 /* AcuantCameraTextView.swift */,
-				833800BA234CF4D4006A12C0 /* CameraCornerOverlayView.swift */,
-				833800BB234CF4D4006A12C0 /* CameraCornerView.swift */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -131,7 +120,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				134F59D721FA0BA600CEDBFC /* CameraSDK.h in Headers */,
+				83B34286237B291700AB2834 /* CameraSDK.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -167,7 +156,7 @@
 				TargetAttributes = {
 					134F59D121FA0BA600CEDBFC = {
 						CreatedOnToolsVersion = 10.1;
-						LastSwiftMigration = 1010;
+						LastSwiftMigration = 1120;
 					};
 				};
 			};
@@ -203,22 +192,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C2DC4951224BC7F70003C0CA /* DocumentFeedbackDelegate.swift in Sources */,
-				833800AC234CF274006A12C0 /* AcuantCameraOptions.swift in Sources */,
-				C2743A26222DE2E700302CE7 /* CaptureConstants.swift in Sources */,
-				835108F522FA44B200CC8329 /* UIScreenExtn.swift in Sources */,
-				833800BE234CF4D4006A12C0 /* CameraCornerOverlayView.swift in Sources */,
-				833800AB234CF274006A12C0 /* UIImageExtn.swift in Sources */,
-				C25D3BAB220B29EE003F3027 /* DocumentCaptureDelegate.swift in Sources */,
-				833800BC234CF4D4006A12C0 /* CameraDocumentOverlayView.swift in Sources */,
-				83C977FC22C69EDB00FC8C53 /* UIDeviceExtn.swift in Sources */,
-				134F59E621FA0C2B00CEDBFC /* DocumentCameraController.swift in Sources */,
-				C25D3BA9220B29BF003F3027 /* DocumentCaptureSession.swift in Sources */,
-				C2DC4950224BC7F70003C0CA /* FrameAnalysisDelegate.swift in Sources */,
-				134F59E921FA0C8700CEDBFC /* CameraCaptureDelegate.swift in Sources */,
-				833800BD234CF4D4006A12C0 /* AcuantCameraTextView.swift in Sources */,
-				833800BF234CF4D4006A12C0 /* CameraCornerView.swift in Sources */,
-				83C977FB22C69EDB00FC8C53 /* AppOrientationDelegate.swift in Sources */,
+				83B3428A237B291700AB2834 /* DocumentFeedbackDelegate.swift in Sources */,
+				83B34289237B291700AB2834 /* UIDeviceExtn.swift in Sources */,
+				83B3428F237B291700AB2834 /* AcuantCameraOptions.swift in Sources */,
+				83B3428B237B291700AB2834 /* UIScreenExtn.swift in Sources */,
+				83B3428D237B291700AB2834 /* DocumentCaptureSession.swift in Sources */,
+				83B3429A237B299E00AB2834 /* CameraDocumentOverlayView.swift in Sources */,
+				83B3428E237B291700AB2834 /* UIImageExtn.swift in Sources */,
+				83B34288237B291700AB2834 /* CameraCaptureDelegate.swift in Sources */,
+				83B34285237B291700AB2834 /* FrameAnalysisDelegate.swift in Sources */,
+				83B34284237B291700AB2834 /* CaptureConstants.swift in Sources */,
+				83B34283237B291700AB2834 /* DocumentCaptureDelegate.swift in Sources */,
+				83B34297237B299E00AB2834 /* CameraCornerView.swift in Sources */,
+				83B34282237B291700AB2834 /* DocumentCameraController.swift in Sources */,
+				83B34299237B299E00AB2834 /* AcuantCameraTextView.swift in Sources */,
+				83B34298237B299E00AB2834 /* CameraCornerOverlayView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

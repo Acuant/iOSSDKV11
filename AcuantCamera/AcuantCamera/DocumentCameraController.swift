@@ -172,7 +172,6 @@ import AcuantCommon
     internal func capture(_ timer: Timer) {
         self.time -= 1
         if(time <= 1){
-            self.readyToCapture()
             self.captureSession.enableCapture()
             self.captureTimer?.invalidate()
         }
