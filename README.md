@@ -1,4 +1,4 @@
-# Acuant iOS SDK v11.2.5.1
+# Acuant iOS SDK v11.2.5.2
 
 **November 2019**
 
@@ -89,7 +89,7 @@ The SDK includes the following modules:
 1. If you are using COCOAPODS, then add the following podfile:
 
 		platform :ios, '11.0'
-		pod 'AcuantiOSSDKV11', '~> 11.2.5.1'
+		pod 'AcuantiOSSDKV11', '~> 11.2.5.2'
 		
 		
 1. 	Enable "BUILD\_FOR\_DISTRIBUTION" for all Acuant pod frameworks in Build Settings.

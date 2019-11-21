@@ -107,7 +107,18 @@ class RootViewController: UIViewController , InitializationDelegate,CreateInstan
                 let retryCallback = ReinitializeHelper(callback: { isInitialized in
                     DispatchQueue.main.async {
                         if(isInitialized){
-                            AcuantIPLiveness.getLivenessTestCredential(delegate: ipLivenessCallback)
+                            if(!Credential.subscription().isEmpty){
+                                  AcuantIPLiveness.getLivenessTestCredential(delegate: ipLivenessCallback)
+                              }
+                              else{
+                                  self.hideProgressView()
+                                  self.isInitialized = false
+                                  self.resetData()
+                                  self.isIPLivenessEnabled = false
+                                  self.showDocumentCaptureCamera()
+                                  self.IPLivenessSwitch.isOn = false
+                              }
+                            
                         }
                         else{
                             self.hideProgressView()
@@ -153,7 +164,18 @@ class RootViewController: UIViewController , InitializationDelegate,CreateInstan
                 })
                 let retryCallback = ReinitializeHelper(callback: { isInitialized in
                     if(isInitialized){
-                        AcuantIPLiveness.getLivenessTestCredential(delegate: ipLivenessCallback)
+                        if(Credential.subscription() != nil && !Credential.subscription().isEmpty){
+                            AcuantIPLiveness.getLivenessTestCredential(delegate: ipLivenessCallback)
+                        }
+                        else{
+                            self.hideProgressView()
+                            self.isInitialized = false
+                            self.resetData()
+                            self.isHealthCard = true
+                            self.isIPLivenessEnabled = false
+                            self.showDocumentCaptureCamera()
+                            self.IPLivenessSwitch.isOn = false
+                        }
                     }
                     else{
                         self.hideProgressView()
@@ -378,7 +400,7 @@ class RootViewController: UIViewController , InitializationDelegate,CreateInstan
     
     func livenessTestResultReceived(result: LivenessTestResult) {
         isLiveFace = result.passedLivenessTest
-        processFacialMatch(image: result.image!)
+        processFacialMatch(image: result.image)
     }
     
     func livenessTestResultReceiveFailed(error: AcuantError) {
@@ -391,14 +413,14 @@ class RootViewController: UIViewController , InitializationDelegate,CreateInstan
         self.isProcessingFacialMatch = false
     }
 
-    func processFacialMatch(image:UIImage){
-        capturedLiveFace = image
+    func processFacialMatch(image:UIImage?){
         self.showProgressView(text: "Processing...")
         DispatchQueue.global().async {
             while(self.isProcessing == true){
                 sleep(1)
             }
-            if(self.capturedFaceImageUrl != nil){
+            if(self.capturedFaceImageUrl != nil && image != nil){
+                self.capturedLiveFace = image
                 self.isProcessingFacialMatch = true
                 let loginData = String(format: "%@:%@", Credential.username(), Credential.password()).data(using: String.Encoding.utf8)!
                 let base64LoginData = loginData.base64EncodedString()
@@ -768,7 +790,16 @@ class RootViewController: UIViewController , InitializationDelegate,CreateInstan
     func initializationFinished(error: AcuantError?) {
         self.hideProgressView()
         if(error == nil){
-            AcuantIPLiveness.getLivenessTestCredential(delegate: self)
+            if(!Credential.subscription().isEmpty){
+                AcuantIPLiveness.getLivenessTestCredential(delegate: self)
+             }
+             else{
+                 self.hideProgressView()
+                 self.isInitialized = false
+                 self.resetData()
+                 self.isIPLivenessEnabled = false
+                 self.IPLivenessSwitch.isOn = false
+             }
         }else{
             if let msg = error?.errorDescription {
                 CustomAlerts.displayError(message: "\(error!.errorCode) : " + msg)
