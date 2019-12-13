@@ -1,6 +1,6 @@
-# Acuant iOS SDK v11.2.5.2
+# Acuant iOS SDK v11.2.6
 
-**November 2019**
+**December 2019**
 
 See [https://github.com/Acuant/iOSSDKV11/releases](https://github.com/Acuant/iOSSDKV11/releases) for release notes.
 
@@ -89,7 +89,7 @@ The SDK includes the following modules:
 1. If you are using COCOAPODS, then add the following podfile:
 
 		platform :ios, '11.0'
-		pod 'AcuantiOSSDKV11', '~> 11.2.5.2'
+		pod 'AcuantiOSSDKV11', '~> 11.2.6'
 		
 		
 1. 	Enable "BUILD\_FOR\_DISTRIBUTION" for all Acuant pod frameworks in Build Settings.
@@ -141,7 +141,7 @@ The SDK includes the following modules:
 ----------
 ### Capture an Image using AcuantCamera ###
 
-1. AcuantCamera is best used in portrait mode. Please lock the orientation of the app before using Camera. 
+1. AcuantCamera is best used in portrait mode. Lock the orientation of the app before using Camera. 
 
 	**Note:**   If you are using **DocumentCaptureSession** with a custom Controller, you must trigger the capture by calling **captureSession.enableCapture()**.
 
