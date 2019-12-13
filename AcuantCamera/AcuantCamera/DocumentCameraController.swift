@@ -30,15 +30,23 @@ import AcuantCommon
     var hideNavBar : Bool = true
     var autoCapture = true
     var backButton : UIButton!
-    weak var captureTimer: Timer?
     
     private let context = CIContext()
-    private var isCapturing = false
-    private var time = 2
-    private var currentPoints : [CGPoint?] = [nil, nil, nil, nil]
-    private var threshold = 25
+    private var currentPoints : [CGPoint]? = nil
     private var options : AcuantCameraOptions? = nil
     weak private var cameraCaptureDelegate : CameraCaptureDelegate? = nil
+    
+    private var currentState = FrameResult.NO_DOCUMENT
+    private var captureTimerState = 0.0
+    private var isHoldSteady = false
+    private var holdSteadyTimer: Timer!
+    
+    private let captureTime = 1
+    private let documentMovementThreshold = 45
+    
+    private var currentStateCount = 0
+    private var nextState = FrameResult.NO_DOCUMENT
+    
     
     public class func getCameraController(delegate:CameraCaptureDelegate, cameraOptions: AcuantCameraOptions)->DocumentCameraController{
         let c = DocumentCameraController()
@@ -165,52 +173,58 @@ import AcuantCommon
         self.messageLayer.setLookFromState(state: state, frame: self.view.frame)
         self.messageLayer.string = message
         self.cornerLayer.setDefaultCorners(frame: self.view.frame)
-        captureTimer?.invalidate()
-        isCapturing = false
+        self.triggerHoldSteady()
+        self.captureTimerState = 0.0
     }
     
-    internal func capture(_ timer: Timer) {
-        self.time -= 1
-        if(time <= 1){
-            self.captureSession.enableCapture()
-            self.captureTimer?.invalidate()
+    private func triggerHoldSteady(){
+        if(!self.isHoldSteady){
+            self.isHoldSteady = true
+            holdSteadyTimer = Timer.scheduledTimer(
+                timeInterval: 0.1,
+                target: self,
+                selector: #selector(self.delayTimer(_:)),
+                userInfo: nil,
+                repeats: false)
+        }
+    }
+    
+    internal func delayTimer(_ timer: Timer){
+        isHoldSteady = false
+        holdSteadyTimer.invalidate()
+
+    }
+   
+    private func getInterval(time: Double, duration: Double) -> Int{
+        let current = CFAbsoluteTimeGetCurrent() - time
+        return Int(current/duration)
+    }
+    
+    private func handleInterval(){
+        if(captureTimerState == 0){
+            self.messageLayer.string = NSLocalizedString("\(self.captureWaitTime)...", comment: "")
+            self.captureTimerState = CFAbsoluteTimeGetCurrent()
         }
         else{
-            self.messageLayer.string = NSLocalizedString("\(time)...", comment: "")
+            let interval = getInterval(time: self.captureTimerState, duration: self.captureIntervalInSeconds)
+            
+            if(interval >= self.captureTime){
+                self.captureSession.enableCapture()
+            }
+            else{
+                self.messageLayer.string = NSLocalizedString("\(self.captureWaitTime - interval)...", comment: "")
+            }
         }
     }
     
-    private func triggerCapture(newPoints: Array<CGPoint>){
-        DispatchQueue.main.async {
-            if(!self.isCapturing){
-                self.time = self.captureWaitTime
-                self.isCapturing = true
-                
-                self.shapeLayer.showBorderFromState(state: CameraState.Hold)
-                self.messageLayer.setLookFromState(state: CameraState.Hold, frame: self.view.frame)
-                self.messageLayer.string = NSLocalizedString("\(self.time)...", comment: "")
-                self.cornerLayer.setLookFromState(state: CameraState.Hold)
-                self.currentPoints = newPoints
-                
-                self.captureTimer = Timer.scheduledTimer(
-                    timeInterval: self.captureIntervalInSeconds,
-                    target: self,
-                    selector: #selector(self.capture(_:)),
-                    userInfo: nil,
-                    repeats: true)
-            }
-            else{
-                if(self.isDocumentMoved(newPoints: newPoints)){
-                    self.cancelCapture(state: CameraState.Steady, message: NSLocalizedString("acuant_camera_hold_steady", comment: ""))
-                }
-            }
-        }
+    private func triggerCapture(){
+        self.handleInterval()
     }
     
     public func isDocumentMoved(newPoints: Array<CGPoint>) -> Bool{
-        if(newPoints.count == self.currentPoints.count){
-            for i in 0..<self.currentPoints.count {
-                if(Int(abs(self.currentPoints[i]!.x - newPoints[i].x)) > threshold || Int(abs(self.currentPoints[i]!.y - newPoints[i].y)) > threshold ){
+        if(self.currentPoints != nil && newPoints.count == self.currentPoints!.count){
+            for i in 0..<self.currentPoints!.count {
+                if(Int(abs(self.currentPoints![i].x - newPoints[i].x)) > documentMovementThreshold || Int(abs(self.currentPoints![i].y - newPoints[i].y)) > documentMovementThreshold ){
                     return true
                 }
             }
@@ -218,52 +232,105 @@ import AcuantCommon
         return false
     }
     
+    
+    private func transitionState(state: CameraState, localString: String? = nil){
+        self.shapeLayer.showBorderFromState(state: state)
+        self.cornerLayer.setLookFromState(state: state)
+        if(localString != nil){
+            self.cancelCapture(state: state, message: NSLocalizedString(localString!, comment: ""))
+        }
+        else{
+            self.messageLayer.setLookFromState(state: state, frame: self.view.frame)
+        }
+    }
+    
+    //temp fix
+    private var detectDuration = CFAbsoluteTimeGetCurrent()
+    
+    private func isOlderDevice() -> Bool{
+        var isCroppingSlow = false
+        if(CFAbsoluteTimeGetCurrent() - detectDuration > 0.2){
+            isCroppingSlow = true
+        }
+        return isCroppingSlow
+    }
+    
+    private func handleNextState(current: FrameResult) -> Bool{
+        if(nextState == current){
+            currentStateCount += 1
+        }
+        else{
+            nextState = current
+            currentStateCount = 0
+        }
+        
+        if(((currentStateCount > 1) || (currentStateCount > 0 && isOlderDevice())) && (self.currentState != nextState || self.currentState == FrameResult.GOOD_DOCUMENT)){
+            detectDuration = CFAbsoluteTimeGetCurrent()
+            return true
+        }
+        else{
+            detectDuration = CFAbsoluteTimeGetCurrent()
+            return false
+        }
+    }
+    //end temp fix
+    
     public func onFrameAvailable(frameResult: FrameResult, points: Array<CGPoint>?) {
-        if(self.videoPreviewLayer == nil || self.messageLayer == nil || self.captured){
+        if(self.videoPreviewLayer == nil || self.messageLayer == nil || self.captured || !handleNextState(current: frameResult)){
             return
         }
         
+        self.currentState = frameResult
+
         switch(frameResult){
             case FrameResult.NO_DOCUMENT:
-                self.shapeLayer.showBorderFromState(state: CameraState.Align)
-                self.cancelCapture(state: CameraState.Align, message: NSLocalizedString("acuant_camera_align", comment: ""))
-                self.cornerLayer.setLookFromState(state: CameraState.Align)
-                break;
+                self.transitionState(state: CameraState.Align, localString: "acuant_camera_align")
+                break
             case FrameResult.SMALL_DOCUMENT:
-                self.shapeLayer.showBorderFromState(state: CameraState.MoveCloser)
-                self.cancelCapture(state: CameraState.MoveCloser, message: NSLocalizedString("acuant_camera_move_closer", comment: ""))
-                self.cornerLayer.setLookFromState(state: CameraState.MoveCloser)
-                break;
+                self.transitionState(state: CameraState.MoveCloser, localString: "acuant_camera_move_closer")
+                break
             case FrameResult.BAD_ASPECT_RATIO:
-                self.shapeLayer.showBorderFromState(state: CameraState.Align)
-                self.cancelCapture(state: CameraState.Align, message: NSLocalizedString("acuant_camera_align", comment: ""))
-                self.cornerLayer.setLookFromState(state: CameraState.Align)
-                break;
+                self.transitionState(state: CameraState.MoveCloser, localString: "acuant_camera_move_closer")
+                break
             case FrameResult.GOOD_DOCUMENT:
                 if(points != nil && points?.count == 4 && autoCapture){
-                    let openSquarePath = UIBezierPath()
-                    let convertedPoints = [
-                        self.videoPreviewLayer.layerPointConverted(fromCaptureDevicePoint: points![0]),
-                        self.videoPreviewLayer.layerPointConverted(fromCaptureDevicePoint: points![1]),
-                        self.videoPreviewLayer.layerPointConverted(fromCaptureDevicePoint: points![2]),
-                        self.videoPreviewLayer.layerPointConverted(fromCaptureDevicePoint: points![3])
-                    ]
-                    
-                    openSquarePath.move(to: convertedPoints[0])
-                    openSquarePath.addLine(to: convertedPoints[1])
-                    openSquarePath.addLine(to: convertedPoints[2])
-                    openSquarePath.addLine(to: convertedPoints[3])
-                    openSquarePath.addLine(to: convertedPoints[0])
-                    
-                    shapeLayer.path = openSquarePath.cgPath
-                    self.cornerLayer.setCorners(point1: convertedPoints[0], point2: convertedPoints[1], point3: convertedPoints[2], point4: convertedPoints[3])
-                
-                    if(!self.captured){
-                        self.triggerCapture(newPoints: convertedPoints)
+                    let scaledPoints = scalePoints(points: points!)
+                    self.setPath(points: scaledPoints)
+                    if(!isHoldSteady){
+                        self.transitionState(state: CameraState.Hold)
+
+                        if(self.isDocumentMoved(newPoints: scaledPoints)){
+                            self.cancelCapture(state: CameraState.Steady, message: NSLocalizedString("acuant_camera_hold_steady", comment: ""))
+                        }
+                        else if(!self.captured){
+                           self.triggerCapture()
+                        }
+                        self.currentPoints = scaledPoints
                     }
                 }
-                break;
+                break
         }
+    }
+    private func scalePoints(points: Array<CGPoint>) -> Array<CGPoint>{
+        return [
+            self.videoPreviewLayer.layerPointConverted(fromCaptureDevicePoint: points[0]),
+            self.videoPreviewLayer.layerPointConverted(fromCaptureDevicePoint: points[1]),
+            self.videoPreviewLayer.layerPointConverted(fromCaptureDevicePoint: points[2]),
+            self.videoPreviewLayer.layerPointConverted(fromCaptureDevicePoint: points[3])
+        ]
+    }
+    
+    private func setPath(points: Array<CGPoint>){
+        let openSquarePath = UIBezierPath()
+
+        openSquarePath.move(to: points[0])
+        openSquarePath.addLine(to: points[1])
+        openSquarePath.addLine(to: points[2])
+        openSquarePath.addLine(to: points[3])
+        openSquarePath.addLine(to: points[0])
+        
+        self.shapeLayer.path = openSquarePath.cgPath
+        self.cornerLayer.setCorners(point1: points[0], point2: points[1], point3: points[2], point4: points[3])
     }
     
     public func readyToCapture(){

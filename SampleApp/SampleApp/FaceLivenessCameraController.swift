@@ -225,9 +225,9 @@ class FaceLivenessCameraController : UIViewController,AcuantHGLiveFaceCaptureDel
     }
     
     func displayBlinkMessage(){
-        let message = NSMutableAttributedString.init(string: "Blink when green oval appears")
+        let message = NSMutableAttributedString.init(string: "Move closer and blink when green oval appears")
         message.addAttribute(kCTForegroundColorAttributeName as NSAttributedString.Key,value: UIColor.white, range: NSRange.init(location: 0, length: message.length))
-        message.addAttribute(kCTForegroundColorAttributeName as NSAttributedString.Key,value: UIColor.green, range: NSRange.init(location: 11, length: 10))
+        message.addAttribute(kCTForegroundColorAttributeName as NSAttributedString.Key,value: UIColor.green, range: NSRange.init(location: 27, length: 10))
         message.addAttribute(kCTFontAttributeName as NSAttributedString.Key,value:UIFont.boldSystemFont(ofSize: 13), range: NSRange.init(location: 0, length: message.length))
         
         
@@ -242,7 +242,7 @@ class FaceLivenessCameraController : UIViewController,AcuantHGLiveFaceCaptureDel
     }
     
     func getBlinkMessageRect()->CGRect{
-        let width : CGFloat = 220
+        let width : CGFloat = 330
         let height : CGFloat  = 30
         let mainViewFrame = getViewFrame()
         return CGRect.init(x: mainViewFrame.origin.x + mainViewFrame.size.width/2-width/2, y: 0.08*mainViewFrame.size.height, width: width, height: height)
