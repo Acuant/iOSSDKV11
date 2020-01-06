@@ -11,7 +11,7 @@ import Foundation
 @objcMembers public class CaptureConstants : NSObject{
     
     public static let CAMERA_PREVIEW_LONGER_SIDE_STANDARD = 3840
-    public static let CAMERA_PRIVEW_LARGER_DOCUMENT_DPI_RATIO = 0.104167
+    public static let CAMERA_PRIVEW_LARGER_DOCUMENT_DPI_RATIO = 0.094167
     public static let CAMERA_PRIVEW_SMALLER_DOCUMENT_DPI_RATIO = 0.15625
 
     public static let ASPECT_RATIO_ID1 = 1.59

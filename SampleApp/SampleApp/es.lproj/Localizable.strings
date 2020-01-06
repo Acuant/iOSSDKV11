@@ -9,10 +9,11 @@
 "acuant_camera_move_closer" = "MUÉVETE MAS CERCA";
 "acuant_camera_hold_steady" = "MANTENER ESTABLE";
 "acuant_camera_capturing" = "CAPTURA";
+"acuant_camera_outside_view" = "ALINEAR";
 
-/* loco:5b56f1d17ec8ae43575e40f3
- * ok */
-"IProov_OK" = "OK";
+/* loco:5b56f1d17ec8ae43575e40f2
+ * app_name */
+"IProov_AppName" = "iProov";
 
 /* loco:5b56f1d17ec8ae43575e40f4
  * error */
@@ -24,7 +25,7 @@
 
 /* loco:5b56f1d17ec8ae43575e40f6
  * prompt_loading */
-"IProov_PromptLoading" = "por favor espera…";
+"IProov_PromptLoading" = "Por favor espera…";
 
 /* loco:5b56f1d17ec8ae43575e40f7
  * prompt_loading_slow */
@@ -43,48 +44,12 @@
 "IProov_PromptTapToBegin" = "Toca la pantalla para comenzar";
 
 /* loco:5b56f1d17ec8ae43575e40fb
- * prompt_move_closer */
-"IProov_PromptMoveCloser" = "Muévete mas cerca";
+ * prompt_too_far */
+"IProov_PromptTooFar" = "Muévete mas cerca";
 
 /* loco:5b56f1d17ec8ae43575e40fc
  * prompt_too_bright */
 "IProov_PromptTooBright" = "Ve a un lugar más sombrío";
-
-/* loco:5b56f1d17ec8ae43575e40fd
- * prompt_too_backlit */
-"IProov_PromptTooBacklit" = "Estás retroiluminado, gira ligeramente";
-
-/* loco:5b56f1d17ec8ae43575e40fe
- * prompt_too_backlit_short */
-"IProov_PromptTooBacklitShort" = "Estás retroiluminado, gira ligeramente";
-
-/* loco:5b56f1d17ec8ae43575e40ff
- * prompt_beginning_in */
-
-"IProov_PromptBeginningIn" = "Comenzando en…";
-/* loco:5b56f1d17ec8ae43575e4100
- * too_many_faces */
-
-"IProov_TooManyFaces" = "Demasiadas caras";
-/* loco:5b56f1d17ec8ae43575e4101
- * open_your_eyes */
-"IProov_OpenYourEyes" = "Abre tus ojos";
-
-/* loco:5b56f1d17ec8ae43575e4102
- * connected */
-"IProov_Connected" = "Conectada";
-
-/* loco:5b56f1d17ec8ae43575e4104
- * face_camera */
-"IProov_FaceCamera" = "Mira a la cámara directamente";
-
-/* loco:5b56f1d17ec8ae43575e4105
- * streamer_finished */
-"IProov_StreamerFinished" = "Terminada";
-
-/* loco:5b56f1d17ec8ae43575e4106
- * hold_still */
-"IProov_HoldStill" = "Quédate quieto";
 
 /* loco:5b56f1d17ec8ae43575e4107
  * progress_streaming */
@@ -92,98 +57,244 @@
 
 /* loco:5b56f1d17ec8ae43575e4108
  * progress_streaming_slow */
-"IProov_ProgressStreamingSlow" = "Streaming, la red es lenta…";
+"IProov_ProgressStreamingSlow" = "Transmisión, la red es lenta…";
 
 /* loco:5b56f1d17ec8ae43575e4109
  * progress_processing */
 "IProov_ProgressProcessing" = "Tratamiento…";
-
-/* loco:5b56f1d17ec8ae43575e410a
- * dialog_instructions_title */
-"IProov_DialogInstructionsTitle" = "Instrucciones iProov";
-
-/* loco:5b56f1d17ec8ae43575e410b
- * dialog_instructions_message */
-"IProov_DialogInstructionsMessage" = "• Llena el óvalo con tu cara \ n \ n • Toca o espera la cuenta regresiva \ n \ n • Permanece quieto durante el parpadeo";
-
-/* loco:5b56f1d17ec8ae43575e410c
- * dialog_instructions_skip */
-"IProov_DialogInstructionsSkip" = "No muestres esto otra vez";
-
-/* loco:5b56f1d17ec8ae43575e410d
- * agree */
-"IProov_Agree" = "De acuerdo";
-
-/* loco:5b56f1d17ec8ae43575e410e
- * disagree */
-"IProov_Disagree" = "Discrepar";
-
-/* loco:5b56f1d17ec8ae43575e410f
- * dialog_privacy_disagree_title */
-"IProov_DialogPrivacyDisagreeTitle" = "Lo siento";
-
-/* loco:5b56f1d17ec8ae43575e4110
- * dialog_privacy_disagree_message */
-"IProov_DialogPrivacyDisagreeMessage" = "Debe aceptar la política de privacidad para usar iProov";
 
 /* loco:5b56f1d17ec8ae43575e4111
  * iproov_success */
 "IProov_IProovSuccess" = "Has iProoved con éxito";
 
 /* loco:5b56f1d17ec8ae43575e4112
- * scanning */
-"IProov_Scanning" = "Exploración…";
-
-/* loco:5b56f1d17ec8ae43575e4113
- * network_problem_cant_connect */
-"IProov_NetworkProblemCantConnect" = "Problema de red, no se puede conectar";
-
-/* loco:5b56f1d17ec8ae43575e4114
- * lost_internet_link */
-
-"IProov_LostInternetLink" = "Perdió la conexión a Internet, intente nuevamente";
-
-/* loco:5b56f1d17ec8ae43575e4115
- * cannot_stream_video */
-"IProov_CannotStreamVideo" = "No se puede transmitir video, por favor intente nuevamente";
-
-/* loco:5b56f1d17ec8ae43575e4116
- * device_not_supported */
-"IProov_DeviceNotSupported" = "Lo sentimos, tu dispositivo no es compatible actualmente";
-
-/* loco:5b56f1d17ec8ae43575e4117
- * username_already_enrolled */
-"IProov_UsernameAlreadyEnrolled" = "Este nombre de usuario ya ha sido inscrito";
-
-/* loco:5b56f1d17ec8ae43575e4118
- * unknown_identity */
-
-"IProov_UnknownIdentity" = "Este nombre de usuario no está inscrito, regístrese primero";
-
-/* loco:5b56f1d17ec8ae43575e4119
- * camera_permission_denied */
-"IProov_CameraPermissionDenied" = "Permiso de cámara denegado";
+ * prompt_scanning */
+"IProov_PromptScanning" = "Exploración…";
 
 /* loco:5b56f1d17ec8ae43575e411a
  * unknown_error */
-"IProov_UnknownError" = "Error desconocido";
+"IProov_UnknownError" = "Unknown Error";
 
 /* loco:5b56f1d17ec8ae43575e411b
  * starting_detector */
 "IProov_StartingDetector" = "Detector de arranque…";
 
 /* loco:5b56f1d17ec8ae43575e411c
- * ssl_exception */
-"IProov_SSLException" = "Excepción SSL";
+ * error_ssl_exception */
+"IProov_ErrorSSLException" = "SSL Exception";
 
-/* loco:5b56f1d17ec8ae43575e411d
- * too_close */
-"IProov_TooClose" = "Demasiado cerca";
+/* loco:5bbb68727ec8ae0b0e45faf4
+ * progress_identifying_face */
+"IProov_ProgressIdentifyingFace" = "Cara identificativa…";
 
-/* loco:5b5714bb7ec8ae4b51446623
- * not_you */
-"IProov_NotYou" = "¿No tú?";
+/* loco:5bbb68d07ec8ae0b84680992
+ * progress_confirming_identity */
+"IProov_ProgressConfirmingIdentity" = "Confirmando identidad";
 
-/* loco:5b5715247ec8ae4b9a53f972
- * go_back */
-"IProov_GoBack" = "Regresa";
+/* loco:5bbb68f17ec8ae0b7e546063
+ * progress_assessing_genuine_presence */
+"IProov_ProgressAssessingGenuinePresence" = "Evaluar la presencia genuina…";
+
+/* loco:5bbb69067ec8ae0b9856ffe2
+ * progress_loading */
+"IProov_ProgressLoading" = "Por favor espera…";
+
+/* loco:5bbb69267ec8ae0b7d6eaa23
+ * progress_creating_identity */
+"IProov_ProgressCreatingIdentity" = "Creando identidad…";
+
+/* loco:5bbb6b0c7ec8ae0c0c50c744
+ * progress_finding_face */
+"IProov_ProgressFindingFace" = "Encontrando cara…";
+
+/* loco:5bbb816b7ec8ae109642c8c2
+ * authenticate */
+"IProov_Authenticate" = "Authenticate";
+
+/* loco:5bbb81777ec8ae109c2a3952
+ * enrol */
+"IProov_Enrol" = "Enrol";
+
+/* loco:5bbb81dd7ec8ae10ba335193
+ * message_format */
+"IProov_MessageFormat" = "%@ to %@";
+
+/* loco:5bcdab237ec8ae743c2490c3
+ * prompt_too_close */
+"IProov_PromptTooClose" = "Demasiado cerca";
+
+/* loco:5bcf26b9a08ef1469d2129cd
+ * failure_motion_too_much_movement */
+"IProov_FailureMotionTooMuchMovement" = "Por favor no te muevas en iProov";
+
+/* loco:5bcf26d5a08ef1469a501327
+ * failure_lighting_flash_reflection_too_low */
+"IProov_FailureLightingFlashReflectionTooLow" = "Luz ambiental demasiado fuerte o brillo de pantalla demasiado bajo";
+
+/* loco:5bcf26f6a08ef1469b5c6c93
+ * failure_lighting_backlit */
+"IProov_FailureLightingBacklit" = "Fuerte fuente de luz detectada detrás de ti";
+
+/* loco:5bcf2713a08ef146991980c7
+ * failure_lighting_too_dark */
+"IProov_FailureLightingTooDark" = "Tu entorno parece demasiado oscuro";
+
+/* loco:5bcf2735a08ef1473c75eb52
+ * failure_lighting_face_too_bright */
+"IProov_FailureLightingFaceTooBright" = "Demasiada luz detectada en tu cara";
+
+/* loco:5bcf2752a08ef147420f6f72
+ * failure_motion_too_much_mouth_movement */
+"IProov_FailureMotionTooMuchMouthMovement" = "Por favor no hable en iProov";
+
+/* loco:5c470a3d7ec8ae70494fb632
+ * message_format_with_username */
+"IProov_MessageFormatWithUsername" = "%@ as %@ to %@";
+
+/* loco:5ce7afc34d3dd75c910205a2
+ * prompt_roll_too_high */
+"IProov_PromptRollTooHigh" = "Evita inclinar la cabeza";
+
+/* loco:5ce7b1154d3dd75cea6b4852
+ * prompt_roll_too_low */
+"IProov_PromptRollTooLow" = "Evita inclinar la cabeza";
+
+/* loco:5ce7b1414d3dd75ce5786ea4
+ * prompt_yaw_too_low */
+"IProov_PromptYawTooLow" = "Gira ligeramente a la derecha";
+
+/* loco:5ce7b1614d3dd75d0c3caef2
+ * prompt_yaw_too_high */
+"IProov_PromptYawTooHigh" = "Gire ligeramente a la izquierda";
+
+/* loco:5ce7b18c4d3dd75ce93af262
+ * prompt_pitch_too_high */
+"IProov_PromptPitchTooHigh" = "Sostenga el dispositivo a la altura de los ojos.";
+
+/* loco:5ce7b1a84d3dd75d06361922
+ * prompt_pitch_too_low */
+"IProov_PromptPitchTooLow" = "Sostenga el dispositivo a la altura de los ojos.";
+
+/* loco:5ce7b7ca4d3dd75e1f603933
+ * error_streaming */
+"IProov_ErrorStreaming" = "Streaming error";
+
+/* loco:5ce7b7e44d3dd75e2d0a79d3
+ * error_encoder */
+"IProov_ErrorEncoder" = "Encoder error";
+
+/* loco:5ce7b80d4d3dd75e1f603935
+ * error_camera */
+"IProov_ErrorCamera" = "Camera error";
+
+/* loco:5ce7b8344d3dd75e216b9dd4
+ * error_camera_permission_denied */
+"IProov_ErrorCameraPermissionDenied" = "Camera permission denied";
+
+/* loco:5ce7b87c4d3dd75e1d6465c5
+ * error_camera_permission_denied_message_ios */
+"IProov_ErrorCameraPermissionDeniedMessageIos" = "Please allow camera access for this app in iOS Settings";
+
+/* loco:5ce7b8a04d3dd75e216b9dd6
+ * error_server_abort */
+"IProov_ErrorServerAbort" = "Server abort";
+
+/* loco:5ce7b8ba4d3dd75e720a06b2
+ * error_server */
+"IProov_ErrorServer" = "Server error";
+
+/* loco:5ce7b8cf4d3dd75e744b9512
+ * error_lighting_model */
+"IProov_ErrorLightingModel" = "Lighting model error";
+
+/* loco:5ce7bb614d3dd75f10391ce2
+ * error_encoder_unknown_message */
+"IProov_ErrorEncoderUnknownMessage" = "Unknown encoder error";
+
+/* loco:5ce7bbd74d3dd75ecb1bed63
+ * error_encoder_code_message */
+"IProov_ErrorEncoderCodeMessage" = "Error code %@";
+
+/* loco:5d286656ed0cfa14ef7a4832
+ * error_capture_already_active */
+"IProov_ErrorCaptureAlreadyActive" = "An existing capture is already in progress";
+
+/* loco:5d6e453aed0cfa48b04d8944
+ * prompt_get_ready */
+"IProov_PromptGetReady" = "Prepararse…";
+
+/* loco:5d7b9ba4c38e0f552773dd42
+ * prompt_too_right */
+"IProov_PromptTooRight" = "Mover hacia la izquierda";
+
+/* loco:5d7b9ca9c38e0f552a433fb6
+ * prompt_too_left */
+"IProov_PromptTooLeft" = "Moverse a la derecha";
+
+/* loco:5d7b9cd7c38e0f552a433fb8
+ * prompt_too_high */
+"IProov_PromptTooHigh" = "Mover hacia abajo";
+
+/* loco:5d7b9d09c38e0f55016e9b47
+ * prompt_too_low */
+"IProov_PromptTooLow" = "Ascender";
+
+/* loco:5d7b9d4dc38e0f5525429e25
+ * prompt_beginning_in */
+"IProov_PromptBeginningIn" = "Comenzando en…";
+
+/* loco:5d7b9d7dc38e0f556e716462
+ * prompt_grant_permission */
+"IProov_PromptGrantPermission" = "Grant Camera Access";
+
+/* loco:5d7b9df6c38e0f552459601c
+ * prompt_grant_permission_message */
+"IProov_PromptGrantPermissionMessage" = "Camera access must be granted to use iProov";
+
+/* loco:5d7ba03bc38e0f559401b322
+ * passed */
+"IProov_Passed" = "Pasado";
+
+/* loco:5d7ba066c38e0f55a9275a85
+ * failed */
+"IProov_Failed" = "Ha fallado";
+
+/* loco:5d7ba098c38e0f5612366b52
+ * failure_user_timeout */
+"IProov_FailureUserTimeout" = "Sorry, your session has timed out";
+
+/* loco:5d7ba9ccc38e0f5746769f85
+ * failure_network_problem */
+"IProov_FailureNetworkProblem" = "Lo sentimos, problema de red";
+
+/* loco:5d7baa0dc38e0f57200ed694
+ * failure_ambiguous_outcome */
+"IProov_FailureAmbiguousOutcome" = "Lo siento, resultado ambiguo";
+
+/* loco:5d7bab13c38e0f5747306457
+ * error_not_supported */
+"IProov_ErrorNotSupported" = "Unsupported";
+
+/* loco:5d7bab4dc38e0f57bc04d3b3
+ * error_not_supported_message */
+"IProov_ErrorNotSupportedMessage" = "Your device is not supported";
+
+/* loco:5d7babb8c38e0f57bf000183
+ * error_fullscreen_change */
+"IProov_ErrorFullscreenChange" = "Exited full-screen without completing iProov";
+
+/* loco:5d7bac00c38e0f579518c1e4
+ * error_no_camera */
+"IProov_ErrorNoCamera" = "No Camera Detected";
+
+/* loco:5d7bac40c38e0f57bc04d3b6
+ * error_no_camera_message */
+"IProov_ErrorNoCameraMessage" = "A camera must be available to use iProov";
+
+/* loco:5d7bacc8c38e0f57bc04d3b9
+ * error_camera_permission_denied_message */
+"IProov_ErrorCameraPermissionDeniedMessage" = "Permission to access the camera has been denied. Please allow camera access to use iProov. If you have already allowed access, please reload the page.";
+
+/* loco:5d7bacf9c38e0f57c048c734
+ * error_user_timeout */
+"IProov_ErrorUserTimeout" = "Your session has expired";

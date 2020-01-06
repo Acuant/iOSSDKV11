@@ -11,20 +11,17 @@ import UIKit
 import AVFoundation
 import AcuantHGLiveness
 
-class FaceLivenessCameraController : UIViewController,AcuantHGLiveFaceCaptureDelegate{
+class FaceLivenessCameraController : UIViewController, AcuantHGLiveFaceCaptureDelegate{
     
-    public var delegate : AcuantHGLivenessDelegate?
-    
+    weak public var delegate : AcuantHGLivenessDelegate?
     private var overlayView : UIView?
-    
     private var captured = false
-    private let context = CIContext()
-    var captureSession: FaceCaptureSession!
-    var lastDeviceOrientation : UIDeviceOrientation!
-    var videoPreviewLayer: AVCaptureVideoPreviewLayer!
-    var faceOval : CAShapeLayer?
-    var messageBoundingRect : CGRect?
-    
+    private var captureSession: FaceCaptureSession!
+    private var videoPreviewLayer: AVCaptureVideoPreviewLayer!
+    private var faceOval : CAShapeLayer?
+    private var blinkLabel: CATextLayer!
+    private var currentFrameTime = -1.0
+    private let FRAME_DURATION = 0.1
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.setNavigationBarHidden(true, animated: false)
@@ -32,14 +29,13 @@ class FaceLivenessCameraController : UIViewController,AcuantHGLiveFaceCaptureDel
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        (UIApplication.shared.delegate as! AppDelegate).orientationLock = .portrait
+        startCameraView()
     }
     
     
     override func viewDidAppear(_ animated: Bool) {
-        captured = false
         super.viewDidAppear(animated)
-        startCameraView()
+        captured = false
     }
     
     override var prefersStatusBarHidden: Bool {
@@ -66,28 +62,8 @@ class FaceLivenessCameraController : UIViewController,AcuantHGLiveFaceCaptureDel
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         if let connection =  self.videoPreviewLayer?.connection  {
-            let currentDevice: UIDevice = UIDevice.current
-            let orientation: UIDeviceOrientation = currentDevice.orientation
             let previewLayerConnection : AVCaptureConnection = connection
-            if previewLayerConnection.isVideoOrientationSupported {
-                
-                switch (orientation) {
-                case .portrait: updatePreviewLayer(layer: previewLayerConnection, orientation: .portrait)
-                    break
-                    
-                case .landscapeRight: updatePreviewLayer(layer: previewLayerConnection, orientation: .landscapeLeft)
-                    break
-                    
-                case .landscapeLeft: updatePreviewLayer(layer: previewLayerConnection, orientation: .landscapeRight)
-                    break
-                    
-                case .portraitUpsideDown: updatePreviewLayer(layer: previewLayerConnection, orientation: .portraitUpsideDown)
-                    break
-                    
-                default: updatePreviewLayer(layer: previewLayerConnection, orientation: .portrait)
-                    break
-                }
-            }
+            updatePreviewLayer(layer: previewLayerConnection, orientation: .portrait)
         }
     }
     
@@ -96,58 +72,83 @@ class FaceLivenessCameraController : UIViewController,AcuantHGLiveFaceCaptureDel
         if let frontCameraDevice = AVCaptureDevice.default(.builtInWideAngleCamera, for: AVMediaType.video, position: .front) {
             captureDevice = frontCameraDevice
         }
-        captureSession = AcuantHGLiveness.getFaceCaptureSession(delegate: self,captureDevice: captureDevice,previewSize:self.view.layer.bounds.size)
+        captureSession = AcuantHGLiveness.getFaceCaptureSession(delegate: self,captureDevice: captureDevice)
+        captureSession?.start()
+        
         videoPreviewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
         videoPreviewLayer.videoGravity = AVLayerVideoGravity.resizeAspectFill
         videoPreviewLayer.frame = self.view.layer.bounds
+        
         addoverlay()
         displayBlinkMessage()
         
+        faceOval = CAShapeLayer()
+        faceOval?.fillColor = UIColor.clear.cgColor
+        faceOval?.strokeColor = UIColor.green.cgColor
+        faceOval?.lineWidth = 5.0
+        self.videoPreviewLayer.addSublayer(faceOval!)
         self.view.layer.addSublayer(videoPreviewLayer)
-        captureSession?.startRunning()
         
     }
     
-    func liveFaceDetailsCaptured(liveFaceDetails: LiveFaceDetails?) {
+    func shouldSkipFrame(liveFaceDetails: LiveFaceDetails?,faceType: AcuantFaceType) -> Bool{
+        var skipFrame = false
+        if(currentFrameTime < 0 || (liveFaceDetails != nil && liveFaceDetails!.isLiveFace) || CFAbsoluteTimeGetCurrent() - currentFrameTime >= FRAME_DURATION){
+            currentFrameTime = CFAbsoluteTimeGetCurrent()
+        }
+        else{
+            skipFrame = true
+        }
+        return skipFrame
+    }
+    
+    func liveFaceDetailsCaptured(liveFaceDetails: LiveFaceDetails?, faceType: AcuantFaceType) {
+        if(shouldSkipFrame(liveFaceDetails:liveFaceDetails, faceType: faceType)){
+            return
+        }
         
-        if(liveFaceDetails?.faceRect != nil && liveFaceDetails?.image != nil && liveFaceDetails?.cleanAperture != nil){
+        switch(faceType){
+            case AcuantFaceType.NONE:
+                self.addMessage()
+                break
+            case .FACE_TOO_CLOSE:
+                self.addMessage(message: "Too Close! Move Away")
+                break
+            case .FACE_TOO_FAR:
+                self.addMessage(message: "Move Closer")
+                break
+            case .FACE_NOT_IN_FRAME:
+                self.addMessage(message: "Move in Frame")
+                break
+            case .FACE_GOOD_DISTANCE:
+                self.addMessage(message: "Blink!", color: UIColor.green.cgColor)
+                break
+            case .FACE_MOVED:
+                self.addMessage(message: "Hold Steady")
+                break
+        }
+        
+        if(liveFaceDetails?.faceRect != nil && liveFaceDetails?.cleanAperture != nil){
+            let rect = liveFaceDetails!.faceRect!.toCGRect()
+            let totalSize = liveFaceDetails!.cleanAperture!.toCGRect()
+            let scaled = CGRect(x: (rect.origin.x - 150)/totalSize.width, y: 1-((rect.origin.y)/totalSize.height + (rect.height)/totalSize.height), width: (rect.width + 150)/totalSize.width, height: (rect.height)/totalSize.height)
+            let faceRect = videoPreviewLayer.layerRectConverted(fromMetadataOutputRect: scaled)
             
-            let translatedFaceRect = self.calculateFaceRect(faceBounds: liveFaceDetails!.faceRect!.toCGRect(), clearAperture:(liveFaceDetails!.cleanAperture!.toCGRect()))
-            
-            let topPadding = view.safeAreaInsets.top
-            let bottomPadding = view.safeAreaInsets.bottom
-            
-            
-            var width = (translatedFaceRect.width)
-            width = 1.1*width
-            
-            var height = (translatedFaceRect.height)
-            height = 1.3*height
-            
-            let x = (translatedFaceRect.origin.x) + ((translatedFaceRect.width)-width) + (topPadding + bottomPadding)/2
-            let y = (translatedFaceRect.origin.y) + ((translatedFaceRect.height)-height)
-            let faceRect =  CGRect.init(x: x, y: y, width: width, height:height)
-            self.faceOval?.removeFromSuperlayer()
-            faceOval = CAShapeLayer()
+            self.faceOval?.isHidden = false
             faceOval?.path = UIBezierPath.init(ovalIn: faceRect).cgPath
-            faceOval?.fillColor = UIColor.clear.cgColor
-            faceOval?.strokeColor = UIColor.green.cgColor
-            faceOval?.lineWidth = 5.0
             
-            self.videoPreviewLayer.addSublayer((faceOval)!)
-            if(liveFaceDetails?.isLiveFace)!{
+            if(liveFaceDetails?.isLiveFace != nil && liveFaceDetails!.isLiveFace){
                 if(self.captured == false){
                     self.captured = true
                     self.navigationController?.popViewController(animated: true)
                     delegate?.liveFaceCaptured(image: (liveFaceDetails?.image)!)
                 }
             }
-        }else if(liveFaceDetails == nil || liveFaceDetails?.faceRect == nil){
-            self.faceOval?.removeFromSuperlayer()
         }
-        
+        else if(liveFaceDetails == nil || liveFaceDetails?.faceRect == nil){
+            self.faceOval?.isHidden = true
+        }
     }
-    
     // UI Functions
     
     func getViewFrame()->CGRect{
@@ -161,18 +162,11 @@ class FaceLivenessCameraController : UIViewController,AcuantHGLiveFaceCaptureDel
         var retRect : CGRect? = nil
         if (UIDevice.current.userInterfaceIdiom == .pad) {
             let overlayRect = getViewFrame()
-            var hSpace = 0.75
-            var vSpace = 0.75
-            var rectWidth = overlayRect.size.width
-            var rectHeight = overlayRect.size.height
-            if(UIDevice.current.orientation.isLandscape){
-                let tmp = rectWidth
-                rectWidth = rectHeight
-                rectHeight = tmp
-                
-                hSpace = 0.75
-                vSpace = 0.5
-            }
+            let hSpace = 0.75
+            let vSpace = 0.75
+            let rectWidth = overlayRect.size.width
+            let rectHeight = overlayRect.size.height
+            
             let width = rectWidth*CGFloat(hSpace)
             let height = rectHeight*CGFloat(vSpace)
             let horizontalSpace = (overlayRect.size.width-width)/2
@@ -180,18 +174,11 @@ class FaceLivenessCameraController : UIViewController,AcuantHGLiveFaceCaptureDel
             retRect = CGRect.init(x:horizontalSpace, y:verticalSpace, width: width, height: height)
         }else{
             let overlayRect = getViewFrame()
-            var hSpace = 0.95
-            var vSpace = 0.75
-            var rectWidth = overlayRect.size.width
-            var rectHeight = overlayRect.size.height
-            if(UIDevice.current.orientation.isLandscape){
-                let tmp = rectWidth
-                rectWidth = rectHeight
-                rectHeight = tmp
-                
-                hSpace = 0.75
-                vSpace = 0.45
-            }
+            let hSpace = 0.95
+            let vSpace = 0.75
+            let rectWidth = overlayRect.size.width
+            let rectHeight = overlayRect.size.height
+            
             let width = rectWidth*CGFloat(hSpace)
             let height = rectHeight*CGFloat(vSpace)
             let horizontalSpace = (overlayRect.size.width-width)/2
@@ -224,138 +211,39 @@ class FaceLivenessCameraController : UIViewController,AcuantHGLiveFaceCaptureDel
         videoPreviewLayer.addSublayer((overlayView?.layer)!)
     }
     
+    func addMessage(message: String? = nil, color: CGColor = UIColor.red.cgColor, fontSize: CGFloat = 25){
+        if(message == nil){
+            let msg = NSMutableAttributedString.init(string: "Align face and blink when green oval appears")
+            msg.addAttribute(kCTForegroundColorAttributeName as NSAttributedString.Key,value: UIColor.white, range: NSRange.init(location: 0, length: msg.length))
+            msg.addAttribute(kCTForegroundColorAttributeName as NSAttributedString.Key,value: UIColor.green, range: NSRange.init(location: 26, length: 10))
+            msg.addAttribute(kCTFontAttributeName as NSAttributedString.Key,value:UIFont.boldSystemFont(ofSize: 13), range: NSRange.init(location: 0, length: msg.length))
+            blinkLabel.fontSize = 15
+            blinkLabel.foregroundColor = UIColor.white.cgColor
+            blinkLabel.string = msg
+        }
+        else{
+            blinkLabel.fontSize = fontSize
+            blinkLabel.foregroundColor = color
+            blinkLabel.string = message
+        }
+    }
     func displayBlinkMessage(){
-        let message = NSMutableAttributedString.init(string: "Move closer and blink when green oval appears")
-        message.addAttribute(kCTForegroundColorAttributeName as NSAttributedString.Key,value: UIColor.white, range: NSRange.init(location: 0, length: message.length))
-        message.addAttribute(kCTForegroundColorAttributeName as NSAttributedString.Key,value: UIColor.green, range: NSRange.init(location: 27, length: 10))
-        message.addAttribute(kCTFontAttributeName as NSAttributedString.Key,value:UIFont.boldSystemFont(ofSize: 13), range: NSRange.init(location: 0, length: message.length))
-        
-        
-        let blinkLabel = CATextLayer()
+        blinkLabel = CATextLayer()
         blinkLabel.frame = getBlinkMessageRect()
-        blinkLabel.string = message
-        blinkLabel.fontSize = 15
         blinkLabel.contentsScale = UIScreen.main.scale
         blinkLabel.alignmentMode = CATextLayerAlignmentMode.center
         blinkLabel.foregroundColor = UIColor.white.cgColor
+        addMessage()
         videoPreviewLayer.addSublayer(blinkLabel)
     }
     
     func getBlinkMessageRect()->CGRect{
         let width : CGFloat = 330
-        let height : CGFloat  = 30
+        let height : CGFloat  = 55
         let mainViewFrame = getViewFrame()
-        return CGRect.init(x: mainViewFrame.origin.x + mainViewFrame.size.width/2-width/2, y: 0.08*mainViewFrame.size.height, width: width, height: height)
+        return CGRect.init(x: mainViewFrame.origin.x + mainViewFrame.size.width/2-width/2, y: 0.06*mainViewFrame.size.height, width: width, height: height)
         
     }
-    
-    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
-        
-        coordinator.animate(alongsideTransition: { (UIViewControllerTransitionCoordinatorContext) -> Void in
-            
-            let orient = UIApplication.shared.statusBarOrientation
-            
-            switch orient {
-                
-            case .portrait:
-                
-                print("Portrait")
-                
-            case .landscapeLeft,.landscapeRight :
-                
-                print("Landscape")
-                
-            default:
-                
-                print("Anything But Portrait")
-            }
-            
-        }, completion: { (UIViewControllerTransitionCoordinatorContext) -> Void in
-            self.captureSession.stopRunning()
-            var captureDevice: AVCaptureDevice?
-            if let frontCameraDevice = AVCaptureDevice.default(.builtInWideAngleCamera, for: AVMediaType.video, position: .front) {
-                captureDevice = frontCameraDevice
-            }
-            self.captureSession = AcuantHGLiveness.getFaceCaptureSession(delegate: self,captureDevice: captureDevice,previewSize:self.view.layer.bounds.size)
-            self.videoPreviewLayer = AVCaptureVideoPreviewLayer(session: self.captureSession)
-            self.videoPreviewLayer.videoGravity = AVLayerVideoGravity.resizeAspectFill
-            self.videoPreviewLayer.frame = self.view.layer.bounds
-            self.addoverlay()
-            self.displayBlinkMessage()
-            
-            self.view.layer.addSublayer(self.videoPreviewLayer)
-            self.captureSession?.startRunning()
-        })
-        super.viewWillTransition(to: size, with: coordinator)
-        
-    }
-    
-    // Face rect adjustment
-    
-    func videoBox(frameSize: CGSize, apertureSize: CGSize) -> CGRect {
-        //let apertureRatio = apertureSize.height / apertureSize.width
-        //let viewRatio = frameSize.width / frameSize.height
-        
-        var size = CGSize.zero
-        
-        size.width = apertureSize.height * (frameSize.height / apertureSize.width)
-        size.height = frameSize.height
-        
-        var videoBox = CGRect(origin: .zero, size: size)
-        
-        if (size.width < frameSize.width) {
-            videoBox.origin.x = (frameSize.width - size.width) / 2.0
-        } else {
-            videoBox.origin.x = (size.width - frameSize.width) / 2.0
-        }
-        
-        if (size.height < frameSize.height) {
-            videoBox.origin.y = (frameSize.height - size.height) / 2.0
-        } else {
-            videoBox.origin.y = (size.height - frameSize.height) / 2.0
-        }
-        
-        return videoBox
-    }
-    
-    func calculateFaceRect(faceBounds: CGRect, clearAperture: CGRect) -> CGRect {
-        var parentFrameSize = self.videoPreviewLayer.frame.size
-        var apperatureSize = clearAperture.size
-        if #available(iOS 11.0, *) {
-            parentFrameSize.width = parentFrameSize.width - self.view.safeAreaInsets.left - self.view.safeAreaInsets.right
-            
-            apperatureSize.width = apperatureSize.width - self.view.safeAreaInsets.left - self.view.safeAreaInsets.right
-        } else {
-            // Fallback on earlier versions
-        }
-        if #available(iOS 11.0, *) {
-            parentFrameSize.height = parentFrameSize.height - self.view.safeAreaInsets.top - self.view.safeAreaInsets.bottom
-            
-            apperatureSize.height = apperatureSize.height - self.view.safeAreaInsets.top - self.view.safeAreaInsets.bottom
-        } else {
-            // Fallback on earlier versions
-        }
-        let previewBox = videoBox(frameSize: parentFrameSize, apertureSize: apperatureSize)
-        
-        var faceRect = faceBounds
-        
-        swap(&faceRect.size.width, &faceRect.size.height)
-        swap(&faceRect.origin.x, &faceRect.origin.y)
-        
-        let widthScaleBy = previewBox.size.width / apperatureSize.height
-        let heightScaleBy = previewBox.size.height / apperatureSize.width
-        faceRect.size.width *= widthScaleBy
-        faceRect.size.height *= heightScaleBy
-        faceRect.origin.x *= widthScaleBy
-        faceRect.origin.y *= heightScaleBy
-        
-        
-        faceRect = faceRect.offsetBy(dx: 0.0, dy: previewBox.origin.y)
-        let frame = CGRect(x: (parentFrameSize.width) - faceRect.origin.x - faceRect.size.width - previewBox.origin.x / 2.0, y: faceRect.origin.y, width: faceRect.width, height: faceRect.height)
-        
-        return frame
-    }
-    
 }
 
 

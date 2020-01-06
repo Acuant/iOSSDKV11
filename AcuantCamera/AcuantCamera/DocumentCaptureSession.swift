@@ -57,57 +57,52 @@ import AcuantImagePreparation
         }
     }
     
-    override public func startRunning() {
-        DispatchQueue.main.async {
-            super.startRunning()
-            DispatchQueue(label: "come.acuant.avcapture.queue.0",qos:.userInteractive,attributes:.concurrent).async {
-                self.automaticallyConfiguresApplicationAudioSession = false
-                self.usesApplicationAudioSession = false
-                if(self.captureDevice?.isFocusModeSupported(.continuousAutoFocus))! {
-                    try! self.captureDevice?.lockForConfiguration()
-                    self.captureDevice?.focusMode = .continuousAutoFocus
-                    self.captureDevice?.unlockForConfiguration()
-                }
-                do {
-                    self.input = try AVCaptureDeviceInput(device: self.captureDevice!)
-                    if(self.canAddInput(self.input!)){
-                        self.addInput(self.input!)
-                    }
-                } catch _ as NSError {
-                    return
-                }
-                
-                self.sessionPreset = AVCaptureSession.Preset.photo
+    public func start() {
+        DispatchQueue.main.async{
+            self.automaticallyConfiguresApplicationAudioSession = false
+               self.usesApplicationAudioSession = false
+               if(self.captureDevice?.isFocusModeSupported(.continuousAutoFocus))! {
+                   try! self.captureDevice?.lockForConfiguration()
+                   self.captureDevice?.focusMode = .continuousAutoFocus
+                   self.captureDevice?.unlockForConfiguration()
+               }
+               do {
+                   self.input = try AVCaptureDeviceInput(device: self.captureDevice!)
+                   if(self.canAddInput(self.input!)){
+                       self.addInput(self.input!)
+                   }
+               } catch _ as NSError {
+                   return
+               }
+               
+               self.sessionPreset = AVCaptureSession.Preset.photo
 
-                if let formatDescription = self.captureDevice?.activeFormat.formatDescription {
-                    let dimensions = CMVideoFormatDescriptionGetDimensions(formatDescription)
-                    self.devicePreviewResolutionLongerSide = max(Int(dimensions.width),Int(dimensions.height))
-                }
-                
-                self.videoOutput = AVCaptureVideoDataOutput()
-                self.videoOutput?.alwaysDiscardsLateVideoFrames = true
-                let frameQueue = DispatchQueue(label: "com.acuant.frame.queue",qos:.userInteractive,attributes:.concurrent)
-                self.videoOutput?.setSampleBufferDelegate(self, queue: frameQueue)
-                if(self.canAddOutput(self.videoOutput!)){
-                    self.addOutput(self.videoOutput!)
-                }
-                
+               if let formatDescription = self.captureDevice?.activeFormat.formatDescription {
+                   let dimensions = CMVideoFormatDescriptionGetDimensions(formatDescription)
+                   self.devicePreviewResolutionLongerSide = max(Int(dimensions.width),Int(dimensions.height))
+               }
+               
+               self.videoOutput = AVCaptureVideoDataOutput()
+               self.videoOutput?.alwaysDiscardsLateVideoFrames = true
+               let frameQueue = DispatchQueue(label: "com.acuant.frame.queue",qos:.userInteractive,attributes:.concurrent)
+               self.videoOutput?.setSampleBufferDelegate(self, queue: frameQueue)
+               if(self.canAddOutput(self.videoOutput!)){
+                   self.addOutput(self.videoOutput!)
+               }
                 if(self.canAddOutput(self.stillImageOutput)){
-                    self.addOutput(self.stillImageOutput)
-                }
-                
-                /* Check for metadata */
-                self.captureMetadataOutput = AVCaptureMetadataOutput()
-                let metadataQueue = DispatchQueue(label: "com.acuant.metadata.queue",qos:.userInteractive,attributes:.concurrent)
-                self.captureMetadataOutput?.setMetadataObjectsDelegate(self, queue: metadataQueue)
-                if (self.canAddOutput(self.captureMetadataOutput!)) {
-                    self.addOutput(self.captureMetadataOutput!)
-                    self.captureMetadataOutput?.metadataObjectTypes = [.pdf417]
-                }
-                DispatchQueue.main.async {
-                    self.delegate?.didStartCaptureSession()
-                }
-            }
+                    self.stillImageOutput.isLivePhotoCaptureEnabled = false
+                  self.addOutput(self.stillImageOutput)
+              }
+
+               /* Check for metadata */
+               self.captureMetadataOutput = AVCaptureMetadataOutput()
+               let metadataQueue = DispatchQueue(label: "com.acuant.metadata.queue",qos:.userInteractive,attributes:.concurrent)
+               self.captureMetadataOutput?.setMetadataObjectsDelegate(self, queue: metadataQueue)
+               if (self.canAddOutput(self.captureMetadataOutput!)) {
+                   self.addOutput(self.captureMetadataOutput!)
+                   self.captureMetadataOutput?.metadataObjectTypes = [.pdf417]
+               }
+            self.startRunning()
         }
     }
     
@@ -237,9 +232,7 @@ import AcuantImagePreparation
     func capturePhoto() {
         let photoSetting = AVCapturePhotoSettings.init(format: [AVVideoCodecKey: AVVideoCodecType.jpeg])
         photoSetting.isAutoStillImageStabilizationEnabled = true
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-            self.stillImageOutput.capturePhoto(with: photoSetting, delegate: self)
-        }
+        self.stillImageOutput.capturePhoto(with: photoSetting, delegate: self)
     }
     
     func detectImage(image:UIImage)->Image?{

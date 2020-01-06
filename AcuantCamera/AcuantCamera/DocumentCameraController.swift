@@ -79,11 +79,12 @@ import AcuantCommon
     
     override public func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        startCameraView()
     }
     
     override public func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        startCameraView()
+
     }
     
     override public var prefersStatusBarHidden: Bool {
@@ -112,11 +113,9 @@ import AcuantCommon
     
     internal func startCameraView() {
         let captureDevice: AVCaptureDevice = AVCaptureDevice.default(.builtInWideAngleCamera, for: AVMediaType.video, position: .back)!
-        self.view.backgroundColor = UIColor.white
         self.captureSession = DocumentCaptureSession.getDocumentCaptureSession(delegate: self, frameDelegate: self,autoCapture:autoCapture, captureDevice: captureDevice)
-        
+        self.captureSession.start()
         self.videoPreviewLayer = AVCaptureVideoPreviewLayer(session: self.captureSession)
-        self.videoPreviewLayer.isHidden = true
         self.videoPreviewLayer.videoGravity = AVLayerVideoGravity.resizeAspectFill
         self.videoPreviewLayer.frame = self.view.layer.bounds
         self.videoPreviewLayer.connection?.videoOrientation = .portrait
@@ -139,18 +138,6 @@ import AcuantCommon
         self.view.layer.addSublayer(self.videoPreviewLayer)
         addNavigationBackButton()
         
-        self.captureSession?.startRunning()
-
-        UIView.animate(withDuration: 0.1, delay: 0.0, options: .curveEaseOut, animations: {
-            self.view.alpha = 0.3
-        }, completion: nil)
-    }
-    
-    public func didStartCaptureSession() {
-        UIView.animate(withDuration: 0.1, delay: 0.0, options: .curveEaseOut, animations: {
-            self.view.alpha = 1.0
-        }, completion: nil)
-        self.videoPreviewLayer.isHidden = false
     }
     
     public func documentCaptured(image: UIImage, barcodeString: String?) {
@@ -275,14 +262,35 @@ import AcuantCommon
     }
     //end temp fix
     
+    func isInRange(point: CGPoint) -> Bool{
+        return (point.x >= 0 && point.x <= self.videoPreviewLayer.frame.width) && (point.y >= 0 && point.y <= self.videoPreviewLayer.frame.height)
+    }
+    
+    func isOutsideView(points: Array<CGPoint>?) -> Bool {
+        if(points != nil && points?.count == 4 && autoCapture){
+            let scaledPoints = scalePoints(points: points!)
+            for i in scaledPoints {
+               if(!isInRange(point: i)){
+                   return true
+               }
+            }
+        }
+        return false
+    }
+    
     public func onFrameAvailable(frameResult: FrameResult, points: Array<CGPoint>?) {
         if(self.videoPreviewLayer == nil || self.messageLayer == nil || self.captured || !handleNextState(current: frameResult)){
             return
         }
         
-        self.currentState = frameResult
-
-        switch(frameResult){
+        if(isOutsideView(points: points)){
+            self.currentState = FrameResult.DOCUMENT_NOT_IN_FRAME
+        }
+        else{
+            self.currentState = frameResult
+        }
+        
+        switch(self.currentState){
             case FrameResult.NO_DOCUMENT:
                 self.transitionState(state: CameraState.Align, localString: "acuant_camera_align")
                 break
@@ -292,6 +300,9 @@ import AcuantCommon
             case FrameResult.BAD_ASPECT_RATIO:
                 self.transitionState(state: CameraState.MoveCloser, localString: "acuant_camera_move_closer")
                 break
+            case FrameResult.DOCUMENT_NOT_IN_FRAME:
+               self.transitionState(state: CameraState.Align, localString: "acuant_camera_outside_view")
+               break
             case FrameResult.GOOD_DOCUMENT:
                 if(points != nil && points?.count == 4 && autoCapture){
                     let scaledPoints = scalePoints(points: points!)

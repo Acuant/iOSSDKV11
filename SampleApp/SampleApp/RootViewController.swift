@@ -18,7 +18,7 @@ import AVFoundation
 
 class RootViewController: UIViewController , InitializationDelegate,CreateInstanceDelegate,UploadImageDelegate,GetDataDelegate, FacialMatchDelegate,DeleteDelegate,AcuantHGLivenessDelegate,CameraCaptureDelegate,LivenessSetupDelegate,LivenessTestDelegate,LivenessTestResultDelegate, LivenessTestCredentialDelegate{
     
-
+    
     @IBOutlet var autoCaptureSwitch : UISwitch!
     
     public var capturedFrontImage : UIImage?
@@ -35,6 +35,7 @@ class RootViewController: UIViewController , InitializationDelegate,CreateInstan
     public var isRetrying : Bool = false
     private var isInitialized = false
     private var isIPLivenessEnabled = false
+    private var isKeyless = false
     
     public var idOptions : IdOptions? = nil
     public var idData : IdData? = nil
@@ -64,7 +65,7 @@ class RootViewController: UIViewController , InitializationDelegate,CreateInstan
             self.progressView.startAnimation()
             self.view.addSubview(self.progressView)
         }
-
+        
     }
     private func hideProgressView(){
         DispatchQueue.main.async {
@@ -94,7 +95,7 @@ class RootViewController: UIViewController , InitializationDelegate,CreateInstan
                             self.IPLivenessSwitch.isEnabled = true
                         }
                     }
-                
+                    
                     
                 }, onError: {
                     error in
@@ -108,16 +109,16 @@ class RootViewController: UIViewController , InitializationDelegate,CreateInstan
                     DispatchQueue.main.async {
                         if(isInitialized){
                             if(!Credential.subscription().isEmpty){
-                                  AcuantIPLiveness.getLivenessTestCredential(delegate: ipLivenessCallback)
-                              }
-                              else{
-                                  self.hideProgressView()
-                                  self.isInitialized = false
-                                  self.resetData()
-                                  self.isIPLivenessEnabled = false
-                                  self.showDocumentCaptureCamera()
-                                  self.IPLivenessSwitch.isOn = false
-                              }
+                                AcuantIPLiveness.getLivenessTestCredential(delegate: ipLivenessCallback)
+                            }
+                            else{
+                                self.hideProgressView()
+                                self.isInitialized = false
+                                self.resetData()
+                                self.isIPLivenessEnabled = false
+                                self.showDocumentCaptureCamera()
+                                self.IPLivenessSwitch.isOn = false
+                            }
                             
                         }
                         else{
@@ -156,7 +157,7 @@ class RootViewController: UIViewController , InitializationDelegate,CreateInstan
                         self.IPLivenessLabel.isEnabled = true
                         self.IPLivenessSwitch.isEnabled = true
                     }
-                   
+                    
                 }, onError: {
                     error in
                     self.hideProgressView()
@@ -225,7 +226,7 @@ class RootViewController: UIViewController , InitializationDelegate,CreateInstan
     }
     
     func showDocumentCaptureCamera(){
-        // handler in .requestAccess is needed to process user's answer to our request
+        //handler in .requestAccess is needed to process user's answer to our request
         AVCaptureDevice.requestAccess(for: .video) { [weak self] success in
             if success { // if request is granted (success is true)
                 DispatchQueue.main.async {
@@ -236,7 +237,7 @@ class RootViewController: UIViewController , InitializationDelegate,CreateInstan
             } else { // if request is denied (success is false)
                 // Create Alert
                 let alert = UIAlertController(title: "Camera", message: "Camera access is absolutely necessary to use this app", preferredStyle: .alert)
-                
+
                 // Add "OK" Button to alert, pressing it will bring you to the settings app
                 alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
                     UIApplication.shared.open(URL(string: UIApplication.openSettingsURLString)!)
@@ -312,9 +313,8 @@ class RootViewController: UIViewController , InitializationDelegate,CreateInstan
             liveFaceViewController.delegate = self
             self.navigationController?.pushViewController(liveFaceViewController, animated: true)
         }
-        
     }
-
+    
     
     func showResult(data:Array<String>?,front:String?,back:String?,sign:String?,face:String?){
         DispatchQueue.global().async {
@@ -369,9 +369,8 @@ class RootViewController: UIViewController , InitializationDelegate,CreateInstan
             resultViewController.back = back
             self.navigationController?.pushViewController(resultViewController, animated: true)
         }
-        
     }
-
+    
     
     // IP Liveness
     func livenessSetupSucceeded(result: LivenessSetupResult) {
@@ -412,7 +411,7 @@ class RootViewController: UIViewController , InitializationDelegate,CreateInstan
         isLiveFace = false
         self.isProcessingFacialMatch = false
     }
-
+    
     func processFacialMatch(image:UIImage?){
         self.showProgressView(text: "Processing...")
         DispatchQueue.global().async {
@@ -444,7 +443,7 @@ class RootViewController: UIViewController , InitializationDelegate,CreateInstan
                         self.isProcessingFacialMatch = false
                         return
                     }
-                    }.resume()
+                }.resume()
             }else{
                 self.isProcessingFacialMatch = false
                 DispatchQueue.main.async {
@@ -466,17 +465,51 @@ class RootViewController: UIViewController , InitializationDelegate,CreateInstan
                 self.hideProgressView()
             }
         }
-      
     }
-    public func setCapturedImage(image:Image, barcodeString:String?){
-        self.showProgressView(text: "Processing...")
     
-        if(barcodeString != nil){
-            capturedBarcodeString = barcodeString
-        }
-        let croppedImage = cropImage(image: image.image!)
+    public func showHGLiveness(){
+        let liveFaceViewController = FaceLivenessCameraController()
+        self.navigationController?.pushViewController(liveFaceViewController, animated: true)
+    }
+    
+    public func cropImage(image:Image, callback: @escaping (Image?) -> ()){
+        self.showProgressView(text: "Processing...")
         DispatchQueue.global().async {
+            let croppedImage = self.cropImage(image: image.image!)
             DispatchQueue.main.async {
+                self.hideProgressView()
+                callback(croppedImage)
+            }
+        }
+    }
+    
+    private func handleKeyless(image:Image){
+        cropImage(image: image){ croppedImage in
+            if(croppedImage == nil || croppedImage!.isPassport || self.side == CardSide.Back){
+                self.showHGLiveness()
+            }
+            else{
+                let alert = UIAlertController(title: NSLocalizedString("Back Side?", comment: ""), message: NSLocalizedString("Scan the back side of the ID document", comment: ""), preferredStyle:UIAlertController.Style.alert)
+                alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default)
+                { action -> Void in
+                    self.side = CardSide.Back
+                    self.captureWaitTime = 2
+                    self.showDocumentCaptureCamera()
+                })
+                self.present(alert, animated: true, completion: nil)
+            }
+        }
+    }
+    
+    public func setCapturedImage(image:Image, barcodeString:String?){
+        if(self.isKeyless){
+            handleKeyless(image: image)
+        }
+        else{
+            if(barcodeString != nil){
+                capturedBarcodeString = barcodeString
+            }
+            cropImage(image: image){ croppedImage in
                 if(croppedImage?.image == nil || (croppedImage?.error != nil && croppedImage?.error?.errorCode != AcuantErrorCodes.ERROR_LowResolutionImage)){
                     CustomAlerts.display(
                         message: (croppedImage?.error?.errorDescription)!,
@@ -485,7 +518,6 @@ class RootViewController: UIViewController , InitializationDelegate,CreateInstan
                 else{
                     let sharpness = AcuantImagePreparation.sharpness(image:croppedImage!.image!)
                     let glare = AcuantImagePreparation.glare(image:croppedImage!.image!)
-                    self.hideProgressView()
                     
                     let storyBoard = UIStoryboard.init(name: "Main", bundle: nil)
                     let confirmController = storyBoard.instantiateViewController(withIdentifier: "ConfirmationViewController") as! ConfirmationViewController
@@ -503,9 +535,9 @@ class RootViewController: UIViewController , InitializationDelegate,CreateInstan
                     confirmController.image = croppedImage
                     self.navigationController?.pushViewController(confirmController, animated: true)
                 }
-                self.hideProgressView()
             }
         }
+        
     }
     
     func cropImage(image:UIImage)->Image?{
@@ -751,32 +783,26 @@ class RootViewController: UIViewController , InitializationDelegate,CreateInstan
         showDocumentCaptureCamera()
     }
     
-   // let vcUtil = ViewControllerUtils.createInstance()
     override func viewDidLoad() {
         super.viewDidLoad()
         
         autoCaptureSwitch.setOn(true, animated: false)
+        self.isKeyless = Credential.subscription() == ""
         
-//        var configDictionay: NSDictionary?
-//        if let path = Bundle.main.path(forResource: "Config", ofType: "plist") {
-//            configDictionay = NSDictionary(contentsOfFile: path)
-//        }
-//
-
         self.progressView = AcuantProgressView(frame: self.view.frame, center: self.view.center)
         self.showProgressView(text:  "Initializing...")
         
         // If not initialized via AcuantConfig.plist , the initiallize as below
         /*Credential.setUsername(username: "xxx")
-        Credential.setPassword(password: "xxxx")
-        Credential.setSubscription(subscription: "xxxxxx")
-        
-        let endpoints = Endpoints()
-        endpoints.frmEndpoint = "https://frm.acuant.net"
-        endpoints.healthInsuranceEndpoint = "https://medicscan.acuant.net"
-        endpoints.idEndpoint = "https://services.assureid.net"
-        
-        Credential.setEndpoints(endpoints: endpoints)*/
+         Credential.setPassword(password: "xxxx")
+         Credential.setSubscription(subscription: "xxxxxx")
+         
+         let endpoints = Endpoints()
+         endpoints.frmEndpoint = "https://frm.acuant.net"
+         endpoints.healthInsuranceEndpoint = "https://medicscan.acuant.net"
+         endpoints.idEndpoint = "https://services.assureid.net"
+         
+         Credential.setEndpoints(endpoints: endpoints)*/
         
         
         AcuantImagePreparation.initialize(delegate:self)
@@ -792,14 +818,14 @@ class RootViewController: UIViewController , InitializationDelegate,CreateInstan
         if(error == nil){
             if(!Credential.subscription().isEmpty){
                 AcuantIPLiveness.getLivenessTestCredential(delegate: self)
-             }
-             else{
-                 self.hideProgressView()
-                 self.isInitialized = false
-                 self.resetData()
-                 self.isIPLivenessEnabled = false
-                 self.IPLivenessSwitch.isOn = false
-             }
+            }
+            else{
+                self.hideProgressView()
+                self.isInitialized = false
+                self.resetData()
+                self.isIPLivenessEnabled = false
+                self.IPLivenessSwitch.isOn = false
+            }
         }else{
             if let msg = error?.errorDescription {
                 CustomAlerts.displayError(message: "\(error!.errorCode) : " + msg)

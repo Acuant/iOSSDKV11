@@ -61,6 +61,7 @@ class ConfirmationViewController: UIViewController {
         }
         
         textView.text = text
+        textView.isEditable = false
     }
 
     override func didReceiveMemoryWarning() {

@@ -1,6 +1,6 @@
-# Acuant iOS SDK v11.2.6
+# Acuant iOS SDK v11.2.7
 
-**December 2019**
+**January 2020**
 
 See [https://github.com/Acuant/iOSSDKV11/releases](https://github.com/Acuant/iOSSDKV11/releases) for release notes.
 
@@ -89,7 +89,7 @@ The SDK includes the following modules:
 1. If you are using COCOAPODS, then add the following podfile:
 
 		platform :ios, '11.0'
-		pod 'AcuantiOSSDKV11', '~> 11.2.6'
+		pod 'AcuantiOSSDKV11', '~> 11.2.7'
 		
 		
 1. 	Enable "BUILD\_FOR\_DISTRIBUTION" for all Acuant pod frameworks in Build Settings.
@@ -288,22 +288,38 @@ After a document image is captured, it can be processed using the following step
 
 This module checks for liveness (whether the subject is a live person) by using blink detection. The user interface code for this is contained in the Sample application (**FaceLivenessCameraController.swift**) which customers may modify for their specific requirements.
 
-**Create a face live capture session:**
+**Acuant UI in Sample App**
 
-		public class func getFaceCaptureSession(delegate:AcuantHGLiveFaceCaptureDelegate?,captureDevice: AVCaptureDevice?,previewSize:CGSize?)->FaceCaptureSession
+	// Code for HG Live controller
+	let liveFaceViewController = FaceLivenessCameraController()
+	liveFaceViewController.delegate : AcuantHGLiveFaceCaptureDelegate = self
+	self.navigationController.pushViewController(liveFaceViewController, animated: true)
 
-		public protocol AcuantHGLiveFaceCaptureDelegate {
-    		func liveFaceDetailsCaptured(liveFaceDetails: LiveFaceDetails?)
-		}
+**Custom UI, create a face live capture session:**
+		
+	enum AcuantFaceType : Int {
+	
+	    case NONE //No face
+		
+	    case FACE_TOO_CLOSE //face is too close camera
+		
+	    case FACE_MOVED //face moved from its original position
+		
+	    case FACE_TOO_FAR //face is too far from camera
+			
+	    case FACE_NOT_IN_FRAME // face is not in frame
+	    
+	    case FACE_GOOD_DISTANCE //face is good distance and in frame
+    }
 
-**Example**
+	public protocol AcuantHGLiveFaceCaptureDelegate {
+			func liveFaceDetailsCaptured(liveFaceDetails: LiveFaceDetails?, faceType: AcuantHGLiveness.AcuantFaceType)
+	}
 
-		self.captureSession = AcuantHGLiveness.getFaceCaptureSession(delegate: self,captureDevice: captureDevice,previewSize:self.view.layer.bounds.size)
+	public class func getFaceCaptureSession(delegate:AcuantHGLiveFaceCaptureDelegate?, captureDevice: AVCaptureDevice?)-> FaceCaptureSession
 
-		// Code for HG Live controller
-		let liveFaceViewController = FaceLivenessCameraController()
-		liveFaceViewController.delegate = self
-		AppDelegate.navigationController?.pushViewController(liveFaceViewController, animated: true)
+    
+    let faceCaptureSession = AcuantHGLiveness.getFaceCaptureSession(delegate: self, captureDevice: captureDevice)
 
 ----------
 
