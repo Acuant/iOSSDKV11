@@ -143,12 +143,9 @@ The SDK includes the following modules:
 
 1. AcuantCamera is best used in portrait mode. Lock the orientation of the app before using Camera. 
 
-	**Note:**   If you are using **DocumentCaptureSession** with a custom Controller, you must trigger the capture by calling **captureSession.enableCapture()**.
-
-
 1. Set up callbacks:
 		
-		//Returns the image and barcodeString captured from device
+		// Returns the image and barcodeString captured from device
 		public protocol CameraCaptureDelegate {
 	    	func setCapturedImage(image:Image, barcodeString:String?)
 		}
@@ -167,6 +164,51 @@ The SDK includes the following modules:
 		public protocol CameraCaptureDelegate {
 	    	func setCapturedImage(image:Image, barcodeString:String?)
 		}
+		
+		
+**Custom UI with DocumentCaptureSesssion (see DocumentCameraController.swift for reference):**
+
+1. Get the DocumentCaptureSesssion.
+		
+		@objc public protocol DocumentCaptureDelegate {
+		    func readyToCapture() // gets called when triggering capture
+		    func documentCaptured(image:UIImage, barcodeString:String?) // gets called with captured result
+		}
+		
+		let captureSession = DocumentCaptureSession.getDocumentCaptureSession(
+			delegate: DocumentCaptureDelegate, // session callback
+			frameDelegate: FrameAnalysisDelegate, // frame anaylsis callback
+			autoCapture:Bool, // enable frame analysis
+			captureDevice:AVCaptureDevice?) // AV Capture Device 
+			
+1. Start the session, and then add the session to AVCaptureVideoPreviewLayer.
+
+		captureSession.start() // will start the capture session.
+		let videoPreviewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
+		//add custom ui
+
+		
+1. Receive Frame Results.
+		
+		@objc public enum FrameResult : Int{
+		    case NO_DOCUMENT, // No document
+		    	SMALL_DOCUMENT, // Document is small
+		    	BAD_ASPECT_RATIO, // Document type does not match aspect ratio
+		    	GOOD_DOCUMENT, // Document is good to trigger capture
+		    	DOCUMENT_NOT_IN_FRAME // Document is not in frame
+		}
+		
+		@objc public protocol FrameAnalysisDelegate{
+		    func onFrameAvailable(frameResult: FrameResult, points: Array<CGPoint>?)
+		}
+		
+1. Trigger capture.
+
+		captureSession.enableCapture()
+		
+1. DocumentCaptureDelegate will be executed with result
+	
+		func documentCaptured(image:UIImage, barcodeString:String?)
 
 	**Note:**   **AcuantCamera** is dependent on **AcuantImagePreparation** and  **AcuantCommon**.
 
@@ -212,7 +254,6 @@ Without a Subscription ID:
 		public protocol DocumentCaptureDelegate {
     		func readyToCapture()
     		func documentCaptured(image:UIImage, barcodeString:String?)
-    		func didStartCaptureSession()
 		}
 
 #### Cropping ####
@@ -299,17 +340,17 @@ This module checks for liveness (whether the subject is a live person) by using 
 		
 	enum AcuantFaceType : Int {
 	
-	    case NONE //No face
+	    case NONE // No face
 		
-	    case FACE_TOO_CLOSE //face is too close camera
+	    case FACE_TOO_CLOSE // face is too close camera
 		
-	    case FACE_MOVED //face moved from its original position
+	    case FACE_MOVED // face moved from its original position
 		
-	    case FACE_TOO_FAR //face is too far from camera
+	    case FACE_TOO_FAR // face is too far from camera
 			
 	    case FACE_NOT_IN_FRAME // face is not in frame
 	    
-	    case FACE_GOOD_DISTANCE //face is good distance and in frame
+	    case FACE_GOOD_DISTANCE // face is good distance and in frame
     }
 
 	public protocol AcuantHGLiveFaceCaptureDelegate {
@@ -356,7 +397,7 @@ The **AcuantIPLiveness** module checks whether the subject is a live person.
 		setupResult.ui.notReadyTintColor = .orange
 		setupResult.ui.readyTintColor = .green
 
-		setupResult.ui.title = "title"// Specify a custom title to be shown. Defaults to nil which will show an auto generated message. Set to empty string ("") to hide the message entirely.
+		setupResult.ui.title = "title" // Specify a custom title to be shown. Defaults to nil which will show an auto generated message. Set to empty string ("") to hide the message entirely.
 		setupResult.ui.regularFont = "SomeFont"
 		setupResult.ui.boldFont = "SomeFont-Bold"
 		setupResult.ui.fonts = ["SomeFont", "SomeFont-Bold"] // If using custom fonts, specify them here (don't forget to add them to your Info.plist!)
@@ -545,7 +586,7 @@ Acuant does not provide obfuscation tools, however several third-party tools, in
 
 -------------------------------------------------------------
 
-**Copyright 2019 Acuant Inc. All rights reserved.**
+**Copyright 2020 Acuant Inc. All rights reserved.**
 
 This document contains proprietary and confidential information and creative works owned by Acuant and its respective licensors, if any. Any use, copying, publication, distribution, display, modification, or transmission of such technology, in whole or in part, in any form or by any means, without the prior express written permission of Acuant is strictly prohibited. Except where expressly provided by Acuant in writing, possession of this information shall not be construed to confer any license or rights under any Acuant intellectual property rights, whether by estoppel, implication, or otherwise.
 
