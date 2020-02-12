@@ -11,6 +11,16 @@
 "acuant_camera_capturing" = "CAPTURING";
 "acuant_camera_outside_view" = "ALIGN";
 
+// Acuant Face Capture
+"acuant_face_camera_initial" = "Align face to start capture";
+"acuant_face_camera_face_too_close" = "Too Close! Move Away";
+"acuant_face_camera_face_too_far" = "Move Closer";
+"acuant_face_camera_face_has_angle" =  "Face has Angle. Do not tilt";
+"acuant_face_camera_face_not_in_frame" =  "Move in Frame";
+"acuant_face_camera_face_moved" = "Hold Steady";
+"acuant_face_camera_capturing_2" = "Capturing\n2...";
+"acuant_face_camera_capturing_1" = "Capturing\n1...";
+
 /* loco:5b56f1d17ec8ae43575e40f2
  * app_name */
 "IProov_AppName" = "iProov";

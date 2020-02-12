@@ -1,5 +1,5 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.1.2 (swiftlang-1100.0.278 clang-1100.0.33.9)
+// swift-compiler-version: Apple Swift version 5.1.3 (swiftlang-1100.0.282.1 clang-1100.0.33.15)
 // swift-module-flags: -target x86_64-apple-ios11.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name AcuantCommon
 import Foundation
 import MobileCoreServices
@@ -62,14 +62,16 @@ import UIKit
   @objc public static let ERROR_CouldNotAccessLivenessData: Swift.Int
   @objc public static let ERROR_CouldNotAccessCredential: Swift.Int
   @objc public static let ERROR_USER_CANCELED_ACTIVITY: Swift.Int
+  @objc public static let ERROR_INVALID_PARAMETER: Swift.Int
   @objc override dynamic public init()
   @objc deinit
 }
 @objc @objcMembers public class Credential : ObjectiveC.NSObject {
-  @objc public class func username() -> Swift.String
-  @objc public class func password() -> Swift.String
-  @objc public class func subscription() -> Swift.String
-  @objc public class func endpoints() -> AcuantCommon.Endpoints
+  @objc public class func username() -> Swift.String?
+  @objc public class func password() -> Swift.String?
+  @objc public class func subscription() -> Swift.String?
+  @objc public class func endpoints() -> AcuantCommon.Endpoints?
+  @objc public class func isCredentialValid(endpoint: Swift.String?) -> Swift.Bool
   @objc public class func setUsername(username: Swift.String!)
   @objc public class func setPassword(password: Swift.String!)
   @objc public class func setSubscription(subscription: Swift.String!)
@@ -103,6 +105,7 @@ import UIKit
   @objc public static let ERROR_DESC_CouldNotAccessLivenessData: Swift.String
   @objc public static let ERROR_DESC_ERROR_CouldNotAccessCredential: Swift.String
   @objc public static let ERROR_DESC_USER_CANCELED_ACTIVITY: Swift.String
+  @objc public static let ERROR_DESC_INVALID_PARAMETERS: Swift.String
   @objc override dynamic public init()
   @objc deinit
 }
@@ -130,6 +133,7 @@ import UIKit
 @objc @objcMembers public class Endpoints : ObjectiveC.NSObject {
   @objc public var frmEndpoint: Swift.String?
   @objc public var idEndpoint: Swift.String?
+  @objc public var passiveLivenessEndpoint: Swift.String?
   @objc public var healthInsuranceEndpoint: Swift.String?
   @objc public class func newInstance() -> AcuantCommon.Endpoints
   @objc override dynamic public init()

@@ -1,0 +1,11 @@
+framework module AcuantPassiveLiveness {
+  umbrella header "AcuantPassiveLiveness.h"
+
+  export *
+  module * { export * }
+}
+
+module AcuantPassiveLiveness.Swift {
+    header "AcuantPassiveLiveness-Swift.h"
+    requires objc
+}

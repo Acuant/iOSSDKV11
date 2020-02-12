@@ -1,6 +1,6 @@
-# Acuant iOS SDK v11.2.7
+# Acuant iOS SDK v11.3.0
 
-**January 2020**
+**Febuary 2020**
 
 See [https://github.com/Acuant/iOSSDKV11/releases](https://github.com/Acuant/iOSSDKV11/releases) for release notes.
 
@@ -12,7 +12,7 @@ This document provides detailed information about the Acuant iOS SDK. The Acuant
 
 ![](https://i.imgur.com/KR0J94S.png)
 
-**Note** The accceptable quality image is well-cropped, sharp and with no glare present, has a resolution of at least 300 dpi (for data capture) or 600 dpi (for authentication). The aspect ratio should be acceptable and matches an ID document.
+**Note** The acceptable quality image is well-cropped, sharp and with no glare present, has a resolution of at least 300 dpi (for data capture) or 600 dpi (for authentication). The aspect ratio should be acceptable and matches an ID document.
 
 ----------
 ## Prerequisites ##
@@ -22,6 +22,14 @@ This document provides detailed information about the Acuant iOS SDK. The Acuant
 ## Modules ##
 
 The SDK includes the following modules:
+
+**Acuant Face Capture Library (AcuantFaceCapture):**
+
+- Uses native iOS Camera to capture face.
+
+**Acuant Passive Liveness Library (AcuantPassiveLiveness):**
+
+- Uses proprietary algorithm to detect a live person
 
 **Acuant Common Library (AcuantCommon):**
 
@@ -57,7 +65,8 @@ The SDK includes the following modules:
 
 1. Add the following dependent embedded frameworks:
 
-
+ -	**AcuantFaceCapture**
+ -	**AcuantPassiveLiveness**
  -	**AcuantCommon**
  -	**AcuantImagePreparation**
  -	**AcuantCamera**
@@ -89,7 +98,7 @@ The SDK includes the following modules:
 1. If you are using COCOAPODS, then add the following podfile:
 
 		platform :ios, '11.0'
-		pod 'AcuantiOSSDKV11', '~> 11.2.7'
+		pod 'AcuantiOSSDKV11', '~> 11.3.0'
 		
 		
 1. 	Enable "BUILD\_FOR\_DISTRIBUTION" for all Acuant pod frameworks in Build Settings.
@@ -129,6 +138,8 @@ The SDK includes the following modules:
 				<string>xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</string>
 				<key>frm_endpoint</key>
 				<string>https://frm.acuant.net</string>
+				<key>passive_liveness_endpoint</key>
+				<string>https://passlive.acuant.net</string>
 				<key>med_endpoint</key>
 				<string>https://medicscan.acuant.net</string>
 				<key>assureid_endpoint</key>
@@ -325,6 +336,137 @@ After a document image is captured, it can be processed using the following step
 
 ----------
 
+----------
+
+### Acuant Face Capture ###
+
+1. (Optional) Set default Image. Locate "acuant\_default\_face_image.png" in the Assets directory of sample app project. Add this to your app if needed.
+	
+1. Set localized strings in app's localizables:
+		
+		"acuant_face_camera_initial" = "Align face to start capture";
+		"acuant_face_camera_face_too_close" = "Too Close! Move Away";
+		"acuant_face_camera_face_too_far" = "Move Closer";
+		"acuant_face_camera_face_has_angle" =  "Face has Angle. Do not tilt";
+		"acuant_face_camera_face_not_in_frame" =  "Move in Frame";
+		"acuant_face_camera_face_moved" = "Hold Steady";
+		"acuant_face_camera_capturing_2" = "Capturing\n2...";
+		"acuant_face_camera_capturing_1" = "Capturing\n1...";	
+1. Set any UI Customizations needed:
+		
+		class FaceAcuantCameraOptions{
+			public let totalCaptureTime: Int //totoal time to capture
+			public let bracketColorDefault: CGColor //bracket color default (no face)
+			public let bracketColorError: CGColor //bracket color error (error in face requirements)
+			public let bracketColorGood: CGColor //bracket color good (good face requirements)
+			public let fontColorDefault: CGColor //font color default
+			public let fontColorError: CGColor //font color error
+			public let fontColorGood: CGColor //font color good
+			public let defaultImageUrl: String //default image
+			public let showOval: Bool // show oval
+		}
+		
+		//example
+		let options = FaceAcuantCameraOptions()
+		
+1. Get the Controller and push to navigationController:
+
+		let controller = AcuantFaceCaptureController()
+			controller.options = options
+			controller.callback = { [weak self]
+				(image: UIImage?) in
+					
+					if(image == nil){
+						//user canceled
+					}
+                
+			}
+				
+		self.navigationController.pushViewController(controller, animated: true)
+
+		
+1. Use the callback with the captured result. 
+
+----------
+
+### Acuant Passive Liveness ###
+Acuant recommends using the **LiveAssessment** property rather than the score) to evaluate response. **AcuantPassiveLiveness.startSelfieCapture** will return a rescaled image.
+
+Follow these recommendations to effectively process an image for passive liveness:
+####Image requirements
+- **Height**:  minimum 480 pixels; recommended 720 or 1080 pixels
+- **Compression**:  Image compression is not recommended (JPEG 70 level or above is acceptable). For best results, use uncompressed images.
+
+####Face requirements
+- Out-of-plane rotation:  Face pitch and yaw angle: from -20 to 20 degrees +/-3 degrees
+- In-plane rotation:  Face roll angle: from -30 to 30 degrees +/- 3 degrees
+- Pupillary distance:  Minimum distance between the eyes 90 +/- 5 pixels
+- Face size: Minimum 200 pixels in either dimension
+- Faces per image: 1
+- Sunglasses: Must be removed
+
+####Capture requirements
+The following may significantly increase errors or false results:
+
+- Using a motion blur effect
+- Texture filtering
+- A spotlight on the face and nearest surroundings
+- An environment with poor lighting or colored light
+
+**Note**  The use of fish-eye lenses is not supported by this API.
+
+1. Get Passive Liveness result with UIImage:
+
+		//liveness request
+		class AcuantLivenessRequest{
+		    public let image: UIImage
+		    public init(image: UIImage)
+		}
+		
+		//liveness response
+		class AcuantLivenessResponse{
+			public let score: Int
+			public let result: AcuantLivenessAssessment
+    		
+    		public enum AcuantLivenessAssessment: String{
+				case Error
+				case PoorQuality
+				case Live
+				case NotLive
+			}
+		}
+		
+		//liveness response
+		class AcuantLivenessError{
+			public let errorCode: AcuantLivenessErrorCode?
+			public let description: String?
+			
+			
+			public enum AcuantLivenessErrorCode: String{
+			    case Unknown
+			    case FaceTooClose
+			    case FaceNotFound
+			    case FaceTooSmall
+			    case FaceAngleTooLarge
+			    case FailedToReadImage
+			    case InvalidRequest
+			    case InvalidRequestSettings
+			    case Unauthorized
+			    case NotFound
+			    case InternalError
+			    case InvalidJson
+			}
+		}
+		
+		//example
+		AcuantPassiveLiveness.postLiveness(request: AcuantLivenessRequest(image: image)){ [weak self]
+			(result: AcuantLivenessResponse?, error: AcuantLivenessError?) in
+				//response
+		}
+    
+----------
+
+
 ### AcuantHGLiveness ###
 
 This module checks for liveness (whether the subject is a live person) by using blink detection. The user interface code for this is contained in the Sample application (**FaceLivenessCameraController.swift**) which customers may modify for their specific requirements.
@@ -379,10 +521,10 @@ The **AcuantIPLiveness** module checks whether the subject is a live person.
 		}
 
     	public class LivenessSetupResult {
-    		public var apiKey : String? = nil
-    		public var token : String? = nil
-    		public var userId : String? = nil
-    		public var apiEndpoint : String? = nil
+    		public var apiKey : String
+    		public var token : String
+    		public var userId : String
+    		public var apiEndpoint : String
    
 		}
 		
@@ -443,15 +585,15 @@ The following is a list of dependencies:
 
 This module is used to match two facial images:
 
-		public class func processFacialMatch(facialData : FacialMatchData, delegate : FacialMatchDelegate?)
+		public class func processFacialMatch(facialData : FacialMatchData, delegate : FacialMatchDelegate)
 
 		public protocol FacialMatchDelegate {
     		func facialMatchFinished(result:FacialMatchResult?)
 		}
 
 		public class FacialMatchData{
-    		public var faceImageOne : UIImage? = nil // Facial image from ID Card
-    		public var faceImageTwo : UIImage? = nil // Facial image from selfie capture during liveness check (image gets compressed by 50%)
+    		public var faceImageOne : UIImage // Facial image from ID Card (image gets compressed by 80%)
+    		public var faceImageTwo : UIImage // Facial image from selfie capture during liveness check (image gets compressed by 80%)
 		}
 
 ----------

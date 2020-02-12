@@ -1,5 +1,5 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.1.2 (swiftlang-1100.0.278 clang-1100.0.33.9)
+// swift-compiler-version: Apple Swift version 5.1.3 (swiftlang-1100.0.282.1 clang-1100.0.33.15)
 // swift-module-flags: -target x86_64-apple-ios11.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name AcuantIPLiveness
 import AcuantCommon
 import Foundation
@@ -7,13 +7,14 @@ import Swift
 import UIKit
 import iProov
 @objc @objcMembers public class LivenessSetupResult : ObjectiveC.NSObject {
-  @objc public var apiKey: Swift.String?
-  @objc public var token: Swift.String?
-  @objc public var userId: Swift.String?
-  @objc public var apiEndpoint: Swift.String?
+  @objc public var apiKey: Swift.String
+  @objc public var token: Swift.String
+  @objc public var userId: Swift.String
+  @objc public var apiEndpoint: Swift.String
   @objc public var ui: AcuantIPLiveness.LivenessUiOptions
+  @objc public init(apiKey: Swift.String, token: Swift.String, userId: Swift.String, apiEndpoint: Swift.String)
+  @objc public class func createInstance(apiKey: Swift.String, token: Swift.String, userId: Swift.String, apiEndpoint: Swift.String) -> AcuantIPLiveness.LivenessSetupResult
   @objc override dynamic public init()
-  @objc public class func createInstance() -> AcuantIPLiveness.LivenessSetupResult
   @objc deinit
 }
 @objc public protocol LivenessSetupDelegate {

@@ -11,6 +11,16 @@
 "acuant_camera_capturing" = "KINUKUHA";
 "acuant_camera_outside_view" = "ITAPAT SA ID";
 
+// Acuant Face Capture
+"acuant_face_camera_initial" = "Itapat ang mukha\n upang magsimula";
+"acuant_face_camera_face_too_close" = "Masyadong malapit!\n Ilayo ang mukha";
+"acuant_face_camera_face_too_far" = "Ilapit ang mukha sa screen";
+"acuant_face_camera_face_has_angle" =  "May anggulo ang mukha.\n Huwag ikiling";
+"acuant_face_camera_face_not_in_frame" =  "Itapat ang mukha\n sa frame";
+"acuant_face_camera_face_moved" = "Huwag igalaw";
+"acuant_face_camera_capturing_2" = "Kinukuha\n2...";
+"acuant_face_camera_capturing_1" = "Kinukuha\n1...";
+
 /* loco:5b56f1d17ec8ae43575e40f2
  * app_name */
 "IProov_AppName" = "iProov";

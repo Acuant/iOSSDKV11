@@ -14,7 +14,6 @@ import AcuantCamera
 
 class ConfirmationViewController: UIViewController {
     
-    public var side : CardSide = CardSide.Front
     public var image : Image? = nil
     public var sharpness : Int = 0
     public var glare : Int = 0
@@ -29,7 +28,7 @@ class ConfirmationViewController: UIViewController {
     @IBAction func confirmTapped(_ sender: Any) {
         let rootVC : RootViewController = self.navigationController?.viewControllers[0] as! RootViewController
         self.navigationController?.popViewController(animated: true)
-        rootVC.confirmImage(image: imageView.image!,side:side)
+        rootVC.confirmImage(image: imageView.image!)
         
     }
     

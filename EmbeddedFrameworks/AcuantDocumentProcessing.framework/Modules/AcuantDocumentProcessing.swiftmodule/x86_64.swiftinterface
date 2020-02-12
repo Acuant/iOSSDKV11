@@ -1,5 +1,5 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.1.2 (swiftlang-1100.0.278 clang-1100.0.33.9)
+// swift-compiler-version: Apple Swift version 5.1.3 (swiftlang-1100.0.282.1 clang-1100.0.33.15)
 // swift-module-flags: -target x86_64-apple-ios11.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name AcuantDocumentProcessing
 import AcuantCommon
 import Foundation
@@ -81,7 +81,7 @@ import UIKit
   @objc public var webAddress: Swift.String?
   @objc public var transactionId: Swift.String?
   @objc public var instanceID: Swift.String?
-  @objc public static func initWithJsonString(jsonString: Swift.String?, instanceID: Swift.String?) -> AcuantDocumentProcessing.HealthInsuranceCardResult?
+  @objc public static func initWithJsonString(jsonString: Swift.String?, instanceID: Swift.String?) -> AcuantDocumentProcessing.HealthInsuranceCardResult
   @objc deinit
 }
 @objc @objcMembers public class Device : ObjectiveC.NSObject {
@@ -160,7 +160,7 @@ import UIKit
   @objc public var fields: AcuantDocumentProcessing.Fields?
   @objc public var images: AcuantDocumentProcessing.Images?
   @objc public var regions: AcuantDocumentProcessing.Regions?
-  @objc public static func initWithJsonString(jsonString: Swift.String?) -> AcuantDocumentProcessing.IDResult?
+  @objc public static func initWithJsonString(jsonString: Swift.String?) -> AcuantDocumentProcessing.IDResult
   @objc deinit
 }
 @objc @objcMembers public class Biographic : ObjectiveC.NSObject {
@@ -248,7 +248,7 @@ import UIKit
 @objc @objcMembers public class AcuantDocumentProcessing : ObjectiveC.NSObject {
   @objc public class func createInstance(options: AcuantDocumentProcessing.IdOptions, delegate: AcuantDocumentProcessing.CreateInstanceDelegate)
   @objc public class func uploadImage(instancdId: Swift.String, data: AcuantDocumentProcessing.IdData, options: AcuantDocumentProcessing.IdOptions, delegate: AcuantDocumentProcessing.UploadImageDelegate)
-  @objc public class func getData(instanceId: Swift.String, isHealthCard: Swift.Bool, delegate: AcuantDocumentProcessing.GetDataDelegate?)
+  @objc public class func getData(instanceId: Swift.String, isHealthCard: Swift.Bool, delegate: AcuantDocumentProcessing.GetDataDelegate)
   @objc public class func deleteInstance(instanceId: Swift.String, type: AcuantCommon.DeleteType, delegate: AcuantDocumentProcessing.DeleteDelegate)
   @objc override dynamic public init()
   @objc deinit

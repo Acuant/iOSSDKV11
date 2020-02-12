@@ -16,6 +16,7 @@ class ResultViewController: UIViewController,UITableViewDataSource,UITableViewDe
     @IBOutlet var faceImage: UIImageView!
     @IBOutlet var signImage: UIImageView!
     
+    @IBOutlet weak var faceCapturedImage: UIImageView!
     
     public var data:[String]? = nil
     public var frontImageUrl : String? = nil
@@ -25,10 +26,10 @@ class ResultViewController: UIViewController,UITableViewDataSource,UITableViewDe
     
     public var front : UIImage? = nil
     public var back : UIImage? = nil
-    
+    public var faceImageCaptured : UIImage? = nil
+
     public var username : String? = nil
     public var password : String? = nil
-    
     
     @IBAction func backTapped(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
@@ -61,6 +62,9 @@ class ResultViewController: UIViewController,UITableViewDataSource,UITableViewDe
             backImage.image = back
         }
         
+        if let frontCapturedImage = self.faceImageCaptured{
+            faceCapturedImage.image = frontCapturedImage
+        }
     }
     
     override func didReceiveMemoryWarning() {
@@ -104,7 +108,7 @@ extension UIImageView {
         
         URLSession.shared.dataTask(with: request) { (data, response, error) in
             let httpURLResponse = response as? HTTPURLResponse
-            if(httpURLResponse?.statusCode == 200){
+            if(httpURLResponse?.statusCode == 200 && data != nil){
                 let downloadedImage = UIImage(data: data!)
                 DispatchQueue.main.async() { () -> Void in
                     self.image = downloadedImage

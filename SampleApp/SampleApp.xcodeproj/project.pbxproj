@@ -17,6 +17,8 @@
 		13AC65E620EE8F9000F0D494 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 13AC65E420EE8F9000F0D494 /* LaunchScreen.storyboard */; };
 		13AC66BE20EED36D00F0D494 /* CustomAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13AC66BD20EED36D00F0D494 /* CustomAlert.swift */; };
 		13D13F1420F6AC000052B1D7 /* ConfirmationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D13F1320F6AC000052B1D7 /* ConfirmationViewController.swift */; };
+		83248A8323ECB05D00A264F2 /* AcuantFaceCapture.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83248A8223ECAFF500A264F2 /* AcuantFaceCapture.framework */; };
+		83248A8423ECB05D00A264F2 /* AcuantFaceCapture.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 83248A8223ECAFF500A264F2 /* AcuantFaceCapture.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		835108EA22FA425300CC8329 /* AcuantProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 835108E922FA425300CC8329 /* AcuantProgressView.swift */; };
 		8351094C22FB462B00CC8329 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8351094A22FB462B00CC8329 /* Localizable.strings */; };
 		8351095322FB463B00CC8329 /* Main.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8351095022FB463B00CC8329 /* Main.strings */; };
@@ -27,6 +29,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		83248A8123ECAFF500A264F2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 83248A7D23ECAFF500A264F2 /* AcuantFaceCapture.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 83F0BF7123D8B28E00140A06;
+			remoteInfo = AcuantFaceCapture;
+		};
 		C208049C2226E049004FA5BE /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = C20804982226E048004FA5BE /* AcuantCamera.xcodeproj */;
@@ -50,6 +59,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				83248A8423ECB05D00A264F2 /* AcuantFaceCapture.framework in Embed Frameworks */,
 				C2AD3AAA2273B8F200088F0A /* AcuantCamera.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -70,6 +80,8 @@
 		13AC65E720EE8F9000F0D494 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		13AC66BD20EED36D00F0D494 /* CustomAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlert.swift; sourceTree = "<group>"; };
 		13D13F1320F6AC000052B1D7 /* ConfirmationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmationViewController.swift; sourceTree = "<group>"; };
+		83248A5B23ECAFAB00A264F2 /* AcuantPassiveLiveness.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AcuantPassiveLiveness.framework; sourceTree = "<group>"; };
+		83248A7D23ECAFF500A264F2 /* AcuantFaceCapture.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = AcuantFaceCapture.xcodeproj; path = ../AcuantFaceCapture/AcuantFaceCapture.xcodeproj; sourceTree = "<group>"; };
 		835108E922FA425300CC8329 /* AcuantProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AcuantProgressView.swift; path = View/AcuantProgressView.swift; sourceTree = "<group>"; };
 		8351090C22FA45BB00CC8329 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SwiftyJSON.framework; sourceTree = "<group>"; };
 		8351090D22FA45BB00CC8329 /* AcuantIPLiveness.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AcuantIPLiveness.framework; sourceTree = "<group>"; };
@@ -98,6 +110,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				83248A8323ECB05D00A264F2 /* AcuantFaceCapture.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -149,9 +162,18 @@
 			isa = PBXGroup;
 			children = (
 				C29FDC7F22738FDA00707EF8 /* EmbeddedFrameworks */,
+				83248A7D23ECAFF500A264F2 /* AcuantFaceCapture.xcodeproj */,
 				C20804982226E048004FA5BE /* AcuantCamera.xcodeproj */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		83248A7E23ECAFF500A264F2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				83248A8223ECAFF500A264F2 /* AcuantFaceCapture.framework */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 		C20804992226E048004FA5BE /* Products */ = {
@@ -165,6 +187,7 @@
 		C29FDC7F22738FDA00707EF8 /* EmbeddedFrameworks */ = {
 			isa = PBXGroup;
 			children = (
+				83248A5B23ECAFAB00A264F2 /* AcuantPassiveLiveness.framework */,
 				8351091622FA45BC00CC8329 /* AcuantCommon.framework */,
 				8351091022FA45BB00CC8329 /* AcuantDocumentProcessing.framework */,
 				8351090E22FA45BB00CC8329 /* AcuantFaceMatch.framework */,
@@ -237,6 +260,10 @@
 					ProductGroup = C20804992226E048004FA5BE /* Products */;
 					ProjectRef = C20804982226E048004FA5BE /* AcuantCamera.xcodeproj */;
 				},
+				{
+					ProductGroup = 83248A7E23ECAFF500A264F2 /* Products */;
+					ProjectRef = 83248A7D23ECAFF500A264F2 /* AcuantFaceCapture.xcodeproj */;
+				},
 			);
 			projectRoot = "";
 			targets = (
@@ -246,6 +273,13 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
+		83248A8223ECAFF500A264F2 /* AcuantFaceCapture.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = AcuantFaceCapture.framework;
+			remoteRef = 83248A8123ECAFF500A264F2 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		C208049D2226E049004FA5BE /* AcuantCamera.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
@@ -483,7 +517,9 @@
 				CLANG_WARN_CXX0X_EXTENSIONS = NO;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 17;
 				DEVELOPMENT_TEAM = E67326HC5Q;
+				ENABLE_BITCODE = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/../EmbeddedFrameworks",
@@ -494,6 +530,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 11.3.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.cssn.SampleApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -511,7 +548,9 @@
 				CLANG_WARN_CXX0X_EXTENSIONS = NO;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 17;
 				DEVELOPMENT_TEAM = E67326HC5Q;
+				ENABLE_BITCODE = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/../EmbeddedFrameworks",
@@ -522,6 +561,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 11.3.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.cssn.SampleApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
