@@ -1,4 +1,4 @@
-# Acuant iOS SDK v11.3.0
+# Acuant iOS SDK v11.3.1
 
 **Febuary 2020**
 
@@ -6,7 +6,7 @@ See [https://github.com/Acuant/iOSSDKV11/releases](https://github.com/Acuant/iOS
 
 ----------
 
-# Introduction #
+# Introduction
 
 This document provides detailed information about the Acuant iOS SDK. The Acuant-recommended workflow is described below.
 
@@ -15,11 +15,11 @@ This document provides detailed information about the Acuant iOS SDK. The Acuant
 **Note** The acceptable quality image is well-cropped, sharp and with no glare present, has a resolution of at least 300 dpi (for data capture) or 600 dpi (for authentication). The aspect ratio should be acceptable and matches an ID document.
 
 ----------
-## Prerequisites ##
+## Prerequisites
 
 - iOS version 11.0 or later
 
-## Modules ##
+## Modules
 
 The SDK includes the following modules:
 
@@ -61,7 +61,7 @@ The SDK includes the following modules:
 - Uses proprietary algorithm to detect a live person
 
 ----------
-### Manual Setup ###
+### Manual Setup
 
 1. Add the following dependent embedded frameworks:
 
@@ -94,11 +94,11 @@ The SDK includes the following modules:
 
 ----------
 
-### Using COCOAPODS ###
+### Using COCOAPODS
 1. If you are using COCOAPODS, then add the following podfile:
 
 		platform :ios, '11.0'
-		pod 'AcuantiOSSDKV11', '~> 11.3.0'
+		pod 'AcuantiOSSDKV11', '~> 11.3.1'
 		
 		
 1. 	Enable "BUILD\_FOR\_DISTRIBUTION" for all Acuant pod frameworks in Build Settings.
@@ -123,7 +123,7 @@ The SDK includes the following modules:
 
 ----------
 
-### Required Setup ###
+### Required Setup
 1. Create a **plist** file named **AcuantConfig** which includes the following details:
 
     	<?xml version="1.0" encoding="UTF-8"?>
@@ -150,7 +150,7 @@ The SDK includes the following modules:
 
 
 ----------
-### Capture an Image using AcuantCamera ###
+### Capture an Image using AcuantCamera
 
 1. AcuantCamera is best used in portrait mode. Lock the orientation of the app before using Camera. 
 
@@ -224,7 +224,7 @@ The SDK includes the following modules:
 	**Note:**   **AcuantCamera** is dependent on **AcuantImagePreparation** and  **AcuantCommon**.
 
 ----------
-### AcuantImagePreparation ###
+### AcuantImagePreparation
 
 This module contains all image preparation functionality.
 
@@ -253,7 +253,7 @@ This module contains all image preparation functionality.
 		AcuantImagePreparation.initialize(delegate:self)
 		
 
-#### **Initialization without a Subscription ID** ####
+#### **Initialization without a Subscription ID**
 
 **AcuantImagePreparation** may be initialized by providing only a username and a password. However, without providing a Subscription ID, the application can only capture an image and get the image. 
 Without a Subscription ID:
@@ -267,7 +267,7 @@ Without a Subscription ID:
     		func documentCaptured(image:UIImage, barcodeString:String?)
 		}
 
-#### Cropping ####
+#### Cropping
 
 After the image is captured, it is sent to the cropping library for cropping.
 
@@ -281,13 +281,13 @@ After the image is captured, it is sent to the cropping library for cropping.
 
         let croppedImage = AcuantImagePreparation.crop(data: croppingData)
 
-#### Sharpness ####
+#### Sharpness
 
 The **sharpness** method returns a sharpness value of an image. If the sharpness value is greater than 50, then the image is considered sharp (not blurry).
 
 		public class func sharpness(image: UIImage)->Int
 
-#### Glare ####
+#### Glare
 
 The **glare** method returns the glare value of an image. If the glare value is 100, then the image does not contain glare. If the glare value is 0, then image contains glare.
 
@@ -296,7 +296,7 @@ The **glare** method returns the glare value of an image. If the glare value is 
 
 ----------
 
-### AcuantDocumentProcessing ###
+### AcuantDocumentProcessing
 
 After a document image is captured, it can be processed using the following steps.
 
@@ -338,7 +338,7 @@ After a document image is captured, it can be processed using the following step
 
 ----------
 
-### Acuant Face Capture ###
+### Acuant Face Capture
 
 1. (Optional) Set default Image. Locate "acuant\_default\_face_image.png" in the Assets directory of sample app project. Add this to your app if needed.
 	
@@ -389,15 +389,15 @@ After a document image is captured, it can be processed using the following step
 
 ----------
 
-### Acuant Passive Liveness ###
+### Acuant Passive Liveness
 Acuant recommends using the **LiveAssessment** property rather than the score) to evaluate response. **AcuantPassiveLiveness.startSelfieCapture** will return a rescaled image.
 
 Follow these recommendations to effectively process an image for passive liveness:
-####Image requirements
+#### Image requirements
 - **Height**:  minimum 480 pixels; recommended 720 or 1080 pixels
 - **Compression**:  Image compression is not recommended (JPEG 70 level or above is acceptable). For best results, use uncompressed images.
 
-####Face requirements
+#### Face requirements
 - Out-of-plane rotation:  Face pitch and yaw angle: from -20 to 20 degrees +/-3 degrees
 - In-plane rotation:  Face roll angle: from -30 to 30 degrees +/- 3 degrees
 - Pupillary distance:  Minimum distance between the eyes 90 +/- 5 pixels
@@ -405,7 +405,7 @@ Follow these recommendations to effectively process an image for passive livenes
 - Faces per image: 1
 - Sunglasses: Must be removed
 
-####Capture requirements
+#### Capture requirements
 The following may significantly increase errors or false results:
 
 - Using a motion blur effect
@@ -467,7 +467,7 @@ The following may significantly increase errors or false results:
 ----------
 
 
-### AcuantHGLiveness ###
+### AcuantHGLiveness
 
 This module checks for liveness (whether the subject is a live person) by using blink detection. The user interface code for this is contained in the Sample application (**FaceLivenessCameraController.swift**) which customers may modify for their specific requirements.
 
@@ -506,7 +506,7 @@ This module checks for liveness (whether the subject is a live person) by using 
 
 ----------
 
-### AcuantIPLiveness ###
+### AcuantIPLiveness
 
 The **AcuantIPLiveness** module checks whether the subject is a live person. 
 
@@ -581,7 +581,7 @@ The following is a list of dependencies:
 
 ----------
 
-### AcuantFaceMatch ###
+### AcuantFaceMatch
 
 This module is used to match two facial images:
 
@@ -598,7 +598,7 @@ This module is used to match two facial images:
 
 ----------
 
-### Error codes ###
+### Error codes
 
 	public class AcuantErrorCodes{
     	public static let ERROR_InvalidCredentials = -1
@@ -629,7 +629,7 @@ This module is used to match two facial images:
     	public static let ERROR_CouldNotAccessLivenessData = -26
 	}
 
-### Error descriptions ###
+### Error descriptions
 
 	public class AcuantErrorDescriptions {
     	public static let ERROR_DESC_InvalidCredentials = "Invalid credentials"
@@ -658,7 +658,7 @@ This module is used to match two facial images:
     	public static let ERROR_DESC_CouldNotAccessLivenessData = "Could not access liveness data"
 	}
 
-### Image ###
+### Image
 
 	public class Image {
     	public var image: UIImage? = nil
@@ -671,7 +671,7 @@ This module is used to match two facial images:
     	public init(){}
     }
     
-### AcuantCameraOptions ###
+### AcuantCameraOptions
 
     public class AcuantCameraOptions {
         timeInMsPerDigit: Int = 900,
@@ -691,7 +691,7 @@ This module is used to match two facial images:
         colorBracketCapture: CGColor = UIColor.green.cgColor
     }
     
-### IdOptions ###
+### IdOptions
     public class IdOptions {
         public var cardSide: CardSide = CardSide.Front
         public var isHealthCard: Bool = false
@@ -699,9 +699,9 @@ This module is used to match two facial images:
         public var authenticationSensitivity: AuthenticationSensitivity = AuthenticationSensitivity.Normal
     }
 
-## Frequently Asked Questions ##
+## Frequently Asked Questions
 
-### What causes an "Unsupported Architecture" error when publishing the app in the Apple App store? ####
+### What causes an "Unsupported Architecture" error when publishing the app in the Apple App store?
 
 All frameworks are *fat* (multi-architecture) binaries that contain *slices* for **armv7**, **arm64**, **i386**, and **x86(64)**  CPU architectures. ARM slices are used by physical iOS devices, while i386 and x86(64) are used by the simulator.
 
@@ -715,14 +715,14 @@ You can also use the **lipo** command to remove unwanted slices:
 
 		lipo -remove x86_64 <Path to the file> -o <Output file path>
 
-### Why does the Code signing “AcuantCommon.framework” error occur when I archive the sample application? ###
+### Why does the Code signing “AcuantCommon.framework” error occur when I archive the sample application?
 
 Acuant provides support for all CPU architectures that are required by simulators and devices. However, when exporting or publishing to the Test Flight/App Store, the simulator architectures (i386 and x86(64)) should be removed from the framework binaries. 
 
 1. Archive the application. 
 2. Select the archive and then click **Distribute app> App store > Export**.
 
-### How do I obfuscate my iOS application? ###
+### How do I obfuscate my iOS application?
 
 Acuant does not provide obfuscation tools, however several third-party tools, including **iXGuard** and **Arxan**, are available.
 

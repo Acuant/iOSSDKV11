@@ -35,7 +35,6 @@ import AcuantImagePreparation
     private var devicePreviewResolutionLongerSide = CaptureConstants.CAMERA_PREVIEW_LONGER_SIDE_STANDARD
     weak private var frameDelegate:FrameAnalysisDelegate? = nil
     
-    
     public class func getDocumentCaptureSession(delegate:DocumentCaptureDelegate?, frameDelegate: FrameAnalysisDelegate,autoCapture:Bool, captureDevice:AVCaptureDevice?)-> DocumentCaptureSession{
         return DocumentCaptureSession().getDocumentCaptureSession(delegate: delegate!, frameDelegate: frameDelegate,autoCapture: autoCapture,  captureDevice: captureDevice)
     }
@@ -58,52 +57,50 @@ import AcuantImagePreparation
     }
     
     public func start() {
-        DispatchQueue.main.async{
-            self.automaticallyConfiguresApplicationAudioSession = false
-               self.usesApplicationAudioSession = false
-               if(self.captureDevice?.isFocusModeSupported(.continuousAutoFocus))! {
-                   try! self.captureDevice?.lockForConfiguration()
-                   self.captureDevice?.focusMode = .continuousAutoFocus
-                   self.captureDevice?.unlockForConfiguration()
+        self.automaticallyConfiguresApplicationAudioSession = false
+           self.usesApplicationAudioSession = false
+           if(self.captureDevice?.isFocusModeSupported(.continuousAutoFocus))! {
+               try? self.captureDevice?.lockForConfiguration()
+               self.captureDevice?.focusMode = .continuousAutoFocus
+               self.captureDevice?.unlockForConfiguration()
+           }
+           do {
+               self.input = try AVCaptureDeviceInput(device: self.captureDevice!)
+               if(self.canAddInput(self.input!)){
+                   self.addInput(self.input!)
                }
-               do {
-                   self.input = try AVCaptureDeviceInput(device: self.captureDevice!)
-                   if(self.canAddInput(self.input!)){
-                       self.addInput(self.input!)
-                   }
-               } catch _ as NSError {
-                   return
-               }
-               
-               self.sessionPreset = AVCaptureSession.Preset.photo
+           } catch _ as NSError {
+               return
+           }
+           
+           self.sessionPreset = AVCaptureSession.Preset.photo
 
-               if let formatDescription = self.captureDevice?.activeFormat.formatDescription {
-                   let dimensions = CMVideoFormatDescriptionGetDimensions(formatDescription)
-                   self.devicePreviewResolutionLongerSide = max(Int(dimensions.width),Int(dimensions.height))
-               }
-               
-               self.videoOutput = AVCaptureVideoDataOutput()
-               self.videoOutput?.alwaysDiscardsLateVideoFrames = true
-               let frameQueue = DispatchQueue(label: "com.acuant.frame.queue",qos:.userInteractive,attributes:.concurrent)
-               self.videoOutput?.setSampleBufferDelegate(self, queue: frameQueue)
-               if(self.canAddOutput(self.videoOutput!)){
-                   self.addOutput(self.videoOutput!)
-               }
-                if(self.canAddOutput(self.stillImageOutput)){
-                    self.stillImageOutput.isLivePhotoCaptureEnabled = false
-                  self.addOutput(self.stillImageOutput)
-              }
+           if let formatDescription = self.captureDevice?.activeFormat.formatDescription {
+               let dimensions = CMVideoFormatDescriptionGetDimensions(formatDescription)
+               self.devicePreviewResolutionLongerSide = max(Int(dimensions.width),Int(dimensions.height))
+           }
+           
+           self.videoOutput = AVCaptureVideoDataOutput()
+           self.videoOutput?.alwaysDiscardsLateVideoFrames = true
+           let frameQueue = DispatchQueue(label: "com.acuant.frame.queue",qos:.userInteractive,attributes:.concurrent)
+           self.videoOutput?.setSampleBufferDelegate(self, queue: frameQueue)
+           if(self.canAddOutput(self.videoOutput!)){
+               self.addOutput(self.videoOutput!)
+           }
+            if(self.canAddOutput(self.stillImageOutput)){
+                self.stillImageOutput.isLivePhotoCaptureEnabled = false
+              self.addOutput(self.stillImageOutput)
+          }
 
-               /* Check for metadata */
-               self.captureMetadataOutput = AVCaptureMetadataOutput()
-               let metadataQueue = DispatchQueue(label: "com.acuant.metadata.queue",qos:.userInteractive,attributes:.concurrent)
-               self.captureMetadataOutput?.setMetadataObjectsDelegate(self, queue: metadataQueue)
-               if (self.canAddOutput(self.captureMetadataOutput!)) {
-                   self.addOutput(self.captureMetadataOutput!)
-                   self.captureMetadataOutput?.metadataObjectTypes = [.pdf417]
-               }
-            self.startRunning()
-        }
+           /* Check for metadata */
+           self.captureMetadataOutput = AVCaptureMetadataOutput()
+           let metadataQueue = DispatchQueue(label: "com.acuant.metadata.queue",qos:.userInteractive,attributes:.concurrent)
+           self.captureMetadataOutput?.setMetadataObjectsDelegate(self, queue: metadataQueue)
+           if (self.canAddOutput(self.captureMetadataOutput!)) {
+               self.addOutput(self.captureMetadataOutput!)
+               self.captureMetadataOutput?.metadataObjectTypes = [.pdf417]
+           }
+        self.startRunning()
     }
     
     // MARK: Sample buffer to UIImage conversion

@@ -57,43 +57,46 @@ public enum AuthenticationType {
 public enum Accessibility {
   case whenUnlocked
   case afterFirstUnlock
+  @available(macCatalyst, unavailable)
   case always
   @available(iOS 8.0, OSX 10.10, *)
   case whenPasscodeSetThisDeviceOnly
   case whenUnlockedThisDeviceOnly
   case afterFirstUnlockThisDeviceOnly
+  @available(macCatalyst, unavailable)
   case alwaysThisDeviceOnly
 }
 public struct AuthenticationPolicy : Swift.OptionSet {
-  @available(iOS 8.0, OSX 10.10, *)
-  @available(watchOS, unavailable)
+  @available(iOS 8.0, OSX 10.10, watchOS 2.0, tvOS 8.0, *)
   public static let userPresence: KeychainAccess.AuthenticationPolicy
-  @available(iOS 9.0, *)
-  @available(OSX, unavailable)
-  @available(watchOS, unavailable)
+  @available(iOS 11.3, OSX 10.13.4, watchOS 4.3, tvOS 11.3, *)
+  public static let biometryAny: KeychainAccess.AuthenticationPolicy
+  @available(iOS, introduced: 9.0, deprecated: 11.3, renamed: "biometryAny")
+  @available(OSX, introduced: 10.12.1, deprecated: 10.13.4, renamed: "biometryAny")
+  @available(watchOS, introduced: 2.0, deprecated: 4.3, renamed: "biometryAny")
+  @available(tvOS, introduced: 9.0, deprecated: 11.3, renamed: "biometryAny")
   public static let touchIDAny: KeychainAccess.AuthenticationPolicy
-  @available(iOS 9.0, *)
-  @available(OSX, unavailable)
-  @available(watchOS, unavailable)
+  @available(iOS 11.3, OSX 10.13.4, watchOS 4.3, tvOS 11.3, *)
+  public static let biometryCurrentSet: KeychainAccess.AuthenticationPolicy
+  @available(iOS, introduced: 9.0, deprecated: 11.3, renamed: "biometryCurrentSet")
+  @available(OSX, introduced: 10.12.1, deprecated: 10.13.4, renamed: "biometryCurrentSet")
+  @available(watchOS, introduced: 2.0, deprecated: 4.3, renamed: "biometryCurrentSet")
+  @available(tvOS, introduced: 9.0, deprecated: 11.3, renamed: "biometryCurrentSet")
   public static let touchIDCurrentSet: KeychainAccess.AuthenticationPolicy
-  @available(iOS 9.0, OSX 10.11, *)
-  @available(watchOS, unavailable)
+  @available(iOS 9.0, OSX 10.11, watchOS 2.0, tvOS 9.0, *)
   public static let devicePasscode: KeychainAccess.AuthenticationPolicy
-  @available(iOS 9.0, *)
-  @available(OSX, unavailable)
+  @available(OSX 10.15, *)
+  @available(iOS, unavailable)
   @available(watchOS, unavailable)
+  @available(tvOS, unavailable)
+  public static let watch: KeychainAccess.AuthenticationPolicy
+  @available(iOS 9.0, OSX 10.12.1, watchOS 2.0, tvOS 9.0, *)
   public static let or: KeychainAccess.AuthenticationPolicy
-  @available(iOS 9.0, *)
-  @available(OSX, unavailable)
-  @available(watchOS, unavailable)
+  @available(iOS 9.0, OSX 10.12.1, watchOS 2.0, tvOS 9.0, *)
   public static let and: KeychainAccess.AuthenticationPolicy
-  @available(iOS 9.0, *)
-  @available(OSX, unavailable)
-  @available(watchOS, unavailable)
+  @available(iOS 9.0, OSX 10.12.1, watchOS 2.0, tvOS 9.0, *)
   public static let privateKeyUsage: KeychainAccess.AuthenticationPolicy
-  @available(iOS 9.0, *)
-  @available(OSX, unavailable)
-  @available(watchOS, unavailable)
+  @available(iOS 9.0, OSX 10.12.1, watchOS 2.0, tvOS 9.0, *)
   public static let applicationPassword: KeychainAccess.AuthenticationPolicy
   public let rawValue: Swift.UInt
   public init(rawValue: Swift.UInt)
@@ -233,8 +236,8 @@ final public class Keychain {
   convenience public init(service: Swift.String)
   convenience public init(accessGroup: Swift.String)
   convenience public init(service: Swift.String, accessGroup: Swift.String)
-  convenience public init(server: Swift.String, protocolType: KeychainAccess.ProtocolType, authenticationType: KeychainAccess.AuthenticationType = .default)
-  convenience public init(server: Foundation.URL, protocolType: KeychainAccess.ProtocolType, authenticationType: KeychainAccess.AuthenticationType = .default)
+  convenience public init(server: Swift.String, protocolType: KeychainAccess.ProtocolType, accessGroup: Swift.String? = nil, authenticationType: KeychainAccess.AuthenticationType = .default)
+  convenience public init(server: Foundation.URL, protocolType: KeychainAccess.ProtocolType, accessGroup: Swift.String? = nil, authenticationType: KeychainAccess.AuthenticationType = .default)
   final public func accessibility(_ accessibility: KeychainAccess.Accessibility) -> KeychainAccess.Keychain
   @available(iOS 8.0, OSX 10.10, *)
   @available(watchOS, unavailable)
@@ -248,12 +251,12 @@ final public class Keychain {
   final public func authenticationPrompt(_ authenticationPrompt: Swift.String) -> KeychainAccess.Keychain
   @available(iOS 9.0, OSX 10.11, *)
   final public func authenticationContext(_ authenticationContext: LocalAuthentication.LAContext) -> KeychainAccess.Keychain
-  final public func get(_ key: Swift.String) throws -> Swift.String?
-  final public func getString(_ key: Swift.String) throws -> Swift.String?
-  final public func getData(_ key: Swift.String) throws -> Foundation.Data?
-  final public func get<T>(_ key: Swift.String, handler: (KeychainAccess.Attributes?) -> T) throws -> T
-  final public func set(_ value: Swift.String, key: Swift.String) throws
-  final public func set(_ value: Foundation.Data, key: Swift.String) throws
+  final public func get(_ key: Swift.String, ignoringAttributeSynchronizable: Swift.Bool = true) throws -> Swift.String?
+  final public func getString(_ key: Swift.String, ignoringAttributeSynchronizable: Swift.Bool = true) throws -> Swift.String?
+  final public func getData(_ key: Swift.String, ignoringAttributeSynchronizable: Swift.Bool = true) throws -> Foundation.Data?
+  final public func get<T>(_ key: Swift.String, ignoringAttributeSynchronizable: Swift.Bool = true, handler: (KeychainAccess.Attributes?) -> T) throws -> T
+  final public func set(_ value: Swift.String, key: Swift.String, ignoringAttributeSynchronizable: Swift.Bool = true) throws
+  final public func set(_ value: Foundation.Data, key: Swift.String, ignoringAttributeSynchronizable: Swift.Bool = true) throws
   final public subscript(key: Swift.String) -> Swift.String? {
     get
     set
@@ -269,9 +272,9 @@ final public class Keychain {
   final public subscript(attributes key: Swift.String) -> KeychainAccess.Attributes? {
     get
   }
-  final public func remove(_ key: Swift.String) throws
+  final public func remove(_ key: Swift.String, ignoringAttributeSynchronizable: Swift.Bool = true) throws
   final public func removeAll() throws
-  final public func contains(_ key: Swift.String) throws -> Swift.Bool
+  final public func contains(_ key: Swift.String, withoutAuthenticationUI: Swift.Bool = false) throws -> Swift.Bool
   final public class func allKeys(_ itemClass: KeychainAccess.ItemClass) -> [(Swift.String, Swift.String)]
   final public func allKeys() -> [Swift.String]
   final public class func allItems(_ itemClass: KeychainAccess.ItemClass) -> [[Swift.String : Any]]
