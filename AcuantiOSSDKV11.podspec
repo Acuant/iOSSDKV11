@@ -3,7 +3,7 @@ Pod::Spec.new do |s|
   s.platform = :ios
   s.ios.deployment_target = '11.0'
   s.name         = "AcuantiOSSDKV11"
-  s.version      = "11.3.0"
+  s.version      = "11.3.1"
   s.summary      = "Acuant's latest SDK with most advanced image capture technology and optimized user workflow  "
   s.description  = "Acuant's latest SDK with most advanced image capture technology and optimized user workflow.
 
@@ -32,5 +32,5 @@ SDK broken down in to small different modules so that developers can include onl
     acuantfacecapture.source_files = "AcuantFaceCapture/AcuantFaceCapture/*.{h,swift}"
   end
 
-  s.dependency 'iProov', '~> 7.2.0'
+  s.dependency 'iProov', '~> 7.2.2'
 end
