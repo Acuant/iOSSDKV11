@@ -21,6 +21,13 @@
 "acuant_face_camera_capturing_2" = "Captura\n2...";
 "acuant_face_camera_capturing_1" = "Captura\n1...";
 
+"hg_too_close" = "Too Close! Move Away";
+"hg_too_far_away" = "Muévete mas cerca";
+"hg_move_in_frame" = "Moverse en cuadro";
+"hg_blink" = "Parpadeo!";
+"hg_hold_steady" = "Mantener estable";
+"hg_align_face_and_blink" = "Alinear la cara para comenzar";
+
 /* loco:5b56f1d17ec8ae43575e40f2
  * app_name */
 "IProov_AppName" = "iProov";

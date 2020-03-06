@@ -23,16 +23,13 @@ class RootViewController: UIViewController{
     @IBOutlet weak var autoCaptureSwitch : UISwitch!
     @IBOutlet weak var medicalCardButton: UIButton!
     @IBOutlet weak var idPassportButton: UIButton!
-    
-    @IBOutlet weak var IPLivenessLabel: UILabel!
-    @IBOutlet weak var IPLivenessSwitch: UISwitch!
+    @IBOutlet weak var livenessOption: UISegmentedControl!
     
     public var documentInstance : String?
     public var livenessString: String?
     public var capturedFacialMatchResult : FacialMatchResult? = nil
     public var capturedFaceImageUrl : String? = nil
     private var isInitialized = false
-    private var isIPLivenessEnabled = false
     private var isKeyless = false
     private var faceCapturedImage: UIImage?
     
@@ -51,7 +48,6 @@ class RootViewController: UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         autoCaptureSwitch.setOn(true, animated: false)
         self.isKeyless = Credential.subscription() == nil || Credential.subscription() == ""
         
@@ -70,13 +66,22 @@ class RootViewController: UIViewController{
          
          Credential.setEndpoints(endpoints: endpoints)*/
         
+        UISegmentedControl.appearance().setTitleTextAttributes([NSAttributedString.Key.foregroundColor:UIColor.white], for: .selected)
+        UISegmentedControl.appearance().setTitleTextAttributes([NSAttributedString.Key.foregroundColor:UIColor.white], for: .normal)
         
-        AcuantImagePreparation.initialize(delegate:self)
+    }
+    
+    func addEnhancedLiveness(){
+        if(livenessOption.numberOfSegments == 2){
+            livenessOption.insertSegment(withTitle: "Enhanced", at: livenessOption.numberOfSegments, animated: true)
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
+        if(!self.isInitialized){
+            AcuantImagePreparation.initialize(delegate:self)
+        }
     }
     
     override func didReceiveMemoryWarning() {
@@ -102,8 +107,8 @@ class RootViewController: UIViewController{
         }
     }
     
-    @IBAction func iPLivenessTapped(_ sender: Any) {
-        isIPLivenessEnabled = IPLivenessSwitch.isOn
+    
+    @IBAction func onLivenessChanged(_ sender: Any) {
     }
     
     private func showProgressView(text:String = ""){
@@ -179,7 +184,6 @@ extension RootViewController: InitializationDelegate{
                 self.hideProgressView()
                 self.isInitialized = true
                 self.resetData()
-                self.IPLivenessSwitch.isOn = false
             }
         }else{
             if let msg = error?.errorDescription {
@@ -196,8 +200,7 @@ extension RootViewController: InitializationDelegate{
         
         DispatchQueue.main.async {
             if(isEnabled){
-                self.IPLivenessLabel.isEnabled = true
-                self.IPLivenessSwitch.isEnabled = true
+                self.addEnhancedLiveness()
             }
         }
     }
@@ -221,7 +224,6 @@ extension RootViewController: InitializationDelegate{
                     self.isInitialized = true
                     self.resetData()
                     self.showDocumentCaptureCamera()
-                    self.IPLivenessSwitch.isOn = false
                 }
                 
             }
@@ -338,6 +340,10 @@ extension RootViewController: CameraCaptureDelegate{
     
     public func showKeylessHGLiveness(){
         let liveFaceViewController = FaceLivenessCameraController()
+        
+        //Optionally override to change refresh rate
+        //liveFaceViewController.frameRefreshSpeed = 10
+        
         self.navigationController?.pushViewController(liveFaceViewController, animated: true)
     }
     
@@ -554,20 +560,17 @@ extension RootViewController:GetDataDelegate{
             self.hideProgressView()
             let storyBoard = UIStoryboard.init(name: "Main", bundle: nil)
             let resultViewController = storyBoard.instantiateViewController(withIdentifier: "ResultViewController") as! ResultViewController
+            resultViewController.data = data
+
+            if(self.livenessString != nil){
+                resultViewController.data?.insert(self.livenessString!, at: 0)
+            }
             
             if(self.capturedFacialMatchResult != nil){
-                var dataWithFacialData = data
-                dataWithFacialData?.insert("Face matched :\(self.capturedFacialMatchResult!.isMatch)", at: 0)
-                
-                dataWithFacialData?.insert("Face Match score :\(self.capturedFacialMatchResult!.score)", at: 0)
-                
-                if(self.livenessString != nil){
-                   dataWithFacialData?.insert(self.livenessString!, at: 0)
-                }
-                resultViewController.data = dataWithFacialData
-            }else{
-                resultViewController.data = data
+                resultViewController.data?.insert("Face matched :\(self.capturedFacialMatchResult!.isMatch)", at: 0)
+                resultViewController.data?.insert("Face Match score :\(self.capturedFacialMatchResult!.score)", at: 0)
             }
+            
             resultViewController.frontImageUrl = front
             resultViewController.backImageUrl = back
             resultViewController.signImageUrl = sign
@@ -610,8 +613,7 @@ extension RootViewController : LivenessTestCredentialDelegate{
         
         DispatchQueue.main.async{
             if(result){
-                self.IPLivenessLabel.isEnabled = true
-                self.IPLivenessSwitch.isEnabled = true
+                self.addEnhancedLiveness()
             }
         }
     }
@@ -722,13 +724,18 @@ extension RootViewController {
     
     func showFacialCaptureInterface(){
         self.showResultGroup.enter()
-        if(isIPLivenessEnabled){
-            //Code for IP liveness
+        
+        let faceIndex = livenessOption.selectedSegmentIndex
+        
+        if(faceIndex == 1){
+            self.showPassiveLiveness()
+            
+        }
+        else if (faceIndex == 2){
             AcuantIPLiveness.performLivenessSetup(delegate: self)
         }
         else{
-            // Code for HG Live controller
-            self.showPassiveLiveness()
+            self.showResultGroup.leave()
         }
     }
 }
@@ -743,11 +750,6 @@ extension RootViewController : FacialMatchDelegate{
         
         if(result?.error == nil){
             capturedFacialMatchResult = result
-        }
-        else{
-            if let msg = result?.error?.errorDescription {
-                CustomAlerts.displayError(message: msg)
-            }
         }
     }
     func processFacialMatch(image:UIImage?){

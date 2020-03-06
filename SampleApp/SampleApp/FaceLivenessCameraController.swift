@@ -21,7 +21,7 @@ class FaceLivenessCameraController : UIViewController, AcuantHGLiveFaceCaptureDe
     private var faceOval : CAShapeLayer?
     private var blinkLabel: CATextLayer!
     private var currentFrameTime = -1.0
-    private let FRAME_DURATION = 0.1
+    public var frameRefreshSpeed = 10
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.setNavigationBarHidden(true, animated: false)
@@ -93,7 +93,7 @@ class FaceLivenessCameraController : UIViewController, AcuantHGLiveFaceCaptureDe
     
     func shouldSkipFrame(liveFaceDetails: LiveFaceDetails?,faceType: AcuantFaceType) -> Bool{
         var skipFrame = false
-        if(currentFrameTime < 0 || (liveFaceDetails != nil && liveFaceDetails!.isLiveFace) || CFAbsoluteTimeGetCurrent() - currentFrameTime >= FRAME_DURATION){
+        if(currentFrameTime < 0 || (liveFaceDetails != nil && liveFaceDetails!.isLiveFace) || CFAbsoluteTimeGetCurrent() - currentFrameTime >= 1/Double(frameRefreshSpeed)){
             currentFrameTime = CFAbsoluteTimeGetCurrent()
         }
         else{
@@ -112,19 +112,19 @@ class FaceLivenessCameraController : UIViewController, AcuantHGLiveFaceCaptureDe
                 self.addMessage()
                 break
             case .FACE_TOO_CLOSE:
-                self.addMessage(message: "Too Close! Move Away")
+                self.addMessage(message: NSLocalizedString("hg_too_close", comment: ""))
                 break
             case .FACE_TOO_FAR:
-                self.addMessage(message: "Move Closer")
+                self.addMessage(message: NSLocalizedString("hg_too_far_away", comment: ""))
                 break
             case .FACE_NOT_IN_FRAME:
-                self.addMessage(message: "Move in Frame")
+                self.addMessage(message: NSLocalizedString("hg_move_in_frame", comment: ""))
                 break
             case .FACE_GOOD_DISTANCE:
-                self.addMessage(message: "Blink!", color: UIColor.green.cgColor)
+                self.addMessage(message: NSLocalizedString("hg_blink", comment: ""), color: UIColor.green.cgColor)
                 break
             case .FACE_MOVED:
-                self.addMessage(message: "Hold Steady")
+                self.addMessage(message: NSLocalizedString("hg_hold_steady", comment: ""))
                 break
         }
         
@@ -213,10 +213,10 @@ class FaceLivenessCameraController : UIViewController, AcuantHGLiveFaceCaptureDe
     
     func addMessage(message: String? = nil, color: CGColor = UIColor.red.cgColor, fontSize: CGFloat = 25){
         if(message == nil){
-            let msg = NSMutableAttributedString.init(string: "Align face and blink when green oval appears")
+            let msg = NSMutableAttributedString.init(string: NSLocalizedString("hg_align_face_and_blink", comment: ""))
+            msg.addAttribute(kCTFontAttributeName as NSAttributedString.Key,value:UIFont.systemFont(ofSize: 25), range: NSRange.init(location: 0, length: msg.length))
             msg.addAttribute(kCTForegroundColorAttributeName as NSAttributedString.Key,value: UIColor.white, range: NSRange.init(location: 0, length: msg.length))
-            msg.addAttribute(kCTForegroundColorAttributeName as NSAttributedString.Key,value: UIColor.green, range: NSRange.init(location: 26, length: 10))
-            msg.addAttribute(kCTFontAttributeName as NSAttributedString.Key,value:UIFont.boldSystemFont(ofSize: 13), range: NSRange.init(location: 0, length: msg.length))
+            
             blinkLabel.fontSize = 15
             blinkLabel.foregroundColor = UIColor.white.cgColor
             blinkLabel.string = msg

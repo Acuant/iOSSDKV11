@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="I0c-68-3Fo">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="I0c-68-3Fo">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -51,27 +51,24 @@
                                             <constraint firstAttribute="trailing" secondItem="Iwp-Pu-c4C" secondAttribute="trailing" id="yJS-EV-j2c"/>
                                         </constraints>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="76" translatesAutoresizingMaskIntoConstraints="NO" id="NeM-nG-kjk">
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="NeM-nG-kjk">
                                         <rect key="frame" x="0.0" y="52" width="323" height="31"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="IPLiveness Enabled" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="11" enabled="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2FC-0f-szG">
-                                                <rect key="frame" x="0.0" y="0.0" width="198" height="31"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Liveness" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mmv-Vw-fdc" userLabel="Liveness">
+                                                <rect key="frame" x="0.0" y="0.0" width="60" height="31"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Bmq-q8-pcK">
-                                                <rect key="frame" x="274" y="0.0" width="51" height="31"/>
-                                                <connections>
-                                                    <action selector="iPLivenessTapped:" destination="BYZ-38-t0r" eventType="valueChanged" id="2ey-On-GvH"/>
-                                                </connections>
-                                            </switch>
+                                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="LeD-3s-7ZQ">
+                                                <rect key="frame" x="90" y="0.0" width="233" height="32"/>
+                                                <segments>
+                                                    <segment title="None"/>
+                                                    <segment title="Passive"/>
+                                                </segments>
+                                                <color key="selectedSegmentTintColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </segmentedControl>
                                         </subviews>
-                                        <constraints>
-                                            <constraint firstAttribute="trailing" secondItem="Bmq-q8-pcK" secondAttribute="trailing" id="9Zv-fh-Chp"/>
-                                            <constraint firstItem="Bmq-q8-pcK" firstAttribute="leading" secondItem="2FC-0f-szG" secondAttribute="trailing" constant="76" id="xyo-Wu-Dh3"/>
-                                            <constraint firstItem="2FC-0f-szG" firstAttribute="leading" secondItem="NeM-nG-kjk" secondAttribute="leading" id="yOO-qY-3Mc"/>
-                                        </constraints>
                                     </stackView>
                                 </subviews>
                                 <constraints>
@@ -109,10 +106,9 @@
                     </view>
                     <navigationItem key="navigationItem" id="bwg-Bu-cai"/>
                     <connections>
-                        <outlet property="IPLivenessLabel" destination="2FC-0f-szG" id="rUV-kD-f9E"/>
-                        <outlet property="IPLivenessSwitch" destination="Bmq-q8-pcK" id="IAP-Lq-G5x"/>
                         <outlet property="autoCaptureSwitch" destination="Iwp-Pu-c4C" id="Vcn-JV-F28"/>
                         <outlet property="idPassportButton" destination="UWo-um-OZM" id="TML-6j-Bhh"/>
+                        <outlet property="livenessOption" destination="LeD-3s-7ZQ" id="sld-Xk-t22"/>
                         <outlet property="medicalCardButton" destination="9sA-2d-9CD" id="WPU-fH-feu"/>
                     </connections>
                 </viewController>

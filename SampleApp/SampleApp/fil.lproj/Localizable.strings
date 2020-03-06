@@ -21,6 +21,13 @@
 "acuant_face_camera_capturing_2" = "Kinukuha\n2...";
 "acuant_face_camera_capturing_1" = "Kinukuha\n1...";
 
+"hg_too_close" = "Masyadong malapit! Lumayo";
+"hg_too_far_away" = "Lumapit sa screen";
+"hg_move_in_frame" = "Ihanay sa frame";
+"hg_blink" = "Kumurap!";
+"hg_hold_steady" = "Huwag gumalaw";
+"hg_align_face_and_blink" = "Ihanay ang mukha upang magsimula";
+
 /* loco:5b56f1d17ec8ae43575e40f2
  * app_name */
 "IProov_AppName" = "iProov";
