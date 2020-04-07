@@ -1,10 +1,30 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.1.3 (swiftlang-1100.0.282.1 clang-1100.0.33.15)
+// swift-compiler-version: Apple Swift version 5.2 (swiftlang-1103.0.32.1 clang-1103.0.32.29)
 // swift-module-flags: -target x86_64-apple-ios11.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name AcuantCommon
 import Foundation
 import MobileCoreServices
 import Swift
 import UIKit
+public protocol IAcuantInitializer {
+  func initialize(packages: [AcuantCommon.IAcuantPackage], callback: @escaping (AcuantCommon.AcuantError?) -> ()) -> Foundation.URLSessionTask?
+}
+public class AcuantInitializer : AcuantCommon.IAcuantInitializer {
+  public init()
+  public func initialize(packages: [AcuantCommon.IAcuantPackage], callback: @escaping (AcuantCommon.AcuantError?) -> ()) -> Foundation.URLSessionTask?
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class SecureAuthorizations {
+  public var processingMode: AcuantCommon.ProcessingMode {
+    get
+  }
+  public var hasOzone: Swift.Bool {
+    get
+  }
+  public var hasLiveCapture: Swift.Bool {
+    get
+  }
+  @objc deinit
+}
 @objc public enum DeleteType : Swift.Int {
   case ID
   case MedicalCard
@@ -14,7 +34,7 @@ import UIKit
     get
   }
 }
-@objc @objcMembers public class Image : ObjectiveC.NSObject {
+@objc @_inheritsConvenienceInitializers @objcMembers public class Image : ObjectiveC.NSObject {
   @objc public var image: UIKit.UIImage?
   @objc public var dpi: Swift.Int
   @objc public var error: AcuantCommon.AcuantError?
@@ -26,33 +46,27 @@ import UIKit
   @objc override dynamic public init()
   @objc deinit
 }
-@objc @objcMembers public class AcuantError : ObjectiveC.NSObject {
+public protocol IAcuantPackage {
+  func initialize()
+}
+@objc @_inheritsConvenienceInitializers @objcMembers public class AcuantError : ObjectiveC.NSObject {
   @objc public var errorCode: Swift.Int
   @objc public var errorDescription: Swift.String?
   @objc override dynamic public init()
+  @objc public init(errorCode: Swift.Int = 0, errorDescription: Swift.String?)
   @objc public class func newInstance() -> AcuantCommon.AcuantError
   @objc deinit
 }
-@objc @objcMembers public class AcuantErrorCodes : ObjectiveC.NSObject {
+@objc @_inheritsConvenienceInitializers @objcMembers public class AcuantErrorCodes : ObjectiveC.NSObject {
   @objc public static let ERROR_InvalidCredentials: Swift.Int
-  @objc public static let ERROR_InvalidLicenseKey: Swift.Int
-  @objc public static let ERROR_InvalidEndpoint: Swift.Int
   @objc public static let ERROR_InitializationNotFinished: Swift.Int
   @objc public static let ERROR_Network: Swift.Int
   @objc public static let ERROR_InvalidJson: Swift.Int
   @objc public static let ERROR_CouldNotCrop: Swift.Int
-  @objc public static let ERROR_NotEnoughMemory: Swift.Int
-  @objc public static let ERROR_BarcodeCaptureFailed: Swift.Int
-  @objc public static let ERROR_BarcodeCaptureTimedOut: Swift.Int
-  @objc public static let ERROR_BarcodeCaptureNotAuthorized: Swift.Int
-  @objc public static let ERROR_LiveFaceCaptureNotAuthorized: Swift.Int
   @objc public static let ERROR_CouldNotCreateConnectInstance: Swift.Int
   @objc public static let ERROR_CouldNotUploadConnectImage: Swift.Int
   @objc public static let ERROR_CouldNotUploadConnectBarcode: Swift.Int
   @objc public static let ERROR_CouldNotGetConnectData: Swift.Int
-  @objc public static let ERROR_CouldNotProcessFacialMatch: Swift.Int
-  @objc public static let ERROR_CardWidthNotSet: Swift.Int
-  @objc public static let ERROR_CouldNotGetHealthCardData: Swift.Int
   @objc public static let ERROR_CouldNotClassifyDocument: Swift.Int
   @objc public static let ERROR_LowResolutionImage: Swift.Int
   @objc public static let ERROR_BlurryImage: Swift.Int
@@ -63,10 +77,16 @@ import UIKit
   @objc public static let ERROR_CouldNotAccessCredential: Swift.Int
   @objc public static let ERROR_USER_CANCELED_ACTIVITY: Swift.Int
   @objc public static let ERROR_INVALID_PARAMETER: Swift.Int
-  @objc override dynamic public init()
+  @objc public static let ERROR_OzoneInvalidFormat: Swift.Int
+  @objc public static let ERROR_OzoneNotAuthorized: Swift.Int
+  @objc public static let ERROR_EChipReadError: Swift.Int
+  @objc public static let ERROR_InvalidNfcTag: Swift.Int
+  @objc public static let ERROR_InvalidNfcKeyFormatting: Swift.Int
   @objc deinit
+  @objc override dynamic public init()
 }
-@objc @objcMembers public class Credential : ObjectiveC.NSObject {
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objcMembers public class Credential : ObjectiveC.NSObject {
+  public class func authorization() -> AcuantCommon.SecureAuthorizations
   @objc public class func username() -> Swift.String?
   @objc public class func password() -> Swift.String?
   @objc public class func subscription() -> Swift.String?
@@ -76,9 +96,10 @@ import UIKit
   @objc public class func setPassword(password: Swift.String!)
   @objc public class func setSubscription(subscription: Swift.String!)
   @objc public class func setEndpoints(endpoints: AcuantCommon.Endpoints)
+  public class func setAuthorzation(auth: AcuantCommon.SecureAuthorizations)
   @objc deinit
 }
-@objc @objcMembers public class AcuantErrorDescriptions : ObjectiveC.NSObject {
+@objc @_inheritsConvenienceInitializers @objcMembers public class AcuantErrorDescriptions : ObjectiveC.NSObject {
   @objc public static let ERROR_DESC_InvalidCredentials: Swift.String
   @objc public static let ERROR_DESC_InvalidLicenseKey: Swift.String
   @objc public static let ERROR_DESC_InvalidEndpoint: Swift.String
@@ -106,16 +127,21 @@ import UIKit
   @objc public static let ERROR_DESC_ERROR_CouldNotAccessCredential: Swift.String
   @objc public static let ERROR_DESC_USER_CANCELED_ACTIVITY: Swift.String
   @objc public static let ERROR_DESC_INVALID_PARAMETERS: Swift.String
-  @objc override dynamic public init()
+  @objc public static let ERROR_DESC_OzoneInvalidFormat: Swift.String
+  @objc public static let ERROR_DESC_OzoneNotAuthorized: Swift.String
+  @objc public static let ERROR_DESC_EChipReadError: Swift.String
+  @objc public static let ERROR_DESC_InvalidNfcTag: Swift.String
+  @objc public static let ERROR_DESC_InvalidNfcKeyFormatting: Swift.String
   @objc deinit
+  @objc override dynamic public init()
 }
-@objc @objcMembers public class CroppingData : ObjectiveC.NSObject {
+@objc @_inheritsConvenienceInitializers @objcMembers public class CroppingData : ObjectiveC.NSObject {
   @objc public var image: UIKit.UIImage?
   @objc public class func newInstance() -> AcuantCommon.CroppingData
   @objc override dynamic public init()
   @objc deinit
 }
-@objc @objcMembers public class DocumentProcessingMode : ObjectiveC.NSObject {
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objcMembers public class DocumentProcessingMode : ObjectiveC.NSObject {
   @objc public class func processingMode() -> AcuantCommon.ProcessingMode
   @objc public class func setDataCaptureProcessingMode()
   @objc deinit
@@ -130,16 +156,18 @@ import UIKit
     get
   }
 }
-@objc @objcMembers public class Endpoints : ObjectiveC.NSObject {
+@objc @_inheritsConvenienceInitializers @objcMembers public class Endpoints : ObjectiveC.NSObject {
   @objc public var frmEndpoint: Swift.String?
   @objc public var idEndpoint: Swift.String?
   @objc public var passiveLivenessEndpoint: Swift.String?
   @objc public var healthInsuranceEndpoint: Swift.String?
+  @objc public var acasEndpoint: Swift.String?
+  @objc public var ozoneEndpoint: Swift.String?
   @objc public class func newInstance() -> AcuantCommon.Endpoints
   @objc override dynamic public init()
   @objc deinit
 }
-@objc @objcMembers public class Utils : ObjectiveC.NSObject {
+@objc @_inheritsConvenienceInitializers @objcMembers public class Utils : ObjectiveC.NSObject {
   @objc public static var SENT_IMAGE_QUALITY_JPEG_COMPRESSION: CoreGraphics.CGFloat
   @objc public static var SDK_VERSION_CODE: Swift.String
   @objc public static func convertToDictionary(text: Swift.String?) -> [Swift.String : Any]?
@@ -151,8 +179,8 @@ import UIKit
   @objc public static func getArrayValue(jsonDict: [Swift.String : Any]?, key: Swift.String) -> Swift.Array<Any>?
   @objc public static func getBooleanValue(jsonDict: [Swift.String : Any]?, key: Swift.String) -> Swift.Bool
   @objc public static func dateFieldToDateString(dateStr: Swift.String?) -> Swift.String?
-  @objc override dynamic public init()
   @objc deinit
+  @objc override dynamic public init()
 }
 extension AcuantCommon.DeleteType : Swift.Equatable {}
 extension AcuantCommon.DeleteType : Swift.Hashable {}

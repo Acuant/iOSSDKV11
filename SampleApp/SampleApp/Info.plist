@@ -22,6 +22,8 @@
 	<false/>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NFCReaderUsageDescription</key>
+	<string>NFC tag to read NDEF messages into the application</string>
 	<key>NSCameraUsageDescription</key>
 	<string>$(PRODUCT_NAME) uses camera to take photo</string>
 	<key>NSPhotoLibraryAddUsageDescription</key>
@@ -33,6 +35,7 @@
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>
+		<string>nfc</string>
 	</array>
 	<key>UIRequiresFullScreen</key>
 	<true/>
@@ -49,5 +52,9 @@
 	</array>
 	<key>UIUserInterfaceStyle</key>
 	<string>Light</string>
+	<key>com.apple.developer.nfc.readersession.iso7816.select-identifiers</key>
+	<array>
+		<string>A0000002471001</string>
+	</array>
 </dict>
 </plist>

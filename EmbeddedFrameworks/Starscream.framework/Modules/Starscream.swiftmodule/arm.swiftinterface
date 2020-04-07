@@ -1,5 +1,5 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.1.2 (swiftlang-1100.0.278 clang-1100.0.33.9)
+// swift-compiler-version: Apple Swift version 5.2 (swiftlang-1103.0.32.1 clang-1103.0.32.29)
 // swift-module-flags: -target armv7-apple-ios8.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name Starscream
 import CommonCrypto
 import CoreFoundation
@@ -89,7 +89,7 @@ public protocol WSStream {
   func cleanup()
   func sslTrust() -> (trust: Security.SecTrust?, domain: Swift.String?)
 }
-@objc open class FoundationStream : ObjectiveC.NSObject, Starscream.WSStream, Foundation.StreamDelegate {
+@objc @_inheritsConvenienceInitializers open class FoundationStream : ObjectiveC.NSObject, Starscream.WSStream, Foundation.StreamDelegate {
   weak public var delegate: Starscream.WSStreamDelegate?
   public var enableSOCKSProxy: Swift.Bool
   public func connect(url: Foundation.URL, port: Swift.Int, timeout: Foundation.TimeInterval, ssl: Starscream.SSLSettings, completion: @escaping ((Swift.Error?) -> Swift.Void))
@@ -98,8 +98,8 @@ public protocol WSStream {
   public func cleanup()
   public func sslTrust() -> (trust: Security.SecTrust?, domain: Swift.String?)
   @objc open func stream(_ aStream: Foundation.Stream, handle eventCode: Foundation.Stream.Event)
-  @objc override dynamic public init()
   @objc deinit
+  @objc override dynamic public init()
 }
 public protocol WebSocketDelegate : AnyObject {
   func websocketDidConnect(socket: Starscream.WebSocketClient)
@@ -134,7 +134,7 @@ public protocol WebSocketAdvancedDelegate : AnyObject {
   }
   public static let ErrorDomain: Swift.String
   public var callbackQueue: Dispatch.DispatchQueue
-  public class WSResponse {
+  @_hasMissingDesignatedInitializers public class WSResponse {
     public var code: Starscream.WebSocket.OpCode
     public var frameCount: Swift.Int
     public var buffer: Foundation.NSMutableData?

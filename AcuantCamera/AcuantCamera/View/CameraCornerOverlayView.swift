@@ -14,10 +14,6 @@ public class CameraCornerOverlayView : CALayer{
     public var bracketHeight: Int? = nil
     public var defaultBracketMarginWidth: CGFloat? = nil
     public var defaultBracketMarginHeight: CGFloat? = nil
-    public var colorAlign: CGColor? = nil
-    public var colorCloser: CGColor? = nil
-    public var colorHold: CGColor? = nil
-    public var colorCapture: CGColor? = nil
     
     private let corners = [CameraCornerView(), CameraCornerView(), CameraCornerView(), CameraCornerView()]
     
@@ -26,10 +22,6 @@ public class CameraCornerOverlayView : CALayer{
         self.bracketWidth = options.bracketLengthInVertical
         self.defaultBracketMarginWidth = options.defaultBracketMarginWidth
         self.defaultBracketMarginHeight = options.defaultBracketMarginHeight
-        self.colorAlign = options.colorBracketAlign
-        self.colorHold = options.colorBracketHold
-        self.colorCapture = options.colorBracketCapture
-        self.colorCloser = options.colorBracketCloser
         super.init()
         corners.forEach { c in
             self.addSublayer(c)
@@ -44,31 +36,11 @@ public class CameraCornerOverlayView : CALayer{
         self.setDefaultCorners(frame: frame)
     }
     
-    public func setLookFromState(state: DocumentCameraController.CameraState) {
-        var color = UIColor.black.cgColor
-        switch state {
-        case DocumentCameraController.CameraState.MoveCloser:
-            color = colorCloser!
-            break;
-        case DocumentCameraController.CameraState.Hold:
-            color = colorHold!
-            break;
-        case DocumentCameraController.CameraState.Steady:
-            color = colorHold!
-            break;
-        case DocumentCameraController.CameraState.Capture:
-            color = colorCapture!
-            break;
-        default://align
-            color = colorAlign!
-            break;
-        }
-        setColor(color: color)
-    }
-    
-    private func setColor(color: CGColor){
-        corners.forEach { c in
-            c.strokeColor = color
+    public func setColor(color: CGColor?){
+        if let uc = color{
+            corners.forEach { c in
+                c.strokeColor = uc
+            }
         }
     }
     
@@ -113,7 +85,7 @@ public class CameraCornerOverlayView : CALayer{
     }
     
     
-    internal func setDefaultCorners(frame: CGRect){
+    public func setDefaultCorners(frame: CGRect){
         let center = CGSize(width: frame.width/2, height: frame.height/2)
         let xOffset = Int(center.width * defaultBracketMarginWidth!) + bracketWidth!
         let yOffset = Int(center.height * defaultBracketMarginHeight!)

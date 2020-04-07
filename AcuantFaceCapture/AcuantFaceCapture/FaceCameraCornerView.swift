@@ -55,7 +55,7 @@ class FaceCameraCornerView : CAShapeLayer, CAAnimationDelegate{
         self.fillColor = color
     }
     
-    func showBorder(color: CGColor = UIColor.red.cgColor){
+    func showBorder(color: CGColor? = UIColor.red.cgColor){
         self.strokeColor = color
         self.fillColor = color
         if(!isAnimating && !isShown){

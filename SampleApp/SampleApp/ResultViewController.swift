@@ -31,9 +31,6 @@ class ResultViewController: UIViewController,UITableViewDataSource,UITableViewDe
     public var username : String? = nil
     public var password : String? = nil
     
-    @IBAction func backTapped(_ sender: Any) {
-        self.navigationController?.popViewController(animated: true)
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

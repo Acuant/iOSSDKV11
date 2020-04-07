@@ -3,6 +3,7 @@ $(SRCROOT)/../EmbeddedFrameworks/SwiftyJSON.framework
 $(SRCROOT)/../EmbeddedFrameworks/KeychainAccess.framework
 $(SRCROOT)/../EmbeddedFrameworks/SocketIO.framework
 $(SRCROOT)/../EmbeddedFrameworks/Starscream.framework
+$(SRCROOT)/../EmbeddedFrameworks/TesseractOCR.framework
 $(SRCROOT)/../EmbeddedFrameworks/AcuantIPLiveness.framework
 $(SRCROOT)/../EmbeddedFrameworks/AcuantCommon.framework
 $(SRCROOT)/../EmbeddedFrameworks/AcuantDocumentProcessing.framework
@@ -10,3 +11,4 @@ $(SRCROOT)/../EmbeddedFrameworks/AcuantHGLiveness.framework
 $(SRCROOT)/../EmbeddedFrameworks/AcuantFaceMatch.framework
 $(SRCROOT)/../EmbeddedFrameworks/AcuantImagePreparation.framework
 $(SRCROOT)/../EmbeddedFrameworks/AcuantPassiveLiveness.framework
+$(SRCROOT)/../EmbeddedFrameworks/AcuantEchipReader.framework

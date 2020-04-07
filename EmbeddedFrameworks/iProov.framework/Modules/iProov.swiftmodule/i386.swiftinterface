@@ -20,8 +20,13 @@ import SwiftyJSON
 import UIKit
 import VideoToolbox
 import Vision
+import WebKit
 @_exported import iProov
-@objc public class IProov : ObjectiveC.NSObject {
+extension IProov {
+  @discardableResult
+  public static func handle(url: Foundation.URL, from webView: WebKit.WKWebView) -> Swift.Bool
+}
+@objc(IProov) public class IProov : ObjectiveC.NSObject {
   @objc deinit
 }
 public enum IProovError : Foundation.LocalizedError {
@@ -36,49 +41,49 @@ public enum IProovError : Foundation.LocalizedError {
     get
   }
 }
-public protocol IProovPresentationDelegate : AnyObject {
-  func present(iProovViewController: UIKit.UIViewController)
-  func dismiss(iProovViewController: UIKit.UIViewController)
+@objc public protocol IProovPresentationDelegate : AnyObject {
+  @objc func present(iProovViewController: UIKit.UIViewController)
+  @objc func dismiss(iProovViewController: UIKit.UIViewController)
 }
 extension IProov {
   @available(swift, obsoleted: 1.0)
-  @objc public static func launch(streamingURL: Swift.String, token: Swift.String, options: iProov.Options, processing: @escaping (Swift.Double, Swift.String) -> Swift.Void, success: @escaping (Swift.String) -> Swift.Void, cancelled: @escaping () -> Swift.Void, failure: @escaping (Swift.String) -> Swift.Void, error: @escaping (Foundation.NSError) -> Swift.Void)
+  @objc public static func launch(streamingURL: Swift.String, token: Swift.String, options: iProov.Options, processing: @escaping (Swift.Double, Swift.String) -> Swift.Void, success: @escaping (Swift.String) -> Swift.Void, cancelled: @escaping () -> Swift.Void, failure: @escaping (Swift.String, Swift.String) -> Swift.Void, error: @escaping (Foundation.NSError) -> Swift.Void)
 }
 @objc public class Options : ObjectiveC.NSObject {
-  public var ui: iProov.UIOptions
-  public var network: iProov.NetworkOptions
-  public var capture: iProov.CaptureOptions
+  @objc public var ui: iProov.UIOptions
+  @objc public var network: iProov.NetworkOptions
+  @objc public var capture: iProov.CaptureOptions
   @objc override dynamic public init()
   @objc deinit
 }
 @objc public class UIOptions : ObjectiveC.NSObject {
-  public var autoStartDisabled: Swift.Bool
-  public var filter: iProov.Filter
-  public var stringsBundle: Foundation.Bundle?
-  public var lineColor: UIKit.UIColor
-  public var backgroundColor: UIKit.UIColor
-  public var loadingTintColor: UIKit.UIColor
-  public var notReadyTintColor: UIKit.UIColor
-  public var readyTintColor: UIKit.UIColor
-  public var title: Swift.String?
-  public var font: Swift.String
-  public var logoImage: UIKit.UIImage?
-  public var scanLineDisabled: Swift.Bool
-  weak public var presentationDelegate: iProov.IProovPresentationDelegate?
+  @objc public var autoStartDisabled: Swift.Bool
+  @objc public var filter: iProov.Filter
+  @objc public var stringsBundle: Foundation.Bundle?
+  @objc public var lineColor: UIKit.UIColor
+  @objc public var backgroundColor: UIKit.UIColor
+  @objc public var loadingTintColor: UIKit.UIColor
+  @objc public var notReadyTintColor: UIKit.UIColor
+  @objc public var readyTintColor: UIKit.UIColor
+  @objc public var title: Swift.String?
+  @objc public var font: Swift.String
+  @objc public var logoImage: UIKit.UIImage?
+  @objc public var scanLineDisabled: Swift.Bool
+  @objc weak public var presentationDelegate: iProov.IProovPresentationDelegate?
   @objc deinit
 }
 @objc public class NetworkOptions : ObjectiveC.NSObject {
-  public var certificates: [Swift.String]
-  public var certificatePinningDisabled: Swift.Bool
-  public var timeout: Foundation.TimeInterval
-  public var path: Swift.String
+  @objc public var certificates: [Swift.String]
+  @objc public var certificatePinningDisabled: Swift.Bool
+  @objc public var timeout: Foundation.TimeInterval
+  @objc public var path: Swift.String
   @objc override dynamic public init()
   @objc deinit
 }
 @objc public class CaptureOptions : ObjectiveC.NSObject {
-  public var maxYaw: CoreGraphics.CGFloat?
-  public var maxRoll: CoreGraphics.CGFloat?
-  public var maxPitch: CoreGraphics.CGFloat?
+  @objc public var maxYaw: CoreGraphics.CGFloat
+  @objc public var maxRoll: CoreGraphics.CGFloat
+  @objc public var maxPitch: CoreGraphics.CGFloat
   @objc override dynamic public init()
   @objc deinit
 }
@@ -90,6 +95,7 @@ extension IProov {
     get
   }
 }
+infix operator ?= : AssignmentPrecedence
 infix operator --> : AdditionPrecedence
 public typealias Callback = (iProov.Status) -> Swift.Void
 public let defaultStreamingURL: Swift.String

@@ -1,5 +1,5 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.1.3 (swiftlang-1100.0.282.1 clang-1100.0.33.15)
+// swift-compiler-version: Apple Swift version 5.2 (swiftlang-1103.0.32.1 clang-1103.0.32.29)
 // swift-module-flags: -target x86_64-apple-ios11.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name AcuantPassiveLiveness
 import AcuantCommon
 @_exported import AcuantPassiveLiveness
@@ -28,7 +28,7 @@ public class AcuantLivenessError {
   public init(errorCode: AcuantPassiveLiveness.AcuantLivenessErrorCode? = nil, description: Swift.String? = nil)
   @objc deinit
 }
-public class AcuantPassiveLiveness {
+@_hasMissingDesignatedInitializers public class AcuantPassiveLiveness {
   public class func postLiveness(request: AcuantPassiveLiveness.AcuantLivenessRequest, callback: @escaping (AcuantPassiveLiveness.AcuantLivenessResponse?, AcuantPassiveLiveness.AcuantLivenessError?) -> ())
   @objc deinit
 }

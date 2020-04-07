@@ -1,4 +1,4 @@
-# Acuant iOS SDK v11.3.2
+# Acuant iOS SDK v11.4.0
 
 **March 2020**
 
@@ -39,6 +39,7 @@ The SDK includes the following modules:
 
 - Implemented using iOS native camera library
 - Uses **AcuantImagePreparation** for cropping
+- Uses **https://github.com/gali8/Tesseract-OCR-iOS** for OCR on device
 
 **Acuant Image Preparation Library (AcuantImagePreparation):**
 
@@ -50,15 +51,23 @@ The SDK includes the following modules:
 
 **Acuant Face Match Library (AcuantFaceMatch):**
 
-- Contains a method to match two face images
+- Contains a method to match two facial images
+
+**Acuant EChip Library (AcuantEchipReader):**
+
+- Contains methods for e-Passport chip reading and authentication using Ozone
 
 **Acuant HG Liveness Library (AcuantHGLiveness):**
 
-- Uses iOS native camera library to capture facial liveliness using a proprietary algorithm
+- Uses iOS native camera library to capture facial liveness using a proprietary algorithm
 
-**Acuant IP Liveliness Library (AcuantIPLiveness):**
+**Acuant IP Liveness Library (AcuantIPLiveness):**
 
 - Uses proprietary algorithm to detect a live person
+
+**Note** IP Liveness is now referred to in the UI as Enhanced Liveness. 
+
+
 
 ----------
 ### Manual Setup
@@ -69,11 +78,13 @@ The SDK includes the following modules:
  -	**AcuantPassiveLiveness**
  -	**AcuantCommon**
  -	**AcuantImagePreparation**
- -	**AcuantCamera**
  -	**AcuantDocumentProcessing**
  -	**AcuantHGLiveness**
  -	**AcuantFaceMatch**
- - **AcuantIPLiveness**
+ -	**AcuantEchipReader**
+ -	**AcuantCamera**
+ 		- TesseractOCRiOS.framework
+ -	**AcuantIPLiveness**
 	 	- iProov.framework
  		- KeychainAccess.framework
  		- SocketIO.framework
@@ -97,9 +108,62 @@ The SDK includes the following modules:
 ### Using COCOAPODS
 1. If you are using COCOAPODS, then add the following podfile:
 
-		platform :ios, '11.0'
-		pod 'AcuantiOSSDKV11', '~> 11.3.2'
+		platform :ios, '13.2'
+		pod 'AcuantiOSSDKV11', '~> 11.4.0' #for all packages
 		
+		#indepedent packages below
+		
+		#=== AcuantCamera ====
+		platform :ios, '11'
+		pod 'AcuantiOSSDKV11/AcuantCamera'
+		dependency AcuantImagePreparation
+		dependency AcuantCommon
+		
+		pod 'AcuantiOSSDKV11/AcuantCamera/Mrz' # if you want MRZ camera
+		dependency TesseractOCRiOS
+				
+		pod 'AcuantiOSSDKV11/AcuantCamera/Document' # if you want Document camera
+		# =====================
+
+		#AcuantFaceCapture
+		platform :ios, '11'
+		pod 'AcuantiOSSDKV11/AcuantFaceCapture'
+
+		#AcuantImagePreparation
+		platform :ios, '11'
+		pod 'AcuantiOSSDKV11/AcuantImagePreparation'
+		dependency AcuantCommon
+		
+		#AcuantDocumentProcessing
+		platform :ios, '11'
+		pod 'AcuantiOSSDKV11/AcuantDocumentProcessing'
+		dependency AcuantCommon
+
+		#AcuantHGLiveness
+		platform :ios, '11'
+		pod 'AcuantiOSSDKV11/AcuantHGLiveness'
+		dependency AcuantCommon
+		
+		#AcuantIPLiveness
+		platform :ios, '11'
+		pod 'AcuantiOSSDKV11/AcuantIPLiveness'
+		dependency AcuantCommon
+		dependency iProov
+		
+		#AcuantPassiveLiveness
+		platform :ios, '11'
+		pod 'AcuantiOSSDKV11/AcuantIPLiveness'
+		dependency AcuantCommon
+		
+		#AcuantFaceMatch
+		platform :ios, '11'
+		pod 'AcuantiOSSDKV11/AcuantFaceMatch'
+		dependency AcuantCommon
+		
+		#AcuantEchipReader
+		platform :ios, '13.2'
+		pod 'AcuantiOSSDKV11/AcuantEchipReader'
+		dependency AcuantCommon
 		
 1. 	Enable "BUILD\_FOR\_DISTRIBUTION" for all Acuant pod frameworks in Build Settings.
 
@@ -144,12 +208,101 @@ The SDK includes the following modules:
 				<string>https://medicscan.acuant.net</string>
 				<key>assureid_endpoint</key>
 				<string>https://services.assureid.net</string>
+				<key>acas_endpoint</key>
+				<string>https://acas.acuant.net</string>
+				<key>ozone_endpoint</key>
+				<string>https://ozone.acuant.net</string>
 			</dict>
 		</plist>
+		
+	The following are the default values based on region:
 
+		USA
+			<key>frm_endpoint</key>
+			<string>https://frm.acuant.net</string>
+			<key>passive_liveness_endpoint</key>
+			<string>https://passlive.acuant.net</string>
+			<key>med_endpoint</key>
+			<string>https://medicscan.acuant.net</string>
+			<key>assureid_endpoint</key>
+			<string>https://services.assureid.net</string>
+			<key>acas_endpoint</key>
+			<string>https://acas.acuant.net</string>
+			<key>ozone_endpoint</key>
+			<string>https://ozone.acuant.net</string>
+
+		EU
+			<key>frm_endpoint</key>
+			<string>https://eu.frm.acuant.net</string>
+			<key>passive_liveness_endpoint</key>
+			<string>https://eu.passlive.acuant.net</string>
+			<key>assureid_endpoint</key>
+			<string>https://eu.assureid.acuant.net</string>
+			<key>acas_endpoint</key>
+			<string>https://eu.acas.acuant.net</string>
+			<key>ozone_endpoint</key>
+			<string>https://eu.ozone.acuant.net</string>
+
+		AUS
+			<key>frm_endpoint</key>
+			<string>https://aus.frm.acuant.net</string>
+			<key>passive_liveness_endpoint</key>
+			<string>https://aus.passlive.acuant.net</string>
+			<key>assureid_endpoint</key>
+			<string>https://aus.assureid.acuant.net</string>
+			<key>acas_endpoint</key>
+			<string>https://aus.acas.acuant.net</string>
+			<key>ozone_endpoint</key>
+			<string>https://aus.ozone.acuant.net</string>
 
 
 ----------
+### Initialize
+
+**Initialization**
+
+1. Select packages for initialization.
+
+		let packages = [AcuantEchipPackage(), AcuantImagePreparationPackage()]
+
+1. Initialize the sdk.
+		
+		let initalizer: IAcuantInitializer = AcuantInitializer()
+        
+		let task = initalizer.initialize(packages: packages){ [weak self]
+			error in
+				if let err = error{
+					//error
+				}
+				else{
+					//success
+				}	
+        }
+                
+	**Note:** If you are *not* using a configuration file for initialization, then use the following statement (providing appropriate credentials for *username*, *password*, and *subscription ID*):
+	
+		Credential.setUsername(username: "xxx")
+		Credential.setPassword(password: "xxxx")
+		Credential.setSubscription(subscription: "xxxxxx")
+
+		let endpoints = Endpoints()
+		endpoints.frmEndpoint = "https://frm.acuant.net"
+		endpoints.healthInsuranceEndpoint = "https://medicscan.acuant.net"
+		endpoints.idEndpoint = "https://services.assureid.net"
+		endpoints.acasEndpoint = "https://acas.acuant.net"
+		endpoints.ozoneEndpoint = "https://ozone.acuant.net"
+
+		Credential.setEndpoints(endpoints: endpoints)		
+#### **Initialization without a Subscription ID**
+
+**AcuantImagePreparation** may be initialized by providing only a username and a password. However, without providing a Subscription ID, the application can only capture an image and get the image. 
+Initialize without a Subscription ID:
+
+-	Only the **AcuantCamera**, **AcuantImagePreparation**, and **AcuantHGLiveness** modules may be used.
+-	The SDK can be used to capture the identity documents.
+-	The captured images can be exported from the SDK. See the **DocumentCaptureDelegate** protocol in the **AcuantCamera** project.
+		
+		
 ### Capture an Image using AcuantCamera
 
 1. AcuantCamera is best used in portrait mode. Lock the orientation of the app before using Camera. 
@@ -188,7 +341,7 @@ The SDK includes the following modules:
 		
 		let captureSession = DocumentCaptureSession.getDocumentCaptureSession(
 			delegate: DocumentCaptureDelegate, // session callback
-			frameDelegate: FrameAnalysisDelegate, // frame anaylsis callback
+			frameDelegate: FrameAnalysisDelegate, // frame analysis callback
 			autoCapture:Bool, // enable frame analysis
 			captureDevice:AVCaptureDevice?) // AV Capture Device 
 			
@@ -224,78 +377,232 @@ The SDK includes the following modules:
 	**Note:**   **AcuantCamera** is dependent on **AcuantImagePreparation** and  **AcuantCommon**.
 
 ----------
+### Read MRZ using AcuantCamera
+
+1. Add Tesseract dependency. See https://github.com/gali8/Tesseract-OCR-iOS
+
+
+1. Add the OCRB Training data to you project. We recommend using the training data resource in Assets directory of the Sample App. Please refer to https://www.raywenderlich.com/2010498-tesseract-ocr-tutorial-for-ios#toc-anchor-005.
+
+1. Set View Controller UI customizations.
+
+		public enum MrzCameraState : Int {
+			case None = 0, Align = 1, MoveCloser = 2, TooClose = 3, Good = 4, Captured = 5
+		}
+		
+		let vc = AcuantMrzCameraController()
+		vc.options = AcuantCameraOptions()
+		
+		vc.customDisplayMessage : ((MrzCameraState) -> String) = {
+			state in
+				switch(state){
+					case .None, .Align:
+						return ""
+					case .MoveCloser:
+						return "Move Closer"
+					case .TooClose:
+						return "Too Close!"
+					case .Good:
+						return "Reading MRZ"
+					case .Captured:
+						return "Captured"
+				}
+		}
+
+		
+1. Set callback.
+
+		vc.callback : ((AcuantMrzResult) -> Void)? = { [weak self]
+			result in
+				DispatchQueue.main.async {
+					//pop or dismiss the View Controller
+					self?.navigationController?.popViewController(animated: true)
+				}
+		}	
+
+1. Present or Push the View Controller. Push is shown in example.
+
+		self.navigationController?.pushViewController(controller, animated: false)
+
+1. Result.
+
+		public class AcuantMrzResult{
+			public var surName:String = ""
+			public var givenName:String = ""
+			public var country:String = ""
+			public var passportNumber: String = ""
+			public var nationality:String = ""
+			public var dob: String = ""
+			public var gender: String = ""
+			public var passportExpiration: String = ""
+			public var personalDocNumber: String = ""
+			public var checkSumResult1: Bool = false
+			public var checkSumResult2: Bool = false
+			public var checkSumResult3: Bool = false
+			public var checkSumResult4: Bool = false
+			public var checkSumResult5: Bool = false
+		}
+
+----------
+### AcuantEchipReader
+
+1. Configure the application to detect NFC Tags. Add "Near Field Communication" Capability to the target app under Signing and Capability in Xcode. Then, add "NFCReaderUsageDescription" key to the Info.plist of the app. For more info, please look at "Configure the App to Detect NFC Tags" on https://developer.apple.com/documentation/corenfc/building_an_nfc_tag-reader_app.
+
+
+1. AcuantEchipPackage must be initialized in the previous step.
+
+
+1. Create an instance of Acuant Reader. Make sure this object does not get disposed while reading.
+
+		private let reader: IAcuantEchipReader = AcuantEchipReader()
+		
+1. Create a session request.
+
+		let request = AcuantEchipSessionRequest(passportNumber: "", dateOfBirth: "", expiryDate: "")
+		
+1. Set custom messages based on state of reader.
+
+		public enum AcuantEchipDisplayMessage {
+		    case requestPresentPassport
+		    case authenticatingWithPassport(Int)
+		    case readingDataGroupProgress(String, Int)
+		    case error
+		    case authenticatingExtractedData
+		    case successfulRead
+		}
+
+		let customDisplayMessage : ((AcuantEchipDisplayMessage) -> String?) =  {
+			message in
+    
+				switch message {
+					case .requestPresentPassport:
+						return "Hold your iPhone near an NFC enabled passport."
+					case .authenticatingWithPassport(let progress):
+	                let progressString = handleProgress(percentualProgress: progress)
+	                return "Authenticating with passport.....\n\n\(progressString)"
+					case .readingDataGroupProgress(let dataGroup, let progress):
+						let progressString = handleProgress(percentualProgress: progress)
+						return "Reading \(dataGroup).....\n\n\(progressString)"
+					case .error:
+						return "Sorry, there was a problem reading the passport. Please try again"
+					case .successfulRead:
+						return "Passport read successfully"
+					case .authenticatingExtractedData:
+						return "Authenicating with Ozone"
+            }
+		}
+    
+            
+1. Start the reader. 
+
+		self.reader.readNfcTag(request: request, customDisplayMessage: customDisplayMessage){ [weak self]
+			(model, error) in
+				if let result = model{
+                    //success
+				}
+				else{
+					if let err = error{
+						//error
+					}
+					else{
+						//user canceled
+					}  
+				}
+		}
+		
+1. Result.
+
+		public class AcuantPassportModel {
+			public var documentType : String
+			public var documentSubType : String
+			public var personalNumber : String
+			public var documentNumber : String
+			public var issuingAuthority : String
+			public var documentExpiryDate : String
+			public var firstName : String
+			public var lastName : String
+			public var dateOfBirth : String
+			public var gender : String
+			public var nationality : String
+			public var image : UIImage?
+			public var passportSigned = OzoneResultStatus.UNKNOWN
+			public var passportCountrySigned = OzoneResultStatus.UNKNOWN
+			public var passportDataValid = false
+			
+			    
+		    public func getRawDataGroup(dgId: AcuantDataGroupId) -> [UInt8]?{
+		        return self.dataGroups[dgId]
+		    }
+		}
+		
+		public enum OzoneResultStatus : Int{
+		    case SUCCESS
+		    case FAILED
+		    case UNKNOWN
+		}
+
+		public enum AcuantDataGroupId : Int {
+		    case COM
+		    case DG1
+		    case DG2
+		    case DG3
+		    case DG4
+		    case DG5
+		    case DG6
+		    case DG7
+		    case DG8
+		    case DG9
+		    case DG10
+		    case DG11
+		    case DG12
+		    case DG13
+		    case DG14
+		    case DG15
+		    case DG16
+		    case SOD
+		    case Unknown
+		}
+		
+1. Map country to passport.
+
+		public let AcuantCountryDataPageMap: [String: String]
+		//{ "CountryCode": "Location" }
+	
+
+----------
 ### AcuantImagePreparation
 
 This module contains all image preparation functionality.
-
-
--	**Initialization**
-
-		AcuantImagePreparation.initialize(delegate: InitializationDelegate)
-
-		public protocol InitializationDelegate {
-    		func initializationFinished(error: AcuantError?);
-		}
-
-	**Note:** If you are *not* using a configuration file for initialization, then use the following statement (providing appropriate credentials for *username*, *password*, and *subscription ID*):
-	
-		Credential.setUsername(username: "xxx")
-		Credential.setPassword(password: "xxxx")
-		Credential.setSubscription(subscription: "xxxxxx")
-
-		let endpoints = Endpoints()
-		endpoints.frmEndpoint = "https://frm.acuant.net"
-		endpoints.healthInsuranceEndpoint = "https://medicscan.acuant.net"
-		endpoints.idEndpoint = "https://services.assureid.net"
-
-		Credential.setEndpoints(endpoints: endpoints)
-
-		AcuantImagePreparation.initialize(delegate:self)
-		
-
-#### **Initialization without a Subscription ID**
-
-**AcuantImagePreparation** may be initialized by providing only a username and a password. However, without providing a Subscription ID, the application can only capture an image and get the image. 
-Without a Subscription ID:
-
--	Only the **AcuantCamera**, **AcuantImagePreparation**, and **AcuantHGLiveness** modules may be used.
--	The SDK can be used to capture the identity documents.
--	The captured images can be exported from the SDK. See the **DocumentCaptureDelegate** protocol in the **AcuantCamera** project.
-
-		public protocol DocumentCaptureDelegate {
-    		func readyToCapture()
-    		func documentCaptured(image:UIImage, barcodeString:String?)
-		}
 
 #### Cropping
 
 After the image is captured, it is sent to the cropping library for cropping.
 
-		public class func crop(data: CroppingData)->Image
 
-		// CroppingData & Image are part of AcuantCommon
-		// Sample
+	public class func crop(data: CroppingData)->Image
 
-		let croppingData  = CroppingData()
-        croppingData.image = image // UIImage
+	// CroppingData & Image are part of AcuantCommon
+	// Sample
 
-        let croppedImage = AcuantImagePreparation.crop(data: croppingData)
+	let croppingData  = CroppingData()
+	croppingData.image = image // UIImage
+
+	let croppedImage = AcuantImagePreparation.crop(data: croppingData)
 
 #### Sharpness
 
 The **sharpness** method returns a sharpness value of an image. If the sharpness value is greater than 50, then the image is considered sharp (not blurry).
 
-		public class func sharpness(image: UIImage)->Int
+	public class func sharpness(image: UIImage)->Int
 
 #### Glare
 
 The **glare** method returns the glare value of an image. If the glare value is 100, then the image does not contain glare. If the glare value is 0, then image contains glare.
 
-		public class func glare(image: UIImage)->Int
+	public class func glare(image: UIImage)->Int
 		
 
 ----------
-
 ### AcuantDocumentProcessing
 
 After a document image is captured, it can be processed using the following steps.
@@ -334,10 +641,8 @@ After a document image is captured, it can be processed using the following step
     		func instanceDeleted(success : Bool)
 		}
 
-----------
 
 ----------
-
 ### Acuant Face Capture
 
 1. (Optional) Set default Image. Locate "acuant\_default\_face_image.png" in the Assets directory of sample app project. Add this to your app if needed.
@@ -372,15 +677,15 @@ After a document image is captured, it can be processed using the following step
 1. Get the Controller and push to navigationController:
 
 		let controller = AcuantFaceCaptureController()
-			controller.options = options
-			controller.callback = { [weak self]
-				(image: UIImage?) in
-					
-					if(image == nil){
-						//user canceled
-					}
-                
-			}
+		controller.options = options
+		controller.callback = { [weak self]
+			(image: UIImage?) in
+				
+				if(image == nil){
+					//user canceled
+				}
+            
+		}
 				
 		self.navigationController.pushViewController(controller, animated: true)
 
@@ -601,61 +906,72 @@ This module is used to match two facial images:
 ### Error codes
 
 	public class AcuantErrorCodes{
-    	public static let ERROR_InvalidCredentials = -1
-    	public static let ERROR_InvalidLicenseKey = -2
-    	public static let ERROR_InvalidEndpoint = -3
-    	public static let ERROR_InitializationNotFinished = -4
-    	public static let ERROR_Network = -5
-    	public static let ERROR_InvalidJson = -6
-    	public static let ERROR_CouldNotCrop = -7
-    	public static let ERROR_NotEnoughMemory = -8
-    	public static let ERROR_BarcodeCaptureFailed = -9
-    	public static let ERROR_BarcodeCaptureTimedOut = -10
-    	public static let ERROR_BarcodeCaptureNotAuthorized = -11
-    	public static let ERROR_LiveFaceCaptureNotAuthorized = -12
-    	public static let ERROR_CouldNotCreateConnectInstance = -13
-    	public static let ERROR_CouldNotUploadConnectImage = -14
-    	public static let ERROR_CouldNotUploadConnectBarcode = -15
-    	public static let ERROR_CouldNotGetConnectData = -16
-    	public static let ERROR_CouldNotProcessFacialMatch = -17
-    	public static let ERROR_CardWidthNotSet = -18
-    	public static let ERROR_CouldNotGetHealthCardData = -19
-    	public static let ERROR_CouldNotClassifyDocument = -20
-    	public static let ERROR_LowResolutionImage = -21
-    	public static let ERROR_BlurryImage = -22
-    	public static let ERROR_ImageWithGlare = -23
-    	public static let ERROR_CouldNotGetIPLivenessToken = -24
-    	public static let ERROR_NotALiveFace = -25
-    	public static let ERROR_CouldNotAccessLivenessData = -26
+		public static let ERROR_InvalidCredentials = -1
+		public static let ERROR_InitializationNotFinished = -4
+		public static let ERROR_Network = -5
+		public static let ERROR_InvalidJson = -6
+		public static let ERROR_CouldNotCrop = -7
+		public static let ERROR_CouldNotCreateConnectInstance = -13
+		public static let ERROR_CouldNotUploadConnectImage = -14
+		public static let ERROR_CouldNotUploadConnectBarcode = -15
+		public static let ERROR_CouldNotGetConnectData = -16
+		public static let ERROR_CouldNotClassifyDocument = -20
+		public static let ERROR_LowResolutionImage = -21
+		public static let ERROR_BlurryImage = -22
+		public static let ERROR_ImageWithGlare = -23
+		public static let ERROR_CouldNotGetIPLivenessToken = -24
+		public static let ERROR_NotALiveFace = -25
+		public static let ERROR_CouldNotAccessLivenessData = -26
+		public static let ERROR_CouldNotAccessCredential = -27
+		public static let ERROR_USER_CANCELED_ACTIVITY = -28
+		public static let ERROR_INVALID_PARAMETER = -29
+		    
+		//ozone
+		public static let ERROR_OzoneInvalidFormat = -50;
+		public static let ERROR_OzoneNotAuthorized = -51;
+		    
+		//echip
+		public static let ERROR_EChipReadError = -60;
+		public static let ERROR_InvalidNfcTag = -61;
+		public static let ERROR_InvalidNfcKeyFormatting = -62;
 	}
 
 ### Error descriptions
 
 	public class AcuantErrorDescriptions {
-    	public static let ERROR_DESC_InvalidCredentials = "Invalid credentials"
-    	public static let ERROR_DESC_InvalidLicenseKey = "Invalid License Key"
-    	public static let ERROR_DESC_InvalidEndpoint = "Invalid endpoint"
-    	public static let ERROR_DESC_Network = "Network problem"
-    	public static let ERROR_DESC_InitializationNotFinished = "Initialization not finished"
-    	public static let ERROR_DESC_InvalidJson = "Invalid Json response"
-    	public static let ERROR_DESC_CouldNotCrop = "Could not crop image"
-    	public static let ERROR_DESC_BarcodeCaptureFailed = "Barcode capture failed"
-    	public static let ERROR_DESC_BarcodeCaptureTimedOut = "Barcode capture timed out"
-    	public static let ERROR_DESC_BarcodeCaptureNotAuthorized = "Barcode capture is not authorized"
-    	public static let ERROR_DESC_LiveFaceCaptureNotAuthorized = "Live face capture is not authorized"
-    	public static let ERROR_DESC_CouldNotCreateConnectInstance = "Could not create connect Instance"
-    	public static let ERROR_DESC_CouldNotUploadConnectImage = "Could not upload image to connect instance"
-    	public static let ERROR_DESC_CouldNotUploadConnectBarcode = "Could not upload barcode to connect instance"
-    	public static let ERROR_DESC_CouldNotGetConnectData = "Could not get connect image data"
-    	public static let ERROR_DESC_CardWidthNotSet = "Card width not set"
-    	public static let ERROR_DESC_CouldNotGetHealthCardData = "Could not get health card data"
-    	public static let ERROR_DESC_CouldNotClassifyDocument = "Could not classify document"
-    	public static let ERROR_DESC_LowResolutionImage = "Low resolution image"
-    	public static let ERROR_DESC_BlurryImage = "Blurry image"
-    	public static let ERROR_DESC_ImageWithGlare = "Image has glare"
-    	public static let ERROR_DESC_CouldNotGetIPLivenessToken = "Could not get face liveness token"
-    	public static let ERROR_DESC_NotALiveFace = "Not a live face"
-    	public static let ERROR_DESC_CouldNotAccessLivenessData = "Could not access liveness data"
+		public static let ERROR_DESC_InvalidCredentials = "Invalid credentials"
+		public static let ERROR_DESC_InvalidLicenseKey = "Invalid License Key"
+		public static let ERROR_DESC_InvalidEndpoint = "Invalid endpoint"
+		public static let ERROR_DESC_Network = "Network problem"
+		public static let ERROR_DESC_InitializationNotFinished = "Initialization not finished"
+		public static let ERROR_DESC_InvalidJson = "Invalid Json response"
+		public static let ERROR_DESC_CouldNotCrop = "Could not crop image"
+		public static let ERROR_DESC_BarcodeCaptureFailed = "Barcode capture failed"
+		public static let ERROR_DESC_BarcodeCaptureTimedOut = "Barcode capture timed out"
+		public static let ERROR_DESC_BarcodeCaptureNotAuthorized = "Barcode capture is not authorized"
+		public static let ERROR_DESC_LiveFaceCaptureNotAuthorized = "Live face capture is not authorized"
+		public static let ERROR_DESC_CouldNotCreateConnectInstance = "Could not create connect Instance"
+		public static let ERROR_DESC_CouldNotUploadConnectImage = "Could not upload image to connect instance"
+		public static let ERROR_DESC_CouldNotUploadConnectBarcode = "Could not upload barcode to connect instance"
+		public static let ERROR_DESC_CouldNotGetConnectData = "Could not get connect image data"
+		public static let ERROR_DESC_CardWidthNotSet = "Card width not set"
+		public static let ERROR_DESC_CouldNotGetHealthCardData = "Could not get health card data"
+		public static let ERROR_DESC_CouldNotClassifyDocument = "Could not classify document"
+		public static let ERROR_DESC_LowResolutionImage = "Low resolution image"
+		public static let ERROR_DESC_BlurryImage = "Blurry image"
+		public static let ERROR_DESC_ImageWithGlare = "Image has glare"
+		public static let ERROR_DESC_CouldNotGetIPLivenessToken = "Could not get face liveness token"
+		public static let ERROR_DESC_NotALiveFace = "Not a live face"
+		public static let ERROR_DESC_CouldNotAccessLivenessData = "Could not access liveness data"
+		public static let ERROR_DESC_ERROR_CouldNotAccessCredential = "Could not get credential"
+		public static let ERROR_DESC_USER_CANCELED_ACTIVITY = "User canceled activity"
+		public static let ERROR_DESC_INVALID_PARAMETERS = "Invalid Parameters."
+		public static let ERROR_DESC_OzoneInvalidFormat = "Ozone returned invalid format";
+		    
+		public static let ERROR_DESC_OzoneNotAuthorized = "Credentials not authorized for ozone";
+		public static let ERROR_DESC_EChipReadError = "Error reading eChip. Connection lost to passport or incorrect key.";
+		public static let ERROR_DESC_InvalidNfcTag = "Tag Tech list was null. Most likely means unsupported passport/not a passport";
+		public static let ERROR_DESC_InvalidNfcKeyFormatting = "Decryption key formatted incorrectly. Check DOB, DOE, and doc number.";
 	}
 
 ### Image
@@ -673,23 +989,25 @@ This module is used to match two facial images:
     
 ### AcuantCameraOptions
 
-    public class AcuantCameraOptions {
-        timeInMsPerDigit: Int = 900,
-        digitsToShow: Int = 2,
-        allowBox: Bool = true,
-        autoCapture: Bool = true,
-        hideNavigationBar: Bool = true,
-        bracketLengthInHorizontal: Int = 80,
-        bracketLengthInVertical: Int = 50,
-        defaultBracketMarginWidth: CGFloat = 0.5,
-        defaultBracketMarginHeight: CGFloat = 0.6,
-        colorHold: CGColor = UIColor.yellow.cgColor,
-        colorCapturing: CGColor = UIColor.green.cgColor,
-        colorBracketAlign: CGColor = UIColor.black.cgColor,
-        colorBracketCloser: CGColor = UIColor.red.cgColor,
-        colorBracketHold: CGColor = UIColor.yellow.cgColor,
-        colorBracketCapture: CGColor = UIColor.green.cgColor
-    }
+	public class AcuantCameraOptions{    
+	    public let timeInMsPerDigit: Int
+	    public let digitsToShow: Int
+	    public let allowBox: Bool
+	    public let autoCapture: Bool
+	    public let hideNavigationBar : Bool
+	    public let bracketLengthInHorizontal : Int
+	    public let bracketLengthInVertical: Int
+	    public let defaultBracketMarginWidth : CGFloat
+	    public let defaultBracketMarginHeight : CGFloat
+	    public let colorHold: CGColor
+	    public let colorCapturing: CGColor
+	    public let colorBracketAlign: CGColor
+	    public let colorBracketCloser: CGColor
+	    public let colorBracketHold: CGColor
+	    public let colorBracketCapture: CGColor
+	    public let defaultImageUrl: String
+	    
+	}
     
 ### IdOptions
     public class IdOptions {
@@ -734,7 +1052,7 @@ This document contains proprietary and confidential information and creative wor
 
 AssureID and *i-D*entify are trademarks of Acuant Inc. Other Acuant product or service names or logos referenced this document are either trademarks or registered trademarks of Acuant.
 
-All 3M trademarks are trademarks of Gemalto Inc.
+All 3M trademarks are trademarks of Gemalto Inc/Thales
 
 Windows is a registered trademark of Microsoft Corporation.
 

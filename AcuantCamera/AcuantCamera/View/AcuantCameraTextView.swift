@@ -46,34 +46,14 @@ public class AcuantCameraTextView: CATextLayer{
         super.init(coder: aDecoder)
     }
     
-    public func setLookFromState(state: DocumentCameraController.CameraState, frame: CGRect) {
-        switch state {
-        case DocumentCameraController.CameraState.MoveCloser:
-            setDefaultSettings(frame: frame)
-            break;
-        case DocumentCameraController.CameraState.Hold:
-            setCaptureSettings(frame: frame)
-            break;
-        case DocumentCameraController.CameraState.Steady:
-            setDefaultSettings(frame: frame)
-            break;
-        case DocumentCameraController.CameraState.Capture:
-            setCaptureSettings(frame: frame)
-            break;
-        default://align
-            setDefaultSettings(frame: frame)
-            break;
-        }
-    }
-    
-    private func setDefaultSettings(frame: CGRect){
+    public func setDefaultSettings(frame: CGRect){
         self.fontSize = textSizeDefault
         self.backgroundColor = backgroundColorDefault
         self.foregroundColor = foregroundColorDefault
         self.frame = CGRect(x: (frame.width/2)-20, y: (frame.height/2)-150, width: 40, height: 300)
     }
     
-    private func setCaptureSettings(frame: CGRect){
+    public func setCaptureSettings(frame: CGRect){
         self.fontSize = textSizeCapture
         self.backgroundColor = backgroundColorCapture
         self.foregroundColor = foregroundColorCapture

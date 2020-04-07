@@ -1,0 +1,155 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.2 (swiftlang-1103.0.32.1 clang-1103.0.32.29)
+// swift-module-flags: -target x86_64-apple-ios13.2-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name AcuantEchipReader
+import AcuantCommon
+@_exported import AcuantEchipReader
+import Combine
+import CommonCrypto
+import CoreNFC
+import CryptoKit
+import Foundation
+import JavaScriptCore
+import Security
+import Swift
+import SwiftUI
+import UIKit
+@available(iOS 13, *)
+public enum DocTypeEnum : Swift.String {
+  case TD1
+  case TD2
+  case OTHER
+  public typealias RawValue = Swift.String
+  public init?(rawValue: Swift.String)
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public enum OzoneResultStatus : Swift.Int {
+  case SUCCESS
+  case FAILED
+  case UNKNOWN
+  public typealias RawValue = Swift.Int
+  public init?(rawValue: Swift.Int)
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@_hasMissingDesignatedInitializers public class OzoneResponse {
+  final public let isCountrySigned: AcuantEchipReader.OzoneResultStatus
+  final public let isPassportSigned: AcuantEchipReader.OzoneResultStatus
+  @objc deinit
+}
+public protocol IOzoneService {
+  func getTask() -> Foundation.URLSessionTask?
+}
+@objc public class OzoneService : ObjectiveC.NSObject, AcuantEchipReader.IOzoneService {
+  public init(request: AcuantEchipReader.OzoneRequest, delegate: @escaping ((AcuantEchipReader.OzoneResponse?, AcuantCommon.AcuantError?) -> ()))
+  public class func createInstance(request: AcuantEchipReader.OzoneRequest, delegate: @escaping ((AcuantEchipReader.OzoneResponse?, AcuantCommon.AcuantError?) -> ())) -> AcuantEchipReader.OzoneService
+  public func getTask() -> Foundation.URLSessionTask?
+  @objc deinit
+  @objc override dynamic public init()
+}
+public enum AcuantDataGroupId : Swift.Int {
+  case COM
+  case DG1
+  case DG2
+  case DG3
+  case DG4
+  case DG5
+  case DG6
+  case DG7
+  case DG8
+  case DG9
+  case DG10
+  case DG11
+  case DG12
+  case DG13
+  case DG14
+  case DG15
+  case DG16
+  case SOD
+  case Unknown
+  public typealias RawValue = Swift.Int
+  public init?(rawValue: Swift.Int)
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@available(iOS 13, *)
+public func tripleDESDecrypt(key: [Swift.UInt8], message: [Swift.UInt8], iv: [Swift.UInt8]) -> [Swift.UInt8]
+@available(iOS 13, *)
+public func DESEncrypt(key: [Swift.UInt8], message: [Swift.UInt8], iv: [Swift.UInt8], options: Swift.UInt32 = 0) -> [Swift.UInt8]
+@available(iOS 13, *)
+public func DESDecrypt(key: [Swift.UInt8], message: [Swift.UInt8], iv: [Swift.UInt8], options: Swift.UInt32 = 0) -> [Swift.UInt8]
+public let AcuantCountryDataPageMap: [Swift.String : Swift.String]
+public protocol IAcuantEchipReader {
+  func readNfcTag(request: AcuantEchipReader.AcuantEchipSessionRequest, customDisplayMessage: ((AcuantEchipReader.AcuantEchipDisplayMessage) -> Swift.String?)?, _ callback: @escaping (AcuantEchipReader.AcuantPassportModel?, AcuantCommon.AcuantError?) -> ())
+}
+public class AcuantEchipReader : AcuantEchipReader.IAcuantEchipReader {
+  public init()
+  public func readNfcTag(request: AcuantEchipReader.AcuantEchipSessionRequest, customDisplayMessage: ((AcuantEchipReader.AcuantEchipDisplayMessage) -> Swift.String?)? = nil, _ callback: @escaping (AcuantEchipReader.AcuantPassportModel?, AcuantCommon.AcuantError?) -> ())
+  public class func authenticate(request: AcuantEchipReader.OzoneRequest, _ callback: @escaping ((AcuantEchipReader.OzoneResponse?, AcuantCommon.AcuantError?) -> ()))
+  public class func getPositionOfChip(countryCode: Swift.String) -> Swift.String?
+  @objc deinit
+}
+public class OzoneRequest {
+  final public let mrz: Swift.String
+  final public let sod: Swift.String
+  public init(mrz: Swift.String, sod: Swift.String)
+  @objc deinit
+}
+public protocol OzoneServiceDelegate {
+  func onSuccess()
+  func onFail()
+}
+public enum AcuantEchipDisplayMessage {
+  case requestPresentPassport
+  case authenticatingWithPassport(Swift.Int)
+  case readingDataGroupProgress(Swift.String, Swift.Int)
+  case error
+  case authenticatingExtractedData
+  case successfulRead
+}
+@_hasMissingDesignatedInitializers public class AcuantPassportModel {
+  public var documentType: Swift.String
+  public var documentSubType: Swift.String
+  public var personalNumber: Swift.String
+  public var documentNumber: Swift.String
+  public var issuingAuthority: Swift.String
+  public var documentExpiryDate: Swift.String
+  public var firstName: Swift.String
+  public var lastName: Swift.String
+  public var dateOfBirth: Swift.String
+  public var gender: Swift.String
+  public var nationality: Swift.String
+  public var image: UIKit.UIImage?
+  public var passportSigned: AcuantEchipReader.OzoneResultStatus
+  public var passportCountrySigned: AcuantEchipReader.OzoneResultStatus
+  public var passportDataValid: Swift.Bool
+  public func getRawDataGroup(dgId: AcuantEchipReader.AcuantDataGroupId) -> [Swift.UInt8]?
+  @objc deinit
+}
+public class AcuantEchipSessionRequest {
+  final public let passportNumber: Swift.String
+  final public let dateOfBirth: Swift.String
+  final public let expiryDate: Swift.String
+  public init(passportNumber: Swift.String, dateOfBirth: Swift.String, expiryDate: Swift.String)
+  @objc deinit
+}
+public class AcuantEchipPackage : AcuantCommon.IAcuantPackage {
+  public init()
+  public func initialize()
+  @objc deinit
+}
+@available(iOS 13, *)
+extension AcuantEchipReader.DocTypeEnum : Swift.Equatable {}
+@available(iOS 13, *)
+extension AcuantEchipReader.DocTypeEnum : Swift.Hashable {}
+@available(iOS 13, *)
+extension AcuantEchipReader.DocTypeEnum : Swift.RawRepresentable {}
+extension AcuantEchipReader.OzoneResultStatus : Swift.Equatable {}
+extension AcuantEchipReader.OzoneResultStatus : Swift.Hashable {}
+extension AcuantEchipReader.OzoneResultStatus : Swift.RawRepresentable {}
+extension AcuantEchipReader.AcuantDataGroupId : Swift.Equatable {}
+extension AcuantEchipReader.AcuantDataGroupId : Swift.Hashable {}
+extension AcuantEchipReader.AcuantDataGroupId : Swift.RawRepresentable {}

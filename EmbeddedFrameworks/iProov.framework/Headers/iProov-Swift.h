@@ -183,11 +183,13 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 #if __has_warning("-Watimport-in-framework-header")
 #pragma clang diagnostic ignored "-Watimport-in-framework-header"
 #endif
+@import CoreGraphics;
 @import CoreImage;
 @import Foundation;
 @import ObjectiveC;
 @import SocketIO;
 @import UIKit;
+@import WebKit;
 #endif
 
 #pragma clang diagnostic ignored "-Wproperty-attribute-mismatch"
@@ -216,8 +218,13 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 
 SWIFT_CLASS("_TtC6iProov14CaptureOptions")
 @interface CaptureOptions : NSObject
+@property (nonatomic) CGFloat maxYaw;
+@property (nonatomic) CGFloat maxRoll;
+@property (nonatomic) CGFloat maxPitch;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
+
+
 
 typedef SWIFT_ENUM(NSInteger, Filter, open) {
   FilterClassic = 0,
@@ -226,7 +233,7 @@ typedef SWIFT_ENUM(NSInteger, Filter, open) {
 };
 
 
-SWIFT_CLASS("_TtC6iProov6IProov")
+SWIFT_CLASS_NAMED("IProov")
 @interface IProov : NSObject
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
@@ -236,14 +243,28 @@ SWIFT_CLASS("_TtC6iProov6IProov")
 @class NSError;
 
 @interface IProov (SWIFT_EXTENSION(iProov))
-+ (void)launchWithStreamingURL:(NSString * _Nonnull)streamingURL token:(NSString * _Nonnull)token options:(Options * _Nonnull)options processing:(void (^ _Nonnull)(double, NSString * _Nonnull))processing success:(void (^ _Nonnull)(NSString * _Nonnull))success cancelled:(void (^ _Nonnull)(void))cancelled failure:(void (^ _Nonnull)(NSString * _Nonnull))failure error:(void (^ _Nonnull)(NSError * _Nonnull))error;
++ (void)launchWithStreamingURL:(NSString * _Nonnull)streamingURL token:(NSString * _Nonnull)token options:(Options * _Nonnull)options processing:(void (^ _Nonnull)(double, NSString * _Nonnull))processing success:(void (^ _Nonnull)(NSString * _Nonnull))success cancelled:(void (^ _Nonnull)(void))cancelled failure:(void (^ _Nonnull)(NSString * _Nonnull, NSString * _Nonnull))failure error:(void (^ _Nonnull)(NSError * _Nonnull))error;
 @end
 
 
+
+
+
+@class UIViewController;
+
+SWIFT_PROTOCOL("_TtP6iProov26IProovPresentationDelegate_")
+@protocol IProovPresentationDelegate
+- (void)presentWithIProovViewController:(UIViewController * _Nonnull)iProovViewController;
+- (void)dismissWithIProovViewController:(UIViewController * _Nonnull)iProovViewController;
+@end
 
 
 SWIFT_CLASS("_TtC6iProov14NetworkOptions")
 @interface NetworkOptions : NSObject
+@property (nonatomic, copy) NSArray<NSString *> * _Nonnull certificates;
+@property (nonatomic) BOOL certificatePinningDisabled;
+@property (nonatomic) NSTimeInterval timeout;
+@property (nonatomic, copy) NSString * _Nonnull path;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
@@ -251,11 +272,23 @@ SWIFT_CLASS("_TtC6iProov14NetworkOptions")
 
 
 
+
+
+@class UIOptions;
 
 SWIFT_CLASS("_TtC6iProov7Options")
 @interface Options : NSObject
+@property (nonatomic, strong) UIOptions * _Nonnull ui;
+@property (nonatomic, strong) NetworkOptions * _Nonnull network;
+@property (nonatomic, strong) CaptureOptions * _Nonnull capture;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
+
+
+
+
+
+
 
 
 
@@ -274,9 +307,26 @@ SWIFT_CLASS("_TtC6iProov7Options")
 
 SWIFT_CLASS("_TtC6iProov9UIOptions")
 @interface UIOptions : NSObject
+@property (nonatomic) BOOL autoStartDisabled;
+@property (nonatomic) enum Filter filter;
+@property (nonatomic, strong) NSBundle * _Nullable stringsBundle;
+@property (nonatomic, strong) UIColor * _Nonnull lineColor;
+@property (nonatomic, strong) UIColor * _Nonnull backgroundColor;
+@property (nonatomic, strong) UIColor * _Nonnull loadingTintColor;
+@property (nonatomic, strong) UIColor * _Nonnull notReadyTintColor;
+@property (nonatomic, strong) UIColor * _Nonnull readyTintColor;
+@property (nonatomic, copy) NSString * _Nullable title;
+@property (nonatomic, copy) NSString * _Nonnull font;
+@property (nonatomic, strong) UIImage * _Nullable logoImage;
+@property (nonatomic) BOOL scanLineDisabled;
+@property (nonatomic, weak) id <IProovPresentationDelegate> _Nullable presentationDelegate;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
+
+
+
+
 
 
 
@@ -471,11 +521,13 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 #if __has_warning("-Watimport-in-framework-header")
 #pragma clang diagnostic ignored "-Watimport-in-framework-header"
 #endif
+@import CoreGraphics;
 @import CoreImage;
 @import Foundation;
 @import ObjectiveC;
 @import SocketIO;
 @import UIKit;
+@import WebKit;
 #endif
 
 #pragma clang diagnostic ignored "-Wproperty-attribute-mismatch"
@@ -504,8 +556,13 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 
 SWIFT_CLASS("_TtC6iProov14CaptureOptions")
 @interface CaptureOptions : NSObject
+@property (nonatomic) CGFloat maxYaw;
+@property (nonatomic) CGFloat maxRoll;
+@property (nonatomic) CGFloat maxPitch;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
+
+
 
 typedef SWIFT_ENUM(NSInteger, Filter, open) {
   FilterClassic = 0,
@@ -514,7 +571,7 @@ typedef SWIFT_ENUM(NSInteger, Filter, open) {
 };
 
 
-SWIFT_CLASS("_TtC6iProov6IProov")
+SWIFT_CLASS_NAMED("IProov")
 @interface IProov : NSObject
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
@@ -524,14 +581,28 @@ SWIFT_CLASS("_TtC6iProov6IProov")
 @class NSError;
 
 @interface IProov (SWIFT_EXTENSION(iProov))
-+ (void)launchWithStreamingURL:(NSString * _Nonnull)streamingURL token:(NSString * _Nonnull)token options:(Options * _Nonnull)options processing:(void (^ _Nonnull)(double, NSString * _Nonnull))processing success:(void (^ _Nonnull)(NSString * _Nonnull))success cancelled:(void (^ _Nonnull)(void))cancelled failure:(void (^ _Nonnull)(NSString * _Nonnull))failure error:(void (^ _Nonnull)(NSError * _Nonnull))error;
++ (void)launchWithStreamingURL:(NSString * _Nonnull)streamingURL token:(NSString * _Nonnull)token options:(Options * _Nonnull)options processing:(void (^ _Nonnull)(double, NSString * _Nonnull))processing success:(void (^ _Nonnull)(NSString * _Nonnull))success cancelled:(void (^ _Nonnull)(void))cancelled failure:(void (^ _Nonnull)(NSString * _Nonnull, NSString * _Nonnull))failure error:(void (^ _Nonnull)(NSError * _Nonnull))error;
 @end
 
 
+
+
+
+@class UIViewController;
+
+SWIFT_PROTOCOL("_TtP6iProov26IProovPresentationDelegate_")
+@protocol IProovPresentationDelegate
+- (void)presentWithIProovViewController:(UIViewController * _Nonnull)iProovViewController;
+- (void)dismissWithIProovViewController:(UIViewController * _Nonnull)iProovViewController;
+@end
 
 
 SWIFT_CLASS("_TtC6iProov14NetworkOptions")
 @interface NetworkOptions : NSObject
+@property (nonatomic, copy) NSArray<NSString *> * _Nonnull certificates;
+@property (nonatomic) BOOL certificatePinningDisabled;
+@property (nonatomic) NSTimeInterval timeout;
+@property (nonatomic, copy) NSString * _Nonnull path;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
@@ -539,11 +610,23 @@ SWIFT_CLASS("_TtC6iProov14NetworkOptions")
 
 
 
+
+
+@class UIOptions;
 
 SWIFT_CLASS("_TtC6iProov7Options")
 @interface Options : NSObject
+@property (nonatomic, strong) UIOptions * _Nonnull ui;
+@property (nonatomic, strong) NetworkOptions * _Nonnull network;
+@property (nonatomic, strong) CaptureOptions * _Nonnull capture;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
+
+
+
+
+
+
 
 
 
@@ -562,9 +645,26 @@ SWIFT_CLASS("_TtC6iProov7Options")
 
 SWIFT_CLASS("_TtC6iProov9UIOptions")
 @interface UIOptions : NSObject
+@property (nonatomic) BOOL autoStartDisabled;
+@property (nonatomic) enum Filter filter;
+@property (nonatomic, strong) NSBundle * _Nullable stringsBundle;
+@property (nonatomic, strong) UIColor * _Nonnull lineColor;
+@property (nonatomic, strong) UIColor * _Nonnull backgroundColor;
+@property (nonatomic, strong) UIColor * _Nonnull loadingTintColor;
+@property (nonatomic, strong) UIColor * _Nonnull notReadyTintColor;
+@property (nonatomic, strong) UIColor * _Nonnull readyTintColor;
+@property (nonatomic, copy) NSString * _Nullable title;
+@property (nonatomic, copy) NSString * _Nonnull font;
+@property (nonatomic, strong) UIImage * _Nullable logoImage;
+@property (nonatomic) BOOL scanLineDisabled;
+@property (nonatomic, weak) id <IProovPresentationDelegate> _Nullable presentationDelegate;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
+
+
+
+
 
 
 

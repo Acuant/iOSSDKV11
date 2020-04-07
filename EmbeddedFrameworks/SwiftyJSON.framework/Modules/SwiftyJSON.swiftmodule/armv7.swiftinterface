@@ -1,5 +1,5 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.1.2 (swiftlang-1100.0.278 clang-1100.0.33.9)
+// swift-compiler-version: Apple Swift version 5.2 (swiftlang-1103.0.32.1 clang-1103.0.32.29)
 // swift-module-flags: -target armv7-apple-ios8.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name SwiftyJSON
 import Foundation
 import Swift
@@ -46,14 +46,14 @@ public struct JSON {
   public init(data: Foundation.Data, options opt: Foundation.JSONSerialization.ReadingOptions = []) throws
   public init(_ object: Any)
   public init(parseJSON jsonString: Swift.String)
-  mutating public func merge(with other: SwiftyJSON.JSON) throws
+  public mutating func merge(with other: SwiftyJSON.JSON) throws
   public func merged(with other: SwiftyJSON.JSON) throws -> SwiftyJSON.JSON
-  public var type: SwiftyJSON.Type {
+  public var type: SwiftyJSON.`Type` {
     get
-    }
+  }
   public var error: SwiftyJSON.SwiftyJSONError? {
     get
-    }
+  }
   public var object: Any {
     get
     set
@@ -356,8 +356,8 @@ extension JSON : Swift.Codable {
 extension SwiftyJSON.SwiftyJSONError : Swift.Equatable {}
 extension SwiftyJSON.SwiftyJSONError : Swift.Hashable {}
 extension SwiftyJSON.SwiftyJSONError : Swift.RawRepresentable {}
-extension SwiftyJSON.Type : Swift.Equatable {}
-extension SwiftyJSON.Type : Swift.Hashable {}
-extension SwiftyJSON.Type : Swift.RawRepresentable {}
+extension SwiftyJSON.`Type` : Swift.Equatable {}
+extension SwiftyJSON.`Type` : Swift.Hashable {}
+extension SwiftyJSON.`Type` : Swift.RawRepresentable {}
 extension SwiftyJSON.writingOptionsKeys : Swift.Equatable {}
 extension SwiftyJSON.writingOptionsKeys : Swift.Hashable {}

@@ -1,18 +1,18 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.1.3 (swiftlang-1100.0.282.1 clang-1100.0.33.15)
+// swift-compiler-version: Apple Swift version 5.2 (swiftlang-1103.0.32.1 clang-1103.0.32.29)
 // swift-module-flags: -target arm64-apple-ios11.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name AcuantDocumentProcessing
 import AcuantCommon
 import Foundation
 import Swift
 import UIKit
-@objc @objcMembers public class IdData : ObjectiveC.NSObject {
+@objc @_inheritsConvenienceInitializers @objcMembers public class IdData : ObjectiveC.NSObject {
   @objc public var image: UIKit.UIImage?
   @objc public var barcodeString: Swift.String?
   @objc override dynamic public init()
   @objc public class func createInstance() -> AcuantDocumentProcessing.IdData
   @objc deinit
 }
-@objc @objcMembers public class AssureIDImage : ObjectiveC.NSObject {
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objcMembers public class AssureIDImage : ObjectiveC.NSObject {
   @objc public var horizontalResolution: Swift.Int
   @objc public var verticalResolution: Swift.Int
   @objc public var side: Swift.Int
@@ -25,20 +25,20 @@ import UIKit
   @objc public static func initWithJSONObject(jsonDict: [Swift.String : Any]?) -> AcuantDocumentProcessing.AssureIDImage?
   @objc deinit
 }
-@objc @objcMembers public class Classification : ObjectiveC.NSObject {
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objcMembers public class Classification : ObjectiveC.NSObject {
   @objc public var mode: Swift.Int
   @objc public var orientationChanged: Swift.Bool
   @objc public var presentationChanged: Swift.Bool
-  @objc public var type: AcuantDocumentProcessing.Type?
+  @objc public var type: AcuantDocumentProcessing.`Type`?
   @objc public static func initWithJsonObject(jsonDict: [Swift.String : Any]?) -> AcuantDocumentProcessing.Classification
   @objc deinit
 }
-@objc @objcMembers public class Fields : ObjectiveC.NSObject {
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objcMembers public class Fields : ObjectiveC.NSObject {
   @objc public var documentFields: [AcuantDocumentProcessing.DocumentField]?
   @objc public static func initWithJsonArray(jsonArray: Swift.Array<[Swift.String : Any]>?) -> AcuantDocumentProcessing.Fields?
   @objc deinit
 }
-@objc @objcMembers public class HealthInsuranceCardResult : AcuantDocumentProcessing.ProcessingResult {
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objcMembers public class HealthInsuranceCardResult : AcuantDocumentProcessing.ProcessingResult {
   @objc public var copayOv: Swift.String?
   @objc public var copaySp: Swift.String?
   @objc public var copayUc: Swift.String?
@@ -84,7 +84,7 @@ import UIKit
   @objc public static func initWithJsonString(jsonString: Swift.String?, instanceID: Swift.String?) -> AcuantDocumentProcessing.HealthInsuranceCardResult
   @objc deinit
 }
-@objc @objcMembers public class Device : ObjectiveC.NSObject {
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objcMembers public class Device : ObjectiveC.NSObject {
   @objc public var hasContactlessChipReader: Swift.Bool
   @objc public var hasMagneticStripeReader: Swift.Bool
   @objc public var serialNumber: Swift.String?
@@ -92,7 +92,7 @@ import UIKit
   @objc public static func initWithJsonObject(jsonDict: [Swift.String : Any]?) -> AcuantDocumentProcessing.Device?
   @objc deinit
 }
-@objc @objcMembers public class DataField : ObjectiveC.NSObject {
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objcMembers public class DataField : ObjectiveC.NSObject {
   @objc public var dataSource: Swift.Int
   @objc public var fieldDescrption: Swift.String?
   @objc public var Id: Swift.String?
@@ -109,7 +109,7 @@ import UIKit
 @objc public protocol CreateInstanceDelegate {
   @objc func instanceCreated(instanceId: Swift.String?, error: AcuantCommon.AcuantError?)
 }
-@objc @objcMembers public class Type : ObjectiveC.NSObject {
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objcMembers public class Type : ObjectiveC.NSObject {
   @objc public var Class: Swift.Int
   @objc public var classCode: Swift.String?
   @objc public var className: Swift.String?
@@ -123,7 +123,7 @@ import UIKit
   @objc public var name: Swift.String?
   @objc public var size: Swift.Int
   @objc public var supportedImages: [Swift.Dictionary<Swift.String, Any>]?
-  @objc public static func initWithJsonObject(jsonDict: [Swift.String : Any]?) -> AcuantDocumentProcessing.Type?
+  @objc public static func initWithJsonObject(jsonDict: [Swift.String : Any]?) -> AcuantDocumentProcessing.`Type`?
   @objc deinit
 }
 @objc public protocol DeleteDelegate {
@@ -132,7 +132,7 @@ import UIKit
 @objc public protocol DocumentClassificationDelegate {
   @objc func documentClassified(success: Swift.Bool, classification: AcuantDocumentProcessing.Classification?, error: AcuantCommon.AcuantError?)
 }
-@objc @objcMembers public class Action : ObjectiveC.NSObject {
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objcMembers public class Action : ObjectiveC.NSObject {
   @objc public var actions: Swift.String?
   @objc public var actionDescription: Swift.String?
   @objc public var disposition: Swift.String?
@@ -144,7 +144,7 @@ import UIKit
   @objc public static func initWithJSONObject(jsonDict: [Swift.String : Any]?) -> AcuantDocumentProcessing.Action?
   @objc deinit
 }
-@objc @objcMembers public class IDResult : AcuantDocumentProcessing.ProcessingResult {
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objcMembers public class IDResult : AcuantDocumentProcessing.ProcessingResult {
   @objc public var instanceID: Swift.String?
   @objc public var authenticationSensitivity: Swift.Int
   @objc public var engineVersion: Swift.String?
@@ -163,7 +163,7 @@ import UIKit
   @objc public static func initWithJsonString(jsonString: Swift.String?) -> AcuantDocumentProcessing.IDResult
   @objc deinit
 }
-@objc @objcMembers public class Biographic : ObjectiveC.NSObject {
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objcMembers public class Biographic : ObjectiveC.NSObject {
   @objc public var age: Swift.Int
   @objc public var birthDate: Swift.String?
   @objc public var expirationDate: Swift.String?
@@ -173,7 +173,7 @@ import UIKit
   @objc public static func initWithJsonObject(jsonDict: [Swift.String : Any]?) -> AcuantDocumentProcessing.Biographic
   @objc deinit
 }
-@objc @objcMembers public class IdOptions : ObjectiveC.NSObject {
+@objc @_inheritsConvenienceInitializers @objcMembers public class IdOptions : ObjectiveC.NSObject {
   @objc public enum AuthenticationSensitivity : Swift.Int {
     case Normal = 0
     case High = 1
@@ -192,17 +192,17 @@ import UIKit
   @objc public class func createInstance() -> AcuantDocumentProcessing.IdOptions
   @objc deinit
 }
-@objc @objcMembers public class Images : ObjectiveC.NSObject {
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objcMembers public class Images : ObjectiveC.NSObject {
   @objc public var images: [AcuantDocumentProcessing.AssureIDImage]?
   @objc public static func initWithJsonArray(jsonArray: Swift.Array<[Swift.String : Any]>?) -> AcuantDocumentProcessing.Images?
   @objc deinit
 }
-@objc @objcMembers public class Regions : ObjectiveC.NSObject {
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objcMembers public class Regions : ObjectiveC.NSObject {
   @objc public var regions: [AcuantDocumentProcessing.DocumentElement]?
   @objc public static func initWithJsonArray(jsonArray: Swift.Array<[Swift.String : Any]>?) -> AcuantDocumentProcessing.Regions?
   @objc deinit
 }
-@objc @objcMembers public class DocumentField : ObjectiveC.NSObject {
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objcMembers public class DocumentField : ObjectiveC.NSObject {
   @objc public var dataSource: Swift.Int
   @objc public var fieldDescription: Swift.String?
   @objc public var Id: Swift.String?
@@ -216,7 +216,7 @@ import UIKit
   @objc public static func initWithJsonObject(jsonDict: [Swift.String : Any]?) -> AcuantDocumentProcessing.DocumentField?
   @objc deinit
 }
-@objc @objcMembers public class RegionRectangle : ObjectiveC.NSObject {
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objcMembers public class RegionRectangle : ObjectiveC.NSObject {
   @objc public var height: Swift.Int
   @objc public var width: Swift.Int
   @objc public var x: Swift.Int
@@ -224,7 +224,7 @@ import UIKit
   @objc public static func initWithJSONObject(jsonDict: [Swift.String : Any]?) -> AcuantDocumentProcessing.RegionRectangle?
   @objc deinit
 }
-@objc @objcMembers public class DocumentElement : ObjectiveC.NSObject {
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objcMembers public class DocumentElement : ObjectiveC.NSObject {
   @objc public var documentElement: Swift.Int
   @objc public var imageReference: Swift.String?
   @objc public var key: Swift.String?
@@ -245,15 +245,15 @@ import UIKit
     get
   }
 }
-@objc @objcMembers public class AcuantDocumentProcessing : ObjectiveC.NSObject {
+@objc @_inheritsConvenienceInitializers @objcMembers public class AcuantDocumentProcessing : ObjectiveC.NSObject {
   @objc public class func createInstance(options: AcuantDocumentProcessing.IdOptions, delegate: AcuantDocumentProcessing.CreateInstanceDelegate)
   @objc public class func uploadImage(instancdId: Swift.String, data: AcuantDocumentProcessing.IdData, options: AcuantDocumentProcessing.IdOptions, delegate: AcuantDocumentProcessing.UploadImageDelegate)
   @objc public class func getData(instanceId: Swift.String, isHealthCard: Swift.Bool, delegate: AcuantDocumentProcessing.GetDataDelegate)
   @objc public class func deleteInstance(instanceId: Swift.String, type: AcuantCommon.DeleteType, delegate: AcuantDocumentProcessing.DeleteDelegate)
-  @objc override dynamic public init()
   @objc deinit
+  @objc override dynamic public init()
 }
-@objc @objcMembers public class Subscription : ObjectiveC.NSObject {
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objcMembers public class Subscription : ObjectiveC.NSObject {
   @objc public var documentProcessMode: Swift.Int
   @objc public var Id: Swift.String?
   @objc public var isActive: Swift.Bool
@@ -264,7 +264,7 @@ import UIKit
   @objc public static func initWithJsonObject(jsonDict: [Swift.String : Any]) -> AcuantDocumentProcessing.Subscription
   @objc deinit
 }
-@objc @objcMembers public class RegionOfInterest : ObjectiveC.NSObject {
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objcMembers public class RegionOfInterest : ObjectiveC.NSObject {
   @objc public var height: Swift.Int
   @objc public var width: Swift.Int
   @objc public var x: Swift.Int
@@ -272,25 +272,25 @@ import UIKit
   @objc public static func initWithJSONObject(jsonDict: [Swift.String : Any]?) -> AcuantDocumentProcessing.RegionOfInterest?
   @objc deinit
 }
-@objc @objcMembers public class DeviceType : ObjectiveC.NSObject {
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objcMembers public class DeviceType : ObjectiveC.NSObject {
   @objc public var manufacturer: Swift.String?
   @objc public var model: Swift.String?
   @objc public var sensorType: Swift.Int
   @objc public static func initWithJsonObject(jsonDict: [Swift.String : Any]?) -> AcuantDocumentProcessing.DeviceType?
   @objc deinit
 }
-@objc @objcMembers public class DataFields : ObjectiveC.NSObject {
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objcMembers public class DataFields : ObjectiveC.NSObject {
   @objc public var dataFields: Swift.Array<AcuantDocumentProcessing.DataField>?
   @objc public static func initWithJsonArray(jsonArray: Swift.Array<[Swift.String : Any]>?) -> AcuantDocumentProcessing.DataFields?
   @objc deinit
 }
-@objc @objcMembers public class ProcessingResult : ObjectiveC.NSObject {
+@objc @_inheritsConvenienceInitializers @objcMembers public class ProcessingResult : ObjectiveC.NSObject {
   @objc public var error: AcuantCommon.AcuantError?
   @objc public class func createInstance() -> AcuantDocumentProcessing.ProcessingResult
   @objc override dynamic public init()
   @objc deinit
 }
-@objc @objcMembers public class Alerts : ObjectiveC.NSObject {
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objcMembers public class Alerts : ObjectiveC.NSObject {
   @objc public var actions: Swift.Array<AcuantDocumentProcessing.Action>?
   @objc public static func initWithJsonArray(jsonArray: Swift.Array<[Swift.String : Any]>?) -> AcuantDocumentProcessing.Alerts?
   @objc deinit
@@ -301,5 +301,6 @@ import UIKit
 extension AcuantDocumentProcessing.IdOptions.AuthenticationSensitivity : Swift.Equatable {}
 extension AcuantDocumentProcessing.IdOptions.AuthenticationSensitivity : Swift.Hashable {}
 extension AcuantDocumentProcessing.IdOptions.AuthenticationSensitivity : Swift.RawRepresentable {}
+extension AcuantDocumentProcessing.CardSide : Swift.Equatable {}
 extension AcuantDocumentProcessing.CardSide : Swift.Hashable {}
 extension AcuantDocumentProcessing.CardSide : Swift.RawRepresentable {}

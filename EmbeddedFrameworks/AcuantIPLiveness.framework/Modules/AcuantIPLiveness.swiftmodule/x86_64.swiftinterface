@@ -1,5 +1,5 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.1.3 (swiftlang-1100.0.282.1 clang-1100.0.33.15)
+// swift-compiler-version: Apple Swift version 5.2 (swiftlang-1103.0.32.1 clang-1103.0.32.29)
 // swift-module-flags: -target x86_64-apple-ios11.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name AcuantIPLiveness
 import AcuantCommon
 import Foundation
@@ -34,15 +34,15 @@ import iProov
   @objc func livenessTestCredentialReceived(result: Swift.Bool)
   @objc func livenessTestCredentialReceiveFailed(error: AcuantCommon.AcuantError)
 }
-@objc @objcMembers public class AcuantIPLiveness : ObjectiveC.NSObject {
+@objc @_inheritsConvenienceInitializers @objcMembers public class AcuantIPLiveness : ObjectiveC.NSObject {
   @objc public class func performLivenessSetup(delegate: AcuantIPLiveness.LivenessSetupDelegate)
   @objc public class func performLivenessTest(setupResult: AcuantIPLiveness.LivenessSetupResult, delegate: AcuantIPLiveness.LivenessTestDelegate)
   @objc public class func getLivenessTestResult(token: Swift.String, userId: Swift.String, delegate: AcuantIPLiveness.LivenessTestResultDelegate)
   @objc public class func getLivenessTestCredential(delegate: AcuantIPLiveness.LivenessTestCredentialDelegate)
-  @objc override dynamic public init()
   @objc deinit
+  @objc override dynamic public init()
 }
-@objc @objcMembers public class LivenessUiOptions : ObjectiveC.NSObject {
+@objc @_inheritsConvenienceInitializers @objcMembers public class LivenessUiOptions : ObjectiveC.NSObject {
   public var autoStartDisabled: Swift.Bool?
   @objc public var locale: Foundation.Locale?
   public var filter: AcuantIPLiveness.IpFilter?
@@ -57,7 +57,7 @@ import iProov
   @objc public var fonts: [Swift.String]?
   @objc public var logoImage: UIKit.UIImage?
   public var scanLineDisabled: Swift.Bool?
-  weak public var delegate: iProov.IProovPresentationDelegate?
+  @objc weak public var delegate: iProov.IProovPresentationDelegate?
   @objc public func toIProovOptions() -> iProov.Options
   @objc override dynamic public init()
   @objc deinit
@@ -72,7 +72,7 @@ import iProov
     get
   }
 }
-@objc @objcMembers public class LivenessTestResult : ObjectiveC.NSObject {
+@objc @_inheritsConvenienceInitializers @objcMembers public class LivenessTestResult : ObjectiveC.NSObject {
   @objc public var passedLivenessTest: Swift.Bool
   @objc public var image: UIKit.UIImage?
   @objc override dynamic public init()

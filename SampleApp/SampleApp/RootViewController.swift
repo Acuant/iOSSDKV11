@@ -17,6 +17,7 @@ import AcuantIPLiveness
 import AcuantPassiveLiveness
 import AcuantFaceCapture
 import AVFoundation
+import AcuantEchipReader
 
 class RootViewController: UIViewController{
     
@@ -24,6 +25,8 @@ class RootViewController: UIViewController{
     @IBOutlet weak var medicalCardButton: UIButton!
     @IBOutlet weak var idPassportButton: UIButton!
     @IBOutlet weak var livenessOption: UISegmentedControl!
+    
+    @IBOutlet weak var mrzButton: UIButton!
     
     public var documentInstance : String?
     public var livenessString: String?
@@ -46,6 +49,8 @@ class RootViewController: UIViewController{
     private let showResultGroup = DispatchGroup()
     private let createInstanceGroup = DispatchGroup()
     
+    //    private let passportReader = PassportReader()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         autoCaptureSwitch.setOn(true, animated: false)
@@ -65,10 +70,8 @@ class RootViewController: UIViewController{
          endpoints.idEndpoint = "https://services.assureid.net"
          
          Credential.setEndpoints(endpoints: endpoints)*/
-        
         UISegmentedControl.appearance().setTitleTextAttributes([NSAttributedString.Key.foregroundColor:UIColor.white], for: .selected)
         UISegmentedControl.appearance().setTitleTextAttributes([NSAttributedString.Key.foregroundColor:UIColor.white], for: .normal)
-        
     }
     
     func addEnhancedLiveness(){
@@ -77,10 +80,44 @@ class RootViewController: UIViewController{
         }
     }
     
+    private func initialize(){
+        let initalizer: IAcuantInitializer = AcuantInitializer()
+        
+        let task = initalizer.initialize(packages: [AcuantEchipPackage(), AcuantImagePreparationPackage()]){ [weak self]
+            error in
+            
+            DispatchQueue.main.async {
+                if let self = self{
+                    self.hideProgressView()
+                    if(error == nil){
+                        if(!Credential.authorization().hasOzone){
+                            self.mrzButton.isHidden = true
+                        }
+                        
+                        if(!self.isKeyless){
+                            AcuantIPLiveness.getLivenessTestCredential(delegate: self)
+                        }
+                        else{
+                            self.hideProgressView()
+                            self.isInitialized = true
+                            self.resetData()
+                        }
+                    }else{
+                        if let msg = error?.errorDescription {
+                            CustomAlerts.displayError(message: "\(error!.errorCode) : " + msg)
+                        }
+                    }
+                    
+                }
+            }
+        }
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         if(!self.isInitialized){
-            AcuantImagePreparation.initialize(delegate:self)
+            self.initialize()
+            
         }
     }
     
@@ -89,12 +126,16 @@ class RootViewController: UIViewController{
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func idPassportTapped(_ sender: UIButton) {
+    @IBAction func onMrzEchipTapped(_ sender: Any) {
+        self.handleInitialization(isDocumentCapture: false)
+    }
+    
+    @IBAction func idPassportTapped(_ sender: UIButton){
         self.idOptions.isHealthCard = false
         self.handleInitialization()
     }
     
-    @IBAction func healthCardTapped(_ sender: UIButton) {
+    @IBAction func healthCardTapped(_ sender: UIButton){
         self.idOptions.isHealthCard = true
         self.handleInitialization()
     }
@@ -173,110 +214,23 @@ class RootViewController: UIViewController{
 }
 
 //ImagePreparation - START =============
-extension RootViewController: InitializationDelegate{
-    func initializationFinished(error: AcuantError?) {
-        self.hideProgressView()
-        if(error == nil){
-            if(!self.isKeyless){
-                AcuantIPLiveness.getLivenessTestCredential(delegate: self)
-            }
-            else{
-                self.hideProgressView()
-                self.isInitialized = true
-                self.resetData()
-            }
-        }else{
-            if let msg = error?.errorDescription {
-                CustomAlerts.displayError(message: "\(error!.errorCode) : " + msg)
-            }
-        }
-    }
-    private func ipLivenessRetryCallback(isEnabled: Bool)
-    {
-        self.isInitialized = true
-        self.resetData()
-        self.hideProgressView()
-        self.showDocumentCaptureCamera()
-        
-        DispatchQueue.main.async {
-            if(isEnabled){
-                self.addEnhancedLiveness()
-            }
-        }
-    }
-    
-    private func ipLivenessErrorCallback(error: AcuantError) {
-        DispatchQueue.main.async {
-            self.hideProgressView()
-            CustomAlerts.displayError(message: error.errorDescription!)
-        }
-    }
-    
-    private func reInitializeSdkCallback(isInitialized: Bool){
-        DispatchQueue.main.async {
-            if(isInitialized){
-                if(!self.isKeyless){
-                    let ipLivenessCallback = IPLivenessCredentialHelper(callback: self.ipLivenessRetryCallback, onError: self.ipLivenessErrorCallback)
-                    AcuantIPLiveness.getLivenessTestCredential(delegate: ipLivenessCallback)
-                }
-                else{
-                    self.hideProgressView()
-                    self.isInitialized = true
-                    self.resetData()
-                    self.showDocumentCaptureCamera()
-                }
-                
-            }
-            else{
-                self.hideProgressView()
-            }
-        }
-    }
-    
-    private func handleInitialization(){
+extension RootViewController{
+    private func handleInitialization(isDocumentCapture : Bool = true){
         if(CheckConnection.isConnectedToNetwork() == false){
             CustomAlerts.displayError(message: CheckConnection.ERROR_INTERNET_UNAVAILABLE)
         }
         else{
             if(!self.isInitialized){
-                AcuantImagePreparation.initialize(delegate: ReinitializeHelper(callback: self.reInitializeSdkCallback))
+                self.initialize()
                 self.showProgressView(text: "Initializing...")
             }
-            else{
+            else if (isDocumentCapture){
                 self.resetData()
                 self.showDocumentCaptureCamera()
             }
-        }
-    }
-    
-    class IPLivenessCredentialHelper:LivenessTestCredentialDelegate{
-        init(callback: @escaping (_ isInitalized: Bool) -> (), onError: @escaping (_ error:AcuantError) -> ()){
-            self.completion = callback
-            self.onError = onError
-        }
-        var completion: (_ isInitalized: Bool)->()
-        var onError: (_ error:AcuantError)->()
-        func livenessTestCredentialReceived(result:Bool){
-            self.completion(result)
-            
-        }
-        func livenessTestCredentialReceiveFailed(error:AcuantError){
-            self.onError(error)
-        }
-    }
-    
-    class ReinitializeHelper:InitializationDelegate{
-        init(callback: @escaping (_ isInitalized: Bool) -> ()){
-            completion = callback
-        }
-        var completion: (_ isInitalized: Bool)->()
-        func initializationFinished(error: AcuantError?) {
-            if(error != nil){
-                CustomAlerts.displayError(message: error!.errorDescription!)
-                self.completion(false)
-            }
             else{
-                self.completion(true)
+                self.resetData()
+                self.showMrzCamera()
             }
         }
     }
@@ -315,6 +269,38 @@ extension RootViewController: CameraCaptureDelegate{
             }
         }
     }
+    
+    func showMrzCamera(){
+        let controller = AcuantMrzCameraController()
+        controller.customDisplayMessage = {
+            state in
+            
+            switch(state){
+            case .None, .Align:
+                return ""
+            case .MoveCloser:
+                return "Move Closer"
+            case .TooClose:
+                return "Too Close!"
+            case .Good:
+                return "Reading MRZ"
+            case .Captured:
+                return "Captured"
+            }
+        }
+        controller.callback = { [weak self]
+            result in
+            DispatchQueue.main.async {
+                self?.navigationController?.popViewController(animated: true)
+                let storyBoard = UIStoryboard.init(name: "Main", bundle: nil)
+                let vc = storyBoard.instantiateViewController(withIdentifier: "NFCViewController") as! NFCViewController
+                vc.result = result
+                self?.navigationController?.pushViewController(vc, animated: true)
+            }
+        }
+        self.navigationController?.pushViewController(controller, animated: false)
+    }
+    
     func showDocumentCaptureCamera(){
         //handler in .requestAccess is needed to process user's answer to our request
         AVCaptureDevice.requestAccess(for: .video) { [weak self] success in
@@ -323,6 +309,7 @@ extension RootViewController: CameraCaptureDelegate{
                     let options = AcuantCameraOptions(autoCapture:self!.autoCapture, hideNavigationBar: true)
                     let documentCameraController = DocumentCameraController.getCameraController(delegate:self!, cameraOptions: options)
                     self!.navigationController?.pushViewController(documentCameraController, animated: false)
+                    
                 }
             } else { // if request is denied (success is false)
                 // Create Alert
@@ -561,7 +548,7 @@ extension RootViewController:GetDataDelegate{
             let storyBoard = UIStoryboard.init(name: "Main", bundle: nil)
             let resultViewController = storyBoard.instantiateViewController(withIdentifier: "ResultViewController") as! ResultViewController
             resultViewController.data = data
-
+            
             if(self.livenessString != nil){
                 resultViewController.data?.insert(self.livenessString!, at: 0)
             }

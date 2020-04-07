@@ -1,15 +1,15 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.1.3 (swiftlang-1100.0.282.1 clang-1100.0.33.15)
+// swift-compiler-version: Apple Swift version 5.2 (swiftlang-1103.0.32.1 clang-1103.0.32.29)
 // swift-module-flags: -target arm64-apple-ios11.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name AcuantHGLiveness
 import AVFoundation
 import AcuantCommon
 import Foundation
 import Swift
 import UIKit
-@objc @objcMembers public class AcuantHGLiveness : ObjectiveC.NSObject {
+@objc @_inheritsConvenienceInitializers @objcMembers public class AcuantHGLiveness : ObjectiveC.NSObject {
   @objc public class func getFaceCaptureSession(delegate: AcuantHGLiveness.AcuantHGLiveFaceCaptureDelegate?, captureDevice: AVFoundation.AVCaptureDevice?) -> AcuantHGLiveness.FaceCaptureSession
-  @objc override dynamic public init()
   @objc deinit
+  @objc override dynamic public init()
 }
 @objc public enum AcuantFaceType : Swift.Int {
   case NONE
@@ -27,14 +27,14 @@ import UIKit
 @objc public protocol AcuantHGLivenessDelegate {
   @objc func liveFaceCaptured(image: UIKit.UIImage?)
 }
-@objc @objcMembers public class FaceCaptureSession : AVFoundation.AVCaptureSession, AVFoundation.AVCaptureVideoDataOutputSampleBufferDelegate {
+@objc @_inheritsConvenienceInitializers @objcMembers public class FaceCaptureSession : AVFoundation.AVCaptureSession, AVFoundation.AVCaptureVideoDataOutputSampleBufferDelegate {
   @objc public class func getFaceCaptureSession(delegate: AcuantHGLiveness.AcuantHGLiveFaceCaptureDelegate?, captureDevice: AVFoundation.AVCaptureDevice?) -> AcuantHGLiveness.FaceCaptureSession
   @objc public func start()
   @objc public func captureOutput(_ output: AVFoundation.AVCaptureOutput, didOutput sampleBuffer: CoreMedia.CMSampleBuffer, from connection: AVFoundation.AVCaptureConnection)
-  @objc override dynamic public init()
   @objc deinit
+  @objc override dynamic public init()
 }
-@objc @objcMembers public class LiveFaceRectDetail : ObjectiveC.NSObject {
+@objc @_inheritsConvenienceInitializers @objcMembers public class LiveFaceRectDetail : ObjectiveC.NSObject {
   @objc public var width: Swift.Float
   @objc public var height: Swift.Float
   @objc public var x: Swift.Float
@@ -45,7 +45,7 @@ import UIKit
   @objc override dynamic public init()
   @objc deinit
 }
-@objc @objcMembers public class LiveFaceDetails : ObjectiveC.NSObject {
+@objc @_inheritsConvenienceInitializers @objcMembers public class LiveFaceDetails : ObjectiveC.NSObject {
   @objc public var isLiveFace: Swift.Bool
   @objc public var faceRect: AcuantHGLiveness.LiveFaceRectDetail?
   @objc public var cleanAperture: AcuantHGLiveness.LiveFaceRectDetail?
