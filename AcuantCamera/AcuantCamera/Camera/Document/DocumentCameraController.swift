@@ -137,7 +137,10 @@ import AcuantCommon
         self.videoPreviewLayer.addSublayer(self.messageLayer)
         self.videoPreviewLayer.addSublayer(self.cornerLayer)
         self.view.layer.addSublayer(self.videoPreviewLayer)
-        addNavigationBackButton()
+        
+        if(self.options!.showBackButton){
+            addNavigationBackButton()
+        }
     }
     
     public func documentCaptured(image: UIImage, barcodeString: String?) {
@@ -398,6 +401,7 @@ import AcuantCommon
     }
     
     @objc internal func backTapped(_ sender: Any){
+        self.cameraCaptureDelegate?.setCapturedImage(image: Image(), barcodeString: nil)
         self.navigationController?.popViewController(animated: true)
     }
 }

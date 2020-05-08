@@ -1,9 +1,9 @@
 Pod::Spec.new do |s|
     s.platform = :ios
     s.swift_versions = ['5.2']
-    s.ios.deployment_target = '13.2'
+    s.ios.deployment_target = '11.0'
     s.name         = "AcuantiOSSDKV11"
-    s.version      = "11.4.0"
+    s.version      = "11.4.1"
     s.summary      = "Acuant's latest SDK with most advanced image capture technology and optimized user workflow  "
     s.description  = "Acuant's latest SDK with most advanced image capture technology and optimized user workflow.
 
@@ -76,7 +76,7 @@ Pod::Spec.new do |s|
     end
     
     s.subspec 'AcuantEchipReader' do |acuantEchip|
-        acuantEchip.ios.deployment_target = '13.2'
+        acuantEchip.ios.deployment_target = '11.0'
 
         acuantEchip.ios.vendored_frameworks = "EmbeddedFrameworks/AcuantEchipReader.framework"
         

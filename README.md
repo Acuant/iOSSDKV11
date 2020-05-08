@@ -1,6 +1,6 @@
-# Acuant iOS SDK v11.4.0
+# Acuant iOS SDK v11.4.1
 
-**March 2020**
+**May 2020**
 
 See [https://github.com/Acuant/iOSSDKV11/releases](https://github.com/Acuant/iOSSDKV11/releases) for release notes.
 
@@ -65,7 +65,7 @@ The SDK includes the following modules:
 
 - Uses proprietary algorithm to detect a live person
 
-**Note** IP Liveness is now referred to in the UI as Enhanced Liveness. 
+**Note:** IP Liveness is now referred to in the UI as Enhanced Liveness. 
 
 
 
@@ -92,7 +92,10 @@ The SDK includes the following modules:
  		- SwiftyJSON.framework
 
 	![](document_images/embeded_framework.png)
+	
+	**Note:** AcuantCamera and AcuantFaceCapture are open projects. You will have to add the source code to your solution for frameworks.
 
+### Using Carthage
 1. Open your project in Xcode and navigate to Build Phases tab in application project settings. Add a "New Run Script".
 
 1.  Add the following to the script.
@@ -108,8 +111,8 @@ The SDK includes the following modules:
 ### Using COCOAPODS
 1. If you are using COCOAPODS, then add the following podfile:
 
-		platform :ios, '13.2'
-		pod 'AcuantiOSSDKV11', '~> 11.4.0' #for all packages
+		platform :ios, '11'
+		pod 'AcuantiOSSDKV11', '~> 11.4.1' #for all packages
 		
 		#indepedent packages below
 		
@@ -152,7 +155,7 @@ The SDK includes the following modules:
 		
 		#AcuantPassiveLiveness
 		platform :ios, '11'
-		pod 'AcuantiOSSDKV11/AcuantIPLiveness'
+		pod 'AcuantiOSSDKV11/AcuantPassiveLiveness'
 		dependency AcuantCommon
 		
 		#AcuantFaceMatch
@@ -161,7 +164,7 @@ The SDK includes the following modules:
 		dependency AcuantCommon
 		
 		#AcuantEchipReader
-		platform :ios, '13.2'
+		platform :ios, '11'
 		pod 'AcuantiOSSDKV11/AcuantEchipReader'
 		dependency AcuantCommon
 		
@@ -203,7 +206,7 @@ The SDK includes the following modules:
 				<key>frm_endpoint</key>
 				<string>https://frm.acuant.net</string>
 				<key>passive_liveness_endpoint</key>
-				<string>https://passlive.acuant.net</string>
+				<string>https://us.passlive.acuant.net</string>
 				<key>med_endpoint</key>
 				<string>https://medicscan.acuant.net</string>
 				<key>assureid_endpoint</key>
@@ -221,7 +224,7 @@ The SDK includes the following modules:
 			<key>frm_endpoint</key>
 			<string>https://frm.acuant.net</string>
 			<key>passive_liveness_endpoint</key>
-			<string>https://passlive.acuant.net</string>
+			<string>https://us.passlive.acuant.net</string>
 			<key>med_endpoint</key>
 			<string>https://medicscan.acuant.net</string>
 			<key>assureid_endpoint</key>
@@ -314,20 +317,31 @@ Initialize without a Subscription ID:
 	    	func setCapturedImage(image:Image, barcodeString:String?)
 		}
 		
-2. Open the camera: 
+1. Open the camera: 
 
-	**Note:**   Options are now defined through an options object. See **AcuantCameraOptions** for all configurable fields.
+	**Note:** Options are now defined through an options object. See **AcuantCameraOptions** for all configurable fields.
 		
         let options = AcuantCameraOptions(autoCapture: true, hideNavigationBar: true)
         let documentCameraController = DocumentCameraController.getCameraController(delegate:self!, cameraOptions: options)
         
         navigationController.pushViewController(documentCameraController, animated: false)
 
-3. Get the captured image:
+1. Get the captured image:
 
 		public protocol CameraCaptureDelegate {
 	    	func setCapturedImage(image:Image, barcodeString:String?)
 		}
+		
+1. User canceled:
+		
+		func setCapturedImage(image:Image, barcodeString:String?){
+			if let success = image.image{
+			}
+			else{
+				//user has canceled
+			}
+		}
+		
 		
 		
 **Custom UI with DocumentCaptureSesssion (see DocumentCameraController.swift for reference):**
@@ -374,7 +388,7 @@ Initialize without a Subscription ID:
 	
 		func documentCaptured(image:UIImage, barcodeString:String?)
 
-	**Note:**   **AcuantCamera** is dependent on **AcuantImagePreparation** and  **AcuantCommon**.
+	**Note:** **AcuantCamera** is dependent on **AcuantImagePreparation** and  **AcuantCommon**.
 
 ----------
 ### Read MRZ using AcuantCamera
@@ -412,11 +426,17 @@ Initialize without a Subscription ID:
 		
 1. Set callback.
 
-		vc.callback : ((AcuantMrzResult) -> Void)? = { [weak self]
+		vc.callback : ((AcuantMrzResult?) -> Void)? = { [weak self]
 			result in
-				DispatchQueue.main.async {
-					//pop or dismiss the View Controller
-					self?.navigationController?.popViewController(animated: true)
+			
+				if let success = result{
+					DispatchQueue.main.async {
+						//pop or dismiss the View Controller
+						self?.navigationController?.popViewController(animated: true)
+					}
+				}
+				else{
+					//User Canceled
 				}
 		}	
 
@@ -448,9 +468,11 @@ Initialize without a Subscription ID:
 
 1. Configure the application to detect NFC Tags. Add "Near Field Communication" Capability to the target app under Signing and Capability in Xcode. Then, add "NFCReaderUsageDescription" key to the Info.plist of the app. For more info, please look at "Configure the App to Detect NFC Tags" on https://developer.apple.com/documentation/corenfc/building_an_nfc_tag-reader_app.
 
+1. Add "ISO7816 application identifiers for NFC Tag Reader Session" key with "A0000002471001" as item value in application info.plist.
 
 1. AcuantEchipPackage must be initialized in the previous step.
 
+1. This feature is only available in iOS version 13. You will need to use the @available attribute to use methods inside module.
 
 1. Create an instance of Acuant Reader. Make sure this object does not get disposed while reading.
 
@@ -607,7 +629,7 @@ The **glare** method returns the glare value of an image. If the glare value is 
 
 After a document image is captured, it can be processed using the following steps.
 
-**Note:**  If an upload fails with an error, retry the image upload using a better image.
+**Note:** If an upload fails with an error, retry the image upload using a better image.
 
 1. Create an instance:
 
@@ -1006,6 +1028,7 @@ This module is used to match two facial images:
 	    public let colorBracketHold: CGColor
 	    public let colorBracketCapture: CGColor
 	    public let defaultImageUrl: String
+	    public let showBackButton: Bool
 	    
 	}
     

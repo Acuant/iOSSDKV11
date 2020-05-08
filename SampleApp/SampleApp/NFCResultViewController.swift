@@ -64,6 +64,7 @@ class ResultTableViewController : UITableViewController{
      
 }
 
+@available (iOS 13, *)
 class NFCResultViewController: UIViewController{
     
     public var passport : AcuantPassportModel?
@@ -116,7 +117,7 @@ class NFCResultViewController: UIViewController{
     }
 }
 
-
+@available (iOS 13, *)
 extension NFCResultViewController: UITableViewDataSource,UITableViewDelegate{
     
     func numberOfSections(in tableView: UITableView) -> Int {

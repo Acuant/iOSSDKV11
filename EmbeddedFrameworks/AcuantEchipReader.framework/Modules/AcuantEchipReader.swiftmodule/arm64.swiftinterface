@@ -1,6 +1,6 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.2 (swiftlang-1103.0.32.1 clang-1103.0.32.29)
-// swift-module-flags: -target arm64-apple-ios13.2 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name AcuantEchipReader
+// swift-compiler-version: Apple Swift version 5.2.2 (swiftlang-1103.0.32.6 clang-1103.0.32.51)
+// swift-module-flags: -target arm64-apple-ios11.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name AcuantEchipReader
 import AcuantCommon
 @_exported import AcuantEchipReader
 import Combine
@@ -82,9 +82,11 @@ public func DESEncrypt(key: [Swift.UInt8], message: [Swift.UInt8], iv: [Swift.UI
 @available(iOS 13, *)
 public func DESDecrypt(key: [Swift.UInt8], message: [Swift.UInt8], iv: [Swift.UInt8], options: Swift.UInt32 = 0) -> [Swift.UInt8]
 public let AcuantCountryDataPageMap: [Swift.String : Swift.String]
+@available(iOS 13, *)
 public protocol IAcuantEchipReader {
   func readNfcTag(request: AcuantEchipReader.AcuantEchipSessionRequest, customDisplayMessage: ((AcuantEchipReader.AcuantEchipDisplayMessage) -> Swift.String?)?, _ callback: @escaping (AcuantEchipReader.AcuantPassportModel?, AcuantCommon.AcuantError?) -> ())
 }
+@available(iOS 13, *)
 public class AcuantEchipReader : AcuantEchipReader.IAcuantEchipReader {
   public init()
   public func readNfcTag(request: AcuantEchipReader.AcuantEchipSessionRequest, customDisplayMessage: ((AcuantEchipReader.AcuantEchipDisplayMessage) -> Swift.String?)? = nil, _ callback: @escaping (AcuantEchipReader.AcuantPassportModel?, AcuantCommon.AcuantError?) -> ())
@@ -110,7 +112,8 @@ public enum AcuantEchipDisplayMessage {
   case authenticatingExtractedData
   case successfulRead
 }
-@_hasMissingDesignatedInitializers public class AcuantPassportModel {
+@_hasMissingDesignatedInitializers @available(iOS 13, *)
+public class AcuantPassportModel {
   public var documentType: Swift.String
   public var documentSubType: Swift.String
   public var personalNumber: Swift.String
@@ -136,6 +139,7 @@ public class AcuantEchipSessionRequest {
   public init(passportNumber: Swift.String, dateOfBirth: Swift.String, expiryDate: Swift.String)
   @objc deinit
 }
+@available(iOS 13, *)
 public class AcuantEchipPackage : AcuantCommon.IAcuantPackage {
   public init()
   public func initialize()

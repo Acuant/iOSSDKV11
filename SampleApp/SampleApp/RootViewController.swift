@@ -82,8 +82,13 @@ class RootViewController: UIViewController{
     
     private func initialize(){
         let initalizer: IAcuantInitializer = AcuantInitializer()
+        var packages : Array<IAcuantPackage> = [AcuantImagePreparationPackage()]
         
-        let task = initalizer.initialize(packages: [AcuantEchipPackage(), AcuantImagePreparationPackage()]){ [weak self]
+        if #available(iOS 13, *) {
+            packages.append(AcuantEchipPackage())
+        }
+    
+        let task = initalizer.initialize(packages:packages){ [weak self]
             error in
             
             DispatchQueue.main.async {
@@ -230,7 +235,13 @@ extension RootViewController{
             }
             else{
                 self.resetData()
-                self.showMrzCamera()
+                
+                if #available (iOS 13, *){
+                    self.showMrzCamera()
+                }
+                else{
+                    CustomAlerts.displayError(message: "Need iOS 13 or later")
+                }
             }
         }
     }
@@ -270,6 +281,7 @@ extension RootViewController: CameraCaptureDelegate{
         }
     }
     
+    @available (iOS 13, *)
     func showMrzCamera(){
         let controller = AcuantMrzCameraController()
         controller.customDisplayMessage = {
@@ -290,14 +302,17 @@ extension RootViewController: CameraCaptureDelegate{
         }
         controller.callback = { [weak self]
             result in
-            DispatchQueue.main.async {
-                self?.navigationController?.popViewController(animated: true)
-                let storyBoard = UIStoryboard.init(name: "Main", bundle: nil)
-                let vc = storyBoard.instantiateViewController(withIdentifier: "NFCViewController") as! NFCViewController
-                vc.result = result
-                self?.navigationController?.pushViewController(vc, animated: true)
+            if let success = result{
+                DispatchQueue.main.async {
+                    self?.navigationController?.popViewController(animated: true)
+                    let storyBoard = UIStoryboard.init(name: "Main", bundle: nil)
+                    let vc = storyBoard.instantiateViewController(withIdentifier: "NFCViewController") as! NFCViewController
+                    vc.result = success
+                    self?.navigationController?.pushViewController(vc, animated: true)
+                }
             }
         }
+        
         self.navigationController?.pushViewController(controller, animated: false)
     }
     
@@ -344,12 +359,15 @@ extension RootViewController: CameraCaptureDelegate{
     
     
     public func cropImage(image:Image, callback: @escaping (Image?) -> ()){
-        self.showProgressView(text: "Processing...")
-        DispatchQueue.global().async {
-            let croppedImage = self.cropImage(image: image.image!)
-            DispatchQueue.main.async {
-                self.hideProgressView()
-                callback(croppedImage)
+        if let succcess = image.image{
+            self.showProgressView(text: "Processing...")
+
+            DispatchQueue.global().async {
+                let croppedImage = self.cropImage(image: succcess)
+                DispatchQueue.main.async {
+                    self.hideProgressView()
+                    callback(croppedImage)
+                }
             }
         }
     }

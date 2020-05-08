@@ -33,7 +33,7 @@ import AcuantCommon
     private var isCaptured = false
     
     public var options : AcuantCameraOptions!
-    public var callback : ((AcuantMrzResult) -> Void)?
+    public var callback : ((AcuantMrzResult?) -> Void)?
     public var customDisplayMessage: ((MrzCameraState) -> String) = {
         state in
         switch(state){
@@ -233,7 +233,10 @@ import AcuantCommon
         self.videoPreviewLayer.addSublayer(self.messageLayer)
         self.videoPreviewLayer.addSublayer(self.cornerLayer)
         self.view.layer.addSublayer(self.videoPreviewLayer)
-        addNavigationBackButton()
+        
+        if(self.options.showBackButton){
+            addNavigationBackButton()
+        }
     }
     
     private func getImage() -> UIImage?{
@@ -341,5 +344,8 @@ import AcuantCommon
     
     @objc internal func backTapped(_ sender: Any){
         self.navigationController?.popViewController(animated: true)
+        if let cb = self.callback{
+            cb(nil)
+        }
     }
 }

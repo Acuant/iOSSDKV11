@@ -27,6 +27,7 @@ import UIKit
     public let colorBracketHold: CGColor
     public let colorBracketCapture: CGColor
     public let defaultImageUrl: String
+    public let showBackButton: Bool
     
     public init(timeInMsPerDigit: Int = 900,
                 digitsToShow: Int = 2,
@@ -43,7 +44,8 @@ import UIKit
                 colorBracketCloser: CGColor = UIColor.red.cgColor,
                 colorBracketHold: CGColor = UIColor.yellow.cgColor,
                 colorBracketCapture: CGColor = UIColor.green.cgColor,
-                defaultImageUrl: String = "") {
+                defaultImageUrl: String = "",
+                showBackButton: Bool = true) {
         
         self.timeInMsPerDigit = timeInMsPerDigit
         self.digitsToShow = digitsToShow
@@ -61,5 +63,6 @@ import UIKit
         self.colorBracketHold = colorBracketHold
         self.colorBracketCapture = colorBracketCapture
         self.defaultImageUrl = defaultImageUrl
+        self.showBackButton = showBackButton
     }
 }

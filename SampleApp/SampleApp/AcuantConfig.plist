@@ -14,9 +14,7 @@
 	<string>https://medicscan.acuant.net</string>
 	<key>assureid_endpoint</key>
 	<string>https://services.assureid.net</string>
-	<key>ozone_endpoint</key>
-	<string>https://ozone.acuant.net</string>
-	<key>acas_endpoint</key>
-	<string>https://acas.acuant.net</string>
+	<key>passive_liveness_endpoint</key>
+	<string>https://us.passlive.acuant.net</string>
 </dict>
 </plist>

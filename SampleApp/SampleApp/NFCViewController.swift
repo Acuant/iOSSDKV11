@@ -7,17 +7,18 @@
 //
 
 import UIKit
-import CoreNFC
 import AcuantCamera
 import AcuantEchipReader
 
 /// - Tag: NFCViewController
+@available (iOS 13, *)
 class NFCViewController: UIViewController, UITextFieldDelegate, OzoneServiceDelegate {
     
     @IBOutlet weak var passportNumberTextView: UITextField!
     
     @IBOutlet weak var expiryTextView: UITextField!
     @IBOutlet weak var dobTextView: UITextField!
+    
     
     
     // MARK: - Properties
