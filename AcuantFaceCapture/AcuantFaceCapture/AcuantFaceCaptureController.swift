@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 import AVFoundation
+import AcuantImagePreparation
 
 public class AcuantFaceCaptureController : UIViewController {
     
@@ -170,6 +171,15 @@ public class AcuantFaceCaptureController : UIViewController {
         currentTimer = nil
     }
     
+    private func getTargetWidth(width: Int, height: Int) -> Int{
+        if(width > height){
+            return Int(720 * (Float(width)/Float(height)))
+        }
+        else{
+            return 720
+        }
+    }
+    
     private func handleCountdown(image: UIImage){
         if(currentTimer == nil){
             currentTimer = CFAbsoluteTimeGetCurrent()
@@ -184,7 +194,8 @@ public class AcuantFaceCaptureController : UIViewController {
                 self.isCaptured = true
                 self.navigationController?.popViewController(animated: true)
                 if let userCallback = self.callback {
-                    userCallback(image)
+                    let resized = AcuantImagePreparation.resize(image: image, targetWidth: getTargetWidth(width: Int(image.size.width), height: Int(image.size.height)))
+                    userCallback(resized)
                 }
             }
         }

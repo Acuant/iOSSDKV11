@@ -193,7 +193,6 @@ import AVFoundation
         guard let cgImage = context.createCGImage(ciImage, from: ciImage.extent) else { return nil }
         return UIImage(cgImage: cgImage)
     }
-    
-    
 }
+
 

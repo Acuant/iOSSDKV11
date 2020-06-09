@@ -10,6 +10,7 @@
 		8320597823DBA14100B7803F /* FaceCameraCornerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8320597623DBA14100B7803F /* FaceCameraCornerView.swift */; };
 		8320597923DBA14100B7803F /* FaceCameraCornerOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8320597723DBA14100B7803F /* FaceCameraCornerOverlayView.swift */; };
 		8320597B23DBA18100B7803F /* FaceAcuantCameraOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8320597A23DBA18100B7803F /* FaceAcuantCameraOptions.swift */; };
+		8381E909248EFF2C003FB763 /* AcuantImagePreparation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8381E908248EFF2C003FB763 /* AcuantImagePreparation.framework */; };
 		83F0BF7623D8B28E00140A06 /* AcuantFaceCapture.h in Headers */ = {isa = PBXBuildFile; fileRef = 83F0BF7423D8B28E00140A06 /* AcuantFaceCapture.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		83F0BFAB23D8B59D00140A06 /* AcuantFaceCaptureController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83F0BFAA23D8B59D00140A06 /* AcuantFaceCaptureController.swift */; };
 		83F0BFB823D8B7E600140A06 /* AcuantFaceState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83F0BFB723D8B7E600140A06 /* AcuantFaceState.swift */; };
@@ -21,6 +22,7 @@
 		8320597623DBA14100B7803F /* FaceCameraCornerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FaceCameraCornerView.swift; sourceTree = "<group>"; };
 		8320597723DBA14100B7803F /* FaceCameraCornerOverlayView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FaceCameraCornerOverlayView.swift; sourceTree = "<group>"; };
 		8320597A23DBA18100B7803F /* FaceAcuantCameraOptions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FaceAcuantCameraOptions.swift; sourceTree = "<group>"; };
+		8381E908248EFF2C003FB763 /* AcuantImagePreparation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AcuantImagePreparation.framework; path = ../EmbeddedFrameworks/AcuantImagePreparation.framework; sourceTree = "<group>"; };
 		83F0BF7123D8B28E00140A06 /* AcuantFaceCapture.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AcuantFaceCapture.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		83F0BF7423D8B28E00140A06 /* AcuantFaceCapture.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AcuantFaceCapture.h; sourceTree = "<group>"; };
 		83F0BF7523D8B28E00140A06 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -35,17 +37,27 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8381E909248EFF2C003FB763 /* AcuantImagePreparation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		83997E502489AFA1002E5840 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8381E908248EFF2C003FB763 /* AcuantImagePreparation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		83F0BF6723D8B28E00140A06 = {
 			isa = PBXGroup;
 			children = (
 				83F0BF7323D8B28E00140A06 /* AcuantFaceCapture */,
 				83F0BF7223D8B28E00140A06 /* Products */,
+				83997E502489AFA1002E5840 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -298,6 +310,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(PROJECT_DIR)/../EmbeddedFrameworks",
+					"$(PROJECT_DIR)/../SampleApp/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = AcuantFaceCapture/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
@@ -327,6 +343,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(PROJECT_DIR)/../EmbeddedFrameworks",
+					"$(PROJECT_DIR)/../SampleApp/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = AcuantFaceCapture/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;

@@ -1,5 +1,5 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.2.2 (swiftlang-1103.0.32.6 clang-1103.0.32.51)
+// swift-compiler-version: Apple Swift version 5.2.4 (swiftlang-1103.0.32.9 clang-1103.0.32.53)
 // swift-module-flags: -target x86_64-apple-ios11.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name AcuantImagePreparation
 import AVFoundation
 import AcuantCommon
@@ -12,6 +12,7 @@ import UIKit
 }
 @objc @_inheritsConvenienceInitializers @objcMembers public class AcuantImagePreparation : ObjectiveC.NSObject {
   @objc public class func initialize(delegate: AcuantImagePreparation.InitializationDelegate?)
+  @objc public class func resize(image: UIKit.UIImage, targetWidth: Swift.Int) -> UIKit.UIImage?
   @objc public class func crop(data: AcuantCommon.CroppingData) -> AcuantCommon.Image
   @objc public class func cropMrz(data: AcuantCommon.CroppingData) -> AcuantCommon.Image
   @objc public class func detect(data: AcuantCommon.CroppingData) -> AcuantCommon.Image

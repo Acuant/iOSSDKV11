@@ -43,7 +43,8 @@ import AcuantCommon
     
     private let captureTime = 1
     private let documentMovementThreshold = 45
-    
+    private let previewBoundsThreshold: CGFloat = 25
+
     private var currentStateCount = 0
     private var nextState = FrameResult.NO_DOCUMENT
     private var isNavigationHidden = false
@@ -164,6 +165,7 @@ import AcuantCommon
         case DocumentCameraController.CameraState.MoveCloser:
             self.messageLayer.setDefaultSettings(frame: self.view.frame)
             self.cornerLayer.setColor(color: self.options?.colorBracketCloser)
+            self.cornerLayer.setDefaultCorners(frame: self.view.frame)
             self.shapeLayer.hideBorder()
             break;
         case DocumentCameraController.CameraState.Hold:
@@ -262,9 +264,8 @@ import AcuantCommon
         }
     }
     
-
     func isInRange(point: CGPoint) -> Bool{
-        return (point.x >= 0 && point.x <= self.videoPreviewLayer.frame.width) && (point.y >= 0 && point.y <= self.videoPreviewLayer.frame.height)
+        return (point.x >= -previewBoundsThreshold && point.x <= self.videoPreviewLayer.frame.width + previewBoundsThreshold) && (point.y >= -previewBoundsThreshold && point.y <= self.videoPreviewLayer.frame.height + previewBoundsThreshold)
     }
     
     func isOutsideView(points: Array<CGPoint>?) -> Bool {
@@ -302,7 +303,7 @@ import AcuantCommon
                 self.transitionState(state: CameraState.MoveCloser, localString: "acuant_camera_move_closer")
                 break
             case FrameResult.DOCUMENT_NOT_IN_FRAME:
-               self.transitionState(state: CameraState.Align, localString: "acuant_camera_outside_view")
+               self.transitionState(state: CameraState.MoveCloser, localString: "acuant_camera_outside_view")
                break
             case FrameResult.GOOD_DOCUMENT:
                 if(points != nil && points?.count == 4 && autoCapture){

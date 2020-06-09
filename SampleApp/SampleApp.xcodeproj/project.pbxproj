@@ -91,7 +91,6 @@
 		13AC65E720EE8F9000F0D494 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		13AC66BD20EED36D00F0D494 /* CustomAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlert.swift; sourceTree = "<group>"; };
 		13D13F1320F6AC000052B1D7 /* ConfirmationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmationViewController.swift; sourceTree = "<group>"; };
-		8313529424649AAC002CA067 /* SampleApp.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = SampleApp.entitlements; sourceTree = "<group>"; };
 		83248A7D23ECAFF500A264F2 /* AcuantFaceCapture.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = AcuantFaceCapture.xcodeproj; path = ../AcuantFaceCapture/AcuantFaceCapture.xcodeproj; sourceTree = "<group>"; };
 		835108E922FA425300CC8329 /* AcuantProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AcuantProgressView.swift; path = View/AcuantProgressView.swift; sourceTree = "<group>"; };
 		8351094B22FB462B00CC8329 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -102,6 +101,7 @@
 		83576FF1243554E20091454C /* NFCViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NFCViewController.swift; sourceTree = "<group>"; };
 		83576FF2243554E20091454C /* NFCResultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NFCResultViewController.swift; sourceTree = "<group>"; };
 		83576FF5243555310091454C /* tessdata */ = {isa = PBXFileReference; lastKnownFileType = folder; name = tessdata; path = Assets.xcassets/tessdata; sourceTree = "<group>"; };
+		8381E903248EFD93003FB763 /* SampleApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SampleApp.entitlements; sourceTree = "<group>"; };
 		83C977F522C69D9A00FC8C53 /* CheckConnection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckConnection.swift; sourceTree = "<group>"; };
 		C20804982226E048004FA5BE /* AcuantCamera.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = AcuantCamera.xcodeproj; path = ../AcuantCamera/AcuantCamera.xcodeproj; sourceTree = "<group>"; };
 		C229E7B52224520700FFAC6F /* AcuantConfig.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = AcuantConfig.plist; sourceTree = "<group>"; };
@@ -141,7 +141,7 @@
 		13AC65DA20EE8F8F00F0D494 /* SampleApp */ = {
 			isa = PBXGroup;
 			children = (
-				8313529424649AAC002CA067 /* SampleApp.entitlements */,
+				8381E903248EFD93003FB763 /* SampleApp.entitlements */,
 				83576FF5243555310091454C /* tessdata */,
 				8351094A22FB462B00CC8329 /* Localizable.strings */,
 				8351095022FB463B00CC8329 /* Main.strings */,
@@ -514,7 +514,7 @@
 				CODE_SIGN_ENTITLEMENTS = SampleApp/SampleApp.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = E67326HC5Q;
 				ENABLE_BITCODE = YES;
 				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/../EmbeddedFrameworks";
@@ -524,7 +524,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 11.4.0;
+				MARKETING_VERSION = 11.4.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.cssn.SampleApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -543,7 +543,7 @@
 				CODE_SIGN_ENTITLEMENTS = SampleApp/SampleApp.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = E67326HC5Q;
 				ENABLE_BITCODE = YES;
 				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/../EmbeddedFrameworks";
@@ -553,7 +553,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 11.4.0;
+				MARKETING_VERSION = 11.4.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.cssn.SampleApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";

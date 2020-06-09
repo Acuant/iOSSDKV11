@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 import AVFoundation
 import AcuantHGLiveness
+import AcuantImagePreparation
 
 class FaceLivenessCameraController : UIViewController, AcuantHGLiveFaceCaptureDelegate{
     
@@ -102,6 +103,15 @@ class FaceLivenessCameraController : UIViewController, AcuantHGLiveFaceCaptureDe
         return skipFrame
     }
     
+    private func getTargetWidth(width: Int, height: Int) -> Int{
+        if(width > height){
+            return Int(720 * (Float(width)/Float(height)))
+        }
+        else{
+            return 720
+        }
+    }
+    
     func liveFaceDetailsCaptured(liveFaceDetails: LiveFaceDetails?, faceType: AcuantFaceType) {
         if(shouldSkipFrame(liveFaceDetails:liveFaceDetails, faceType: faceType)){
             return
@@ -139,7 +149,9 @@ class FaceLivenessCameraController : UIViewController, AcuantHGLiveFaceCaptureDe
             
             if(liveFaceDetails?.isLiveFace != nil && liveFaceDetails!.isLiveFace){
                 if(self.captured == false){
+                    let img = (liveFaceDetails?.image)!
                     self.captured = true
+                    liveFaceDetails?.image = AcuantImagePreparation.resize(image: img, targetWidth: getTargetWidth(width: Int(img.size.width), height: Int(img.size.height)))
                     self.navigationController?.popViewController(animated: true)
                     delegate?.liveFaceCaptured(image: (liveFaceDetails?.image)!)
                 }

@@ -359,11 +359,15 @@ extension RootViewController: CameraCaptureDelegate{
     
     
     public func cropImage(image:Image, callback: @escaping (Image?) -> ()){
+        print("test original img \(image.image?.size.width), \(image.image?.size.height)")
         if let succcess = image.image{
             self.showProgressView(text: "Processing...")
 
             DispatchQueue.global().async {
                 let croppedImage = self.cropImage(image: succcess)
+                
+                print("test cropped img \(croppedImage?.image?.size.width), \(croppedImage?.image?.size.height)")
+
                 DispatchQueue.main.async {
                     self.hideProgressView()
                     callback(croppedImage)

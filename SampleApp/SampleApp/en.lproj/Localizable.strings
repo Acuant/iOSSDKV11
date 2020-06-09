@@ -9,7 +9,7 @@
 "acuant_camera_move_closer" = "MOVE CLOSER";
 "acuant_camera_hold_steady" = "HOLD STEADY";
 "acuant_camera_capturing" = "CAPTURING";
-"acuant_camera_outside_view" = "ALIGN";
+"acuant_camera_outside_view" = "TOO CLOSE!";
 
 // Acuant Face Capture
 "acuant_face_camera_initial" = "Align face to start capture";
