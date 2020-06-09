@@ -90,6 +90,7 @@ Pod::Spec.new do |s|
             "AcuantFaceCapture/AcuantFaceCapture/*.{h,swift}"
 
         acuantFaceCapture.dependency "#{s.name}/AcuantCommon"
+        acuantFaceCapture.dependency "#{s.name}/AcuantImagePreparation"
     end
     
     s.subspec 'AcuantCamera' do |acuantCamera|
