@@ -53,7 +53,6 @@
 	<string>Light</string>
 	<key>com.apple.developer.nfc.readersession.iso7816.select-identifiers</key>
 	<array>
-		<string>com.apple.developer.nfc.readersession.iso7816.select-identifiers</string>
 		<string>A0000002471001</string>
 	</array>
 </dict>

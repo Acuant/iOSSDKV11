@@ -1,6 +1,6 @@
-# Acuant iOS SDK v11.4.2
+# Acuant iOS SDK v11.4.3
 
-**June 2020**
+**July 2020**
 
 See [https://github.com/Acuant/iOSSDKV11/releases](https://github.com/Acuant/iOSSDKV11/releases) for release notes.
 
@@ -112,7 +112,7 @@ The SDK includes the following modules:
 1. If you are using COCOAPODS, then add the following podfile:
 
 		platform :ios, '11'
-		pod 'AcuantiOSSDKV11', '~> 11.4.2' #for all packages
+		pod 'AcuantiOSSDKV11', '~> 11.4.3' #for all packages
 		
 		#indepedent packages below
 		
@@ -619,7 +619,7 @@ The **sharpness** method returns a sharpness value of an image. If the sharpness
 
 #### Glare
 
-The **glare** method returns the glare value of an image. If the glare value is 100, then the image does not contain glare. If the glare value is 0, then image contains glare.
+The **glare** method returns the glare value of an image. If the glare value is greater or equal to 50, then the image does not contain glare. If the glare value is less than 50, then image contains glare.
 
 	public class func glare(image: UIImage)->Int
 		
