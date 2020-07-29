@@ -6,7 +6,12 @@ See [https://github.com/Acuant/iOSSDKV11/releases](https://github.com/Acuant/iOS
 
 ----------
 
-# Introduction
+## License
+This software is subject to Acuant's end user license agreement (EULA), which can be found [here](docs/EULA.pdf).
+
+----------
+
+## Introduction
 
 This document provides detailed information about the Acuant iOS SDK. The Acuant-recommended workflow is described below.
 
@@ -91,7 +96,7 @@ The SDK includes the following modules:
  		- Starscream.framework
  		- SwiftyJSON.framework
 
-	![](document_images/embeded_framework.png)
+	![](docs/embeded_framework.png)
 	
 	**Note:** AcuantCamera and AcuantFaceCapture are open projects. You will have to add the source code to your solution for frameworks.
 
@@ -184,7 +189,7 @@ The SDK includes the following modules:
 	
 	- Manually
 	
-		![](document_images/cocoapodsetup.png)
+		![](docs/cocoapodsetup.png)
 		
 
 
