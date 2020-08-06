@@ -7,7 +7,7 @@ See [https://github.com/Acuant/iOSSDKV11/releases](https://github.com/Acuant/iOS
 ----------
 
 ## License
-This software is subject to Acuant's end user license agreement (EULA), which can be found [here](docs/EULA.pdf).
+This software is subject to Acuant's end user license agreement (EULA), which can be found [here](EULA.pdf).
 
 ----------
 
