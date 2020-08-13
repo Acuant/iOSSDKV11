@@ -115,7 +115,7 @@ Pod::Spec.new do |s|
                "AcuantCamera/AcuantCamera/Camera/Mrz/OCR/Utils/*.{h,swift}"
              mrz.dependency "#{s.name}/AcuantCamera/Common"
              mrz.ios.vendored_frameworks = "EmbeddedFrameworks/TesseractOCR.framework"
-             mrz.resources = "AcuantCamera/AcuantCamera/Camera/Mrz/*.xcassets"
+             mrz.resource_bundle = "AcuantCamera/AcuantCamera/Camera/Mrz/*.xcassets"
          end
         
          acuantCamera.subspec 'Common' do |common|
