@@ -110,7 +110,7 @@ Pod::Spec.new do |s|
                "AcuantCamera/AcuantCamera/Camera/Mrz/OCR/Utils/*.{h,swift}"
              mrz.dependency "#{s.name}/AcuantCamera/Common"
              mrz.dependency 'TesseractOCRiOS', '~> 5.0.1'
-             mrz.resources = "AcuantCamera/AcuantCamera/Camera/Mrz/*.xcassets"
+             mrz.resource_bundle = "AcuantCamera/AcuantCamera/Camera/Mrz/*.xcassets"
          end
         
          acuantCamera.subspec 'Common' do |common|
