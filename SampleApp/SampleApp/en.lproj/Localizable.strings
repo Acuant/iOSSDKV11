@@ -1,9 +1,9 @@
-// SampleApp
+/* SampleApp */
 "Back Side?" = "Back Side?";
 "Scan the back side of the health insurance card" = "Scan the back side of the health insurance card";
 "Scan the back side of the ID document" = "Scan the back side of the ID document";
 
-// Acuant Camera
+/* AcuantCamera */
 "acuant_camera_align" = "ALIGN";
 "acuant_camera_manual_capture" = "ALIGN & TAP";
 "acuant_camera_move_closer" = "MOVE CLOSER";
@@ -11,7 +11,7 @@
 "acuant_camera_capturing" = "CAPTURING";
 "acuant_camera_outside_view" = "TOO CLOSE!";
 
-// Acuant Face Capture
+/* AcuantFaceCapture/AcuantPassiveLiveness */
 "acuant_face_camera_initial" = "Align face to start capture";
 "acuant_face_camera_face_too_close" = "Too Close! Move Away";
 "acuant_face_camera_face_too_far" = "Move Closer";
@@ -21,6 +21,7 @@
 "acuant_face_camera_capturing_2" = "Capturing\n2...";
 "acuant_face_camera_capturing_1" = "Capturing\n1...";
 
+/* AcuantHGLiveness */
 "hg_too_close" = "Too Close! Move Away";
 "hg_too_far_away" = "Move Closer";
 "hg_move_in_frame" = "Move in Frame";
@@ -28,290 +29,77 @@
 "hg_hold_steady" = "Hold Steady";
 "hg_align_face_and_blink" = "Align face to begin";
 
-/* loco:5b56f1d17ec8ae43575e40f2
- * app_name */
+/* AcuantIPLiveness */
+"IProov_LanguageFile" = "en";
 "IProov_AppName" = "iProov";
-
-/* loco:5b56f1d17ec8ae43575e40f4
- * error */
 "IProov_Error" = "Error";
-
-/* loco:5b56f1d17ec8ae43575e40f5
- * prompt_hold_still */
 "IProov_PromptHoldStill" = "Put your face in the oval";
-
-/* loco:5b56f1d17ec8ae43575e40f6
- * prompt_loading */
 "IProov_PromptLoading" = "Please wait…";
-
-/* loco:5b56f1d17ec8ae43575e40f7
- * prompt_loading_slow */
 "IProov_PromptLoadingSlow" = "Connecting, network is slow…";
-
-/* loco:5b56f1d17ec8ae43575e40f8
- * prompt_connecting */
 "IProov_PromptConnecting" = "Connecting…";
-
-/* loco:5b56f1d17ec8ae43575e40f9
- * prompt_connecting_slow */
 "IProov_PromptConnectingSlow" = "Connecting, network is slow…";
-
-/* loco:5b56f1d17ec8ae43575e40fa
- * prompt_tap_to_begin */
 "IProov_PromptTapToBegin" = "Tap the screen to begin";
-
-/* loco:5b56f1d17ec8ae43575e40fb
- * prompt_too_far */
 "IProov_PromptTooFar" = "Move closer";
-
-/* loco:5b56f1d17ec8ae43575e40fc
- * prompt_too_bright */
 "IProov_PromptTooBright" = "Go somewhere shadier";
-
-/* loco:5b56f1d17ec8ae43575e4107
- * progress_streaming */
 "IProov_ProgressStreaming" = "Streaming…";
-
-/* loco:5b56f1d17ec8ae43575e4108
- * progress_streaming_slow */
 "IProov_ProgressStreamingSlow" = "Streaming, network is slow…";
-
-/* loco:5b56f1d17ec8ae43575e4109
- * progress_processing */
 "IProov_ProgressProcessing" = "Processing…";
-
-/* loco:5b56f1d17ec8ae43575e4111
- * iproov_success */
 "IProov_IProovSuccess" = "You have iProoved successfully";
-
-/* loco:5b56f1d17ec8ae43575e4112
- * prompt_scanning */
 "IProov_PromptScanning" = "Scanning…";
-
-/* loco:5b56f1d17ec8ae43575e411a
- * unknown_error */
 "IProov_UnknownError" = "Unknown Error";
-
-/* loco:5b56f1d17ec8ae43575e411b
- * starting_detector */
 "IProov_StartingDetector" = "Starting detector…";
-
-/* loco:5b56f1d17ec8ae43575e411c
- * error_ssl_exception */
 "IProov_ErrorSSLException" = "SSL Exception";
-
-/* loco:5bbb68727ec8ae0b0e45faf4
- * progress_identifying_face */
 "IProov_ProgressIdentifyingFace" = "Identifying face…";
-
-/* loco:5bbb68d07ec8ae0b84680992
- * progress_confirming_identity */
 "IProov_ProgressConfirmingIdentity" = "Confirming identity…";
-
-/* loco:5bbb68f17ec8ae0b7e546063
- * progress_assessing_genuine_presence */
 "IProov_ProgressAssessingGenuinePresence" = "Assessing genuine presence…";
-
-/* loco:5bbb69067ec8ae0b9856ffe2
- * progress_loading */
 "IProov_ProgressLoading" = "Loading…";
-
-/* loco:5bbb69267ec8ae0b7d6eaa23
- * progress_creating_identity */
 "IProov_ProgressCreatingIdentity" = "Creating identity…";
-
-/* loco:5bbb6b0c7ec8ae0c0c50c744
- * progress_finding_face */
 "IProov_ProgressFindingFace" = "Finding face…";
-
-/* loco:5bbb816b7ec8ae109642c8c2
- * authenticate */
 "IProov_Authenticate" = "Authenticate";
-
-/* loco:5bbb81777ec8ae109c2a3952
- * enrol */
 "IProov_Enrol" = "Enrol";
-
-/* loco:5bbb81dd7ec8ae10ba335193
- * message_format */
 "IProov_MessageFormat" = "%@ to %@";
-
-/* loco:5bcdab237ec8ae743c2490c3
- * prompt_too_close */
 "IProov_PromptTooClose" = "Too close";
-
-/* loco:5bcf26b9a08ef1469d2129cd
- * failure_motion_too_much_movement */
 "IProov_FailureMotionTooMuchMovement" = "Please do not move while iProoving";
-
-/* loco:5bcf26d5a08ef1469a501327
- * failure_lighting_flash_reflection_too_low */
 "IProov_FailureLightingFlashReflectionTooLow" = "Ambient light too strong or screen brightness too low";
-
-/* loco:5bcf26f6a08ef1469b5c6c93
- * failure_lighting_backlit */
 "IProov_FailureLightingBacklit" = "Strong light source detected behind you";
-
-/* loco:5bcf2713a08ef146991980c7
- * failure_lighting_too_dark */
 "IProov_FailureLightingTooDark" = "Your environment appears too dark";
-
-/* loco:5bcf2735a08ef1473c75eb52
- * failure_lighting_face_too_bright */
 "IProov_FailureLightingFaceTooBright" = "Too much light detected on your face";
-
-/* loco:5bcf2752a08ef147420f6f72
- * failure_motion_too_much_mouth_movement */
 "IProov_FailureMotionTooMuchMouthMovement" = "Please do not talk while iProoving";
-
-/* loco:5c470a3d7ec8ae70494fb632
- * message_format_with_username */
 "IProov_MessageFormatWithUsername" = "%@ as %@ to %@";
-
-/* loco:5ce7afc34d3dd75c910205a2
- * prompt_roll_too_high */
 "IProov_PromptRollTooHigh" = "Avoid tilting your head";
-
-/* loco:5ce7b1154d3dd75cea6b4852
- * prompt_roll_too_low */
 "IProov_PromptRollTooLow" = "Avoid tilting your head";
-
-/* loco:5ce7b1414d3dd75ce5786ea4
- * prompt_yaw_too_low */
 "IProov_PromptYawTooLow" = "Turn slightly to your right";
-
-/* loco:5ce7b1614d3dd75d0c3caef2
- * prompt_yaw_too_high */
 "IProov_PromptYawTooHigh" = "Turn slightly to your left";
-
-/* loco:5ce7b18c4d3dd75ce93af262
- * prompt_pitch_too_high */
 "IProov_PromptPitchTooHigh" = "Hold the device at eye level";
-
-/* loco:5ce7b1a84d3dd75d06361922
- * prompt_pitch_too_low */
 "IProov_PromptPitchTooLow" = "Hold the device at eye level";
-
-/* loco:5ce7b7ca4d3dd75e1f603933
- * error_streaming */
 "IProov_ErrorStreaming" = "Streaming error";
-
-/* loco:5ce7b7e44d3dd75e2d0a79d3
- * error_encoder */
 "IProov_ErrorEncoder" = "Encoder error";
-
-/* loco:5ce7b80d4d3dd75e1f603935
- * error_camera */
 "IProov_ErrorCamera" = "Camera error";
-
-/* loco:5ce7b8344d3dd75e216b9dd4
- * error_camera_permission_denied */
 "IProov_ErrorCameraPermissionDenied" = "Camera permission denied";
-
-/* loco:5ce7b87c4d3dd75e1d6465c5
- * error_camera_permission_denied_message_ios */
 "IProov_ErrorCameraPermissionDeniedMessageIos" = "Please allow camera access for this app in iOS Settings";
-
-/* loco:5ce7b8a04d3dd75e216b9dd6
- * error_server_abort */
 "IProov_ErrorServerAbort" = "Server abort";
-
-/* loco:5ce7b8ba4d3dd75e720a06b2
- * error_server */
 "IProov_ErrorServer" = "Server error";
-
-/* loco:5ce7b8cf4d3dd75e744b9512
- * error_lighting_model */
 "IProov_ErrorLightingModel" = "Lighting model error";
-
-/* loco:5ce7bb614d3dd75f10391ce2
- * error_encoder_unknown_message */
 "IProov_ErrorEncoderUnknownMessage" = "Unknown encoder error";
-
-/* loco:5ce7bbd74d3dd75ecb1bed63
- * error_encoder_code_message */
 "IProov_ErrorEncoderCodeMessage" = "Error code %@";
-
-/* loco:5d286656ed0cfa14ef7a4832
- * error_capture_already_active */
 "IProov_ErrorCaptureAlreadyActive" = "An existing capture is already in progress";
-
-/* loco:5d6e453aed0cfa48b04d8944
- * prompt_get_ready */
 "IProov_PromptGetReady" = "Get ready…";
-
-/* loco:5d7b9ba4c38e0f552773dd42
- * prompt_too_right */
 "IProov_PromptTooRight" = "Move left";
-
-/* loco:5d7b9ca9c38e0f552a433fb6
- * prompt_too_left */
 "IProov_PromptTooLeft" = "Move right";
-
-/* loco:5d7b9cd7c38e0f552a433fb8
- * prompt_too_high */
 "IProov_PromptTooHigh" = "Move down";
-
-/* loco:5d7b9d09c38e0f55016e9b47
- * prompt_too_low */
 "IProov_PromptTooLow" = "Move up";
-
-/* loco:5d7b9d4dc38e0f5525429e25
- * prompt_beginning_in */
 "IProov_PromptBeginningIn" = "Starting in…";
-
-/* loco:5d7b9d7dc38e0f556e716462
- * prompt_grant_permission */
 "IProov_PromptGrantPermission" = "Grant Camera Access";
-
-/* loco:5d7b9df6c38e0f552459601c
- * prompt_grant_permission_message */
 "IProov_PromptGrantPermissionMessage" = "Camera access must be granted to use iProov";
-
-/* loco:5d7ba03bc38e0f559401b322
- * passed */
 "IProov_Passed" = "Passed";
-
-/* loco:5d7ba066c38e0f55a9275a85
- * failed */
 "IProov_Failed" = "Failed";
-
-/* loco:5d7ba098c38e0f5612366b52
- * failure_user_timeout */
 "IProov_FailureUserTimeout" = "Sorry, your session has timed out";
-
-/* loco:5d7ba9ccc38e0f5746769f85
- * failure_network_problem */
 "IProov_FailureNetworkProblem" = "Sorry, network problem";
-
-/* loco:5d7baa0dc38e0f57200ed694
- * failure_ambiguous_outcome */
 "IProov_FailureAmbiguousOutcome" = "Sorry, ambiguous outcome";
-
-/* loco:5d7bab13c38e0f5747306457
- * error_not_supported */
 "IProov_ErrorNotSupported" = "Unsupported";
-
-/* loco:5d7bab4dc38e0f57bc04d3b3
- * error_not_supported_message */
 "IProov_ErrorNotSupportedMessage" = "Your device is not supported";
-
-/* loco:5d7babb8c38e0f57bf000183
- * error_fullscreen_change */
 "IProov_ErrorFullscreenChange" = "Exited full-screen without completing iProov";
-
-/* loco:5d7bac00c38e0f579518c1e4
- * error_no_camera */
 "IProov_ErrorNoCamera" = "No Camera Detected";
-
-/* loco:5d7bac40c38e0f57bc04d3b6
- * error_no_camera_message */
 "IProov_ErrorNoCameraMessage" = "A camera must be available to use iProov";
-
-/* loco:5d7bacc8c38e0f57bc04d3b9
- * error_camera_permission_denied_message */
 "IProov_ErrorCameraPermissionDeniedMessage" = "Permission to access the camera has been denied. Please allow camera access to use iProov. If you have already allowed access, please reload the page.";
-
-/* loco:5d7bacf9c38e0f57c048c734
- * error_user_timeout */
 "IProov_ErrorUserTimeout" = "Your session has expired";

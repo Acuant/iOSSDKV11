@@ -85,9 +85,18 @@ class NFCResultViewController: UIViewController{
         data.append("\n Nationality  : " + passport!.nationality)
         data.append("\n First Name  : " + passport!.firstName )
         data.append("\n Last Name  : " + passport!.lastName)
+        
+        if let age = passport?.age {
+            data.append("\n Age  : \(age)")
+        }
+        
+        if let isExpired = passport?.isExpired {
+            data.append("\n Is Expired  : \(isExpired ? "True" : "False")")
+        }
+        
         data.append("\n Date of Birth  : " + passport!.dateOfBirth)
         data.append("\n Expiry Date  : " + passport!.documentExpiryDate)
-        data.append("Document Type  : " + passport!.documentType)
+        data.append("\n Document Type  : " + passport!.documentType)
         data.append("\n Gender  : " + passport!.gender)
         data.append("\n Issuing Authority  : " + passport!.issuingAuthority)
         data.append("\n Data Hash  : "  + (passport!.passportDataValid ? "True" : "False"))

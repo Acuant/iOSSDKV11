@@ -46,6 +46,14 @@ public class AcuantInitializer : AcuantCommon.IAcuantInitializer {
   @objc override dynamic public init()
   @objc deinit
 }
+public class AcuantJwtParser {
+  public init()
+  public func parseToken(jwtToken: Swift.String) -> AcuantCommon.AcuantJwtToken?
+  public func decode(jwtToken jwt: Swift.String) -> [Swift.String : Any]
+  public func base64UrlDecode(_ value: Swift.String) -> Foundation.Data?
+  public func decodeJWTPart(_ value: Swift.String) -> [Swift.String : Any]?
+  @objc deinit
+}
 public protocol IAcuantPackage {
   func initialize()
 }
@@ -55,6 +63,13 @@ public protocol IAcuantPackage {
   @objc override dynamic public init()
   @objc public init(errorCode: Swift.Int = 0, errorDescription: Swift.String?)
   @objc public class func newInstance() -> AcuantCommon.AcuantError
+  @objc deinit
+}
+public class AcuantJwtToken {
+  final public let value: Swift.String
+  final public let expiration: Foundation.Date
+  public init(value: Swift.String, expiration: Foundation.Date)
+  public func isValid() -> Swift.Bool
   @objc deinit
 }
 @objc @_inheritsConvenienceInitializers @objcMembers public class AcuantErrorCodes : ObjectiveC.NSObject {
@@ -91,7 +106,12 @@ public protocol IAcuantPackage {
   @objc public class func password() -> Swift.String?
   @objc public class func subscription() -> Swift.String?
   @objc public class func endpoints() -> AcuantCommon.Endpoints?
+  @objc public class func removeToken() -> Swift.Bool
+  @objc public class func setToken(token: Swift.String) -> Swift.Bool
+  public class func getToken() -> AcuantCommon.AcuantJwtToken?
   @objc public class func isCredentialValid(endpoint: Swift.String?) -> Swift.Bool
+  @objc public class func getAcuantAuthHeader() -> Swift.String?
+  @objc public class func getBasicAuthHeader() -> Swift.String?
   @objc public class func setUsername(username: Swift.String!)
   @objc public class func setPassword(password: Swift.String!)
   @objc public class func setSubscription(subscription: Swift.String!)

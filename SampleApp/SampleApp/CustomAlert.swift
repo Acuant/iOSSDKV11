@@ -18,9 +18,9 @@ class CustomAlerts{
         }
     }
     
-    static func display(message:String,action:UIAlertAction){
+    static func display(title:String, message:String,action:UIAlertAction){
         DispatchQueue.main.async{
-            let alert = UIAlertController(title: "Error", message: message, preferredStyle: UIAlertController.Style.alert)
+            let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
             alert.addAction(action)
             let delegate : AppDelegate = UIApplication.shared.delegate as! AppDelegate
             delegate.showAlertGlobally(alert)

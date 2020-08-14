@@ -1,5 +1,5 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.2 (swiftlang-1103.0.32.1 clang-1103.0.32.29)
+// swift-compiler-version: Apple Swift version 5.2.4 (swiftlang-1103.0.32.9 clang-1103.0.32.53)
 // swift-module-flags: -target i386-apple-ios8.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name KeychainAccess
 import Foundation
 @_exported import KeychainAccess
@@ -66,6 +66,25 @@ public enum Accessibility {
   @available(macCatalyst, unavailable)
   case alwaysThisDeviceOnly
 }
+public enum AuthenticationUI {
+  case allow
+  case fail
+  case skip
+  public static func == (a: KeychainAccess.AuthenticationUI, b: KeychainAccess.AuthenticationUI) -> Swift.Bool
+  public var hashValue: Swift.Int {
+    get
+  }
+  public func hash(into hasher: inout Swift.Hasher)
+}
+@available(iOS 9.0, OSX 10.11, *)
+extension AuthenticationUI {
+  public var rawValue: Swift.String {
+    get
+  }
+  public var description: Swift.String {
+    get
+  }
+}
 public struct AuthenticationPolicy : Swift.OptionSet {
   @available(iOS 8.0, OSX 10.10, watchOS 2.0, tvOS 8.0, *)
   public static let userPresence: KeychainAccess.AuthenticationPolicy
@@ -76,7 +95,7 @@ public struct AuthenticationPolicy : Swift.OptionSet {
   @available(watchOS, introduced: 2.0, deprecated: 4.3, renamed: "biometryAny")
   @available(tvOS, introduced: 9.0, deprecated: 11.3, renamed: "biometryAny")
   public static let touchIDAny: KeychainAccess.AuthenticationPolicy
-  @available(iOS 11.3, OSX 10.13.4, watchOS 4.3, tvOS 11.3, *)
+  @available(iOS 11.3, OSX 10.13, watchOS 4.3, tvOS 11.3, *)
   public static let biometryCurrentSet: KeychainAccess.AuthenticationPolicy
   @available(iOS, introduced: 9.0, deprecated: 11.3, renamed: "biometryCurrentSet")
   @available(OSX, introduced: 10.12.1, deprecated: 10.13.4, renamed: "biometryCurrentSet")
@@ -229,6 +248,10 @@ public struct Attributes {
     get
   }
   @available(iOS 9.0, OSX 10.11, *)
+  final public var authenticationUI: KeychainAccess.AuthenticationUI {
+    get
+  }
+  @available(iOS 9.0, OSX 10.11, *)
   final public var authenticationContext: LocalAuthentication.LAContext? {
     get
   }
@@ -249,6 +272,8 @@ public struct Attributes {
   @available(iOS 8.0, OSX 10.10, *)
   @available(watchOS, unavailable)
   final public func authenticationPrompt(_ authenticationPrompt: Swift.String) -> KeychainAccess.Keychain
+  @available(iOS 9.0, OSX 10.11, *)
+  final public func authenticationUI(_ authenticationUI: KeychainAccess.AuthenticationUI) -> KeychainAccess.Keychain
   @available(iOS 9.0, OSX 10.11, *)
   final public func authenticationContext(_ authenticationContext: LocalAuthentication.LAContext) -> KeychainAccess.Keychain
   final public func get(_ key: Swift.String, ignoringAttributeSynchronizable: Swift.Bool = true) throws -> Swift.String?
@@ -786,5 +811,7 @@ extension KeychainAccess.AuthenticationType : Swift.Equatable {}
 extension KeychainAccess.AuthenticationType : Swift.Hashable {}
 extension KeychainAccess.Accessibility : Swift.Equatable {}
 extension KeychainAccess.Accessibility : Swift.Hashable {}
+extension KeychainAccess.AuthenticationUI : Swift.Equatable {}
+extension KeychainAccess.AuthenticationUI : Swift.Hashable {}
 extension KeychainAccess.Status : Swift.Equatable {}
 extension KeychainAccess.Status : Swift.Hashable {}

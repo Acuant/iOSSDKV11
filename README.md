@@ -1,6 +1,6 @@
-# Acuant iOS SDK v11.4.3
+# Acuant iOS SDK v11.4.4
 
-**July 2020**
+**August 2020**
 
 See [https://github.com/Acuant/iOSSDKV11/releases](https://github.com/Acuant/iOSSDKV11/releases) for release notes.
 
@@ -117,7 +117,7 @@ The SDK includes the following modules:
 1. If you are using COCOAPODS, then add the following podfile:
 
 		platform :ios, '11'
-		pod 'AcuantiOSSDKV11', '~> 11.4.3' #for all packages
+		pod 'AcuantiOSSDKV11', '~> 11.4.4' #for all packages
 		
 		#indepedent packages below
 		
@@ -265,6 +265,30 @@ The SDK includes the following modules:
 
 
 ----------
+### Bearer Tokens
+
+1. Use Acuant Services to retrieve a token. We recommend using a proxy service to retrieve the token to ensure integrity of credentials.
+
+2. Set the token:
+
+		if let success = Credential.setToken(token: ""){
+			//token was valid
+		}
+		else{
+			//invalid or expired token
+		}
+
+3. Tokens will eventually expire, depending on the provided settings. Use the method below to ensure token is still valid before reusing the token.
+
+		if let token : AcuantJwtToken = Credential.getToken(){
+			let valid: Bool = token.isValid()
+		}
+		
+4. **NOTE**: If token is set, all service calls will attempt to authorize using the token. If the token is not set, the legacy credentials will be used.
+
+5. **IMPORTANT**: You will still need to provide the SubscriptionId in the Credential object in order to use Acuant Services with bearer tokens.
+
+
 ### Initialize
 
 **Initialization**
@@ -301,7 +325,8 @@ The SDK includes the following modules:
 		endpoints.ozoneEndpoint = "https://ozone.acuant.net"
 
 		Credential.setEndpoints(endpoints: endpoints)		
-#### **Initialization without a Subscription ID**
+		
+**Initialization without a Subscription ID**
 
 **AcuantImagePreparation** may be initialized by providing only a username and a password. However, without providing a Subscription ID, the application can only capture an image and get the image. 
 Initialize without a Subscription ID:
@@ -555,7 +580,8 @@ Initialize without a Subscription ID:
 			public var passportSigned = OzoneResultStatus.UNKNOWN
 			public var passportCountrySigned = OzoneResultStatus.UNKNOWN
 			public var passportDataValid = false
-			
+			public var age: Int?
+			public var isExpired: Bool?
 			    
 		    public func getRawDataGroup(dgId: AcuantDataGroupId) -> [UInt8]?{
 		        return self.dataGroups[dgId]

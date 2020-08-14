@@ -17,6 +17,7 @@
 		13AC65E620EE8F9000F0D494 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 13AC65E420EE8F9000F0D494 /* LaunchScreen.storyboard */; };
 		13AC66BE20EED36D00F0D494 /* CustomAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13AC66BD20EED36D00F0D494 /* CustomAlert.swift */; };
 		13D13F1420F6AC000052B1D7 /* ConfirmationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D13F1320F6AC000052B1D7 /* ConfirmationViewController.swift */; };
+		760DB0A624E5D900004747E7 /* AcuantTokenService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 760DB0A524E5D900004747E7 /* AcuantTokenService.swift */; };
 		83248A8323ECB05D00A264F2 /* AcuantFaceCapture.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83248A8223ECAFF500A264F2 /* AcuantFaceCapture.framework */; };
 		83248A8423ECB05D00A264F2 /* AcuantFaceCapture.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 83248A8223ECAFF500A264F2 /* AcuantFaceCapture.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		835108EA22FA425300CC8329 /* AcuantProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 835108E922FA425300CC8329 /* AcuantProgressView.swift */; };
@@ -91,6 +92,7 @@
 		13AC65E720EE8F9000F0D494 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		13AC66BD20EED36D00F0D494 /* CustomAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlert.swift; sourceTree = "<group>"; };
 		13D13F1320F6AC000052B1D7 /* ConfirmationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmationViewController.swift; sourceTree = "<group>"; };
+		760DB0A524E5D900004747E7 /* AcuantTokenService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AcuantTokenService.swift; sourceTree = "<group>"; };
 		83248A7D23ECAFF500A264F2 /* AcuantFaceCapture.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = AcuantFaceCapture.xcodeproj; path = ../AcuantFaceCapture/AcuantFaceCapture.xcodeproj; sourceTree = "<group>"; };
 		835108E922FA425300CC8329 /* AcuantProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AcuantProgressView.swift; path = View/AcuantProgressView.swift; sourceTree = "<group>"; };
 		8351094B22FB462B00CC8329 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -141,6 +143,7 @@
 		13AC65DA20EE8F8F00F0D494 /* SampleApp */ = {
 			isa = PBXGroup;
 			children = (
+				760DB0A424E5D900004747E7 /* Token */,
 				8381E903248EFD93003FB763 /* SampleApp.entitlements */,
 				83576FF5243555310091454C /* tessdata */,
 				8351094A22FB462B00CC8329 /* Localizable.strings */,
@@ -173,6 +176,14 @@
 				C20804982226E048004FA5BE /* AcuantCamera.xcodeproj */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		760DB0A424E5D900004747E7 /* Token */ = {
+			isa = PBXGroup;
+			children = (
+				760DB0A524E5D900004747E7 /* AcuantTokenService.swift */,
+			);
+			path = Token;
 			sourceTree = "<group>";
 		};
 		83248A7E23ECAFF500A264F2 /* Products */ = {
@@ -330,6 +341,7 @@
 				C2B08D5922C6AF31003F2CBE /* FaceLivenessCameraController.swift in Sources */,
 				138EA90320F7BF9B002FC333 /* ResultViewController.swift in Sources */,
 				83C977F622C69D9A00FC8C53 /* CheckConnection.swift in Sources */,
+				760DB0A624E5D900004747E7 /* AcuantTokenService.swift in Sources */,
 				835108EA22FA425300CC8329 /* AcuantProgressView.swift in Sources */,
 				13AC65DC20EE8F8F00F0D494 /* AppDelegate.swift in Sources */,
 				13AC66BE20EED36D00F0D494 /* CustomAlert.swift in Sources */,

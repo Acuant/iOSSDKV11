@@ -349,7 +349,11 @@ SWIFT_CLASS("_TtC12AcuantCommon10Credential")
 + (NSString * _Nullable)password SWIFT_WARN_UNUSED_RESULT;
 + (NSString * _Nullable)subscription SWIFT_WARN_UNUSED_RESULT;
 + (Endpoints * _Nullable)endpoints SWIFT_WARN_UNUSED_RESULT;
++ (BOOL)removeToken SWIFT_WARN_UNUSED_RESULT;
++ (BOOL)setTokenWithToken:(NSString * _Nonnull)token SWIFT_WARN_UNUSED_RESULT;
 + (BOOL)isCredentialValidWithEndpoint:(NSString * _Nullable)endpoint SWIFT_WARN_UNUSED_RESULT;
++ (NSString * _Nullable)getAcuantAuthHeader SWIFT_WARN_UNUSED_RESULT;
++ (NSString * _Nullable)getBasicAuthHeader SWIFT_WARN_UNUSED_RESULT;
 + (void)setUsernameWithUsername:(NSString * _Null_unspecified)username;
 + (void)setPasswordWithPassword:(NSString * _Null_unspecified)password;
 + (void)setSubscriptionWithSubscription:(NSString * _Null_unspecified)subscription;
