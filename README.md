@@ -326,7 +326,7 @@ The SDK includes the following modules:
 
 		Credential.setEndpoints(endpoints: endpoints)		
 		
-**Initialization without a Subscription ID**
+### Initialization without a Subscription ID
 
 **AcuantImagePreparation** may be initialized by providing only a username and a password. However, without providing a Subscription ID, the application can only capture an image and get the image. 
 Initialize without a Subscription ID:
