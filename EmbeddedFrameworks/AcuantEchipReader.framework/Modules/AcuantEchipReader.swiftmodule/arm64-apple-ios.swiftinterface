@@ -75,6 +75,14 @@ public enum AcuantDataGroupId : Swift.Int {
     get
   }
 }
+public class AcuantDateParser {
+  public init()
+  public func parseDobDate(current: Foundation.Date, date: Swift.String) -> Foundation.Date?
+  public func parseExpDate(current: Foundation.Date, date: Swift.String) -> Foundation.Date?
+  public func getAge(current: Foundation.Date, dob: Foundation.Date) -> Swift.Int?
+  public func isExpired(current: Foundation.Date, expiredDate: Foundation.Date) -> Swift.Bool?
+  @objc deinit
+}
 @available(iOS 13, *)
 public func tripleDESDecrypt(key: [Swift.UInt8], message: [Swift.UInt8], iv: [Swift.UInt8]) -> [Swift.UInt8]
 @available(iOS 13, *)
@@ -129,6 +137,8 @@ public class AcuantPassportModel {
   public var passportSigned: AcuantEchipReader.OzoneResultStatus
   public var passportCountrySigned: AcuantEchipReader.OzoneResultStatus
   public var passportDataValid: Swift.Bool
+  public var age: Swift.Int?
+  public var isExpired: Swift.Bool?
   public func getRawDataGroup(dgId: AcuantEchipReader.AcuantDataGroupId) -> [Swift.UInt8]?
   @objc deinit
 }

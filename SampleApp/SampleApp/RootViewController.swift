@@ -49,6 +49,8 @@ class RootViewController: UIViewController{
     private let showResultGroup = DispatchGroup()
     private let createInstanceGroup = DispatchGroup()
     
+    private let service: IAcuantTokenService = AcuantTokenService()
+    
     //    private let passportReader = PassportReader()
     
     override func viewDidLoad() {
@@ -72,6 +74,55 @@ class RootViewController: UIViewController{
          Credential.setEndpoints(endpoints: endpoints)*/
         UISegmentedControl.appearance().setTitleTextAttributes([NSAttributedString.Key.foregroundColor:UIColor.white], for: .selected)
         UISegmentedControl.appearance().setTitleTextAttributes([NSAttributedString.Key.foregroundColor:UIColor.white], for: .normal)
+        
+        
+
+    }
+    
+    func getToken(){
+        self.medicalCardButton.isEnabled = false
+        self.idPassportButton.isEnabled = false
+        self.mrzButton.isEnabled = false
+        
+        let task = self.service.getTask(){
+            token in
+            
+            DispatchQueue.main.async {
+                if let success = token{
+                    if Credential.setToken(token: success){
+                        if(!self.isInitialized){
+                            self.initialize()
+                        }
+                        else
+                        {
+                            self.hideProgressView()
+                            CustomAlerts.display(title: "Success",
+                                                 message: "Valid New Token",
+                                                 action: UIAlertAction(title: "Continue", style: UIAlertAction.Style.default, handler: nil))
+                            self.medicalCardButton.isEnabled = true
+                            self.idPassportButton.isEnabled = true
+                            self.mrzButton.isEnabled = true
+                        }
+                    }
+                    else{
+                        self.hideProgressView()
+                        CustomAlerts.displayError(message: "Invalid Token")
+                        self.medicalCardButton.isEnabled = true
+                        self.idPassportButton.isEnabled = true
+                        self.mrzButton.isEnabled = true
+                    }
+                }
+                else{
+                    self.hideProgressView()
+                    CustomAlerts.displayError(message: "Failed to get Token")
+                    self.medicalCardButton.isEnabled = true
+                    self.idPassportButton.isEnabled = true
+                    self.mrzButton.isEnabled = true
+                }
+            }
+        }
+        
+        task?.resume()
     }
     
     func addEnhancedLiveness(){
@@ -93,7 +144,6 @@ class RootViewController: UIViewController{
             
             DispatchQueue.main.async {
                 if let self = self{
-                    self.hideProgressView()
                     if(error == nil){
                         if(!Credential.authorization().hasOzone){
                             self.mrzButton.isHidden = true
@@ -104,10 +154,18 @@ class RootViewController: UIViewController{
                         }
                         else{
                             self.hideProgressView()
+                            self.medicalCardButton.isEnabled = true
+                            self.idPassportButton.isEnabled = true
+                            self.mrzButton.isEnabled = true
+                            self.hideProgressView()
                             self.isInitialized = true
                             self.resetData()
                         }
                     }else{
+                        self.hideProgressView()
+                        self.medicalCardButton.isEnabled = true
+                        self.idPassportButton.isEnabled = true
+                        self.mrzButton.isEnabled = true
                         if let msg = error?.errorDescription {
                             CustomAlerts.displayError(message: "\(error!.errorCode) : " + msg)
                         }
@@ -120,9 +178,8 @@ class RootViewController: UIViewController{
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        if(!self.isInitialized){
-            self.initialize()
-            
+        if !self.isInitialized{
+            self.getToken()
         }
     }
     
@@ -225,8 +282,10 @@ extension RootViewController{
             CustomAlerts.displayError(message: CheckConnection.ERROR_INTERNET_UNAVAILABLE)
         }
         else{
-            if(!self.isInitialized){
-                self.initialize()
+            let token = Credential.getToken()
+            
+            if(!self.isInitialized || (token != nil && !token!.isValid())){
+                self.getToken()
                 self.showProgressView(text: "Initializing...")
             }
             else if (isDocumentCapture){
@@ -258,6 +317,7 @@ extension RootViewController: CameraCaptureDelegate{
             cropImage(image: image){ croppedImage in
                 if(croppedImage?.image == nil || (croppedImage?.error != nil && croppedImage?.error?.errorCode != AcuantErrorCodes.ERROR_LowResolutionImage)){
                     CustomAlerts.display(
+                        title: "Error",
                         message: (croppedImage?.error?.errorDescription)!,
                         action: UIAlertAction(title: "Try Again", style: UIAlertAction.Style.default, handler: { (action:UIAlertAction) in self.retryCapture() }))
                 }
@@ -557,6 +617,7 @@ extension RootViewController:GetDataDelegate{
                 self.showResult(data: dataArray, front: frontImageUri, back: backImageUri, sign: signImageUri, face: faceImageUri)
             }
         }else{
+            self.hideProgressView()
             if let msg = processingResult.error?.errorDescription {
                 CustomAlerts.displayError(message: msg)
             }
@@ -618,9 +679,13 @@ extension RootViewController:DeleteDelegate{
 
 extension RootViewController : LivenessTestCredentialDelegate{
     func livenessTestCredentialReceived(result:Bool){
-        isInitialized = true
-        
+        self.isInitialized = true
+
         DispatchQueue.main.async{
+            self.hideProgressView()
+            self.medicalCardButton.isEnabled = true
+            self.idPassportButton.isEnabled = true
+            self.mrzButton.isEnabled = true
             if(result){
                 self.addEnhancedLiveness()
             }

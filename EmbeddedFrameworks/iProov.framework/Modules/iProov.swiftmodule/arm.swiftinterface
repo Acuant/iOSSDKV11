@@ -1,5 +1,5 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.1.2 (swiftlang-1100.0.278 clang-1100.0.33.9)
+// swift-compiler-version: Apple Swift version 5.2.4 (swiftlang-1103.0.32.9 clang-1103.0.32.53)
 // swift-module-flags: -target armv7-apple-ios9.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name iProov
 import AVFoundation
 import Accelerate
@@ -22,11 +22,7 @@ import VideoToolbox
 import Vision
 import WebKit
 @_exported import iProov
-extension IProov {
-  @discardableResult
-  public static func handle(url: Foundation.URL, from webView: WebKit.WKWebView) -> Swift.Bool
-}
-@objc(IProov) public class IProov : ObjectiveC.NSObject {
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc(IProov) public class IProov : ObjectiveC.NSObject {
   @objc deinit
 }
 public enum IProovError : Foundation.LocalizedError {
@@ -45,18 +41,21 @@ public enum IProovError : Foundation.LocalizedError {
   @objc func present(iProovViewController: UIKit.UIViewController)
   @objc func dismiss(iProovViewController: UIKit.UIViewController)
 }
+extension WKWebView {
+  public func installIProovNativeBridge()
+}
 extension IProov {
   @available(swift, obsoleted: 1.0)
   @objc public static func launch(streamingURL: Swift.String, token: Swift.String, options: iProov.Options, processing: @escaping (Swift.Double, Swift.String) -> Swift.Void, success: @escaping (Swift.String) -> Swift.Void, cancelled: @escaping () -> Swift.Void, failure: @escaping (Swift.String, Swift.String) -> Swift.Void, error: @escaping (Foundation.NSError) -> Swift.Void)
 }
-@objc public class Options : ObjectiveC.NSObject {
+@_inheritsConvenienceInitializers @objc public class Options : ObjectiveC.NSObject {
   @objc public var ui: iProov.UIOptions
   @objc public var network: iProov.NetworkOptions
   @objc public var capture: iProov.CaptureOptions
   @objc override dynamic public init()
   @objc deinit
 }
-@objc public class UIOptions : ObjectiveC.NSObject {
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc public class UIOptions : ObjectiveC.NSObject {
   @objc public var autoStartDisabled: Swift.Bool
   @objc public var filter: iProov.Filter
   @objc public var stringsBundle: Foundation.Bundle?
@@ -72,7 +71,7 @@ extension IProov {
   @objc weak public var presentationDelegate: iProov.IProovPresentationDelegate?
   @objc deinit
 }
-@objc public class NetworkOptions : ObjectiveC.NSObject {
+@_inheritsConvenienceInitializers @objc public class NetworkOptions : ObjectiveC.NSObject {
   @objc public var certificates: [Swift.String]
   @objc public var certificatePinningDisabled: Swift.Bool
   @objc public var timeout: Foundation.TimeInterval
@@ -80,7 +79,7 @@ extension IProov {
   @objc override dynamic public init()
   @objc deinit
 }
-@objc public class CaptureOptions : ObjectiveC.NSObject {
+@_inheritsConvenienceInitializers @objc public class CaptureOptions : ObjectiveC.NSObject {
   @objc public var maxYaw: CoreGraphics.CGFloat
   @objc public var maxRoll: CoreGraphics.CGFloat
   @objc public var maxPitch: CoreGraphics.CGFloat
@@ -110,10 +109,6 @@ public enum Status {
   }
 }
 extension IProov {
-  public static var deviceID: Swift.String {
-    get
-  }
-  public static func clearKeychain()
   public static func launch(streamingURL: Swift.String = defaultStreamingURL, token: Swift.String, options: iProov.Options = Options(), callback: @escaping iProov.Callback)
 }
 extension iProov.Filter : Swift.Equatable {}
