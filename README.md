@@ -1,6 +1,6 @@
-# Acuant iOS SDK v11.4.4
+# Acuant iOS SDK v11.4.5
 
-**August 2020**
+**October 2020**
 
 See [https://github.com/Acuant/iOSSDKV11/releases](https://github.com/Acuant/iOSSDKV11/releases) for release notes.
 
@@ -117,7 +117,7 @@ The SDK includes the following modules:
 1. If you are using COCOAPODS, then add the following podfile:
 
 		platform :ios, '11'
-		pod 'AcuantiOSSDKV11', '~> 11.4.4' #for all packages
+		pod 'AcuantiOSSDKV11', '~> 11.4.5' #for all packages
 		
 		#indepedent packages below
 		
@@ -627,34 +627,21 @@ Initialize without a Subscription ID:
 
 This module contains all image preparation functionality.
 
-#### Cropping
+#### Cropping, Sharpness, and Glare
 
-After the image is captured, it is sent to the cropping library for cropping.
+After an image is captured, it is cropped and checked for sharpness and glare. This is done using the **evaluateImage** of **AcuantImagePreparation**.
 
+	public class func evaluateImage(image: UImage, callback: (AcuantImage, AcuantError) -> ())
 
-	public class func crop(data: CroppingData)->Image
+The callback returns the **AcuantImage** and **AcuantError**. The **AcuantImage** can be used to be verify the crop, sharpness, and glare.
 
-	// CroppingData & Image are part of AcuantCommon
-	// Sample
-
-	let croppingData  = CroppingData()
-	croppingData.image = image // UIImage
-
-	let croppedImage = AcuantImagePreparation.crop(data: croppingData)
-
-#### Sharpness
-
-The **sharpness** method returns a sharpness value of an image. If the sharpness value is greater than 50, then the image is considered sharp (not blurry).
-
-	public class func sharpness(image: UIImage)->Int
-
-#### Glare
-
-The **glare** method returns the glare value of an image. If the glare value is greater or equal to 50, then the image does not contain glare. If the glare value is less than 50, then image contains glare.
-
-	public class func glare(image: UIImage)->Int
-		
-
+	public class AcuantImage {
+		public let image: UIImage
+		public let data: NSData
+		public let sharpness: Int
+		public let glare: Int
+		public let dpi: Int
+	}		
 ----------
 ### AcuantDocumentProcessing
 
@@ -667,18 +654,26 @@ After a document image is captured, it can be processed using the following step
 		public class func createInstance(options:IdOptions,delegate:CreateInstanceDelegate)
 
 		public protocol CreateInstanceDelegate{
-    		func instanceCreated(instanceId : String?,error:AcuantError?);
+    		func instanceCreated(instanceId: String?,error:AcuantError?);
 		}
+		
+1. Prepare the image. You must pass in **AcuantImage.data** and **idData.barcodeString** (when applicable) in **EvaluatedImageData**.
 
-2. Upload an image:
+		public class EvaluatedImageData {
+			public let imageBytes: NSData
+			public let barcodeString: String?
+			public init(imageBytes: NSData, barcodeString: String?)
+		}
+	
+1. Upload the image:
 
-		public class func uploadImage(instancdId:String,data:IdData,options:IdOptions,delegate:UploadImageDelegate)
+		public class func uploadImage(instancdId:String,data:EvaluatedImageData,options:IdOptions,delegate:UploadImageDelegate)
 
 		public protocol UploadImageDelegate{
     		func imageUploaded(error: AcuantError?,classification:Classification?);
 		}
 
-3. Get the data:
+1. Get the data:
 
 		public class func getData(instanceId:String,isHealthCard:Bool,delegate:GetDataDelegate?)
 
@@ -686,7 +681,7 @@ After a document image is captured, it can be processed using the following step
     		func imageUploaded(error: AcuantError?,classification:Classification?);
 		}
 
-4. Delete the instance:
+1. Delete the instance:
 
 		public class func deleteInstance(instanceId : String,type:DeleteType, delegate:DeleteDelegate)
 

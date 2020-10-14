@@ -76,7 +76,7 @@ class RootViewController: UIViewController{
         UISegmentedControl.appearance().setTitleTextAttributes([NSAttributedString.Key.foregroundColor:UIColor.white], for: .normal)
         
         
-
+        
     }
     
     func getToken(){
@@ -138,7 +138,7 @@ class RootViewController: UIViewController{
         if #available(iOS 13, *) {
             packages.append(AcuantEchipPackage())
         }
-    
+        
         let task = initalizer.initialize(packages:packages){ [weak self]
             error in
             
@@ -240,14 +240,25 @@ class RootViewController: UIViewController{
         self.createInstance()
     }
     
-    public func confirmImage(image:UIImage){
+    public func confirmImage(image:AcuantImage){
         self.createInstanceGroup.notify(queue: .main){
             self.showProgressView(text: "Processing...")
-            self.idData.image = image
             
-            AcuantDocumentProcessing.uploadImage( instancdId: self.documentInstance!, data: self.idData, options: self.idOptions, delegate: self)
+            let evaluted = EvaluatedImageData(imageBytes: image.data, barcodeString: self.idData.barcodeString)
+            
+            //use for testing purposes
+            //self.saveToFile(data: image.data)
+        
+            AcuantDocumentProcessing.uploadImage(instancdId: self.documentInstance!, data: evaluted, options: self.idOptions, delegate: self)
         }
     }
+    
+    private func saveToFile(data: NSData){
+        let documentDirectory = try? FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor:nil, create:false)
+        let fileURL = documentDirectory?.appendingPathComponent("test.jpg")
+        try? data.write(to: fileURL!)
+    }
+    
     
     public func retryCapture(){
         showDocumentCaptureCamera()
@@ -313,29 +324,30 @@ extension RootViewController: CameraCaptureDelegate{
         if(self.isKeyless){
             handleKeyless(image: image)
         }
-        else{
-            cropImage(image: image){ croppedImage in
-                if(croppedImage?.image == nil || (croppedImage?.error != nil && croppedImage?.error?.errorCode != AcuantErrorCodes.ERROR_LowResolutionImage)){
-                    CustomAlerts.display(
-                        title: "Error",
-                        message: (croppedImage?.error?.errorDescription)!,
-                        action: UIAlertAction(title: "Try Again", style: UIAlertAction.Style.default, handler: { (action:UIAlertAction) in self.retryCapture() }))
-                }
-                else{
-                    let sharpness = AcuantImagePreparation.sharpness(image:croppedImage!.image!)
-                    let glare = AcuantImagePreparation.glare(image:croppedImage!.image!)
-                    
-                    let storyBoard = UIStoryboard.init(name: "Main", bundle: nil)
-                    let confirmController = storyBoard.instantiateViewController(withIdentifier: "ConfirmationViewController") as! ConfirmationViewController
-                    confirmController.sharpness = sharpness
-                    confirmController.glare = glare
-                    if(barcodeString != nil){
-                        confirmController.barcodeCaptured = true
-                        confirmController.barcodeString = barcodeString
+        else if (image.image != nil) {
+            self.showProgressView(text: "Processing...")
+            AcuantImagePreparation.evaluateImage(image: image.image!){
+                result, error in
+                
+                DispatchQueue.main.async {
+                    self.hideProgressView()
+                    if result != nil{
+                        let storyBoard = UIStoryboard.init(name: "Main", bundle: nil)
+                        let confirmController = storyBoard.instantiateViewController(withIdentifier: "ConfirmationViewController") as! ConfirmationViewController
+                        confirmController.acuantImage = result
+                        if(barcodeString != nil){
+                            confirmController.barcodeCaptured = true
+                            confirmController.barcodeString = barcodeString
+                        }
+                        self.idData.barcodeString = barcodeString
+                        self.navigationController?.pushViewController(confirmController, animated: true)
                     }
-                    self.idData.barcodeString = barcodeString
-                    confirmController.image = croppedImage
-                    self.navigationController?.pushViewController(confirmController, animated: true)
+                    else{
+                        CustomAlerts.display(
+                            title: "Error",
+                            message: (error?.errorDescription)!,
+                            action: UIAlertAction(title: "Try Again", style: UIAlertAction.Style.default, handler: { (action:UIAlertAction) in self.retryCapture() }))
+                    }
                 }
             }
         }
@@ -422,12 +434,12 @@ extension RootViewController: CameraCaptureDelegate{
         print("test original img \(image.image?.size.width), \(image.image?.size.height)")
         if let succcess = image.image{
             self.showProgressView(text: "Processing...")
-
+            
             DispatchQueue.global().async {
                 let croppedImage = self.cropImage(image: succcess)
                 
                 print("test cropped img \(croppedImage?.image?.size.width), \(croppedImage?.image?.size.height)")
-
+                
                 DispatchQueue.main.async {
                     self.hideProgressView()
                     callback(croppedImage)
@@ -680,7 +692,7 @@ extension RootViewController:DeleteDelegate{
 extension RootViewController : LivenessTestCredentialDelegate{
     func livenessTestCredentialReceived(result:Bool){
         self.isInitialized = true
-
+        
         DispatchQueue.main.async{
             self.hideProgressView()
             self.medicalCardButton.isEnabled = true

@@ -1,5 +1,5 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.2.4 (swiftlang-1103.0.32.9 clang-1103.0.32.53)
+// swift-compiler-version: Apple Swift version 5.3 (swiftlang-1200.0.29.2 clang-1200.0.30.1)
 // swift-module-flags: -target x86_64-apple-ios11.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name AcuantDocumentProcessing
 import AcuantCommon
 import Foundation
@@ -113,6 +113,8 @@ import UIKit
   @objc public var Class: Swift.Int
   @objc public var classCode: Swift.String?
   @objc public var className: Swift.String?
+  @objc public var countryCode: Swift.String?
+  @objc public var geographicRegions: [Swift.String]?
   @objc public var Id: Swift.String?
   @objc public var isGeneric: Swift.Bool
   @objc public var issue: Swift.String?
@@ -171,6 +173,12 @@ import UIKit
   @objc public var gender: Swift.Int
   @objc public var photo: Swift.String?
   @objc public static func initWithJsonObject(jsonDict: [Swift.String : Any]?) -> AcuantDocumentProcessing.Biographic
+  @objc deinit
+}
+public class EvaluatedImageData {
+  final public let imageBytes: Foundation.NSData
+  final public let barcodeString: Swift.String?
+  public init(imageBytes: Foundation.NSData, barcodeString: Swift.String?)
   @objc deinit
 }
 @objc @_inheritsConvenienceInitializers @objcMembers public class IdOptions : ObjectiveC.NSObject {
@@ -248,6 +256,7 @@ import UIKit
 @objc @_inheritsConvenienceInitializers @objcMembers public class AcuantDocumentProcessing : ObjectiveC.NSObject {
   @objc public class func createInstance(options: AcuantDocumentProcessing.IdOptions, delegate: AcuantDocumentProcessing.CreateInstanceDelegate)
   @objc public class func uploadImage(instancdId: Swift.String, data: AcuantDocumentProcessing.IdData, options: AcuantDocumentProcessing.IdOptions, delegate: AcuantDocumentProcessing.UploadImageDelegate)
+  public class func uploadImage(instancdId: Swift.String, data: AcuantDocumentProcessing.EvaluatedImageData, options: AcuantDocumentProcessing.IdOptions, delegate: AcuantDocumentProcessing.UploadImageDelegate)
   @objc public class func getData(instanceId: Swift.String, isHealthCard: Swift.Bool, delegate: AcuantDocumentProcessing.GetDataDelegate)
   @objc public class func deleteInstance(instanceId: Swift.String, type: AcuantCommon.DeleteType, delegate: AcuantDocumentProcessing.DeleteDelegate)
   @objc deinit
