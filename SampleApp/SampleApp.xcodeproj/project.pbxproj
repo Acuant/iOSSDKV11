@@ -537,6 +537,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 11.4.3;
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.cssn.SampleApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -566,6 +567,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 11.4.3;
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.cssn.SampleApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";

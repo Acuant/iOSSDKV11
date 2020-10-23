@@ -14,9 +14,7 @@ import AcuantCamera
 
 class ConfirmationViewController: UIViewController {
     
-    public var image : Image? = nil
-    public var sharpness : Int = 0
-    public var glare : Int = 0
+    public var acuantImage: AcuantImage?
     public var barcodeCaptured : Bool = false
     public var barcodeString : String? = nil
     
@@ -28,7 +26,7 @@ class ConfirmationViewController: UIViewController {
     @IBAction func confirmTapped(_ sender: Any) {
         let rootVC : RootViewController = self.navigationController?.viewControllers[0] as! RootViewController
         self.navigationController?.popViewController(animated: true)
-        rootVC.confirmImage(image: imageView.image!)
+        rootVC.confirmImage(image: acuantImage!)
         
     }
     
@@ -40,19 +38,18 @@ class ConfirmationViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        imageView?.image = image?.image
+        imageView?.image = acuantImage?.image
         var text : String = "Please ensure all text is visible\n"
-        if(image?.image == nil){
+        if(acuantImage?.image == nil){
             text = "Could not crop image\nPlease hold steady and retry\nPlease make sure there is enough ambient light and retry\n"
         }
-        if(image?.image != nil){
-            text = text + "Sharpness Grade : \(sharpness)\n"
-            text = text + "Is Blurry : \(sharpness < CaptureConstants.SHARPNESS_THRESHOLD)\n"
-            text = text + "Glare Grade : \(glare)\n"
-            text = text + "Has Glare : \(glare < CaptureConstants.GLARE_THRESHOLD)\n"
-            
+        if(acuantImage?.image != nil){
+            text = text + "Sharpness Grade : \(acuantImage!.sharpness)\n"
+            text = text + "Is Blurry : \(acuantImage!.sharpness < CaptureConstants.SHARPNESS_THRESHOLD)\n"
+            text = text + "Glare Grade : \(acuantImage!.glare)\n"
+            text = text + "Has Glare : \(acuantImage!.glare < CaptureConstants.GLARE_THRESHOLD)\n"
+            text = text + "DPI : \(String(describing: acuantImage!.dpi))\n"
         }
-        text = text + "DPI : \(String(describing: image!.dpi))\n"
         if(barcodeCaptured && barcodeString != nil){
             let len = (barcodeString?.count)!*25/100
             let index = barcodeString?.index((barcodeString?.startIndex)!, offsetBy: len)
