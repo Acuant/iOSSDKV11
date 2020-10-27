@@ -1,5 +1,5 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.2.4 (swiftlang-1103.0.32.9 clang-1103.0.32.53)
+// swift-compiler-version: Apple Swift version 5.3 (swiftlang-1200.0.29.2 clang-1200.0.30.1)
 // swift-module-flags: -target arm64-apple-ios11.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name AcuantImagePreparation
 import AVFoundation
 import AcuantCommon
@@ -10,10 +10,19 @@ import UIKit
 @objc public protocol InitializationDelegate {
   @objc func initializationFinished(error: AcuantCommon.AcuantError?)
 }
+@_hasMissingDesignatedInitializers public class AcuantImage {
+  final public let image: UIKit.UIImage
+  final public let data: Foundation.NSData
+  final public let sharpness: Swift.Int
+  final public let glare: Swift.Int
+  final public let dpi: Swift.Int
+  @objc deinit
+}
 @objc @_inheritsConvenienceInitializers @objcMembers public class AcuantImagePreparation : ObjectiveC.NSObject {
   @objc public class func initialize(delegate: AcuantImagePreparation.InitializationDelegate?)
   @objc public class func resize(image: UIKit.UIImage, targetWidth: Swift.Int) -> UIKit.UIImage?
   @objc public class func crop(data: AcuantCommon.CroppingData) -> AcuantCommon.Image
+  public class func evaluateImage(image: UIKit.UIImage, callback: @escaping (AcuantImagePreparation.AcuantImage?, AcuantCommon.AcuantError?) -> ())
   @objc public class func cropMrz(data: AcuantCommon.CroppingData) -> AcuantCommon.Image
   @objc public class func detect(data: AcuantCommon.CroppingData) -> AcuantCommon.Image
   @objc public class func sharpness(image: UIKit.UIImage) -> Swift.Int

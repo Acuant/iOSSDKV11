@@ -1,9 +1,9 @@
 Pod::Spec.new do |s|
     s.platform = :ios
-    s.swift_versions = ['5.2']
+    s.swift_versions = ['5.3']
     s.ios.deployment_target = '11.0'
     s.name         = "AcuantiOSSDKV11"
-    s.version      = "11.4.4"
+    s.version      = "11.4.5"
     s.summary      = "Acuant's latest SDK with most advanced image capture technology and optimized user workflow  "
     s.description  = "Acuant's latest SDK with most advanced image capture technology and optimized user workflow.
 
@@ -21,6 +21,11 @@ Pod::Spec.new do |s|
     s.author             = { "Acuant Inc" => "jmoon@acuantcorp.com" }
     s.source       = { :git => "https://github.com/Acuant/iOSSDKV11.git", :tag =>    "#{s.version}" }
     
+    s.pod_target_xcconfig = {
+        'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64'
+    }
+    s.user_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
+
     s.subspec 'AcuantCommon' do |acuantCommon|
         acuantCommon.ios.deployment_target = '11.0'
         acuantCommon.ios.vendored_frameworks = "EmbeddedFrameworks/AcuantCommon.framework"
@@ -109,7 +114,7 @@ Pod::Spec.new do |s|
                "AcuantCamera/AcuantCamera/Camera/Mrz/OCR/*.{h,swift}",
                "AcuantCamera/AcuantCamera/Camera/Mrz/OCR/Utils/*.{h,swift}"
              mrz.dependency "#{s.name}/AcuantCamera/Common"
-             mrz.dependency 'TesseractOCRiOS', '~> 5.0.1'
+             mrz.ios.vendored_frameworks = "EmbeddedFrameworks/TesseractOCR.framework"
              mrz.resource_bundles = {'AcuantCamera' => 'AcuantCamera/AcuantCamera/Camera/Mrz/*.xcassets' }
          end
         
