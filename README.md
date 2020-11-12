@@ -1,6 +1,6 @@
-# Acuant iOS SDK v11.4.5
+# Acuant iOS SDK v11.4.6
 
-**October 2020**
+**November 2020**
 
 See [https://github.com/Acuant/iOSSDKV11/releases](https://github.com/Acuant/iOSSDKV11/releases) for release notes.
 
@@ -117,7 +117,7 @@ The SDK includes the following modules:
 1. If you are using COCOAPODS, then add the following podfile:
 
 		platform :ios, '11'
-		pod 'AcuantiOSSDKV11', '~> 11.4.5' #for all packages
+		pod 'AcuantiOSSDKV11', '~> 11.4.6' #for all packages
 		
 		#indepedent packages below
 		
@@ -222,6 +222,22 @@ The SDK includes the following modules:
 				<string>https://ozone.acuant.net</string>
 			</dict>
 		</plist>
+	
+	The following are the default values for testing purposes:
+	
+		PREVIEW
+				<key>frm_endpoint</key>
+				<string>https://preview.face.acuant.net</string>
+				<key>passive_liveness_endpoint</key>
+				<string>https://preview.passlive.acuant.net</string>
+				<key>med_endpoint</key>
+				<string>https://preview.medicscan.acuant.net</string>
+				<key>assureid_endpoint</key>
+				<string>https://preview.assureid.acuant.net</string>
+				<key>acas_endpoint</key>
+				<string>https://preview.acas.acuant.net</string>
+				<key>ozone_endpoint</key>
+				<string>https://preview.ozone.acuant.net</string>
 		
 	The following are the default values based on region:
 
