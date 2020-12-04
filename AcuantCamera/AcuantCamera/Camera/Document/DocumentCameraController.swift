@@ -58,7 +58,6 @@ import AcuantCommon
         c.autoCapture = cameraOptions.autoCapture
         c.hideNavBar = cameraOptions.hideNavigationBar
         c.captureIntervalInSeconds = Double(cameraOptions.timeInMsPerDigit)/Double(1000)
-        c.supportedOrientations = supportedOrientations
         return c
     }
     
