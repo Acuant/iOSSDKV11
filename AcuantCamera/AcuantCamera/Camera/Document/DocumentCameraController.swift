@@ -48,9 +48,9 @@ import AcuantCommon
     private var currentStateCount = 0
     private var nextState = FrameResult.NO_DOCUMENT
     private var isNavigationHidden = false
-    private var supportedOrientations: UIInterfaceOrientationMask = .portrait
+    private var supportedOrientations: UIInterfaceOrientationMask?
     
-    public class func getCameraController(delegate:CameraCaptureDelegate, cameraOptions: AcuantCameraOptions, supportedOrientations: UIInterfaceOrientationMask = UIInterfaceOrientationMask.all)->DocumentCameraController{
+    public class func getCameraController(delegate:CameraCaptureDelegate, cameraOptions: AcuantCameraOptions, supportedOrientations: UIInterfaceOrientationMask?=nil)->DocumentCameraController{
         let c = DocumentCameraController()
         c.cameraCaptureDelegate = delegate
         c.options = cameraOptions
@@ -58,11 +58,13 @@ import AcuantCommon
         c.autoCapture = cameraOptions.autoCapture
         c.hideNavBar = cameraOptions.hideNavigationBar
         c.captureIntervalInSeconds = Double(cameraOptions.timeInMsPerDigit)/Double(1000)
+        c.supportedOrientations = supportedOrientations
+        
         return c
     }
     
     override public var supportedInterfaceOrientations: UIInterfaceOrientationMask {
-        return self.supportedOrientations
+        return self.supportedOrientations ?? super.supportedInterfaceOrientations
     }
 
     override public func viewDidLoad() {
