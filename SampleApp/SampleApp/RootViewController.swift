@@ -22,6 +22,7 @@ import AcuantEchipReader
 class RootViewController: UIViewController{
     
     @IBOutlet weak var autoCaptureSwitch : UISwitch!
+    @IBOutlet weak var detailDescSwitch: UISwitch!
     @IBOutlet weak var medicalCardButton: UIButton!
     @IBOutlet weak var idPassportButton: UIButton!
     @IBOutlet weak var livenessOption: UISegmentedControl!
@@ -42,6 +43,7 @@ class RootViewController: UIViewController{
     public var ipLivenessSetupResult : LivenessSetupResult? = nil
     
     var autoCapture = true
+    var detailedAuth = true
     var progressView : AcuantProgressView!
     
     private let getDataGroup = DispatchGroup()
@@ -55,7 +57,8 @@ class RootViewController: UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        autoCaptureSwitch.setOn(true, animated: false)
+        autoCaptureSwitch.setOn(autoCapture, animated: false)
+        autoCaptureSwitch.setOn(detailedAuth, animated: false)
         self.isKeyless = Credential.subscription() == nil || Credential.subscription() == ""
         
         self.progressView = AcuantProgressView(frame: self.view.frame, center: self.view.center)
@@ -200,6 +203,14 @@ class RootViewController: UIViewController{
     @IBAction func healthCardTapped(_ sender: UIButton){
         self.idOptions.isHealthCard = true
         self.handleInitialization()
+    }
+    
+    @IBAction func detailedAuthSwitched(_ sender: UISwitch) {
+        if sender.isOn {
+            detailedAuth =  true
+        } else {
+            detailedAuth =  false
+        }
     }
     
     @IBAction func autocaptureSwitched(_ sender: UISwitch) {
@@ -393,7 +404,7 @@ extension RootViewController: CameraCaptureDelegate{
         AVCaptureDevice.requestAccess(for: .video) { [weak self] success in
             if success { // if request is granted (success is true)
                 DispatchQueue.main.async {
-                    let options = AcuantCameraOptions(autoCapture:self!.autoCapture, hideNavigationBar: true)
+                    let options = AcuantCameraOptions(digitsToShow: 2, autoCapture:self!.autoCapture, hideNavigationBar: true)
                     let documentCameraController = DocumentCameraController.getCameraController(delegate:self!, cameraOptions: options)
                     self!.navigationController?.pushViewController(documentCameraController, animated: false)
                     
@@ -559,6 +570,21 @@ extension RootViewController:UploadImageDelegate{
     }
 }
 
+func appendDetailed(dataArray: inout Array<String>, result: IDResult) {
+    
+    dataArray.append("Authentication Starts")
+    dataArray.append("Authentication Overall : \(Utils.getAuthResultString(authResult: result.result))")
+    if (result.alerts?.actions != nil) {
+        for alert in result.alerts!.actions! {
+            if(alert.result != "1") {
+                dataArray.append("\(alert.actionDescription ?? "nil") : \(alert.disposition ?? "nil")")
+            }
+        }
+    }
+    dataArray.append("Authentication Ends")
+    dataArray.append("")
+}
+
 extension RootViewController:GetDataDelegate{
     func processingResultReceived(processingResult: ProcessingResult) {
         if(processingResult.error == nil){
@@ -582,14 +608,17 @@ extension RootViewController:GetDataDelegate{
             }else{
                 let idResult = processingResult as! IDResult
                 if(idResult.fields == nil){
+                    self.hideProgressView()
                     CustomAlerts.displayError(message: "Could not extract data")
                     getDataGroup.leave()
                     return
                 }else if(idResult.fields!.documentFields == nil){
+                    self.hideProgressView()
                     CustomAlerts.displayError(message: "Could not extract data")
                     getDataGroup.leave()
                     return
                 }else if(idResult.fields!.documentFields!.count==0){
+                    self.hideProgressView()
                     CustomAlerts.displayError(message: "Could not extract data")
                     getDataGroup.leave()
                     return
@@ -603,7 +632,11 @@ extension RootViewController:GetDataDelegate{
                 
                 var dataArray = Array<String>()
                 
-                dataArray.append("Authentication Result : \(Utils.getAuthResultString(authResult: idResult.result))")
+                if (!detailedAuth) {
+                    dataArray.append("Authentication Result : \(Utils.getAuthResultString(authResult: idResult.result))")
+                } else {
+                    appendDetailed(dataArray: &dataArray, result: idResult)
+                }
                 //var images = [String:UIImage]()
                 for field in fields{
                     if(field.type == "string"){
@@ -645,12 +678,13 @@ extension RootViewController:GetDataDelegate{
             resultViewController.data = data
             
             if(self.livenessString != nil){
+                resultViewController.data?.insert("", at: 0)
                 resultViewController.data?.insert(self.livenessString!, at: 0)
             }
             
             if(self.capturedFacialMatchResult != nil){
-                resultViewController.data?.insert("Face matched :\(self.capturedFacialMatchResult!.isMatch)", at: 0)
-                resultViewController.data?.insert("Face Match score :\(self.capturedFacialMatchResult!.score)", at: 0)
+                resultViewController.data?.insert("Face matched : \(self.capturedFacialMatchResult!.isMatch)", at: 0)
+                resultViewController.data?.insert("Face Match score : \(self.capturedFacialMatchResult!.score)", at: 0)
             }
             
             resultViewController.frontImageUrl = front
@@ -763,7 +797,7 @@ extension RootViewController : LivenessTestResultDelegate{
     }
     
     func livenessTestFailed(error:AcuantError) {
-        self.livenessString = "IP Liveness: failed"
+        self.livenessString = "IP Liveness : failed"
         self.showResultGroup.leave()
     }
 }
@@ -779,10 +813,10 @@ extension RootViewController {
         AcuantPassiveLiveness.postLiveness(request: AcuantLivenessRequest(image: image)){ [weak self]
             (result, error) in
             if(result != nil && (result?.result == AcuantLivenessAssessment.Live || result?.result == AcuantLivenessAssessment.NotLive)){
-                self?.livenessString = "Liveness: \(result!.result.rawValue)"
+                self?.livenessString = "Liveness : \(result!.result.rawValue)"
             }
             else{
-                self?.livenessString = "Liveness: \(result?.result.rawValue ?? "Unknown") \(error?.errorCode?.rawValue ?? "") \(error?.description ?? "")"
+                self?.livenessString = "Liveness : \(result?.result.rawValue ?? "Unknown") \(error?.errorCode?.rawValue ?? "") \(error?.description ?? "")"
             }
             self?.faceProcessingGroup.leave()
         }

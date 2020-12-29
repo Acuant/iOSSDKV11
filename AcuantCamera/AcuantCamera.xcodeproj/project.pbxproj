@@ -10,6 +10,7 @@
 		134F59D721FA0BA600CEDBFC /* AcuantCamera.h in Headers */ = {isa = PBXBuildFile; fileRef = 134F59D521FA0BA600CEDBFC /* AcuantCamera.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		134F59E621FA0C2B00CEDBFC /* DocumentCameraController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 134F59E421FA0C2B00CEDBFC /* DocumentCameraController.swift */; };
 		134F59E921FA0C8700CEDBFC /* CameraCaptureDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 134F59E821FA0C8700CEDBFC /* CameraCaptureDelegate.swift */; };
+		767F07FD255F356800830649 /* AutoCaptureDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767F07FC255F356800830649 /* AutoCaptureDelegate.swift */; };
 		76D00240233E7C7F00CE3DA8 /* AcuantCameraOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76D0023F233E7C7F00CE3DA8 /* AcuantCameraOptions.swift */; };
 		8327AA1D2420056700B524F9 /* AcuantMrzCaptureSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8327AA192420056700B524F9 /* AcuantMrzCaptureSession.swift */; };
 		8327AA212420056700B524F9 /* AcuantMrzCameraController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8327AA182420056700B524F9 /* AcuantMrzCameraController.swift */; };
@@ -39,6 +40,7 @@
 		134F59D621FA0BA600CEDBFC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		134F59E421FA0C2B00CEDBFC /* DocumentCameraController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DocumentCameraController.swift; sourceTree = "<group>"; };
 		134F59E821FA0C8700CEDBFC /* CameraCaptureDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraCaptureDelegate.swift; sourceTree = "<group>"; };
+		767F07FC255F356800830649 /* AutoCaptureDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoCaptureDelegate.swift; sourceTree = "<group>"; };
 		76D0023F233E7C7F00CE3DA8 /* AcuantCameraOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcuantCameraOptions.swift; sourceTree = "<group>"; };
 		8327AA182420056700B524F9 /* AcuantMrzCameraController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AcuantMrzCameraController.swift; sourceTree = "<group>"; };
 		8327AA192420056700B524F9 /* AcuantMrzCaptureSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AcuantMrzCaptureSession.swift; sourceTree = "<group>"; };
@@ -162,6 +164,7 @@
 				C25D3BAA220B29EE003F3027 /* DocumentCaptureDelegate.swift */,
 				134F59E821FA0C8700CEDBFC /* CameraCaptureDelegate.swift */,
 				83BCAA002241961E00181B2A /* FrameAnalysisDelegate.swift */,
+				767F07FC255F356800830649 /* AutoCaptureDelegate.swift */,
 			);
 			path = Delegate;
 			sourceTree = "<group>";
@@ -289,6 +292,7 @@
 				8327AA422420081100B524F9 /* AcuantMrzParser.swift in Sources */,
 				C25D3BAB220B29EE003F3027 /* DocumentCaptureDelegate.swift in Sources */,
 				C2B8F11F22F1D61A009811A8 /* UIScreenExtn.swift in Sources */,
+				767F07FD255F356800830649 /* AutoCaptureDelegate.swift in Sources */,
 				134F59E621FA0C2B00CEDBFC /* DocumentCameraController.swift in Sources */,
 				8327AA1D2420056700B524F9 /* AcuantMrzCaptureSession.swift in Sources */,
 				836DD9A62315EA3000428964 /* AcuantCameraTextView.swift in Sources */,

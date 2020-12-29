@@ -1,6 +1,6 @@
-# Acuant iOS SDK v11.4.6
+# Acuant iOS SDK v11.4.7
 
-**November 2020**
+**December 2020**
 
 See [https://github.com/Acuant/iOSSDKV11/releases](https://github.com/Acuant/iOSSDKV11/releases) for release notes.
 
@@ -17,7 +17,7 @@ This document provides detailed information about the Acuant iOS SDK. The Acuant
 
 ![](https://i.imgur.com/KR0J94S.png)
 
-**Note** The acceptable quality image is well-cropped, sharp and with no glare present, has a resolution of at least 300 dpi (for data capture) or 600 dpi (for authentication). The aspect ratio should be acceptable and matches an ID document.
+**Note:** The acceptable quality image is well-cropped, sharp and with no glare present, has a resolution of at least 300 dpi (for data capture) or 600 dpi (for authentication). The aspect ratio should be acceptable and matches an ID document.
 
 ----------
 ## Prerequisites
@@ -117,7 +117,7 @@ The SDK includes the following modules:
 1. If you are using COCOAPODS, then add the following podfile:
 
 		platform :ios, '11'
-		pod 'AcuantiOSSDKV11', '~> 11.4.6' #for all packages
+		pod 'AcuantiOSSDKV11', '~> 11.4.7' #for all packages
 		
 		#indepedent packages below
 		
@@ -300,9 +300,9 @@ The SDK includes the following modules:
 			let valid: Bool = token.isValid()
 		}
 		
-4. **NOTE**: If token is set, all service calls will attempt to authorize using the token. If the token is not set, the legacy credentials will be used.
+4. **Note:** If token is set, all service calls will attempt to authorize using the token. If the token is not set, the legacy credentials will be used.
 
-5. **IMPORTANT**: You will still need to provide the SubscriptionId in the Credential object in order to use Acuant Services with bearer tokens.
+5. **Important Note:** You will still need to provide the SubscriptionId in the Credential object in order to use Acuant Services with bearer tokens.
 
 
 ### Initialize
@@ -363,14 +363,17 @@ Initialize without a Subscription ID:
 	    	func setCapturedImage(image:Image, barcodeString:String?)
 		}
 		
-1. Open the camera: 
-
-	**Note:** Options are now defined through an options object. See **AcuantCameraOptions** for all configurable fields.
+1. Open the camera. Options can be defined through an options object. See **AcuantCameraOptions** for all configurable fields.
 		
-        let options = AcuantCameraOptions(autoCapture: true, hideNavigationBar: true)
-        let documentCameraController = DocumentCameraController.getCameraController(delegate:self!, cameraOptions: options)
+		let options = AcuantCameraOptions(autoCapture: true, hideNavigationBar: true)
+		let documentCameraController = DocumentCameraController.getCameraController(delegate:self!, cameraOptions: options)
         
-        navigationController.pushViewController(documentCameraController, animated: false)
+		navigationController.pushViewController(documentCameraController, animated: false)
+        
+ **Note:** When the camera is launched, the image processing speed is automatically checked.
+
+ * Live document detection and auto capture features are enabled if the device supports a speed of at least 130ms.
+ * For devices that don't meet the processing threshold, tap to capture will be enabled. Live document detection and auto capture features are disabled and switched to tap to capture. The user will have to manually capture the document.
 
 1. Get the captured image:
 
@@ -782,7 +785,7 @@ The following may significantly increase errors or false results:
 - A spotlight on the face and nearest surroundings
 - An environment with poor lighting or colored light
 
-**Note**  The use of fish-eye lenses is not supported by this API.
+**Note:** The use of fish-eye lenses is not supported by this API.
 
 1. Get Passive Liveness result with UIImage:
 
@@ -899,7 +902,7 @@ The **AcuantIPLiveness** module checks whether the subject is a live person.
 		
 2. Perform the Liveness test: 
 		
-	**Note** You can customize the UI as needed by using **LivenessSetupResult**.
+	**Note:** You can customize the UI as needed by using **LivenessSetupResult**.
 
 		// Adjust various colors for the camera preview:
 		setupResult.ui.lineColor = .white
