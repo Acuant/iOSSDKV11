@@ -24,26 +24,31 @@ import AcuantImagePreparation
     private let context = CIContext()
     private let DEFAULT_FRAME_THRESHOLD = 1
     private let FAST_FRAME_THRESHOLD = 3
+    private let TOO_SLOW_FOR_AUTO_CAPTURE = 130
     private var frameCounter = 0
     private var autoCapture = true
+    weak private var autoCaptureDelegate: AutoCaptureDelegate? = nil
     private var captureEnabled = true
     private var captured = false
     private var cropping = false
+    private var times = [-1, -1, -1]
+    private var finishedTest = false
     private var input : AVCaptureDeviceInput? = nil
     private var videoOutput : AVCaptureVideoDataOutput? = nil
     private var captureMetadataOutput : AVCaptureMetadataOutput? = nil
     private var devicePreviewResolutionLongerSide = CaptureConstants.CAMERA_PREVIEW_LONGER_SIDE_STANDARD
     weak private var frameDelegate:FrameAnalysisDelegate? = nil
     
-    public class func getDocumentCaptureSession(delegate:DocumentCaptureDelegate?, frameDelegate: FrameAnalysisDelegate,autoCapture:Bool, captureDevice:AVCaptureDevice?)-> DocumentCaptureSession{
-        return DocumentCaptureSession().getDocumentCaptureSession(delegate: delegate!, frameDelegate: frameDelegate,autoCapture: autoCapture,  captureDevice: captureDevice)
+    public class func getDocumentCaptureSession(delegate:DocumentCaptureDelegate?, frameDelegate: FrameAnalysisDelegate, autoCaptureDelegate:AutoCaptureDelegate, captureDevice:AVCaptureDevice?)-> DocumentCaptureSession{
+        return DocumentCaptureSession().getDocumentCaptureSession(delegate: delegate!, frameDelegate: frameDelegate, autoCaptureDelegate: autoCaptureDelegate,  captureDevice: captureDevice)
     }
     
-    private func getDocumentCaptureSession(delegate:DocumentCaptureDelegate?, frameDelegate:FrameAnalysisDelegate,autoCapture:Bool, captureDevice: AVCaptureDevice?)->DocumentCaptureSession{
+    private func getDocumentCaptureSession(delegate:DocumentCaptureDelegate?, frameDelegate:FrameAnalysisDelegate, autoCaptureDelegate:AutoCaptureDelegate, captureDevice: AVCaptureDevice?)->DocumentCaptureSession{
         self.delegate = delegate
         self.captureDevice = captureDevice
         self.frameDelegate = frameDelegate
-        self.autoCapture = autoCapture
+        self.autoCaptureDelegate = autoCaptureDelegate
+        self.autoCapture = autoCaptureDelegate.getAutoCapture()
         return self;
     }
     
@@ -124,7 +129,33 @@ import AcuantImagePreparation
                     return
                 }
                 self.cropping = true
+                let startTime = CACurrentMediaTime()
                 self.croppedFrame = self.detectImage(image: frame!)
+                let elapsed = CACurrentMediaTime() - startTime
+                
+                if (!self.finishedTest) {
+                    for i in 0 ..< self.times.count {
+                        if (self.times[i] == -1) {
+                            self.times[i] = Int(elapsed * 1000)
+                            if (i == self.times.count - 1) {
+                                break
+                            } else {
+                                self.cropping = false
+                                return
+                            }
+                        }
+                    }
+                }
+                
+                if (!self.times.contains(-1)) {
+                    self.finishedTest = true;
+                    if(self.times.min() ?? (self.TOO_SLOW_FOR_AUTO_CAPTURE + 10) > self.TOO_SLOW_FOR_AUTO_CAPTURE) {
+                        self.autoCapture = false;
+                        self.autoCaptureDelegate?.setAutoCapture(autoCapture: false)
+                        return
+                    }
+                }
+                
                 let frameSize = frame!.size
 
                 DispatchQueue.main.async{ [weak self] in

@@ -82,9 +82,11 @@ class ResultViewController: UIViewController,UITableViewDataSource,UITableViewDe
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        tableView.rowHeight = UITableView.automaticDimension;
+        tableView.estimatedRowHeight = 44.0;
         let cell = tableView.dequeueReusableCell(withIdentifier: "ResultCell", for: indexPath)
         cell.textLabel?.numberOfLines = 0
-        cell.textLabel?.lineBreakMode = .byWordWrapping
+        cell.textLabel?.lineBreakMode = NSLineBreakMode.byWordWrapping
         cell.textLabel?.text = data?[indexPath.row]
         cell.textLabel?.textColor = UIColor.black
         return cell

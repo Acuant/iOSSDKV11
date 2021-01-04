@@ -12,7 +12,7 @@ import AVFoundation
 import AcuantImagePreparation
 import AcuantCommon
 
-@objcMembers public class DocumentCameraController : UIViewController, DocumentCaptureDelegate , FrameAnalysisDelegate {
+@objcMembers public class DocumentCameraController : UIViewController, DocumentCaptureDelegate, FrameAnalysisDelegate, AutoCaptureDelegate {
     
     @objc public enum CameraState : Int {
         case Align = 0, MoveCloser = 1, Steady = 2, Hold = 3, Capture = 4
@@ -65,6 +65,19 @@ import AcuantCommon
     
     override public var supportedInterfaceOrientations: UIInterfaceOrientationMask {
         return self.supportedOrientations ?? super.supportedInterfaceOrientations
+    }
+
+    public func setAutoCapture(autoCapture: Bool) {
+        self.autoCapture = autoCapture
+        if (!autoCapture) {
+            DispatchQueue.main.async {
+                self.messageLayer.string = NSLocalizedString("acuant_camera_manual_capture", comment: "")
+            }
+        }
+    }
+    
+    public func getAutoCapture() -> Bool {
+        return autoCapture
     }
 
     override public func viewDidLoad() {
@@ -122,7 +135,7 @@ import AcuantCommon
     
     internal func startCameraView() {
         let captureDevice: AVCaptureDevice = AVCaptureDevice.default(.builtInWideAngleCamera, for: AVMediaType.video, position: .back)!
-        self.captureSession = DocumentCaptureSession.getDocumentCaptureSession(delegate: self, frameDelegate: self,autoCapture:autoCapture, captureDevice: captureDevice)
+        self.captureSession = DocumentCaptureSession.getDocumentCaptureSession(delegate: self, frameDelegate: self, autoCaptureDelegate: self, captureDevice: captureDevice)
         self.captureSession.start()
         self.videoPreviewLayer = AVCaptureVideoPreviewLayer(session: self.captureSession)
         self.videoPreviewLayer.videoGravity = AVLayerVideoGravity.resizeAspectFill
@@ -207,7 +220,7 @@ import AcuantCommon
     }
     
     private func triggerHoldSteady(){
-        if(!self.isHoldSteady){
+        if(!self.isHoldSteady && self.autoCapture){
             self.isHoldSteady = true
             holdSteadyTimer = Timer.scheduledTimer(
                 timeInterval: 0.1,
@@ -237,7 +250,7 @@ import AcuantCommon
         else{
             let interval = getInterval(time: self.captureTimerState, duration: self.captureIntervalInSeconds)
             
-            if(interval >= self.captureTime){
+            if(interval >= self.captureWaitTime-1){
                 self.captureSession.enableCapture()
             }
             else{
@@ -262,7 +275,11 @@ import AcuantCommon
     }
     
     
-    private func transitionState(state: CameraState, localString: String? = nil){
+    private func transitionState(state: CameraState, localString: String? = nil) {
+        if (!autoCapture) {
+            return
+        }
+        
         if(localString != nil){
             self.cancelCapture(state: state, message: NSLocalizedString(localString!, comment: ""))
         }
@@ -288,7 +305,7 @@ import AcuantCommon
     }
     
     public func onFrameAvailable(frameResult: FrameResult, points: Array<CGPoint>?) {
-        if(self.videoPreviewLayer == nil || self.messageLayer == nil || self.captured){
+        if(self.videoPreviewLayer == nil || self.messageLayer == nil || self.captured || !self.autoCapture){
             return
         }
         
