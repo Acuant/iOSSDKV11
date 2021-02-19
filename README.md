@@ -1,6 +1,6 @@
-# Acuant iOS SDK v11.4.7
+# Acuant iOS SDK v11.4.8
 
-**December 2020**
+**February 2021**
 
 See [https://github.com/Acuant/iOSSDKV11/releases](https://github.com/Acuant/iOSSDKV11/releases) for release notes.
 
@@ -23,6 +23,7 @@ This document provides detailed information about the Acuant iOS SDK. The Acuant
 ## Prerequisites
 
 - iOS version 11.0 or later
+- Xcode 12.3
 
 ## Modules
 
@@ -100,7 +101,10 @@ The SDK includes the following modules:
 	
 	**Note:** AcuantCamera and AcuantFaceCapture are open projects. You will have to add the source code to your solution for frameworks.
 
-### Using Carthage
+1. Get Carthage [https://github.com/Carthage/Carthage](https://github.com/Carthage/Carthage)
+
+   **Note:** The SDK does not support downloading from Carthage. The usage of Carthage here is to simplify copying frameworks and slicing unwanted architectures.
+
 1. Open your project in Xcode and navigate to Build Phases tab in application project settings. Add a "New Run Script".
 
 1.  Add the following to the script.
@@ -109,71 +113,75 @@ The SDK includes the following modules:
 
 1. Create new inputFileList.xcfilelist and outputFileList.xcfilelist. Add necessary frameworks to both files. Example in repository.
 
-1. Add the .xcfilelist to your run script. For additional information, please visit [https://github.com/Carthage/Carthage](https://github.com/Carthage/Carthage).
+1. Add the .xcfilelist to your run script.
+
+	For additional information, please visit [https://github.com/Carthage/Carthage](https://github.com/Carthage/Carthage).
 
 ----------
 
-### Using COCOAPODS
-1. If you are using COCOAPODS, then add the following podfile:
+### Using CocoaPods
+
+**Important Note:** When using import statements for open projects (specifically AcuantCamera and AcuantFaceCapture) with CocoaPods, please use `import AcuantiOSSDKV11` in Xcode.
+
+1. Add the following in the podfile to get **all** the modules:
 
 		platform :ios, '11'
-		pod 'AcuantiOSSDKV11', '~> 11.4.7' #for all packages
+		pod 'AcuantiOSSDKV11', '~> 11.4.8' #for all packages
 		
-		#indepedent packages below
+ Alternatively, use the following to add **independent** modules in the podfile:
 		
-		#=== AcuantCamera ====
-		platform :ios, '11'
-		pod 'AcuantiOSSDKV11/AcuantCamera'
-		dependency AcuantImagePreparation
-		dependency AcuantCommon
-		
-		pod 'AcuantiOSSDKV11/AcuantCamera/Mrz' # if you want MRZ camera
-		dependency TesseractOCRiOS
-				
-		pod 'AcuantiOSSDKV11/AcuantCamera/Document' # if you want Document camera
-		# =====================
+ - AcuantCamera
 
-		#AcuantFaceCapture
-		platform :ios, '11'
-		pod 'AcuantiOSSDKV11/AcuantFaceCapture'
+			pod 'AcuantiOSSDKV11/AcuantCamera'
+			dependency AcuantImagePreparation
+			dependency AcuantCommon
+					
+			pod 'AcuantiOSSDKV11/AcuantCamera/Document' # if you want Document camera
+			
+			pod 'AcuantiOSSDKV11/AcuantCamera/Mrz' # if you want MRZ camera
+			dependency TesseractOCRiOS
+		
+ - AcuantFaceCapture
 
-		#AcuantImagePreparation
-		platform :ios, '11'
-		pod 'AcuantiOSSDKV11/AcuantImagePreparation'
-		dependency AcuantCommon
-		
-		#AcuantDocumentProcessing
-		platform :ios, '11'
-		pod 'AcuantiOSSDKV11/AcuantDocumentProcessing'
-		dependency AcuantCommon
+			pod 'AcuantiOSSDKV11/AcuantFaceCapture'
 
-		#AcuantHGLiveness
-		platform :ios, '11'
-		pod 'AcuantiOSSDKV11/AcuantHGLiveness'
-		dependency AcuantCommon
+ - AcuantImagePreparation
+
+			pod 'AcuantiOSSDKV11/AcuantImagePreparation'
+			dependency AcuantCommon
+			
+ - AcuantDocumentProcessing
+
+			pod 'AcuantiOSSDKV11/AcuantDocumentProcessing'
+			dependency AcuantCommon
+
+ - AcuantHGLiveness
+
+			pod 'AcuantiOSSDKV11/AcuantHGLiveness'
+			dependency AcuantCommon
+			
+ - AcuantIPLiveness
+
+			pod 'AcuantiOSSDKV11/AcuantIPLiveness'
+			dependency AcuantCommon
+			dependency iProov
+
+ - AcuantPassiveLiveness
+
+			pod 'AcuantiOSSDKV11/AcuantPassiveLiveness'
+			dependency AcuantCommon
+			
+ - AcuantFaceMatch
+
+			pod 'AcuantiOSSDKV11/AcuantFaceMatch'
+			dependency AcuantCommon
+
+ - AcuantEchipReader
+
+			pod 'AcuantiOSSDKV11/AcuantEchipReader'
+			dependency AcuantCommon
 		
-		#AcuantIPLiveness
-		platform :ios, '11'
-		pod 'AcuantiOSSDKV11/AcuantIPLiveness'
-		dependency AcuantCommon
-		dependency iProov
-		
-		#AcuantPassiveLiveness
-		platform :ios, '11'
-		pod 'AcuantiOSSDKV11/AcuantPassiveLiveness'
-		dependency AcuantCommon
-		
-		#AcuantFaceMatch
-		platform :ios, '11'
-		pod 'AcuantiOSSDKV11/AcuantFaceMatch'
-		dependency AcuantCommon
-		
-		#AcuantEchipReader
-		platform :ios, '11'
-		pod 'AcuantiOSSDKV11/AcuantEchipReader'
-		dependency AcuantCommon
-		
-1. 	Enable "BUILD\_FOR\_DISTRIBUTION" for all Acuant pod frameworks in Build Settings.
+1. Enable "BUILD\_FOR\_DISTRIBUTION" for all Acuant pod frameworks in Build Settings.
 
 	- Using Cocoapods. Add to your Podfile.
 		
@@ -191,7 +199,6 @@ The SDK includes the following modules:
 	
 		![](docs/cocoapodsetup.png)
 		
-
 
 ----------
 
@@ -313,7 +320,7 @@ The SDK includes the following modules:
 
 		let packages = [AcuantEchipPackage(), AcuantImagePreparationPackage()]
 
-1. Initialize the sdk.
+1. Initialize the SDK.
 		
 		let initalizer: IAcuantInitializer = AcuantInitializer()
         
@@ -393,11 +400,11 @@ Initialize without a Subscription ID:
 		
 		
 		
-**Custom UI with DocumentCaptureSesssion (see DocumentCameraController.swift for reference):**
+**Using Custom UI with DocumentCaptureSession (see DocumentCameraController.swift for reference):**
 
-1. Get the DocumentCaptureSesssion.
+1. Get the DocumentCaptureSession.
 		
-		@objc public protocol DocumentCaptureDelegate {
+		public protocol DocumentCaptureDelegate {
 		    func readyToCapture() // gets called when triggering capture
 		    func documentCaptured(image:UIImage, barcodeString:String?) // gets called with captured result
 		}
@@ -405,19 +412,20 @@ Initialize without a Subscription ID:
 		let captureSession = DocumentCaptureSession.getDocumentCaptureSession(
 			delegate: DocumentCaptureDelegate, // session callback
 			frameDelegate: FrameAnalysisDelegate, // frame analysis callback
-			autoCapture:Bool, // enable frame analysis
-			captureDevice:AVCaptureDevice?) // AV Capture Device 
+			autoCaptureDelegate: AutoCaptureDelegate, // enable frame analysis/auto capture
+			captureDevice: AVCaptureDevice?) // AV Capture Device 
 			
 1. Start the session, and then add the session to AVCaptureVideoPreviewLayer.
 
 		captureSession.start() // will start the capture session.
 		let videoPreviewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
-		//add custom ui
+		
+		//write your own custom UI code
 
 		
 1. Receive Frame Results.
 		
-		@objc public enum FrameResult : Int{
+		public enum FrameResult : Int{
 		    case NO_DOCUMENT, // No document
 		    	SMALL_DOCUMENT, // Document is small
 		    	BAD_ASPECT_RATIO, // Document type does not match aspect ratio
@@ -425,7 +433,7 @@ Initialize without a Subscription ID:
 		    	DOCUMENT_NOT_IN_FRAME // Document is not in frame
 		}
 		
-		@objc public protocol FrameAnalysisDelegate{
+		public protocol FrameAnalysisDelegate{
 		    func onFrameAvailable(frameResult: FrameResult, points: Array<CGPoint>?)
 		}
 		
@@ -650,7 +658,11 @@ This module contains all image preparation functionality.
 
 After an image is captured, it is cropped and checked for sharpness and glare. This is done using the **evaluateImage** of **AcuantImagePreparation**.
 
-	public class func evaluateImage(image: UImage, callback: (AcuantImage, AcuantError) -> ())
+	public class func evaluateImage(data: CroppingData, callback: (AcuantImage, AcuantError) -> ())
+	
+To create the CroppingData used above, use the following method passing in the Image that you received from the camera:
+
+	CroppingData.newInstance(image: Image)
 
 The callback returns the **AcuantImage** and **AcuantError**. The **AcuantImage** can be used to be verify the crop, sharpness, and glare.
 
@@ -660,7 +672,11 @@ The callback returns the **AcuantImage** and **AcuantError**. The **AcuantImage*
 		public let sharpness: Int
 		public let glare: Int
 		public let dpi: Int
-	}		
+		public let isPassport: Bool
+	}	
+
+**Note:**If you are using an independent orchestration layer, then make sure you supply AcuantImage.data not just AcuantImage.image.	
+
 ----------
 ### AcuantDocumentProcessing
 
@@ -1086,6 +1102,9 @@ This module is used to match two facial images:
     }
 
 ## Frequently Asked Questions
+
+### Why do I get "No such module" error in Xcode when using "import AcuantCamera" when using CocoaPods
+**AcuantCamera** and **AcuantFaceCapture** are open projects and must be compiled by the user. With CocoaPods, both are compiled into pods name **AcuantiOSSDKV11** in which `import AcuantiOSSDKV11` must be used in Xcode. Using `import AcuantCamera` and `import AcuantFaceCapture` will not work.
 
 ### What causes an "Unsupported Architecture" error when publishing the app in the Apple App store?
 

@@ -210,17 +210,37 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 @class UIImage;
 @class CroppingData;
 @class Image;
+@class DetectData;
 
 SWIFT_CLASS("_TtC22AcuantImagePreparation22AcuantImagePreparation")
 @interface AcuantImagePreparation : NSObject
 + (void)initializeWithDelegate:(id <InitializationDelegate> _Nullable)delegate;
 + (UIImage * _Nullable)resizeWithImage:(UIImage * _Nonnull)image targetWidth:(NSInteger)targetWidth SWIFT_WARN_UNUSED_RESULT;
 + (Image * _Nonnull)cropWithData:(CroppingData * _Nonnull)data SWIFT_WARN_UNUSED_RESULT;
++ (Image * _Nonnull)cropMrzWithDetectData:(DetectData * _Nonnull)detectData SWIFT_WARN_UNUSED_RESULT;
 + (Image * _Nonnull)cropMrzWithData:(CroppingData * _Nonnull)data SWIFT_WARN_UNUSED_RESULT;
++ (Image * _Nonnull)detectWithDetectData:(DetectData * _Nonnull)detectData SWIFT_WARN_UNUSED_RESULT;
 + (Image * _Nonnull)detectWithData:(CroppingData * _Nonnull)data SWIFT_WARN_UNUSED_RESULT;
 + (NSInteger)sharpnessWithImage:(UIImage * _Nonnull)image SWIFT_WARN_UNUSED_RESULT;
 + (NSInteger)glareWithImage:(UIImage * _Nonnull)image SWIFT_WARN_UNUSED_RESULT;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+SWIFT_CLASS("_TtC22AcuantImagePreparation12CroppingData")
+@interface CroppingData : NSObject
+@property (nonatomic, strong) UIImage * _Nullable image SWIFT_DEPRECATED_MSG("Use newInstance passing the image");
++ (CroppingData * _Nonnull)newInstanceWithImage:(Image * _Nonnull)image SWIFT_WARN_UNUSED_RESULT;
++ (CroppingData * _Nonnull)newInstance SWIFT_WARN_UNUSED_RESULT SWIFT_DEPRECATED_MSG("Pass the image from the camera to newInstance");
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER SWIFT_DEPRECATED_MSG("Use the overload of this method that accepts an Image");
+@end
+
+
+SWIFT_CLASS("_TtC22AcuantImagePreparation10DetectData")
+@interface DetectData : NSObject
++ (DetectData * _Nonnull)newInstanceWithImage:(UIImage * _Nonnull)image SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
 
 @class AcuantError;

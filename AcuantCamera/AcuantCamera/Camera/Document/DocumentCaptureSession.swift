@@ -39,6 +39,13 @@ import AcuantImagePreparation
     private var devicePreviewResolutionLongerSide = CaptureConstants.CAMERA_PREVIEW_LONGER_SIDE_STANDARD
     weak private var frameDelegate:FrameAnalysisDelegate? = nil
     
+    public override init() {
+        super.init()
+        if #available(iOS 13.0, *) {
+            stillImageOutput.maxPhotoQualityPrioritization = .quality
+        }
+    }
+    
     public class func getDocumentCaptureSession(delegate:DocumentCaptureDelegate?, frameDelegate: FrameAnalysisDelegate, autoCaptureDelegate:AutoCaptureDelegate, captureDevice:AVCaptureDevice?)-> DocumentCaptureSession{
         return DocumentCaptureSession().getDocumentCaptureSession(delegate: delegate!, frameDelegate: frameDelegate, autoCaptureDelegate: autoCaptureDelegate,  captureDevice: captureDevice)
     }
@@ -259,15 +266,18 @@ import AcuantImagePreparation
     
     func capturePhoto() {
         let photoSetting = AVCapturePhotoSettings.init(format: [AVVideoCodecKey: AVVideoCodecType.jpeg])
-        photoSetting.isAutoStillImageStabilizationEnabled = true
+        if #available(iOS 13.0, *) {
+            photoSetting.photoQualityPrioritization = .quality
+        } else {
+            photoSetting.isAutoStillImageStabilizationEnabled = true
+        }
         self.stillImageOutput.capturePhoto(with: photoSetting, delegate: self)
     }
     
     func detectImage(image:UIImage)->Image?{
-        let croppingData  = CroppingData()
-        croppingData.image = image
+        let detectData  = DetectData.newInstance(image: image)
         
-        let croppedImage = AcuantImagePreparation.detect(data: croppingData)
+        let croppedImage = AcuantImagePreparation.detect(detectData: detectData)
         return croppedImage
     }
 }

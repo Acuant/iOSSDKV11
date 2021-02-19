@@ -185,10 +185,9 @@ import AcuantImagePreparation
     }
     
     func detectImage(image:UIImage)->Image?{
-        let croppingData  = CroppingData()
-        croppingData.image = image
+        let detectData  = DetectData.newInstance(image: image)
         
-        let croppedImage = AcuantImagePreparation.cropMrz(data: croppingData)
+        let croppedImage = AcuantImagePreparation.cropMrz(detectData: detectData)
         return croppedImage
     }
 }

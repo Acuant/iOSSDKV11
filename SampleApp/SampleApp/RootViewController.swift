@@ -337,7 +337,7 @@ extension RootViewController: CameraCaptureDelegate{
         }
         else if (image.image != nil) {
             self.showProgressView(text: "Processing...")
-            AcuantImagePreparation.evaluateImage(image: image.image!){
+            AcuantImagePreparation.evaluateImage(data: CroppingData.newInstance(image: image)){
                 result, error in
                 
                 DispatchQueue.main.async {
@@ -432,28 +432,16 @@ extension RootViewController: CameraCaptureDelegate{
         self.navigationController?.pushViewController(liveFaceViewController, animated: true)
     }
     
-    func cropImage(image:UIImage)->Image?{
-        let croppingData  = CroppingData()
-        croppingData.image = image
-        
-        let croppedImage = AcuantImagePreparation.crop(data: croppingData)
-        return croppedImage
-    }
-    
-    
-    public func cropImage(image:Image, callback: @escaping (Image?) -> ()){
-        print("test original img \(image.image?.size.width), \(image.image?.size.height)")
-        if let succcess = image.image{
+    public func cropImage(image:Image, callback: @escaping (AcuantImage?) -> ()){
+        if image.image != nil {
             self.showProgressView(text: "Processing...")
             
             DispatchQueue.global().async {
-                let croppedImage = self.cropImage(image: succcess)
-                
-                print("test cropped img \(croppedImage?.image?.size.width), \(croppedImage?.image?.size.height)")
-                
-                DispatchQueue.main.async {
-                    self.hideProgressView()
-                    callback(croppedImage)
+                AcuantImagePreparation.evaluateImage(data: CroppingData.newInstance(image: image)) {image,_ in
+                    DispatchQueue.main.async {
+                        self.hideProgressView()
+                        callback(image)
+                    }
                 }
             }
         }

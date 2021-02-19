@@ -126,19 +126,25 @@ import AVFoundation
     }
     
     func isGoodSizeFace(face: CIFaceFeature, previewLayerSize:CGSize)-> AcuantFaceState{
-        let scale_min:CGFloat = 0.12
-        let scale_max:CGFloat = 0.5
-        let faceArea = face.bounds.width * face.bounds.height
-        let totalArea = previewLayerSize.width * previewLayerSize.height
+        let bounds = UIScreen.main.bounds
+        let width = bounds.size.width
+        let height = bounds.size.height
+        let screenRatio = max(width, height) / min(width, height)
+        let cameraRatio = max(previewLayerSize.width, previewLayerSize.height) / min(previewLayerSize.width, previewLayerSize.height)
         
-        if(faceArea < scale_min * totalArea){
-            return AcuantFaceState.FACE_TOO_FAR
+        let TOO_CLOSE_THRESH: CGFloat = 0.235 * screenRatio / cameraRatio
+        let TOO_FAR_THRESH: CGFloat = 0.385 * screenRatio / cameraRatio
+        let ratioToEdges = 1 - face.bounds.height/previewLayerSize.height
+        
+        
+        if (isFaceInBound(facePosition : face.bounds, previewLayerSize:previewLayerSize)){
+            return AcuantFaceState.FACE_NOT_IN_FRAME
         }
-        else if (faceArea > scale_max * totalArea){
+        else if (ratioToEdges < TOO_CLOSE_THRESH){
             return AcuantFaceState.FACE_TOO_CLOSE
         }
-        else if (isFaceInBound(facePosition : face.bounds, previewLayerSize:previewLayerSize)){
-            return AcuantFaceState.FACE_NOT_IN_FRAME
+        else if(ratioToEdges > TOO_FAR_THRESH){
+            return AcuantFaceState.FACE_TOO_FAR
         }
         else if (doesFaceHaveAngle(hasAnglePosition: face.hasFaceAngle, faceAngle: face.faceAngle)){
             return AcuantFaceState.FACE_HAS_ANGLE

@@ -36,6 +36,7 @@ public class AcuantInitializer : AcuantCommon.IAcuantInitializer {
 }
 @objc @_inheritsConvenienceInitializers @objcMembers public class Image : ObjectiveC.NSObject {
   @objc public var image: UIKit.UIImage?
+  @objc public var data: Foundation.NSMutableData?
   @objc public var dpi: Swift.Int
   @objc public var error: AcuantCommon.AcuantError?
   @objc public var isCorrectAspectRatio: Swift.Bool
@@ -43,6 +44,7 @@ public class AcuantInitializer : AcuantCommon.IAcuantInitializer {
   @objc public var points: [CoreGraphics.CGPoint]
   @objc public var isPassport: Swift.Bool
   @objc public class func newInstance() -> AcuantCommon.Image
+  @objc public class func newInstance(image: UIKit.UIImage, data: Foundation.NSMutableData?) -> AcuantCommon.Image
   @objc override dynamic public init()
   @objc deinit
 }
@@ -154,12 +156,6 @@ public class AcuantJwtToken {
   @objc public static let ERROR_DESC_InvalidNfcKeyFormatting: Swift.String
   @objc deinit
   @objc override dynamic public init()
-}
-@objc @_inheritsConvenienceInitializers @objcMembers public class CroppingData : ObjectiveC.NSObject {
-  @objc public var image: UIKit.UIImage?
-  @objc public class func newInstance() -> AcuantCommon.CroppingData
-  @objc override dynamic public init()
-  @objc deinit
 }
 @objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objcMembers public class DocumentProcessingMode : ObjectiveC.NSObject {
   @objc public class func processingMode() -> AcuantCommon.ProcessingMode

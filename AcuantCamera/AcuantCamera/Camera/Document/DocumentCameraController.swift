@@ -42,8 +42,8 @@ import AcuantCommon
     private var holdSteadyTimer: Timer!
     
     private let captureTime = 1
-    private let documentMovementThreshold = 45
-    private let previewBoundsThreshold: CGFloat = 25
+    private let documentMovementThreshold = 25
+    private let previewBoundsThreshold: CGFloat = -5
 
     private var currentStateCount = 0
     private var nextState = FrameResult.NO_DOCUMENT
@@ -131,7 +131,7 @@ import AcuantCommon
         self.captureSession = DocumentCaptureSession.getDocumentCaptureSession(delegate: self, frameDelegate: self, autoCaptureDelegate: self, captureDevice: captureDevice)
         self.captureSession.start()
         self.videoPreviewLayer = AVCaptureVideoPreviewLayer(session: self.captureSession)
-        self.videoPreviewLayer.videoGravity = AVLayerVideoGravity.resizeAspectFill
+        self.videoPreviewLayer.videoGravity = AVLayerVideoGravity.resizeAspect
         self.videoPreviewLayer.frame = self.view.layer.bounds
         self.videoPreviewLayer.connection?.videoOrientation = .portrait
         
@@ -158,8 +158,9 @@ import AcuantCommon
     }
     
     public func documentCaptured(image: UIImage, barcodeString: String?) {
-        let result = Image()
-        result.image = rotateImage(image: image)
+        let result = AcuantImagePreparation.createCameraImage(image: rotateImage(image: image), data: AcuantCameraMetaData().setCaptureType(captureType: autoCapture ? "AUTO" : "TAP"))
+        //result.image = rotateImage(image: image)
+        //result.captureType = autoCapture ? "AUTO" : "TAP"
         self.navigationController?.popViewController(animated: true)
         self.cameraCaptureDelegate?.setCapturedImage(image: result, barcodeString: barcodeString)
     }

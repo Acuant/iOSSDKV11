@@ -362,15 +362,6 @@ SWIFT_CLASS("_TtC12AcuantCommon10Credential")
 + (void)setEndpointsWithEndpoints:(Endpoints * _Nonnull)endpoints;
 @end
 
-@class UIImage;
-
-SWIFT_CLASS("_TtC12AcuantCommon12CroppingData")
-@interface CroppingData : NSObject
-@property (nonatomic, strong) UIImage * _Nullable image;
-+ (CroppingData * _Nonnull)newInstance SWIFT_WARN_UNUSED_RESULT;
-- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
-@end
-
 typedef SWIFT_ENUM(NSInteger, DeleteType, open) {
   DeleteTypeID = 0,
   DeleteTypeMedicalCard = 1,
@@ -399,10 +390,13 @@ SWIFT_CLASS("_TtC12AcuantCommon9Endpoints")
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
+@class UIImage;
+@class NSMutableData;
 
 SWIFT_CLASS("_TtC12AcuantCommon5Image")
 @interface Image : NSObject
 @property (nonatomic, strong) UIImage * _Nullable image;
+@property (nonatomic, strong) NSMutableData * _Nullable data;
 @property (nonatomic) NSInteger dpi;
 @property (nonatomic, strong) AcuantError * _Nullable error;
 @property (nonatomic) BOOL isCorrectAspectRatio;
@@ -410,6 +404,7 @@ SWIFT_CLASS("_TtC12AcuantCommon5Image")
 @property (nonatomic, copy) NSArray<NSValue *> * _Nonnull points;
 @property (nonatomic) BOOL isPassport;
 + (Image * _Nonnull)newInstance SWIFT_WARN_UNUSED_RESULT;
++ (Image * _Nonnull)newInstanceWithImage:(UIImage * _Nonnull)image data:(NSMutableData * _Nullable)data SWIFT_WARN_UNUSED_RESULT;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
