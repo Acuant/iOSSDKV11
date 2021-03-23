@@ -28,6 +28,7 @@ public enum OzoneResultStatus : Swift.Int {
   case SUCCESS
   case FAILED
   case UNKNOWN
+  case NOT_PERFORMED
   public typealias RawValue = Swift.Int
   public init?(rawValue: Swift.Int)
   public var rawValue: Swift.Int {
@@ -146,7 +147,8 @@ public class AcuantEchipSessionRequest {
   final public let passportNumber: Swift.String
   final public let dateOfBirth: Swift.String
   final public let expiryDate: Swift.String
-  public init(passportNumber: Swift.String, dateOfBirth: Swift.String, expiryDate: Swift.String)
+  final public let performOzoneAuthentication: Swift.Bool
+  public init(passportNumber: Swift.String, dateOfBirth: Swift.String, expiryDate: Swift.String, performOzoneAuthentication: Swift.Bool = true)
   @objc deinit
 }
 @available(iOS 13, *)

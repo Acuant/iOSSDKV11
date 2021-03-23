@@ -20,6 +20,9 @@ public class AcuantInitializer : AcuantCommon.IAcuantInitializer {
   public var hasOzone: Swift.Bool {
     get
   }
+  public var chipExtract: Swift.Bool {
+    get
+  }
   public var hasLiveCapture: Swift.Bool {
     get
   }

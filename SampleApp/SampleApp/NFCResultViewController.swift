@@ -101,9 +101,13 @@ class NFCResultViewController: UIViewController{
         data.append("\n Issuing Authority  : " + passport!.issuingAuthority)
         data.append("\n Data Hash  : "  + (passport!.passportDataValid ? "True" : "False"))
 //         data.append("\n Active Authentication  : "  +  (passport!.activeAuthentication == nil ? "Not Supported" : passport!.activeAuthentication == false ? "False" : "True"))
-        data.append("\n Document Signer  (Ozone): "  + (passport!.passportSigned == OzoneResultStatus.SUCCESS ? "True" : "False"))
-        data.append("\n Country Signer (Ozone): "  +  (passport!.passportCountrySigned == OzoneResultStatus.SUCCESS ? "True" : "False"))
-       
+        if (passport!.passportSigned != OzoneResultStatus.NOT_PERFORMED) {
+            data.append("\n Document Signer  (Ozone): "  + (passport!.passportSigned == OzoneResultStatus.SUCCESS ? "True" : "False"))
+        }
+        
+        if (passport!.passportCountrySigned != OzoneResultStatus.NOT_PERFORMED) {
+            data.append("\n Country Signer (Ozone): "  +  (passport!.passportCountrySigned == OzoneResultStatus.SUCCESS ? "True" : "False"))
+        }
         tableView.reloadData()
    
     }

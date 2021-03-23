@@ -148,7 +148,7 @@ class RootViewController: UIViewController{
             DispatchQueue.main.async {
                 if let self = self{
                     if(error == nil){
-                        if(!Credential.authorization().hasOzone){
+                        if(!Credential.authorization().hasOzone && !Credential.authorization().chipExtract){
                             self.mrzButton.isHidden = true
                         }
                         

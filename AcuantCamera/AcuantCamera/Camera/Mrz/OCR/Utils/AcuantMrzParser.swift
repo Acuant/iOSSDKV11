@@ -70,7 +70,7 @@ public class AcuantMrzParser{
         }
 
         var startPos = 0
-        result.passportNumber = getSubstring(str: line, offsetStart: startPos, offsetEnd: startPos+9)
+        result.passportNumber = getSubstring(str: line, offsetStart: startPos, offsetEnd: startPos+9).replacingOccurrences(of: "<", with: "")
         startPos+=9
 
         result.checkSumResult1 = checkSum(input: result.passportNumber, checkSumChar: line[startPos])

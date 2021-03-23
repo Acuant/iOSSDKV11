@@ -1,6 +1,6 @@
-# Acuant iOS SDK v11.4.8
+# Acuant iOS SDK v11.4.9
 
-**February 2021**
+**March 2021**
 
 See [https://github.com/Acuant/iOSSDKV11/releases](https://github.com/Acuant/iOSSDKV11/releases) for release notes.
 
@@ -23,7 +23,7 @@ This document provides detailed information about the Acuant iOS SDK. The Acuant
 ## Prerequisites
 
 - iOS version 11.0 or later
-- Xcode 12.3
+- Xcode 12.4
 
 ## Modules
 
@@ -126,7 +126,7 @@ The SDK includes the following modules:
 1. Add the following in the podfile to get **all** the modules:
 
 		platform :ios, '11'
-		pod 'AcuantiOSSDKV11', '~> 11.4.8' #for all packages
+		pod 'AcuantiOSSDKV11', '~> 11.4.9' #for all packages
 		
  Alternatively, use the following to add **independent** modules in the podfile:
 		
@@ -203,7 +203,7 @@ The SDK includes the following modules:
 ----------
 
 ### Required Setup
-1. Create a **plist** file named **AcuantConfig** which includes the following details:
+Create a **plist** file named **AcuantConfig** that includes the following details:
 
     	<?xml version="1.0" encoding="UTF-8"?>
 		<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
@@ -287,40 +287,16 @@ The SDK includes the following modules:
 			<string>https://aus.ozone.acuant.net</string>
 
 
-----------
-### Bearer Tokens
-
-1. Use Acuant Services to retrieve a token. We recommend using a proxy service to retrieve the token to ensure integrity of credentials.
-
-2. Set the token:
-
-		if let success = Credential.setToken(token: ""){
-			//token was valid
-		}
-		else{
-			//invalid or expired token
-		}
-
-3. Tokens will eventually expire, depending on the provided settings. Use the method below to ensure token is still valid before reusing the token.
-
-		if let token : AcuantJwtToken = Credential.getToken(){
-			let valid: Bool = token.isValid()
-		}
-		
-4. **Note:** If token is set, all service calls will attempt to authorize using the token. If the token is not set, the legacy credentials will be used.
-
-5. **Important Note:** You will still need to provide the SubscriptionId in the Credential object in order to use Acuant Services with bearer tokens.
-
-
 ### Initialize
 
 **Initialization**
+Before you use the SDK, you must initialize it, either by using the credentials saved on the device or by using bearer tokens (provided by an external server).
 
 1. Select packages for initialization.
 
 		let packages = [AcuantEchipPackage(), AcuantImagePreparationPackage()]
 
-1. Initialize the SDK.
+1. Initialize the SDK. 
 		
 		let initalizer: IAcuantInitializer = AcuantInitializer()
         
@@ -348,20 +324,45 @@ The SDK includes the following modules:
 		endpoints.ozoneEndpoint = "https://ozone.acuant.net"
 
 		Credential.setEndpoints(endpoints: endpoints)		
+### Bearer Tokens
+
+1. Use Acuant Services to retrieve a token. Acuant recommends using a proxy service to retrieve the token to ensure integrity of credentials.
+
+2. Set the token:
+
+		if let success = Credential.setToken(token: ""){
+			//token was valid
+		}
+		else{
+			//invalid or expired token
+		}
+
+3. Tokens will eventually expire, depending on the provided settings. Use the method below to ensure token is still valid before reusing the token.
+
+		if let token : AcuantJwtToken = Credential.getToken(){
+			let valid: Bool = token.isValid()
+		}
+		
+4. **Note:** If token is set, all service calls will attempt to authorize using the token. If the token is not set, the legacy credentials will be used.
+
+5. **Important Note:** You will still need to provide the SubscriptionId in the Credential object in order to use Acuant Services with bearer tokens.
+	
 		
 ### Initialization without a Subscription ID
 
-**AcuantImagePreparation** may be initialized by providing only a username and a password. However, without providing a Subscription ID, the application can only capture an image and get the image. 
+**AcuantImagePreparation** may be initialized by providing only a username and a password. However, without providing a Subscription ID, the application can only capture an image and get the image.
+ 
 Initialize without a Subscription ID:
 
 -	Only the **AcuantCamera**, **AcuantImagePreparation**, and **AcuantHGLiveness** modules may be used.
 -	The SDK can be used to capture the identity documents.
 -	The captured images can be exported from the SDK. See the **DocumentCaptureDelegate** protocol in the **AcuantCamera** project.
 		
-		
+----------
+
 ### Capture an Image using AcuantCamera
 
-1. AcuantCamera is best used in portrait mode. Lock the orientation of the app before using Camera. 
+AcuantCamera is best used in portrait mode. Lock the orientation of the app before using Camera. 
 
 1. Set up callbacks:
 		
@@ -452,7 +453,6 @@ Initialize without a Subscription ID:
 
 1. Add Tesseract dependency. See https://github.com/gali8/Tesseract-OCR-iOS
 
-
 1. Add the OCRB Training data to you project. We recommend using the training data resource in Assets directory of the Sample App. Please refer to https://www.raywenderlich.com/2010498-tesseract-ocr-tutorial-for-ios#toc-anchor-005.
 
 1. Set View Controller UI customizations.
@@ -529,7 +529,7 @@ Initialize without a Subscription ID:
 
 1. AcuantEchipPackage must be initialized in the previous step.
 
-1. This feature is only available in iOS version 13. You will need to use the @available attribute to use methods inside module.
+1. This feature is only available in iOS version 13 and above. You will need to use the @available attribute to use methods inside module.
 
 1. Create an instance of Acuant Reader. Make sure this object does not get disposed while reading.
 
@@ -664,7 +664,7 @@ To create the CroppingData used above, use the following method passing in the I
 
 	CroppingData.newInstance(image: Image)
 
-The callback returns the **AcuantImage** and **AcuantError**. The **AcuantImage** can be used to be verify the crop, sharpness, and glare.
+The callback returns the **AcuantImage** and **AcuantError**. The **AcuantImage** can be used to verify the crop, sharpness, and glare of the image, and then upload the document in the next step (see [AcuantDocumentProcessing](#acuantdocumentprocessing)).
 
 	public class AcuantImage {
 		public let image: UIImage
@@ -674,13 +674,19 @@ The callback returns the **AcuantImage** and **AcuantError**. The **AcuantImage*
 		public let dpi: Int
 		public let isPassport: Bool
 	}	
+	
+If the sharpness value is greater than 50, then the image is considered sharp (not blurry). If the glare value is 100, then the image does not contain glare. If the glare value is 0, then image contains glare.
+	
+Preferably, the image must be sharp and not contain glare to get best results in authentication and data extraction. When the image has glare, low sharpness, or both, retry the capture.
+	
+Acuant recommends against modifying and/or compressing the resulting AcuantImage.image before uploading. Modifying and/or compressing the AcuantImage.image may negatively affect authentication and data extraction results.
 
-**Note:**If you are using an independent orchestration layer, then make sure you supply AcuantImage.data not just AcuantImage.image.	
+**Note:** If you are using an independent orchestration layer, then make sure you supply AcuantImage.data not just AcuantImage.image.	
 
 ----------
 ### AcuantDocumentProcessing
 
-After a document image is captured, it can be processed using the following steps.
+After you capture a document image and completed crop, it can be processed using the following steps.
 
 **Note:** If an upload fails with an error, retry the image upload using a better image.
 
@@ -1133,7 +1139,7 @@ Acuant does not provide obfuscation tools, however several third-party tools, in
 
 -------------------------------------------------------------
 
-**Copyright 2020 Acuant Inc. All rights reserved.**
+**Copyright 2021 Acuant Inc. All rights reserved.**
 
 This document contains proprietary and confidential information and creative works owned by Acuant and its respective licensors, if any. Any use, copying, publication, distribution, display, modification, or transmission of such technology, in whole or in part, in any form or by any means, without the prior express written permission of Acuant is strictly prohibited. Except where expressly provided by Acuant in writing, possession of this information shall not be construed to confer any license or rights under any Acuant intellectual property rights, whether by estoppel, implication, or otherwise.
 

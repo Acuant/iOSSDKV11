@@ -82,7 +82,7 @@ class NFCViewController: UIViewController, UITextFieldDelegate, OzoneServiceDele
             showAlert(title: "Error", message: error)
         }
         else{
-            let request = AcuantEchipSessionRequest(passportNumber: passportNumberTextView.text!, dateOfBirth: dobTextView.text!, expiryDate:expiryTextView.text!)
+            let request = AcuantEchipSessionRequest(passportNumber: passportNumberTextView.text!, dateOfBirth: dobTextView.text!, expiryDate:expiryTextView.text!, performOzoneAuthentication: true)
             
             self.reader.readNfcTag(request: request, customDisplayMessage: customDisplayMessage){ [weak self]
                 (model, error) in
