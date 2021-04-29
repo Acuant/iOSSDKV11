@@ -1,5 +1,5 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.3.2 (swiftlang-1200.0.45 clang-1200.0.32.28)
+// swift-compiler-version: Apple Swift version 5.4 (swiftlang-1205.0.26.9 clang-1205.0.19.55)
 // swift-module-flags: -target arm64-apple-ios11.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name AcuantDocumentProcessing
 import AcuantCommon
 import Foundation
@@ -186,11 +186,11 @@ public class EvaluatedImageData {
     case Normal = 0
     case High = 1
     case Low = 2
+    public init?(rawValue: Swift.Int)
     public typealias RawValue = Swift.Int
     public var rawValue: Swift.Int {
       get
     }
-    public init?(rawValue: Swift.Int)
   }
   @objc public var cardSide: AcuantDocumentProcessing.CardSide
   @objc public var isHealthCard: Swift.Bool
@@ -247,8 +247,8 @@ public class EvaluatedImageData {
 @objc public enum CardSide : Swift.Int {
   case Front
   case Back
-  public typealias RawValue = Swift.Int
   public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
   public var rawValue: Swift.Int {
     get
   }
@@ -259,8 +259,8 @@ public class EvaluatedImageData {
   public class func uploadImage(instancdId: Swift.String, data: AcuantDocumentProcessing.EvaluatedImageData, options: AcuantDocumentProcessing.IdOptions, delegate: AcuantDocumentProcessing.UploadImageDelegate)
   @objc public class func getData(instanceId: Swift.String, isHealthCard: Swift.Bool, delegate: AcuantDocumentProcessing.GetDataDelegate)
   @objc public class func deleteInstance(instanceId: Swift.String, type: AcuantCommon.DeleteType, delegate: AcuantDocumentProcessing.DeleteDelegate)
-  @objc deinit
   @objc override dynamic public init()
+  @objc deinit
 }
 @objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objcMembers public class Subscription : ObjectiveC.NSObject {
   @objc public var documentProcessMode: Swift.Int
