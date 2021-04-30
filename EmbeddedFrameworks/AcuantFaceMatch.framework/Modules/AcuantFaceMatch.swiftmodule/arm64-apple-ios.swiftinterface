@@ -1,5 +1,5 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.4 (swiftlang-1205.0.26.9 clang-1205.0.19.55)
+// swift-compiler-version: Apple Swift version 5.3.2 (swiftlang-1200.0.45 clang-1200.0.32.28)
 // swift-module-flags: -target arm64-apple-ios11.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name AcuantFaceMatch
 import AcuantCommon
 @_exported import AcuantFaceMatch
@@ -16,19 +16,19 @@ import UIKit
   @objc public var error: AcuantCommon.AcuantError?
   @objc public static func initWithJSONDict(jsonDict: [Swift.String : Any]?) -> AcuantFaceMatch.FacialMatchResult
   @objc public class func createInstance() -> AcuantFaceMatch.FacialMatchResult
-  @objc override dynamic public init()
   @objc deinit
+  @objc override dynamic public init()
 }
 @objc @_inheritsConvenienceInitializers @objcMembers public class AcuantFaceMatch : ObjectiveC.NSObject {
   @objc public class func processFacialMatch(facialData: AcuantFaceMatch.FacialMatchData, delegate: AcuantFaceMatch.FacialMatchDelegate)
-  @objc override dynamic public init()
   @objc deinit
+  @objc override dynamic public init()
 }
 @objc @objcMembers public class FacialMatchData : ObjectiveC.NSObject {
   @objc public var faceImageOne: UIKit.UIImage
   @objc public var faceImageTwo: UIKit.UIImage
   @objc public init(faceImageOne: UIKit.UIImage, faceImageTwo: UIKit.UIImage)
   @objc public class func newInstance(faceImageOne: UIKit.UIImage, faceImageTwo: UIKit.UIImage) -> AcuantFaceMatch.FacialMatchData
-  @objc override dynamic public init()
   @objc deinit
+  @objc override dynamic public init()
 }

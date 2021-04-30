@@ -1,5 +1,5 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.4 (swiftlang-1205.0.26.9 clang-1205.0.19.55)
+// swift-compiler-version: Apple Swift version 5.3.2 (swiftlang-1200.0.45 clang-1200.0.32.28)
 // swift-module-flags: -target arm64-apple-ios11.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name AcuantImagePreparation
 import AVFoundation
 import AcuantCommon
@@ -11,13 +11,13 @@ public class AcuantCameraMetaData : Swift.Codable {
   public init()
   public func setCaptureType(captureType: Swift.String) -> AcuantImagePreparation.AcuantCameraMetaData
   @objc deinit
-  public func encode(to encoder: Swift.Encoder) throws
   required public init(from decoder: Swift.Decoder) throws
+  public func encode(to encoder: Swift.Encoder) throws
 }
 @objc @_hasMissingDesignatedInitializers @objcMembers public class DetectData : ObjectiveC.NSObject {
   @objc public class func newInstance(image: UIKit.UIImage) -> AcuantImagePreparation.DetectData
-  @objc override dynamic public init()
   @objc deinit
+  @objc override dynamic public init()
 }
 @objc public protocol InitializationDelegate {
   @objc func initializationFinished(error: AcuantCommon.AcuantError?)
@@ -45,8 +45,8 @@ public class AcuantCameraMetaData : Swift.Codable {
   @objc public class func detect(data: AcuantImagePreparation.CroppingData) -> AcuantCommon.Image
   @objc public class func sharpness(image: UIKit.UIImage) -> Swift.Int
   @objc public class func glare(image: UIKit.UIImage) -> Swift.Int
-  @objc override dynamic public init()
   @objc deinit
+  @objc override dynamic public init()
 }
 @objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objcMembers public class CroppingData : ObjectiveC.NSObject {
   @objc @available(*, deprecated, message: "Use newInstance passing the image")
