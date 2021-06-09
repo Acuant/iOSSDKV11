@@ -20,6 +20,17 @@ This document provides detailed information about the Acuant iOS SDK. The Acuant
 **Note:** The acceptable quality image is well-cropped, sharp and with no glare present, has a resolution of at least 300 dpi (for data capture) or 600 dpi (for authentication). The aspect ratio should be acceptable and matches an ID document.
 
 ----------
+
+## Support for Xcode v12.5 and the upcoming SDK v11.5.0 update
+
+To properly support Xcode v12.5, Acuant will begin distributing the SDK using XCFrameworks as of SDK v11.5.0. As a result, there will be some unavoidable backwards-incompatible changes. Acuant is providing this information as an early warning about the upcoming changes.
+
+- Class names -- Any class names that match the module names in the SDK will change. This is being done to work around a bug in Swift that causes major issues if the XCFramework has the same name as a class within it. This will require implementation changes and a mapping of each old name to each new name will be provided with the release.
+
+- IPLiveness -- Users of IPLiveness must implement two new callbacks: livenessTestConnecting() and livenessTestConnected(). This will allow the user to display any desired form of connecting message and the IPLiveness UI will only appear when it is fully ready for capture. In addition, users of IPLiveness might need to review localization as some strings have changed.
+
+----------
+
 ## Prerequisites
 
 - iOS version 11.0 or later
