@@ -162,49 +162,49 @@ import AcuantImagePreparation
                         return
                     }
                 }
-                
+
                 let frameSize = frame!.size
 
-                DispatchQueue.main.async{ [weak self] in
-                    if(self != nil) {
-                        let croppedImage = self!.croppedFrame
-                        var frameResult: FrameResult
-                        var scaledPoints : Array<CGPoint> = Array<CGPoint>()
-                        var MANDATORY_RESOLUTION_THRESHOLD = CaptureConstants.MANDATORY_RESOLUTION_THRESHOLD_DEFAULT
-                        
-                        if(croppedImage != nil){
-                            if(croppedImage!.points.count == 4 && self!.shouldShowBorder){
-                                croppedImage!.points.forEach{ point in
-                                    var scaled: CGPoint = CGPoint()
-                                    scaled.x = point.x/frameSize.width as CGFloat
-                                    scaled.y = point.y/frameSize.height  as CGFloat
-                                    scaledPoints.append(scaled)
-                                }
-                            }
-                            
-                            if(croppedImage!.isPassport){
-                                MANDATORY_RESOLUTION_THRESHOLD = Int(Double(frameSize.width) * CaptureConstants.CAMERA_PRIVEW_LARGER_DOCUMENT_DPI_RATIO)
-                                
-                            }else{
-                                MANDATORY_RESOLUTION_THRESHOLD = Int(Double(frameSize.width) * CaptureConstants.CAMERA_PRIVEW_SMALLER_DOCUMENT_DPI_RATIO)
+                DispatchQueue.main.async { [weak self] in
+                    guard let self = self else { return }
+
+                    let croppedImage = self.croppedFrame
+                    var frameResult: FrameResult
+                    var scaledPoints = Array<CGPoint>()
+                    var MANDATORY_RESOLUTION_THRESHOLD = CaptureConstants.MANDATORY_RESOLUTION_THRESHOLD_DEFAULT
+
+                    if let croppedImg = croppedImage {
+                        if self.isDocumentAligned(croppedImg.points), self.shouldShowBorder {
+                            croppedImg.points.forEach{ point in
+                                var scaled: CGPoint = CGPoint()
+                                scaled.x = point.x/frameSize.width as CGFloat
+                                scaled.y = point.y/frameSize.height  as CGFloat
+                                scaledPoints.append(scaled)
                             }
                         }
                         
-                        if(croppedImage == nil || croppedImage!.error?.errorCode == AcuantErrorCodes.ERROR_CouldNotCrop || (croppedImage!.dpi) < CaptureConstants.NO_DOCUMENT_DPI_THRESHOLD){
-                            frameResult = FrameResult.NO_DOCUMENT
-                            self!.frameCounter = 0
-                        }else if(croppedImage!.error?.errorCode == AcuantErrorCodes.ERROR_LowResolutionImage && (croppedImage!.dpi) < MANDATORY_RESOLUTION_THRESHOLD){
-                            frameResult = FrameResult.SMALL_DOCUMENT
-                            self!.frameCounter = 0
-                        }else if(croppedImage!.isCorrectAspectRatio == false){
-                            frameResult = FrameResult.BAD_ASPECT_RATIO
-                            self!.frameCounter = 0
-                        }else{
-                            frameResult = FrameResult.GOOD_DOCUMENT
+                        if croppedImg.isPassport {
+                            MANDATORY_RESOLUTION_THRESHOLD = Int(Double(frameSize.width) * CaptureConstants.CAMERA_PRIVEW_LARGER_DOCUMENT_DPI_RATIO)
+                        } else {
+                            MANDATORY_RESOLUTION_THRESHOLD = Int(Double(frameSize.width) * CaptureConstants.CAMERA_PRIVEW_SMALLER_DOCUMENT_DPI_RATIO)
                         }
-                        self!.frameDelegate?.onFrameAvailable(frameResult: frameResult, points: scaledPoints)
-                        self!.cropping = false
                     }
+
+                    if(croppedImage == nil || croppedImage!.error?.errorCode == AcuantErrorCodes.ERROR_CouldNotCrop || (croppedImage!.dpi) < CaptureConstants.NO_DOCUMENT_DPI_THRESHOLD){
+                        frameResult = FrameResult.NO_DOCUMENT
+                        self.frameCounter = 0
+                    }else if(croppedImage!.error?.errorCode == AcuantErrorCodes.ERROR_LowResolutionImage && (croppedImage!.dpi) < MANDATORY_RESOLUTION_THRESHOLD){
+                        frameResult = FrameResult.SMALL_DOCUMENT
+                        self.frameCounter = 0
+                    }else if(croppedImage!.isCorrectAspectRatio == false){
+                        frameResult = FrameResult.BAD_ASPECT_RATIO
+                        self.frameCounter = 0
+                    }else{
+                        frameResult = FrameResult.GOOD_DOCUMENT
+                    }
+
+                    self.frameDelegate?.onFrameAvailable(frameResult: frameResult, points: scaledPoints)
+                    self.cropping = false
                 }
             }
         }
@@ -277,7 +277,15 @@ import AcuantImagePreparation
     func detectImage(image:UIImage)->Image?{
         let detectData  = DetectData.newInstance(image: image)
         
-        let croppedImage = AcuantImagePreparation.detect(detectData: detectData)
+        let croppedImage = ImagePreparation.detect(detectData: detectData)
         return croppedImage
+    }
+
+    private func isDocumentAligned(_ points: [CGPoint]) -> Bool {
+        guard points.count == 4 else {
+            return false
+        }
+
+        return abs(points[1].x - points[3].x) > abs(points[1].y - points[3].y)
     }
 }

@@ -23,7 +23,7 @@ class NFCViewController: UIViewController, UITextFieldDelegate, OzoneServiceDele
     
     // MARK: - Properties
     public var result : AcuantMrzResult!
-    private let reader: IAcuantEchipReader = AcuantEchipReader()
+    private let reader: IEchipReader = EchipReader()
 
     @IBOutlet weak var assistanceLabel: UILabel!
     // MARK: - Life cycle
@@ -49,18 +49,20 @@ class NFCViewController: UIViewController, UITextFieldDelegate, OzoneServiceDele
     }
     
     func setDataPageAlert(){
-        if let mapped = AcuantEchipReader.getPositionOfChip(countryCode: result.country.uppercased()){
-            if(mapped.compare("unknown", options: NSString.CompareOptions.caseInsensitive) == .orderedSame){
-                self.showAlert(title: "Chip Location", message: "The passport chip is unkown for this country."){
-                    self.startScanning()
+        if (!result.threeLineMrz) {
+            if let mapped = EchipReader.getPositionOfChip(countryCode: result.country.uppercased()){
+                if(mapped.compare("unknown", options: NSString.CompareOptions.caseInsensitive) == .orderedSame){
+                    self.showAlert(title: "Chip Location", message: "The passport chip is unkown for this country."){
+                        self.startScanning()
+                    }
                 }
-            }
-            else{
-                let description = "The passport chip will be on the \(mapped)."
-                self.showAlert(title: "Chip Location", message: description){
-                    self.startScanning()
+                else{
+                    let description = "The passport chip will be on the \(mapped)."
+                    self.showAlert(title: "Chip Location", message: description){
+                        self.startScanning()
+                    }
+                    assistanceLabel.text! += "\(description)"
                 }
-                assistanceLabel.text! += "\(description)"
             }
         }
     }

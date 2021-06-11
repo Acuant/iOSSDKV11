@@ -16,7 +16,7 @@ public class CameraDocumentOverlayView : CAShapeLayer{
     private var isAnimating = false
     private var isShown = false
     
-    init(options: AcuantCameraOptions){
+    init(options: CameraOptions){
         self.alwaysHideBox = !(options.allowBox)
         super.init()
         self.fillColor = nil

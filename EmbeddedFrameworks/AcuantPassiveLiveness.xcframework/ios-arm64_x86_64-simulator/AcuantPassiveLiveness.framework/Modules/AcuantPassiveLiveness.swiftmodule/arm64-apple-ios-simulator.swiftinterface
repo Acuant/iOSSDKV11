@@ -1,0 +1,65 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.4 (swiftlang-1205.0.26.9 clang-1205.0.19.55)
+// swift-module-flags: -target arm64-apple-ios11.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name AcuantPassiveLiveness
+import AcuantCommon
+@_exported import AcuantPassiveLiveness
+import Foundation
+import Swift
+import UIKit
+public enum AcuantLivenessAssessment : Swift.String {
+  case Error
+  case PoorQuality
+  case Live
+  case NotLive
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public class AcuantLivenessRequest {
+  final public let image: UIKit.UIImage
+  public init(image: UIKit.UIImage)
+  @objc deinit
+}
+public class AcuantLivenessError {
+  final public let errorCode: AcuantPassiveLiveness.AcuantLivenessErrorCode?
+  final public let description: Swift.String?
+  public init(errorCode: AcuantPassiveLiveness.AcuantLivenessErrorCode? = nil, description: Swift.String? = nil)
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class PassiveLiveness {
+  public class func postLiveness(request: AcuantPassiveLiveness.AcuantLivenessRequest, callback: @escaping (AcuantPassiveLiveness.AcuantLivenessResponse?, AcuantPassiveLiveness.AcuantLivenessError?) -> ())
+  @objc deinit
+}
+public class AcuantLivenessResponse {
+  final public let score: Swift.Int
+  final public let result: AcuantPassiveLiveness.AcuantLivenessAssessment
+  public init(score: Swift.Int, result: AcuantPassiveLiveness.AcuantLivenessAssessment)
+  @objc deinit
+}
+public enum AcuantLivenessErrorCode : Swift.String {
+  case Unknown
+  case FaceTooClose
+  case FaceNotFound
+  case FaceTooSmall
+  case FaceAngleTooLarge
+  case FailedToReadImage
+  case InvalidRequest
+  case InvalidRequestSettings
+  case Unauthorized
+  case NotFound
+  case InternalError
+  case InvalidJson
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+extension AcuantPassiveLiveness.AcuantLivenessAssessment : Swift.Equatable {}
+extension AcuantPassiveLiveness.AcuantLivenessAssessment : Swift.Hashable {}
+extension AcuantPassiveLiveness.AcuantLivenessAssessment : Swift.RawRepresentable {}
+extension AcuantPassiveLiveness.AcuantLivenessErrorCode : Swift.Equatable {}
+extension AcuantPassiveLiveness.AcuantLivenessErrorCode : Swift.Hashable {}
+extension AcuantPassiveLiveness.AcuantLivenessErrorCode : Swift.RawRepresentable {}

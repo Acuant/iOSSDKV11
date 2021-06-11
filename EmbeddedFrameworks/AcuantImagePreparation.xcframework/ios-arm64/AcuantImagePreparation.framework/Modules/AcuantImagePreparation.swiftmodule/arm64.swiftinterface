@@ -1,0 +1,65 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.4 (swiftlang-1205.0.26.9 clang-1205.0.19.55)
+// swift-module-flags: -target arm64-apple-ios11.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name AcuantImagePreparation
+import AVFoundation
+import AcuantCommon
+@_exported import AcuantImagePreparation
+import Foundation
+import Swift
+import UIKit
+public class CameraMetaData : Swift.Codable {
+  public init()
+  public func setCaptureType(captureType: Swift.String) -> AcuantImagePreparation.CameraMetaData
+  @objc deinit
+  public func encode(to encoder: Swift.Encoder) throws
+  required public init(from decoder: Swift.Decoder) throws
+}
+@objc @_hasMissingDesignatedInitializers @objcMembers public class DetectData : ObjectiveC.NSObject {
+  @objc public class func newInstance(image: UIKit.UIImage) -> AcuantImagePreparation.DetectData
+  @objc override dynamic public init()
+  @objc deinit
+}
+@objc public protocol InitializationDelegate {
+  @objc func initializationFinished(error: AcuantCommon.AcuantError?)
+}
+@_hasMissingDesignatedInitializers public class AcuantImage {
+  final public let image: UIKit.UIImage
+  final public let data: Foundation.NSData
+  final public let sharpness: Swift.Int
+  final public let glare: Swift.Int
+  final public let dpi: Swift.Int
+  final public let isPassport: Swift.Bool
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers @objcMembers public class ImagePreparation : ObjectiveC.NSObject {
+  @objc public class func initialize(delegate: AcuantImagePreparation.InitializationDelegate?)
+  @objc public class func resize(image: UIKit.UIImage, targetWidth: Swift.Int) -> UIKit.UIImage?
+  @objc public class func crop(data: AcuantImagePreparation.CroppingData) -> AcuantCommon.Image
+  public class func createCameraImage(image: UIKit.UIImage, data: AcuantImagePreparation.CameraMetaData) -> AcuantCommon.Image
+  public class func evaluateImage(data: AcuantImagePreparation.CroppingData, callback: @escaping (AcuantImagePreparation.AcuantImage?, AcuantCommon.AcuantError?) -> ())
+  @available(*, deprecated, message: "Please initialize CroppingData with the Image from the camera and pass that as data: instead of image:.")
+  public class func evaluateImage(image: UIKit.UIImage, callback: @escaping (AcuantImagePreparation.AcuantImage?, AcuantCommon.AcuantError?) -> ())
+  @objc public class func cropMrz(detectData: AcuantImagePreparation.DetectData) -> AcuantCommon.Image
+  @objc public class func cropMrz(data: AcuantImagePreparation.CroppingData) -> AcuantCommon.Image
+  @objc public class func detect(detectData: AcuantImagePreparation.DetectData) -> AcuantCommon.Image
+  @objc public class func detect(data: AcuantImagePreparation.CroppingData) -> AcuantCommon.Image
+  @objc public class func sharpness(image: UIKit.UIImage) -> Swift.Int
+  @objc public class func glare(image: UIKit.UIImage) -> Swift.Int
+  @objc override dynamic public init()
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objcMembers public class CroppingData : ObjectiveC.NSObject {
+  @objc @available(*, deprecated, message: "Use newInstance passing the image")
+  public var image: UIKit.UIImage?
+  @objc public class func newInstance(image: AcuantCommon.Image) -> AcuantImagePreparation.CroppingData
+  @objc @available(*, deprecated, message: "Pass the image from the camera to newInstance")
+  public class func newInstance() -> AcuantImagePreparation.CroppingData
+  @available(*, deprecated, message: "Use the overload of this method that accepts an Image")
+  @objc override dynamic public init()
+  @objc deinit
+}
+public class ImagePreparationPackage : AcuantCommon.IAcuantPackage {
+  public init()
+  public func initialize()
+  @objc deinit
+}

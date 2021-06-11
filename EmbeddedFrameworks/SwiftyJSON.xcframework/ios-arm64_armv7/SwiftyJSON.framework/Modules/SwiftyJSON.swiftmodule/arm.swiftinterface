@@ -1,0 +1,363 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.4 (swiftlang-1205.0.26.9 clang-1205.0.19.55)
+// swift-module-flags: -target armv7-apple-ios9.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name SwiftyJSON
+import Foundation
+import Swift
+@_exported import SwiftyJSON
+public enum SwiftyJSONError : Swift.Int, Swift.Error {
+  case unsupportedType
+  case indexOutOfBounds
+  case elementTooDeep
+  case wrongType
+  case notExist
+  case invalidJSON
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+extension SwiftyJSONError : Foundation.CustomNSError {
+  public static var errorDomain: Swift.String {
+    get
+  }
+  public var errorCode: Swift.Int {
+    get
+  }
+  public var errorUserInfo: [Swift.String : Any] {
+    get
+  }
+}
+public enum Type : Swift.Int {
+  case number
+  case string
+  case bool
+  case array
+  case dictionary
+  case null
+  case unknown
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+public struct JSON {
+  public init(data: Foundation.Data, options opt: Foundation.JSONSerialization.ReadingOptions = []) throws
+  public init(_ object: Any)
+  public init(parseJSON jsonString: Swift.String)
+  public mutating func merge(with other: SwiftyJSON.JSON) throws
+  public func merged(with other: SwiftyJSON.JSON) throws -> SwiftyJSON.JSON
+  public var type: SwiftyJSON.`Type` {
+    get
+  }
+  public var error: SwiftyJSON.SwiftyJSONError? {
+    get
+  }
+  public var object: Any {
+    get
+    set
+  }
+  @available(*, unavailable, renamed: "null")
+  public static var nullJSON: SwiftyJSON.JSON {
+    get
+  }
+  public static var null: SwiftyJSON.JSON {
+    get
+  }
+}
+public enum Index<T> : Swift.Comparable {
+  case array(Swift.Int)
+  case dictionary(Swift.DictionaryIndex<Swift.String, T>)
+  case null
+  public static func == (lhs: SwiftyJSON.Index<T>, rhs: SwiftyJSON.Index<T>) -> Swift.Bool
+  public static func < (lhs: SwiftyJSON.Index<T>, rhs: SwiftyJSON.Index<T>) -> Swift.Bool
+}
+public typealias JSONIndex = SwiftyJSON.Index<SwiftyJSON.JSON>
+public typealias JSONRawIndex = SwiftyJSON.Index<Any>
+extension JSON : Swift.Collection {
+  public typealias Index = SwiftyJSON.JSONRawIndex
+  public var startIndex: SwiftyJSON.JSON.Index {
+    get
+  }
+  public var endIndex: SwiftyJSON.JSON.Index {
+    get
+  }
+  public func index(after i: SwiftyJSON.JSON.Index) -> SwiftyJSON.JSON.Index
+  public subscript(position: SwiftyJSON.JSON.Index) -> (Swift.String, SwiftyJSON.JSON) {
+    get
+  }
+  public typealias Element = (Swift.String, SwiftyJSON.JSON)
+  public typealias Indices = Swift.DefaultIndices<SwiftyJSON.JSON>
+  public typealias Iterator = Swift.IndexingIterator<SwiftyJSON.JSON>
+  public typealias SubSequence = Swift.Slice<SwiftyJSON.JSON>
+}
+public enum JSONKey {
+  case index(Swift.Int)
+  case key(Swift.String)
+}
+public protocol JSONSubscriptType {
+  var jsonKey: SwiftyJSON.JSONKey { get }
+}
+extension Int : SwiftyJSON.JSONSubscriptType {
+  public var jsonKey: SwiftyJSON.JSONKey {
+    get
+  }
+}
+extension String : SwiftyJSON.JSONSubscriptType {
+  public var jsonKey: SwiftyJSON.JSONKey {
+    get
+  }
+}
+extension JSON {
+  public subscript(path: [SwiftyJSON.JSONSubscriptType]) -> SwiftyJSON.JSON {
+    get
+    set
+  }
+  public subscript(path: SwiftyJSON.JSONSubscriptType...) -> SwiftyJSON.JSON {
+    get
+    set
+  }
+}
+extension JSON : Swift.ExpressibleByStringLiteral {
+  public init(stringLiteral value: Swift.StringLiteralType)
+  public init(extendedGraphemeClusterLiteral value: Swift.StringLiteralType)
+  public init(unicodeScalarLiteral value: Swift.StringLiteralType)
+  public typealias ExtendedGraphemeClusterLiteralType = Swift.StringLiteralType
+  public typealias StringLiteralType = Swift.StringLiteralType
+  public typealias UnicodeScalarLiteralType = Swift.StringLiteralType
+}
+extension JSON : Swift.ExpressibleByIntegerLiteral {
+  public init(integerLiteral value: Swift.IntegerLiteralType)
+  public typealias IntegerLiteralType = Swift.IntegerLiteralType
+}
+extension JSON : Swift.ExpressibleByBooleanLiteral {
+  public init(booleanLiteral value: Swift.BooleanLiteralType)
+  public typealias BooleanLiteralType = Swift.BooleanLiteralType
+}
+extension JSON : Swift.ExpressibleByFloatLiteral {
+  public init(floatLiteral value: Swift.FloatLiteralType)
+  public typealias FloatLiteralType = Swift.FloatLiteralType
+}
+extension JSON : Swift.ExpressibleByDictionaryLiteral {
+  public init(dictionaryLiteral elements: (Swift.String, Any)...)
+  public typealias Key = Swift.String
+  public typealias Value = Any
+}
+extension JSON : Swift.ExpressibleByArrayLiteral {
+  public init(arrayLiteral elements: Any...)
+  public typealias ArrayLiteralElement = Any
+}
+extension JSON : Swift.RawRepresentable {
+  public init?(rawValue: Any)
+  public var rawValue: Any {
+    get
+  }
+  public func rawData(options opt: Foundation.JSONSerialization.WritingOptions = JSONSerialization.WritingOptions(rawValue: 0)) throws -> Foundation.Data
+  public func rawString(_ encoding: Swift.String.Encoding = .utf8, options opt: Foundation.JSONSerialization.WritingOptions = .prettyPrinted) -> Swift.String?
+  public func rawString(_ options: [SwiftyJSON.writingOptionsKeys : Any]) -> Swift.String?
+  public typealias RawValue = Any
+}
+extension JSON : Swift.CustomStringConvertible, Swift.CustomDebugStringConvertible {
+  public var description: Swift.String {
+    get
+  }
+  public var debugDescription: Swift.String {
+    get
+  }
+}
+extension JSON {
+  public var array: [SwiftyJSON.JSON]? {
+    get
+  }
+  public var arrayValue: [SwiftyJSON.JSON] {
+    get
+  }
+  public var arrayObject: [Any]? {
+    get
+    set
+  }
+}
+extension JSON {
+  public var dictionary: [Swift.String : SwiftyJSON.JSON]? {
+    get
+  }
+  public var dictionaryValue: [Swift.String : SwiftyJSON.JSON] {
+    get
+  }
+  public var dictionaryObject: [Swift.String : Any]? {
+    get
+    set
+  }
+}
+extension JSON {
+  public var bool: Swift.Bool? {
+    get
+    set
+  }
+  public var boolValue: Swift.Bool {
+    get
+    set
+  }
+}
+extension JSON {
+  public var string: Swift.String? {
+    get
+    set
+  }
+  public var stringValue: Swift.String {
+    get
+    set
+  }
+}
+extension JSON {
+  public var number: Foundation.NSNumber? {
+    get
+    set
+  }
+  public var numberValue: Foundation.NSNumber {
+    get
+    set
+  }
+}
+extension JSON {
+  public var null: Foundation.NSNull? {
+    get
+    set
+  }
+  public func exists() -> Swift.Bool
+}
+extension JSON {
+  public var url: Foundation.URL? {
+    get
+    set
+  }
+}
+extension JSON {
+  public var double: Swift.Double? {
+    get
+    set
+  }
+  public var doubleValue: Swift.Double {
+    get
+    set
+  }
+  public var float: Swift.Float? {
+    get
+    set
+  }
+  public var floatValue: Swift.Float {
+    get
+    set
+  }
+  public var int: Swift.Int? {
+    get
+    set
+  }
+  public var intValue: Swift.Int {
+    get
+    set
+  }
+  public var uInt: Swift.UInt? {
+    get
+    set
+  }
+  public var uIntValue: Swift.UInt {
+    get
+    set
+  }
+  public var int8: Swift.Int8? {
+    get
+    set
+  }
+  public var int8Value: Swift.Int8 {
+    get
+    set
+  }
+  public var uInt8: Swift.UInt8? {
+    get
+    set
+  }
+  public var uInt8Value: Swift.UInt8 {
+    get
+    set
+  }
+  public var int16: Swift.Int16? {
+    get
+    set
+  }
+  public var int16Value: Swift.Int16 {
+    get
+    set
+  }
+  public var uInt16: Swift.UInt16? {
+    get
+    set
+  }
+  public var uInt16Value: Swift.UInt16 {
+    get
+    set
+  }
+  public var int32: Swift.Int32? {
+    get
+    set
+  }
+  public var int32Value: Swift.Int32 {
+    get
+    set
+  }
+  public var uInt32: Swift.UInt32? {
+    get
+    set
+  }
+  public var uInt32Value: Swift.UInt32 {
+    get
+    set
+  }
+  public var int64: Swift.Int64? {
+    get
+    set
+  }
+  public var int64Value: Swift.Int64 {
+    get
+    set
+  }
+  public var uInt64: Swift.UInt64? {
+    get
+    set
+  }
+  public var uInt64Value: Swift.UInt64 {
+    get
+    set
+  }
+}
+extension JSON : Swift.Comparable {
+}
+public func == (lhs: SwiftyJSON.JSON, rhs: SwiftyJSON.JSON) -> Swift.Bool
+public func <= (lhs: SwiftyJSON.JSON, rhs: SwiftyJSON.JSON) -> Swift.Bool
+public func >= (lhs: SwiftyJSON.JSON, rhs: SwiftyJSON.JSON) -> Swift.Bool
+public func > (lhs: SwiftyJSON.JSON, rhs: SwiftyJSON.JSON) -> Swift.Bool
+public func < (lhs: SwiftyJSON.JSON, rhs: SwiftyJSON.JSON) -> Swift.Bool
+public enum writingOptionsKeys {
+  case jsonSerialization
+  case castNilToNSNull
+  case maxObjextDepth
+  case encoding
+  public static func == (a: SwiftyJSON.writingOptionsKeys, b: SwiftyJSON.writingOptionsKeys) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+extension JSON : Swift.Codable {
+  public init(from decoder: Swift.Decoder) throws
+  public func encode(to encoder: Swift.Encoder) throws
+}
+extension SwiftyJSON.SwiftyJSONError : Swift.Equatable {}
+extension SwiftyJSON.SwiftyJSONError : Swift.Hashable {}
+extension SwiftyJSON.SwiftyJSONError : Swift.RawRepresentable {}
+extension SwiftyJSON.`Type` : Swift.Equatable {}
+extension SwiftyJSON.`Type` : Swift.Hashable {}
+extension SwiftyJSON.`Type` : Swift.RawRepresentable {}
+extension SwiftyJSON.writingOptionsKeys : Swift.Equatable {}
+extension SwiftyJSON.writingOptionsKeys : Swift.Hashable {}

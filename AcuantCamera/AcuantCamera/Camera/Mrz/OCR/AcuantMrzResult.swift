@@ -18,9 +18,12 @@ import Foundation
     public var gender: String = ""
     public var passportExpiration: String = ""
     public var personalDocNumber: String = ""
+    public var checkSumChar1: String = ""
+    public var optional1: String = ""
     public var checkSumResult1: Bool = false
     public var checkSumResult2: Bool = false
     public var checkSumResult3: Bool = false
     public var checkSumResult4: Bool = false
     public var checkSumResult5: Bool = false
+    public var threeLineMrz: Bool = false
 }

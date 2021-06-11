@@ -1,0 +1,4 @@
+framework module AcuantCommon {
+  header "AcuantCommon-Swift.h"
+  requires objc
+}

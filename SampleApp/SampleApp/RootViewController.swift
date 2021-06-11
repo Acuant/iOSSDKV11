@@ -136,7 +136,7 @@ class RootViewController: UIViewController{
     
     private func initialize(){
         let initalizer: IAcuantInitializer = AcuantInitializer()
-        var packages : Array<IAcuantPackage> = [AcuantImagePreparationPackage()]
+        var packages : Array<IAcuantPackage> = [ImagePreparationPackage()]
         
         if #available(iOS 13, *) {
             packages.append(AcuantEchipPackage())
@@ -153,7 +153,7 @@ class RootViewController: UIViewController{
                         }
                         
                         if(!self.isKeyless){
-                            AcuantIPLiveness.getLivenessTestCredential(delegate: self)
+                            IPLiveness.getLivenessTestCredential(delegate: self)
                         }
                         else{
                             self.hideProgressView()
@@ -260,7 +260,7 @@ class RootViewController: UIViewController{
             //use for testing purposes
             //self.saveToFile(data: image.data)
         
-            AcuantDocumentProcessing.uploadImage(instancdId: self.documentInstance!, data: evaluted, options: self.idOptions, delegate: self)
+            DocumentProcessing.uploadImage(instancdId: self.documentInstance!, data: evaluted, options: self.idOptions, delegate: self)
         }
     }
     
@@ -317,14 +317,25 @@ extension RootViewController{
             else{
                 self.resetData()
                 
-                if #available (iOS 13, *){
-                    self.showMrzCamera()
+                if #available (iOS 13, *) {
+                    showMrzReaderHelperController()
                 }
                 else{
                     CustomAlerts.displayError(message: "Need iOS 13 or later")
                 }
             }
         }
+    }
+
+    private func showMrzReaderHelperController() {
+        guard let mrzHelpVc =
+                storyboard?.instantiateViewController(withIdentifier: "MrzHelpViewController")
+                as? MrzHelpViewController else {
+            fatalError("Failed to instatiate MrzHelpViewController")
+        }
+
+        mrzHelpVc.delegate = self
+        navigationController?.pushViewController(mrzHelpVc, animated: true)
     }
 }
 //ImagePreparation - END =============
@@ -337,7 +348,7 @@ extension RootViewController: CameraCaptureDelegate{
         }
         else if (image.image != nil) {
             self.showProgressView(text: "Processing...")
-            AcuantImagePreparation.evaluateImage(data: CroppingData.newInstance(image: image)){
+            ImagePreparation.evaluateImage(data: CroppingData.newInstance(image: image)){
                 result, error in
                 
                 DispatchQueue.main.async {
@@ -364,47 +375,12 @@ extension RootViewController: CameraCaptureDelegate{
         }
     }
     
-    @available (iOS 13, *)
-    func showMrzCamera(){
-        let controller = AcuantMrzCameraController()
-        controller.customDisplayMessage = {
-            state in
-            
-            switch(state){
-            case .None, .Align:
-                return ""
-            case .MoveCloser:
-                return "Move Closer"
-            case .TooClose:
-                return "Too Close!"
-            case .Good:
-                return "Reading MRZ"
-            case .Captured:
-                return "Captured"
-            }
-        }
-        controller.callback = { [weak self]
-            result in
-            if let success = result{
-                DispatchQueue.main.async {
-                    self?.navigationController?.popViewController(animated: true)
-                    let storyBoard = UIStoryboard.init(name: "Main", bundle: nil)
-                    let vc = storyBoard.instantiateViewController(withIdentifier: "NFCViewController") as! NFCViewController
-                    vc.result = success
-                    self?.navigationController?.pushViewController(vc, animated: true)
-                }
-            }
-        }
-        
-        self.navigationController?.pushViewController(controller, animated: false)
-    }
-    
     func showDocumentCaptureCamera(){
         //handler in .requestAccess is needed to process user's answer to our request
         AVCaptureDevice.requestAccess(for: .video) { [weak self] success in
             if success { // if request is granted (success is true)
                 DispatchQueue.main.async {
-                    let options = AcuantCameraOptions(digitsToShow: 2, autoCapture:self!.autoCapture, hideNavigationBar: true)
+                    let options = CameraOptions(digitsToShow: 2, autoCapture:self!.autoCapture, hideNavigationBar: true)
                     let documentCameraController = DocumentCameraController.getCameraController(delegate:self!, cameraOptions: options)
                     self!.navigationController?.pushViewController(documentCameraController, animated: false)
                     
@@ -437,7 +413,7 @@ extension RootViewController: CameraCaptureDelegate{
             self.showProgressView(text: "Processing...")
             
             DispatchQueue.global().async {
-                AcuantImagePreparation.evaluateImage(data: CroppingData.newInstance(image: image)) {image,_ in
+                ImagePreparation.evaluateImage(data: CroppingData.newInstance(image: image)) {image,_ in
                     DispatchQueue.main.async {
                         self.hideProgressView()
                         callback(image)
@@ -482,7 +458,7 @@ extension RootViewController: CreateInstanceDelegate{
     private func createInstance(){
         if(!self.isKeyless){
             self.createInstanceGroup.enter()
-            AcuantDocumentProcessing.createInstance(options: self.idOptions, delegate:self)
+            DocumentProcessing.createInstance(options: self.idOptions, delegate:self)
         }
     }
 }
@@ -497,7 +473,7 @@ extension RootViewController:UploadImageDelegate{
         })
         alert.addAction(UIAlertAction(title: "SKIP", style: UIAlertAction.Style.default)
         { action -> Void in
-            AcuantDocumentProcessing.getData(instanceId: self.documentInstance!, isHealthCard: true, delegate: self)
+            DocumentProcessing.getData(instanceId: self.documentInstance!, isHealthCard: true, delegate: self)
             self.showProgressView(text: "Processing...")
         })
         self.present(alert, animated: true, completion: nil)
@@ -508,7 +484,7 @@ extension RootViewController:UploadImageDelegate{
             self.showFacialCaptureInterface()
         }
         self.getDataGroup.enter()
-        AcuantDocumentProcessing.getData(instanceId: self.documentInstance!, isHealthCard: false, delegate: self)
+        DocumentProcessing.getData(instanceId: self.documentInstance!, isHealthCard: false, delegate: self)
         self.showProgressView(text: "Processing...")
     }
     
@@ -522,7 +498,7 @@ extension RootViewController:UploadImageDelegate{
                     self.handleHealthcardFront()
                 }else{
                     // Get Data
-                    AcuantDocumentProcessing.getData(instanceId: self.documentInstance!, isHealthCard: true, delegate: self)
+                    DocumentProcessing.getData(instanceId: self.documentInstance!, isHealthCard: true, delegate: self)
                     self.showProgressView(text: "Processing...")
                 }
             }else{
@@ -591,7 +567,7 @@ extension RootViewController:GetDataDelegate{
                 }
                 
                 showHealthCardResult(data: dataArray, front: healthCardResult.frontImage, back: healthCardResult.backImage)
-                AcuantDocumentProcessing.deleteInstance(instanceId: healthCardResult.instanceID!,type:DeleteType.MedicalCard, delegate: self)
+                DocumentProcessing.deleteInstance(instanceId: healthCardResult.instanceID!,type:DeleteType.MedicalCard, delegate: self)
                 
             }else{
                 let idResult = processingResult as! IDResult
@@ -735,7 +711,7 @@ extension RootViewController : LivenessSetupDelegate{
     func livenessSetupSucceeded(result: LivenessSetupResult) {
         ipLivenessSetupResult = result
         result.ui.title = ""
-        AcuantIPLiveness.performLivenessTest(setupResult: result, delegate: self)
+        IPLiveness.performLivenessTest(setupResult: result, delegate: self)
     }
     
     func livenessSetupFailed(error: AcuantError) {
@@ -746,7 +722,7 @@ extension RootViewController : LivenessSetupDelegate{
 extension RootViewController : LivenessTestDelegate{
     func livenessTestCompleted() {
         if(ipLivenessSetupResult != nil){
-            AcuantIPLiveness.getLivenessTestResult(token: ipLivenessSetupResult!.token, userId: ipLivenessSetupResult!.userId, delegate: self)
+            IPLiveness.getLivenessTestResult(token: ipLivenessSetupResult!.token, userId: ipLivenessSetupResult!.userId, delegate: self)
         }
         else{
             livenessTestFailed(error: AcuantError())
@@ -756,6 +732,18 @@ extension RootViewController : LivenessTestDelegate{
     func livenessTestProcessing(progress: Double, message: String) {
         DispatchQueue.main.async {
             self.showProgressView(text: "\(Int(progress * 100))%")
+        }
+    }
+    
+    func livenessTestConnecting() {
+        DispatchQueue.main.async {
+            self.showProgressView(text: "Connecting...")
+        }
+    }
+    
+    func livenessTestConnected() {
+        DispatchQueue.main.async {
+            self.hideProgressView()
         }
     }
     
@@ -798,7 +786,7 @@ extension RootViewController : LivenessTestResultDelegate{
 extension RootViewController {
     private func processPassiveLiveness(image:UIImage){
         self.faceProcessingGroup.enter()
-        AcuantPassiveLiveness.postLiveness(request: AcuantLivenessRequest(image: image)){ [weak self]
+        PassiveLiveness.postLiveness(request: AcuantLivenessRequest(image: image)){ [weak self]
             (result, error) in
             if(result != nil && (result?.result == AcuantLivenessAssessment.Live || result?.result == AcuantLivenessAssessment.NotLive)){
                 self?.livenessString = "Liveness : \(result!.result.rawValue)"
@@ -812,7 +800,7 @@ extension RootViewController {
     
     public func showPassiveLiveness(){
         DispatchQueue.main.async {
-            let controller = AcuantFaceCaptureController()
+            let controller = FaceCaptureController()
             controller.callback = { [weak self]
                 (image) in
                 
@@ -840,7 +828,7 @@ extension RootViewController {
             
         }
         else if (faceIndex == 2){
-            AcuantIPLiveness.performLivenessSetup(delegate: self)
+            IPLiveness.performLivenessSetup(delegate: self)
         }
         else{
             self.showResultGroup.leave()
@@ -881,7 +869,7 @@ extension RootViewController : FacialMatchDelegate{
                         
                         if(downloadedImage != nil){
                             let facialMatchData = FacialMatchData(faceImageOne: downloadedImage!, faceImageTwo: image!)
-                            AcuantFaceMatch.processFacialMatch(facialData: facialMatchData, delegate: self)
+                            FaceMatch.processFacialMatch(facialData: facialMatchData, delegate: self)
                         }
                         else{
                             self.faceProcessingGroup.leave()
@@ -904,3 +892,46 @@ extension RootViewController : FacialMatchDelegate{
     }
 }
 //FaceMatch - END ============
+
+// MARK: - MrzHelpViewControllerDelegate
+
+extension RootViewController: MrzHelpViewControllerDelegate {
+
+    func dismissed() {
+        guard #available(iOS 13, *) else { return }
+
+        showMrzCamera()
+    }
+
+    @available (iOS 13, *)
+    private func showMrzCamera() {
+        let controller = AcuantMrzCameraController()
+        controller.customDisplayMessage = { state in
+            switch state {
+            case .None, .Align:
+                return ""
+            case .MoveCloser:
+                return "Move Closer"
+            case .TooClose:
+                return "Too Close!"
+            case .Good:
+                return "Reading MRZ"
+            case .Captured:
+                return "Captured"
+            }
+        }
+        controller.callback = { [weak self] result in
+            if let success = result {
+                DispatchQueue.main.async {
+                    self?.navigationController?.popViewController(animated: true)
+                    let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                    let vc = storyboard.instantiateViewController(withIdentifier: "NFCViewController") as! NFCViewController
+                    vc.result = success
+                    self?.navigationController?.pushViewController(vc, animated: true)
+                }
+            }
+        }
+
+        navigationController?.pushViewController(controller, animated: false)
+    }
+}

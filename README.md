@@ -1,6 +1,6 @@
-# Acuant iOS SDK v11.4.9
+# Acuant iOS SDK v11.5.0
 
-**March 2021**
+**June 2021**
 
 See [https://github.com/Acuant/iOSSDKV11/releases](https://github.com/Acuant/iOSSDKV11/releases) for release notes.
 
@@ -21,20 +21,16 @@ This document provides detailed information about the Acuant iOS SDK. The Acuant
 
 ----------
 
-## Support for Xcode v12.5 and the upcoming SDK v11.5.0 update
+## Updating to 11.5.0
 
-To properly support Xcode v12.5, Acuant will begin distributing the SDK using XCFrameworks as of SDK v11.5.0. As a result, there will be some unavoidable backwards-incompatible changes. Acuant is providing this information as an early warning about the upcoming changes.
-
-- Class names -- Any class names that match the module names in the SDK will change. This is being done to work around a bug in Swift that causes major issues if the XCFramework has the same name as a class within it. This will require implementation changes and a mapping of each old name to each new name will be provided with the release.
-
-- IPLiveness -- Users of IPLiveness must implement two new callbacks: livenessTestConnecting() and livenessTestConnected(). This will allow the user to display any desired form of connecting message and the IPLiveness UI will only appear when it is fully ready for capture. In addition, users of IPLiveness might need to review localization as some strings have changed.
+Please see the provided [migration details document](iOS migration details.pdf) for information about updating to 11.5.0.
 
 ----------
 
 ## Prerequisites
 
 - iOS version 11.0 or later
-- Xcode 12.4
+- Xcode 12.5
 
 ## Modules
 
@@ -100,13 +96,13 @@ The SDK includes the following modules:
  -	**AcuantFaceMatch**
  -	**AcuantEchipReader**
  -	**AcuantCamera**
- 		- TesseractOCRiOS.framework
+ 		- TesseractOCR.framework
  -	**AcuantIPLiveness**
-	 	- iProov.framework
- 		- KeychainAccess.framework
- 		- SocketIO.framework
- 		- Starscream.framework
- 		- SwiftyJSON.framework
+	 	- iProov.xcframework
+ 		- KeychainAccess.xcframework
+ 		- SocketIO.xcframework
+ 		- Starscream.xcframework
+ 		- SwiftyJSON.xcframework
 
 	![](docs/embeded_framework.png)
 	
@@ -137,7 +133,7 @@ The SDK includes the following modules:
 1. Add the following in the podfile to get **all** the modules:
 
 		platform :ios, '11'
-		pod 'AcuantiOSSDKV11', '~> 11.4.9' #for all packages
+		pod 'AcuantiOSSDKV11', '~> 11.5.0' #for all packages
 		
  Alternatively, use the following to add **independent** modules in the podfile:
 		
@@ -305,7 +301,7 @@ Before you use the SDK, you must initialize it, either by using the credentials 
 
 1. Select packages for initialization.
 
-		let packages = [AcuantEchipPackage(), AcuantImagePreparationPackage()]
+		let packages = [AcuantEchipPackage(), ImagePreparationPackage()]
 
 1. Initialize the SDK. 
 		
@@ -382,9 +378,9 @@ AcuantCamera is best used in portrait mode. Lock the orientation of the app befo
 	    	func setCapturedImage(image:Image, barcodeString:String?)
 		}
 		
-1. Open the camera. Options can be defined through an options object. See **AcuantCameraOptions** for all configurable fields.
+1. Open the camera. Options can be defined through an options object. See **CameraOptions** for all configurable fields.
 		
-		let options = AcuantCameraOptions(autoCapture: true, hideNavigationBar: true)
+		let options = CameraOptions(autoCapture: true, hideNavigationBar: true)
 		let documentCameraController = DocumentCameraController.getCameraController(delegate:self!, cameraOptions: options)
         
 		navigationController.pushViewController(documentCameraController, animated: false)
@@ -473,7 +469,7 @@ AcuantCamera is best used in portrait mode. Lock the orientation of the app befo
 		}
 		
 		let vc = AcuantMrzCameraController()
-		vc.options = AcuantCameraOptions()
+		vc.options = CameraOptions()
 		
 		vc.customDisplayMessage : ((MrzCameraState) -> String) = {
 			state in
@@ -544,7 +540,7 @@ AcuantCamera is best used in portrait mode. Lock the orientation of the app befo
 
 1. Create an instance of Acuant Reader. Make sure this object does not get disposed while reading.
 
-		private let reader: IAcuantEchipReader = AcuantEchipReader()
+		private let reader: IEchipReader = EchipReader()
 		
 1. Create a session request.
 
@@ -759,7 +755,7 @@ After you capture a document image and completed crop, it can be processed using
 		"acuant_face_camera_capturing_1" = "Capturing\n1...";	
 1. Set any UI Customizations needed:
 		
-		class FaceAcuantCameraOptions{
+		class FaceCameraOptions{
 			public let totalCaptureTime: Int //totoal time to capture
 			public let bracketColorDefault: CGColor //bracket color default (no face)
 			public let bracketColorError: CGColor //bracket color error (error in face requirements)
@@ -772,11 +768,11 @@ After you capture a document image and completed crop, it can be processed using
 		}
 		
 		//example
-		let options = FaceAcuantCameraOptions()
+		let options = FaceCameraOptions()
 		
 1. Get the Controller and push to navigationController:
 
-		let controller = AcuantFaceCaptureController()
+		let controller = FaceCaptureController()
 		controller.options = options
 		controller.callback = { [weak self]
 			(image: UIImage?) in
@@ -795,7 +791,7 @@ After you capture a document image and completed crop, it can be processed using
 ----------
 
 ### Acuant Passive Liveness
-Acuant recommends using the **LiveAssessment** property rather than the score) to evaluate response. **AcuantPassiveLiveness.startSelfieCapture** will return a rescaled image.
+Acuant recommends using the **LiveAssessment** property rather than the score) to evaluate response. **PassiveLiveness.startSelfieCapture** will return a rescaled image.
 
 Follow these recommendations to effectively process an image for passive liveness:
 #### Image requirements
@@ -864,7 +860,7 @@ The following may significantly increase errors or false results:
 		}
 		
 		//example
-		AcuantPassiveLiveness.postLiveness(request: AcuantLivenessRequest(image: image)){ [weak self]
+		PassiveLiveness.postLiveness(request: AcuantLivenessRequest(image: image)){ [weak self]
 			(result: AcuantLivenessResponse?, error: AcuantLivenessError?) in
 				//response
 		}
@@ -901,13 +897,13 @@ This module checks for liveness (whether the subject is a live person) by using 
     }
 
 	public protocol AcuantHGLiveFaceCaptureDelegate {
-			func liveFaceDetailsCaptured(liveFaceDetails: LiveFaceDetails?, faceType: AcuantHGLiveness.AcuantFaceType)
+			func liveFaceDetailsCaptured(liveFaceDetails: LiveFaceDetails?, faceType: HGLiveness.AcuantFaceType)
 	}
 
 	public class func getFaceCaptureSession(delegate:AcuantHGLiveFaceCaptureDelegate?, captureDevice: AVCaptureDevice?)-> FaceCaptureSession
 
     
-    let faceCaptureSession = AcuantHGLiveness.getFaceCaptureSession(delegate: self, captureDevice: captureDevice)
+    let faceCaptureSession = HGLiveness.getFaceCaptureSession(delegate: self, captureDevice: captureDevice)
 
 ----------
 
@@ -918,7 +914,7 @@ The **AcuantIPLiveness** module checks whether the subject is a live person.
 1. Run the setup:
 
 
-    	AcuantIPLiveness.performLivenessSetup(delegate:LivenessSetupDelegate)
+    	IPLiveness.performLivenessSetup(delegate:LivenessSetupDelegate)
 
     	public protocol LivenessSetupDelegate{
     		func livenessSetupSucceeded(result:LivenessSetupResult) // Called when setup succeeds
@@ -952,18 +948,20 @@ The **AcuantIPLiveness** module checks whether the subject is a live person.
 		setupResult.ui.scanLineDisabled = false // Disables the vertical sweeping scanline while flashing
 		setupResult.ui.autoStartDisabled = false // Disable the "auto start" countdown functionality. The user will have to tap the screen to start liveness test
 
-		AcuantIPLiveness.performLivenessTest(setupResult:LivenessSetupResult, delegate:LivenessTestDelegate)
+		IPLiveness.performLivenessTest(setupResult:LivenessSetupResult, delegate:LivenessTestDelegate)
 		
 		public protocol LivenessTestDelegate{
 			func livenessTestCompleted() // This is for the test; called when Enroll is complete
 			func livenessTestCompletedWithError(error:AcuantError?) // This is for the test; called when Enroll is complete and error occured
 			func livenessTestProcessing(progress: Double, message: String) // This is for real-time notifications of progress of liveness test. It will be called after user captures live face. It is intended to be used for custom UI progress notification.
+			func livenessTestConnecting() // Will be called before face capture starts. Use for custom UI while test is connecting.
+			func livenessTestConnected() // Will be called as face capture starts. Can usually be blank or can be used to clear any custom connecting UI if needed.
 
 		}
 		
 3. Get the liveness test result:
 	
-		AcuantIPLiveness.getLivenessTestResult(token:String,userId:String,delegate:LivenessTestResultDelegate)
+		IPLiveness.getLivenessTestResult(token:String,userId:String,delegate:LivenessTestResultDelegate)
 		
 		public protocol LivenessTestResultDelegate{
     		func livenessTestResultReceived(result:LivenessResult) // Called when test result was received successfully
@@ -1087,9 +1085,9 @@ This module is used to match two facial images:
     	public init(){}
     }
     
-### AcuantCameraOptions
+### CameraOptions
 
-	public class AcuantCameraOptions{    
+	public class CameraOptions{    
 	    public let timeInMsPerDigit: Int
 	    public let digitsToShow: Int
 	    public let allowBox: Bool

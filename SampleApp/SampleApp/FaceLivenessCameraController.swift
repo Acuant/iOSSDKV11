@@ -14,7 +14,7 @@ import AcuantImagePreparation
 
 class FaceLivenessCameraController : UIViewController, AcuantHGLiveFaceCaptureDelegate{
     
-    weak public var delegate : AcuantHGLivenessDelegate?
+    weak public var delegate : HGLivenessDelegate?
     private var overlayView : UIView?
     private var captured = false
     private var captureSession: FaceCaptureSession!
@@ -73,7 +73,7 @@ class FaceLivenessCameraController : UIViewController, AcuantHGLiveFaceCaptureDe
         if let frontCameraDevice = AVCaptureDevice.default(.builtInWideAngleCamera, for: AVMediaType.video, position: .front) {
             captureDevice = frontCameraDevice
         }
-        captureSession = AcuantHGLiveness.getFaceCaptureSession(delegate: self,captureDevice: captureDevice)
+        captureSession = HGLiveness.getFaceCaptureSession(delegate: self,captureDevice: captureDevice)
         captureSession?.start()
         
         videoPreviewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
@@ -151,7 +151,7 @@ class FaceLivenessCameraController : UIViewController, AcuantHGLiveFaceCaptureDe
                 if(self.captured == false){
                     let img = (liveFaceDetails?.image)!
                     self.captured = true
-                    liveFaceDetails?.image = AcuantImagePreparation.resize(image: img, targetWidth: getTargetWidth(width: Int(img.size.width), height: Int(img.size.height)))
+                    liveFaceDetails?.image = ImagePreparation.resize(image: img, targetWidth: getTargetWidth(width: Int(img.size.width), height: Int(img.size.height)))
                     self.navigationController?.popViewController(animated: true)
                     delegate?.liveFaceCaptured(image: (liveFaceDetails?.image)!)
                 }

@@ -1,0 +1,11 @@
+framework module AcuantImagePreparation {
+  umbrella header "AcuantImagePreparation.h"
+
+  export *
+  module * { export * }
+}
+
+module AcuantImagePreparation.Swift {
+    header "AcuantImagePreparation-Swift.h"
+    requires objc
+}

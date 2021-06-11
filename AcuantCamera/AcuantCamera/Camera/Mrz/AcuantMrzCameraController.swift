@@ -20,7 +20,7 @@ import AcuantCommon
     var captureSession: AcuantMrzCaptureSession!
     var lastDeviceOrientation : UIDeviceOrientation!
     var videoPreviewLayer: AVCaptureVideoPreviewLayer!
-    var messageLayer :AcuantCameraTextView! = nil
+    var messageLayer :CameraTextView! = nil
     var cornerLayer : CameraCornerOverlayView! = nil
     var shapeLayer : CameraDocumentOverlayView! = nil
     var imageLayer: CALayer?
@@ -32,7 +32,7 @@ import AcuantCommon
     private var isNavigationHidden = false
     private var isCaptured = false
     
-    public var options : AcuantCameraOptions!
+    public var options : CameraOptions!
     public var callback : ((AcuantMrzResult?) -> Void)?
     public var customDisplayMessage: ((MrzCameraState) -> String) = {
         state in
@@ -54,7 +54,7 @@ import AcuantCommon
         super.viewDidLoad()
         UIDevice.current.setValue(UIInterfaceOrientation.portrait.rawValue, forKey: "orientation")
         self.isNavigationHidden = self.navigationController?.isNavigationBarHidden ?? false
-        options = options ?? AcuantCameraOptions(
+        options = options ?? CameraOptions(
             bracketLengthInHorizontal: 50,
             bracketLengthInVertical : 40,
             defaultBracketMarginWidth : 0.58,
@@ -203,7 +203,7 @@ import AcuantCommon
         self.videoPreviewLayer.frame = self.view.layer.bounds
         self.videoPreviewLayer.connection?.videoOrientation = .portrait
         if(self.messageLayer == nil) {
-            self.messageLayer = AcuantCameraTextView(autoCapture: options.autoCapture)
+            self.messageLayer = CameraTextView(autoCapture: options.autoCapture)
             self.messageLayer.isHidden = true
         }
         self.messageLayer.setFrame(frame: self.view!.frame);

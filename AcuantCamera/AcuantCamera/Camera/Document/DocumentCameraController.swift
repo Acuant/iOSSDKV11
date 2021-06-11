@@ -23,7 +23,7 @@ import AcuantCommon
     var captureSession: DocumentCaptureSession!
     var lastDeviceOrientation : UIDeviceOrientation!
     var videoPreviewLayer: AVCaptureVideoPreviewLayer!
-    var messageLayer :AcuantCameraTextView! = nil
+    var messageLayer :CameraTextView! = nil
     var cornerLayer : CameraCornerOverlayView! = nil
     var shapeLayer : CameraDocumentOverlayView! = nil
     var captured : Bool = false
@@ -33,7 +33,7 @@ import AcuantCommon
     
     private let context = CIContext()
     private var currentPoints : [CGPoint]? = nil
-    private var options : AcuantCameraOptions? = nil
+    private var options : CameraOptions? = nil
     weak private var cameraCaptureDelegate : CameraCaptureDelegate? = nil
     
     private var currentState = FrameResult.NO_DOCUMENT
@@ -49,7 +49,7 @@ import AcuantCommon
     private var nextState = FrameResult.NO_DOCUMENT
     private var isNavigationHidden = false
     
-    public class func getCameraController(delegate:CameraCaptureDelegate, cameraOptions: AcuantCameraOptions)->DocumentCameraController{
+    public class func getCameraController(delegate:CameraCaptureDelegate, cameraOptions: CameraOptions)->DocumentCameraController{
         let c = DocumentCameraController()
         c.cameraCaptureDelegate = delegate
         c.options = cameraOptions
@@ -136,7 +136,7 @@ import AcuantCommon
         self.videoPreviewLayer.connection?.videoOrientation = .portrait
         
         if(self.messageLayer == nil) {
-            self.messageLayer = AcuantCameraTextView(autoCapture: autoCapture)
+            self.messageLayer = CameraTextView(autoCapture: autoCapture)
         }
         self.messageLayer.setFrame(frame: self.view!.frame);
         if(self.cornerLayer == nil) {
@@ -158,7 +158,7 @@ import AcuantCommon
     }
     
     public func documentCaptured(image: UIImage, barcodeString: String?) {
-        let result = AcuantImagePreparation.createCameraImage(image: rotateImage(image: image), data: AcuantCameraMetaData().setCaptureType(captureType: autoCapture ? "AUTO" : "TAP"))
+        let result = ImagePreparation.createCameraImage(image: rotateImage(image: image), data: CameraMetaData().setCaptureType(captureType: autoCapture ? "AUTO" : "TAP"))
         //result.image = rotateImage(image: image)
         //result.captureType = autoCapture ? "AUTO" : "TAP"
         self.navigationController?.popViewController(animated: true)

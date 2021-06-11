@@ -78,32 +78,27 @@ import AcuantImagePreparation
     public func captureOutput(_ output: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
         let frameQueue = DispatchQueue(label: "com.acuant.image.queue",attributes:.concurrent)
         frameQueue.async {
-            if(self.cropping || !self.detector.isInitalized){
+            if self.cropping || !self.detector.isInitalized {
                 return
             }
             
-            if let frame = self.imageFromSampleBuffer(sampleBuffer: sampleBuffer){
+            if let frame = self.imageFromSampleBuffer(sampleBuffer: sampleBuffer) {
                 self.cropping = true
                 
                 var scaledPoints : Array<CGPoint> = Array<CGPoint>()
                 var state = AcuantMrzCameraController.MrzCameraState.None
                 var result: AcuantMrzResult?
 
-                if let croppedFrame = self.detectImage(image: frame){
-                    if let img = croppedFrame.image{
-                        result = self.executeOCRAndParseMrzResult(image: img)
-                        
-                        if(croppedFrame.points.count == 4){
-                            state = self.getMrzState(points:croppedFrame.points, imgSize: img.size, frameSize: frame.size)
-                            
-                            scaledPoints = self.getScaledPoints(points: croppedFrame.points, frameSize: frame.size)
-                            
-                        }
-                    }
-                    
+                if let croppedFrame = self.detectImage(image: frame),
+                   self.isMrzAligned(croppedFrame.points),
+                   let img = croppedFrame.image {
+
+                    result = self.executeOCRAndParseMrzResult(image: img)
+                    state = self.getMrzState(points:croppedFrame.points, imgSize: img.size, frameSize: frame.size)
+                    scaledPoints = self.getScaledPoints(points: croppedFrame.points, frameSize: frame.size)
                 }
                 
-                if let cb = self.callback{
+                if let cb = self.callback {
                     cb(state, result, scaledPoints)
                 }
                 self.cropping = false
@@ -166,7 +161,7 @@ import AcuantImagePreparation
     
     private func isCorrectAspectRatio(size:CGSize) -> Bool{
         let aspectRatio = size.width/size.height
-        return (8...10 ~= aspectRatio)
+        return (4...10 ~= aspectRatio)
     }
     
     private func isMrzTilted(points:Array<CGPoint>) -> Bool{
@@ -180,6 +175,14 @@ import AcuantImagePreparation
         return Int(sqrt(pow(p2.x - p1.x, 2) + pow(p2.y - p1.y, 2)))
     }
     
+    private func isMrzAligned(_ points: [CGPoint]) -> Bool {
+        guard points.count == 4 else {
+            return false
+        }
+
+        return abs(points[1].x - points[3].x) > abs(points[1].y - points[3].y)
+    }
+
     public func stopCamera(){
         self.stopRunning()
     }
@@ -187,7 +190,7 @@ import AcuantImagePreparation
     func detectImage(image:UIImage)->Image?{
         let detectData  = DetectData.newInstance(image: image)
         
-        let croppedImage = AcuantImagePreparation.cropMrz(detectData: detectData)
+        let croppedImage = ImagePreparation.cropMrz(detectData: detectData)
         return croppedImage
     }
 }

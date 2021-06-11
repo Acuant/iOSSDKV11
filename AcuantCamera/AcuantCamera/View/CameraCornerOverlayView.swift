@@ -17,7 +17,7 @@ public class CameraCornerOverlayView : CALayer{
     
     private let corners = [CameraCornerView(), CameraCornerView(), CameraCornerView(), CameraCornerView()]
     
-    public init(options: AcuantCameraOptions){
+    public init(options: CameraOptions){
         self.bracketHeight = options.bracketLengthInHorizontal
         self.bracketWidth = options.bracketLengthInVertical
         self.defaultBracketMarginWidth = options.defaultBracketMarginWidth

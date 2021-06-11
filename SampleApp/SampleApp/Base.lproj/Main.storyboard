@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="I0c-68-3Fo">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="I0c-68-3Fo">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -190,7 +190,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ResultCell" id="bWj-qc-3zH">
-                                        <rect key="frame" x="0.0" y="28" width="331" height="44"/>
+                                        <rect key="frame" x="0.0" y="24.5" width="331" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bWj-qc-3zH" id="UQx-LR-Jng">
                                             <rect key="frame" x="0.0" y="0.0" width="331" height="44"/>
@@ -240,7 +240,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d2U-PV-m5d" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1816.8" y="-197.45127436281859"/>
+            <point key="canvasLocation" x="2386" y="-134"/>
         </scene>
         <!--Classification Error View Controller-->
         <scene sceneID="1MO-k6-dnm">
@@ -455,7 +455,7 @@
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <prototypes>
                                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ResultCell" id="vhp-aK-M4D">
-                                                        <rect key="frame" x="0.0" y="28" width="359" height="43.5"/>
+                                                        <rect key="frame" x="0.0" y="24.5" width="359" height="43.5"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="vhp-aK-M4D" id="AVc-iN-MWx">
                                                             <rect key="frame" x="0.0" y="0.0" width="359" height="43.5"/>
@@ -499,7 +499,67 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1zB-Xd-n5a" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2655.1999999999998" y="112.89355322338831"/>
+            <point key="canvasLocation" x="3070" y="260"/>
+        </scene>
+        <!--Mrz Help View Controller-->
+        <scene sceneID="HfO-fr-RNP">
+            <objects>
+                <viewController storyboardIdentifier="MrzHelpViewController" id="gWX-u0-vWK" customClass="MrzHelpViewController" customModule="SampleApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="iJ9-dY-FaY">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="uen-AV-tgF">
+                                <rect key="frame" x="0.0" y="60" width="375" height="300"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="300" id="gCb-EN-phS"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Capture the MRZ" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hfo-Gm-m5Y">
+                                <rect key="frame" x="25" y="399" width="325" height="41"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="34"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ensure sufficient lighting with no reflection or glare on the passport" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dGl-ev-buD">
+                                <rect key="frame" x="25" y="465" width="325" height="41"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap anywhere to continue" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K2u-UD-ZPC">
+                                <rect key="frame" x="25" y="548" width="325" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Jo5-AA-cUj"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="uen-AV-tgF" firstAttribute="leading" secondItem="iJ9-dY-FaY" secondAttribute="leading" id="2j8-Tu-Sy5"/>
+                            <constraint firstItem="K2u-UD-ZPC" firstAttribute="top" secondItem="dGl-ev-buD" secondAttribute="bottom" constant="42" id="5PH-WK-ktX"/>
+                            <constraint firstItem="uen-AV-tgF" firstAttribute="centerX" secondItem="iJ9-dY-FaY" secondAttribute="centerX" id="7EG-tk-mIL"/>
+                            <constraint firstAttribute="trailing" secondItem="uen-AV-tgF" secondAttribute="trailing" id="N5Y-6s-6fs"/>
+                            <constraint firstAttribute="trailing" secondItem="dGl-ev-buD" secondAttribute="trailing" constant="25" id="RuH-J3-rxb"/>
+                            <constraint firstItem="dGl-ev-buD" firstAttribute="top" secondItem="hfo-Gm-m5Y" secondAttribute="bottom" constant="25" id="TPI-A5-Sco"/>
+                            <constraint firstItem="Jo5-AA-cUj" firstAttribute="trailing" secondItem="K2u-UD-ZPC" secondAttribute="trailing" constant="25" id="WZK-aM-aCi"/>
+                            <constraint firstItem="hfo-Gm-m5Y" firstAttribute="leading" secondItem="Jo5-AA-cUj" secondAttribute="leading" constant="25" id="Zjc-s7-KN9"/>
+                            <constraint firstItem="hfo-Gm-m5Y" firstAttribute="top" secondItem="uen-AV-tgF" secondAttribute="bottom" constant="39" id="bTl-VJ-97b"/>
+                            <constraint firstItem="uen-AV-tgF" firstAttribute="top" secondItem="Jo5-AA-cUj" secondAttribute="top" constant="60" id="hPk-Kw-gko"/>
+                            <constraint firstItem="dGl-ev-buD" firstAttribute="leading" secondItem="Jo5-AA-cUj" secondAttribute="leading" constant="25" id="leE-1Z-w9d"/>
+                            <constraint firstItem="Jo5-AA-cUj" firstAttribute="trailing" secondItem="hfo-Gm-m5Y" secondAttribute="trailing" constant="25" id="muf-Lf-hdE"/>
+                            <constraint firstItem="K2u-UD-ZPC" firstAttribute="leading" secondItem="Jo5-AA-cUj" secondAttribute="leading" constant="25" id="xpk-XA-jEt"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="HDd-rg-AmL"/>
+                    <connections>
+                        <outlet property="mrzImageView" destination="uen-AV-tgF" id="Vpc-Oc-KeE"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fHN-LX-bjG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="736.79999999999995" y="-331.48425787106447"/>
         </scene>
         <!--Confirmation View Controller-->
         <scene sceneID="40d-dP-P0i">
@@ -564,7 +624,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7aD-u9-qkD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="676" y="-330.58470764617692"/>
+            <point key="canvasLocation" x="1564" y="-331"/>
         </scene>
     </scenes>
     <resources>

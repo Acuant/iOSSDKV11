@@ -3,33 +3,33 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		8320597823DBA14100B7803F /* FaceCameraCornerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8320597623DBA14100B7803F /* FaceCameraCornerView.swift */; };
 		8320597923DBA14100B7803F /* FaceCameraCornerOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8320597723DBA14100B7803F /* FaceCameraCornerOverlayView.swift */; };
-		8320597B23DBA18100B7803F /* FaceAcuantCameraOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8320597A23DBA18100B7803F /* FaceAcuantCameraOptions.swift */; };
-		83997E522489AFA1002E5840 /* AcuantImagePreparation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83997E512489AFA1002E5840 /* AcuantImagePreparation.framework */; };
+		8320597B23DBA18100B7803F /* FaceCameraOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8320597A23DBA18100B7803F /* FaceCameraOptions.swift */; };
 		83F0BF7623D8B28E00140A06 /* AcuantFaceCapture.h in Headers */ = {isa = PBXBuildFile; fileRef = 83F0BF7423D8B28E00140A06 /* AcuantFaceCapture.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		83F0BFAB23D8B59D00140A06 /* AcuantFaceCaptureController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83F0BFAA23D8B59D00140A06 /* AcuantFaceCaptureController.swift */; };
+		83F0BFAB23D8B59D00140A06 /* FaceCaptureController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83F0BFAA23D8B59D00140A06 /* FaceCaptureController.swift */; };
 		83F0BFB823D8B7E600140A06 /* AcuantFaceState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83F0BFB723D8B7E600140A06 /* AcuantFaceState.swift */; };
 		83F0BFBA23D8B81200140A06 /* AcuantFaceCaptureSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83F0BFB923D8B81200140A06 /* AcuantFaceCaptureSession.swift */; };
 		83F0BFBC23D8B87F00140A06 /* AcuantFaceDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83F0BFBB23D8B87F00140A06 /* AcuantFaceDetails.swift */; };
+		AA1728CA2673DE1600E3E2CB /* AcuantImagePreparation.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA1728C92673DE1600E3E2CB /* AcuantImagePreparation.xcframework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		8320597623DBA14100B7803F /* FaceCameraCornerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FaceCameraCornerView.swift; sourceTree = "<group>"; };
 		8320597723DBA14100B7803F /* FaceCameraCornerOverlayView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FaceCameraCornerOverlayView.swift; sourceTree = "<group>"; };
-		8320597A23DBA18100B7803F /* FaceAcuantCameraOptions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FaceAcuantCameraOptions.swift; sourceTree = "<group>"; };
-		83997E512489AFA1002E5840 /* AcuantImagePreparation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = AcuantImagePreparation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8320597A23DBA18100B7803F /* FaceCameraOptions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FaceCameraOptions.swift; sourceTree = "<group>"; };
 		83F0BF7123D8B28E00140A06 /* AcuantFaceCapture.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AcuantFaceCapture.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		83F0BF7423D8B28E00140A06 /* AcuantFaceCapture.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AcuantFaceCapture.h; sourceTree = "<group>"; };
 		83F0BF7523D8B28E00140A06 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		83F0BFAA23D8B59D00140A06 /* AcuantFaceCaptureController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AcuantFaceCaptureController.swift; sourceTree = "<group>"; };
+		83F0BFAA23D8B59D00140A06 /* FaceCaptureController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FaceCaptureController.swift; sourceTree = "<group>"; };
 		83F0BFB723D8B7E600140A06 /* AcuantFaceState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcuantFaceState.swift; sourceTree = "<group>"; };
 		83F0BFB923D8B81200140A06 /* AcuantFaceCaptureSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcuantFaceCaptureSession.swift; sourceTree = "<group>"; };
 		83F0BFBB23D8B87F00140A06 /* AcuantFaceDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcuantFaceDetails.swift; sourceTree = "<group>"; };
+		AA1728C92673DE1600E3E2CB /* AcuantImagePreparation.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = AcuantImagePreparation.xcframework; path = ../EmbeddedFrameworks/AcuantImagePreparation.xcframework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,7 +37,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				83997E522489AFA1002E5840 /* AcuantImagePreparation.framework in Frameworks */,
+				AA1728CA2673DE1600E3E2CB /* AcuantImagePreparation.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -47,7 +47,7 @@
 		83997E502489AFA1002E5840 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				83997E512489AFA1002E5840 /* AcuantImagePreparation.framework */,
+				AA1728C92673DE1600E3E2CB /* AcuantImagePreparation.xcframework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -72,10 +72,10 @@
 		83F0BF7323D8B28E00140A06 /* AcuantFaceCapture */ = {
 			isa = PBXGroup;
 			children = (
-				8320597A23DBA18100B7803F /* FaceAcuantCameraOptions.swift */,
+				8320597A23DBA18100B7803F /* FaceCameraOptions.swift */,
 				8320597723DBA14100B7803F /* FaceCameraCornerOverlayView.swift */,
 				8320597623DBA14100B7803F /* FaceCameraCornerView.swift */,
-				83F0BFAA23D8B59D00140A06 /* AcuantFaceCaptureController.swift */,
+				83F0BFAA23D8B59D00140A06 /* FaceCaptureController.swift */,
 				83F0BF7423D8B28E00140A06 /* AcuantFaceCapture.h */,
 				83F0BF7523D8B28E00140A06 /* Info.plist */,
 				83F0BFB723D8B7E600140A06 /* AcuantFaceState.swift */,
@@ -166,11 +166,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				83F0BFBA23D8B81200140A06 /* AcuantFaceCaptureSession.swift in Sources */,
-				8320597B23DBA18100B7803F /* FaceAcuantCameraOptions.swift in Sources */,
+				8320597B23DBA18100B7803F /* FaceCameraOptions.swift in Sources */,
 				83F0BFBC23D8B87F00140A06 /* AcuantFaceDetails.swift in Sources */,
 				83F0BFB823D8B7E600140A06 /* AcuantFaceState.swift in Sources */,
 				8320597823DBA14100B7803F /* FaceCameraCornerView.swift in Sources */,
-				83F0BFAB23D8B59D00140A06 /* AcuantFaceCaptureController.swift in Sources */,
+				83F0BFAB23D8B59D00140A06 /* FaceCaptureController.swift in Sources */,
 				8320597923DBA14100B7803F /* FaceCameraCornerOverlayView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

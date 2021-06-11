@@ -1,9 +1,9 @@
 Pod::Spec.new do |s|
     s.platform = :ios
-    s.swift_versions = ['5.3.2']
+    s.swift_versions = ['5.4']
     s.ios.deployment_target = '11.0'
     s.name         = "AcuantiOSSDKV11"
-    s.version      = "11.4.9"
+    s.version      = "11.5.0"
     s.summary      = "Acuant's latest SDK with most advanced image capture technology and optimized user workflow  "
     s.description  = "Acuant's latest SDK with most advanced image capture technology and optimized user workflow.
 
@@ -15,7 +15,7 @@ Pod::Spec.new do |s|
     s.license      = {
           :type => 'commercial',
           :text => <<-LICENSE
-                  Copyright 2019 Acuant, Inc. All Rights Reserved.
+                  Copyright 2021 Acuant, Inc. All Rights Reserved.
                   LICENSE
     }
     s.author             = { "Acuant Inc" => "jmoon@acuantcorp.com" }
@@ -28,13 +28,13 @@ Pod::Spec.new do |s|
 
     s.subspec 'AcuantCommon' do |acuantCommon|
         acuantCommon.ios.deployment_target = '11.0'
-        acuantCommon.ios.vendored_frameworks = "EmbeddedFrameworks/AcuantCommon.framework"
+        acuantCommon.ios.vendored_frameworks = "EmbeddedFrameworks/AcuantCommon.xcframework"
     end
     
     s.subspec 'AcuantImagePreparation' do |acuantImage|
         acuantImage.ios.deployment_target = '11.0'
 
-        acuantImage.ios.vendored_frameworks = "EmbeddedFrameworks/AcuantImagePreparation.framework"
+        acuantImage.ios.vendored_frameworks = "EmbeddedFrameworks/AcuantImagePreparation.xcframework"
         
         acuantImage.dependency "#{s.name}/AcuantCommon"
     end
@@ -42,7 +42,7 @@ Pod::Spec.new do |s|
     s.subspec 'AcuantDocumentProcessing' do |acuantDocument|
         acuantDocument.ios.deployment_target = '11.0'
 
-        acuantDocument.ios.vendored_frameworks = "EmbeddedFrameworks/AcuantDocumentProcessing.framework"
+        acuantDocument.ios.vendored_frameworks = "EmbeddedFrameworks/AcuantDocumentProcessing.xcframework"
         
         acuantDocument.dependency "#{s.name}/AcuantCommon"
     end
@@ -50,7 +50,7 @@ Pod::Spec.new do |s|
     s.subspec 'AcuantFaceMatch' do |acuantFaceMatch|
         acuantFaceMatch.ios.deployment_target = '11.0'
 
-        acuantFaceMatch.ios.vendored_frameworks = "EmbeddedFrameworks/AcuantFaceMatch.framework"
+        acuantFaceMatch.ios.vendored_frameworks = "EmbeddedFrameworks/AcuantFaceMatch.xcframework"
         
         acuantFaceMatch.dependency "#{s.name}/AcuantCommon"
     end
@@ -58,7 +58,7 @@ Pod::Spec.new do |s|
     s.subspec 'AcuantPassiveLiveness' do |acuantPassive|
         acuantPassive.ios.deployment_target = '11.0'
 
-        acuantPassive.ios.vendored_frameworks = "EmbeddedFrameworks/AcuantPassiveLiveness.framework"
+        acuantPassive.ios.vendored_frameworks = "EmbeddedFrameworks/AcuantPassiveLiveness.xcframework"
         
         acuantPassive.dependency "#{s.name}/AcuantCommon"
     end
@@ -66,7 +66,7 @@ Pod::Spec.new do |s|
     s.subspec 'AcuantHGLiveness' do |acuantHG|
         acuantHG.ios.deployment_target = '11.0'
 
-        acuantHG.ios.vendored_frameworks = "EmbeddedFrameworks/AcuantHGLiveness.framework"
+        acuantHG.ios.vendored_frameworks = "EmbeddedFrameworks/AcuantHGLiveness.xcframework"
         
         acuantHG.dependency "#{s.name}/AcuantCommon"
     end
@@ -74,16 +74,16 @@ Pod::Spec.new do |s|
     s.subspec 'AcuantIPLiveness' do |acuantIP|
         acuantIP.ios.deployment_target = '11.0'
 
-        acuantIP.ios.vendored_frameworks = "EmbeddedFrameworks/AcuantIPLiveness.framework"
+        acuantIP.ios.vendored_frameworks = "EmbeddedFrameworks/AcuantIPLiveness.xcframework"
         
         acuantIP.dependency "#{s.name}/AcuantCommon"
-        acuantIP.dependency 'iProov', '~> 7.5.0'
+        acuantIP.dependency 'iProov', '~> 8.4.0'
     end
     
     s.subspec 'AcuantEchipReader' do |acuantEchip|
         acuantEchip.ios.deployment_target = '11.0'
 
-        acuantEchip.ios.vendored_frameworks = "EmbeddedFrameworks/AcuantEchipReader.framework"
+        acuantEchip.ios.vendored_frameworks = "EmbeddedFrameworks/AcuantEchipReader.xcframework"
         
         acuantEchip.dependency "#{s.name}/AcuantCommon"
     end

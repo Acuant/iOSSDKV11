@@ -1,0 +1,11 @@
+framework module AcuantEchipReader {
+  umbrella header "AcuantEchipReader.h"
+
+  export *
+  module * { export * }
+}
+
+module AcuantEchipReader.Swift {
+    header "AcuantEchipReader-Swift.h"
+    requires objc
+}

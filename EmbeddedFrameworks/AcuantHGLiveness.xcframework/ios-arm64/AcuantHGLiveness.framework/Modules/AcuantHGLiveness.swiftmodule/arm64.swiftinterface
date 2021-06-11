@@ -1,0 +1,63 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.4 (swiftlang-1205.0.26.9 clang-1205.0.19.55)
+// swift-module-flags: -target arm64-apple-ios11.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name AcuantHGLiveness
+import AVFoundation
+import AcuantCommon
+import Foundation
+import Swift
+import UIKit
+@objc @_inheritsConvenienceInitializers @objcMembers public class HGLiveness : ObjectiveC.NSObject {
+  @objc public class func getFaceCaptureSession(delegate: AcuantHGLiveness.AcuantHGLiveFaceCaptureDelegate?, captureDevice: AVFoundation.AVCaptureDevice?) -> AcuantHGLiveness.FaceCaptureSession
+  @objc override dynamic public init()
+  @objc deinit
+}
+@objc public enum AcuantFaceType : Swift.Int {
+  case NONE
+  case FACE_TOO_CLOSE
+  case FACE_MOVED
+  case FACE_TOO_FAR
+  case FACE_GOOD_DISTANCE
+  case FACE_NOT_IN_FRAME
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@objc public protocol HGLivenessDelegate {
+  @objc func liveFaceCaptured(image: UIKit.UIImage?)
+}
+@objc @_inheritsConvenienceInitializers @objcMembers public class FaceCaptureSession : AVFoundation.AVCaptureSession, AVFoundation.AVCaptureVideoDataOutputSampleBufferDelegate {
+  @objc public class func getFaceCaptureSession(delegate: AcuantHGLiveness.AcuantHGLiveFaceCaptureDelegate?, captureDevice: AVFoundation.AVCaptureDevice?) -> AcuantHGLiveness.FaceCaptureSession
+  @objc public func start()
+  @objc public func captureOutput(_ output: AVFoundation.AVCaptureOutput, didOutput sampleBuffer: CoreMedia.CMSampleBuffer, from connection: AVFoundation.AVCaptureConnection)
+  @objc override dynamic public init()
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers @objcMembers public class LiveFaceRectDetail : ObjectiveC.NSObject {
+  @objc public var width: Swift.Float
+  @objc public var height: Swift.Float
+  @objc public var x: Swift.Float
+  @objc public var y: Swift.Float
+  @objc public class func createInstance() -> AcuantHGLiveness.LiveFaceRectDetail
+  @objc public func mapCGRect(rect: CoreGraphics.CGRect)
+  @objc public func toCGRect() -> CoreGraphics.CGRect
+  @objc override dynamic public init()
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers @objcMembers public class LiveFaceDetails : ObjectiveC.NSObject {
+  @objc public var isLiveFace: Swift.Bool
+  @objc public var faceRect: AcuantHGLiveness.LiveFaceRectDetail?
+  @objc public var cleanAperture: AcuantHGLiveness.LiveFaceRectDetail?
+  @objc public var image: UIKit.UIImage?
+  @objc public var error: AcuantCommon.AcuantError?
+  @objc public class func createInstance() -> AcuantHGLiveness.LiveFaceDetails
+  @objc override dynamic public init()
+  @objc deinit
+}
+@objc public protocol AcuantHGLiveFaceCaptureDelegate {
+  @objc func liveFaceDetailsCaptured(liveFaceDetails: AcuantHGLiveness.LiveFaceDetails?, faceType: AcuantHGLiveness.AcuantFaceType)
+}
+extension AcuantHGLiveness.AcuantFaceType : Swift.Equatable {}
+extension AcuantHGLiveness.AcuantFaceType : Swift.Hashable {}
+extension AcuantHGLiveness.AcuantFaceType : Swift.RawRepresentable {}

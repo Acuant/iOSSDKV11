@@ -35,13 +35,83 @@ public class AcuantMrzParser{
         return str.substring(with: start..<end)
     }
 
-    private func parseFirstLine(firstLine:String) -> AcuantMrzResult?{
+    private func parseFirstLineOfThree(firstLine:String) -> AcuantMrzResult?{
+        var startPos = 0
+        if(firstLine.count == 30){
+            let result = AcuantMrzResult()
+
+            startPos += 1
+            //let type = firstLine[startPos]
+            startPos += 1
+
+            result.country = getSubstring(str: firstLine, offsetStart: startPos, offsetEnd: startPos + 3)
+            startPos += 3
+            
+            result.passportNumber = getSubstring(str: firstLine, offsetStart: startPos, offsetEnd: startPos+9)//.replacingOccurrences(of: "<", with: "")
+            startPos += 9
+            
+            result.checkSumChar1 = firstLine[startPos]
+            startPos += 1
+            
+            result.checkSumResult1 = checkSum(input: result.passportNumber, checkSumChar: result.checkSumChar1)
+            
+            result.optional1 = getSubstring(str: firstLine, offsetStart: startPos, offsetEnd: startPos + 15)
+
+            return result
+        }
+        return nil
+    }
+
+    private func parseSecondLineOfThree(line: String, result: AcuantMrzResult) -> AcuantMrzResult?{
+        if(line.count != 30){
+            return nil
+        }
+
+        var startPos = 0
+
+        result.dob = getSubstring(str: line, offsetStart: startPos, offsetEnd: startPos+6)
+        startPos+=6
+
+        let checkChar2 = line[startPos]
+        startPos+=1
+        
+        result.checkSumResult2 = checkSum(input: result.dob, checkSumChar: checkChar2)
+
+        result.gender = getSubstring(str: line, offsetStart: startPos, offsetEnd: startPos+1)
+        startPos+=1
+
+        result.passportExpiration = getSubstring(str: line, offsetStart: startPos, offsetEnd: startPos+6)
+        startPos+=6
+
+        let checkChar3 = line[startPos]
+        startPos+=1
+        
+        result.checkSumResult3 = checkSum(input: result.passportExpiration, checkSumChar: checkChar3)
+        
+        result.nationality = getSubstring(str: line, offsetStart: startPos, offsetEnd: startPos+3)
+        startPos+=3
+
+        let optional2 = getSubstring(str: line, offsetStart: startPos, offsetEnd: startPos+11)
+        startPos+=11
+        
+        let finalCheckString = "\(result.passportNumber)\(result.checkSumChar1)\(result.optional1)\(result.dob)\(checkChar2)\(result.passportExpiration)\(checkChar3)\(optional2)"
+        
+        result.checkSumResult4 = checkSum(input: finalCheckString, checkSumChar: line[startPos])
+        
+        result.checkSumResult5 = true
+        
+        result.passportNumber = result.passportNumber.replacingOccurrences(of: "<", with: "")
+
+        return result
+    }
+
+    private func parseFirstLineOfTwo(firstLine:String) -> AcuantMrzResult?{
         var startPos = 0
         if(firstLine[startPos] == PASSPORT_FIRST_VALUE && firstLine.count == 44){
             let result = AcuantMrzResult()
 
             startPos+=1
-            let type = firstLine[startPos]
+            //let type = firstLine[startPos]
             startPos += 1
 
             result.country = getSubstring(str: firstLine, offsetStart: startPos, offsetEnd: startPos + 3)
@@ -56,7 +126,7 @@ public class AcuantMrzParser{
             
             nextPos = indexOf(str: firstLine, data: FILLER, offSetStart: startPos)
             if(nextPos != -1){
-                result.givenName  = getSubstring(str: firstLine, offsetStart: startPos, offsetEnd: nextPos)
+                result.givenName = getSubstring(str: firstLine, offsetStart: startPos, offsetEnd: nextPos)
             }
 
             return result
@@ -64,13 +134,13 @@ public class AcuantMrzParser{
         return nil
     }
 
-    private func parseSecondLine(line:String, result: AcuantMrzResult) -> AcuantMrzResult?{
+    private func parseSecondLineOfTwo(line:String, result: AcuantMrzResult) -> AcuantMrzResult?{
         if(line.count != 44){
             return nil
         }
 
         var startPos = 0
-        result.passportNumber = getSubstring(str: line, offsetStart: startPos, offsetEnd: startPos+9).replacingOccurrences(of: "<", with: "")
+        result.passportNumber = getSubstring(str: line, offsetStart: startPos, offsetEnd: startPos+9)
         startPos+=9
 
         result.checkSumResult1 = checkSum(input: result.passportNumber, checkSumChar: line[startPos])
@@ -103,6 +173,8 @@ public class AcuantMrzParser{
         let finalCheckString = "\(getSubstring(str: line, offsetStart: 0, offsetEnd: 10))\(getSubstring(str: line, offsetStart: 13, offsetEnd: 20))\(getSubstring(str: line, offsetStart: 21, offsetEnd: 43))"
         
         result.checkSumResult5 = checkSum(input: finalCheckString, checkSumChar: line[startPos])
+        
+        result.passportNumber = result.passportNumber.replacingOccurrences(of: "<", with: "")
 
         return result
     }
@@ -112,9 +184,23 @@ public class AcuantMrzParser{
         print(mrzWithNoSpaces)
         let mrzLines = mrzWithNoSpaces.split(separator: "\n")
         if(mrzLines.count == 2){
-            let result = parseFirstLine(firstLine: String(mrzLines[0]))
+            var result = parseFirstLineOfTwo(firstLine: String(mrzLines[0]))
             if(result != nil){
-                return parseSecondLine(line: String(mrzLines[1]), result: result!)
+                result = parseSecondLineOfTwo(line: String(mrzLines[1]), result: result!)
+                
+                result?.threeLineMrz = false;
+                
+                return result;
+            }
+        }
+        else if(mrzLines.count == 3){
+            var result = parseFirstLineOfThree(firstLine: String(mrzLines[0]))
+            if(result != nil){
+                result = parseSecondLineOfThree(line: String(mrzLines[1]), result: result!)
+                
+                result?.threeLineMrz = true;
+                
+                return result
             }
         }
         return nil

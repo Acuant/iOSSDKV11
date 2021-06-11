@@ -1,0 +1,4 @@
+framework module AcuantDocumentProcessing {
+  header "AcuantDocumentProcessing-Swift.h"
+  requires objc
+}

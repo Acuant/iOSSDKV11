@@ -22,7 +22,7 @@
 "acuant_face_camera_capturing_1" = "Captura\n1...";
 
 /* AcuantHGLiveness */
-"hg_too_close" = "Too Close! Move Away";
+"hg_too_close" = "Demasiado cerca";
 "hg_too_far_away" = "Muévete mas cerca";
 "hg_move_in_frame" = "Moverse en cuadro";
 "hg_blink" = "Parpadeo!";
@@ -31,27 +31,21 @@
 
 /* AcuantIPLiveness */
 "IProov_LanguageFile" = "es";
-"IProov_AppName" = "iProov";
-"IProov_Error" = "Error";
-"IProov_PromptHoldStill" = "Pon tu cara en el óvalo";
-"IProov_PromptLoading" = "Por favor espera…";
-"IProov_PromptLoadingSlow" = "Conectando, la red es lenta…";
 "IProov_PromptConnecting" = "Conectando…";
-"IProov_PromptConnectingSlow" = "Conectando, la red es lenta…";
 "IProov_PromptTapToBegin" = "Toca la pantalla para comenzar";
 "IProov_PromptTooFar" = "Muévete mas cerca";
 "IProov_PromptTooBright" = "Ve a un lugar más sombrío";
+"IProov_PromptLivenessScanCompleted" = "Scan completed";
+"IProov_PromptGenuinePresenceAlignFace" = "Pon tu cara en el óvalo";
+"IProov_PromptLivenessAlignFace" = "Rellena el óvalo con tu cara";
+"IProov_PromptLivenessNoTarget" = "Pon tu cara en el marco";
 "IProov_ProgressStreaming" = "Transmisión…";
 "IProov_ProgressStreamingSlow" = "Transmisión, la red es lenta…";
-"IProov_ProgressProcessing" = "Tratamiento…";
-"IProov_IProovSuccess" = "Has iProoved con éxito";
 "IProov_PromptScanning" = "Exploración…";
-"IProov_UnknownError" = "Unknown Error";
-"IProov_StartingDetector" = "Detector de arranque…";
-"IProov_ErrorSSLException" = "SSL Exception";
 "IProov_ProgressIdentifyingFace" = "Cara identificativa…";
 "IProov_ProgressConfirmingIdentity" = "Confirmando identidad";
 "IProov_ProgressAssessingGenuinePresence" = "Evaluar la presencia genuina…";
+"IProov_ProgressAssessingLiveness" = "Evaluación de la vitalidad…";
 "IProov_ProgressLoading" = "Por favor espera…";
 "IProov_ProgressCreatingIdentity" = "Creando identidad…";
 "IProov_ProgressFindingFace" = "Encontrando cara…";
@@ -72,34 +66,17 @@
 "IProov_PromptYawTooHigh" = "Gire ligeramente a la izquierda";
 "IProov_PromptPitchTooHigh" = "Sostenga el dispositivo a la altura de los ojos.";
 "IProov_PromptPitchTooLow" = "Sostenga el dispositivo a la altura de los ojos.";
-"IProov_ErrorStreaming" = "Streaming error";
+"IProov_ErrorNetwork" = "Network error";
 "IProov_ErrorEncoder" = "Encoder error";
 "IProov_ErrorCamera" = "Camera error";
 "IProov_ErrorCameraPermissionDenied" = "Camera permission denied";
 "IProov_ErrorCameraPermissionDeniedMessageIos" = "Please allow camera access for this app in iOS Settings";
-"IProov_ErrorServerAbort" = "Server abort";
 "IProov_ErrorServer" = "Server error";
 "IProov_ErrorLightingModel" = "Lighting model error";
 "IProov_ErrorEncoderUnknownMessage" = "Unknown encoder error";
 "IProov_ErrorEncoderCodeMessage" = "Error code %@";
 "IProov_ErrorCaptureAlreadyActive" = "An existing capture is already in progress";
 "IProov_PromptGetReady" = "Prepararse…";
-"IProov_PromptTooRight" = "Mover hacia la izquierda";
-"IProov_PromptTooLeft" = "Moverse a la derecha";
-"IProov_PromptTooHigh" = "Mover hacia abajo";
-"IProov_PromptTooLow" = "Ascender";
-"IProov_PromptBeginningIn" = "Comenzando en…";
 "IProov_PromptGrantPermission" = "Grant Camera Access";
 "IProov_PromptGrantPermissionMessage" = "Camera access must be granted to use iProov";
-"IProov_Passed" = "Pasado";
-"IProov_Failed" = "Ha fallado";
-"IProov_FailureUserTimeout" = "Sorry, your session has timed out";
-"IProov_FailureNetworkProblem" = "Lo sentimos, problema de red";
 "IProov_FailureAmbiguousOutcome" = "Lo siento, resultado ambiguo";
-"IProov_ErrorNotSupported" = "Unsupported";
-"IProov_ErrorNotSupportedMessage" = "Your device is not supported";
-"IProov_ErrorFullscreenChange" = "Exited full-screen without completing iProov";
-"IProov_ErrorNoCamera" = "No Camera Detected";
-"IProov_ErrorNoCameraMessage" = "A camera must be available to use iProov";
-"IProov_ErrorCameraPermissionDeniedMessage" = "Permission to access the camera has been denied. Please allow camera access to use iProov. If you have already allowed access, please reload the page.";
-"IProov_ErrorUserTimeout" = "Your session has expired";
