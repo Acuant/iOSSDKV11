@@ -23,7 +23,7 @@ This document provides detailed information about the Acuant iOS SDK. The Acuant
 
 ## Updating to 11.5.1+
 
-Please see the provided [migration details document](iOS migration details.pdf) for information about updating to 11.5.1+
+Please see the provided [migration details document](iOSmigrationdetails.pdf) for information about updating to 11.5.1+
 
 ----------
 
