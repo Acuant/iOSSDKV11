@@ -723,10 +723,10 @@ After you capture a document image and completed crop, it can be processed using
 
 1. Get the data:
 
-		public class func getData(instanceId:String,isHealthCard:Bool,delegate:GetDataDelegate?)
+		public class func getData(instanceId: String, isHealthCard: Bool, delegate: GetDataDelegate?)
 
-		public protocol UploadImageDelegate{
-    		func imageUploaded(error: AcuantError?,classification:Classification?);
+		public protocol GetDataDelegate{
+    		func processingResultReceived(result: ProcessingResult);
 		}
 
 1. Delete the instance:
