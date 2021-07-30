@@ -1,9 +1,9 @@
 Pod::Spec.new do |s|
     s.platform = :ios
-    s.swift_versions = ['5.4']
+    s.swift_versions = ['5.4.2']
     s.ios.deployment_target = '11.0'
     s.name         = "AcuantiOSSDKV11"
-    s.version      = "11.5.1"
+    s.version      = "11.5.2"
     s.summary      = "Acuant's latest SDK with most advanced image capture technology and optimized user workflow  "
     s.description  = "Acuant's latest SDK with most advanced image capture technology and optimized user workflow.
 
@@ -78,8 +78,6 @@ Pod::Spec.new do |s|
         
         acuantIP.dependency "#{s.name}/AcuantCommon"
         acuantIP.dependency 'iProov', '~> 8.4.0'
-        acuantIP.dependency 'KeychainAccess', '~> 4.2'
-        acuantIP.dependency 'SwiftyJSON', '~> 5.0'
     end
     
     s.subspec 'AcuantEchipReader' do |acuantEchip|

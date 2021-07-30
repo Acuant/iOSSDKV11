@@ -12,15 +12,15 @@ import AVFoundation
 import AcuantCommon
 import AcuantImagePreparation
 
-@objcMembers public class AcuantMrzCaptureSession :AVCaptureSession, AVCaptureVideoDataOutputSampleBufferDelegate{
+@objcMembers public class AcuantMrzCaptureSession: AVCaptureSession, AVCaptureVideoDataOutputSampleBufferDelegate {
     private let captureDevice: AVCaptureDevice
     private let detector = AcuantOcrDetector()
     private let parser = AcuantMrzParser()
     private let context = CIContext()
     private var cropping = false
-    private var callback:((AcuantMrzCameraController.MrzCameraState, AcuantMrzResult?, Array<CGPoint>?) -> Void)? = nil
+    private var callback: ((AcuantMrzCameraController.MrzCameraState, AcuantMrzResult?, Array<CGPoint>?) -> Void)?
     
-    public init(captureDevice: AVCaptureDevice, userCallback:((AcuantMrzCameraController.MrzCameraState, AcuantMrzResult?, Array<CGPoint>?) -> Void)? = nil){
+    public init(captureDevice: AVCaptureDevice, userCallback:((AcuantMrzCameraController.MrzCameraState, AcuantMrzResult?, Array<CGPoint>?) -> Void)? = nil) {
         self.captureDevice = captureDevice
         self.callback = userCallback
     }
@@ -29,7 +29,7 @@ import AcuantImagePreparation
         self.automaticallyConfiguresApplicationAudioSession = false
         self.usesApplicationAudioSession = false
         self.sessionPreset = AVCaptureSession.Preset.photo
-        
+
         self.setFocusMode()
         self.addCaptureDevice()
         self.addVideoOutput()

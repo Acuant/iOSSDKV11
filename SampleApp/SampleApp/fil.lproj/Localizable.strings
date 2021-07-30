@@ -10,6 +10,7 @@
 "acuant_camera_hold_steady" = "HUWAG IGALAW";
 "acuant_camera_capturing" = "KINUKUHA";
 "acuant_camera_outside_view" = "ITAPAT SA ID";
+"acuant_camera_paused" = "NAKA-PAUSE ANG CAMERA";
 
 /* AcuantFaceCapture/AcuantPassiveLiveness */
 "acuant_face_camera_initial" = "Itapat ang mukha\n upang magsimula";

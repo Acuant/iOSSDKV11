@@ -15,60 +15,61 @@ class ResultViewController: UIViewController,UITableViewDataSource,UITableViewDe
     @IBOutlet var backImage: UIImageView!
     @IBOutlet var faceImage: UIImageView!
     @IBOutlet var signImage: UIImageView!
-    
     @IBOutlet weak var faceCapturedImage: UIImageView!
     
-    public var data:[String]? = nil
-    public var frontImageUrl : String? = nil
-    public var backImageUrl : String? = nil
-    public var faceImageUrl : String? = nil
-    public var signImageUrl : String? = nil
+    public var data: [String]?
+    public var frontImageUrl: String?
+    public var backImageUrl: String?
+    public var faceImageUrl: String?
+    public var signImageUrl: String?
     
-    public var front : UIImage? = nil
-    public var back : UIImage? = nil
-    public var faceImageCaptured : UIImage? = nil
+    public var front: UIImage?
+    public var back: UIImage?
+    public var faceImageCaptured: UIImage?
 
-    public var username : String? = nil
-    public var password : String? = nil
-    
-    
+    public var username: String?
+    public var password: String?
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
     
-        if(frontImageUrl != nil){
-            frontImage.downloadedFrom(urlStr: frontImageUrl!, username: username!, password: password!)
-        }
-        if(backImageUrl != nil){
-            backImage.downloadedFrom(urlStr: backImageUrl!, username: username!, password: password!)
+        if let frontImageUrl = self.frontImageUrl {
+            frontImage.downloadedFrom(urlStr: frontImageUrl, username: username!, password: password!)
         }
         
-        if(faceImageUrl != nil){
-            faceImage.downloadedFrom(urlStr: faceImageUrl!, username: username!, password: password!)
+        if let backImageUrl = self.backImageUrl {
+            backImage.downloadedFrom(urlStr: backImageUrl, username: username!, password: password!)
         }
         
-        if(signImageUrl != nil){
-            signImage.downloadedFrom(urlStr: signImageUrl!, username: username!, password: password!)
+        if let faceImageUrl = self.faceImageUrl {
+            faceImage.downloadedFrom(urlStr: faceImageUrl, username: username!, password: password!)
         }
         
-        if(front != nil){
-            frontImage.image = front
+        if let signImageUrl = self.signImageUrl {
+            signImage.downloadedFrom(urlStr: signImageUrl, username: username!, password: password!)
         }
         
-        if(back != nil){
-            backImage.image = back
+        if backImageUrl == nil {
+            backImage.removeFromSuperview()
+            if faceImageCaptured == nil {
+                faceImage.leadingAnchor.constraint(equalTo: frontImage.trailingAnchor, constant: 10).isActive = true
+            } else {
+                frontImage.trailingAnchor.constraint(equalTo: faceCapturedImage.leadingAnchor, constant: 10).isActive = true
+            }
         }
         
-        if let frontCapturedImage = self.faceImageCaptured{
+        if let frontCapturedImage = self.faceImageCaptured {
             faceCapturedImage.image = frontCapturedImage
+        } else {
+            faceCapturedImage.removeFromSuperview()
+            if backImageUrl == nil {
+                faceImage.leadingAnchor.constraint(equalTo: frontImage.trailingAnchor, constant: 10).isActive = true
+            } else {
+                faceImage.leadingAnchor.constraint(equalTo: backImage.trailingAnchor, constant: 10).isActive = true
+            }
         }
     }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1

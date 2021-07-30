@@ -1,5 +1,5 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.4 (swiftlang-1205.0.26.9 clang-1205.0.19.55)
+// swift-compiler-version: Apple Swift version 5.4.2 (swiftlang-1205.0.28.2 clang-1205.0.19.57)
 // swift-module-flags: -target arm64-apple-ios11.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name AcuantDocumentProcessing
 import AcuantCommon
 import Foundation
@@ -143,6 +143,7 @@ import UIKit
   @objc public var key: Swift.String?
   @objc public var name: Swift.String?
   @objc public var result: Swift.String?
+  @objc public var model: Swift.String?
   @objc public static func initWithJSONObject(jsonDict: [Swift.String : Any]?) -> AcuantDocumentProcessing.Action?
   @objc deinit
 }
@@ -162,6 +163,8 @@ import UIKit
   @objc public var fields: AcuantDocumentProcessing.Fields?
   @objc public var images: AcuantDocumentProcessing.Images?
   @objc public var regions: AcuantDocumentProcessing.Regions?
+  @objc public var tamperResult: Swift.Int
+  @objc public var tamperSensitivity: Swift.Int
   @objc public static func initWithJsonString(jsonString: Swift.String?) -> AcuantDocumentProcessing.IDResult
   @objc deinit
 }
@@ -183,9 +186,15 @@ public class EvaluatedImageData {
 }
 @objc @_inheritsConvenienceInitializers @objcMembers public class IdOptions : ObjectiveC.NSObject {
   @objc public enum AuthenticationSensitivity : Swift.Int {
-    case Normal = 0
-    case High = 1
-    case Low = 2
+    case Normal, High, Low
+    public init?(rawValue: Swift.Int)
+    public typealias RawValue = Swift.Int
+    public var rawValue: Swift.Int {
+      get
+    }
+  }
+  @objc public enum TamperSensitivity : Swift.Int {
+    case Normal, High, Low
     public init?(rawValue: Swift.Int)
     public typealias RawValue = Swift.Int
     public var rawValue: Swift.Int {
@@ -196,6 +205,7 @@ public class EvaluatedImageData {
   @objc public var isHealthCard: Swift.Bool
   @objc public var isRetrying: Swift.Bool
   @objc public var authenticationSensitivity: AcuantDocumentProcessing.IdOptions.AuthenticationSensitivity
+  @objc public var tamperSensitivity: AcuantDocumentProcessing.IdOptions.TamperSensitivity
   @objc override dynamic public init()
   @objc public class func createInstance() -> AcuantDocumentProcessing.IdOptions
   @objc deinit
@@ -310,6 +320,9 @@ public class EvaluatedImageData {
 extension AcuantDocumentProcessing.IdOptions.AuthenticationSensitivity : Swift.Equatable {}
 extension AcuantDocumentProcessing.IdOptions.AuthenticationSensitivity : Swift.Hashable {}
 extension AcuantDocumentProcessing.IdOptions.AuthenticationSensitivity : Swift.RawRepresentable {}
+extension AcuantDocumentProcessing.IdOptions.TamperSensitivity : Swift.Equatable {}
+extension AcuantDocumentProcessing.IdOptions.TamperSensitivity : Swift.Hashable {}
+extension AcuantDocumentProcessing.IdOptions.TamperSensitivity : Swift.RawRepresentable {}
 extension AcuantDocumentProcessing.CardSide : Swift.Equatable {}
 extension AcuantDocumentProcessing.CardSide : Swift.Hashable {}
 extension AcuantDocumentProcessing.CardSide : Swift.RawRepresentable {}

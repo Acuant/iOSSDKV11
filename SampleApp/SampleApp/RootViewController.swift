@@ -82,6 +82,10 @@ class RootViewController: UIViewController{
         
     }
     
+    override func viewDidLayoutSubviews() {
+        progressView.update(frame: view.frame, center: view.center)
+    }
+
     func getToken(){
         self.medicalCardButton.isEnabled = false
         self.idPassportButton.isEnabled = false

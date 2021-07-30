@@ -60,6 +60,19 @@ import UIKit
         activityIndicator.stopAnimating()
     }
     
+    func update(frame: CGRect, center: CGPoint) {
+        self.frame = frame
+        self.center = center
+        loadingView.center = center
+        activityIndicator.center = CGPoint.init(x: loadingView.frame.size.width / 2, y: loadingView.frame.size.height / 2)
+        messageView.frame = CGRect(x: activityIndicator.frame.origin.x,
+                                   y: activityIndicator.frame.origin.y+activityIndicator.frame.size.height+10,
+                                   width: 120,
+                                   height: 20)
+        messageView.center = CGPoint(x: loadingView.frame.size.width / 2,
+                                     y: loadingView.frame.size.height / 2 + activityIndicator.frame.size.height/2+5)
+    }
+
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }

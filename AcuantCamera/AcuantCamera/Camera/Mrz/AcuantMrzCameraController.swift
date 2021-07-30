@@ -12,31 +12,32 @@ import AVFoundation
 import AcuantImagePreparation
 import AcuantCommon
 
-@objcMembers public class AcuantMrzCameraController : UIViewController {
+@objcMembers public class AcuantMrzCameraController: UIViewController {
     @objc public enum MrzCameraState : Int {
         case None = 0, Align = 1, MoveCloser = 2, TooClose = 3, Good = 4, Captured = 5
     }
     
     var captureSession: AcuantMrzCaptureSession!
-    var lastDeviceOrientation : UIDeviceOrientation!
+    var lastDeviceOrientation: UIDeviceOrientation!
     var videoPreviewLayer: AVCaptureVideoPreviewLayer!
-    var messageLayer :CameraTextView! = nil
-    var cornerLayer : CameraCornerOverlayView! = nil
-    var shapeLayer : CameraDocumentOverlayView! = nil
-    var imageLayer: CALayer?
-    var backButton : UIButton!
+    var messageLayer: CameraTextView!
+    var cornerLayer: CameraCornerOverlayView!
+    var shapeLayer: CameraDocumentOverlayView!
+    var imageLayer: DocumentPlaceholderLayer!
+    var alertView: CameraAlertView?
+    var backButton: UIButton!
     
-    private var currentPoints : [CGPoint?] = [nil, nil, nil, nil]
+    private var currentPoints: [CGPoint?] = [nil, nil, nil, nil]
     private var threshold = 25
     
     private var isNavigationHidden = false
     private var isCaptured = false
     
-    public var options : CameraOptions!
-    public var callback : ((AcuantMrzResult?) -> Void)?
+    public var options: CameraOptions!
+    public var callback: ((AcuantMrzResult?) -> Void)?
     public var customDisplayMessage: ((MrzCameraState) -> String) = {
         state in
-        switch(state){
+        switch state {
         case .None, .Align:
             return ""
         case .MoveCloser:
@@ -52,18 +53,15 @@ import AcuantCommon
     
     override public func viewDidLoad() {
         super.viewDidLoad()
-        UIDevice.current.setValue(UIInterfaceOrientation.portrait.rawValue, forKey: "orientation")
         self.isNavigationHidden = self.navigationController?.isNavigationBarHidden ?? false
         options = options ?? CameraOptions(
             bracketLengthInHorizontal: 50,
-            bracketLengthInVertical : 40,
-            defaultBracketMarginWidth : 0.58,
+            bracketLengthInVertical: 40,
+            defaultBracketMarginWidth: 0.58,
             defaultBracketMarginHeight: 0.63)
-        
         self.navigationController?.setNavigationBarHidden(options.hideNavigationBar, animated: false)
-        UIDevice.current.beginGeneratingDeviceOrientationNotifications()
-        NotificationCenter.default.addObserver(self, selector: #selector(self.deviceDidRotate(notification:)), name: UIDevice.orientationDidChangeNotification, object: nil)
         self.lastDeviceOrientation = UIDevice.current.orientation
+        createCameraLayers()
     }
     
     override public func viewDidAppear(_ animated: Bool) {
@@ -73,6 +71,8 @@ import AcuantCommon
     
     override public func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        addDeviceOrientationObserver()
+        addCaptureSessionObservers()
     }
     
     override public var prefersStatusBarHidden: Bool {
@@ -99,31 +99,115 @@ import AcuantCommon
         // TODO: Dispose of any resources that can be recreated.
     }
     
+    override public func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        super.viewWillTransition(to: size, with: coordinator)
+
+        coordinator.animate(alongsideTransition: { [weak self] context in
+            guard let self = self else { return }
+
+            self.rotateCameraPreview(to: self.view.window?.interfaceOrientation)
+        })
+    }
+
+    private func addDeviceOrientationObserver() {
+        guard let orientations = Bundle.main.infoDictionary?[.kUISupportedInterfaceOrientations] as? [String],
+              orientations.count == 1,
+              orientations[0] == .kUIInterfaceOrientationPortrait else {
+            return
+        }
+
+        UIDevice.current.beginGeneratingDeviceOrientationNotifications()
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(deviceDidRotate),
+                                               name: UIDevice.orientationDidChangeNotification,
+                                               object: nil)
+    }
+
+    private func addCaptureSessionObservers() {
+        NotificationCenter.default.addObserver(forName: .AVCaptureSessionWasInterrupted,
+                                               object: captureSession,
+                                               queue: .main) { [weak self] _ in
+            guard let self = self, self.alertView == nil else { return }
+
+            self.messageLayer.isHidden = false
+            self.messageLayer.string = NSLocalizedString("acuant_camera_paused", comment: "")
+            self.imageLayer.isHidden = true
+            let alertView = CameraAlertView(frame: self.view.bounds)
+            self.view.addSubview(alertView)
+            self.view.bringSubviewToFront(alertView)
+            self.alertView = alertView
+        }
+
+        NotificationCenter.default.addObserver(forName: .AVCaptureSessionInterruptionEnded,
+                                               object: captureSession,
+                                               queue: .main) { [weak self ] _ in
+            guard let self = self else { return }
+
+            self.alertView?.removeFromSuperview()
+            self.alertView = nil
+            self.messageLayer.isHidden = true
+            self.imageLayer.isHidden = false
+        }
+    }
+
+    private func rotateCameraPreview(to interfaceOrientation: UIInterfaceOrientation?) {
+        guard let connection = videoPreviewLayer.connection,
+              connection.isVideoOrientationSupported,
+              let orientation = interfaceOrientation else {
+            return
+        }
+
+        videoPreviewLayer.frame = view.bounds
+        connection.videoOrientation = orientation.videoOrientation ?? .portrait
+        if orientation.isLandscape {
+            cornerLayer.setHorizontalDefaultCorners(frame: view.bounds)
+            messageLayer.transform = CATransform3DIdentity
+            messageLayer.setFrame(frame: view.bounds)
+            imageLayer.transform = CATransform3DIdentity
+            imageLayer.setFrame(frame: view.bounds)
+        } else {
+            cornerLayer.setFrame(frame: view.bounds)
+
+            if CATransform3DIsIdentity(messageLayer.transform) {
+                messageLayer.rotate(angle: 90)
+            }
+
+            if CATransform3DIsIdentity(imageLayer.transform) {
+                imageLayer.setFrame(frame: view.bounds)
+                imageLayer.rotate(angle: 90)
+            }
+            messageLayer.setVerticalDefaultSettings(frame: view.bounds)
+        }
+        videoPreviewLayer.removeAllAnimations()
+    }
+
     private var mrzResult: AcuantMrzResult?
     private var dotCount = 0
     private var counter: Timer?
-    
-    private func handleUi(color:CGColor, message: String = "", points: Array<CGPoint>? = nil, shouldShowOverlay: Bool = false){
+
+    private func handleUi(color: CGColor, message: String = "", points: Array<CGPoint>? = nil, shouldShowOverlay: Bool = false){
         self.cornerLayer.setColor(color: color)
         
-        if(message.isEmpty){
+        if message.isEmpty {
             self.imageLayer?.isHidden = false
             self.messageLayer.isHidden = true
-            self.cornerLayer.setDefaultCorners(frame: self.view.frame)
+            if let orientation = view.window?.interfaceOrientation, orientation.isLandscape {
+                self.cornerLayer.setHorizontalDefaultCorners(frame: self.view.frame)
+            } else {
+                self.cornerLayer.setDefaultCorners(frame: self.view.frame)
+            }
             self.shapeLayer.hideBorder()
             self.counter?.invalidate()
             self.counter = nil
-        }
-        else{
+        } else {
             self.imageLayer?.isHidden = true
             self.messageLayer.isHidden = false
             self.messageLayer.string = message
             self.updateCorners(points: points)
             
-            if(shouldShowOverlay){
+            if shouldShowOverlay {
                 self.shapeLayer.showBorder(color: color)
-            }
-            else{
+            } else {
                 self.shapeLayer.hideBorder()
             }
         }
@@ -143,51 +227,54 @@ import AcuantCommon
             self.cornerLayer.setCorners(point1: convertedPoints[0], point2: convertedPoints[1], point3: convertedPoints[2], point4: convertedPoints[3])
         }
     }
-    
-    internal func startCameraView() {
+
+    func startCameraView() {
         let captureDevice: AVCaptureDevice = AVCaptureDevice.default(.builtInWideAngleCamera, for: AVMediaType.video, position: .back)!
-        self.captureSession = AcuantMrzCaptureSession(captureDevice: captureDevice){ [weak self]
-            (state, result, points) in
-            DispatchQueue.main.async{
-                if let self = self{
-                    if(self.videoPreviewLayer == nil || self.messageLayer == nil || self.videoPreviewLayer.isHidden || self.isCaptured){
-                        return
+        self.captureSession = AcuantMrzCaptureSession(captureDevice: captureDevice) { [weak self] (state, result, points) in
+            DispatchQueue.main.async {
+                guard let self = self, !self.captureSession.isInterrupted else { return }
+
+                if self.videoPreviewLayer == nil ||
+                    self.messageLayer == nil ||
+                    self.videoPreviewLayer.isHidden ||
+                    self.isCaptured {
+                    return
+                }
+
+                if self.isOutsideView(points: points) {
+                    self.mrzResult = nil
+                    self.handleUi(color: self.options.colorBracketAlign, message: self.customDisplayMessage(.Align))
+                } else {
+                    if let parsedResut = result {
+                        self.mrzResult = parsedResut
                     }
                     
-                    if(self.isOutsideView(points: points)){
+                    let message = self.customDisplayMessage(state)
+
+                    switch state {
+                    case .None:
                         self.mrzResult = nil
-                        self.handleUi(color: self.options.colorBracketAlign, message: self.customDisplayMessage(.Align))
-                    }
-                    else{
-                        if let parsedResut = result{
-                            self.mrzResult = parsedResut
-                        }
-                        
-                        let message = self.customDisplayMessage(state)
-                        
-                        switch(state){
-                        case .None:
-                            self.mrzResult = nil
-                            self.handleUi(color: self.options.colorBracketAlign, message: message)
-                            break;
-                        case .Align:
-                            self.handleUi(color: self.options.colorBracketAlign, message: message)
-                            break;
-                        case .MoveCloser:
-                            self.handleUi(color: self.options.colorBracketCloser, message: message, points:points)
-                        case .TooClose:
-                            self.handleUi(color: self.options.colorBracketCloser, message: message, points:points)
-                            break;
-                        case .Good, .Captured:
-                            if(self.mrzResult != nil){
-                                self.isCaptured = true
-                                self.handleUi(color: self.options.colorCapturing, message: self.customDisplayMessage(.Captured), points:points, shouldShowOverlay: true)
-                                self.counter = Timer.scheduledTimer(timeInterval: 0.8, target: self, selector: #selector(self.exitTimer), userInfo: nil, repeats: false)
-                            }
-                            else{
-                                self.handleUi(color: self.options.colorBracketHold, message: message, points:points, shouldShowOverlay: true)
-                            }
-                            break;
+                        self.handleUi(color: self.options.colorBracketAlign, message: message)
+                    case .Align:
+                        self.handleUi(color: self.options.colorBracketAlign, message: message)
+                    case .MoveCloser:
+                        self.handleUi(color: self.options.colorBracketCloser, message: message, points: points)
+                    case .TooClose:
+                        self.handleUi(color: self.options.colorBracketCloser, message: message, points: points)
+                    case .Good, .Captured:
+                        if self.mrzResult != nil {
+                            self.isCaptured = true
+                            self.handleUi(color: self.options.colorCapturing,
+                                          message: self.customDisplayMessage(.Captured),
+                                          points: points,
+                                          shouldShowOverlay: true)
+                            self.counter = Timer.scheduledTimer(timeInterval: 0.8,
+                                                                target: self,
+                                                                selector: #selector(self.exitTimer),
+                                                                userInfo: nil,
+                                                                repeats: false)
+                        } else {
+                            self.handleUi(color: self.options.colorBracketHold, message: message, points: points, shouldShowOverlay: true)
                         }
                     }
                 }
@@ -195,55 +282,51 @@ import AcuantCommon
         }
         self.startSessionAndAddViews()
     }
-    
-    private func startSessionAndAddViews(){
+
+    private func startSessionAndAddViews() {
         self.captureSession.start()
         self.videoPreviewLayer = AVCaptureVideoPreviewLayer(session: self.captureSession)
-        self.videoPreviewLayer.videoGravity = AVLayerVideoGravity.resizeAspectFill
-        self.videoPreviewLayer.frame = self.view.layer.bounds
-        self.videoPreviewLayer.connection?.videoOrientation = .portrait
-        if(self.messageLayer == nil) {
-            self.messageLayer = CameraTextView(autoCapture: options.autoCapture)
-            self.messageLayer.isHidden = true
-        }
-        self.messageLayer.setFrame(frame: self.view!.frame);
-        if(self.cornerLayer == nil) {
-            self.cornerLayer = CameraCornerOverlayView(options: options)
-        }
-        self.cornerLayer.setFrame(frame: self.view!.frame)
-        if(shapeLayer == nil) {
-            shapeLayer = CameraDocumentOverlayView(options: options)
-        }
-        
-        if let image = self.getImage(){
-            UIGraphicsBeginImageContextWithOptions(image.size, false, image.scale)
-            let rotated = image.rotate(radians: .pi/2)
-            rotated?.draw(at: .zero, blendMode: .normal, alpha: 0.6)
-            if let newImage = rotated{
-                self.imageLayer = CALayer()
-                
-                self.imageLayer!.frame = CGRect(x: (self.view.bounds.size.width/2) - (newImage.size.width/2), y:  (self.view.bounds.size.height/2) - (newImage.size.height/2), width: (newImage.size.width), height: (newImage.size.height))
-                self.imageLayer!.contents = newImage.cgImage
-                self.videoPreviewLayer.addSublayer(imageLayer!)
-            }
-            UIGraphicsEndImageContext()
-        }
-        
+        self.videoPreviewLayer.videoGravity = .resizeAspectFill
+
+        createCameraLayers()
+
         self.videoPreviewLayer.addSublayer(self.shapeLayer)
         self.videoPreviewLayer.addSublayer(self.messageLayer)
         self.videoPreviewLayer.addSublayer(self.cornerLayer)
+        self.videoPreviewLayer.addSublayer(self.imageLayer)
         self.view.layer.addSublayer(self.videoPreviewLayer)
-        
-        if(self.options.showBackButton){
+
+        rotateCameraPreview(to: self.view.window?.interfaceOrientation)
+
+        if self.options.showBackButton {
             addNavigationBackButton()
         }
     }
-    
-    private func getImage() -> UIImage?{
-        if(self.options.defaultImageUrl.isEmpty){
-            return UIImage(named: "Passport_placement_Overlay", in: Bundle(for: AcuantMrzCameraController.self), compatibleWith: nil)
+
+    private func createCameraLayers() {
+        if self.messageLayer == nil {
+            self.messageLayer = CameraTextView(autoCapture: options.autoCapture)
+            self.messageLayer.isHidden = true
         }
-        else{
+        self.messageLayer.setFrame(frame: self.view.frame)
+        if self.cornerLayer == nil {
+            self.cornerLayer = CameraCornerOverlayView(options: options)
+        }
+        self.cornerLayer.setFrame(frame: self.view.frame)
+        if shapeLayer == nil {
+            shapeLayer = CameraDocumentOverlayView(options: options)
+        }
+        if imageLayer == nil, let image = getPlaceholderImage() {
+            self.imageLayer = DocumentPlaceholderLayer(image: image, bounds: self.view.frame)
+        }
+    }
+    
+    private func getPlaceholderImage() -> UIImage? {
+        if self.options.defaultImageUrl.isEmpty {
+            return UIImage(named: "Passport_placement_Overlay",
+                           in: Bundle(for: AcuantMrzCameraController.self),
+                           compatibleWith: nil)
+        } else {
             return UIImage(named: self.options.defaultImageUrl)
         }
     }
@@ -298,35 +381,26 @@ import AcuantCommon
         return false
     }
     
-    @objc internal func deviceDidRotate(notification:NSNotification)
-    {
+    @objc func deviceDidRotate(notification: NSNotification) {
         let currentOrientation = UIDevice.current.orientation
-        if(self.lastDeviceOrientation != currentOrientation && self.messageLayer != nil){
-            if(currentOrientation.isLandscape){
-                if(currentOrientation == UIDeviceOrientation.landscapeLeft){
-                    rotateLayer(angle: -270, layer: messageLayer)
-                    if let imgLayer = self.imageLayer{
-                        rotateLayer(angle: 0, layer: imgLayer)
-                    }
-                }else if(currentOrientation == UIDeviceOrientation.landscapeRight){
-                    rotateLayer(angle: 270, layer: messageLayer)
-                    if let imgLayer = self.imageLayer{
-                        rotateLayer(angle: 180, layer: imgLayer)
-                    }
-                }
-                self.lastDeviceOrientation = currentOrientation;
+        guard self.lastDeviceOrientation != currentOrientation && self.messageLayer != nil else {
+            return
+        }
+
+        if currentOrientation.isLandscape {
+            if currentOrientation == UIDeviceOrientation.landscapeLeft {
+                messageLayer.rotate(angle: -270)
+                imageLayer.rotate(angle: -270)
+            } else if currentOrientation == UIDeviceOrientation.landscapeRight {
+                messageLayer.rotate(angle: 270)
+                imageLayer.rotate(angle: 270)
             }
+            self.lastDeviceOrientation = currentOrientation
         }
     }
     
-    
-    internal func rotateLayer(angle: Double,layer:CALayer){
-        layer.transform = CATransform3DMakeRotation(CGFloat(angle / 180.0 * .pi), 0.0, 0.0, 1.0)
-    }
-    
-    internal func addNavigationBackButton(){
+    func addNavigationBackButton() {
         backButton = UIButton(frame: CGRect(x: 0, y: UIScreen.main.heightOfSafeArea()*0.065, width: 90, height: 40))
-        
         
         var attribs : [NSAttributedString.Key : Any?] = [:]
         attribs[NSAttributedString.Key.font]=UIFont.systemFont(ofSize: 18)
@@ -342,7 +416,7 @@ import AcuantCommon
         self.view.addSubview(backButton)
     }
     
-    @objc internal func backTapped(_ sender: Any){
+    @objc func backTapped(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
         if let cb = self.callback{
             cb(nil)

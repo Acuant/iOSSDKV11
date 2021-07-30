@@ -1,6 +1,6 @@
-# Acuant iOS SDK v11.5.1
+# Acuant iOS SDK v11.5.2
 
-**June 2021**
+**July 2021**
 
 See [https://github.com/Acuant/iOSSDKV11/releases](https://github.com/Acuant/iOSSDKV11/releases) for release notes.
 
@@ -99,13 +99,11 @@ The SDK includes the following modules:
  		- TesseractOCR.framework
  -	**AcuantIPLiveness**
 	 	- iProov.xcframework
- 		- KeychainAccess.xcframework
  		- SocketIO.xcframework
  		- Starscream.xcframework
- 		- SwiftyJSON.xcframework
 
 	![](docs/embeded_framework.png)
-	
+
 	**Note:** AcuantCamera and AcuantFaceCapture are open projects. You will have to add the source code to your solution for frameworks.
 
 1. Get Carthage [https://github.com/Carthage/Carthage](https://github.com/Carthage/Carthage)
@@ -133,7 +131,7 @@ The SDK includes the following modules:
 1. Add the following in the podfile to get **all** the modules:
 
 		platform :ios, '11'
-		pod 'AcuantiOSSDKV11', '~> 11.5.1' #for all packages
+		pod 'AcuantiOSSDKV11', '~> 11.5.2' #for all packages
 		
  Alternatively, use the following to add **independent** modules in the podfile:
 		
@@ -188,13 +186,13 @@ The SDK includes the following modules:
 			pod 'AcuantiOSSDKV11/AcuantEchipReader'
 			dependency AcuantCommon
 		
-1. Enable "BUILD\_FOR\_DISTRIBUTION" for all Acuant pod frameworks in Build Settings.
+1. Enable "BUILD\_LIBRARY\_FOR\_DISTRIBUTION" for all Acuant pod frameworks in Build Settings.
 
 	- Using Cocoapods. Add to your Podfile.
 		
 			post_install do |installer|
 				installer.pods_project.targets.each do |target|
-					if ['AcuantiOSSDKV11', 'KeychainAccess', 'Socket.IO-Client-Swift', 'Starscream' 'SwiftyJSON'].include? target.name
+					if ['AcuantiOSSDKV11', 'Socket.IO-Client-Swift', 'Starscream'].include? target.name
 						target.build_configurations.each do |config|
 							config.build_settings['BUILD_LIBRARY_FOR_DISTRIBUTION'] = 'YES'
 						end
@@ -976,11 +974,9 @@ The **AcuantIPLiveness** module checks whether the subject is a live person.
 
 The following is a list of dependencies:
 
-- **iProov.framework**
-- **KeychainAccess.framework**
-- **SocketIO.framework**
-- **Startscream.framework**
-- **SwiftyJSON.framework**
+- **iProov.xcframework**
+- **SocketIO.xcframework**
+- **Startscream.xcframework**
 
 ----------
 
@@ -1114,26 +1110,13 @@ This module is used to match two facial images:
         public var isHealthCard: Bool = false
         public var isRetrying: Bool = false
         public var authenticationSensitivity: AuthenticationSensitivity = AuthenticationSensitivity.Normal
+        public var tamperSensitivity: TamperSensitivity = TamperSensitivity.Normal
     }
 
 ## Frequently Asked Questions
 
 ### Why do I get "No such module" error in Xcode when using "import AcuantCamera" when using CocoaPods
 **AcuantCamera** and **AcuantFaceCapture** are open projects and must be compiled by the user. With CocoaPods, both are compiled into pods name **AcuantiOSSDKV11** in which `import AcuantiOSSDKV11` must be used in Xcode. Using `import AcuantCamera` and `import AcuantFaceCapture` will not work.
-
-### What causes an "Unsupported Architecture" error when publishing the app in the Apple App store?
-
-All frameworks are *fat* (multi-architecture) binaries that contain *slices* for **armv7**, **arm64**, **i386**, and **x86(64)**  CPU architectures. ARM slices are used by physical iOS devices, while i386 and x86(64) are used by the simulator.
-
-Use the **lipo** command to check which slices are contained in the binaries:
-
-    	lipo -info <path to the file>
-
-You can also use the **lipo** command to remove unwanted slices:
-
-    	lipo -remove i386 <Path to the file> -o <Output file path>
-
-		lipo -remove x86_64 <Path to the file> -o <Output file path>
 
 ### Why does the Code signing “AcuantCommon.framework” error occur when I archive the sample application?
 

@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -14,6 +14,7 @@
 		76D00240233E7C7F00CE3DA8 /* CameraOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76D0023F233E7C7F00CE3DA8 /* CameraOptions.swift */; };
 		8327AA1D2420056700B524F9 /* AcuantMrzCaptureSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8327AA192420056700B524F9 /* AcuantMrzCaptureSession.swift */; };
 		8327AA212420056700B524F9 /* AcuantMrzCameraController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8327AA182420056700B524F9 /* AcuantMrzCameraController.swift */; };
+		8327AA27242005A900B524F9 /* TesseractOCR.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8327AA26242005A900B524F9 /* TesseractOCR.framework */; };
 		8327AA422420081100B524F9 /* AcuantMrzParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8327AA3D2420081100B524F9 /* AcuantMrzParser.swift */; };
 		8327AA432420081100B524F9 /* StringExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8327AA3F2420081100B524F9 /* StringExt.swift */; };
 		8327AA442420081100B524F9 /* AcuantOcrDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8327AA402420081100B524F9 /* AcuantOcrDetector.swift */; };
@@ -25,13 +26,19 @@
 		836DE49523204DA8005299E5 /* UIImageExtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 836DE49423204DA8005299E5 /* UIImageExtn.swift */; };
 		8387E200243284440051AF80 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8387E1FF243284440051AF80 /* Media.xcassets */; };
 		83BCAA012241961E00181B2A /* FrameAnalysisDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83BCAA002241961E00181B2A /* FrameAnalysisDelegate.swift */; };
-		AA1728CF2673DE3D00E3E2CB /* AcuantCommon.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA1728CD2673DE3D00E3E2CB /* AcuantCommon.xcframework */; };
-		AA1728D12673DE3D00E3E2CB /* AcuantImagePreparation.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA1728CE2673DE3D00E3E2CB /* AcuantImagePreparation.xcframework */; };
-		AA1728D52673E21800E3E2CB /* TesseractOCR.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA1728D42673E21800E3E2CB /* TesseractOCR.framework */; };
 		C25D3BA9220B29BF003F3027 /* DocumentCaptureSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = C25D3BA8220B29BF003F3027 /* DocumentCaptureSession.swift */; };
 		C25D3BAB220B29EE003F3027 /* DocumentCaptureDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C25D3BAA220B29EE003F3027 /* DocumentCaptureDelegate.swift */; };
 		C2743A26222DE2E700302CE7 /* CaptureConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2743A25222DE2E700302CE7 /* CaptureConstants.swift */; };
 		C2B8F11F22F1D61A009811A8 /* UIScreenExtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B8F11E22F1D61A009811A8 /* UIScreenExtn.swift */; };
+		C2DC4932224BBCD20003C0CA /* AcuantCommon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2C291F0221DC860005B4918 /* AcuantCommon.framework */; };
+		C2DC4933224BBCD20003C0CA /* AcuantImagePreparation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2BB6D6D221E0F65005AFC35 /* AcuantImagePreparation.framework */; };
+		D93A1361268F75A70047EB0E /* CameraPreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D93A1360268F75A70047EB0E /* CameraPreviewView.swift */; };
+		D95FF40E266FB9350054E7B9 /* UInterfaceOrientationExtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = D95FF40D266FB9350054E7B9 /* UInterfaceOrientationExtn.swift */; };
+		D95FF410266FC7E30054E7B9 /* UIWindowExtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = D95FF40F266FC7E30054E7B9 /* UIWindowExtn.swift */; };
+		D95FF41226711ED00054E7B9 /* DocumentPlaceholderLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D95FF41126711ED00054E7B9 /* DocumentPlaceholderLayer.swift */; };
+		D95FF414267177A60054E7B9 /* UILayerExtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = D95FF413267177A60054E7B9 /* UILayerExtn.swift */; };
+		D95FF41626727D760054E7B9 /* StringExtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = D95FF41526727D760054E7B9 /* StringExtn.swift */; };
+		D95FF4402672EDBF0054E7B9 /* CameraAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D95FF43F2672EDBF0054E7B9 /* CameraAlertView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +51,7 @@
 		76D0023F233E7C7F00CE3DA8 /* CameraOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraOptions.swift; sourceTree = "<group>"; };
 		8327AA182420056700B524F9 /* AcuantMrzCameraController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AcuantMrzCameraController.swift; sourceTree = "<group>"; };
 		8327AA192420056700B524F9 /* AcuantMrzCaptureSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AcuantMrzCaptureSession.swift; sourceTree = "<group>"; };
+		8327AA26242005A900B524F9 /* TesseractOCR.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TesseractOCR.framework; path = ../SampleApp/Carthage/Build/iOS/TesseractOCR.framework; sourceTree = "<group>"; };
 		8327AA3D2420081100B524F9 /* AcuantMrzParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AcuantMrzParser.swift; sourceTree = "<group>"; };
 		8327AA3F2420081100B524F9 /* StringExt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExt.swift; sourceTree = "<group>"; };
 		8327AA402420081100B524F9 /* AcuantOcrDetector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AcuantOcrDetector.swift; sourceTree = "<group>"; };
@@ -55,13 +63,19 @@
 		836DE49423204DA8005299E5 /* UIImageExtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtn.swift; sourceTree = "<group>"; };
 		8387E1FF243284440051AF80 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
 		83BCAA002241961E00181B2A /* FrameAnalysisDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrameAnalysisDelegate.swift; sourceTree = "<group>"; };
-		AA1728CD2673DE3D00E3E2CB /* AcuantCommon.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = AcuantCommon.xcframework; path = ../EmbeddedFrameworks/AcuantCommon.xcframework; sourceTree = "<group>"; };
-		AA1728CE2673DE3D00E3E2CB /* AcuantImagePreparation.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = AcuantImagePreparation.xcframework; path = ../EmbeddedFrameworks/AcuantImagePreparation.xcframework; sourceTree = "<group>"; };
-		AA1728D42673E21800E3E2CB /* TesseractOCR.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TesseractOCR.framework; path = ../EmbeddedFrameworks/TesseractOCR.framework; sourceTree = "<group>"; };
 		C25D3BA8220B29BF003F3027 /* DocumentCaptureSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DocumentCaptureSession.swift; sourceTree = "<group>"; };
 		C25D3BAA220B29EE003F3027 /* DocumentCaptureDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DocumentCaptureDelegate.swift; sourceTree = "<group>"; };
 		C2743A25222DE2E700302CE7 /* CaptureConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptureConstants.swift; sourceTree = "<group>"; };
 		C2B8F11E22F1D61A009811A8 /* UIScreenExtn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIScreenExtn.swift; sourceTree = "<group>"; };
+		C2BB6D6D221E0F65005AFC35 /* AcuantImagePreparation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = AcuantImagePreparation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C2C291F0221DC860005B4918 /* AcuantCommon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = AcuantCommon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D93A1360268F75A70047EB0E /* CameraPreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraPreviewView.swift; sourceTree = "<group>"; };
+		D95FF40D266FB9350054E7B9 /* UInterfaceOrientationExtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UInterfaceOrientationExtn.swift; sourceTree = "<group>"; };
+		D95FF40F266FC7E30054E7B9 /* UIWindowExtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIWindowExtn.swift; sourceTree = "<group>"; };
+		D95FF41126711ED00054E7B9 /* DocumentPlaceholderLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentPlaceholderLayer.swift; sourceTree = "<group>"; };
+		D95FF413267177A60054E7B9 /* UILayerExtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILayerExtn.swift; sourceTree = "<group>"; };
+		D95FF41526727D760054E7B9 /* StringExtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtn.swift; sourceTree = "<group>"; };
+		D95FF43F2672EDBF0054E7B9 /* CameraAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraAlertView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,9 +83,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AA1728CF2673DE3D00E3E2CB /* AcuantCommon.xcframework in Frameworks */,
-				AA1728D52673E21800E3E2CB /* TesseractOCR.framework in Frameworks */,
-				AA1728D12673DE3D00E3E2CB /* AcuantImagePreparation.xcframework in Frameworks */,
+				C2DC4932224BBCD20003C0CA /* AcuantCommon.framework in Frameworks */,
+				8327AA27242005A900B524F9 /* TesseractOCR.framework in Frameworks */,
+				C2DC4933224BBCD20003C0CA /* AcuantImagePreparation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -111,9 +125,9 @@
 		134F59EA21FA0E0D00CEDBFC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				AA1728D42673E21800E3E2CB /* TesseractOCR.framework */,
-				AA1728CD2673DE3D00E3E2CB /* AcuantCommon.xcframework */,
-				AA1728CE2673DE3D00E3E2CB /* AcuantImagePreparation.xcframework */,
+				C2BB6D6D221E0F65005AFC35 /* AcuantImagePreparation.framework */,
+				C2C291F0221DC860005B4918 /* AcuantCommon.framework */,
+				8327AA26242005A900B524F9 /* TesseractOCR.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -174,6 +188,10 @@
 			children = (
 				C2B8F11E22F1D61A009811A8 /* UIScreenExtn.swift */,
 				836DE49423204DA8005299E5 /* UIImageExtn.swift */,
+				D95FF40D266FB9350054E7B9 /* UInterfaceOrientationExtn.swift */,
+				D95FF40F266FC7E30054E7B9 /* UIWindowExtn.swift */,
+				D95FF413267177A60054E7B9 /* UILayerExtn.swift */,
+				D95FF41526727D760054E7B9 /* StringExtn.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -203,6 +221,9 @@
 				836DD9A52315EA3000428964 /* CameraTextView.swift */,
 				836DD9A72316096400428964 /* CameraCornerView.swift */,
 				836DD9A923160BA200428964 /* CameraCornerOverlayView.swift */,
+				D95FF41126711ED00054E7B9 /* DocumentPlaceholderLayer.swift */,
+				D95FF43F2672EDBF0054E7B9 /* CameraAlertView.swift */,
+				D93A1360268F75A70047EB0E /* CameraPreviewView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -246,7 +267,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 1010;
-				ORGANIZATIONNAME = "Tapas Behera";
+				ORGANIZATIONNAME = Acuant;
 				TargetAttributes = {
 					134F59D121FA0BA600CEDBFC = {
 						CreatedOnToolsVersion = 10.1;
@@ -287,6 +308,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D95FF410266FC7E30054E7B9 /* UIWindowExtn.swift in Sources */,
 				C2743A26222DE2E700302CE7 /* CaptureConstants.swift in Sources */,
 				8327AA452420081100B524F9 /* AcuantMrzResult.swift in Sources */,
 				8327AA422420081100B524F9 /* AcuantMrzParser.swift in Sources */,
@@ -297,16 +319,22 @@
 				8327AA1D2420056700B524F9 /* AcuantMrzCaptureSession.swift in Sources */,
 				836DD9A62315EA3000428964 /* CameraTextView.swift in Sources */,
 				836DD9A42315EA1400428964 /* CameraDocumentOverlayView.swift in Sources */,
+				D93A1361268F75A70047EB0E /* CameraPreviewView.swift in Sources */,
+				D95FF40E266FB9350054E7B9 /* UInterfaceOrientationExtn.swift in Sources */,
 				8327AA432420081100B524F9 /* StringExt.swift in Sources */,
+				D95FF414267177A60054E7B9 /* UILayerExtn.swift in Sources */,
 				76D00240233E7C7F00CE3DA8 /* CameraOptions.swift in Sources */,
 				C25D3BA9220B29BF003F3027 /* DocumentCaptureSession.swift in Sources */,
 				836DE49523204DA8005299E5 /* UIImageExtn.swift in Sources */,
 				8327AA442420081100B524F9 /* AcuantOcrDetector.swift in Sources */,
 				836DD9A82316096400428964 /* CameraCornerView.swift in Sources */,
 				8327AA212420056700B524F9 /* AcuantMrzCameraController.swift in Sources */,
+				D95FF4402672EDBF0054E7B9 /* CameraAlertView.swift in Sources */,
 				83BCAA012241961E00181B2A /* FrameAnalysisDelegate.swift in Sources */,
+				D95FF41626727D760054E7B9 /* StringExtn.swift in Sources */,
 				134F59E921FA0C8700CEDBFC /* CameraCaptureDelegate.swift in Sources */,
 				836DD9AA23160BA200428964 /* CameraCornerOverlayView.swift in Sources */,
+				D95FF41226711ED00054E7B9 /* DocumentPlaceholderLayer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
