@@ -92,7 +92,9 @@ Pod::Spec.new do |s|
         acuantFaceCapture.ios.deployment_target = '11.0'
 
         acuantFaceCapture.source_files =
-            "AcuantFaceCapture/AcuantFaceCapture/*.{h,swift}"
+            "AcuantFaceCapture/AcuantFaceCapture/*.{h,swift}",
+            "AcuantFaceCapture/AcuantFaceCapture/View/*.{h,swift}",
+            "AcuantFaceCapture/AcuantFaceCapture/Extension/*.{h,swift}"
 
         acuantFaceCapture.dependency "#{s.name}/AcuantCommon"
         acuantFaceCapture.dependency "#{s.name}/AcuantImagePreparation"

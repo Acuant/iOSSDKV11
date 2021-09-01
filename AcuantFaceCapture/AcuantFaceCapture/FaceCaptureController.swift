@@ -71,7 +71,7 @@ public class FaceCaptureController: UIViewController {
         coordinator.animate(alongsideTransition: { [weak self] context in
             guard let self = self else { return }
 
-            self.rotateCameraPreview(to: self.view.window?.interfaceOrientation)
+            self.rotateCameraPreview(to: self.view.window?.faceCaptureInterfaceOrientation)
             self.handleRotateToPortraitAlertIfPhone()
         })
     }
@@ -104,7 +104,7 @@ public class FaceCaptureController: UIViewController {
     private func handleRotateToPortraitAlertIfPhone() {
         guard
             UIDevice.current.userInterfaceIdiom == .phone,
-            let interfaceOrientation = self.view.window?.interfaceOrientation
+            let interfaceOrientation = self.view.window?.faceCaptureInterfaceOrientation
         else {
             return
         }
@@ -193,7 +193,7 @@ public class FaceCaptureController: UIViewController {
             }
             
             view.layer.addSublayer(videoPreviewLayer)
-            rotateCameraPreview(to: view.window?.interfaceOrientation)
+            rotateCameraPreview(to: view.window?.faceCaptureInterfaceOrientation)
             addNavigationBackButton()
         } else {
             navigationController?.popViewController(animated: true)
@@ -208,7 +208,7 @@ public class FaceCaptureController: UIViewController {
         }
 
         videoPreviewLayer.frame = view.bounds
-        connection.videoOrientation = orientation.videoOrientation ?? .portrait
+        connection.videoOrientation = orientation.faceCaptureVideoOrientation ?? .portrait
 
         topOverlayLayer.path = createRectanglePath().cgPath
         imageLayer?.setFrame(view.bounds)
@@ -275,7 +275,7 @@ public class FaceCaptureController: UIViewController {
                                 y: 1 - ((faceRect.origin.y) / aperture.height + (faceRect.height) / aperture.height),
                                 width: (faceRect.width + 150) / aperture.width,
                                 height: faceRect.height / aperture.height)
-            if let orientation = view.window?.interfaceOrientation, orientation.isLandscape {
+            if let orientation = view.window?.faceCaptureInterfaceOrientation, orientation.isLandscape {
                 scaled = CGRect(x: faceRect.origin.x / aperture.width,
                                 y: 1 - ((faceRect.origin.y) / aperture.height + (faceRect.height) / aperture.height),
                                 width: faceRect.width / aperture.width,
@@ -290,7 +290,7 @@ public class FaceCaptureController: UIViewController {
                                    point4: CGPoint(x: faceRect.origin.x, y: faceRect.origin.y + faceRect.size.height))
         } else {
             self.faceOval?.isHidden = true
-            if let orientation = view.window?.interfaceOrientation, orientation.isLandscape {
+            if let orientation = view.window?.faceCaptureInterfaceOrientation, orientation.isLandscape {
                 cornerlayer.setHorizontalDefaultCorners(frame: view.bounds)
             } else {
                 cornerlayer.setDefaultCorners(frame: view.bounds)

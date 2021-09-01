@@ -11,7 +11,7 @@ import AVFoundation
 
 extension UIInterfaceOrientation {
 
-    var videoOrientation: AVCaptureVideoOrientation? {
+    var faceCaptureVideoOrientation: AVCaptureVideoOrientation? {
         switch self {
         case .portraitUpsideDown: return .portraitUpsideDown
         case .landscapeRight: return .landscapeRight

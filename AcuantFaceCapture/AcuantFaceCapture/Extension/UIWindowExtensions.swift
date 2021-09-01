@@ -10,7 +10,7 @@ import UIKit
 
 extension UIWindow {
 
-    var interfaceOrientation: UIInterfaceOrientation? {
+    var faceCaptureInterfaceOrientation: UIInterfaceOrientation? {
         if #available(iOS 13, *) {
             return windowScene?.interfaceOrientation
         } else {
