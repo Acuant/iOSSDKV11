@@ -2,6 +2,9 @@
 "Back Side?" = "Back Side?";
 "Scan the back side of the health insurance card" = "Scan the back side of the health insurance card";
 "Scan the back side of the ID document" = "Scan the back side of the ID document";
+"Capture Barcode" = "Capture Barcode";
+"Barcode Expected" = "A barcode was expected but was not captured. Please try capturing the barcode";
+
 
 /* AcuantCamera */
 "acuant_camera_align" = "ALIGN";
@@ -11,6 +14,7 @@
 "acuant_camera_capturing" = "CAPTURING";
 "acuant_camera_outside_view" = "TOO CLOSE!";
 "acuant_camera_paused" = "CAMERA PAUSED";
+"acuant_camera_capture_barcode" = "CAPTURE BARCODE";
 
 /* AcuantFaceCapture/AcuantPassiveLiveness */
 "acuant_face_camera_initial" = "Align face to start capture";
@@ -21,6 +25,8 @@
 "acuant_face_camera_face_moved" = "Hold Steady";
 "acuant_face_camera_capturing_2" = "Capturing\n2...";
 "acuant_face_camera_capturing_1" = "Capturing\n1...";
+"acuant_face_camera_rotate_portrait" = "Face can only be captured in portrait";
+"acuant_face_camera_paused" = "Camera paused";
 
 /* AcuantHGLiveness */
 "hg_too_close" = "Too Close! Move Away";

@@ -6,7 +6,7 @@
 	<dict>
 		<key>Headers/AcuantDocumentProcessing-Swift.h</key>
 		<data>
-		kuJD8CdohBQ0N37vTRrvpGm2Aw8=
+		kfYMQZlqZaZpeNVDrVq94ECZo38=
 		</data>
 		<key>Headers/AssureIDSDK.h</key>
 		<data>
@@ -22,11 +22,11 @@
 		</data>
 		<key>Modules/AcuantDocumentProcessing.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		319yiyrH2IQ1oLVLD8Jk9QNoKew=
+		6fQWrLq7Q/GjdkhflmKU9HEh8/M=
 		</data>
 		<key>Modules/AcuantDocumentProcessing.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		Wqjw5leKUIodMMUERAC9D34hakU=
+		/gm0SQUfuI7k+qTKXBJraz+OwgI=
 		</data>
 		<key>Modules/AcuantDocumentProcessing.swiftmodule/arm64.swiftdoc</key>
 		<data>
@@ -34,11 +34,11 @@
 		</data>
 		<key>Modules/AcuantDocumentProcessing.swiftmodule/arm64.swiftinterface</key>
 		<data>
-		319yiyrH2IQ1oLVLD8Jk9QNoKew=
+		6fQWrLq7Q/GjdkhflmKU9HEh8/M=
 		</data>
 		<key>Modules/AcuantDocumentProcessing.swiftmodule/arm64.swiftmodule</key>
 		<data>
-		Wqjw5leKUIodMMUERAC9D34hakU=
+		/gm0SQUfuI7k+qTKXBJraz+OwgI=
 		</data>
 		<key>Modules/AcuantDocumentProcessing.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
@@ -46,11 +46,11 @@
 		</data>
 		<key>Modules/AcuantDocumentProcessing.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		8sOekllhOJD67QYBHQ/VSYPaSw4=
+		dXRqinXtlvgnZZaWP67R+kHAkIw=
 		</data>
 		<key>Modules/AcuantDocumentProcessing.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		bT1UeiLQekIRVlmlg4fEo/BqQIs=
+		8UdgyMM/7pfJXq+3wMUPgfJGDkw=
 		</data>
 		<key>Modules/AcuantDocumentProcessing.swiftmodule/x86_64.swiftdoc</key>
 		<data>
@@ -58,11 +58,11 @@
 		</data>
 		<key>Modules/AcuantDocumentProcessing.swiftmodule/x86_64.swiftinterface</key>
 		<data>
-		8sOekllhOJD67QYBHQ/VSYPaSw4=
+		dXRqinXtlvgnZZaWP67R+kHAkIw=
 		</data>
 		<key>Modules/AcuantDocumentProcessing.swiftmodule/x86_64.swiftmodule</key>
 		<data>
-		bT1UeiLQekIRVlmlg4fEo/BqQIs=
+		8UdgyMM/7pfJXq+3wMUPgfJGDkw=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -75,7 +75,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			DYDDGzc20HSFbqU0ooozob57h6bkBzYBt+lMdbfoDP0=
+			jIBlkiz7rhnwMRDg0HqtJHAkc6vDBbRgIv6A5O0hq0Y=
 			</data>
 		</dict>
 		<key>Headers/AssureIDSDK.h</key>
@@ -96,14 +96,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			vRwEBOKt1psWZkHhLk2aFRvTjy2PPgn6323cm607TfQ=
+			M8bMyYz7xeLLlR8kFBiN9mh2J6Mm5t8jLkq2izrCfeY=
 			</data>
 		</dict>
 		<key>Modules/AcuantDocumentProcessing.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			U1u6Y/jenwW6cWdsHJEKZW4YnCM/kixxeF3Jf3EK47A=
+			q2rn3z7IUAzEdccxaXLaABrEIsI8tF96jpyJsJnk9JQ=
 			</data>
 		</dict>
 		<key>Modules/AcuantDocumentProcessing.swiftmodule/arm64.swiftdoc</key>
@@ -117,14 +117,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			vRwEBOKt1psWZkHhLk2aFRvTjy2PPgn6323cm607TfQ=
+			M8bMyYz7xeLLlR8kFBiN9mh2J6Mm5t8jLkq2izrCfeY=
 			</data>
 		</dict>
 		<key>Modules/AcuantDocumentProcessing.swiftmodule/arm64.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			U1u6Y/jenwW6cWdsHJEKZW4YnCM/kixxeF3Jf3EK47A=
+			q2rn3z7IUAzEdccxaXLaABrEIsI8tF96jpyJsJnk9JQ=
 			</data>
 		</dict>
 		<key>Modules/AcuantDocumentProcessing.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
@@ -138,14 +138,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			pDurrfMa9Y9oha+uBEwimxP4SKmTmVQp7F1756YZDFY=
+			4UpwRwwmjyaPy3ViQQUMMB2EdtusI5vYKoWahCsm2ao=
 			</data>
 		</dict>
 		<key>Modules/AcuantDocumentProcessing.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			iJ5ch5BaTRhH4huU/VK7gvko/rGkxj9uIgttLNJMy/8=
+			9GLtK5RcO1cLncZAnML+ZntA+MzZVsaxcknPFXFRhks=
 			</data>
 		</dict>
 		<key>Modules/AcuantDocumentProcessing.swiftmodule/x86_64.swiftdoc</key>
@@ -159,14 +159,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			pDurrfMa9Y9oha+uBEwimxP4SKmTmVQp7F1756YZDFY=
+			4UpwRwwmjyaPy3ViQQUMMB2EdtusI5vYKoWahCsm2ao=
 			</data>
 		</dict>
 		<key>Modules/AcuantDocumentProcessing.swiftmodule/x86_64.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			iJ5ch5BaTRhH4huU/VK7gvko/rGkxj9uIgttLNJMy/8=
+			9GLtK5RcO1cLncZAnML+ZntA+MzZVsaxcknPFXFRhks=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

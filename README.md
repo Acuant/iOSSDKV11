@@ -1,6 +1,6 @@
-# Acuant iOS SDK v11.5.2
+# Acuant iOS SDK v11.5.3
 
-**July 2021**
+**September 2021**
 
 See [https://github.com/Acuant/iOSSDKV11/releases](https://github.com/Acuant/iOSSDKV11/releases) for release notes.
 
@@ -30,7 +30,7 @@ Please see the provided [migration details document](iOSmigrationdetails.pdf) fo
 ## Prerequisites
 
 - iOS version 11.0 or later
-- Xcode 12.5
+- Xcode 12.5.1
 
 ## Modules
 
@@ -131,7 +131,7 @@ The SDK includes the following modules:
 1. Add the following in the podfile to get **all** the modules:
 
 		platform :ios, '11'
-		pod 'AcuantiOSSDKV11', '~> 11.5.2' #for all packages
+		pod 'AcuantiOSSDKV11', '~> 11.5.3' #for all packages
 		
  Alternatively, use the following to add **independent** modules in the podfile:
 		
@@ -145,7 +145,9 @@ The SDK includes the following modules:
 			
 			pod 'AcuantiOSSDKV11/AcuantCamera/Mrz' # if you want MRZ camera
 			dependency TesseractOCRiOS
-		
+			
+			pod 'AcuantiOSSDK11/AcuantCamera/Barcode' # if you want Barcode camera
+
  - AcuantFaceCapture
 
 			pod 'AcuantiOSSDKV11/AcuantFaceCapture'
@@ -451,7 +453,29 @@ AcuantCamera is best used in portrait mode. Lock the orientation of the app befo
 	
 		func documentCaptured(image:UIImage, barcodeString:String?)
 
-	**Note:** **AcuantCamera** is dependent on **AcuantImagePreparation** and  **AcuantCommon**.
+**Note:** **AcuantCamera** is dependent on **AcuantImagePreparation** and  **AcuantCommon**.
+
+----------
+### Capture a document barcode using AcuantCamera
+
+**Note:** During regular capture of a document, the camera attempts to read the barcode. Launch this camera mode only if the barcode is expected according to document classification and failed to read during normal capture of the relevant side.
+
+1. Set up delegate:
+
+            @objc public protocol BarcodeCameraDelegate: AnyObject {
+                func captured(barcode: String?)
+            }
+
+1. Open the camera:
+
+            let options = CameraOptions(timeInMsPerDigit: 1000,
+                                        digitsToShow: 20,
+                                        colorHold: UIColor.white.cgColor,
+                                        colorCapturing: UIColor.green.cgColor)
+            let barcodeCamera = BarcodeCameraViewController(options: options, delegate: self)
+            navigationController?.pushViewController(barcodeCamera, animated: false)
+
+ **Note:** Be aware that **timeInMsPerDigit** will be used as the time to wait after the barcode is detected and **digitsToShow** (in seconds) will be used as a timeout. When the timeout is reached the camera will be closed.
 
 ----------
 ### Read MRZ using AcuantCamera
@@ -1060,9 +1084,10 @@ This module is used to match two facial images:
 		public static let ERROR_DESC_ERROR_CouldNotAccessCredential = "Could not get credential"
 		public static let ERROR_DESC_USER_CANCELED_ACTIVITY = "User canceled activity"
 		public static let ERROR_DESC_INVALID_PARAMETERS = "Invalid Parameters."
+		
 		public static let ERROR_DESC_OzoneInvalidFormat = "Ozone returned invalid format";
-		    
 		public static let ERROR_DESC_OzoneNotAuthorized = "Credentials not authorized for ozone";
+		
 		public static let ERROR_DESC_EChipReadError = "Error reading eChip. Connection lost to passport or incorrect key.";
 		public static let ERROR_DESC_InvalidNfcTag = "Tag Tech list was null. Most likely means unsupported passport/not a passport";
 		public static let ERROR_DESC_InvalidNfcKeyFormatting = "Decryption key formatted incorrectly. Check DOB, DOE, and doc number.";
@@ -1071,47 +1096,74 @@ This module is used to match two facial images:
 ### Image
 
 	public class Image {
-    	public var image: UIImage? = nil
-    	public var dpi: Int = 0 // dpi value of the captured image
-    	public var error: AcuantError? = nil
-    	public var isCorrectAspectRatio = false // If the captured image has the correct aspect ratio
-    	public var aspectRatio: Float = 0.0 // Aspect ratio of the captured image
-    	public var points: Array<CGPoint> = []
-    	public var isPassport = false
-    	public init(){}
-    }
+		public var image: UIImage? = nil
+		public var dpi: Int = 0 // dpi value of the captured image
+		public var error: AcuantError? = nil
+		public var isCorrectAspectRatio = false // If the captured image has the correct aspect ratio
+		public var aspectRatio: Float = 0.0 // Aspect ratio of the captured image
+		public var points: Array<CGPoint> = []
+		public var isPassport = false
+		public init(){}
+	}
     
 ### CameraOptions
 
 	public class CameraOptions{    
-	    public let timeInMsPerDigit: Int
-	    public let digitsToShow: Int
-	    public let allowBox: Bool
-	    public let autoCapture: Bool
-	    public let hideNavigationBar : Bool
-	    public let bracketLengthInHorizontal : Int
-	    public let bracketLengthInVertical: Int
-	    public let defaultBracketMarginWidth : CGFloat
-	    public let defaultBracketMarginHeight : CGFloat
-	    public let colorHold: CGColor
-	    public let colorCapturing: CGColor
-	    public let colorBracketAlign: CGColor
-	    public let colorBracketCloser: CGColor
-	    public let colorBracketHold: CGColor
-	    public let colorBracketCapture: CGColor
-	    public let defaultImageUrl: String
-	    public let showBackButton: Bool
-	    
+		public let timeInMsPerDigit: Int
+		public let digitsToShow: Int
+		public let allowBox: Bool
+		public let autoCapture: Bool
+		public let hideNavigationBar : Bool
+		public let bracketLengthInHorizontal : Int
+		public let bracketLengthInVertical: Int
+		public let defaultBracketMarginWidth : CGFloat
+		public let defaultBracketMarginHeight : CGFloat
+		public let colorHold: CGColor
+		public let colorCapturing: CGColor
+		public let colorBracketAlign: CGColor
+		public let colorBracketCloser: CGColor
+		public let colorBracketHold: CGColor
+		public let colorBracketCapture: CGColor
+		public let defaultImageUrl: String
+		public let showBackButton: Bool
 	}
     
 ### IdOptions
-    public class IdOptions {
-        public var cardSide: CardSide = CardSide.Front
-        public var isHealthCard: Bool = false
-        public var isRetrying: Bool = false
-        public var authenticationSensitivity: AuthenticationSensitivity = AuthenticationSensitivity.Normal
-        public var tamperSensitivity: TamperSensitivity = TamperSensitivity.Normal
-    }
+
+	public class IdOptions {
+		public var cardSide: CardSide = CardSide.Front
+		public var isHealthCard: Bool = false
+		public var isRetrying: Bool = false
+		public var authenticationSensitivity: AuthenticationSensitivity = AuthenticationSensitivity.Normal
+		public var tamperSensitivity: TamperSensitivity = TamperSensitivity.Normal
+	}
+    
+### AcuantPassportModel (used in eChip workflow)
+
+	public class AcuantPassportModel{    
+		public var documentType : String
+		public var documentSubType : String
+		public var personalNumber : String
+		public var documentNumber : String
+		public var issuingAuthority : String
+		public var documentExpiryDate : String
+		public var firstName : String
+		public var lastName : String
+		public var dateOfBirth : String
+		public var gender : String
+		public var nationality : String
+		public var image : UIImage?
+		public var passportSigned: OzoneResultStatus
+		public var passportCountrySigned: OzoneResultStatus
+		public var passportDataValid: Bool //Data Group Hash Check Status
+		public var age: Int? //extrapolated
+		public var isExpired: Bool? //extrapolated
+		
+		public func getRawDataGroup(dgId: AcuantDataGroupId) -> [UInt8]?
+	}
+	
+----------
+
 
 ## Frequently Asked Questions
 

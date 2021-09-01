@@ -27,10 +27,8 @@ class DocumentPlaceholderLayer: CALayer {
     }
     
     private func setup(_ bounds: CGRect) {
-        UIGraphicsBeginImageContextWithOptions(image.size, false, image.scale)
         setFrame(frame: bounds)
         contents = image.cgImage
-        UIGraphicsEndImageContext()
     }
     
     func setFrame(frame: CGRect) {

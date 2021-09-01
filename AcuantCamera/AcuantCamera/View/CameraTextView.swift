@@ -16,14 +16,11 @@ public class CameraTextView: CATextLayer {
     public var backgroundColorCapture: CGColor?
     public var foregroundColorDefault: CGColor? = UIColor.white.cgColor
     public var foregroundColorCapture: CGColor? = UIColor.red.cgColor
-    
-    private var isAnimating = false
-    private var isShown = false
-    private var currentColor = UIColor.red.cgColor
-    private let defaultWidth: CGFloat = 300
-    private let defaultHeight: CGFloat = 40
-    private let captureWidth: CGFloat = 100
-    private let captureHeight: CGFloat = 300
+
+    var defaultWidth: CGFloat = 300
+    var defaultHeight: CGFloat = 40
+    var captureWidth: CGFloat = 100
+    var captureHeight: CGFloat = 300
     
     public override var string: Any? {
         didSet {
@@ -44,7 +41,7 @@ public class CameraTextView: CATextLayer {
         self.cornerRadius = 10
     }
     
-    internal func setFrame(frame: CGRect) {
+    func setFrame(frame: CGRect) {
         self.setDefaultSettings(frame: frame)
     }
     

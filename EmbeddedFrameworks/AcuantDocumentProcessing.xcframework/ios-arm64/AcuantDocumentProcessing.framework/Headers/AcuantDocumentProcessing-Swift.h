@@ -397,6 +397,7 @@ SWIFT_CLASS("_TtC24AcuantDocumentProcessing18DocumentProcessing")
 @interface DocumentProcessing : NSObject
 + (void)createInstanceWithOptions:(IdOptions * _Nonnull)options delegate:(id <CreateInstanceDelegate> _Nonnull)delegate;
 + (void)uploadImageWithInstancdId:(NSString * _Nonnull)instancdId data:(IdData * _Nonnull)data options:(IdOptions * _Nonnull)options delegate:(id <UploadImageDelegate> _Nonnull)delegate;
++ (void)uploadBarcodeWithInstanceId:(NSString * _Nonnull)instanceId barcodeString:(NSString * _Nonnull)barcodeString delegate:(id <UploadImageDelegate> _Nonnull)delegate;
 + (void)getDataWithInstanceId:(NSString * _Nonnull)instanceId isHealthCard:(BOOL)isHealthCard delegate:(id <GetDataDelegate> _Nonnull)delegate;
 + (void)deleteInstanceWithInstanceId:(NSString * _Nonnull)instanceId type:(enum DeleteType)type delegate:(id <DeleteDelegate> _Nonnull)delegate;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
@@ -615,6 +616,8 @@ SWIFT_CLASS("_TtC24AcuantDocumentProcessing4Type")
 @property (nonatomic, copy) NSString * _Nullable keesingCode;
 @property (nonatomic, copy) NSString * _Nullable name;
 @property (nonatomic) NSInteger size;
+@property (nonatomic, copy) NSArray<NSNumber *> * _Nullable referenceDocumentDataTypes;
+@property (nonatomic, copy) NSArray<NSNumber *> * _Nullable documentDataTypes;
 @property (nonatomic, copy) NSArray<NSDictionary<NSString *, id> *> * _Nullable supportedImages;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");

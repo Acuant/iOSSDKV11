@@ -2,6 +2,8 @@
 "Back Side?" = "Likod ng ID?";
 "Scan the back side of the health insurance card" = "Kuhanan ng larawan ang likod ng health insurance ID";
 "Scan the back side of the ID document" = "Kuhanan ng larawan ang likod ng ID";
+"Capture Barcode" = "Makuha ang barcode";
+"Barcode Expected" = "Inaasahan ang isang barcode ngunit hindi nakuha. Mangyaring subukang kopyahin ang barcode";
 
 /* AcuantCamera */
 "acuant_camera_align" = "ITAPAT SA ID";
@@ -11,6 +13,7 @@
 "acuant_camera_capturing" = "KINUKUHA";
 "acuant_camera_outside_view" = "ITAPAT SA ID";
 "acuant_camera_paused" = "NAKA-PAUSE ANG CAMERA";
+"acuant_camera_capture_barcode" = "MAKUHA ANG BARCODE";
 
 /* AcuantFaceCapture/AcuantPassiveLiveness */
 "acuant_face_camera_initial" = "Itapat ang mukha\n upang magsimula";
@@ -21,6 +24,8 @@
 "acuant_face_camera_face_moved" = "Huwag igalaw";
 "acuant_face_camera_capturing_2" = "Kinukuha\n2...";
 "acuant_face_camera_capturing_1" = "Kinukuha\n1...";
+"acuant_face_camera_rotate_portrait" = "Maaari lamang makuha ang mukha sa larawan";
+"acuant_face_camera_paused" = "Naka-pause and camera";
 
 /* AcuantHGLiveness */
 "hg_too_close" = "Masyadong malapit! Lumayo";

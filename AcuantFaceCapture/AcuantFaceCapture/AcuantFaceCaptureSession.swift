@@ -125,34 +125,34 @@ import AVFoundation
         return newImage
     }
     
-    func isGoodSizeFace(face: CIFaceFeature, previewLayerSize:CGSize)-> AcuantFaceState{
+    func isGoodSizeFace(face: CIFaceFeature, previewLayerSize: CGSize) -> AcuantFaceState {
         let bounds = UIScreen.main.bounds
         let width = bounds.size.width
         let height = bounds.size.height
         let screenRatio = max(width, height) / min(width, height)
         let cameraRatio = max(previewLayerSize.width, previewLayerSize.height) / min(previewLayerSize.width, previewLayerSize.height)
+
+        var TOO_CLOSE_THRESH: CGFloat = 0.235 * screenRatio / cameraRatio
+        var TOO_FAR_THRESH: CGFloat = 0.385 * screenRatio / cameraRatio
+        let ratioToEdges = 1 - face.bounds.height / previewLayerSize.height
         
-        let TOO_CLOSE_THRESH: CGFloat = 0.235 * screenRatio / cameraRatio
-        let TOO_FAR_THRESH: CGFloat = 0.385 * screenRatio / cameraRatio
-        let ratioToEdges = 1 - face.bounds.height/previewLayerSize.height
-        
-        
-        if (isFaceInBound(facePosition : face.bounds, previewLayerSize:previewLayerSize)){
+        let isLandscape = face.bounds.height / face.bounds.width > 1
+        if isLandscape {
+            TOO_CLOSE_THRESH = 0.5 * screenRatio / cameraRatio
+            TOO_FAR_THRESH = 0.55 * screenRatio / cameraRatio
+        }
+
+        if isFaceInBound(facePosition: face.bounds, previewLayerSize: previewLayerSize) {
             return AcuantFaceState.FACE_NOT_IN_FRAME
-        }
-        else if (ratioToEdges < TOO_CLOSE_THRESH){
+        } else if ratioToEdges < TOO_CLOSE_THRESH {
             return AcuantFaceState.FACE_TOO_CLOSE
-        }
-        else if(ratioToEdges > TOO_FAR_THRESH){
+        } else if ratioToEdges > TOO_FAR_THRESH {
             return AcuantFaceState.FACE_TOO_FAR
-        }
-        else if (doesFaceHaveAngle(hasAnglePosition: face.hasFaceAngle, faceAngle: face.faceAngle)){
+        } else if doesFaceHaveAngle(hasAnglePosition: face.hasFaceAngle, faceAngle: face.faceAngle) {
             return AcuantFaceState.FACE_HAS_ANGLE
-        }
-        else if(didFaceMove(facePosition: face.bounds)){
+        } else if didFaceMove(facePosition: face.bounds) {
             return AcuantFaceState.FACE_MOVED
-        }
-        else{
+        } else {
             return AcuantFaceState.FACE_GOOD_DISTANCE
         }
     }

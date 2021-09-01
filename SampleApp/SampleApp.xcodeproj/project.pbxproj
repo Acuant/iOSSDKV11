@@ -51,6 +51,8 @@
 		AA1728C62673CDDF00E3E2CB /* Starscream.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = AA1728AD2673CDDE00E3E2CB /* Starscream.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		AA1728C72673CDDF00E3E2CB /* AcuantIPLiveness.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA1728AE2673CDDE00E3E2CB /* AcuantIPLiveness.xcframework */; };
 		AA1728C82673CDDF00E3E2CB /* AcuantIPLiveness.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = AA1728AE2673CDDE00E3E2CB /* AcuantIPLiveness.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		AAD8A20C26DD94C1007920C2 /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD8A20B26DD94C1007920C2 /* AlertView.swift */; };
+		AAD8A20E26DD9515007920C2 /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD8A20D26DD9515007920C2 /* BaseNavigationController.swift */; };
 		C229E7B62224520700FFAC6F /* AcuantConfig.plist in Resources */ = {isa = PBXBuildFile; fileRef = C229E7B52224520700FFAC6F /* AcuantConfig.plist */; };
 		C2AD3AAA2273B8F200088F0A /* AcuantCamera.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C208049D2226E049004FA5BE /* AcuantCamera.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C2B08D5922C6AF31003F2CBE /* FaceLivenessCameraController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B08D5822C6AF31003F2CBE /* FaceLivenessCameraController.swift */; };
@@ -151,6 +153,8 @@
 		AA1728AC2673CDDE00E3E2CB /* SocketIO.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = SocketIO.xcframework; path = ../EmbeddedFrameworks/SocketIO.xcframework; sourceTree = "<group>"; };
 		AA1728AD2673CDDE00E3E2CB /* Starscream.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = Starscream.xcframework; path = ../EmbeddedFrameworks/Starscream.xcframework; sourceTree = "<group>"; };
 		AA1728AE2673CDDE00E3E2CB /* AcuantIPLiveness.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = AcuantIPLiveness.xcframework; path = ../EmbeddedFrameworks/AcuantIPLiveness.xcframework; sourceTree = "<group>"; };
+		AAD8A20B26DD94C1007920C2 /* AlertView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AlertView.swift; path = View/AlertView.swift; sourceTree = "<group>"; };
+		AAD8A20D26DD9515007920C2 /* BaseNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
 		C20804982226E048004FA5BE /* AcuantCamera.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = AcuantCamera.xcodeproj; path = ../AcuantCamera/AcuantCamera.xcodeproj; sourceTree = "<group>"; };
 		C229E7B52224520700FFAC6F /* AcuantConfig.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = AcuantConfig.plist; sourceTree = "<group>"; };
 		C2B08D5822C6AF31003F2CBE /* FaceLivenessCameraController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FaceLivenessCameraController.swift; sourceTree = "<group>"; };
@@ -201,6 +205,8 @@
 		13AC65DA20EE8F8F00F0D494 /* SampleApp */ = {
 			isa = PBXGroup;
 			children = (
+				AAD8A20D26DD9515007920C2 /* BaseNavigationController.swift */,
+				AAD8A20B26DD94C1007920C2 /* AlertView.swift */,
 				760DB0A424E5D900004747E7 /* Token */,
 				8381E903248EFD93003FB763 /* SampleApp.entitlements */,
 				83576FF5243555310091454C /* tessdata */,
@@ -406,8 +412,10 @@
 				138EA90520F7CFC9002FC333 /* Utils.swift in Sources */,
 				13750BB62125FC35009B29AA /* ClassificationErrorViewController.swift in Sources */,
 				13AC65DE20EE8F8F00F0D494 /* RootViewController.swift in Sources */,
+				AAD8A20C26DD94C1007920C2 /* AlertView.swift in Sources */,
 				83576FF3243554E20091454C /* NFCViewController.swift in Sources */,
 				C2B08D5922C6AF31003F2CBE /* FaceLivenessCameraController.swift in Sources */,
+				AAD8A20E26DD9515007920C2 /* BaseNavigationController.swift in Sources */,
 				138EA90320F7BF9B002FC333 /* ResultViewController.swift in Sources */,
 				83C977F622C69D9A00FC8C53 /* CheckConnection.swift in Sources */,
 				760DB0A624E5D900004747E7 /* AcuantTokenService.swift in Sources */,

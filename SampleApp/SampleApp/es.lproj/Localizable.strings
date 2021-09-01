@@ -2,6 +2,8 @@
 "Back Side?" = "Reverso?";
 "Scan the back side of the health insurance card" = "Escanee el reverso de la tarjeta de seguro de salud";
 "Scan the back side of the ID document" = "Escanee el reverso del documento de identificación";
+"Capture Barcode" = "Capturar código de barras";
+"Barcode Expected" = "Un código de barras era esperado pero no fue capturado. Por favor trate de capturar el código de barras";
 
 /* AcuantCamera */
 "acuant_camera_align" = "ALINEAR";
@@ -11,6 +13,7 @@
 "acuant_camera_capturing" = "CAPTURANDO";
 "acuant_camera_outside_view" = "ALINEAR";
 "acuant_camera_paused" = "CÁMARA EN PAUSA";
+"acuant_camera_capture_barcode" = "CAPTURAR CÓDIGO DE BARRAS";
 
 /* AcuantFaceCapture/AcuantPassiveLiveness */
 "acuant_face_camera_initial" = "Alinear la cara para\n comenzar a capturar";
@@ -21,6 +24,8 @@
 "acuant_face_camera_face_moved" = "Mantener estable";
 "acuant_face_camera_capturing_2" = "Captura\n2...";
 "acuant_face_camera_capturing_1" = "Captura\n1...";
+"acuant_face_camera_rotate_portrait" = "La cara sólo se puede capturar en retrato";
+"acuant_face_camera_paused" = "Cámara en pausa";
 
 /* AcuantHGLiveness */
 "hg_too_close" = "Demasiado cerca";

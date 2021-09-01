@@ -39,6 +39,10 @@
 		D95FF414267177A60054E7B9 /* UILayerExtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = D95FF413267177A60054E7B9 /* UILayerExtn.swift */; };
 		D95FF41626727D760054E7B9 /* StringExtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = D95FF41526727D760054E7B9 /* StringExtn.swift */; };
 		D95FF4402672EDBF0054E7B9 /* CameraAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D95FF43F2672EDBF0054E7B9 /* CameraAlertView.swift */; };
+		D9B4821726BC4177001C0CEC /* BarcodeCaptureSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9B4821626BC4177001C0CEC /* BarcodeCaptureSession.swift */; };
+		D9B4821926BC4EE2001C0CEC /* BarcodeCameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9B4821826BC4EE2001C0CEC /* BarcodeCameraViewController.swift */; };
+		D9B4821B26C18DC6001C0CEC /* BarcodeCameraDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9B4821A26C18DC6001C0CEC /* BarcodeCameraDelegate.swift */; };
+		D9B4821D26C18F1D001C0CEC /* BarcodeCaptureDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9B4821C26C18F1D001C0CEC /* BarcodeCaptureDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -76,6 +80,10 @@
 		D95FF413267177A60054E7B9 /* UILayerExtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILayerExtn.swift; sourceTree = "<group>"; };
 		D95FF41526727D760054E7B9 /* StringExtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtn.swift; sourceTree = "<group>"; };
 		D95FF43F2672EDBF0054E7B9 /* CameraAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraAlertView.swift; sourceTree = "<group>"; };
+		D9B4821626BC4177001C0CEC /* BarcodeCaptureSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarcodeCaptureSession.swift; sourceTree = "<group>"; };
+		D9B4821826BC4EE2001C0CEC /* BarcodeCameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarcodeCameraViewController.swift; sourceTree = "<group>"; };
+		D9B4821A26C18DC6001C0CEC /* BarcodeCameraDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarcodeCameraDelegate.swift; sourceTree = "<group>"; };
+		D9B4821C26C18F1D001C0CEC /* BarcodeCaptureDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarcodeCaptureDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -207,6 +215,7 @@
 		8327AA4C2420165200B524F9 /* Camera */ = {
 			isa = PBXGroup;
 			children = (
+				D9B4821526BC3FED001C0CEC /* Barcode */,
 				8327AA472420086F00B524F9 /* Document */,
 				8327AA462420084100B524F9 /* Mrz */,
 				76D0023F233E7C7F00CE3DA8 /* CameraOptions.swift */,
@@ -226,6 +235,17 @@
 				D93A1360268F75A70047EB0E /* CameraPreviewView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		D9B4821526BC3FED001C0CEC /* Barcode */ = {
+			isa = PBXGroup;
+			children = (
+				D9B4821626BC4177001C0CEC /* BarcodeCaptureSession.swift */,
+				D9B4821826BC4EE2001C0CEC /* BarcodeCameraViewController.swift */,
+				D9B4821A26C18DC6001C0CEC /* BarcodeCameraDelegate.swift */,
+				D9B4821C26C18F1D001C0CEC /* BarcodeCaptureDelegate.swift */,
+			);
+			path = Barcode;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -308,10 +328,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D9B4821B26C18DC6001C0CEC /* BarcodeCameraDelegate.swift in Sources */,
 				D95FF410266FC7E30054E7B9 /* UIWindowExtn.swift in Sources */,
 				C2743A26222DE2E700302CE7 /* CaptureConstants.swift in Sources */,
 				8327AA452420081100B524F9 /* AcuantMrzResult.swift in Sources */,
 				8327AA422420081100B524F9 /* AcuantMrzParser.swift in Sources */,
+				D9B4821926BC4EE2001C0CEC /* BarcodeCameraViewController.swift in Sources */,
 				C25D3BAB220B29EE003F3027 /* DocumentCaptureDelegate.swift in Sources */,
 				C2B8F11F22F1D61A009811A8 /* UIScreenExtn.swift in Sources */,
 				767F07FD255F356800830649 /* AutoCaptureDelegate.swift in Sources */,
@@ -326,10 +348,12 @@
 				76D00240233E7C7F00CE3DA8 /* CameraOptions.swift in Sources */,
 				C25D3BA9220B29BF003F3027 /* DocumentCaptureSession.swift in Sources */,
 				836DE49523204DA8005299E5 /* UIImageExtn.swift in Sources */,
+				D9B4821D26C18F1D001C0CEC /* BarcodeCaptureDelegate.swift in Sources */,
 				8327AA442420081100B524F9 /* AcuantOcrDetector.swift in Sources */,
 				836DD9A82316096400428964 /* CameraCornerView.swift in Sources */,
 				8327AA212420056700B524F9 /* AcuantMrzCameraController.swift in Sources */,
 				D95FF4402672EDBF0054E7B9 /* CameraAlertView.swift in Sources */,
+				D9B4821726BC4177001C0CEC /* BarcodeCaptureSession.swift in Sources */,
 				83BCAA012241961E00181B2A /* FrameAnalysisDelegate.swift in Sources */,
 				D95FF41626727D760054E7B9 /* StringExtn.swift in Sources */,
 				134F59E921FA0C8700CEDBFC /* CameraCaptureDelegate.swift in Sources */,

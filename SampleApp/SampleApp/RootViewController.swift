@@ -36,6 +36,7 @@ class RootViewController: UIViewController{
     private var isInitialized = false
     private var isKeyless = false
     private var faceCapturedImage: UIImage?
+    private var isDocumentWithBarcode = false
     
     public var idOptions = IdOptions()
     public var idData = IdData()
@@ -199,7 +200,7 @@ class RootViewController: UIViewController{
         self.handleInitialization(isDocumentCapture: false)
     }
     
-    @IBAction func idPassportTapped(_ sender: UIButton){
+    @IBAction func idPassportTapped(_ sender: UIButton) {
         self.idOptions.isHealthCard = false
         self.handleInitialization()
     }
@@ -255,8 +256,8 @@ class RootViewController: UIViewController{
         self.createInstance()
     }
     
-    public func confirmImage(image:AcuantImage){
-        self.createInstanceGroup.notify(queue: .main){
+    public func confirmImage(image: AcuantImage) {
+        self.createInstanceGroup.notify(queue: .main) {
             self.showProgressView(text: "Processing...")
             
             let evaluted = EvaluatedImageData(imageBytes: image.data, barcodeString: self.idData.barcodeString)
@@ -344,15 +345,16 @@ extension RootViewController{
 }
 //ImagePreparation - END =============
 
-//AcuantCamera - START =============
-extension RootViewController: CameraCaptureDelegate{
-    public func setCapturedImage(image:Image, barcodeString:String?){
-        if(self.isKeyless){
+//MARK: - AcuantCamera: CameraCaptureDelegate
+
+extension RootViewController: CameraCaptureDelegate {
+
+    public func setCapturedImage(image: Image, barcodeString: String?) {
+        if isKeyless {
             handleKeyless(image: image)
-        }
-        else if (image.image != nil) {
+        } else if image.image != nil {
             self.showProgressView(text: "Processing...")
-            ImagePreparation.evaluateImage(data: CroppingData.newInstance(image: image)){
+            ImagePreparation.evaluateImage(data: CroppingData.newInstance(image: image)) {
                 result, error in
                 
                 DispatchQueue.main.async {
@@ -361,14 +363,13 @@ extension RootViewController: CameraCaptureDelegate{
                         let storyBoard = UIStoryboard.init(name: "Main", bundle: nil)
                         let confirmController = storyBoard.instantiateViewController(withIdentifier: "ConfirmationViewController") as! ConfirmationViewController
                         confirmController.acuantImage = result
-                        if(barcodeString != nil){
+                        if barcodeString != nil {
                             confirmController.barcodeCaptured = true
                             confirmController.barcodeString = barcodeString
                         }
                         self.idData.barcodeString = barcodeString
                         self.navigationController?.pushViewController(confirmController, animated: true)
-                    }
-                    else{
+                    } else {
                         CustomAlerts.display(
                             title: "Error",
                             message: (error?.errorDescription)!,
@@ -409,7 +410,7 @@ extension RootViewController: CameraCaptureDelegate{
         //Optionally override to change refresh rate
         //liveFaceViewController.frameRefreshSpeed = 10
         
-        self.navigationController?.pushViewController(liveFaceViewController, animated: true)
+        self.navigationController?.pushViewController(liveFaceViewController, animated: false)
     }
     
     public func cropImage(image:Image, callback: @escaping (AcuantImage?) -> ()){
@@ -427,8 +428,8 @@ extension RootViewController: CameraCaptureDelegate{
         }
     }
     
-    private func handleKeyless(image:Image){
-        cropImage(image: image){ croppedImage in
+    private func handleKeyless(image: Image) {
+        cropImage(image: image) { croppedImage in
             if(croppedImage == nil || croppedImage!.isPassport || self.idOptions.cardSide == CardSide.Back){
                 self.showKeylessHGLiveness()
             }
@@ -444,7 +445,6 @@ extension RootViewController: CameraCaptureDelegate{
         }
     }
 }
-//AcuantCamera - END =============
 
 //DocumentProcessing - START ============
 
@@ -467,8 +467,67 @@ extension RootViewController: CreateInstanceDelegate{
     }
 }
 
-extension RootViewController:UploadImageDelegate{
-    private func handleHealthcardFront(){
+//MARK: - AcuantDocumentProcessing: UploadImageDelegate
+
+extension RootViewController: UploadImageDelegate {
+    
+    func imageUploaded(error: AcuantError?, classification: Classification?) {
+        self.hideProgressView()
+        
+        if error == nil {
+            self.idOptions.isRetrying = false
+            if self.idOptions.isHealthCard {
+                if self.idOptions.cardSide == CardSide.Front {
+                    self.handleHealthcardFront()
+                } else {
+                    DocumentProcessing.getData(instanceId: self.documentInstance!, isHealthCard: true, delegate: self)
+                    self.showProgressView(text: "Processing...")
+                }
+            } else {
+                if self.idOptions.cardSide == CardSide.Front {
+                    if self.isBackSideRequired(classification: classification) {
+                        isDocumentWithBarcode = classification?.type?.referenceDocumentDataTypes?.contains(0) ?? false
+                        let alert = UIAlertController(title: NSLocalizedString("Back Side?", comment: ""), message: NSLocalizedString("Scan the back side of the ID document", comment: ""), preferredStyle:UIAlertController.Style.alert)
+                        alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default)
+                        { action -> Void in
+                            self.idOptions.cardSide = CardSide.Back
+                            self.showDocumentCaptureCamera()
+                        })
+                        self.present(alert, animated: true, completion: nil)
+                    } else {
+                        self.getIdDataAndStartFace()
+                    }
+                } else if idOptions.cardSide == .Back, isDocumentWithBarcode, idData.barcodeString == nil {
+                    let alert = UIAlertController(title: NSLocalizedString("Capture Barcode", comment: ""),
+                                                  message: NSLocalizedString("Barcode Expected", comment: ""),
+                                                  preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "OK", style: .default) { _ in
+                        let options = CameraOptions(timeInMsPerDigit: 1000,
+                                                    digitsToShow: 20,
+                                                    colorHold: UIColor.white.cgColor,
+                                                    colorCapturing: UIColor.green.cgColor)
+                        let barcodeCamera = BarcodeCameraViewController(options: options, delegate: self)
+                        self.navigationController?.pushViewController(barcodeCamera, animated: false)
+                    })
+                    present(alert, animated: true, completion: nil)
+                } else {
+                    self.getIdDataAndStartFace()
+                }
+            }
+        }else{
+            if(error?.errorCode == AcuantErrorCodes.ERROR_CouldNotClassifyDocument){
+                let storyBoard = UIStoryboard.init(name: "Main", bundle: nil)
+                let errorController = storyBoard.instantiateViewController(withIdentifier: "ClassificationErrorViewController") as! ClassificationErrorViewController
+                
+                errorController.image = self.idData.image
+                self.navigationController?.pushViewController(errorController, animated: true)
+            }else{
+                CustomAlerts.displayError(message: "\(error!.errorCode) : " + (error?.errorDescription)!)
+            }
+        }
+    }
+    
+    private func handleHealthcardFront() {
         let alert = UIAlertController(title: NSLocalizedString("Back Side?", comment: ""), message: NSLocalizedString("Scan the back side of the health insurance card", comment: ""), preferredStyle:UIAlertController.Style.alert)
         alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default)
         { action -> Void in
@@ -490,51 +549,6 @@ extension RootViewController:UploadImageDelegate{
         self.getDataGroup.enter()
         DocumentProcessing.getData(instanceId: self.documentInstance!, isHealthCard: false, delegate: self)
         self.showProgressView(text: "Processing...")
-    }
-    
-    func imageUploaded(error: AcuantError?, classification:Classification?) {
-        self.hideProgressView()
-        
-        if(error == nil){
-            self.idOptions.isRetrying = false
-            if(self.idOptions.isHealthCard){
-                if(self.idOptions.cardSide == CardSide.Front){
-                    self.handleHealthcardFront()
-                }else{
-                    // Get Data
-                    DocumentProcessing.getData(instanceId: self.documentInstance!, isHealthCard: true, delegate: self)
-                    self.showProgressView(text: "Processing...")
-                }
-            }else{
-                if(self.idOptions.cardSide == CardSide.Front){
-                    if(self.isBackSideRequired(classification: classification)){
-                        // Capture Back Side
-                        let alert = UIAlertController(title: NSLocalizedString("Back Side?", comment: ""), message: NSLocalizedString("Scan the back side of the ID document", comment: ""), preferredStyle:UIAlertController.Style.alert)
-                        alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default)
-                        { action -> Void in
-                            self.idOptions.cardSide = CardSide.Back
-                            self.showDocumentCaptureCamera()
-                        })
-                        self.present(alert, animated: true, completion: nil)
-                    }else{
-                        self.getIdDataAndStartFace()
-                    }
-                }else{
-                    // Get Data
-                    self.getIdDataAndStartFace()
-                }
-            }
-        }else{
-            if(error?.errorCode == AcuantErrorCodes.ERROR_CouldNotClassifyDocument){
-                let storyBoard = UIStoryboard.init(name: "Main", bundle: nil)
-                let errorController = storyBoard.instantiateViewController(withIdentifier: "ClassificationErrorViewController") as! ClassificationErrorViewController
-                
-                errorController.image = self.idData.image
-                self.navigationController?.pushViewController(errorController, animated: true)
-            }else{
-                CustomAlerts.displayError(message: "\(error!.errorCode) : " + (error?.errorDescription)!)
-            }
-        }
     }
 }
 
@@ -818,7 +832,7 @@ extension RootViewController {
                     self?.showResultGroup.leave()
                 }
             }
-            self.navigationController?.pushViewController(controller, animated: true)
+            self.navigationController?.pushViewController(controller, animated: false)
         }
     }
     
@@ -937,5 +951,20 @@ extension RootViewController: MrzHelpViewControllerDelegate {
         }
 
         navigationController?.pushViewController(controller, animated: false)
+    }
+}
+
+//MARK: - AcuantCamera: BarcodeCameraDelegate
+
+extension RootViewController: BarcodeCameraDelegate {
+
+    func captured(barcode: String?) {
+        guard let barcode = barcode, let documentInstanceId = documentInstance else {
+            getIdDataAndStartFace()
+            return
+        }
+        
+        idData.barcodeString = barcode
+        DocumentProcessing.uploadBarcode(instanceId: documentInstanceId, barcodeString: barcode, delegate: self)
     }
 }

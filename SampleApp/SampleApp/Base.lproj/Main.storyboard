@@ -366,10 +366,10 @@
             </objects>
             <point key="canvasLocation" x="1766.6666666666667" y="22.767857142857142"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Base Navigation Controller-->
         <scene sceneID="b6r-l3-ARp">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="I0c-68-3Fo" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="I0c-68-3Fo" customClass="BaseNavigationController" customModule="SampleApp" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="G0S-WV-sIx">
                         <rect key="frame" x="0.0" y="44" width="428" height="44"/>
