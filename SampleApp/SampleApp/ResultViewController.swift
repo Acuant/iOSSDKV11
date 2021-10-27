@@ -27,30 +27,38 @@ class ResultViewController: UIViewController,UITableViewDataSource,UITableViewDe
     public var back: UIImage?
     public var faceImageCaptured: UIImage?
 
-    public var username: String?
-    public var password: String?
+    var basicAuth: String?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-    
-        if let frontImageUrl = self.frontImageUrl {
-            frontImage.downloadedFrom(urlStr: frontImageUrl, username: username!, password: password!)
+        if (front == nil) {
+            if let frontImageUrl = self.frontImageUrl {
+                frontImage.downloadedFrom(urlStr: frontImageUrl, basicAuth: basicAuth!)
+            }
+        } else {
+            frontImage.image = front
+            frontImage.isHidden = false
         }
         
-        if let backImageUrl = self.backImageUrl {
-            backImage.downloadedFrom(urlStr: backImageUrl, username: username!, password: password!)
+        if (back == nil) {
+            if let backImageUrl = self.backImageUrl {
+                backImage.downloadedFrom(urlStr: backImageUrl, basicAuth: basicAuth!)
+            }
+        } else {
+            backImage.image = back
+            backImage.isHidden = false
         }
         
         if let faceImageUrl = self.faceImageUrl {
-            faceImage.downloadedFrom(urlStr: faceImageUrl, username: username!, password: password!)
+            faceImage.downloadedFrom(urlStr: faceImageUrl, basicAuth: basicAuth!)
         }
         
         if let signImageUrl = self.signImageUrl {
-            signImage.downloadedFrom(urlStr: signImageUrl, username: username!, password: password!)
+            signImage.downloadedFrom(urlStr: signImageUrl, basicAuth: basicAuth!)
         }
         
-        if backImageUrl == nil {
+        if backImageUrl == nil && back == nil {
             backImage.removeFromSuperview()
             if faceImageCaptured == nil {
                 faceImage.leadingAnchor.constraint(equalTo: frontImage.trailingAnchor, constant: 10).isActive = true
@@ -96,15 +104,12 @@ class ResultViewController: UIViewController,UITableViewDataSource,UITableViewDe
 }
 
 extension UIImageView {
-    func downloadedFrom(urlStr:String,username:String,password:String) {
-        let loginData = String(format: "%@:%@", username, password).data(using: String.Encoding.utf8)!
-        let base64LoginData = loginData.base64EncodedString()
-        
+    func downloadedFrom(urlStr: String, basicAuth: String) {
         // create the request
         let url = URL(string: urlStr)!
         var request = URLRequest(url: url)
         request.httpMethod = "GET"
-        request.setValue("Basic \(base64LoginData)", forHTTPHeaderField: "Authorization")
+        request.setValue(basicAuth, forHTTPHeaderField: "Authorization")
         
         URLSession.shared.dataTask(with: request) { (data, response, error) in
             let httpURLResponse = response as? HTTPURLResponse

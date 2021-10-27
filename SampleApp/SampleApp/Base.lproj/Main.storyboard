@@ -103,7 +103,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="m7g-O8-z3D"/>
                                 </constraints>
-                                <state key="normal" title="Health Insurance Card"/>
+                                <state key="normal" title="Medical Insurance Card"/>
                                 <connections>
                                     <action selector="healthCardTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="LL2-UN-N3Z"/>
                                 </connections>

@@ -1,6 +1,6 @@
-# Acuant iOS SDK v11.5.3
+# Acuant iOS SDK v11.5.4
 
-**September 2021**
+**October 2021**
 
 See [https://github.com/Acuant/iOSSDKV11/releases](https://github.com/Acuant/iOSSDKV11/releases) for release notes.
 
@@ -30,7 +30,7 @@ Please see the provided [migration details document](iOSmigrationdetails.pdf) fo
 ## Prerequisites
 
 - iOS version 11.0 or later
-- Xcode 12.5.1
+- Xcode 12.5.1+
 
 ## Modules
 
@@ -131,7 +131,7 @@ The SDK includes the following modules:
 1. Add the following in the podfile to get **all** the modules:
 
 		platform :ios, '11'
-		pod 'AcuantiOSSDKV11', '~> 11.5.3' #for all packages
+		pod 'AcuantiOSSDKV11', '~> 11.5.4' #for all packages
 		
  Alternatively, use the following to add **independent** modules in the podfile:
 		

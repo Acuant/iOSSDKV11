@@ -315,7 +315,7 @@ class FaceLivenessCameraController: UIViewController, AcuantHGLiveFaceCaptureDel
 
 //MARK: - Orientation extensions
 
-internal extension UIWindow {
+extension UIWindow {
 
     var interfaceOrientation: UIInterfaceOrientation? {
         if #available(iOS 13, *) {

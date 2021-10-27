@@ -1,6 +1,6 @@
 /* SampleApp */
 "Back Side?" = "Reverso?";
-"Scan the back side of the health insurance card" = "Escanee el reverso de la tarjeta de seguro de salud";
+"Scan the back side of the medical insurance card" = "Escanee el reverso de la tarjeta de seguro de salud";
 "Scan the back side of the ID document" = "Escanee el reverso del documento de identificación";
 "Capture Barcode" = "Capturar código de barras";
 "Barcode Expected" = "Un código de barras era esperado pero no fue capturado. Por favor trate de capturar el código de barras";

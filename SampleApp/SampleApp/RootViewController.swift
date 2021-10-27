@@ -528,7 +528,7 @@ extension RootViewController: UploadImageDelegate {
     }
     
     private func handleHealthcardFront() {
-        let alert = UIAlertController(title: NSLocalizedString("Back Side?", comment: ""), message: NSLocalizedString("Scan the back side of the health insurance card", comment: ""), preferredStyle:UIAlertController.Style.alert)
+        let alert = UIAlertController(title: NSLocalizedString("Back Side?", comment: ""), message: NSLocalizedString("Scan the back side of the medical insurance card", comment: ""), preferredStyle:UIAlertController.Style.alert)
         alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default)
         { action -> Void in
             self.idOptions.cardSide = CardSide.Back
@@ -572,9 +572,11 @@ extension RootViewController:GetDataDelegate{
         if(processingResult.error == nil){
             if(self.idOptions.isHealthCard){
                 let healthCardResult = processingResult as! HealthInsuranceCardResult
+                let frontImage = healthCardResult.frontImage
+                let backImage = healthCardResult.backImage
                 let mirrored_object = Mirror(reflecting: healthCardResult)
                 var dataArray = Array<String>()
-                for (index, attr) in mirrored_object.children.enumerated() {
+                for (_, attr) in mirrored_object.children.enumerated() {
                     if let property_name = attr.label as String? {
                         if let property_value = attr.value as? String {
                             if(property_value != ""){
@@ -584,7 +586,7 @@ extension RootViewController:GetDataDelegate{
                     }
                 }
                 
-                showHealthCardResult(data: dataArray, front: healthCardResult.frontImage, back: healthCardResult.backImage)
+                showHealthCardResult(data: dataArray, front: frontImage, back: backImage)
                 DocumentProcessing.deleteInstance(instanceId: healthCardResult.instanceID!,type:DeleteType.MedicalCard, delegate: self)
                 
             }else{
@@ -673,8 +675,7 @@ extension RootViewController:GetDataDelegate{
             resultViewController.backImageUrl = back
             resultViewController.signImageUrl = sign
             resultViewController.faceImageUrl = face
-            resultViewController.username = Credential.username()
-            resultViewController.password = Credential.password()
+            resultViewController.basicAuth = Credential.getBasicAuthHeader()
             resultViewController.faceImageCaptured = self.faceCapturedImage
             self.navigationController?.pushViewController(resultViewController, animated: true)
         }
@@ -871,14 +872,11 @@ extension RootViewController : FacialMatchDelegate{
         self.showProgressView(text: "Processing...")
         self.getDataGroup.notify(queue: .main){
             if(self.capturedFaceImageUrl != nil && image != nil){
-                let loginData = String(format: "%@:%@", Credential.username()!, Credential.password()!).data(using: String.Encoding.utf8)!
-                let base64LoginData = loginData.base64EncodedString()
-                
                 // create the request
                 let url = URL(string: self.capturedFaceImageUrl!)!
                 var request = URLRequest(url: url)
                 request.httpMethod = "GET"
-                request.setValue("Basic \(base64LoginData)", forHTTPHeaderField: "Authorization")
+                request.setValue(Credential.getBasicAuthHeader()!, forHTTPHeaderField: "Authorization")
                 
                 URLSession.shared.dataTask(with: request) { (data, response, error) in
                     let httpURLResponse = response as? HTTPURLResponse

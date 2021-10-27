@@ -1,6 +1,6 @@
 /* SampleApp */
 "Back Side?" = "Likod ng ID?";
-"Scan the back side of the health insurance card" = "Kuhanan ng larawan ang likod ng health insurance ID";
+"Scan the back side of the medical insurance card" = "Kuhanan ng larawan ang likod ng health insurance ID";
 "Scan the back side of the ID document" = "Kuhanan ng larawan ang likod ng ID";
 "Capture Barcode" = "Makuha ang barcode";
 "Barcode Expected" = "Inaasahan ang isang barcode ngunit hindi nakuha. Mangyaring subukang kopyahin ang barcode";

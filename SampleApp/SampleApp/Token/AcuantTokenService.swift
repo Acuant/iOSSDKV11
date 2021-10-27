@@ -18,20 +18,13 @@ public class AcuantTokenService: IAcuantTokenService{
     public func getTask(callback: @escaping (String?) -> ()) -> URLSessionTask?{
         let session = URLSession.shared
         
-        if  let endpoint = Credential.endpoints()?.acasEndpoint,
-            let urlPath = NSURL(string: "\(endpoint)/oauth/token"),
-            let username = Credential.username(),
-            let password = Credential.password()
-        {
+        if let endpoint = Credential.endpoints()?.acasEndpoint,
+           let urlPath = NSURL(string: "\(endpoint)/oauth/token"),
+           let auth = Credential.getBasicAuthHeader() {
             let request = NSMutableURLRequest(url: urlPath as URL)
-            
-            let sub = (Credential.subscription() != nil && !Credential.subscription()!.isEmpty) ? "\(Credential.subscription()!);" : ""
-            let utf8str = (sub + username+":"+password).data(using: String.Encoding.utf8)
-            let authValue = "Basic \(utf8str?.base64EncodedString() ?? "")"
-            
             request.timeoutInterval = 60
             request.cachePolicy = NSURLRequest.CachePolicy.reloadIgnoringLocalCacheData
-            request.addValue(authValue, forHTTPHeaderField: "Authorization")
+            request.addValue(auth, forHTTPHeaderField: "Authorization")
             request.addValue("application/json", forHTTPHeaderField: "Content-Type")
             request.httpMethod = "POST"
             request.httpBody = "{\"grant_type\": \"client_credentials\"}".data(using: .utf8)

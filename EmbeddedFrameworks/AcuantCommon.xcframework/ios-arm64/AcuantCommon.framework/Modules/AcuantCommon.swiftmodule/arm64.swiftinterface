@@ -51,8 +51,7 @@ public class AcuantInitializer : AcuantCommon.IAcuantInitializer {
   @objc override dynamic public init()
   @objc deinit
 }
-public class AcuantJwtParser {
-  public init()
+@_hasMissingDesignatedInitializers public class AcuantJwtParser {
   public func parseToken(jwtToken: Swift.String) -> AcuantCommon.AcuantJwtToken?
   public func decode(jwtToken jwt: Swift.String) -> [Swift.String : Any]
   public func base64UrlDecode(_ value: Swift.String) -> Foundation.Data?
@@ -70,7 +69,7 @@ public protocol IAcuantPackage {
   @objc public class func newInstance() -> AcuantCommon.AcuantError
   @objc deinit
 }
-public class AcuantJwtToken {
+@_hasMissingDesignatedInitializers public class AcuantJwtToken {
   final public let value: Swift.String
   final public let expiration: Foundation.Date
   public init(value: Swift.String, expiration: Foundation.Date)
