@@ -1,6 +1,6 @@
-# Acuant iOS SDK v11.5.4
+# Acuant iOS SDK v11.5.5
 
-**October 2021**
+**March 2022**
 
 See [https://github.com/Acuant/iOSSDKV11/releases](https://github.com/Acuant/iOSSDKV11/releases) for release notes.
 
@@ -21,9 +21,9 @@ This document provides detailed information about the Acuant iOS SDK. The Acuant
 
 ----------
 
-## Updating to 11.5.1+
+## Updating to 11.5.5+
 
-Please see the provided [migration details document](iOSmigrationdetails.pdf) for information about updating to 11.5.1+
+Please see the provided [Migration Details](MigrationDetails.md) for information about updating to 11.5.5+
 
 ----------
 
@@ -87,17 +87,17 @@ The SDK includes the following modules:
 
 1. Add the following dependent embedded frameworks:
 
- -	**AcuantFaceCapture**
- -	**AcuantPassiveLiveness**
- -	**AcuantCommon**
- -	**AcuantImagePreparation**
- -	**AcuantDocumentProcessing**
- -	**AcuantHGLiveness**
- -	**AcuantFaceMatch**
- -	**AcuantEchipReader**
- -	**AcuantCamera**
+ 	-	**AcuantFaceCapture**
+ 	-	**AcuantPassiveLiveness**
+ 	-	**AcuantCommon**
+	-	**AcuantImagePreparation**
+	-	**AcuantDocumentProcessing**
+	-	**AcuantHGLiveness**
+	-	**AcuantFaceMatch**
+	-	**AcuantEchipReader**
+ 	-	**AcuantCamera**
  		- TesseractOCR.framework
- -	**AcuantIPLiveness**
+ 	-	**AcuantIPLiveness**
 	 	- iProov.xcframework
  		- SocketIO.xcframework
  		- Starscream.xcframework
@@ -116,7 +116,7 @@ The SDK includes the following modules:
 
 		/usr/local/bin/carthage copy-frameworks
 
-1. Create new inputFileList.xcfilelist and outputFileList.xcfilelist. Add necessary frameworks to both files. Example in repository.
+1. Create new inputFileList.xcfilelist and outputFileList.xcfilelist. Add only TesseractOCR.framework to both files. Do not add XCFrameworks. There's an example in repository.
 
 1. Add the .xcfilelist to your run script.
 
@@ -131,7 +131,9 @@ The SDK includes the following modules:
 1. Add the following in the podfile to get **all** the modules:
 
 		platform :ios, '11'
-		pod 'AcuantiOSSDKV11', '~> 11.5.4' #for all packages
+		use_frameworks! # important
+		
+		pod 'AcuantiOSSDKV11', '~> 11.5.5' #for all packages
 		
  Alternatively, use the following to add **independent** modules in the podfile:
 		
@@ -797,9 +799,9 @@ After you capture a document image and completed crop, it can be processed using
 		let controller = FaceCaptureController()
 		controller.options = options
 		controller.callback = { [weak self]
-			(image: UIImage?) in
+			(result: FaceCaptureResult?) in
 				
-				if(image == nil){
+				if (result == nil) {
 					//user canceled
 				}
             
@@ -838,20 +840,20 @@ The following may significantly increase errors or false results:
 
 **Note:** The use of fish-eye lenses is not supported by this API.
 
-1. Get Passive Liveness result with UIImage:
+1. Get Passive Liveness result with Data:
 
 		//liveness request
-		class AcuantLivenessRequest{
-		    public let image: UIImage
-		    public init(image: UIImage)
+		class AcuantLivenessRequest {
+		    public let jpegData: Data
+		    public init(jpegData: Data)
 		}
 		
 		//liveness response
-		class AcuantLivenessResponse{
+		class AcuantLivenessResponse {
 			public let score: Int
 			public let result: AcuantLivenessAssessment
     		
-    		public enum AcuantLivenessAssessment: String{
+    		public enum AcuantLivenessAssessment: String {
 				case Error
 				case PoorQuality
 				case Live
@@ -860,12 +862,12 @@ The following may significantly increase errors or false results:
 		}
 		
 		//liveness response
-		class AcuantLivenessError{
+		class AcuantLivenessError {
 			public let errorCode: AcuantLivenessErrorCode?
 			public let description: String?
 			
 			
-			public enum AcuantLivenessErrorCode: String{
+			public enum AcuantLivenessErrorCode: String {
 			    case Unknown
 			    case FaceTooClose
 			    case FaceNotFound
@@ -882,7 +884,7 @@ The following may significantly increase errors or false results:
 		}
 		
 		//example
-		PassiveLiveness.postLiveness(request: AcuantLivenessRequest(image: image)){ [weak self]
+		PassiveLiveness.postLiveness(request: AcuantLivenessRequest(jpegData: jpegData)) { [weak self]
 			(result: AcuantLivenessResponse?, error: AcuantLivenessError?) in
 				//response
 		}
@@ -1008,15 +1010,15 @@ The following is a list of dependencies:
 
 This module is used to match two facial images:
 
-		public class func processFacialMatch(facialData : FacialMatchData, delegate : FacialMatchDelegate)
+		public class func processFacialMatch(facialData: FacialMatchData, delegate: FacialMatchDelegate)
 
 		public protocol FacialMatchDelegate {
-    		func facialMatchFinished(result:FacialMatchResult?)
+    		func facialMatchFinished(result: FacialMatchResult?)
 		}
 
-		public class FacialMatchData{
-    		public var faceImageOne : UIImage // Facial image from ID Card (image gets compressed by 80%)
-    		public var faceImageTwo : UIImage // Facial image from selfie capture during liveness check (image gets compressed by 80%)
+		public class FacialMatchData {
+    		public var faceOneData: Data // Facial image from ID Card (image gets compressed by 80%)
+    		public var faceTwoData: Data // Facial image from selfie capture during liveness check (image gets compressed by 80%)
 		}
 
 ----------
@@ -1136,6 +1138,7 @@ This module is used to match two facial images:
 		public var isRetrying: Bool = false
 		public var authenticationSensitivity: AuthenticationSensitivity = AuthenticationSensitivity.Normal
 		public var tamperSensitivity: TamperSensitivity = TamperSensitivity.Normal
+		public var countryCode: String?
 	}
     
 ### AcuantPassportModel (used in eChip workflow)
@@ -1183,7 +1186,7 @@ Acuant does not provide obfuscation tools, however several third-party tools, in
 
 -------------------------------------------------------------
 
-**Copyright 2021 Acuant Inc. All rights reserved.**
+**Copyright 2022 Acuant Inc. All rights reserved.**
 
 This document contains proprietary and confidential information and creative works owned by Acuant and its respective licensors, if any. Any use, copying, publication, distribution, display, modification, or transmission of such technology, in whole or in part, in any form or by any means, without the prior express written permission of Acuant is strictly prohibited. Except where expressly provided by Acuant in writing, possession of this information shall not be construed to confer any license or rights under any Acuant intellectual property rights, whether by estoppel, implication, or otherwise.
 

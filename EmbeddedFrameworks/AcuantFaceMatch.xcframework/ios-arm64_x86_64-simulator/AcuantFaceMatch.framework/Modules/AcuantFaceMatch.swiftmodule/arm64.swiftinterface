@@ -1,11 +1,12 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.4.2 (swiftlang-1205.0.28.2 clang-1205.0.19.57)
+// swift-compiler-version: Apple Swift version 5.5.2 (swiftlang-1300.0.47.5 clang-1300.0.29.30)
 // swift-module-flags: -target arm64-apple-ios11.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name AcuantFaceMatch
 import AcuantCommon
 @_exported import AcuantFaceMatch
 import Foundation
 import Swift
 import UIKit
+import _Concurrency
 @objc public protocol FacialMatchDelegate {
   @objc func facialMatchFinished(result: AcuantFaceMatch.FacialMatchResult?)
 }
@@ -25,10 +26,9 @@ import UIKit
   @objc deinit
 }
 @objc @objcMembers public class FacialMatchData : ObjectiveC.NSObject {
-  @objc public var faceImageOne: UIKit.UIImage
-  @objc public var faceImageTwo: UIKit.UIImage
-  @objc public init(faceImageOne: UIKit.UIImage, faceImageTwo: UIKit.UIImage)
-  @objc public class func newInstance(faceImageOne: UIKit.UIImage, faceImageTwo: UIKit.UIImage) -> AcuantFaceMatch.FacialMatchData
-  @objc override dynamic public init()
+  @objc public var faceOneData: Foundation.Data
+  @objc public var faceTwoData: Foundation.Data
+  @objc public init(faceOneData: Foundation.Data, faceTwoData: Foundation.Data)
+  @objc public class func newInstance(faceOneData: Foundation.Data, faceTwoData: Foundation.Data) -> AcuantFaceMatch.FacialMatchData
   @objc deinit
 }

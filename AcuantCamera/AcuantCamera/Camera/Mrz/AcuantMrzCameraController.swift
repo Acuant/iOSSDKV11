@@ -316,19 +316,26 @@ import AcuantCommon
         if shapeLayer == nil {
             shapeLayer = CameraDocumentOverlayView(options: options)
         }
-        if imageLayer == nil, let image = getPlaceholderImage() {
-            self.imageLayer = DocumentPlaceholderLayer(image: image, bounds: self.view.frame)
+        if imageLayer == nil {
+            self.imageLayer = DocumentPlaceholderLayer(image: getPlaceholderImage() ?? UIImage(), bounds: self.view.frame)
         }
     }
-    
+
     private func getPlaceholderImage() -> UIImage? {
         if self.options.defaultImageUrl.isEmpty {
-            return UIImage(named: "Passport_placement_Overlay",
-                           in: Bundle(for: AcuantMrzCameraController.self),
-                           compatibleWith: nil)
-        } else {
-            return UIImage(named: self.options.defaultImageUrl)
+            if let image = UIImage(named: "Passport_placement_Overlay",
+                                   in: Bundle(for: AcuantMrzCameraController.self),
+                                   compatibleWith: nil) {
+                return image
+            } else if let bundlePath = Bundle(for: AcuantMrzCameraController.self).path(forResource: "AcuantCameraAssets",
+                                                                                        ofType: "bundle"),
+                      let bundle = Bundle(path: bundlePath), let image = UIImage(named: "Passport_placement_Overlay",
+                                                                                 in: bundle,
+                                                                                 compatibleWith: nil) {
+                return image
+            }
         }
+        return UIImage(named: self.options.defaultImageUrl)
     }
     
     public func exitTimer(){

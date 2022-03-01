@@ -43,6 +43,7 @@
 		D9B4821926BC4EE2001C0CEC /* BarcodeCameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9B4821826BC4EE2001C0CEC /* BarcodeCameraViewController.swift */; };
 		D9B4821B26C18DC6001C0CEC /* BarcodeCameraDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9B4821A26C18DC6001C0CEC /* BarcodeCameraDelegate.swift */; };
 		D9B4821D26C18F1D001C0CEC /* BarcodeCaptureDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9B4821C26C18F1D001C0CEC /* BarcodeCaptureDelegate.swift */; };
+		D9D18E6E27BAA47E0048293A /* CGRectExtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9D18E6D27BAA47E0048293A /* CGRectExtn.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -84,6 +85,7 @@
 		D9B4821826BC4EE2001C0CEC /* BarcodeCameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarcodeCameraViewController.swift; sourceTree = "<group>"; };
 		D9B4821A26C18DC6001C0CEC /* BarcodeCameraDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarcodeCameraDelegate.swift; sourceTree = "<group>"; };
 		D9B4821C26C18F1D001C0CEC /* BarcodeCaptureDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarcodeCaptureDelegate.swift; sourceTree = "<group>"; };
+		D9D18E6D27BAA47E0048293A /* CGRectExtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGRectExtn.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +127,7 @@
 				8327AA4C2420165200B524F9 /* Camera */,
 				8327AA4A2420099B00B524F9 /* Extension */,
 				134F59D521FA0BA600CEDBFC /* AcuantCamera.h */,
+				8387E1FF243284440051AF80 /* Media.xcassets */,
 				134F59D621FA0BA600CEDBFC /* Info.plist */,
 			);
 			path = AcuantCamera;
@@ -165,7 +168,6 @@
 				8327AA3C2420081100B524F9 /* OCR */,
 				8327AA192420056700B524F9 /* AcuantMrzCaptureSession.swift */,
 				8327AA182420056700B524F9 /* AcuantMrzCameraController.swift */,
-				8387E1FF243284440051AF80 /* Media.xcassets */,
 			);
 			path = Mrz;
 			sourceTree = "<group>";
@@ -200,6 +202,7 @@
 				D95FF40F266FC7E30054E7B9 /* UIWindowExtn.swift */,
 				D95FF413267177A60054E7B9 /* UILayerExtn.swift */,
 				D95FF41526727D760054E7B9 /* StringExtn.swift */,
+				D9D18E6D27BAA47E0048293A /* CGRectExtn.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -330,6 +333,7 @@
 			files = (
 				D9B4821B26C18DC6001C0CEC /* BarcodeCameraDelegate.swift in Sources */,
 				D95FF410266FC7E30054E7B9 /* UIWindowExtn.swift in Sources */,
+				D9D18E6E27BAA47E0048293A /* CGRectExtn.swift in Sources */,
 				C2743A26222DE2E700302CE7 /* CaptureConstants.swift in Sources */,
 				8327AA452420081100B524F9 /* AcuantMrzResult.swift in Sources */,
 				8327AA422420081100B524F9 /* AcuantMrzParser.swift in Sources */,

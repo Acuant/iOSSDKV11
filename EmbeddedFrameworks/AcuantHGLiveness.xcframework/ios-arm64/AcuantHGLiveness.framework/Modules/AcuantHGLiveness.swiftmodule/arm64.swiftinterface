@@ -1,11 +1,12 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.4.2 (swiftlang-1205.0.28.2 clang-1205.0.19.57)
+// swift-compiler-version: Apple Swift version 5.5.2 (swiftlang-1300.0.47.5 clang-1300.0.29.30)
 // swift-module-flags: -target arm64-apple-ios11.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name AcuantHGLiveness
 import AVFoundation
 import AcuantCommon
 import Foundation
 import Swift
 import UIKit
+import _Concurrency
 @objc @_inheritsConvenienceInitializers @objcMembers public class HGLiveness : ObjectiveC.NSObject {
   @objc public class func getFaceCaptureSession(delegate: AcuantHGLiveness.AcuantHGLiveFaceCaptureDelegate?, captureDevice: AVFoundation.AVCaptureDevice?) -> AcuantHGLiveness.FaceCaptureSession
   @objc override dynamic public init()
@@ -25,7 +26,7 @@ import UIKit
   }
 }
 @objc public protocol HGLivenessDelegate {
-  @objc func liveFaceCaptured(image: UIKit.UIImage?)
+  @objc func liveFaceCaptured(result: AcuantHGLiveness.HGLivenessResult?)
 }
 @objc @_inheritsConvenienceInitializers @objcMembers public class FaceCaptureSession : AVFoundation.AVCaptureSession, AVFoundation.AVCaptureVideoDataOutputSampleBufferDelegate {
   @objc public class func getFaceCaptureSession(delegate: AcuantHGLiveness.AcuantHGLiveFaceCaptureDelegate?, captureDevice: AVFoundation.AVCaptureDevice?) -> AcuantHGLiveness.FaceCaptureSession
@@ -53,6 +54,10 @@ import UIKit
   @objc public var error: AcuantCommon.AcuantError?
   @objc public class func createInstance() -> AcuantHGLiveness.LiveFaceDetails
   @objc override dynamic public init()
+  @objc deinit
+}
+@objc @objcMembers public class HGLivenessResult : ObjectiveC.NSObject {
+  @objc public init(image: UIKit.UIImage, jpegData: Foundation.Data)
   @objc deinit
 }
 @objc public protocol AcuantHGLiveFaceCaptureDelegate {

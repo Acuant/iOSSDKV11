@@ -38,7 +38,6 @@
 
 /* AcuantIPLiveness */
 "IProov_LanguageFile" = "en-US";
-"IProov_PromptConnecting" = "Connecting…";
 "IProov_PromptTapToBegin" = "Tap the screen to begin";
 "IProov_PromptTooFar" = "Move closer";
 "IProov_PromptTooBright" = "Go somewhere shadier";
@@ -74,14 +73,10 @@
 "IProov_PromptPitchTooHigh" = "Hold the device at eye level";
 "IProov_PromptPitchTooLow" = "Hold the device at eye level";
 "IProov_ErrorNetwork" = "Network error";
-"IProov_ErrorEncoder" = "Encoder error";
-"IProov_ErrorCamera" = "Camera error";
 "IProov_ErrorCameraPermissionDenied" = "Camera permission denied";
 "IProov_ErrorCameraPermissionDeniedMessageIos" = "Please allow camera access for this app in iOS Settings";
 "IProov_ErrorServer" = "Server error";
-"IProov_ErrorLightingModel" = "Lighting model error";
-"IProov_ErrorEncoderUnknownMessage" = "Unknown encoder error";
-"IProov_ErrorEncoderCodeMessage" = "Error code %@";
+"IProov_ErrorUnexpected" = "Unexpected error";
 "IProov_ErrorCaptureAlreadyActive" = "An existing capture is already in progress";
 "IProov_PromptGetReady" = "Get ready…";
 "IProov_PromptGrantPermission" = "Grant Camera Access";

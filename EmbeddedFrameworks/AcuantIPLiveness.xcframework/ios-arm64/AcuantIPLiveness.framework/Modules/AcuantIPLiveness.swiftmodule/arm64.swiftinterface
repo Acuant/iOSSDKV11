@@ -1,10 +1,11 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.4.2 (swiftlang-1205.0.28.2 clang-1205.0.19.57)
+// swift-compiler-version: Apple Swift version 5.5.2 (swiftlang-1300.0.47.5 clang-1300.0.29.30)
 // swift-module-flags: -target arm64-apple-ios11.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name AcuantIPLiveness
 import AcuantCommon
 import Foundation
 import Swift
 import UIKit
+import _Concurrency
 import iProov
 @objc @objcMembers public class LivenessSetupResult : ObjectiveC.NSObject {
   @objc public var apiKey: Swift.String
@@ -14,7 +15,6 @@ import iProov
   @objc public var ui: AcuantIPLiveness.LivenessUiOptions
   @objc public init(apiKey: Swift.String, token: Swift.String, userId: Swift.String, apiEndpoint: Swift.String)
   @objc public class func createInstance(apiKey: Swift.String, token: Swift.String, userId: Swift.String, apiEndpoint: Swift.String) -> AcuantIPLiveness.LivenessSetupResult
-  @objc override dynamic public init()
   @objc deinit
 }
 @objc public protocol LivenessSetupDelegate {
@@ -32,15 +32,10 @@ import iProov
   @objc func livenessTestResultReceived(result: AcuantIPLiveness.LivenessTestResult)
   @objc func livenessTestResultReceiveFailed(error: AcuantCommon.AcuantError)
 }
-@objc public protocol LivenessTestCredentialDelegate {
-  @objc func livenessTestCredentialReceived(result: Swift.Bool)
-  @objc func livenessTestCredentialReceiveFailed(error: AcuantCommon.AcuantError)
-}
 @objc @_inheritsConvenienceInitializers @objcMembers public class IPLiveness : ObjectiveC.NSObject {
   @objc public class func performLivenessSetup(delegate: AcuantIPLiveness.LivenessSetupDelegate)
   @objc public class func performLivenessTest(setupResult: AcuantIPLiveness.LivenessSetupResult, delegate: AcuantIPLiveness.LivenessTestDelegate)
   @objc public class func getLivenessTestResult(token: Swift.String, userId: Swift.String, delegate: AcuantIPLiveness.LivenessTestResultDelegate)
-  @objc public class func getLivenessTestCredential(delegate: AcuantIPLiveness.LivenessTestCredentialDelegate)
   @objc override dynamic public init()
   @objc deinit
 }
@@ -58,6 +53,7 @@ import iProov
   @objc public var boldFont: Swift.String?
   @objc public var fonts: [Swift.String]?
   @objc public var logoImage: UIKit.UIImage?
+  @available(*, deprecated, message: "This option is no longer supported, setting it will not change anything")
   public var scanLineDisabled: Swift.Bool?
   @objc weak public var delegate: iProov.IProovPresentationDelegate?
   @objc public func toIProovOptions() -> iProov.Options

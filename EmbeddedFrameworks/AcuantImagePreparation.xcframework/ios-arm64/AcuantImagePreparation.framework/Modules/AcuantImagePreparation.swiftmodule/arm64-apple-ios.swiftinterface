@@ -1,12 +1,14 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.4.2 (swiftlang-1205.0.28.2 clang-1205.0.19.57)
+// swift-compiler-version: Apple Swift version 5.5.2 (swiftlang-1300.0.47.5 clang-1300.0.29.30)
 // swift-module-flags: -target arm64-apple-ios11.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name AcuantImagePreparation
 import AVFoundation
 import AcuantCommon
 @_exported import AcuantImagePreparation
+import CoreImage
 import Foundation
 import Swift
 import UIKit
+import _Concurrency
 public class CameraMetaData : Swift.Codable {
   public init()
   public func setCaptureType(captureType: Swift.String) -> AcuantImagePreparation.CameraMetaData
@@ -16,7 +18,6 @@ public class CameraMetaData : Swift.Codable {
 }
 @objc @_hasMissingDesignatedInitializers @objcMembers public class DetectData : ObjectiveC.NSObject {
   @objc public class func newInstance(image: UIKit.UIImage) -> AcuantImagePreparation.DetectData
-  @objc override dynamic public init()
   @objc deinit
 }
 @objc public protocol InitializationDelegate {
@@ -45,6 +46,7 @@ public class CameraMetaData : Swift.Codable {
   @objc public class func detect(data: AcuantImagePreparation.CroppingData) -> AcuantCommon.Image
   @objc public class func sharpness(image: UIKit.UIImage) -> Swift.Int
   @objc public class func glare(image: UIKit.UIImage) -> Swift.Int
+  @objc public class func sign(image: UIKit.UIImage) -> Foundation.Data?
   @objc override dynamic public init()
   @objc deinit
 }

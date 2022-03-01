@@ -217,13 +217,14 @@ class FaceLivenessCameraController: UIViewController, AcuantHGLiveFaceCaptureDel
             faceOval?.isHidden = false
             faceOval?.path = UIBezierPath(ovalIn: faceRect).cgPath
 
-            if faceDetails.isLiveFace, let image = faceDetails.image, !captured {
+            if faceDetails.isLiveFace, let image = faceDetails.image, !captured,
+               let resizedImage = ImagePreparation.resize(image: image,
+                                                          targetWidth: getTargetWidth(width: Int(image.size.width), height: Int(image.size.height))),
+               let signedImageData = ImagePreparation.sign(image: resizedImage) {
                 captured = true
-                faceDetails.image = ImagePreparation.resize(image: image,
-                                                            targetWidth: getTargetWidth(width: Int(image.size.width),
-                                                                                        height: Int(image.size.height)))
+                faceDetails.image = resizedImage
                 navigationController?.popViewController(animated: true)
-                delegate?.liveFaceCaptured(image: image)
+                delegate?.liveFaceCaptured(result: HGLivenessResult(image: resizedImage, jpegData: signedImageData))
             }
         } else if liveFaceDetails == nil || liveFaceDetails?.faceRect == nil {
             faceOval?.isHidden = true

@@ -85,16 +85,28 @@ import AVFoundation
     }
 
     private func createBarcodeLayer() -> DocumentPlaceholderLayer? {
-        guard let barcodeImage = UIImage(named: "barcode_placement_overlay",
-                                         in: Bundle(for: BarcodeCameraViewController.self),
-                                         compatibleWith: nil)
-        else {
+        guard let barcodeImage = getPlaceholderImage() else {
             return nil
         }
 
         let barcodeLayer = DocumentPlaceholderLayer(image: barcodeImage, bounds: view.frame)
         barcodeLayer.opacity = 0.4
         return barcodeLayer
+    }
+
+    private func getPlaceholderImage() -> UIImage? {
+        if let image = UIImage(named: "barcode_placement_overlay",
+                               in: Bundle(for: BarcodeCameraViewController.self),
+                               compatibleWith: nil) {
+            return image
+        } else if let bundlePath = Bundle(for: BarcodeCameraViewController.self).path(forResource: "AcuantCameraAssets",
+                                                                                    ofType: "bundle"),
+                  let bundle = Bundle(path: bundlePath), let image = UIImage(named: "barcode_placement_overlay",
+                                                                             in: bundle,
+                                                                             compatibleWith: nil) {
+            return image
+        }
+        return nil
     }
 
     private func scheduleTimeoutTimer(_ timeout: Int) -> Timer {

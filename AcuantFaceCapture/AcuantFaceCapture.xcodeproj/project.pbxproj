@@ -20,6 +20,7 @@
 		D9395F4826C6CF910057EE4D /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9395F4726C6CF910057EE4D /* AlertView.swift */; };
 		D9395F8026C726510057EE4D /* UIWindowExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9395F7F26C726510057EE4D /* UIWindowExtensions.swift */; };
 		D9395F8226C7267F0057EE4D /* UIInterfaceOrientationExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9395F8126C7267F0057EE4D /* UIInterfaceOrientationExtensions.swift */; };
+		D9676E1927600A1C001E8B4C /* FaceCaptureResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9676E1827600A1C001E8B4C /* FaceCaptureResult.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		D9395F4726C6CF910057EE4D /* AlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertView.swift; sourceTree = "<group>"; };
 		D9395F7F26C726510057EE4D /* UIWindowExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIWindowExtensions.swift; sourceTree = "<group>"; };
 		D9395F8126C7267F0057EE4D /* UIInterfaceOrientationExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIInterfaceOrientationExtensions.swift; sourceTree = "<group>"; };
+		D9676E1827600A1C001E8B4C /* FaceCaptureResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceCaptureResult.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,15 +82,13 @@
 		83F0BF7323D8B28E00140A06 /* AcuantFaceCapture */ = {
 			isa = PBXGroup;
 			children = (
+				D9676E1A27600F39001E8B4C /* Models */,
 				D9395F8426C727260057EE4D /* Extension */,
 				D9395F8326C726F60057EE4D /* View */,
-				8320597A23DBA18100B7803F /* FaceCameraOptions.swift */,
 				83F0BFAA23D8B59D00140A06 /* FaceCaptureController.swift */,
+				83F0BFB923D8B81200140A06 /* AcuantFaceCaptureSession.swift */,
 				83F0BF7423D8B28E00140A06 /* AcuantFaceCapture.h */,
 				83F0BF7523D8B28E00140A06 /* Info.plist */,
-				83F0BFB723D8B7E600140A06 /* AcuantFaceState.swift */,
-				83F0BFB923D8B81200140A06 /* AcuantFaceCaptureSession.swift */,
-				83F0BFBB23D8B87F00140A06 /* AcuantFaceDetails.swift */,
 			);
 			path = AcuantFaceCapture;
 			sourceTree = "<group>";
@@ -111,6 +111,17 @@
 				D9395F8126C7267F0057EE4D /* UIInterfaceOrientationExtensions.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		D9676E1A27600F39001E8B4C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				8320597A23DBA18100B7803F /* FaceCameraOptions.swift */,
+				D9676E1827600A1C001E8B4C /* FaceCaptureResult.swift */,
+				83F0BFBB23D8B87F00140A06 /* AcuantFaceDetails.swift */,
+				83F0BFB723D8B7E600140A06 /* AcuantFaceState.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -201,6 +212,7 @@
 				83F0BFB823D8B7E600140A06 /* AcuantFaceState.swift in Sources */,
 				8320597823DBA14100B7803F /* FaceCameraCornerView.swift in Sources */,
 				83F0BFAB23D8B59D00140A06 /* FaceCaptureController.swift in Sources */,
+				D9676E1927600A1C001E8B4C /* FaceCaptureResult.swift in Sources */,
 				D9395F8026C726510057EE4D /* UIWindowExtensions.swift in Sources */,
 				8320597923DBA14100B7803F /* FaceCameraCornerOverlayView.swift in Sources */,
 				D9395F4626C5D1EC0057EE4D /* ImagePlaceholderLayer.swift in Sources */,

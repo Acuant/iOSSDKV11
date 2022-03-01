@@ -1,10 +1,11 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.4.2 (swiftlang-1205.0.28.2 clang-1205.0.19.57)
+// swift-compiler-version: Apple Swift version 5.5.2 (swiftlang-1300.0.47.5 clang-1300.0.29.30)
 // swift-module-flags: -target arm64-apple-ios11.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name AcuantCommon
 import Foundation
 import MobileCoreServices
 import Swift
 import UIKit
+import _Concurrency
 public protocol IAcuantInitializer {
   func initialize(packages: [AcuantCommon.IAcuantPackage], callback: @escaping (AcuantCommon.AcuantError?) -> ()) -> Foundation.URLSessionTask?
 }
@@ -24,6 +25,9 @@ public class AcuantInitializer : AcuantCommon.IAcuantInitializer {
     get
   }
   public var hasLiveCapture: Swift.Bool {
+    get
+  }
+  public var ipLiveness: Swift.Bool {
     get
   }
   @objc deinit
@@ -178,6 +182,7 @@ public protocol IAcuantPackage {
   @objc public var frmEndpoint: Swift.String?
   @objc public var idEndpoint: Swift.String?
   @objc public var passiveLivenessEndpoint: Swift.String?
+  @objc public var ipLivenessEndpoint: Swift.String?
   @objc public var healthInsuranceEndpoint: Swift.String?
   @objc public var acasEndpoint: Swift.String?
   @objc public var ozoneEndpoint: Swift.String?

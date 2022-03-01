@@ -13,7 +13,7 @@ import AcuantImagePreparation
 
 public class FaceCaptureController: UIViewController {
 
-    public var callback: ((UIImage?)->())?
+    public var callback: ((FaceCaptureResult?) -> Void)?
     public var options: FaceCameraOptions?
 
     private var overlayView: UIView!
@@ -234,23 +234,25 @@ public class FaceCaptureController: UIViewController {
         }
     }
 
-    private func handleCountdown(image: UIImage){
-        if(currentTimer == nil){
+    private func handleCountdown(image: UIImage) {
+        if currentTimer == nil {
             currentTimer = CFAbsoluteTimeGetCurrent()
         }
         let time = self.options!.totalCaptureTime - Int(CFAbsoluteTimeGetCurrent() - (currentTimer ?? CFAbsoluteTimeGetCurrent()))
         
-        if(time > 0){
+        if time > 0 {
             self.addMessage(messageKey: "acuant_face_camera_capturing_\(time)", color: self.options!.fontColorGood)
-        }
-        else{
-            if(!self.isCaptured){
-                self.isCaptured = true
-                self.navigationController?.popViewController(animated: true)
-                if let userCallback = self.callback {
-                    let resized = ImagePreparation.resize(image: image, targetWidth: getTargetWidth(width: Int(image.size.width), height: Int(image.size.height)))
-                    userCallback(resized)
-                }
+        } else if !self.isCaptured {
+            self.isCaptured = true
+            self.navigationController?.popViewController(animated: true)
+            if let resized = ImagePreparation.resize(image: image,
+                                                     targetWidth: getTargetWidth(width: Int(image.size.width),
+                                                                                 height: Int(image.size.height))),
+               let signedImageData = ImagePreparation.sign(image: resized),
+               let signedImage = UIImage(data: signedImageData) {
+                callback?(FaceCaptureResult(image: signedImage, jpegData: signedImageData))
+            } else {
+                callback?(nil)
             }
         }
     }

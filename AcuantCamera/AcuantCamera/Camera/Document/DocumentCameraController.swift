@@ -36,21 +36,18 @@ import AcuantCommon
     private var currentPoints: [CGPoint]?
     private var options: CameraOptions!
     weak private var cameraCaptureDelegate: CameraCaptureDelegate?
-    
-    private var currentState = FrameResult.NO_DOCUMENT
+
     private var captureTimerState = 0.0
     private var isHoldSteady = false
     private var holdSteadyTimer: Timer!
     
     private let captureTime = 1
     private let documentMovementThreshold = 25
-    private let previewBoundsThreshold: CGFloat = -5
 
     private var currentStateCount = 0
-    private var nextState = FrameResult.NO_DOCUMENT
     private var isNavigationHidden = false
 
-    public class func getCameraController(delegate:CameraCaptureDelegate, cameraOptions: CameraOptions)->DocumentCameraController{
+    public class func getCameraController(delegate: CameraCaptureDelegate, cameraOptions: CameraOptions) -> DocumentCameraController {
         let c = DocumentCameraController()
         c.cameraCaptureDelegate = delegate
         c.options = cameraOptions
@@ -169,7 +166,7 @@ import AcuantCommon
             : .resizeAspect
 
         createCameraLayers()
-                
+
         self.cameraPreviewView.layer.addSublayer(self.messageLayer)
         self.cameraPreviewView.layer.addSublayer(self.shapeLayer)
         self.cameraPreviewView.layer.addSublayer(self.cornerLayer)
@@ -183,20 +180,18 @@ import AcuantCommon
     }
 
     private func createCameraLayers() {
-        if self.messageLayer == nil {
-            self.messageLayer = CameraTextView(autoCapture: autoCapture)
+        if messageLayer == nil {
+            messageLayer = CameraTextView(autoCapture: autoCapture)
         }
-        self.messageLayer.setFrame(frame: self.view.frame)
-        if self.cornerLayer == nil {
-            self.cornerLayer = CameraCornerOverlayView(options: options)
+        if cornerLayer == nil {
+            cornerLayer = CameraCornerOverlayView(options: options)
         }
-        self.cornerLayer.setFrame(frame: self.view.frame)
         if shapeLayer == nil {
             shapeLayer = CameraDocumentOverlayView(options: options)
         }
     }
 
-    public func rotateImage(image: UIImage) -> UIImage{
+    public func rotateImage(image: UIImage) -> UIImage {
         if UIDevice.current.orientation == UIDeviceOrientation.landscapeRight {
             return image.rotate(radians: .pi/2)!
         }
@@ -318,7 +313,7 @@ import AcuantCommon
         } else {
             let interval = getInterval(time: self.captureTimerState, duration: self.captureIntervalInSeconds)
             
-            if interval >= self.captureWaitTime - 1 {
+            if interval >= self.captureWaitTime {
                 self.captureSession.enableCapture()
             } else {
                 self.messageLayer.string = "\(self.captureWaitTime - interval)..."
@@ -330,46 +325,31 @@ import AcuantCommon
         self.handleInterval()
     }
     
-    public func isDocumentMoved(newPoints: Array<CGPoint>) -> Bool{
-        if(self.currentPoints != nil && newPoints.count == self.currentPoints!.count){
-            for i in 0..<self.currentPoints!.count {
-                if(Int(abs(self.currentPoints![i].x - newPoints[i].x)) > documentMovementThreshold || Int(abs(self.currentPoints![i].y - newPoints[i].y)) > documentMovementThreshold ){
-                    return true
-                }
+    public func isDocumentMoved(points: [CGPoint]) -> Bool {
+        guard let currentPoints = self.currentPoints, points.count == currentPoints.count else {
+            return false
+        }
+
+        for i in 0..<currentPoints.count {
+            if (Int(abs(currentPoints[i].x - points[i].x)) > documentMovementThreshold
+                || Int(abs(currentPoints[i].y - points[i].y)) > documentMovementThreshold ) {
+                return true
             }
         }
+
         return false
     }
-    
-    
+
     private func transitionState(state: CameraState, localString: String? = nil) {
-        if (!autoCapture) {
+        if !autoCapture {
             return
         }
         
-        if(localString != nil){
-            self.cancelCapture(state: state, message: NSLocalizedString(localString!, comment: ""))
-        }
-        else{
+        if let localString = localString {
+            self.cancelCapture(state: state, message: NSLocalizedString(localString, comment: ""))
+        } else {
             self.setLookFromState(state: state)
         }
-    }
-    
-    func isInRange(point: CGPoint) -> Bool {
-        return (point.x >= -previewBoundsThreshold && point.x <= self.cameraPreviewView.frame.width + previewBoundsThreshold)
-            && (point.y >= -previewBoundsThreshold && point.y <= self.cameraPreviewView.frame.height + previewBoundsThreshold)
-    }
-    
-    func isOutsideView(points: Array<CGPoint>?) -> Bool {
-        if(points != nil && points?.count == 4 && autoCapture){
-            let scaledPoints = scalePoints(points: points!)
-            for i in scaledPoints {
-               if(!isInRange(point: i)){
-                   return true
-               }
-            }
-        }
-        return false
     }
 
     private func scalePoints(points: Array<CGPoint>) -> Array<CGPoint>{
@@ -414,7 +394,7 @@ import AcuantCommon
         }
     }
     
-    internal func addNavigationBackButton(){
+    func addNavigationBackButton() {
         backButton = UIButton(frame: CGRect(x: 0, y: UIScreen.main.heightOfSafeArea()*0.065, width: 90, height: 40))
 
         var attribs : [NSAttributedString.Key : Any?] = [:]
@@ -431,7 +411,7 @@ import AcuantCommon
         self.view.addSubview(backButton)
     }
 
-    @objc internal func backTapped(_ sender: Any){
+    @objc func backTapped(_ sender: Any) {
         self.cameraCaptureDelegate?.setCapturedImage(image: Image(), barcodeString: nil)
         self.navigationController?.popViewController(animated: true)
     }
@@ -447,11 +427,10 @@ extension DocumentCameraController: DocumentCaptureDelegate {
                 if self.autoCapture {
                     self.setLookFromState(state: DocumentCameraController.CameraState.Capture)
                     self.setMessageCaptureSettings()
-                    self.messageLayer.string = NSLocalizedString("1...", comment: "")
                 } else {
                     self.setMessageDefaultSettings()
-                    self.messageLayer.string = NSLocalizedString("acuant_camera_capturing", comment: "")
                 }
+                self.messageLayer.string = NSLocalizedString("acuant_camera_capturing", comment: "")
                 self.captured = true
             }
         }
@@ -480,29 +459,23 @@ extension DocumentCameraController: FrameAnalysisDelegate {
             return
         }
         
-        if isOutsideView(points: points) {
-            self.currentState = FrameResult.DOCUMENT_NOT_IN_FRAME
-        } else{
-            self.currentState = frameResult
-        }
-        
-        switch self.currentState {
-            case FrameResult.NO_DOCUMENT:
+        switch frameResult {
+            case .NO_DOCUMENT:
                 self.transitionState(state: CameraState.Align, localString: "acuant_camera_align")
-            case FrameResult.SMALL_DOCUMENT:
+            case .SMALL_DOCUMENT:
                 self.transitionState(state: CameraState.MoveCloser, localString: "acuant_camera_move_closer")
-            case FrameResult.BAD_ASPECT_RATIO:
+            case .BAD_ASPECT_RATIO:
                 self.transitionState(state: CameraState.MoveCloser, localString: "acuant_camera_move_closer")
-            case FrameResult.DOCUMENT_NOT_IN_FRAME:
+            case .DOCUMENT_NOT_IN_FRAME:
                 self.transitionState(state: CameraState.MoveCloser, localString: "acuant_camera_outside_view")
-            case FrameResult.GOOD_DOCUMENT:
+            case .GOOD_DOCUMENT:
                 if let pts = points, pts.count == 4, autoCapture {
                     let scaledPoints = scalePoints(points: pts)
                     self.setPath(points: scaledPoints)
                     if !isHoldSteady {
                         self.transitionState(state: CameraState.Hold)
 
-                        if self.isDocumentMoved(newPoints: scaledPoints) {
+                        if self.isDocumentMoved(points: scaledPoints) {
                             self.cancelCapture(state: CameraState.Steady, message: NSLocalizedString("acuant_camera_hold_steady", comment: ""))
                         } else if !self.captured {
                            self.triggerCapture()

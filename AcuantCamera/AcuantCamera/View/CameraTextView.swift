@@ -11,7 +11,7 @@ import UIKit
 
 public class CameraTextView: CATextLayer {
     public var textSizeDefault: CGFloat = 30
-    public var textSizeCapture: CGFloat = 70
+    public var textSizeCapture: CGFloat = 50
     public var backgroundColorDefault: CGColor? = UIColor.black.cgColor
     public var backgroundColorCapture: CGColor?
     public var foregroundColorDefault: CGColor? = UIColor.white.cgColor
@@ -19,7 +19,7 @@ public class CameraTextView: CATextLayer {
 
     var defaultWidth: CGFloat = 300
     var defaultHeight: CGFloat = 40
-    var captureWidth: CGFloat = 100
+    var captureWidth: CGFloat = 300
     var captureHeight: CGFloat = 300
     
     public override var string: Any? {

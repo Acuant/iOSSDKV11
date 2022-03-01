@@ -11,7 +11,7 @@
 "acuant_camera_move_closer" = "MUÉVETE MAS CERCA";
 "acuant_camera_hold_steady" = "MANTENER ESTABLE";
 "acuant_camera_capturing" = "CAPTURANDO";
-"acuant_camera_outside_view" = "ALINEAR";
+"acuant_camera_outside_view" = "MUY CERCA!";
 "acuant_camera_paused" = "CÁMARA EN PAUSA";
 "acuant_camera_capture_barcode" = "CAPTURAR CÓDIGO DE BARRAS";
 
@@ -37,7 +37,6 @@
 
 /* AcuantIPLiveness */
 "IProov_LanguageFile" = "es";
-"IProov_PromptConnecting" = "Conectando…";
 "IProov_PromptTapToBegin" = "Toca la pantalla para comenzar";
 "IProov_PromptTooFar" = "Muévete mas cerca";
 "IProov_PromptTooBright" = "Ve a un lugar más sombrío";
@@ -73,14 +72,10 @@
 "IProov_PromptPitchTooHigh" = "Sostenga el dispositivo a la altura de los ojos.";
 "IProov_PromptPitchTooLow" = "Sostenga el dispositivo a la altura de los ojos.";
 "IProov_ErrorNetwork" = "Network error";
-"IProov_ErrorEncoder" = "Encoder error";
-"IProov_ErrorCamera" = "Camera error";
 "IProov_ErrorCameraPermissionDenied" = "Camera permission denied";
 "IProov_ErrorCameraPermissionDeniedMessageIos" = "Please allow camera access for this app in iOS Settings";
 "IProov_ErrorServer" = "Server error";
-"IProov_ErrorLightingModel" = "Lighting model error";
-"IProov_ErrorEncoderUnknownMessage" = "Unknown encoder error";
-"IProov_ErrorEncoderCodeMessage" = "Error code %@";
+"IProov_ErrorUnexpected" = "Unexpected error";
 "IProov_ErrorCaptureAlreadyActive" = "An existing capture is already in progress";
 "IProov_PromptGetReady" = "Prepararse…";
 "IProov_PromptGrantPermission" = "Grant Camera Access";

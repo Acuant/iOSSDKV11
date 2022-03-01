@@ -147,7 +147,7 @@ class RootViewController: UIViewController{
             packages.append(AcuantEchipPackage())
         }
         
-        let task = initalizer.initialize(packages:packages){ [weak self]
+        let _ = initalizer.initialize(packages:packages){ [weak self]
             error in
             
             DispatchQueue.main.async {
@@ -157,18 +157,17 @@ class RootViewController: UIViewController{
                             self.mrzButton.isHidden = true
                         }
                         
-                        if(!self.isKeyless){
-                            IPLiveness.getLivenessTestCredential(delegate: self)
+                        if (Credential.authorization().ipLiveness) {
+                            self.addEnhancedLiveness()
                         }
-                        else{
-                            self.hideProgressView()
-                            self.medicalCardButton.isEnabled = true
-                            self.idPassportButton.isEnabled = true
-                            self.mrzButton.isEnabled = true
-                            self.hideProgressView()
-                            self.isInitialized = true
-                            self.resetData()
-                        }
+
+                        self.hideProgressView()
+                        self.medicalCardButton.isEnabled = true
+                        self.idPassportButton.isEnabled = true
+                        self.mrzButton.isEnabled = true
+                        self.isInitialized = true
+                        self.resetData()
+
                     }else{
                         self.hideProgressView()
                         self.medicalCardButton.isEnabled = true
@@ -706,26 +705,6 @@ extension RootViewController:DeleteDelegate{
 
 //IPLiveness - START ============
 
-extension RootViewController : LivenessTestCredentialDelegate{
-    func livenessTestCredentialReceived(result:Bool){
-        self.isInitialized = true
-        
-        DispatchQueue.main.async{
-            self.hideProgressView()
-            self.medicalCardButton.isEnabled = true
-            self.idPassportButton.isEnabled = true
-            self.mrzButton.isEnabled = true
-            if(result){
-                self.addEnhancedLiveness()
-            }
-        }
-    }
-    
-    func livenessTestCredentialReceiveFailed(error:AcuantError){
-        self.hideProgressView()
-        CustomAlerts.displayError(message: "\(error.errorCode) : \(error.errorDescription)" )
-    }
-}
 extension RootViewController : LivenessSetupDelegate{
     func livenessSetupSucceeded(result: LivenessSetupResult) {
         ipLivenessSetupResult = result
@@ -734,7 +713,7 @@ extension RootViewController : LivenessSetupDelegate{
     }
     
     func livenessSetupFailed(error: AcuantError) {
-        livenessTestFailed(error:error)
+        livenessTestFailed(error: error)
     }
 }
 
@@ -744,6 +723,7 @@ extension RootViewController : LivenessTestDelegate{
             IPLiveness.getLivenessTestResult(token: ipLivenessSetupResult!.token, userId: ipLivenessSetupResult!.userId, delegate: self)
         }
         else{
+            print("Liveness test delegate failure")
             livenessTestFailed(error: AcuantError())
         }
     }
@@ -767,11 +747,12 @@ extension RootViewController : LivenessTestDelegate{
     }
     
     func livenessTestCompletedWithError(error: AcuantError?) {
-        livenessTestFailed(error: AcuantError())
+        livenessTestFailed(error: error ?? AcuantError())
     }
 }
 
 extension RootViewController : LivenessTestResultDelegate{
+
     func livenessTestResultReceived(result: LivenessTestResult) {
         if(result.passedLivenessTest){
             self.livenessString =  "IP Liveness : true"
@@ -780,15 +761,17 @@ extension RootViewController : LivenessTestResultDelegate{
             self.livenessString =  "IP Liveness : false"
         }
         self.faceCapturedImage = result.image
-        processFacialMatch(image: result.image)
+        if let jpegData = result.image?.jpegData(compressionQuality: 1.0) {
+            processFacialMatch(imageData: jpegData)
+        }
         
-        self.faceProcessingGroup.notify(queue: .main){
+        self.faceProcessingGroup.notify(queue: .main) {
             self.showResultGroup.leave()
         }
     }
     
     func livenessTestResultReceiveFailed(error: AcuantError) {
-        livenessTestFailed(error:error)
+        livenessTestFailed(error: error)
     }
     
     func livenessTestFailed(error:AcuantError) {
@@ -803,9 +786,9 @@ extension RootViewController : LivenessTestResultDelegate{
 
 
 extension RootViewController {
-    private func processPassiveLiveness(image:UIImage){
+    private func processPassiveLiveness(imageData: Data) {
         self.faceProcessingGroup.enter()
-        PassiveLiveness.postLiveness(request: AcuantLivenessRequest(image: image)){ [weak self]
+        PassiveLiveness.postLiveness(request: AcuantLivenessRequest(jpegData: imageData)) { [weak self]
             (result, error) in
             if(result != nil && (result?.result == AcuantLivenessAssessment.Live || result?.result == AcuantLivenessAssessment.NotLive)){
                 self?.livenessString = "Liveness : \(result!.result.rawValue)"
@@ -820,17 +803,17 @@ extension RootViewController {
     public func showPassiveLiveness(){
         DispatchQueue.main.async {
             let controller = FaceCaptureController()
-            controller.callback = { [weak self]
-                (image) in
+            controller.callback = { [weak self] faceCaptureResult in
+                guard let self = self else { return }
                 
-                if(image != nil){
-                    self?.faceCapturedImage = image
-                    self?.processPassiveLiveness(image: image!)
-                    self?.processFacialMatch(image: image!)
+                if let result = faceCaptureResult {
+                    self.faceCapturedImage = result.image
+                    self.processPassiveLiveness(imageData: result.jpegData)
+                    self.processFacialMatch(imageData: result.jpegData)
                 }
                 
-                self?.faceProcessingGroup.notify(queue: .main){
-                    self?.showResultGroup.leave()
+                self.faceProcessingGroup.notify(queue: .main){
+                    self.showResultGroup.leave()
                 }
             }
             self.navigationController?.pushViewController(controller, animated: false)
@@ -858,8 +841,9 @@ extension RootViewController {
 //Passive Liveness + FaceCapture - END ============
 
 
-//FaceMatch - START ============
-extension RootViewController : FacialMatchDelegate{
+//MARK: - FaceMatchDelegate
+
+extension RootViewController: FacialMatchDelegate {
     func facialMatchFinished(result: FacialMatchResult?) {
         self.faceProcessingGroup.leave()
         
@@ -867,37 +851,33 @@ extension RootViewController : FacialMatchDelegate{
             capturedFacialMatchResult = result
         }
     }
-    func processFacialMatch(image:UIImage?){
+
+    func processFacialMatch(imageData: Data) {
         self.faceProcessingGroup.enter()
         self.showProgressView(text: "Processing...")
-        self.getDataGroup.notify(queue: .main){
-            if(self.capturedFaceImageUrl != nil && image != nil){
-                // create the request
-                let url = URL(string: self.capturedFaceImageUrl!)!
+        self.getDataGroup.notify(queue: .main) {
+            if let capturedFaceImageUrl = self.capturedFaceImageUrl,
+               let url = URL(string: capturedFaceImageUrl) {
+
                 var request = URLRequest(url: url)
                 request.httpMethod = "GET"
                 request.setValue(Credential.getBasicAuthHeader()!, forHTTPHeaderField: "Authorization")
                 
-                URLSession.shared.dataTask(with: request) { (data, response, error) in
+                URLSession.shared.dataTask(with: request) { data, response, error in
                     let httpURLResponse = response as? HTTPURLResponse
-                    if(httpURLResponse?.statusCode == 200){
-                        let downloadedImage = UIImage(data: data!)
-                        
-                        if(downloadedImage != nil){
-                            let facialMatchData = FacialMatchData(faceImageOne: downloadedImage!, faceImageTwo: image!)
+                    if httpURLResponse?.statusCode == 200 {
+                        if let downloadedImageData = data {
+                            let facialMatchData = FacialMatchData(faceOneData: downloadedImageData, faceTwoData: imageData)
                             FaceMatch.processFacialMatch(facialData: facialMatchData, delegate: self)
-                        }
-                        else{
+                        } else {
                             self.faceProcessingGroup.leave()
                         }
-                        
-                    }else {
+                    } else {
                         self.faceProcessingGroup.leave()
-                        
                         return
                     }
                 }.resume()
-            }else{
+            } else {
                 self.faceProcessingGroup.leave()
                 
                 DispatchQueue.main.async {
@@ -907,7 +887,6 @@ extension RootViewController : FacialMatchDelegate{
         }
     }
 }
-//FaceMatch - END ============
 
 // MARK: - MrzHelpViewControllerDelegate
 

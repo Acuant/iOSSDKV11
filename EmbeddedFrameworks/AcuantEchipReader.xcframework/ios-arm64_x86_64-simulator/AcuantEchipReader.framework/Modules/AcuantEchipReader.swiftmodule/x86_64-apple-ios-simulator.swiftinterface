@@ -1,5 +1,5 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.4.2 (swiftlang-1205.0.28.2 clang-1205.0.19.57)
+// swift-compiler-version: Apple Swift version 5.5.2 (swiftlang-1300.0.47.5 clang-1300.0.29.30)
 // swift-module-flags: -target x86_64-apple-ios11.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name AcuantEchipReader
 import AcuantCommon
 @_exported import AcuantEchipReader
@@ -13,6 +13,7 @@ import Security
 import Swift
 import SwiftUI
 import UIKit
+import _Concurrency
 @available(iOS 13, *)
 public enum DocTypeEnum : Swift.String {
   case TD1
@@ -47,7 +48,6 @@ public protocol IOzoneService {
   public init(request: AcuantEchipReader.OzoneRequest, delegate: @escaping ((AcuantEchipReader.OzoneResponse?, AcuantCommon.AcuantError?) -> ()))
   public class func createInstance(request: AcuantEchipReader.OzoneRequest, delegate: @escaping ((AcuantEchipReader.OzoneResponse?, AcuantCommon.AcuantError?) -> ())) -> AcuantEchipReader.OzoneService
   public func getTask() -> Foundation.URLSessionTask?
-  @objc override dynamic public init()
   @objc deinit
 }
 public enum AcuantDataGroupId : Swift.Int {

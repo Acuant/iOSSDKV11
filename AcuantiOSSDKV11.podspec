@@ -1,9 +1,9 @@
 Pod::Spec.new do |s|
     s.platform = :ios
-    s.swift_versions = ['5.4.2']
+    s.swift_versions = ['5.5.2']
     s.ios.deployment_target = '11.0'
     s.name         = "AcuantiOSSDKV11"
-    s.version      = "11.5.4"
+    s.version      = "11.5.5"
     s.summary      = "Acuant's latest SDK with most advanced image capture technology and optimized user workflow  "
     s.description  = "Acuant's latest SDK with most advanced image capture technology and optimized user workflow.
 
@@ -18,7 +18,7 @@ Pod::Spec.new do |s|
                   Copyright 2021 Acuant, Inc. All Rights Reserved.
                   LICENSE
     }
-    s.author             = { "Acuant Inc" => "jmoon@acuantcorp.com" }
+    s.author             = { "Acuant Inc" => "smaltsev@acuant.com" }
     s.source       = { :git => "https://github.com/Acuant/iOSSDKV11.git", :tag =>    "#{s.version}" }
     
     s.pod_target_xcconfig = {
@@ -77,7 +77,7 @@ Pod::Spec.new do |s|
         acuantIP.ios.vendored_frameworks = "EmbeddedFrameworks/AcuantIPLiveness.xcframework"
         
         acuantIP.dependency "#{s.name}/AcuantCommon"
-        acuantIP.dependency 'iProov', '~> 8.4.0'
+        acuantIP.dependency 'iProov', '~> 9.2.0'
     end
     
     s.subspec 'AcuantEchipReader' do |acuantEchip|
@@ -94,6 +94,7 @@ Pod::Spec.new do |s|
         acuantFaceCapture.source_files =
             "AcuantFaceCapture/AcuantFaceCapture/*.{h,swift}",
             "AcuantFaceCapture/AcuantFaceCapture/View/*.{h,swift}",
+            "AcuantFaceCapture/AcuantFaceCapture/Models/*.{h,swift}",
             "AcuantFaceCapture/AcuantFaceCapture/Extension/*.{h,swift}"
 
         acuantFaceCapture.dependency "#{s.name}/AcuantCommon"
@@ -117,27 +118,24 @@ Pod::Spec.new do |s|
                "AcuantCamera/AcuantCamera/Camera/Mrz/OCR/Utils/*.{h,swift}"
              mrz.dependency "#{s.name}/AcuantCamera/Common"
              mrz.ios.vendored_frameworks = "EmbeddedFrameworks/TesseractOCR.framework"
-             mrz.resources = "AcuantCamera/AcuantCamera/Camera/Mrz/*.xcassets"
          end
 
         acuantCamera.subspec 'Barcode' do |barcode|
-            barcode.source_files = "AcuantCamera/AcuantCamera/Camera/Barcode/*.{h,swift}",
-            barcode.resources = "AcuantCamera/AcuantCamera/Camera/Mrz/*.xcassets"
+            barcode.source_files = "AcuantCamera/AcuantCamera/Camera/Barcode/*.{h,swift}"
             barcode.dependency "#{s.name}/AcuantCamera/Common"
         end
         
-         acuantCamera.subspec 'Common' do |common|
-              common.source_files =
+        acuantCamera.subspec 'Common' do |common|
+            common.source_files =
                 "AcuantCamera/AcuantCamera/View/*.{h,swift}",
                 "AcuantCamera/AcuantCamera/Extension/*.{h,swift}",
                 "AcuantCamera/AcuantCamera/Constant/*.{h,swift}",
                 "AcuantCamera/AcuantCamera/Camera/*.{h,swift}"
-         end
-        
-        acuantCamera.source_files =
-            "AcuantCamera/AcuantCamera/*.{h,swift}"
-        
-        
+            common.resource_bundles = { 'AcuantCameraAssets' => [ 'AcuantCamera/AcuantCamera/*.xcassets'] }
+        end
+
+        acuantCamera.source_files = "AcuantCamera/AcuantCamera/*.{h,swift}"
+
         acuantCamera.dependency "#{s.name}/AcuantCommon"
         acuantCamera.dependency "#{s.name}/AcuantImagePreparation"
     end

@@ -37,7 +37,6 @@
 
 /* AcuantIPLiveness */
 "IProov_LanguageFile" = "fil";
-"IProov_PromptConnecting" = "Nagkokonekta…";
 "IProov_PromptTapToBegin" = "I-tap ang screen para magsimula";
 "IProov_PromptTooFar" = "Ilapit ang mukha sa screen";
 "IProov_PromptTooBright" = "Masyadong maliwanag";
@@ -73,14 +72,10 @@
 "IProov_PromptPitchTooHigh" = "Hawakan ang device pantay sa mata";
 "IProov_PromptPitchTooLow" = "Hawakan ang device pantay sa mata";
 "IProov_ErrorNetwork" = "Network error";
-"IProov_ErrorEncoder" = "Encoder error";
-"IProov_ErrorCamera" = "Camera error";
 "IProov_ErrorCameraPermissionDenied" = "Camera permission denied";
 "IProov_ErrorCameraPermissionDeniedMessageIos" = "Please allow camera access for this app in iOS Settings";
 "IProov_ErrorServer" = "Server error";
-"IProov_ErrorLightingModel" = "Lighting model error";
-"IProov_ErrorEncoderUnknownMessage" = "Unknown encoder error";
-"IProov_ErrorEncoderCodeMessage" = "Error code %@";
+"IProov_ErrorUnexpected" = "Unexpected error";
 "IProov_ErrorCaptureAlreadyActive" = "An existing capture is already in progress";
 "IProov_PromptGetReady" = "Humanda…";
 "IProov_PromptGrantPermission" = "Grant Camera Access";
