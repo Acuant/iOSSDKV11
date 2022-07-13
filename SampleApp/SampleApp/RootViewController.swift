@@ -92,17 +92,16 @@ class RootViewController: UIViewController{
         self.idPassportButton.isEnabled = false
         self.mrzButton.isEnabled = false
         
-        let task = self.service.getTask(){
+        let task = self.service.getTask() {
             token in
             
             DispatchQueue.main.async {
-                if let success = token{
-                    if Credential.setToken(token: success){
-                        if(!self.isInitialized){
+                if let success = token {
+                    if Credential.setToken(token: success) {
+                        self.isKeyless = Credential.subscription() == nil || Credential.subscription() == ""
+                        if !self.isInitialized {
                             self.initialize()
-                        }
-                        else
-                        {
+                        } else {
                             self.hideProgressView()
                             CustomAlerts.display(title: "Success",
                                                  message: "Valid New Token",
@@ -111,16 +110,14 @@ class RootViewController: UIViewController{
                             self.idPassportButton.isEnabled = true
                             self.mrzButton.isEnabled = true
                         }
-                    }
-                    else{
+                    } else {
                         self.hideProgressView()
                         CustomAlerts.displayError(message: "Invalid Token")
                         self.medicalCardButton.isEnabled = true
                         self.idPassportButton.isEnabled = true
                         self.mrzButton.isEnabled = true
                     }
-                }
-                else{
+                } else {
                     self.hideProgressView()
                     CustomAlerts.displayError(message: "Failed to get Token")
                     self.medicalCardButton.isEnabled = true
@@ -674,7 +671,7 @@ extension RootViewController:GetDataDelegate{
             resultViewController.backImageUrl = back
             resultViewController.signImageUrl = sign
             resultViewController.faceImageUrl = face
-            resultViewController.basicAuth = Credential.getBasicAuthHeader()
+            resultViewController.auth = Credential.getAcuantAuthHeader()
             resultViewController.faceImageCaptured = self.faceCapturedImage
             self.navigationController?.pushViewController(resultViewController, animated: true)
         }
@@ -857,11 +854,12 @@ extension RootViewController: FacialMatchDelegate {
         self.showProgressView(text: "Processing...")
         self.getDataGroup.notify(queue: .main) {
             if let capturedFaceImageUrl = self.capturedFaceImageUrl,
-               let url = URL(string: capturedFaceImageUrl) {
+               let url = URL(string: capturedFaceImageUrl),
+               let auth = Credential.getAcuantAuthHeader() {
 
                 var request = URLRequest(url: url)
                 request.httpMethod = "GET"
-                request.setValue(Credential.getBasicAuthHeader()!, forHTTPHeaderField: "Authorization")
+                request.setValue(auth, forHTTPHeaderField: "Authorization")
                 
                 URLSession.shared.dataTask(with: request) { data, response, error in
                     let httpURLResponse = response as? HTTPURLResponse

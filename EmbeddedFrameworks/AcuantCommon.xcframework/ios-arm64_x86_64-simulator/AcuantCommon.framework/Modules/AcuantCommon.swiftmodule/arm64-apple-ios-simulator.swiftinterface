@@ -1,5 +1,5 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.5.2 (swiftlang-1300.0.47.5 clang-1300.0.29.30)
+// swift-compiler-version: Apple Swift version 5.6.1 (swiftlang-5.6.0.323.66 clang-1316.0.20.12)
 // swift-module-flags: -target arm64-apple-ios11.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name AcuantCommon
 import Foundation
 import MobileCoreServices
@@ -184,11 +184,27 @@ public protocol IAcuantPackage {
   @objc public var passiveLivenessEndpoint: Swift.String?
   @objc public var ipLivenessEndpoint: Swift.String?
   @objc public var healthInsuranceEndpoint: Swift.String?
-  @objc public var acasEndpoint: Swift.String?
-  @objc public var ozoneEndpoint: Swift.String?
+  @objc @AcuantCommon.IsValidDomain public var acasEndpoint: Swift.String? {
+    @objc get
+    @objc set
+    _modify
+  }
+  @objc @AcuantCommon.IsValidDomain public var ozoneEndpoint: Swift.String? {
+    @objc get
+    @objc set
+    _modify
+  }
   @objc public class func newInstance() -> AcuantCommon.Endpoints
   @objc override dynamic public init()
   @objc deinit
+}
+@propertyWrapper public struct IsValidDomain {
+  public init()
+  public init(endpoint: Swift.String)
+  public var wrappedValue: Swift.String? {
+    get
+    set
+  }
 }
 @objc @_inheritsConvenienceInitializers @objcMembers public class Utils : ObjectiveC.NSObject {
   @objc public static var SENT_IMAGE_QUALITY_JPEG_COMPRESSION: CoreGraphics.CGFloat

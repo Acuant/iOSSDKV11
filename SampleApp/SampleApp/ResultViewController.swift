@@ -27,14 +27,14 @@ class ResultViewController: UIViewController,UITableViewDataSource,UITableViewDe
     public var back: UIImage?
     public var faceImageCaptured: UIImage?
 
-    var basicAuth: String?
+    var auth: String!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         if (front == nil) {
             if let frontImageUrl = self.frontImageUrl {
-                frontImage.downloadedFrom(urlStr: frontImageUrl, basicAuth: basicAuth!)
+                frontImage.downloadedFrom(urlStr: frontImageUrl, auth: auth)
             }
         } else {
             frontImage.image = front
@@ -43,7 +43,7 @@ class ResultViewController: UIViewController,UITableViewDataSource,UITableViewDe
         
         if (back == nil) {
             if let backImageUrl = self.backImageUrl {
-                backImage.downloadedFrom(urlStr: backImageUrl, basicAuth: basicAuth!)
+                backImage.downloadedFrom(urlStr: backImageUrl, auth: auth)
             }
         } else {
             backImage.image = back
@@ -51,11 +51,11 @@ class ResultViewController: UIViewController,UITableViewDataSource,UITableViewDe
         }
         
         if let faceImageUrl = self.faceImageUrl {
-            faceImage.downloadedFrom(urlStr: faceImageUrl, basicAuth: basicAuth!)
+            faceImage.downloadedFrom(urlStr: faceImageUrl, auth: auth)
         }
         
         if let signImageUrl = self.signImageUrl {
-            signImage.downloadedFrom(urlStr: signImageUrl, basicAuth: basicAuth!)
+            signImage.downloadedFrom(urlStr: signImageUrl, auth: auth)
         }
         
         if backImageUrl == nil && back == nil {
@@ -104,12 +104,12 @@ class ResultViewController: UIViewController,UITableViewDataSource,UITableViewDe
 }
 
 extension UIImageView {
-    func downloadedFrom(urlStr: String, basicAuth: String) {
+    func downloadedFrom(urlStr: String, auth: String) {
         // create the request
         let url = URL(string: urlStr)!
         var request = URLRequest(url: url)
         request.httpMethod = "GET"
-        request.setValue(basicAuth, forHTTPHeaderField: "Authorization")
+        request.setValue(auth, forHTTPHeaderField: "Authorization")
         
         URLSession.shared.dataTask(with: request) { (data, response, error) in
             let httpURLResponse = response as? HTTPURLResponse

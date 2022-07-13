@@ -2,6 +2,12 @@
 
 ----------
 
+## v11.5.6
+
+### Important information about upgrading from iOS SDK version 11.5.x to version 11.5.6+
+
+- Because the PACE protocol is now supported by the AcuantEchipReader module, to integrate with the SDK manually, you have to add OpenSSL.xcframework as a dependency.
+
 ## v11.5.5
 
 ### Important information about upgrading from iOS SDK version 11.5.x to version 11.5.5+

@@ -67,7 +67,7 @@ class ResultTableViewController : UITableViewController{
 @available (iOS 13, *)
 class NFCResultViewController: UIViewController{
     
-    public var passport : AcuantPassportModel?
+    public var passport : AcuantPassportModel!
     
     @IBOutlet weak var faceImgeView: UIImageView!
     @IBOutlet weak var tableView: UITableView!
@@ -80,33 +80,51 @@ class NFCResultViewController: UIViewController{
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        faceImgeView.image = passport!.image
-        data.append("\n Document Number  : " + passport!.documentNumber)
-        data.append("\n Nationality  : " + passport!.nationality)
-        data.append("\n First Name  : " + passport!.firstName )
-        data.append("\n Last Name  : " + passport!.lastName)
-        
-        if let age = passport?.age {
+        faceImgeView.image = passport.image
+        data.append("\n Document Number  : " + passport.documentNumber)
+        data.append("\n Nationality  : " + passport.nationality)
+        data.append("\n First Name  : " + passport.firstName )
+        data.append("\n Last Name  : " + passport.lastName)
+        data.append("\n Gender  : " + passport.gender)
+        if let age = passport.age {
             data.append("\n Age  : \(age)")
         }
         
-        if let isExpired = passport?.isExpired {
+        if let isExpired = passport.isExpired {
             data.append("\n Is Expired  : \(isExpired ? "True" : "False")")
         }
         
-        data.append("\n Date of Birth  : " + passport!.dateOfBirth)
-        data.append("\n Expiry Date  : " + passport!.documentExpiryDate)
-        data.append("\n Document Type  : " + passport!.documentType)
-        data.append("\n Gender  : " + passport!.gender)
-        data.append("\n Issuing Authority  : " + passport!.issuingAuthority)
-        data.append("\n Data Hash  : "  + (passport!.passportDataValid ? "True" : "False"))
-//         data.append("\n Active Authentication  : "  +  (passport!.activeAuthentication == nil ? "Not Supported" : passport!.activeAuthentication == false ? "False" : "True"))
-        if (passport!.passportSigned != OzoneResultStatus.NOT_PERFORMED) {
-            data.append("\n Document Signer  (Ozone): "  + (passport!.passportSigned == OzoneResultStatus.SUCCESS ? "True" : "False"))
+        data.append("\n Date of Birth  : " + passport.dateOfBirth)
+        data.append("\n Expiry Date  : " + passport.documentExpiryDate)
+        data.append("\n Document Type  : " + passport.documentType)
+        if passport.translatedDocumentType != TranslatedDocumentType.default {
+            data.append("\n Translated Document Type  : " + passport.translatedDocumentType.rawValue)
         }
-        
-        if (passport!.passportCountrySigned != OzoneResultStatus.NOT_PERFORMED) {
-            data.append("\n Country Signer (Ozone): "  +  (passport!.passportCountrySigned == OzoneResultStatus.SUCCESS ? "True" : "False"))
+        data.append("\n Issuing Authority  : " + passport.issuingAuthority)
+        data.append("\n Data Hash  : "  + (passport.passportDataValid ? "True" : "False"))
+
+        if passport.passportSigned != OzoneResultStatus.NOT_PERFORMED {
+            data.append("\n Document Signer  (Ozone): "  + (passport.passportSigned == OzoneResultStatus.SUCCESS ? "True" : "False"))
+        }
+
+        if passport.passportCountrySigned != OzoneResultStatus.NOT_PERFORMED {
+            data.append("\n Country Signer (Ozone): "  +  (passport.passportCountrySigned == OzoneResultStatus.SUCCESS ? "True" : "False"))
+        }
+
+        if passport.BACStatus != AuthStatus.skipped {
+            data.append("\n BAC Authentication: "  +  (passport.BACStatus == AuthStatus.success ? "True" : "False"))
+        }
+
+        if passport.PACEStatus != AuthStatus.skipped {
+            data.append("\n PACE Authentication: "  +  (passport.PACEStatus == AuthStatus.success ? "True" : "False"))
+        }
+
+        if passport.chipAuthenticationStatus != AuthStatus.skipped {
+            data.append("\n Chip Authentication: " + (passport.chipAuthenticationStatus == .success ? "True" : "False"))
+        }
+
+        if passport.activeAuthenticationStatus != AuthStatus.skipped {
+            data.append("\n Active Authentication: " + (passport.activeAuthenticationStatus == .success ? "True" : "False"))
         }
         tableView.reloadData()
    

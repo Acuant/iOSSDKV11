@@ -1,5 +1,5 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.5.2 (swiftlang-1300.0.47.5 clang-1300.0.29.30)
+// swift-compiler-version: Apple Swift version 5.6.1 (swiftlang-5.6.0.323.66 clang-1316.0.20.12)
 // swift-module-flags: -target arm64-apple-ios11.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name AcuantEchipReader
 import AcuantCommon
 @_exported import AcuantEchipReader
@@ -7,21 +7,34 @@ import Combine
 import CommonCrypto
 import CoreNFC
 import CryptoKit
+import CryptoTokenKit
 import Foundation
-import JavaScriptCore
+import OpenSSL
 import Security
 import Swift
 import SwiftUI
 import UIKit
 import _Concurrency
-@available(iOS 13, *)
-public enum DocTypeEnum : Swift.String {
-  case TD1
-  case TD2
-  case OTHER
-  public init?(rawValue: Swift.String)
-  public typealias RawValue = Swift.String
-  public var rawValue: Swift.String {
+public enum AcuantEchipDisplayMessage {
+  case requestPresentPassport
+  case authenticatingWithPassport(Swift.Int)
+  case readingDataGroupProgress(Swift.String, Swift.Int)
+  case error
+  case authenticatingExtractedData
+  case successfulRead
+}
+@available(iOS 13, macOS 10.15, *)
+public enum NFCViewDisplayMessage {
+  case requestPresentPassport
+  case authenticatingWithPassport(Swift.Int)
+  case readingDataGroupProgress(AcuantEchipReader.DataGroupId, Swift.Int)
+  case error(AcuantEchipReader.NFCPassportReaderError)
+  case successfulRead
+  case authenticatingExtractedData
+}
+@available(iOS 13, macOS 10.15, *)
+extension AcuantEchipReader.NFCViewDisplayMessage {
+  public var description: Swift.String {
     get
   }
 }
@@ -36,9 +49,427 @@ public enum OzoneResultStatus : Swift.Int {
     get
   }
 }
+@available(iOS 13, macOS 10.15, *)
+public enum NFCPassportReaderError : Swift.Error {
+  case ResponseError(Swift.String, Swift.UInt8, Swift.UInt8)
+  case InvalidResponse
+  case UnexpectedError
+  case NFCNotSupported
+  case NoConnectedTag
+  case D087Malformed
+  case InvalidResponseChecksum
+  case MissingMandatoryFields
+  case CannotDecodeASN1Length
+  case InvalidASN1Value
+  case UnableToProtectAPDU
+  case UnableToUnprotectAPDU
+  case UnsupportedDataGroup
+  case DataGroupNotRead
+  case UnknownTag
+  case UnknownImageFormat
+  case NotImplemented
+  case TagNotValid
+  case ConnectionError
+  case UserCanceled
+  case InvalidMRZKey
+  case MoreThanOneTagFound
+  case InvalidHashAlgorithmSpecified
+  case InvalidDataPassed(Swift.String)
+  case NotYetSupported(Swift.String)
+}
+@available(iOS 13, macOS 10.15, *)
+extension AcuantEchipReader.NFCPassportReaderError : Foundation.LocalizedError {
+  public var errorDescription: Swift.String? {
+    get
+  }
+}
+@available(iOS 13, macOS 10.15, *)
+public enum OpenSSLError : Swift.Error {
+  case UnableToGetX509CertificateFromPKCS7(Swift.String)
+  case UnableToVerifyX509CertificateForSOD(Swift.String)
+  case VerifyAndReturnSODEncapsulatedData(Swift.String)
+  case UnableToReadECPublicKey(Swift.String)
+  case UnableToExtractSignedDataFromPKCS7(Swift.String)
+  case VerifySignedAttributes(Swift.String)
+  case UnableToParseASN1(Swift.String)
+  case UnableToDecryptRSASignature(Swift.String)
+}
+@available(iOS 13, macOS 10.15, *)
+extension AcuantEchipReader.OpenSSLError : Foundation.LocalizedError {
+  public var errorDescription: Swift.String? {
+    get
+  }
+}
+public enum PassiveAuthenticationError : Swift.Error {
+  case UnableToParseSODHashes(Swift.String)
+  case InvalidDataGroupHash(Swift.String)
+  case SODMissing(Swift.String)
+}
+extension AcuantEchipReader.PassiveAuthenticationError : Foundation.LocalizedError {
+  public var errorDescription: Swift.String? {
+    get
+  }
+}
+public enum SecureMessagingSupportedAlgorithms {
+  case DES
+  case AES
+  public static func == (a: AcuantEchipReader.SecureMessagingSupportedAlgorithms, b: AcuantEchipReader.SecureMessagingSupportedAlgorithms) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+@available(iOS 13, *)
+public class SecureMessaging {
+  public init(encryptionAlgorithm: AcuantEchipReader.SecureMessagingSupportedAlgorithms = .DES, ksenc: [Swift.UInt8], ksmac: [Swift.UInt8], ssc: [Swift.UInt8])
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @available(iOS 13, macOS 10.15, *)
+public class DataGroup12 : AcuantEchipReader.DataGroup {
+  public var issuingAuthority: Swift.String? {
+    get
+  }
+  public var dateOfIssue: Swift.String? {
+    get
+  }
+  public var otherPersonsDetails: Swift.String? {
+    get
+  }
+  public var endorsementsOrObservations: Swift.String? {
+    get
+  }
+  public var taxOrExitRequirements: Swift.String? {
+    get
+  }
+  public var frontImage: [Swift.UInt8]? {
+    get
+  }
+  public var rearImage: [Swift.UInt8]? {
+    get
+  }
+  public var personalizationTime: Swift.String? {
+    get
+  }
+  public var personalizationDeviceSerialNr: Swift.String? {
+    get
+  }
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers @available(iOS 13, macOS 10.15, *)
+public class ActiveAuthenticationInfo : AcuantEchipReader.SecurityInfo {
+  override public func getObjectIdentifier() -> Swift.String
+  override public func getProtocolOIDString() -> Swift.String
+  public func getSignatureAlgorithmOIDString() -> Swift.String?
+  @objc deinit
+}
 @_hasMissingDesignatedInitializers public class OzoneResponse {
   final public let isCountrySigned: AcuantEchipReader.OzoneResultStatus
   final public let isPassportSigned: AcuantEchipReader.OzoneResultStatus
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers @available(iOS 13, macOS 10.15, *)
+public class DataGroup {
+  public var datagroupType: AcuantEchipReader.DataGroupId
+  public var body: [Swift.UInt8] {
+    get
+  }
+  public var data: [Swift.UInt8] {
+    get
+  }
+  public func hash(_ hashAlgorythm: Swift.String) -> [Swift.UInt8]
+  @objc deinit
+}
+@available(iOS 13, macOS 10.15, *)
+public class ASN1Item : Swift.CustomDebugStringConvertible {
+  public init(line: Swift.String)
+  public func getChild(_ child: Swift.Int) -> AcuantEchipReader.ASN1Item?
+  public func getNumberOfChildren() -> Swift.Int
+  public var debugDescription: Swift.String {
+    get
+  }
+  @objc deinit
+}
+@available(iOS 13, macOS 10.15, *)
+public class SimpleASN1DumpParser {
+  public init()
+  public func parse(data: Foundation.Data) throws -> AcuantEchipReader.ASN1Item
+  public func test()
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @available(iOS 13, macOS 10.15, *)
+public class DataGroup2 : AcuantEchipReader.DataGroup {
+  public var nrImages: Swift.Int {
+    get
+  }
+  public var versionNumber: Swift.Int {
+    get
+  }
+  public var lengthOfRecord: Swift.Int {
+    get
+  }
+  public var numberOfFacialImages: Swift.Int {
+    get
+  }
+  public var facialRecordDataLength: Swift.Int {
+    get
+  }
+  public var nrFeaturePoints: Swift.Int {
+    get
+  }
+  public var gender: Swift.Int {
+    get
+  }
+  public var eyeColor: Swift.Int {
+    get
+  }
+  public var hairColor: Swift.Int {
+    get
+  }
+  public var featureMask: Swift.Int {
+    get
+  }
+  public var expression: Swift.Int {
+    get
+  }
+  public var poseAngle: Swift.Int {
+    get
+  }
+  public var poseAngleUncertainty: Swift.Int {
+    get
+  }
+  public var faceImageType: Swift.Int {
+    get
+  }
+  public var imageDataType: Swift.Int {
+    get
+  }
+  public var imageWidth: Swift.Int {
+    get
+  }
+  public var imageHeight: Swift.Int {
+    get
+  }
+  public var imageColorSpace: Swift.Int {
+    get
+  }
+  public var sourceType: Swift.Int {
+    get
+  }
+  public var deviceType: Swift.Int {
+    get
+  }
+  public var quality: Swift.Int {
+    get
+  }
+  public var imageData: [Swift.UInt8] {
+    get
+  }
+  @objc deinit
+}
+@available(iOS 13, macOS 10.15, *)
+public func AESEncrypt(key: [Swift.UInt8], message: [Swift.UInt8], iv: [Swift.UInt8]) -> [Swift.UInt8]
+@available(iOS 13, macOS 10.15, *)
+public func AESDecrypt(key: [Swift.UInt8], message: [Swift.UInt8], iv: [Swift.UInt8]) -> [Swift.UInt8]
+@available(iOS 13, macOS 10.15, *)
+public func AESECBEncrypt(key: [Swift.UInt8], message: [Swift.UInt8]) -> [Swift.UInt8]
+@available(iOS 13, macOS 10.15, *)
+public func tripleDESEncrypt(key: [Swift.UInt8], message: [Swift.UInt8], iv: [Swift.UInt8]) -> [Swift.UInt8]
+@available(iOS 13, macOS 10.15, *)
+public func tripleDESDecrypt(key: [Swift.UInt8], message: [Swift.UInt8], iv: [Swift.UInt8]) -> [Swift.UInt8]
+@available(iOS 13, macOS 10.15, *)
+public func DESEncrypt(key: [Swift.UInt8], message: [Swift.UInt8], iv: [Swift.UInt8], options: Swift.UInt32 = 0) -> [Swift.UInt8]
+@available(iOS 13, macOS 10.15, *)
+public func DESDecrypt(key: [Swift.UInt8], message: [Swift.UInt8], iv: [Swift.UInt8], options: Swift.UInt32 = 0) -> [Swift.UInt8]
+@_hasMissingDesignatedInitializers @available(iOS 13, macOS 10.15, *)
+public class ChipAuthenticationInfo : AcuantEchipReader.SecurityInfo {
+  override public func getObjectIdentifier() -> Swift.String
+  override public func getProtocolOIDString() -> Swift.String
+  public func getKeyId() -> Swift.Int
+  public static func toKeyAgreementAlgorithm(oid: Swift.String) throws -> Swift.String
+  public static func toCipherAlgorithm(oid: Swift.String) throws -> Swift.String
+  public static func toKeyLength(oid: Swift.String) throws -> Swift.Int
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @available(iOS 13, macOS 10.15, *)
+public class NotImplementedDG : AcuantEchipReader.DataGroup {
+  @objc deinit
+}
+public enum PassportAuthenticationStatus {
+  case notDone
+  case success
+  case failed
+  public static func == (a: AcuantEchipReader.PassportAuthenticationStatus, b: AcuantEchipReader.PassportAuthenticationStatus) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+@available(iOS 13, macOS 10.15, *)
+public class NFCPassportModel {
+  public var documentType: Swift.String {
+    get
+  }
+  public var documentSubType: Swift.String {
+    get
+  }
+  public var personalNumber: Swift.String {
+    get
+  }
+  public var documentNumber: Swift.String {
+    get
+  }
+  public var issuingAuthority: Swift.String {
+    get
+  }
+  public var documentExpiryDate: Swift.String {
+    get
+  }
+  public var dateOfBirth: Swift.String {
+    get
+  }
+  public var gender: Swift.String {
+    get
+  }
+  public var nationality: Swift.String {
+    get
+  }
+  public var lastName: Swift.String {
+    get
+  }
+  public var firstName: Swift.String {
+    get
+  }
+  public var passportMRZ: Swift.String {
+    get
+  }
+  public var placeOfBirth: Swift.String? {
+    get
+  }
+  public var residenceAddress: Swift.String? {
+    get
+  }
+  public var phoneNumber: Swift.String? {
+    get
+  }
+  public var documentSigningCertificate: AcuantEchipReader.X509Wrapper? {
+    get
+  }
+  public var countrySigningCertificate: AcuantEchipReader.X509Wrapper? {
+    get
+  }
+  public var LDSVersion: Swift.String {
+    get
+  }
+  public var dataGroupsPresent: [Swift.String] {
+    get
+  }
+  public var dataGroupsAvailable: [AcuantEchipReader.DataGroupId] {
+    get
+  }
+  public var dataGroupsRead: [AcuantEchipReader.DataGroupId : AcuantEchipReader.DataGroup] {
+    get
+  }
+  public var dataGroupHashes: [AcuantEchipReader.DataGroupId : AcuantEchipReader.DataGroupHash] {
+    get
+  }
+  public var cardAccess: AcuantEchipReader.CardAccess? {
+    get
+  }
+  public var BACStatus: AcuantEchipReader.PassportAuthenticationStatus {
+    get
+  }
+  public var PACEStatus: AcuantEchipReader.PassportAuthenticationStatus {
+    get
+  }
+  public var chipAuthenticationStatus: AcuantEchipReader.PassportAuthenticationStatus {
+    get
+  }
+  public var passportCorrectlySigned: Swift.Bool {
+    get
+  }
+  public var documentSigningCertificateVerified: Swift.Bool {
+    get
+  }
+  public var passportDataNotTampered: Swift.Bool {
+    get
+  }
+  public var activeAuthenticationPassed: Swift.Bool {
+    get
+  }
+  public var activeAuthenticationChallenge: [Swift.UInt8] {
+    get
+  }
+  public var activeAuthenticationSignature: [Swift.UInt8] {
+    get
+  }
+  public var verificationErrors: [Swift.Error] {
+    get
+  }
+  public var isPACESupported: Swift.Bool {
+    get
+  }
+  public var isChipAuthenticationSupported: Swift.Bool {
+    get
+  }
+  public var passportImage: UIKit.UIImage? {
+    get
+  }
+  public var signatureImage: UIKit.UIImage? {
+    get
+  }
+  public var activeAuthenticationSupported: Swift.Bool {
+    get
+  }
+  public init()
+  public init(from dump: [Swift.String : Swift.String])
+  public func addDataGroup(_ id: AcuantEchipReader.DataGroupId, dataGroup: AcuantEchipReader.DataGroup)
+  public func getDataGroup(_ id: AcuantEchipReader.DataGroupId) -> AcuantEchipReader.DataGroup?
+  public func dumpPassportData(selectedDataGroups: [AcuantEchipReader.DataGroupId], includeActiveAuthenticationData: Swift.Bool = false) -> [Swift.String : Swift.String]
+  public func getHashesForDatagroups(hashAlgorythm: Swift.String) -> [AcuantEchipReader.DataGroupId : [Swift.UInt8]]
+  public func verifyPassport(masterListURL: Foundation.URL?, useCMSVerification: Swift.Bool = false)
+  public func verifyActiveAuthentication(challenge: [Swift.UInt8], signature: [Swift.UInt8])
+  @objc deinit
+}
+@available(iOS 13, macOS 10.15, *)
+public enum CertificateType {
+  case documentSigningCertificate
+  case issuerSigningCertificate
+  public static func == (a: AcuantEchipReader.CertificateType, b: AcuantEchipReader.CertificateType) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+@available(iOS 13, macOS 10.15, *)
+public enum CertificateItem : Swift.String {
+  case fingerprint
+  case issuerName
+  case subjectName
+  case serialNumber
+  case signatureAlgorithm
+  case publicKeyAlgorithm
+  case notBefore
+  case notAfter
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+@available(iOS 13, macOS 10.15, *)
+public class X509Wrapper {
+  final public let cert: Swift.OpaquePointer
+  public init?(with cert: Swift.OpaquePointer?)
+  public func getItemsAsDict() -> [AcuantEchipReader.CertificateItem : Swift.String]
+  public func certToPEM() -> Swift.String
+  public func getFingerprint() -> Swift.String?
+  public func getNotBeforeDate() -> Swift.String?
+  public func getNotAfterDate() -> Swift.String?
+  public func getSerialNumber() -> Swift.String?
+  public func getSignatureAlgorithm() -> Swift.String?
+  public func getPublicKeyAlgorithm() -> Swift.String?
+  public func getIssuerName() -> Swift.String?
+  public func getSubjectName() -> Swift.String?
   @objc deinit
 }
 public protocol IOzoneService {
@@ -48,6 +479,76 @@ public protocol IOzoneService {
   public init(request: AcuantEchipReader.OzoneRequest, delegate: @escaping ((AcuantEchipReader.OzoneResponse?, AcuantCommon.AcuantError?) -> ()))
   public class func createInstance(request: AcuantEchipReader.OzoneRequest, delegate: @escaping ((AcuantEchipReader.OzoneResponse?, AcuantCommon.AcuantError?) -> ())) -> AcuantEchipReader.OzoneService
   public func getTask() -> Foundation.URLSessionTask?
+  @objc deinit
+}
+public func binToHexRep(_ val: [Swift.UInt8], asArray: Swift.Bool = false) -> Swift.String
+public func binToHexRep(_ val: Swift.UInt8) -> Swift.String
+public func binToHex(_ val: Swift.UInt8) -> Swift.Int
+public func binToHex(_ val: [Swift.UInt8]) -> Swift.UInt64
+public func binToHex(_ val: Swift.ArraySlice<Swift.UInt8>) -> Swift.UInt64
+public func hexToBin(_ val: Swift.UInt64) -> [Swift.UInt8]
+public func binToInt(_ val: Swift.ArraySlice<Swift.UInt8>) -> Swift.Int
+public func binToInt(_ val: [Swift.UInt8]) -> Swift.Int
+public func intToBin(_ data: Swift.Int, pad: Swift.Int = 2) -> [Swift.UInt8]
+public func hexRepToBin(_ val: Swift.String) -> [Swift.UInt8]
+public func xor(_ kifd: [Swift.UInt8], _ response_kicc: [Swift.UInt8]) -> [Swift.UInt8]
+public func generateRandomUInt8Array(_ size: Swift.Int) -> [Swift.UInt8]
+public func pad(_ toPad: [Swift.UInt8], blockSize: Swift.Int) -> [Swift.UInt8]
+public func unpad(_ tounpad: [Swift.UInt8]) -> [Swift.UInt8]
+@available(iOS 13, macOS 10.15, *)
+public func mac(algoName: AcuantEchipReader.SecureMessagingSupportedAlgorithms, key: [Swift.UInt8], msg: [Swift.UInt8]) -> [Swift.UInt8]
+@available(iOS 13, macOS 10.15, *)
+public func desMAC(key: [Swift.UInt8], msg: [Swift.UInt8]) -> [Swift.UInt8]
+@available(iOS 13, macOS 10.15, *)
+public func aesMAC(key: [Swift.UInt8], msg: [Swift.UInt8]) -> [Swift.UInt8]
+@available(iOS 13, macOS 10.15, *)
+public func wrapDO(b: Swift.UInt8, arr: [Swift.UInt8]) -> [Swift.UInt8]
+@available(iOS 13, macOS 10.15, *)
+public func unwrapDO(tag: Swift.UInt8, wrappedData: [Swift.UInt8]) throws -> [Swift.UInt8]
+public func intToBytes(val: Swift.Int, removePadding: Swift.Bool) -> [Swift.UInt8]
+@available(iOS 13, macOS 10.15, *)
+public func oidToBytes(oid: Swift.String, replaceTag: Swift.Bool) -> [Swift.UInt8]
+@available(iOS 13, macOS 10.15, *)
+public func asn1Length(_ data: Swift.ArraySlice<Swift.UInt8>) throws -> (Swift.Int, Swift.Int)
+@available(iOS 13, macOS 10.15, *)
+public func asn1Length(_ data: [Swift.UInt8]) throws -> (Swift.Int, Swift.Int)
+@available(iOS 13, macOS 10.15, *)
+public func toAsn1Length(_ data: Swift.Int) throws -> [Swift.UInt8]
+@available(iOS 13, macOS 10.15, *)
+public func calcHash(data: [Swift.UInt8], hashAlgorithm: Swift.String) throws -> [Swift.UInt8]
+@available(iOS 13, macOS 10.15, *)
+public func calcSHA1Hash(_ data: [Swift.UInt8]) -> [Swift.UInt8]
+@available(iOS 13, macOS 10.15, *)
+public func calcSHA224Hash(_ data: [Swift.UInt8]) -> [Swift.UInt8]
+@available(iOS 13, macOS 10.15, *)
+public func calcSHA256Hash(_ data: [Swift.UInt8]) -> [Swift.UInt8]
+@available(iOS 13, macOS 10.15, *)
+public func calcSHA512Hash(_ data: [Swift.UInt8]) -> [Swift.UInt8]
+@available(iOS 13, macOS 10.15, *)
+public func calcSHA384Hash(_ data: [Swift.UInt8]) -> [Swift.UInt8]
+@available(iOS 13, macOS 10.15, *)
+public enum DocTypeEnum : Swift.String {
+  case TD1
+  case TD2
+  case OTHER
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @available(iOS 13, macOS 10.15, *)
+public class DataGroup1 : AcuantEchipReader.DataGroup {
+  public var elements: [Swift.String : Swift.String] {
+    get
+  }
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @available(iOS 13, macOS 10.15, *)
+public class DataGroup14 : AcuantEchipReader.DataGroup {
+  public var securityInfos: [AcuantEchipReader.SecurityInfo] {
+    get
+  }
   @objc deinit
 }
 public enum AcuantDataGroupId : Swift.Int {
@@ -76,6 +577,153 @@ public enum AcuantDataGroupId : Swift.Int {
     get
   }
 }
+@available(iOS 13, *)
+public class BACHandler {
+  public var ksenc: [Swift.UInt8]
+  public var ksmac: [Swift.UInt8]
+  public var kifd: [Swift.UInt8]
+  public init()
+  public init(tagReader: AcuantEchipReader.TagReader)
+  public func performBACAndGetSessionKeys(mrzKey: Swift.String, completed: @escaping (_ error: AcuantEchipReader.NFCPassportReaderError?) -> ())
+  public func sessionKeys(data: [Swift.UInt8]) throws -> ([Swift.UInt8], [Swift.UInt8], [Swift.UInt8])
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @available(iOS 13, macOS 10.15, *)
+public class DataGroup15 : AcuantEchipReader.DataGroup {
+  public var rsaPublicKey: Swift.OpaquePointer? {
+    get
+  }
+  public var ecdsaPublicKey: Swift.OpaquePointer? {
+    get
+  }
+  @objc deinit
+}
+public enum PACEMappingType {
+  case GM
+  case IM
+  case CAM
+  public static func == (a: AcuantEchipReader.PACEMappingType, b: AcuantEchipReader.PACEMappingType) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+@_hasMissingDesignatedInitializers @available(iOS 13, macOS 10.15, *)
+public class PACEInfo : AcuantEchipReader.SecurityInfo {
+  public static let PARAM_ID_GFP_1024_160: Swift.Int
+  public static let PARAM_ID_GFP_2048_224: Swift.Int
+  public static let PARAM_ID_GFP_2048_256: Swift.Int
+  public static let PARAM_ID_ECP_NIST_P192_R1: Swift.Int
+  public static let PARAM_ID_ECP_BRAINPOOL_P192_R1: Swift.Int
+  public static let PARAM_ID_ECP_NIST_P224_R1: Swift.Int
+  public static let PARAM_ID_ECP_BRAINPOOL_P224_R1: Swift.Int
+  public static let PARAM_ID_ECP_NIST_P256_R1: Swift.Int
+  public static let PARAM_ID_ECP_BRAINPOOL_P256_R1: Swift.Int
+  public static let PARAM_ID_ECP_BRAINPOOL_P320_R1: Swift.Int
+  public static let PARAM_ID_ECP_NIST_P384_R1: Swift.Int
+  public static let PARAM_ID_ECP_BRAINPOOL_P384_R1: Swift.Int
+  public static let PARAM_ID_ECP_BRAINPOOL_P512_R1: Swift.Int
+  public static let PARAM_ID_ECP_NIST_P521_R1: Swift.Int
+  override public func getObjectIdentifier() -> Swift.String
+  override public func getProtocolOIDString() -> Swift.String
+  public func getVersion() -> Swift.Int
+  public func getParameterId() -> Swift.Int?
+  public func getParameterSpec() throws -> Swift.Int32
+  public func getMappingType() throws -> AcuantEchipReader.PACEMappingType
+  public func getKeyAgreementAlgorithm() throws -> Swift.String
+  public func getCipherAlgorithm() throws -> Swift.String
+  public func getDigestAlgorithm() throws -> Swift.String
+  public func getKeyLength() throws -> Swift.Int
+  public func createMappingKey() throws -> Swift.OpaquePointer
+  public static func getParameterSpec(stdDomainParam: Swift.Int) throws -> Swift.Int32
+  public static func toMappingType(oid: Swift.String) throws -> AcuantEchipReader.PACEMappingType
+  public static func toKeyAgreementAlgorithm(oid: Swift.String) throws -> Swift.String
+  public static func toCipherAlgorithm(oid: Swift.String) throws -> Swift.String
+  public static func toDigestAlgorithm(oid: Swift.String) throws -> Swift.String
+  public static func toKeyLength(oid: Swift.String) throws -> Swift.Int
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @available(iOS 13, macOS 10.15, *)
+public class DataGroup11 : AcuantEchipReader.DataGroup {
+  public var fullName: Swift.String? {
+    get
+  }
+  public var personalNumber: Swift.String? {
+    get
+  }
+  public var dateOfBirth: Swift.String? {
+    get
+  }
+  public var placeOfBirth: Swift.String? {
+    get
+  }
+  public var address: Swift.String? {
+    get
+  }
+  public var telephone: Swift.String? {
+    get
+  }
+  public var profession: Swift.String? {
+    get
+  }
+  public var title: Swift.String? {
+    get
+  }
+  public var personalSummary: Swift.String? {
+    get
+  }
+  public var proofOfCitizenship: Swift.String? {
+    get
+  }
+  public var tdNumbers: Swift.String? {
+    get
+  }
+  public var custodyInfo: Swift.String? {
+    get
+  }
+  @objc deinit
+}
+public enum LogLevel : Swift.Int, Swift.CaseIterable {
+  case verbose
+  case debug
+  case info
+  case warning
+  case error
+  public init?(rawValue: Swift.Int)
+  public typealias AllCases = [AcuantEchipReader.LogLevel]
+  public typealias RawValue = Swift.Int
+  public static var allCases: [AcuantEchipReader.LogLevel] {
+    get
+  }
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@_hasMissingDesignatedInitializers public class Log {
+  public static var logLevel: AcuantEchipReader.LogLevel
+  public static var storeLogs: Swift.Bool
+  public static var logData: [Swift.String]
+  public class func verbose(_ msg: @autoclosure () -> Swift.String)
+  public class func debug(_ msg: @autoclosure () -> Swift.String)
+  public class func info(_ msg: @autoclosure () -> Swift.String)
+  public class func warning(_ msg: @autoclosure () -> Swift.String)
+  public class func error(_ msg: @autoclosure () -> Swift.String)
+  public class func clearStoredLogs()
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @available(iOS 13, macOS 10.15, *)
+public class COM : AcuantEchipReader.DataGroup {
+  public var version: Swift.String {
+    get
+  }
+  public var unicodeVersion: Swift.String {
+    get
+  }
+  public var dataGroupsPresent: [Swift.String] {
+    get
+  }
+  @objc deinit
+}
 public class AcuantDateParser {
   public init()
   public func parseDobDate(current: Foundation.Date, date: Swift.String) -> Foundation.Date?
@@ -84,13 +732,40 @@ public class AcuantDateParser {
   public func isExpired(current: Foundation.Date, expiredDate: Foundation.Date) -> Swift.Bool?
   @objc deinit
 }
-@available(iOS 13, *)
-public func tripleDESDecrypt(key: [Swift.UInt8], message: [Swift.UInt8], iv: [Swift.UInt8]) -> [Swift.UInt8]
-@available(iOS 13, *)
-public func DESEncrypt(key: [Swift.UInt8], message: [Swift.UInt8], iv: [Swift.UInt8], options: Swift.UInt32 = 0) -> [Swift.UInt8]
-@available(iOS 13, *)
-public func DESDecrypt(key: [Swift.UInt8], message: [Swift.UInt8], iv: [Swift.UInt8], options: Swift.UInt32 = 0) -> [Swift.UInt8]
 public let AcuantCountryDataPageMap: [Swift.String : Swift.String]
+@available(iOS 13, macOS 10.15, *)
+public enum DataGroupId : Swift.Int, Swift.CaseIterable {
+  case COM
+  case DG1
+  case DG2
+  case DG3
+  case DG4
+  case DG5
+  case DG6
+  case DG7
+  case DG8
+  case DG9
+  case DG10
+  case DG11
+  case DG12
+  case DG13
+  case DG14
+  case DG15
+  case DG16
+  case SOD
+  case Unknown
+  public func getName() -> Swift.String
+  public static func getIDFromName(name: Swift.String) -> AcuantEchipReader.DataGroupId
+  public init?(rawValue: Swift.Int)
+  public typealias AllCases = [AcuantEchipReader.DataGroupId]
+  public typealias RawValue = Swift.Int
+  public static var allCases: [AcuantEchipReader.DataGroupId] {
+    get
+  }
+  public var rawValue: Swift.Int {
+    get
+  }
+}
 @available(iOS 13, *)
 public protocol IEchipReader {
   func readNfcTag(request: AcuantEchipReader.AcuantEchipSessionRequest, customDisplayMessage: ((AcuantEchipReader.AcuantEchipDisplayMessage) -> Swift.String?)?, _ callback: @escaping (AcuantEchipReader.AcuantPassportModel?, AcuantCommon.AcuantError?) -> ())
@@ -109,22 +784,67 @@ public class OzoneRequest {
   public init(mrz: Swift.String, sod: Swift.String)
   @objc deinit
 }
+@_hasMissingDesignatedInitializers @available(iOS 13, macOS 10.15, *)
+public class ChipAuthenticationPublicKeyInfo : AcuantEchipReader.SecurityInfo {
+  override public func getObjectIdentifier() -> Swift.String
+  override public func getProtocolOIDString() -> Swift.String
+  public func getKeyId() -> Swift.Int
+  @objc deinit
+}
 public protocol OzoneServiceDelegate {
   func onSuccess()
   func onFail()
 }
-public enum AcuantEchipDisplayMessage {
-  case requestPresentPassport
-  case authenticatingWithPassport(Swift.Int)
-  case readingDataGroupProgress(Swift.String, Swift.Int)
-  case error
-  case authenticatingExtractedData
-  case successfulRead
+@available(iOS 13, *)
+public class PACEHandler {
+  public init(cardAccess: AcuantEchipReader.CardAccess, tagReader: AcuantEchipReader.TagReader) throws
+  public func doPACE(mrzKey: Swift.String, completed: @escaping (Swift.Bool) -> ())
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @available(iOS 13, macOS 10.15, *)
+public class DataGroup7 : AcuantEchipReader.DataGroup {
+  public var imageData: [Swift.UInt8] {
+    get
+  }
+  @objc deinit
+}
+@available(iOS 13, *)
+public enum TranslatedDocumentType : Swift.String, Swift.CaseIterable {
+  case `default`
+  case nationalPassport
+  case emergencyPassport
+  case diplomaticPassport
+  case officialOrServicePassport
+  case refugeePassport
+  case alienPassport
+  case statelessPassport
+  case travelDocument
+  case militaryPassport
+  public init?(rawValue: Swift.String)
+  public typealias AllCases = [AcuantEchipReader.TranslatedDocumentType]
+  public typealias RawValue = Swift.String
+  public static var allCases: [AcuantEchipReader.TranslatedDocumentType] {
+    get
+  }
+  public var rawValue: Swift.String {
+    get
+  }
+}
+@available(iOS 13, *)
+public enum AuthStatus {
+  case success, failure, skipped
+  public static func == (a: AcuantEchipReader.AuthStatus, b: AcuantEchipReader.AuthStatus) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
 }
 @_hasMissingDesignatedInitializers @available(iOS 13, *)
 public class AcuantPassportModel {
   public var documentType: Swift.String
   public var documentSubType: Swift.String
+  public var documentCode: Swift.String
+  public var translatedDocumentType: AcuantEchipReader.TranslatedDocumentType
   public var personalNumber: Swift.String
   public var documentNumber: Swift.String
   public var issuingAuthority: Swift.String
@@ -135,12 +855,34 @@ public class AcuantPassportModel {
   public var gender: Swift.String
   public var nationality: Swift.String
   public var image: UIKit.UIImage?
+  public var signatureImage: UIKit.UIImage?
   public var passportSigned: AcuantEchipReader.OzoneResultStatus
   public var passportCountrySigned: AcuantEchipReader.OzoneResultStatus
+  public var PACEStatus: AcuantEchipReader.AuthStatus
+  public var BACStatus: AcuantEchipReader.AuthStatus
+  public var chipAuthenticationStatus: AcuantEchipReader.AuthStatus
+  public var activeAuthenticationStatus: AcuantEchipReader.AuthStatus
   public var passportDataValid: Swift.Bool
   public var age: Swift.Int?
   public var isExpired: Swift.Bool?
   public func getRawDataGroup(dgId: AcuantEchipReader.AcuantDataGroupId) -> [Swift.UInt8]?
+  @objc deinit
+}
+@available(iOS 13, macOS 10.15, *)
+public struct DataGroupHash {
+  public var id: Swift.String
+  public var sodHash: Swift.String
+  public var computedHash: Swift.String
+  public var match: Swift.Bool
+}
+@_hasMissingDesignatedInitializers @available(iOS 13, macOS 10.15, *)
+public class OpenSSLUtils {
+  public static func getOpenSSLError() -> Swift.String
+  @available(iOS 13, macOS 10.15, *)
+  public static func getPublicKeyData(from key: Swift.OpaquePointer) -> [Swift.UInt8]?
+  @available(iOS 13, macOS 10.15, *)
+  public static func decodePublicKeyFromBytes(pubKeyData: [Swift.UInt8], params: Swift.OpaquePointer) -> Swift.OpaquePointer?
+  public static func computeSharedSecret(privateKeyPair: Swift.OpaquePointer, publicKey: Swift.OpaquePointer) -> [Swift.UInt8]
   @objc deinit
 }
 public class AcuantEchipSessionRequest {
@@ -157,15 +899,89 @@ public class AcuantEchipPackage : AcuantCommon.IAcuantPackage {
   public func initialize()
   @objc deinit
 }
+@_hasMissingDesignatedInitializers @available(iOS 13, macOS 10.15, *)
+public class CardAccess {
+  public var securityInfos: [AcuantEchipReader.SecurityInfo] {
+    get
+  }
+  @objc deinit
+}
 @available(iOS 13, *)
-extension AcuantEchipReader.DocTypeEnum : Swift.Equatable {}
+public struct ResponseAPDU {
+  public var data: [Swift.UInt8]
+  public var sw1: Swift.UInt8
+  public var sw2: Swift.UInt8
+  public init(data: [Swift.UInt8], sw1: Swift.UInt8, sw2: Swift.UInt8)
+}
+@objc @available(iOS 13, *)
+public class PassportReader : ObjectiveC.NSObject {
+  public var passiveAuthenticationUsesOpenSSL: Swift.Bool
+  public init(logLevel: AcuantEchipReader.LogLevel = .info, masterListURL: Foundation.URL? = nil)
+  public func setMasterListURL(_ masterListURL: Foundation.URL)
+  public func overrideNFCDataAmountToRead(amount: Swift.Int)
+  public func readPassport(mrzKey: Swift.String, tags: [AcuantEchipReader.DataGroupId] = [], skipSecureElements: Swift.Bool = true, skipCA: Swift.Bool = false, skipPACE: Swift.Bool = false, customDisplayMessage: ((AcuantEchipReader.NFCViewDisplayMessage) -> Swift.String?)? = nil, completed: @escaping (AcuantEchipReader.NFCPassportModel?, AcuantEchipReader.NFCPassportReaderError?) -> ())
+  @objc deinit
+}
 @available(iOS 13, *)
-extension AcuantEchipReader.DocTypeEnum : Swift.Hashable {}
-@available(iOS 13, *)
-extension AcuantEchipReader.DocTypeEnum : Swift.RawRepresentable {}
+extension AcuantEchipReader.PassportReader : CoreNFC.NFCTagReaderSessionDelegate {
+  public func tagReaderSessionDidBecomeActive(_ session: CoreNFC.NFCTagReaderSession)
+  public func tagReaderSession(_ session: CoreNFC.NFCTagReaderSession, didInvalidateWithError error: Swift.Error)
+  public func tagReaderSession(_ session: CoreNFC.NFCTagReaderSession, didDetect tags: [CoreNFC.NFCTag])
+}
+@_hasMissingDesignatedInitializers @available(iOS 13, macOS 10.15, *)
+public class SecurityInfo {
+  public func getObjectIdentifier() -> Swift.String
+  public func getProtocolOIDString() -> Swift.String
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers @available(iOS 13, *)
+public class TagReader {
+  @objc deinit
+}
 extension AcuantEchipReader.OzoneResultStatus : Swift.Equatable {}
 extension AcuantEchipReader.OzoneResultStatus : Swift.Hashable {}
 extension AcuantEchipReader.OzoneResultStatus : Swift.RawRepresentable {}
+extension AcuantEchipReader.SecureMessagingSupportedAlgorithms : Swift.Equatable {}
+extension AcuantEchipReader.SecureMessagingSupportedAlgorithms : Swift.Hashable {}
+extension AcuantEchipReader.PassportAuthenticationStatus : Swift.Equatable {}
+extension AcuantEchipReader.PassportAuthenticationStatus : Swift.Hashable {}
+@available(iOS 13, macOS 10.15, *)
+extension AcuantEchipReader.CertificateType : Swift.Equatable {}
+@available(iOS 13, macOS 10.15, *)
+extension AcuantEchipReader.CertificateType : Swift.Hashable {}
+@available(iOS 13, macOS 10.15, *)
+extension AcuantEchipReader.CertificateItem : Swift.Equatable {}
+@available(iOS 13, macOS 10.15, *)
+extension AcuantEchipReader.CertificateItem : Swift.Hashable {}
+@available(iOS 13, macOS 10.15, *)
+extension AcuantEchipReader.CertificateItem : Swift.RawRepresentable {}
+@available(iOS 13, macOS 10.15, *)
+extension AcuantEchipReader.DocTypeEnum : Swift.Equatable {}
+@available(iOS 13, macOS 10.15, *)
+extension AcuantEchipReader.DocTypeEnum : Swift.Hashable {}
+@available(iOS 13, macOS 10.15, *)
+extension AcuantEchipReader.DocTypeEnum : Swift.RawRepresentable {}
 extension AcuantEchipReader.AcuantDataGroupId : Swift.Equatable {}
 extension AcuantEchipReader.AcuantDataGroupId : Swift.Hashable {}
 extension AcuantEchipReader.AcuantDataGroupId : Swift.RawRepresentable {}
+extension AcuantEchipReader.PACEMappingType : Swift.Equatable {}
+extension AcuantEchipReader.PACEMappingType : Swift.Hashable {}
+extension AcuantEchipReader.LogLevel : Swift.Equatable {}
+extension AcuantEchipReader.LogLevel : Swift.Hashable {}
+extension AcuantEchipReader.LogLevel : Swift.RawRepresentable {}
+@available(iOS 13, macOS 10.15, *)
+extension AcuantEchipReader.DataGroupId : Swift.Equatable {}
+@available(iOS 13, macOS 10.15, *)
+extension AcuantEchipReader.DataGroupId : Swift.Hashable {}
+@available(iOS 13, macOS 10.15, *)
+extension AcuantEchipReader.DataGroupId : Swift.RawRepresentable {}
+@available(iOS 13, *)
+extension AcuantEchipReader.TranslatedDocumentType : Swift.Equatable {}
+@available(iOS 13, *)
+extension AcuantEchipReader.TranslatedDocumentType : Swift.Hashable {}
+@available(iOS 13, *)
+extension AcuantEchipReader.TranslatedDocumentType : Swift.RawRepresentable {}
+@available(iOS 13, *)
+extension AcuantEchipReader.AuthStatus : Swift.Equatable {}
+@available(iOS 13, *)
+extension AcuantEchipReader.AuthStatus : Swift.Hashable {}

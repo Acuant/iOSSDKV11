@@ -37,4 +37,8 @@ extension String {
         let trimmed = self.trimmingCharacters(in: .whitespacesAndNewlines)
         return trimmed
     }
+
+    var isNumeric: Bool {
+        return CharacterSet.decimalDigits.isSuperset(of: CharacterSet(charactersIn: self))
+    }
 }

@@ -1,6 +1,6 @@
-# Acuant iOS SDK v11.5.5
+# Acuant iOS SDK v11.5.6
 
-**March 2022**
+**July 2022**
 
 See [https://github.com/Acuant/iOSSDKV11/releases](https://github.com/Acuant/iOSSDKV11/releases) for release notes.
 
@@ -21,9 +21,9 @@ This document provides detailed information about the Acuant iOS SDK. The Acuant
 
 ----------
 
-## Updating to 11.5.5+
+## Updating to 11.5.6+
 
-Please see the provided [Migration Details](MigrationDetails.md) for information about updating to 11.5.5+
+Please see the provided [Migration Details](MigrationDetails.md) for information about updating to 11.5.6+
 
 ----------
 
@@ -69,6 +69,7 @@ The SDK includes the following modules:
 **Acuant EChip Library (AcuantEchipReader):**
 
 - Contains methods for e-Passport chip reading and authentication using Ozone
+- Depends on **https://github.com/krzyzanowskim/OpenSSL**
 
 **Acuant HG Liveness Library (AcuantHGLiveness):**
 
@@ -95,6 +96,7 @@ The SDK includes the following modules:
 	-	**AcuantHGLiveness**
 	-	**AcuantFaceMatch**
 	-	**AcuantEchipReader**
+		- OpenSSL.xcframework
  	-	**AcuantCamera**
  		- TesseractOCR.framework
  	-	**AcuantIPLiveness**
@@ -133,7 +135,7 @@ The SDK includes the following modules:
 		platform :ios, '11'
 		use_frameworks! # important
 		
-		pod 'AcuantiOSSDKV11', '~> 11.5.5' #for all packages
+		pod 'AcuantiOSSDKV11', '~> 11.5.6' #for all packages
 		
  Alternatively, use the following to add **independent** modules in the podfile:
 		
@@ -189,8 +191,9 @@ The SDK includes the following modules:
 
 			pod 'AcuantiOSSDKV11/AcuantEchipReader'
 			dependency AcuantCommon
+			dependency OpenSSL
 		
-1. Enable "BUILD\_LIBRARY\_FOR\_DISTRIBUTION" for all Acuant pod frameworks in Build Settings.
+2. Enable "BUILD\_LIBRARY\_FOR\_DISTRIBUTION" for all Acuant pod frameworks in Build Settings.
 
 	- Using Cocoapods. Add to your Podfile.
 		
@@ -353,8 +356,6 @@ Before you use the SDK, you must initialize it, either by using the credentials 
 		}
 		
 4. **Note:** If token is set, all service calls will attempt to authorize using the token. If the token is not set, the legacy credentials will be used.
-
-5. **Important Note:** You will still need to provide the SubscriptionId in the Credential object in order to use Acuant Services with bearer tokens.
 	
 		
 ### Initialization without a Subscription ID
@@ -534,16 +535,17 @@ AcuantCamera is best used in portrait mode. Lock the orientation of the app befo
 
 1. Result.
 
-		public class AcuantMrzResult{
-			public var surName:String = ""
-			public var givenName:String = ""
-			public var country:String = ""
+		public class AcuantMrzResult {
+			public var surName: String = ""
+			public var givenName: String = ""
+			public var country: String = ""
 			public var passportNumber: String = ""
-			public var nationality:String = ""
+			public var nationality: String = ""
 			public var dob: String = ""
 			public var gender: String = ""
 			public var passportExpiration: String = ""
 			public var personalDocNumber: String = ""
+			public var threeLineMrz: Bool = false
 			public var checkSumResult1: Bool = false
 			public var checkSumResult2: Bool = false
 			public var checkSumResult3: Bool = false
@@ -571,7 +573,7 @@ AcuantCamera is best used in portrait mode. Lock the orientation of the app befo
 		let request = AcuantEchipSessionRequest(passportNumber: "", dateOfBirth: "", expiryDate: "")
 		
 1. Set custom messages based on state of reader.
-
+   
 		public enum AcuantEchipDisplayMessage {
 		    case requestPresentPassport
 		    case authenticatingWithPassport(Int)
@@ -601,77 +603,98 @@ AcuantCamera is best used in portrait mode. Lock the orientation of the app befo
 						return "Authenicating with Ozone"
             }
 		}
-    
-            
+   
 1. Start the reader. 
 
-		self.reader.readNfcTag(request: request, customDisplayMessage: customDisplayMessage){ [weak self]
-			(model, error) in
-				if let result = model{
-                    //success
-				}
-				else{
-					if let err = error{
+		self.reader.readNfcTag(request: request, customDisplayMessage: customDisplayMessage) { [weak self]
+			model, error in
+				if let result = model {
+            			//success
+				} else if let error = error {
 						//error
-					}
-					else{
+				} else {
 						//user canceled
-					}  
 				}
 		}
 		
 1. Result.
 
 		public class AcuantPassportModel {
-			public var documentType : String
-			public var documentSubType : String
-			public var personalNumber : String
-			public var documentNumber : String
-			public var issuingAuthority : String
-			public var documentExpiryDate : String
-			public var firstName : String
-			public var lastName : String
-			public var dateOfBirth : String
-			public var gender : String
-			public var nationality : String
-			public var image : UIImage?
-			public var passportSigned = OzoneResultStatus.UNKNOWN
-			public var passportCountrySigned = OzoneResultStatus.UNKNOWN
-			public var passportDataValid = false
+			public var documentType: String
+			public var documentSubType: String
+			public var documentCode: String
+			public var translatedDocumentType: TranslatedDocumentType
+			public var personalNumber: String
+			public var documentNumber: String
+			public var issuingAuthority: String
+			public var documentExpiryDate: String
+			public var firstName: String
+			public var lastName: String
+			public var dateOfBirth: String
+			public var gender: String
+			public var nationality: String
+			public var image: UIImage?
+			public var signatureImage: UIImage?
+			public var passportSigned: OzoneResultStatus
+			public var passportCountrySigned: OzoneResultStatus
+			public var PACEStatus: AuthStatus
+			public var BACStatus: AuthStatus
+			public var chipAuthenticationStatus: AuthStatus
+			public var activeAuthenticationStatus: AuthStatus
+			public var passportDataValid: Bool
 			public var age: Int?
 			public var isExpired: Bool?
-			    
-		    public func getRawDataGroup(dgId: AcuantDataGroupId) -> [UInt8]?{
-		        return self.dataGroups[dgId]
-		    }
-		}
-		
-		public enum OzoneResultStatus : Int{
-		    case SUCCESS
-		    case FAILED
-		    case UNKNOWN
+			  
+			public func getRawDataGroup(dgId: AcuantDataGroupId) -> [UInt8]? {
+				return self.dataGroups[dgId]
+			}
 		}
 
-		public enum AcuantDataGroupId : Int {
-		    case COM
-		    case DG1
-		    case DG2
-		    case DG3
-		    case DG4
-		    case DG5
-		    case DG6
-		    case DG7
-		    case DG8
-		    case DG9
-		    case DG10
-		    case DG11
-		    case DG12
-		    case DG13
-		    case DG14
-		    case DG15
-		    case DG16
-		    case SOD
-		    case Unknown
+		public enum AuthStatus {
+			case success 
+			case failure 
+			case skipped
+		}
+		
+		public enum OzoneResultStatus: Int {
+			case SUCCESS
+			case FAILED
+			case UNKNOWN
+		}
+
+		public enum AcuantDataGroupId: Int {
+			case COM
+			case DG1
+			case DG2
+			case DG3
+			case DG4
+			case DG5
+			case DG6
+			case DG7
+			case DG8
+			case DG9
+			case DG10
+			case DG11
+			case DG12
+			case DG13
+			case DG14
+			case DG15
+			case DG16
+			case SOD
+			case Unknown
+		}
+
+		public enum TranslatedDocumentType: String, CaseIterable {
+			case `default` = "Default"
+			case nationalPassport = "National Passport"
+			case emergencyPassport = "Emergency Passport"
+			case diplomaticPassport = "Diplomatic Passport"
+			case officialOrServicePassport = "Official/Service Passport"
+			case refugeePassport = "Refugee Passport"
+			case alienPassport = "Alien Passport"
+			case statelessPassport = "Stateless Passport"
+			case travelDocument = "Travel Document"
+			case militaryPassport = "Military Passport"
 		}
 		
 1. Map country to passport.
@@ -709,10 +732,8 @@ The callback returns the **AcuantImage** and **AcuantError**. The **AcuantImage*
 If the sharpness value is greater than 50, then the image is considered sharp (not blurry). If the glare value is 100, then the image does not contain glare. If the glare value is 0, then image contains glare.
 	
 Preferably, the image must be sharp and not contain glare to get best results in authentication and data extraction. When the image has glare, low sharpness, or both, retry the capture.
-	
-Acuant recommends against modifying and/or compressing the resulting AcuantImage.image before uploading. Modifying and/or compressing the AcuantImage.image may negatively affect authentication and data extraction results.
 
-**Note:** If you are using an independent orchestration layer, then make sure you supply AcuantImage.data not just AcuantImage.image.	
+**Note:** If you are using an independent orchestration layer, make sure you supply AcuantImage.data, and not AcuantImage.image. AcuantImage.image is provided only for visual use within the application (for example, for presenting the crop result to the user for visual verification). Do not modify AcuantImage.data in any way before upload.
 
 ----------
 ### AcuantDocumentProcessing

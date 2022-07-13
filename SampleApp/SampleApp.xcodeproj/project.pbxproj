@@ -28,6 +28,8 @@
 		83576FF6243555310091454C /* tessdata in Resources */ = {isa = PBXBuildFile; fileRef = 83576FF5243555310091454C /* tessdata */; };
 		838DEB5124356128004B5DE3 /* AcuantCamera.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C208049D2226E049004FA5BE /* AcuantCamera.framework */; };
 		83C977F622C69D9A00FC8C53 /* CheckConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83C977F522C69D9A00FC8C53 /* CheckConnection.swift */; };
+		AA08D0A3287DEBAB00C5A336 /* OpenSSL.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA08D0A2287DEBAB00C5A336 /* OpenSSL.xcframework */; };
+		AA08D0A4287DEBAB00C5A336 /* OpenSSL.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = AA08D0A2287DEBAB00C5A336 /* OpenSSL.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		AA1728A12673CDC900E3E2CB /* MrzHelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1728A02673CDC900E3E2CB /* MrzHelpViewController.swift */; };
 		AA1728AF2673CDDE00E3E2CB /* AcuantPassiveLiveness.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA1728A22673CDDE00E3E2CB /* AcuantPassiveLiveness.xcframework */; };
 		AA1728B02673CDDE00E3E2CB /* AcuantPassiveLiveness.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = AA1728A22673CDDE00E3E2CB /* AcuantPassiveLiveness.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -98,6 +100,7 @@
 			files = (
 				AA1728B82673CDDF00E3E2CB /* AcuantEchipReader.xcframework in Embed Frameworks */,
 				AA1728C02673CDDF00E3E2CB /* AcuantImagePreparation.xcframework in Embed Frameworks */,
+				AA08D0A4287DEBAB00C5A336 /* OpenSSL.xcframework in Embed Frameworks */,
 				AA1728BE2673CDDF00E3E2CB /* iProov.xcframework in Embed Frameworks */,
 				AA1728B02673CDDE00E3E2CB /* AcuantPassiveLiveness.xcframework in Embed Frameworks */,
 				83248A8423ECB05D00A264F2 /* AcuantFaceCapture.framework in Embed Frameworks */,
@@ -141,6 +144,7 @@
 		83576FF5243555310091454C /* tessdata */ = {isa = PBXFileReference; lastKnownFileType = folder; name = tessdata; path = Assets.xcassets/tessdata; sourceTree = "<group>"; };
 		8381E903248EFD93003FB763 /* SampleApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SampleApp.entitlements; sourceTree = "<group>"; };
 		83C977F522C69D9A00FC8C53 /* CheckConnection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckConnection.swift; sourceTree = "<group>"; };
+		AA08D0A2287DEBAB00C5A336 /* OpenSSL.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = OpenSSL.xcframework; path = ../EmbeddedFrameworks/OpenSSL.xcframework; sourceTree = "<group>"; };
 		AA1728A02673CDC900E3E2CB /* MrzHelpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MrzHelpViewController.swift; path = SampleApp/MrzHelpViewController.swift; sourceTree = "<group>"; };
 		AA1728A22673CDDE00E3E2CB /* AcuantPassiveLiveness.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = AcuantPassiveLiveness.xcframework; path = ../EmbeddedFrameworks/AcuantPassiveLiveness.xcframework; sourceTree = "<group>"; };
 		AA1728A32673CDDE00E3E2CB /* AcuantFaceMatch.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = AcuantFaceMatch.xcframework; path = ../EmbeddedFrameworks/AcuantFaceMatch.xcframework; sourceTree = "<group>"; };
@@ -167,6 +171,7 @@
 			files = (
 				AA1728B72673CDDF00E3E2CB /* AcuantEchipReader.xcframework in Frameworks */,
 				AA1728BF2673CDDF00E3E2CB /* AcuantImagePreparation.xcframework in Frameworks */,
+				AA08D0A3287DEBAB00C5A336 /* OpenSSL.xcframework in Frameworks */,
 				AA1728BD2673CDDF00E3E2CB /* iProov.xcframework in Frameworks */,
 				AA1728AF2673CDDE00E3E2CB /* AcuantPassiveLiveness.xcframework in Frameworks */,
 				838DEB5124356128004B5DE3 /* AcuantCamera.framework in Frameworks */,
@@ -236,6 +241,7 @@
 		13AC662620EE954900F0D494 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				AA08D0A2287DEBAB00C5A336 /* OpenSSL.xcframework */,
 				AA1728A82673CDDE00E3E2CB /* AcuantCommon.xcframework */,
 				AA1728A52673CDDE00E3E2CB /* AcuantDocumentProcessing.xcframework */,
 				AA1728A62673CDDE00E3E2CB /* AcuantEchipReader.xcframework */,
