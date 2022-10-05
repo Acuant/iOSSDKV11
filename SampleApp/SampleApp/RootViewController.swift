@@ -26,8 +26,9 @@ class RootViewController: UIViewController{
     @IBOutlet weak var medicalCardButton: UIButton!
     @IBOutlet weak var idPassportButton: UIButton!
     @IBOutlet weak var livenessOption: UISegmentedControl!
-    
     @IBOutlet weak var mrzButton: UIButton!
+    @IBOutlet weak var detailedAuthStackView: UIStackView!
+    @IBOutlet weak var livenessStackView: UIStackView!
     
     public var documentInstance : String?
     public var livenessString: String?
@@ -130,51 +131,49 @@ class RootViewController: UIViewController{
         task?.resume()
     }
     
-    func addEnhancedLiveness(){
-        if(livenessOption.numberOfSegments == 2){
+    func addEnhancedLiveness() {
+        if livenessOption.numberOfSegments == 2 {
             livenessOption.insertSegment(withTitle: "Enhanced", at: livenessOption.numberOfSegments, animated: true)
         }
     }
     
-    private func initialize(){
+    private func initialize() {
         let initalizer: IAcuantInitializer = AcuantInitializer()
-        var packages : Array<IAcuantPackage> = [ImagePreparationPackage()]
+        var packages: [IAcuantPackage] = [ImagePreparationPackage()]
         
         if #available(iOS 13, *) {
             packages.append(AcuantEchipPackage())
         }
         
-        let _ = initalizer.initialize(packages:packages){ [weak self]
-            error in
-            
+        _ = initalizer.initialize(packages: packages) { [weak self] error in
             DispatchQueue.main.async {
-                if let self = self{
-                    if(error == nil){
-                        if(!Credential.authorization().hasOzone && !Credential.authorization().chipExtract){
-                            self.mrzButton.isHidden = true
-                        }
-                        
-                        if (Credential.authorization().ipLiveness) {
-                            self.addEnhancedLiveness()
-                        }
+                guard let self = self else {
+                    return
+                }
 
-                        self.hideProgressView()
-                        self.medicalCardButton.isEnabled = true
-                        self.idPassportButton.isEnabled = true
-                        self.mrzButton.isEnabled = true
-                        self.isInitialized = true
-                        self.resetData()
-
-                    }else{
-                        self.hideProgressView()
-                        self.medicalCardButton.isEnabled = true
-                        self.idPassportButton.isEnabled = true
-                        self.mrzButton.isEnabled = true
-                        if let msg = error?.errorDescription {
-                            CustomAlerts.displayError(message: "\(error!.errorCode) : " + msg)
-                        }
+                if let error = error {
+                    self.hideProgressView()
+                    self.medicalCardButton.isEnabled = true
+                    self.idPassportButton.isEnabled = true
+                    self.mrzButton.isEnabled = true
+                    if let msg = error.errorDescription {
+                        CustomAlerts.displayError(message: "\(error.errorCode) : " + msg)
                     }
-                    
+                } else {
+                    if Credential.authorization().ipLiveness {
+                        self.addEnhancedLiveness()
+                    }
+
+                    self.mrzButton.isHidden = !Credential.authorization().hasOzone && !Credential.authorization().chipExtract
+                    self.livenessStackView.isHidden = self.isKeyless
+                    self.detailedAuthStackView.isHidden = self.isKeyless
+
+                    self.hideProgressView()
+                    self.medicalCardButton.isEnabled = true
+                    self.idPassportButton.isEnabled = true
+                    self.mrzButton.isEnabled = true
+                    self.isInitialized = true
+                    self.resetData()
                 }
             }
         }
@@ -253,15 +252,30 @@ class RootViewController: UIViewController{
     }
     
     public func confirmImage(image: AcuantImage) {
-        self.createInstanceGroup.notify(queue: .main) {
-            self.showProgressView(text: "Processing...")
-            
-            let evaluted = EvaluatedImageData(imageBytes: image.data, barcodeString: self.idData.barcodeString)
-            
-            //use for testing purposes
-            //self.saveToFile(data: image.data)
-        
-            DocumentProcessing.uploadImage(instancdId: self.documentInstance!, data: evaluted, options: self.idOptions, delegate: self)
+        if isKeyless {
+            if image.isPassport || self.idOptions.cardSide == CardSide.Back {
+                self.showKeylessHGLiveness()
+            } else {
+                let alert = UIAlertController(title: NSLocalizedString("Back Side?", comment: ""),
+                                              message: NSLocalizedString("Scan the back side of the ID document", comment: ""),
+                                              preferredStyle: UIAlertController.Style.alert)
+                alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default) { action -> Void in
+                    self.idOptions.cardSide = CardSide.Back
+                    self.showDocumentCaptureCamera()
+                })
+                self.present(alert, animated: true, completion: nil)
+            }
+        } else {
+            self.createInstanceGroup.notify(queue: .main) {
+                self.showProgressView(text: "Processing...")
+
+                let evaluted = EvaluatedImageData(imageBytes: image.data, barcodeString: self.idData.barcodeString)
+
+                //use for testing purposes
+                //self.saveToFile(data: image.data)
+
+                DocumentProcessing.uploadImage(instancdId: self.documentInstance!, data: evaluted, options: self.idOptions, delegate: self)
+            }
         }
     }
     
@@ -346,31 +360,29 @@ extension RootViewController{
 extension RootViewController: CameraCaptureDelegate {
 
     public func setCapturedImage(image: Image, barcodeString: String?) {
-        if isKeyless {
-            handleKeyless(image: image)
-        } else if image.image != nil {
-            self.showProgressView(text: "Processing...")
-            ImagePreparation.evaluateImage(data: CroppingData.newInstance(image: image)) {
-                result, error in
-                
-                DispatchQueue.main.async {
-                    self.hideProgressView()
-                    if result != nil{
-                        let storyBoard = UIStoryboard.init(name: "Main", bundle: nil)
-                        let confirmController = storyBoard.instantiateViewController(withIdentifier: "ConfirmationViewController") as! ConfirmationViewController
-                        confirmController.acuantImage = result
-                        if barcodeString != nil {
-                            confirmController.barcodeCaptured = true
-                            confirmController.barcodeString = barcodeString
-                        }
-                        self.idData.barcodeString = barcodeString
-                        self.navigationController?.pushViewController(confirmController, animated: true)
-                    } else {
-                        CustomAlerts.display(
-                            title: "Error",
-                            message: (error?.errorDescription)!,
-                            action: UIAlertAction(title: "Try Again", style: UIAlertAction.Style.default, handler: { (action:UIAlertAction) in self.retryCapture() }))
+        guard image.image != nil else {
+            return
+        }
+
+        self.showProgressView(text: "Processing...")
+        ImagePreparation.evaluateImage(data: CroppingData.newInstance(image: image)) { result, error in
+            DispatchQueue.main.async {
+                self.hideProgressView()
+                if result != nil {
+                    let storyBoard = UIStoryboard.init(name: "Main", bundle: nil)
+                    let confirmController = storyBoard.instantiateViewController(withIdentifier: "ConfirmationViewController") as! ConfirmationViewController
+                    confirmController.acuantImage = result
+                    if barcodeString != nil {
+                        confirmController.barcodeCaptured = true
+                        confirmController.barcodeString = barcodeString
                     }
+                    self.idData.barcodeString = barcodeString
+                    self.navigationController?.pushViewController(confirmController, animated: true)
+                } else {
+                    CustomAlerts.display(
+                        title: "Error",
+                        message: (error?.errorDescription)!,
+                        action: UIAlertAction(title: "Try Again", style: UIAlertAction.Style.default, handler: { (action:UIAlertAction) in self.retryCapture() }))
                 }
             }
         }
@@ -407,38 +419,6 @@ extension RootViewController: CameraCaptureDelegate {
         //liveFaceViewController.frameRefreshSpeed = 10
         
         self.navigationController?.pushViewController(liveFaceViewController, animated: false)
-    }
-    
-    public func cropImage(image:Image, callback: @escaping (AcuantImage?) -> ()){
-        if image.image != nil {
-            self.showProgressView(text: "Processing...")
-            
-            DispatchQueue.global().async {
-                ImagePreparation.evaluateImage(data: CroppingData.newInstance(image: image)) {image,_ in
-                    DispatchQueue.main.async {
-                        self.hideProgressView()
-                        callback(image)
-                    }
-                }
-            }
-        }
-    }
-    
-    private func handleKeyless(image: Image) {
-        cropImage(image: image) { croppedImage in
-            if(croppedImage == nil || croppedImage!.isPassport || self.idOptions.cardSide == CardSide.Back){
-                self.showKeylessHGLiveness()
-            }
-            else{
-                let alert = UIAlertController(title: NSLocalizedString("Back Side?", comment: ""), message: NSLocalizedString("Scan the back side of the ID document", comment: ""), preferredStyle:UIAlertController.Style.alert)
-                alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default)
-                { action -> Void in
-                    self.idOptions.cardSide = CardSide.Back
-                    self.showDocumentCaptureCamera()
-                })
-                self.present(alert, animated: true, completion: nil)
-            }
-        }
     }
 }
 
@@ -907,6 +887,8 @@ extension RootViewController: MrzHelpViewControllerDelegate {
                 return "Move Closer"
             case .TooClose:
                 return "Too Close!"
+            case .Reposition:
+                return "Reposition"
             case .Good:
                 return "Reading MRZ"
             case .Captured:

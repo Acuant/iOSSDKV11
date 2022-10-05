@@ -11,5 +11,5 @@ import UIKit
 
 @objc public protocol DocumentCaptureDelegate {
     func readyToCapture()
-    func documentCaptured(image:UIImage, barcodeString:String?)
+    func documentCaptured(image: UIImage, barcodeString: String?)
 }

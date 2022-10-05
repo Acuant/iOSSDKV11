@@ -6,6 +6,6 @@ framework module AcuantImagePreparation {
 }
 
 module AcuantImagePreparation.Swift {
-    header "AcuantImagePreparation-Swift.h"
-    requires objc
+  header "AcuantImagePreparation-Swift.h"
+  requires objc
 }

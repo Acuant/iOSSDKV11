@@ -17,11 +17,9 @@ public class CameraTextView: CATextLayer {
     public var foregroundColorDefault: CGColor? = UIColor.white.cgColor
     public var foregroundColorCapture: CGColor? = UIColor.red.cgColor
 
-    var defaultWidth: CGFloat = 300
-    var defaultHeight: CGFloat = 40
-    var captureWidth: CGFloat = 300
-    var captureHeight: CGFloat = 300
-    
+    private let frameLargeSideScreenProportion = 0.35
+    private let frameSmallSideScreenProportion = UIDevice.current.userInterfaceIdiom == .pad ? 0.05 : 0.1
+
     public override var string: Any? {
         didSet {
             accessibilityElement?.accessibilityValue = string as? String
@@ -39,12 +37,14 @@ public class CameraTextView: CATextLayer {
         }
         self.alignmentMode = CATextLayerAlignmentMode.center
         self.cornerRadius = 10
+        self.fontSize = textSizeDefault
+        self.contentsScale = UIScreen.main.scale
     }
-    
+
     func setFrame(frame: CGRect) {
         self.setDefaultSettings(frame: frame)
     }
-    
+
     override init(layer: Any) {
         super.init(layer: layer)
     }
@@ -53,6 +53,21 @@ public class CameraTextView: CATextLayer {
         super.init(coder: aDecoder)
     }
     
+    override public func layoutSublayers() {
+        super.layoutSublayers()
+        fitTextToFrame()
+    }
+
+    private func fitTextToFrame() {
+        var stringSize: CGSize  {
+            get { return (string as? String)!.size(ofFont: UIFont(name: (font as! UIFont).fontName, size: fontSize)!) }
+        }
+        let margin: CGFloat = 2
+        while max(frame.width, frame.height) <= max(stringSize.width, stringSize.height) + margin {
+            fontSize -= 1
+        }
+    }
+
     ///Aligns text vertically
     public override func draw(in context: CGContext) {
         let height = self.bounds.size.height
@@ -69,40 +84,52 @@ public class CameraTextView: CATextLayer {
         self.fontSize = textSizeDefault
         self.backgroundColor = backgroundColorDefault
         self.foregroundColor = foregroundColorDefault
-        self.frame = CGRect(x: frame.width / 2 - defaultWidth / 2,
-                            y: frame.height / 2 - defaultHeight / 2,
-                            width: defaultWidth,
-                            height: defaultHeight)
+        let width = max(frame.width, frame.height) * frameLargeSideScreenProportion
+        let height = min(frame.width, frame.height) * frameSmallSideScreenProportion
+        self.frame = CGRect(x: frame.width / 2 - width / 2,
+                            y: frame.height / 2 - height / 2,
+                            width: width,
+                            height: height)
+        fitTextToFrame()
     }
 
     public func setCaptureSettings(frame: CGRect) {
         self.fontSize = textSizeCapture
         self.backgroundColor = backgroundColorCapture
         self.foregroundColor = foregroundColorCapture
-        self.frame = CGRect(x: frame.width / 2 - captureWidth / 2,
-                            y: frame.height / 2 - captureHeight / 2,
-                            width: captureWidth,
-                            height: captureHeight)
+        let width = max(frame.width, frame.height) * frameLargeSideScreenProportion
+        let height = min(frame.width, frame.height) * frameSmallSideScreenProportion
+        self.frame = CGRect(x: frame.width / 2 - width / 2,
+                            y: frame.height / 2 - height / 2,
+                            width: width,
+                            height: height)
+        fitTextToFrame()
     }
 
     func setVerticalDefaultSettings(frame: CGRect) {
         self.fontSize = textSizeDefault
         self.backgroundColor = backgroundColorDefault
         self.foregroundColor = foregroundColorDefault
-        self.frame = CGRect(x: frame.width / 2 - defaultHeight / 2,
-                            y: frame.height / 2 - defaultWidth / 2,
-                            width: defaultHeight,
-                            height: defaultWidth)
+        let height = max(frame.width, frame.height) * frameLargeSideScreenProportion
+        let width = min(frame.height, frame.width) * frameSmallSideScreenProportion
+        self.frame = CGRect(x: frame.width / 2 - width / 2,
+                            y: frame.height / 2 - height / 2,
+                            width: width,
+                            height: height)
+        fitTextToFrame()
     }
 
     func setVerticalCaptureSettings(frame: CGRect) {
         self.fontSize = textSizeCapture
         self.backgroundColor = backgroundColorCapture
         self.foregroundColor = foregroundColorCapture
-        self.frame = CGRect(x: frame.width / 2 - captureHeight / 2,
-                            y: frame.height / 2 - captureWidth / 2,
-                            width: captureHeight,
-                            height: captureWidth)
+        let height = max(frame.width, frame.height) * frameLargeSideScreenProportion
+        let width = min(frame.height, frame.width) * frameSmallSideScreenProportion
+        self.frame = CGRect(x: frame.width / 2 - width / 2,
+                            y: frame.height / 2 - height / 2,
+                            width: width,
+                            height: height)
+        fitTextToFrame()
     }
 
 }

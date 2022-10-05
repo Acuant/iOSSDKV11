@@ -2,6 +2,19 @@
 
 ----------
 
+## v11.5.7
+
+### Important information about upgrading from iOS SDK version 11.5.x to version 11.5.7+
+
+- A new MRZ state (Reposition) was added to determine whether the reading is taking too long. The possible states are as follows:
+
+```swift
+
+public enum MrzCameraState: Int {
+  case None, Align, MoveCloser, TooClose, Reposition, Good, Captured
+}
+```
+
 ## v11.5.6
 
 ### Important information about upgrading from iOS SDK version 11.5.x to version 11.5.6+

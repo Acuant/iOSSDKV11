@@ -9,4 +9,8 @@
 extension String {
     static let kUISupportedInterfaceOrientations = "UISupportedInterfaceOrientations"
     static let kUIInterfaceOrientationPortrait = "UIInterfaceOrientationPortrait"
+
+    func size(ofFont font: UIFont) -> CGSize {
+        return (self as NSString).size(withAttributes: [NSAttributedString.Key.font: font])
+    }
 }

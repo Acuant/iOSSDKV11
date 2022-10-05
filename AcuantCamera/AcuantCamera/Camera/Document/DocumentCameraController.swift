@@ -109,7 +109,8 @@ import AcuantCommon
         coordinator.animate(alongsideTransition: { [weak self] context in
             guard let self = self else { return }
 
-            self.rotateCameraPreview(to: self.view.window?.interfaceOrientation)
+            let newFrame = CGRect(origin: self.view.frame.origin, size: size)
+            self.rotateCameraPreview(to: self.view.window?.interfaceOrientation, frame: newFrame)
         })
     }
 
@@ -160,7 +161,7 @@ import AcuantCommon
                                                                                autoCaptureDelegate: self,
                                                                                captureDevice: captureDevice)
         self.captureSession.start()
-        cameraPreviewView = CameraPreviewView(frame: view.bounds, captureSession: captureSession)
+        cameraPreviewView = CameraPreviewView(frame: view.frame, captureSession: captureSession)
         cameraPreviewView.videoPreviewLayer.videoGravity = UIDevice.current.userInterfaceIdiom == .pad
             ? .resizeAspectFill
             : .resizeAspect
@@ -172,7 +173,7 @@ import AcuantCommon
         self.cameraPreviewView.layer.addSublayer(self.cornerLayer)
         self.view.addSubview(cameraPreviewView)
         
-        rotateCameraPreview(to: self.view.window?.interfaceOrientation)
+        rotateCameraPreview(to: self.view.window?.interfaceOrientation, frame: view.frame)
 
         if self.options.showBackButton {
             addNavigationBackButton()
@@ -198,27 +199,27 @@ import AcuantCommon
         return image
     }
 
-    private func rotateCameraPreview(to interfaceOrientation: UIInterfaceOrientation?) {
+    private func rotateCameraPreview(to interfaceOrientation: UIInterfaceOrientation?, frame: CGRect) {
         guard let connection = cameraPreviewView.videoPreviewLayer.connection,
               connection.isVideoOrientationSupported,
               let orientation = interfaceOrientation else {
             return
         }
 
-        cameraPreviewView.frame = view.bounds
+        cameraPreviewView.frame = frame
         connection.videoOrientation = orientation.videoOrientation ?? .portrait
         cameraPreviewView.clearAccessibilityElements()
 
         if orientation.isLandscape {
             messageLayer.transform = CATransform3DIdentity
-            messageLayer.setFrame(frame: view.bounds)
-            cornerLayer.setHorizontalDefaultCorners(frame: view.bounds)
+            messageLayer.setFrame(frame: frame)
+            cornerLayer.setHorizontalDefaultCorners(frame: frame)
         } else {
             if CATransform3DIsIdentity(messageLayer.transform) {
                 messageLayer.rotate(angle: 90)
             }
-            messageLayer.setVerticalDefaultSettings(frame: view.bounds)
-            cornerLayer.setFrame(frame: view.bounds)
+            messageLayer.setVerticalDefaultSettings(frame: frame)
+            cornerLayer.setFrame(frame: frame)
         }
         cameraPreviewView.videoPreviewLayer.removeAllAnimations()
     }
@@ -271,21 +272,21 @@ import AcuantCommon
         }
 
         if interfaceOrientation.isLandscape {
-            landscapeSetting(view.bounds)
+            landscapeSetting(view.frame)
         } else {
-            portraitSetting(view.bounds)
+            portraitSetting(view.frame)
         }
     }
 
-    private func cancelCapture(state: CameraState, message: String){
+    private func cancelCapture(state: CameraState, message: String) {
         self.setLookFromState(state: state)
         self.messageLayer.string = message
         self.triggerHoldSteady()
         self.captureTimerState = 0.0
     }
     
-    private func triggerHoldSteady(){
-        if(!self.isHoldSteady && self.autoCapture){
+    private func triggerHoldSteady() {
+        if !self.isHoldSteady && self.autoCapture {
             self.isHoldSteady = true
             holdSteadyTimer = Timer.scheduledTimer(
                 timeInterval: 0.1,
@@ -424,13 +425,12 @@ extension DocumentCameraController: DocumentCaptureDelegate {
     public func readyToCapture() {
         DispatchQueue.main.async {
             if self.messageLayer != nil {
+                self.messageLayer.string = NSLocalizedString("acuant_camera_capturing", comment: "")
                 if self.autoCapture {
                     self.setLookFromState(state: DocumentCameraController.CameraState.Capture)
-                    self.setMessageCaptureSettings()
                 } else {
                     self.setMessageDefaultSettings()
                 }
-                self.messageLayer.string = NSLocalizedString("acuant_camera_capturing", comment: "")
                 self.captured = true
             }
         }

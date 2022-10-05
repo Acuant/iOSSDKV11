@@ -6,6 +6,6 @@ framework module AcuantPassiveLiveness {
 }
 
 module AcuantPassiveLiveness.Swift {
-    header "AcuantPassiveLiveness-Swift.h"
-    requires objc
+  header "AcuantPassiveLiveness-Swift.h"
+  requires objc
 }

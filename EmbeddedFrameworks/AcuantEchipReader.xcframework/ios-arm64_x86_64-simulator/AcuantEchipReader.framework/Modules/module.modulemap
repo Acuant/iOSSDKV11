@@ -6,6 +6,6 @@ framework module AcuantEchipReader {
 }
 
 module AcuantEchipReader.Swift {
-    header "AcuantEchipReader-Swift.h"
-    requires objc
+  header "AcuantEchipReader-Swift.h"
+  requires objc
 }

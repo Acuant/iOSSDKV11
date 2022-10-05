@@ -1,0 +1,1472 @@
+{
+  "ABIRoot": {
+    "kind": "Root",
+    "name": "TopLevel",
+    "printedName": "TopLevel",
+    "children": [
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "AcuantPassiveLiveness",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "AcuantLivenessAssessment",
+        "printedName": "AcuantLivenessAssessment",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "Error",
+            "printedName": "Error",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(AcuantPassiveLiveness.AcuantLivenessAssessment.Type) -> AcuantPassiveLiveness.AcuantLivenessAssessment",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "AcuantLivenessAssessment",
+                    "printedName": "AcuantPassiveLiveness.AcuantLivenessAssessment",
+                    "usr": "s:21AcuantPassiveLiveness0aC10AssessmentO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "AcuantPassiveLiveness.AcuantLivenessAssessment.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "AcuantLivenessAssessment",
+                        "printedName": "AcuantPassiveLiveness.AcuantLivenessAssessment",
+                        "usr": "s:21AcuantPassiveLiveness0aC10AssessmentO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:21AcuantPassiveLiveness0aC10AssessmentO5ErroryA2CmF",
+            "mangledName": "$s21AcuantPassiveLiveness0aC10AssessmentO5ErroryA2CmF",
+            "moduleName": "AcuantPassiveLiveness"
+          },
+          {
+            "kind": "Var",
+            "name": "PoorQuality",
+            "printedName": "PoorQuality",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(AcuantPassiveLiveness.AcuantLivenessAssessment.Type) -> AcuantPassiveLiveness.AcuantLivenessAssessment",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "AcuantLivenessAssessment",
+                    "printedName": "AcuantPassiveLiveness.AcuantLivenessAssessment",
+                    "usr": "s:21AcuantPassiveLiveness0aC10AssessmentO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "AcuantPassiveLiveness.AcuantLivenessAssessment.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "AcuantLivenessAssessment",
+                        "printedName": "AcuantPassiveLiveness.AcuantLivenessAssessment",
+                        "usr": "s:21AcuantPassiveLiveness0aC10AssessmentO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:21AcuantPassiveLiveness0aC10AssessmentO11PoorQualityyA2CmF",
+            "mangledName": "$s21AcuantPassiveLiveness0aC10AssessmentO11PoorQualityyA2CmF",
+            "moduleName": "AcuantPassiveLiveness"
+          },
+          {
+            "kind": "Var",
+            "name": "Live",
+            "printedName": "Live",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(AcuantPassiveLiveness.AcuantLivenessAssessment.Type) -> AcuantPassiveLiveness.AcuantLivenessAssessment",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "AcuantLivenessAssessment",
+                    "printedName": "AcuantPassiveLiveness.AcuantLivenessAssessment",
+                    "usr": "s:21AcuantPassiveLiveness0aC10AssessmentO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "AcuantPassiveLiveness.AcuantLivenessAssessment.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "AcuantLivenessAssessment",
+                        "printedName": "AcuantPassiveLiveness.AcuantLivenessAssessment",
+                        "usr": "s:21AcuantPassiveLiveness0aC10AssessmentO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:21AcuantPassiveLiveness0aC10AssessmentO4LiveyA2CmF",
+            "mangledName": "$s21AcuantPassiveLiveness0aC10AssessmentO4LiveyA2CmF",
+            "moduleName": "AcuantPassiveLiveness"
+          },
+          {
+            "kind": "Var",
+            "name": "NotLive",
+            "printedName": "NotLive",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(AcuantPassiveLiveness.AcuantLivenessAssessment.Type) -> AcuantPassiveLiveness.AcuantLivenessAssessment",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "AcuantLivenessAssessment",
+                    "printedName": "AcuantPassiveLiveness.AcuantLivenessAssessment",
+                    "usr": "s:21AcuantPassiveLiveness0aC10AssessmentO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "AcuantPassiveLiveness.AcuantLivenessAssessment.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "AcuantLivenessAssessment",
+                        "printedName": "AcuantPassiveLiveness.AcuantLivenessAssessment",
+                        "usr": "s:21AcuantPassiveLiveness0aC10AssessmentO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:21AcuantPassiveLiveness0aC10AssessmentO7NotLiveyA2CmF",
+            "mangledName": "$s21AcuantPassiveLiveness0aC10AssessmentO7NotLiveyA2CmF",
+            "moduleName": "AcuantPassiveLiveness"
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(rawValue:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "AcuantPassiveLiveness.AcuantLivenessAssessment?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "AcuantLivenessAssessment",
+                    "printedName": "AcuantPassiveLiveness.AcuantLivenessAssessment",
+                    "usr": "s:21AcuantPassiveLiveness0aC10AssessmentO"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:21AcuantPassiveLiveness0aC10AssessmentO8rawValueACSgSS_tcfc",
+            "mangledName": "$s21AcuantPassiveLiveness0aC10AssessmentO8rawValueACSgSS_tcfc",
+            "moduleName": "AcuantPassiveLiveness",
+            "implicit": true,
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Var",
+            "name": "rawValue",
+            "printedName": "rawValue",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:21AcuantPassiveLiveness0aC10AssessmentO8rawValueSSvp",
+            "mangledName": "$s21AcuantPassiveLiveness0aC10AssessmentO8rawValueSSvp",
+            "moduleName": "AcuantPassiveLiveness",
+            "implicit": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:21AcuantPassiveLiveness0aC10AssessmentO8rawValueSSvg",
+                "mangledName": "$s21AcuantPassiveLiveness0aC10AssessmentO8rawValueSSvg",
+                "moduleName": "AcuantPassiveLiveness",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          }
+        ],
+        "declKind": "Enum",
+        "usr": "s:21AcuantPassiveLiveness0aC10AssessmentO",
+        "mangledName": "$s21AcuantPassiveLiveness0aC10AssessmentO",
+        "moduleName": "AcuantPassiveLiveness",
+        "declAttributes": [
+          "AccessControl"
+        ],
+        "enumRawTypeName": "String",
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Hashable",
+            "printedName": "Hashable",
+            "usr": "s:SH",
+            "mangledName": "$sSH"
+          },
+          {
+            "kind": "Conformance",
+            "name": "RawRepresentable",
+            "printedName": "RawRepresentable",
+            "children": [
+              {
+                "kind": "TypeWitness",
+                "name": "RawValue",
+                "printedName": "RawValue",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ]
+              }
+            ],
+            "usr": "s:SY",
+            "mangledName": "$sSY"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "AcuantPassiveLiveness",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "UIKit",
+        "printedName": "UIKit",
+        "declKind": "Import",
+        "moduleName": "AcuantPassiveLiveness"
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "AcuantLivenessRequest",
+        "printedName": "AcuantLivenessRequest",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "jpegData",
+            "printedName": "jpegData",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Data",
+                "printedName": "Foundation.Data",
+                "usr": "s:10Foundation4DataV"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:21AcuantPassiveLiveness0aC7RequestC8jpegData10Foundation0F0Vvp",
+            "mangledName": "$s21AcuantPassiveLiveness0aC7RequestC8jpegData10Foundation0F0Vvp",
+            "moduleName": "AcuantPassiveLiveness",
+            "declAttributes": [
+              "Final",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Data",
+                    "printedName": "Foundation.Data",
+                    "usr": "s:10Foundation4DataV"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:21AcuantPassiveLiveness0aC7RequestC8jpegData10Foundation0F0Vvg",
+                "mangledName": "$s21AcuantPassiveLiveness0aC7RequestC8jpegData10Foundation0F0Vvg",
+                "moduleName": "AcuantPassiveLiveness",
+                "implicit": true,
+                "declAttributes": [
+                  "Final"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(jpegData:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "AcuantLivenessRequest",
+                "printedName": "AcuantPassiveLiveness.AcuantLivenessRequest",
+                "usr": "s:21AcuantPassiveLiveness0aC7RequestC"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Data",
+                "printedName": "Foundation.Data",
+                "usr": "s:10Foundation4DataV"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:21AcuantPassiveLiveness0aC7RequestC8jpegDataAC10Foundation0F0V_tcfc",
+            "mangledName": "$s21AcuantPassiveLiveness0aC7RequestC8jpegDataAC10Foundation0F0V_tcfc",
+            "moduleName": "AcuantPassiveLiveness",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "init_kind": "Designated"
+          }
+        ],
+        "declKind": "Class",
+        "usr": "s:21AcuantPassiveLiveness0aC7RequestC",
+        "mangledName": "$s21AcuantPassiveLiveness0aC7RequestC",
+        "moduleName": "AcuantPassiveLiveness",
+        "declAttributes": [
+          "AccessControl"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "AcuantPassiveLiveness",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "AcuantLivenessError",
+        "printedName": "AcuantLivenessError",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "errorCode",
+            "printedName": "errorCode",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "AcuantPassiveLiveness.AcuantLivenessErrorCode?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "AcuantLivenessErrorCode",
+                    "printedName": "AcuantPassiveLiveness.AcuantLivenessErrorCode",
+                    "usr": "s:21AcuantPassiveLiveness0aC9ErrorCodeO"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:21AcuantPassiveLiveness0aC5ErrorC9errorCodeAA0acdF0OSgvp",
+            "mangledName": "$s21AcuantPassiveLiveness0aC5ErrorC9errorCodeAA0acdF0OSgvp",
+            "moduleName": "AcuantPassiveLiveness",
+            "declAttributes": [
+              "Final",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "AcuantPassiveLiveness.AcuantLivenessErrorCode?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "AcuantLivenessErrorCode",
+                        "printedName": "AcuantPassiveLiveness.AcuantLivenessErrorCode",
+                        "usr": "s:21AcuantPassiveLiveness0aC9ErrorCodeO"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:21AcuantPassiveLiveness0aC5ErrorC9errorCodeAA0acdF0OSgvg",
+                "mangledName": "$s21AcuantPassiveLiveness0aC5ErrorC9errorCodeAA0acdF0OSgvg",
+                "moduleName": "AcuantPassiveLiveness",
+                "implicit": true,
+                "declAttributes": [
+                  "Final"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "description",
+            "printedName": "description",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:21AcuantPassiveLiveness0aC5ErrorC11descriptionSSSgvp",
+            "mangledName": "$s21AcuantPassiveLiveness0aC5ErrorC11descriptionSSSgvp",
+            "moduleName": "AcuantPassiveLiveness",
+            "declAttributes": [
+              "Final",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:21AcuantPassiveLiveness0aC5ErrorC11descriptionSSSgvg",
+                "mangledName": "$s21AcuantPassiveLiveness0aC5ErrorC11descriptionSSSgvg",
+                "moduleName": "AcuantPassiveLiveness",
+                "implicit": true,
+                "declAttributes": [
+                  "Final"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(errorCode:description:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "AcuantLivenessError",
+                "printedName": "AcuantPassiveLiveness.AcuantLivenessError",
+                "usr": "s:21AcuantPassiveLiveness0aC5ErrorC"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "AcuantPassiveLiveness.AcuantLivenessErrorCode?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "AcuantLivenessErrorCode",
+                    "printedName": "AcuantPassiveLiveness.AcuantLivenessErrorCode",
+                    "usr": "s:21AcuantPassiveLiveness0aC9ErrorCodeO"
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:21AcuantPassiveLiveness0aC5ErrorC9errorCode11descriptionAcA0acdF0OSg_SSSgtcfc",
+            "mangledName": "$s21AcuantPassiveLiveness0aC5ErrorC9errorCode11descriptionAcA0acdF0OSg_SSSgtcfc",
+            "moduleName": "AcuantPassiveLiveness",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "init_kind": "Designated"
+          }
+        ],
+        "declKind": "Class",
+        "usr": "s:21AcuantPassiveLiveness0aC5ErrorC",
+        "mangledName": "$s21AcuantPassiveLiveness0aC5ErrorC",
+        "moduleName": "AcuantPassiveLiveness",
+        "declAttributes": [
+          "AccessControl"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "AcuantPassiveLiveness",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "AcuantCommon",
+        "printedName": "AcuantCommon",
+        "declKind": "Import",
+        "moduleName": "AcuantPassiveLiveness"
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "PassiveLiveness",
+        "printedName": "PassiveLiveness",
+        "children": [
+          {
+            "kind": "Function",
+            "name": "postLiveness",
+            "printedName": "postLiveness(request:callback:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "AcuantLivenessRequest",
+                "printedName": "AcuantPassiveLiveness.AcuantLivenessRequest",
+                "usr": "s:21AcuantPassiveLiveness0aC7RequestC"
+              },
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(AcuantPassiveLiveness.AcuantLivenessResponse?, AcuantPassiveLiveness.AcuantLivenessError?) -> ()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Tuple",
+                    "printedName": "(AcuantPassiveLiveness.AcuantLivenessResponse?, AcuantPassiveLiveness.AcuantLivenessError?)",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Optional",
+                        "printedName": "AcuantPassiveLiveness.AcuantLivenessResponse?",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "AcuantLivenessResponse",
+                            "printedName": "AcuantPassiveLiveness.AcuantLivenessResponse",
+                            "usr": "s:21AcuantPassiveLiveness0aC8ResponseC"
+                          }
+                        ],
+                        "usr": "s:Sq"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Optional",
+                        "printedName": "AcuantPassiveLiveness.AcuantLivenessError?",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "AcuantLivenessError",
+                            "printedName": "AcuantPassiveLiveness.AcuantLivenessError",
+                            "usr": "s:21AcuantPassiveLiveness0aC5ErrorC"
+                          }
+                        ],
+                        "usr": "s:Sq"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:21AcuantPassiveLiveness0bC0C04postC07request8callbackyAA0aC7RequestC_yAA0aC8ResponseCSg_AA0aC5ErrorCSgtctFZ",
+            "mangledName": "$s21AcuantPassiveLiveness0bC0C04postC07request8callbackyAA0aC7RequestC_yAA0aC8ResponseCSg_AA0aC5ErrorCSgtctFZ",
+            "moduleName": "AcuantPassiveLiveness",
+            "static": true,
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Class",
+        "usr": "s:21AcuantPassiveLiveness0bC0C",
+        "mangledName": "$s21AcuantPassiveLiveness0bC0C",
+        "moduleName": "AcuantPassiveLiveness",
+        "declAttributes": [
+          "AccessControl"
+        ],
+        "hasMissingDesignatedInitializers": true
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "AcuantPassiveLiveness",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "AcuantLivenessResponse",
+        "printedName": "AcuantLivenessResponse",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "score",
+            "printedName": "score",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:21AcuantPassiveLiveness0aC8ResponseC5scoreSivp",
+            "mangledName": "$s21AcuantPassiveLiveness0aC8ResponseC5scoreSivp",
+            "moduleName": "AcuantPassiveLiveness",
+            "declAttributes": [
+              "Final",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int",
+                    "printedName": "Swift.Int",
+                    "usr": "s:Si"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:21AcuantPassiveLiveness0aC8ResponseC5scoreSivg",
+                "mangledName": "$s21AcuantPassiveLiveness0aC8ResponseC5scoreSivg",
+                "moduleName": "AcuantPassiveLiveness",
+                "implicit": true,
+                "declAttributes": [
+                  "Final"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "result",
+            "printedName": "result",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "AcuantLivenessAssessment",
+                "printedName": "AcuantPassiveLiveness.AcuantLivenessAssessment",
+                "usr": "s:21AcuantPassiveLiveness0aC10AssessmentO"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:21AcuantPassiveLiveness0aC8ResponseC6resultAA0aC10AssessmentOvp",
+            "mangledName": "$s21AcuantPassiveLiveness0aC8ResponseC6resultAA0aC10AssessmentOvp",
+            "moduleName": "AcuantPassiveLiveness",
+            "declAttributes": [
+              "Final",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "AcuantLivenessAssessment",
+                    "printedName": "AcuantPassiveLiveness.AcuantLivenessAssessment",
+                    "usr": "s:21AcuantPassiveLiveness0aC10AssessmentO"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:21AcuantPassiveLiveness0aC8ResponseC6resultAA0aC10AssessmentOvg",
+                "mangledName": "$s21AcuantPassiveLiveness0aC8ResponseC6resultAA0aC10AssessmentOvg",
+                "moduleName": "AcuantPassiveLiveness",
+                "implicit": true,
+                "declAttributes": [
+                  "Final"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(score:result:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "AcuantLivenessResponse",
+                "printedName": "AcuantPassiveLiveness.AcuantLivenessResponse",
+                "usr": "s:21AcuantPassiveLiveness0aC8ResponseC"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "AcuantLivenessAssessment",
+                "printedName": "AcuantPassiveLiveness.AcuantLivenessAssessment",
+                "usr": "s:21AcuantPassiveLiveness0aC10AssessmentO"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:21AcuantPassiveLiveness0aC8ResponseC5score6resultACSi_AA0aC10AssessmentOtcfc",
+            "mangledName": "$s21AcuantPassiveLiveness0aC8ResponseC5score6resultACSi_AA0aC10AssessmentOtcfc",
+            "moduleName": "AcuantPassiveLiveness",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "init_kind": "Designated"
+          }
+        ],
+        "declKind": "Class",
+        "usr": "s:21AcuantPassiveLiveness0aC8ResponseC",
+        "mangledName": "$s21AcuantPassiveLiveness0aC8ResponseC",
+        "moduleName": "AcuantPassiveLiveness",
+        "declAttributes": [
+          "AccessControl"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "AcuantPassiveLiveness",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "AcuantCommon",
+        "printedName": "AcuantCommon",
+        "declKind": "Import",
+        "moduleName": "AcuantPassiveLiveness"
+      },
+      {
+        "kind": "Import",
+        "name": "UIKit",
+        "printedName": "UIKit",
+        "declKind": "Import",
+        "moduleName": "AcuantPassiveLiveness"
+      },
+      {
+        "kind": "Import",
+        "name": "CoreImage",
+        "printedName": "CoreImage",
+        "declKind": "Import",
+        "moduleName": "AcuantPassiveLiveness"
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "AcuantPassiveLiveness",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "AcuantLivenessErrorCode",
+        "printedName": "AcuantLivenessErrorCode",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "Unknown",
+            "printedName": "Unknown",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(AcuantPassiveLiveness.AcuantLivenessErrorCode.Type) -> AcuantPassiveLiveness.AcuantLivenessErrorCode",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "AcuantLivenessErrorCode",
+                    "printedName": "AcuantPassiveLiveness.AcuantLivenessErrorCode",
+                    "usr": "s:21AcuantPassiveLiveness0aC9ErrorCodeO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "AcuantPassiveLiveness.AcuantLivenessErrorCode.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "AcuantLivenessErrorCode",
+                        "printedName": "AcuantPassiveLiveness.AcuantLivenessErrorCode",
+                        "usr": "s:21AcuantPassiveLiveness0aC9ErrorCodeO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:21AcuantPassiveLiveness0aC9ErrorCodeO7UnknownyA2CmF",
+            "mangledName": "$s21AcuantPassiveLiveness0aC9ErrorCodeO7UnknownyA2CmF",
+            "moduleName": "AcuantPassiveLiveness"
+          },
+          {
+            "kind": "Var",
+            "name": "FaceTooClose",
+            "printedName": "FaceTooClose",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(AcuantPassiveLiveness.AcuantLivenessErrorCode.Type) -> AcuantPassiveLiveness.AcuantLivenessErrorCode",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "AcuantLivenessErrorCode",
+                    "printedName": "AcuantPassiveLiveness.AcuantLivenessErrorCode",
+                    "usr": "s:21AcuantPassiveLiveness0aC9ErrorCodeO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "AcuantPassiveLiveness.AcuantLivenessErrorCode.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "AcuantLivenessErrorCode",
+                        "printedName": "AcuantPassiveLiveness.AcuantLivenessErrorCode",
+                        "usr": "s:21AcuantPassiveLiveness0aC9ErrorCodeO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:21AcuantPassiveLiveness0aC9ErrorCodeO12FaceTooCloseyA2CmF",
+            "mangledName": "$s21AcuantPassiveLiveness0aC9ErrorCodeO12FaceTooCloseyA2CmF",
+            "moduleName": "AcuantPassiveLiveness"
+          },
+          {
+            "kind": "Var",
+            "name": "FaceNotFound",
+            "printedName": "FaceNotFound",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(AcuantPassiveLiveness.AcuantLivenessErrorCode.Type) -> AcuantPassiveLiveness.AcuantLivenessErrorCode",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "AcuantLivenessErrorCode",
+                    "printedName": "AcuantPassiveLiveness.AcuantLivenessErrorCode",
+                    "usr": "s:21AcuantPassiveLiveness0aC9ErrorCodeO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "AcuantPassiveLiveness.AcuantLivenessErrorCode.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "AcuantLivenessErrorCode",
+                        "printedName": "AcuantPassiveLiveness.AcuantLivenessErrorCode",
+                        "usr": "s:21AcuantPassiveLiveness0aC9ErrorCodeO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:21AcuantPassiveLiveness0aC9ErrorCodeO12FaceNotFoundyA2CmF",
+            "mangledName": "$s21AcuantPassiveLiveness0aC9ErrorCodeO12FaceNotFoundyA2CmF",
+            "moduleName": "AcuantPassiveLiveness"
+          },
+          {
+            "kind": "Var",
+            "name": "FaceTooSmall",
+            "printedName": "FaceTooSmall",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(AcuantPassiveLiveness.AcuantLivenessErrorCode.Type) -> AcuantPassiveLiveness.AcuantLivenessErrorCode",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "AcuantLivenessErrorCode",
+                    "printedName": "AcuantPassiveLiveness.AcuantLivenessErrorCode",
+                    "usr": "s:21AcuantPassiveLiveness0aC9ErrorCodeO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "AcuantPassiveLiveness.AcuantLivenessErrorCode.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "AcuantLivenessErrorCode",
+                        "printedName": "AcuantPassiveLiveness.AcuantLivenessErrorCode",
+                        "usr": "s:21AcuantPassiveLiveness0aC9ErrorCodeO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:21AcuantPassiveLiveness0aC9ErrorCodeO12FaceTooSmallyA2CmF",
+            "mangledName": "$s21AcuantPassiveLiveness0aC9ErrorCodeO12FaceTooSmallyA2CmF",
+            "moduleName": "AcuantPassiveLiveness"
+          },
+          {
+            "kind": "Var",
+            "name": "FaceAngleTooLarge",
+            "printedName": "FaceAngleTooLarge",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(AcuantPassiveLiveness.AcuantLivenessErrorCode.Type) -> AcuantPassiveLiveness.AcuantLivenessErrorCode",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "AcuantLivenessErrorCode",
+                    "printedName": "AcuantPassiveLiveness.AcuantLivenessErrorCode",
+                    "usr": "s:21AcuantPassiveLiveness0aC9ErrorCodeO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "AcuantPassiveLiveness.AcuantLivenessErrorCode.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "AcuantLivenessErrorCode",
+                        "printedName": "AcuantPassiveLiveness.AcuantLivenessErrorCode",
+                        "usr": "s:21AcuantPassiveLiveness0aC9ErrorCodeO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:21AcuantPassiveLiveness0aC9ErrorCodeO17FaceAngleTooLargeyA2CmF",
+            "mangledName": "$s21AcuantPassiveLiveness0aC9ErrorCodeO17FaceAngleTooLargeyA2CmF",
+            "moduleName": "AcuantPassiveLiveness"
+          },
+          {
+            "kind": "Var",
+            "name": "FailedToReadImage",
+            "printedName": "FailedToReadImage",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(AcuantPassiveLiveness.AcuantLivenessErrorCode.Type) -> AcuantPassiveLiveness.AcuantLivenessErrorCode",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "AcuantLivenessErrorCode",
+                    "printedName": "AcuantPassiveLiveness.AcuantLivenessErrorCode",
+                    "usr": "s:21AcuantPassiveLiveness0aC9ErrorCodeO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "AcuantPassiveLiveness.AcuantLivenessErrorCode.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "AcuantLivenessErrorCode",
+                        "printedName": "AcuantPassiveLiveness.AcuantLivenessErrorCode",
+                        "usr": "s:21AcuantPassiveLiveness0aC9ErrorCodeO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:21AcuantPassiveLiveness0aC9ErrorCodeO17FailedToReadImageyA2CmF",
+            "mangledName": "$s21AcuantPassiveLiveness0aC9ErrorCodeO17FailedToReadImageyA2CmF",
+            "moduleName": "AcuantPassiveLiveness"
+          },
+          {
+            "kind": "Var",
+            "name": "InvalidRequest",
+            "printedName": "InvalidRequest",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(AcuantPassiveLiveness.AcuantLivenessErrorCode.Type) -> AcuantPassiveLiveness.AcuantLivenessErrorCode",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "AcuantLivenessErrorCode",
+                    "printedName": "AcuantPassiveLiveness.AcuantLivenessErrorCode",
+                    "usr": "s:21AcuantPassiveLiveness0aC9ErrorCodeO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "AcuantPassiveLiveness.AcuantLivenessErrorCode.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "AcuantLivenessErrorCode",
+                        "printedName": "AcuantPassiveLiveness.AcuantLivenessErrorCode",
+                        "usr": "s:21AcuantPassiveLiveness0aC9ErrorCodeO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:21AcuantPassiveLiveness0aC9ErrorCodeO14InvalidRequestyA2CmF",
+            "mangledName": "$s21AcuantPassiveLiveness0aC9ErrorCodeO14InvalidRequestyA2CmF",
+            "moduleName": "AcuantPassiveLiveness"
+          },
+          {
+            "kind": "Var",
+            "name": "InvalidRequestSettings",
+            "printedName": "InvalidRequestSettings",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(AcuantPassiveLiveness.AcuantLivenessErrorCode.Type) -> AcuantPassiveLiveness.AcuantLivenessErrorCode",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "AcuantLivenessErrorCode",
+                    "printedName": "AcuantPassiveLiveness.AcuantLivenessErrorCode",
+                    "usr": "s:21AcuantPassiveLiveness0aC9ErrorCodeO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "AcuantPassiveLiveness.AcuantLivenessErrorCode.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "AcuantLivenessErrorCode",
+                        "printedName": "AcuantPassiveLiveness.AcuantLivenessErrorCode",
+                        "usr": "s:21AcuantPassiveLiveness0aC9ErrorCodeO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:21AcuantPassiveLiveness0aC9ErrorCodeO22InvalidRequestSettingsyA2CmF",
+            "mangledName": "$s21AcuantPassiveLiveness0aC9ErrorCodeO22InvalidRequestSettingsyA2CmF",
+            "moduleName": "AcuantPassiveLiveness"
+          },
+          {
+            "kind": "Var",
+            "name": "Unauthorized",
+            "printedName": "Unauthorized",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(AcuantPassiveLiveness.AcuantLivenessErrorCode.Type) -> AcuantPassiveLiveness.AcuantLivenessErrorCode",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "AcuantLivenessErrorCode",
+                    "printedName": "AcuantPassiveLiveness.AcuantLivenessErrorCode",
+                    "usr": "s:21AcuantPassiveLiveness0aC9ErrorCodeO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "AcuantPassiveLiveness.AcuantLivenessErrorCode.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "AcuantLivenessErrorCode",
+                        "printedName": "AcuantPassiveLiveness.AcuantLivenessErrorCode",
+                        "usr": "s:21AcuantPassiveLiveness0aC9ErrorCodeO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:21AcuantPassiveLiveness0aC9ErrorCodeO12UnauthorizedyA2CmF",
+            "mangledName": "$s21AcuantPassiveLiveness0aC9ErrorCodeO12UnauthorizedyA2CmF",
+            "moduleName": "AcuantPassiveLiveness"
+          },
+          {
+            "kind": "Var",
+            "name": "NotFound",
+            "printedName": "NotFound",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(AcuantPassiveLiveness.AcuantLivenessErrorCode.Type) -> AcuantPassiveLiveness.AcuantLivenessErrorCode",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "AcuantLivenessErrorCode",
+                    "printedName": "AcuantPassiveLiveness.AcuantLivenessErrorCode",
+                    "usr": "s:21AcuantPassiveLiveness0aC9ErrorCodeO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "AcuantPassiveLiveness.AcuantLivenessErrorCode.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "AcuantLivenessErrorCode",
+                        "printedName": "AcuantPassiveLiveness.AcuantLivenessErrorCode",
+                        "usr": "s:21AcuantPassiveLiveness0aC9ErrorCodeO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:21AcuantPassiveLiveness0aC9ErrorCodeO8NotFoundyA2CmF",
+            "mangledName": "$s21AcuantPassiveLiveness0aC9ErrorCodeO8NotFoundyA2CmF",
+            "moduleName": "AcuantPassiveLiveness"
+          },
+          {
+            "kind": "Var",
+            "name": "InternalError",
+            "printedName": "InternalError",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(AcuantPassiveLiveness.AcuantLivenessErrorCode.Type) -> AcuantPassiveLiveness.AcuantLivenessErrorCode",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "AcuantLivenessErrorCode",
+                    "printedName": "AcuantPassiveLiveness.AcuantLivenessErrorCode",
+                    "usr": "s:21AcuantPassiveLiveness0aC9ErrorCodeO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "AcuantPassiveLiveness.AcuantLivenessErrorCode.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "AcuantLivenessErrorCode",
+                        "printedName": "AcuantPassiveLiveness.AcuantLivenessErrorCode",
+                        "usr": "s:21AcuantPassiveLiveness0aC9ErrorCodeO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:21AcuantPassiveLiveness0aC9ErrorCodeO08InternalD0yA2CmF",
+            "mangledName": "$s21AcuantPassiveLiveness0aC9ErrorCodeO08InternalD0yA2CmF",
+            "moduleName": "AcuantPassiveLiveness"
+          },
+          {
+            "kind": "Var",
+            "name": "InvalidJson",
+            "printedName": "InvalidJson",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(AcuantPassiveLiveness.AcuantLivenessErrorCode.Type) -> AcuantPassiveLiveness.AcuantLivenessErrorCode",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "AcuantLivenessErrorCode",
+                    "printedName": "AcuantPassiveLiveness.AcuantLivenessErrorCode",
+                    "usr": "s:21AcuantPassiveLiveness0aC9ErrorCodeO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "AcuantPassiveLiveness.AcuantLivenessErrorCode.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "AcuantLivenessErrorCode",
+                        "printedName": "AcuantPassiveLiveness.AcuantLivenessErrorCode",
+                        "usr": "s:21AcuantPassiveLiveness0aC9ErrorCodeO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:21AcuantPassiveLiveness0aC9ErrorCodeO11InvalidJsonyA2CmF",
+            "mangledName": "$s21AcuantPassiveLiveness0aC9ErrorCodeO11InvalidJsonyA2CmF",
+            "moduleName": "AcuantPassiveLiveness"
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(rawValue:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "AcuantPassiveLiveness.AcuantLivenessErrorCode?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "AcuantLivenessErrorCode",
+                    "printedName": "AcuantPassiveLiveness.AcuantLivenessErrorCode",
+                    "usr": "s:21AcuantPassiveLiveness0aC9ErrorCodeO"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:21AcuantPassiveLiveness0aC9ErrorCodeO8rawValueACSgSS_tcfc",
+            "mangledName": "$s21AcuantPassiveLiveness0aC9ErrorCodeO8rawValueACSgSS_tcfc",
+            "moduleName": "AcuantPassiveLiveness",
+            "implicit": true,
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Var",
+            "name": "rawValue",
+            "printedName": "rawValue",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:21AcuantPassiveLiveness0aC9ErrorCodeO8rawValueSSvp",
+            "mangledName": "$s21AcuantPassiveLiveness0aC9ErrorCodeO8rawValueSSvp",
+            "moduleName": "AcuantPassiveLiveness",
+            "implicit": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:21AcuantPassiveLiveness0aC9ErrorCodeO8rawValueSSvg",
+                "mangledName": "$s21AcuantPassiveLiveness0aC9ErrorCodeO8rawValueSSvg",
+                "moduleName": "AcuantPassiveLiveness",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          }
+        ],
+        "declKind": "Enum",
+        "usr": "s:21AcuantPassiveLiveness0aC9ErrorCodeO",
+        "mangledName": "$s21AcuantPassiveLiveness0aC9ErrorCodeO",
+        "moduleName": "AcuantPassiveLiveness",
+        "declAttributes": [
+          "AccessControl"
+        ],
+        "enumRawTypeName": "String",
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Hashable",
+            "printedName": "Hashable",
+            "usr": "s:SH",
+            "mangledName": "$sSH"
+          },
+          {
+            "kind": "Conformance",
+            "name": "RawRepresentable",
+            "printedName": "RawRepresentable",
+            "children": [
+              {
+                "kind": "TypeWitness",
+                "name": "RawValue",
+                "printedName": "RawValue",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ]
+              }
+            ],
+            "usr": "s:SY",
+            "mangledName": "$sSY"
+          }
+        ]
+      }
+    ],
+    "json_format_version": 8
+  },
+  "ConstValues": []
+}

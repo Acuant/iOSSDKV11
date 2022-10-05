@@ -9,19 +9,20 @@
 import Foundation
 import UIKit
 
-@objcMembers public class CameraOptions : NSObject{
+@objcMembers public class CameraOptions: NSObject {
     
     public let timeInMsPerDigit: Int
     public let digitsToShow: Int
     public let allowBox: Bool
     public let autoCapture: Bool
-    public let hideNavigationBar : Bool
-    public let bracketLengthInHorizontal : Int
+    public let hideNavigationBar: Bool
+    public let bracketLengthInHorizontal: Int
     public let bracketLengthInVertical: Int
-    public let defaultBracketMarginWidth : CGFloat
-    public let defaultBracketMarginHeight : CGFloat
+    public let defaultBracketMarginWidth: CGFloat
+    public let defaultBracketMarginHeight: CGFloat
     public let colorHold: CGColor
     public let colorCapturing: CGColor
+    public let colorReposition: CGColor
     public let colorBracketAlign: CGColor
     public let colorBracketCloser: CGColor
     public let colorBracketHold: CGColor
@@ -31,22 +32,22 @@ import UIKit
     
     public init(timeInMsPerDigit: Int = 900,
                 digitsToShow: Int = 2,
-                allowBox : Bool = true,
-                autoCapture : Bool = true,
-                hideNavigationBar : Bool = true,
-                bracketLengthInHorizontal : Int = 80,
-                bracketLengthInVertical : Int = 50,
-                defaultBracketMarginWidth : CGFloat = 0.5,
-                defaultBracketMarginHeight : CGFloat = 0.6,
+                allowBox: Bool = true,
+                autoCapture: Bool = true,
+                hideNavigationBar: Bool = true,
+                bracketLengthInHorizontal: Int = 80,
+                bracketLengthInVertical: Int = 50,
+                defaultBracketMarginWidth: CGFloat = 0.5,
+                defaultBracketMarginHeight: CGFloat = 0.6,
                 colorHold: CGColor = UIColor.yellow.cgColor,
                 colorCapturing: CGColor = UIColor.green.cgColor,
+                colorReposition: CGColor = UIColor.red.cgColor,
                 colorBracketAlign: CGColor = UIColor.black.cgColor,
                 colorBracketCloser: CGColor = UIColor.red.cgColor,
                 colorBracketHold: CGColor = UIColor.yellow.cgColor,
                 colorBracketCapture: CGColor = UIColor.green.cgColor,
                 defaultImageUrl: String = "",
                 showBackButton: Bool = true) {
-        
         self.timeInMsPerDigit = timeInMsPerDigit
         self.digitsToShow = digitsToShow
         self.allowBox = allowBox
@@ -58,6 +59,7 @@ import UIKit
         self.defaultBracketMarginHeight = defaultBracketMarginHeight
         self.colorHold = colorHold
         self.colorCapturing = colorCapturing
+        self.colorReposition = colorReposition
         self.colorBracketAlign = colorBracketAlign
         self.colorBracketCloser = colorBracketCloser
         self.colorBracketHold = colorBracketHold

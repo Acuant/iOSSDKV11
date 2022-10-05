@@ -1,6 +1,6 @@
-# Acuant iOS SDK v11.5.6
+# Acuant iOS SDK v11.5.7
 
-**July 2022**
+**October 2022**
 
 See [https://github.com/Acuant/iOSSDKV11/releases](https://github.com/Acuant/iOSSDKV11/releases) for release notes.
 
@@ -30,7 +30,7 @@ Please see the provided [Migration Details](MigrationDetails.md) for information
 ## Prerequisites
 
 - iOS version 11.0 or later
-- Xcode 12.5.1+
+- Xcode 14+
 
 ## Modules
 
@@ -372,7 +372,9 @@ Initialize without a Subscription ID:
 
 ### Capture an Image using AcuantCamera
 
-AcuantCamera is best used in portrait mode. Lock the orientation of the app before using Camera. 
+AcuantCamera is best used in portrait mode. Lock the orientation of the app before using Camera.
+
+1. Add localized strings in app's localizables as indicated [here](#language-localization).
 
 1. Set up callbacks:
 		
@@ -463,6 +465,8 @@ AcuantCamera is best used in portrait mode. Lock the orientation of the app befo
 
 **Note:** During regular capture of a document, the camera attempts to read the barcode. Launch this camera mode only if the barcode is expected according to document classification and failed to read during normal capture of the relevant side.
 
+1. Add localized strings in app's localizables as indicated [here](#language-localization).
+
 1. Set up delegate:
 
             @objc public protocol BarcodeCameraDelegate: AnyObject {
@@ -489,22 +493,23 @@ AcuantCamera is best used in portrait mode. Lock the orientation of the app befo
 
 1. Set View Controller UI customizations.
 
-		public enum MrzCameraState : Int {
-			case None = 0, Align = 1, MoveCloser = 2, TooClose = 3, Good = 4, Captured = 5
+		public enum MrzCameraState: Int {
+			case None, Align, MoveCloser, TooClose, Reposition, Good, Captured
 		}
 		
 		let vc = AcuantMrzCameraController()
 		vc.options = CameraOptions()
 		
-		vc.customDisplayMessage : ((MrzCameraState) -> String) = {
-			state in
-				switch(state){
+		vc.customDisplayMessage: ((MrzCameraState) -> String) = { state in
+				switch state {
 					case .None, .Align:
 						return ""
 					case .MoveCloser:
 						return "Move Closer"
 					case .TooClose:
 						return "Too Close!"
+					case .Reposition:
+						return "Reposition"
 					case .Good:
 						return "Reading MRZ"
 					case .Captured:
@@ -515,16 +520,13 @@ AcuantCamera is best used in portrait mode. Lock the orientation of the app befo
 		
 1. Set callback.
 
-		vc.callback : ((AcuantMrzResult?) -> Void)? = { [weak self]
-			result in
-			
-				if let success = result{
+		vc.callback: ((AcuantMrzResult?) -> Void)? = { [weak self] result in
+				if let success = result {
 					DispatchQueue.main.async {
 						//pop or dismiss the View Controller
 						self?.navigationController?.popViewController(animated: true)
 					}
-				}
-				else{
+				} else {
 					//User Canceled
 				}
 		}	
@@ -788,16 +790,8 @@ After you capture a document image and completed crop, it can be processed using
 
 1. (Optional) Set default Image. Locate "acuant\_default\_face_image.png" in the Assets directory of sample app project. Add this to your app if needed.
 	
-1. Set localized strings in app's localizables:
-		
-		"acuant_face_camera_initial" = "Align face to start capture";
-		"acuant_face_camera_face_too_close" = "Too Close! Move Away";
-		"acuant_face_camera_face_too_far" = "Move Closer";
-		"acuant_face_camera_face_has_angle" =  "Face has Angle. Do not tilt";
-		"acuant_face_camera_face_not_in_frame" =  "Move in Frame";
-		"acuant_face_camera_face_moved" = "Hold Steady";
-		"acuant_face_camera_capturing_2" = "Capturing\n2...";
-		"acuant_face_camera_capturing_1" = "Capturing\n1...";	
+1. Add localized strings in app's localizables as indicated [here](#language-localization).
+
 1. Set any UI Customizations needed:
 		
 		class FaceCameraOptions{
@@ -954,7 +948,9 @@ This module checks for liveness (whether the subject is a live person) by using 
 
 ### AcuantIPLiveness
 
-The **AcuantIPLiveness** module checks whether the subject is a live person. 
+The **AcuantIPLiveness** module checks whether the subject is a live person.
+
+1. Add localized strings in app's localizables as indicated [here](#language-localization).
 
 1. Run the setup:
 
@@ -1041,6 +1037,84 @@ This module is used to match two facial images:
     		public var faceOneData: Data // Facial image from ID Card (image gets compressed by 80%)
     		public var faceTwoData: Data // Facial image from selfie capture during liveness check (image gets compressed by 80%)
 		}
+
+----------
+
+### Language localization
+
+In order to display texts in the corresponding language you need to add the following localizable strings to your app's localizable:
+
+#### AcuantCamera
+
+	"acuant_camera_align" = "ALIGN";
+	"acuant_camera_manual_capture" = "ALIGN & TAP";
+	"acuant_camera_move_closer" = "MOVE CLOSER";
+	"acuant_camera_hold_steady" = "HOLD STEADY";
+	"acuant_camera_capturing" = "CAPTURING";
+	"acuant_camera_outside_view" = "TOO CLOSE!";
+	"acuant_camera_paused" = "CAMERA PAUSED";
+	"acuant_camera_capture_barcode" = "CAPTURE BARCODE";
+
+#### AcuantFaceCapture
+
+	"acuant_face_camera_initial" = "Align face to start capture";
+	"acuant_face_camera_face_too_close" = "Too Close! Move Away";
+	"acuant_face_camera_face_too_far" = "Move Closer";
+	"acuant_face_camera_face_has_angle" =  "Face has Angle. Do not tilt";
+	"acuant_face_camera_face_not_in_frame" =  "Move in Frame";
+	"acuant_face_camera_face_moved" = "Hold Steady";
+	"acuant_face_camera_capturing_2" = "Capturing\n2...";
+	"acuant_face_camera_capturing_1" = "Capturing\n1...";
+	"acuant_face_camera_rotate_portrait" = "Face can only be captured in portrait";
+	"acuant_face_camera_paused" = "Camera paused";
+
+### AcuantIPLiveness
+
+	"IProov_LanguageFile" = "en-US";
+	"IProov_PromptTapToBegin" = "Tap the screen to begin";
+	"IProov_PromptTooFar" = "Move closer";
+	"IProov_PromptTooBright" = "Go somewhere shadier";
+	"IProov_PromptLivenessScanCompleted" = "Scan completed";
+	"IProov_PromptGenuinePresenceAlignFace" = "Put your face in the oval";
+	"IProov_PromptLivenessAlignFace" = "Fill the oval with your face";
+	"IProov_PromptLivenessNoTarget" = "Put your face in the frame";
+	"IProov_ProgressStreaming" = "Streaming…";
+	"IProov_ProgressStreamingSlow" = "Streaming, network is slow…";
+	"IProov_PromptScanning" = "Scanning…";
+	"IProov_ProgressIdentifyingFace" = "Identifying face…";
+	"IProov_ProgressConfirmingIdentity" = "Confirming identity…";
+	"IProov_ProgressAssessingGenuinePresence" = "Assessing genuine presence…";
+	"IProov_ProgressAssessingLiveness" = "Assessing liveness…";
+	"IProov_ProgressLoading" = "Loading…";
+	"IProov_ProgressCreatingIdentity" = "Creating identity…";
+	"IProov_ProgressFindingFace" = "Finding face…";
+	"IProov_Authenticate" = "Authenticate";
+	"IProov_Enrol" = "Enrol";
+	"IProov_MessageFormat" = "%@ to %@";
+	"IProov_PromptTooClose" = "Too close";
+	"IProov_FailureMotionTooMuchMovement" = "Please do not move while iProoving";
+	"IProov_FailureLightingFlashReflectionTooLow" = "Ambient light too strong or screen brightness too low";
+	"IProov_FailureLightingBacklit" = "Strong light source detected behind you";
+	"IProov_FailureLightingTooDark" = "Your environment appears too dark";
+	"IProov_FailureLightingFaceTooBright" = "Too much light detected on your face";
+	"IProov_FailureMotionTooMuchMouthMovement" = "Please do not talk while iProoving";
+	"IProov_MessageFormatWithUsername" = "%@ as %@ to %@";
+	"IProov_PromptRollTooHigh" = "Avoid tilting your head";
+	"IProov_PromptRollTooLow" = "Avoid tilting your head";
+	"IProov_PromptYawTooLow" = "Turn slightly to your right";
+	"IProov_PromptYawTooHigh" = "Turn slightly to your left";
+	"IProov_PromptPitchTooHigh" = "Hold the device at eye level";
+	"IProov_PromptPitchTooLow" = "Hold the device at eye level";
+	"IProov_ErrorNetwork" = "Network error";
+	"IProov_ErrorCameraPermissionDenied" = "Camera permission denied";
+	"IProov_ErrorCameraPermissionDeniedMessageIos" = "Please allow camera access for this app in iOS Settings";
+	"IProov_ErrorServer" = "Server error";
+	"IProov_ErrorUnexpected" = "Unexpected error";
+	"IProov_ErrorCaptureAlreadyActive" = "An existing capture is already in progress";
+	"IProov_PromptGetReady" = "Get ready…";
+	"IProov_PromptGrantPermission" = "Grant Camera Access";
+	"IProov_PromptGrantPermissionMessage" = "Camera access must be granted to use iProov";
+	"IProov_FailureAmbiguousOutcome" = "Ambiguous outcome";
 
 ----------
 
@@ -1131,18 +1205,19 @@ This module is used to match two facial images:
     
 ### CameraOptions
 
-	public class CameraOptions{    
+	public class CameraOptions { 
 		public let timeInMsPerDigit: Int
 		public let digitsToShow: Int
 		public let allowBox: Bool
 		public let autoCapture: Bool
-		public let hideNavigationBar : Bool
-		public let bracketLengthInHorizontal : Int
+		public let hideNavigationBar: Bool
+		public let bracketLengthInHorizontal: Int
 		public let bracketLengthInVertical: Int
-		public let defaultBracketMarginWidth : CGFloat
-		public let defaultBracketMarginHeight : CGFloat
+		public let defaultBracketMarginWidth: CGFloat
+		public let defaultBracketMarginHeight: CGFloat
 		public let colorHold: CGColor
 		public let colorCapturing: CGColor
+		public let colorReposition: CGColor
 		public let colorBracketAlign: CGColor
 		public let colorBracketCloser: CGColor
 		public let colorBracketHold: CGColor
@@ -1164,25 +1239,32 @@ This module is used to match two facial images:
     
 ### AcuantPassportModel (used in eChip workflow)
 
-	public class AcuantPassportModel{    
-		public var documentType : String
-		public var documentSubType : String
-		public var personalNumber : String
-		public var documentNumber : String
-		public var issuingAuthority : String
-		public var documentExpiryDate : String
-		public var firstName : String
-		public var lastName : String
-		public var dateOfBirth : String
-		public var gender : String
-		public var nationality : String
-		public var image : UIImage?
+	public class AcuantPassportModel {
+		public var documentType: String
+		public var documentSubType: String
+		public var documentCode: String
+		public var translatedDocumentType: TranslatedDocumentType
+		public var personalNumber: String
+		public var documentNumber: String
+		public var issuingAuthority: String
+		public var documentExpiryDate: String
+		public var firstName: String
+		public var lastName: String
+		public var dateOfBirth: String
+		public var gender: String
+		public var nationality: String
+		public var image: UIImage?
+		public var signatureImage: UIImage?
 		public var passportSigned: OzoneResultStatus
 		public var passportCountrySigned: OzoneResultStatus
-		public var passportDataValid: Bool //Data Group Hash Check Status
-		public var age: Int? //extrapolated
-		public var isExpired: Bool? //extrapolated
-		
+		public var PACEStatus: AuthStatus
+		public var BACStatus: AuthStatus
+		public var chipAuthenticationStatus: AuthStatus
+		public var activeAuthenticationStatus: AuthStatus
+		public var passportDataValid: Bool
+		public var age: Int?
+		public var isExpired: Bool?
+
 		public func getRawDataGroup(dgId: AcuantDataGroupId) -> [UInt8]?
 	}
 	

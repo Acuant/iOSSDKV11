@@ -6,6 +6,6 @@ framework module AcuantFaceMatch {
 }
 
 module AcuantFaceMatch.Swift {
-    header "AcuantFaceMatch-Swift.h"
-    requires objc
+  header "AcuantFaceMatch-Swift.h"
+  requires objc
 }

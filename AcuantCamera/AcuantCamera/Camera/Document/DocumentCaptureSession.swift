@@ -147,7 +147,7 @@ import AcuantImagePreparation
         var scaledPoints = [CGPoint]()
         var resolutionThreshold = CaptureConstants.MANDATORY_RESOLUTION_THRESHOLD_DEFAULT
 
-        if self.isDocumentAligned(croppedFrame.points), self.shouldShowBorder {
+        if self.shouldShowBorder {
             croppedFrame.points.forEach{ point in
                 var scaled: CGPoint = CGPoint()
                 scaled.x = point.x/frameSize.width as CGFloat
@@ -162,21 +162,26 @@ import AcuantImagePreparation
             resolutionThreshold = Int(Double(frameSize.width) * smallerDocumentDPIRatio)
         }
 
-        if croppedFrame.error?.errorCode == AcuantErrorCodes.ERROR_CouldNotCrop || croppedFrame.dpi < CaptureConstants.NO_DOCUMENT_DPI_THRESHOLD {
+        let frameRect = CGRect(origin: CGPoint(x: 0, y: 0), size: frameSize).insetBy(dx: 15, dy: 15)
+        let detectedRect = CGRect(points: croppedFrame.points)
+
+        if croppedFrame.error?.errorCode == AcuantErrorCodes.ERROR_CouldNotCrop
+            || croppedFrame.dpi < CaptureConstants.NO_DOCUMENT_DPI_THRESHOLD
+            || !self.isDocumentAligned(croppedFrame.points) {
             return (.NO_DOCUMENT, scaledPoints)
+        }   else if !croppedFrame.isCorrectAspectRatio {
+            return (.BAD_ASPECT_RATIO, scaledPoints)
         } else if croppedFrame.error?.errorCode == AcuantErrorCodes.ERROR_LowResolutionImage, croppedFrame.dpi < resolutionThreshold {
             return (.SMALL_DOCUMENT, scaledPoints)
-        } else if !croppedFrame.isCorrectAspectRatio {
-            return (.BAD_ASPECT_RATIO, scaledPoints)
-        } else if CGRect(points: croppedFrame.points) != nil {
-            return (.GOOD_DOCUMENT, scaledPoints)
-        } else {
+        } else if let rect = detectedRect, !frameRect.contains(rect) {
             return (.DOCUMENT_NOT_IN_FRAME, scaledPoints)
+        } else {
+            return (.GOOD_DOCUMENT, scaledPoints)
         }
     }
     
-    public func getFrameMatchThreshold(cropDuration: Double) -> Int{
-        switch(cropDuration){
+    public func getFrameMatchThreshold(cropDuration: Double) -> Int {
+        switch cropDuration {
             case 0..<0.8:
                 return FAST_FRAME_THRESHOLD
             default:

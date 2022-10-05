@@ -66,7 +66,8 @@ import AVFoundation
         coordinator.animate(alongsideTransition: { [weak self] context in
             guard let self = self else { return }
 
-            self.rotateCameraPreview(to: self.view.window?.interfaceOrientation)
+            let newFrame = CGRect(origin: self.view.frame.origin, size: size)
+            self.rotateCameraPreview(to: self.view.window?.interfaceOrientation, frame: newFrame)
         })
     }
 
@@ -77,10 +78,6 @@ import AVFoundation
         messageLayer.foregroundColorCapture = capturingColor
         messageLayer.backgroundColorCapture = UIColor.black.cgColor
         messageLayer.textSizeCapture = 30
-        messageLayer.defaultWidth = 320
-        messageLayer.defaultHeight = 40
-        messageLayer.captureWidth = 320
-        messageLayer.captureHeight = 40
         return messageLayer
     }
 
@@ -149,7 +146,7 @@ import AVFoundation
     private func attachSession() {
         let captureDevice = AVCaptureDevice.default(.builtInWideAngleCamera, for: AVMediaType.video, position: .back)!
         captureSession = BarcodeCaptureSession(captureDevice: captureDevice, delegate: self)
-        cameraPreviewView = CameraPreviewView(frame: view.bounds, captureSession: captureSession)
+        cameraPreviewView = CameraPreviewView(frame: view.frame, captureSession: captureSession)
         cameraPreviewView.videoPreviewLayer.videoGravity = .resizeAspectFill
 
         if let barcodeLayer = barcodeLayer {
@@ -164,7 +161,7 @@ import AVFoundation
         }
 
         captureSession.start {
-            self.rotateCameraPreview(to: self.view.window?.interfaceOrientation)
+            self.rotateCameraPreview(to: self.view.window?.interfaceOrientation, frame: self.view.frame)
         }
     }
 
@@ -173,31 +170,31 @@ import AVFoundation
         cameraPreviewView.removeFromSuperview()
     }
 
-    private func rotateCameraPreview(to interfaceOrientation: UIInterfaceOrientation?) {
+    private func rotateCameraPreview(to interfaceOrientation: UIInterfaceOrientation?, frame: CGRect) {
         guard let connection = cameraPreviewView.videoPreviewLayer.connection,
               connection.isVideoOrientationSupported,
               let orientation = interfaceOrientation else {
             return
         }
 
-        cameraPreviewView.frame = view.bounds
+        cameraPreviewView.frame = frame
         connection.videoOrientation = orientation.videoOrientation ?? .portrait
         cameraPreviewView.clearAccessibilityElements()
 
         if orientation.isLandscape {
             messageLayer.transform = CATransform3DIdentity
-            messageLayer.setFrame(frame: view.bounds)
+            messageLayer.setFrame(frame: frame)
             barcodeLayer?.transform = CATransform3DIdentity
-            barcodeLayer?.setFrame(frame: view.bounds)
+            barcodeLayer?.setFrame(frame: frame)
         } else {
             if CATransform3DIsIdentity(messageLayer.transform) {
                 messageLayer.rotate(angle: 90)
             }
             if let barcodeLayer = barcodeLayer, CATransform3DIsIdentity(barcodeLayer.transform) {
-                barcodeLayer.setFrame(frame: view.bounds)
+                barcodeLayer.setFrame(frame: frame)
                 barcodeLayer.rotate(angle: 90)
             }
-            messageLayer.setVerticalDefaultSettings(frame: view.bounds)
+            messageLayer.setVerticalDefaultSettings(frame: frame)
         }
         cameraPreviewView.videoPreviewLayer.removeAllAnimations()
     }
@@ -264,12 +261,12 @@ extension BarcodeCameraViewController: BarcodeCaptureDelegate {
     public func captured(barcode: String?) {
         guard let barcode = barcode, afterCaptureTimer == nil else { return }
 
+        messageLayer.string = NSLocalizedString("acuant_camera_capturing", comment: "")
         if let orientation = view.window?.interfaceOrientation, orientation.isPortrait {
             messageLayer.setVerticalCaptureSettings(frame: view.bounds)
         } else {
             messageLayer.setCaptureSettings(frame: view.bounds)
         }
-        messageLayer.string = NSLocalizedString("acuant_camera_capturing", comment: "")
         afterCaptureTimer = Timer.scheduledTimer(withTimeInterval: TimeInterval(options.timeInMsPerDigit/1000),
                              repeats: false) { [weak self] _ in
             guard let self = self else { return }

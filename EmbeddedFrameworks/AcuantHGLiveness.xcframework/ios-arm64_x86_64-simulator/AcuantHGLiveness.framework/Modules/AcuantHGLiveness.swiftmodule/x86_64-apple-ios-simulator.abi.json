@@ -1,0 +1,2510 @@
+{
+  "ABIRoot": {
+    "kind": "Root",
+    "name": "TopLevel",
+    "printedName": "TopLevel",
+    "children": [
+      {
+        "kind": "Import",
+        "name": "UIKit",
+        "printedName": "UIKit",
+        "declKind": "Import",
+        "moduleName": "AcuantHGLiveness",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "AVFoundation",
+        "printedName": "AVFoundation",
+        "declKind": "Import",
+        "moduleName": "AcuantHGLiveness"
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "AcuantHGLiveness"
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "HGLiveness",
+        "printedName": "HGLiveness",
+        "children": [
+          {
+            "kind": "Function",
+            "name": "getFaceCaptureSession",
+            "printedName": "getFaceCaptureSession(delegate:captureDevice:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "FaceCaptureSession",
+                "printedName": "AcuantHGLiveness.FaceCaptureSession",
+                "usr": "c:@M@AcuantHGLiveness@objc(cs)FaceCaptureSession"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "AcuantHGLiveness.AcuantHGLiveFaceCaptureDelegate?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "AcuantHGLiveFaceCaptureDelegate",
+                    "printedName": "AcuantHGLiveness.AcuantHGLiveFaceCaptureDelegate",
+                    "usr": "c:@M@AcuantHGLiveness@objc(pl)AcuantHGLiveFaceCaptureDelegate"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "AVFoundation.AVCaptureDevice?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "AVCaptureDevice",
+                    "printedName": "AVFoundation.AVCaptureDevice",
+                    "usr": "c:objc(cs)AVCaptureDevice"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@AcuantHGLiveness@objc(cs)HGLiveness(cm)getFaceCaptureSessionWithDelegate:captureDevice:",
+            "mangledName": "$s16AcuantHGLiveness0B0C21getFaceCaptureSession8delegate13captureDeviceAA0deF0CAA0a6HGLivedE8Delegate_pSg_So09AVCaptureI0CSgtFZ",
+            "moduleName": "AcuantHGLiveness",
+            "static": true,
+            "declAttributes": [
+              "AccessControl",
+              "ObjC"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "HGLiveness",
+                "printedName": "AcuantHGLiveness.HGLiveness",
+                "usr": "c:@M@AcuantHGLiveness@objc(cs)HGLiveness"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "c:@M@AcuantHGLiveness@objc(cs)HGLiveness(im)init",
+            "mangledName": "$s16AcuantHGLiveness0B0CACycfc",
+            "moduleName": "AcuantHGLiveness",
+            "overriding": true,
+            "implicit": true,
+            "objc_name": "init",
+            "declAttributes": [
+              "Dynamic",
+              "ObjC",
+              "Override"
+            ],
+            "init_kind": "Designated"
+          }
+        ],
+        "declKind": "Class",
+        "usr": "c:@M@AcuantHGLiveness@objc(cs)HGLiveness",
+        "mangledName": "$s16AcuantHGLiveness0B0C",
+        "moduleName": "AcuantHGLiveness",
+        "declAttributes": [
+          "AccessControl",
+          "ObjCMembers",
+          "ObjC"
+        ],
+        "superclassUsr": "c:objc(cs)NSObject",
+        "inheritsConvenienceInitializers": true,
+        "superclassNames": [
+          "ObjectiveC.NSObject"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Hashable",
+            "printedName": "Hashable",
+            "usr": "s:SH",
+            "mangledName": "$sSH"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CVarArg",
+            "printedName": "CVarArg",
+            "usr": "s:s7CVarArgP",
+            "mangledName": "$ss7CVarArgP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObservingPublishing",
+            "printedName": "_KeyValueCodingAndObservingPublishing",
+            "usr": "s:10Foundation37_KeyValueCodingAndObservingPublishingP",
+            "mangledName": "$s10Foundation37_KeyValueCodingAndObservingPublishingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObserving",
+            "printedName": "_KeyValueCodingAndObserving",
+            "usr": "s:10Foundation27_KeyValueCodingAndObservingP",
+            "mangledName": "$s10Foundation27_KeyValueCodingAndObservingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomStringConvertible",
+            "printedName": "CustomStringConvertible",
+            "usr": "s:s23CustomStringConvertibleP",
+            "mangledName": "$ss23CustomStringConvertibleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomDebugStringConvertible",
+            "printedName": "CustomDebugStringConvertible",
+            "usr": "s:s28CustomDebugStringConvertibleP",
+            "mangledName": "$ss28CustomDebugStringConvertibleP"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "UIKit",
+        "printedName": "UIKit",
+        "declKind": "Import",
+        "moduleName": "AcuantHGLiveness",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "AcuantHGLiveness"
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "AcuantFaceType",
+        "printedName": "AcuantFaceType",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "NONE",
+            "printedName": "NONE",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(AcuantHGLiveness.AcuantFaceType.Type) -> AcuantHGLiveness.AcuantFaceType",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "AcuantFaceType",
+                    "printedName": "AcuantHGLiveness.AcuantFaceType",
+                    "usr": "c:@M@AcuantHGLiveness@E@AcuantFaceType"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "AcuantHGLiveness.AcuantFaceType.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "AcuantFaceType",
+                        "printedName": "AcuantHGLiveness.AcuantFaceType",
+                        "usr": "c:@M@AcuantHGLiveness@E@AcuantFaceType"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "c:@M@AcuantHGLiveness@E@AcuantFaceType@AcuantFaceTypeNONE",
+            "mangledName": "$s16AcuantHGLiveness0A8FaceTypeO4NONEyA2CmF",
+            "moduleName": "AcuantHGLiveness",
+            "declAttributes": [
+              "ObjC"
+            ],
+            "fixedbinaryorder": 0
+          },
+          {
+            "kind": "Var",
+            "name": "FACE_TOO_CLOSE",
+            "printedName": "FACE_TOO_CLOSE",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(AcuantHGLiveness.AcuantFaceType.Type) -> AcuantHGLiveness.AcuantFaceType",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "AcuantFaceType",
+                    "printedName": "AcuantHGLiveness.AcuantFaceType",
+                    "usr": "c:@M@AcuantHGLiveness@E@AcuantFaceType"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "AcuantHGLiveness.AcuantFaceType.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "AcuantFaceType",
+                        "printedName": "AcuantHGLiveness.AcuantFaceType",
+                        "usr": "c:@M@AcuantHGLiveness@E@AcuantFaceType"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "c:@M@AcuantHGLiveness@E@AcuantFaceType@AcuantFaceTypeFACE_TOO_CLOSE",
+            "mangledName": "$s16AcuantHGLiveness0A8FaceTypeO14FACE_TOO_CLOSEyA2CmF",
+            "moduleName": "AcuantHGLiveness",
+            "declAttributes": [
+              "ObjC"
+            ],
+            "fixedbinaryorder": 1
+          },
+          {
+            "kind": "Var",
+            "name": "FACE_MOVED",
+            "printedName": "FACE_MOVED",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(AcuantHGLiveness.AcuantFaceType.Type) -> AcuantHGLiveness.AcuantFaceType",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "AcuantFaceType",
+                    "printedName": "AcuantHGLiveness.AcuantFaceType",
+                    "usr": "c:@M@AcuantHGLiveness@E@AcuantFaceType"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "AcuantHGLiveness.AcuantFaceType.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "AcuantFaceType",
+                        "printedName": "AcuantHGLiveness.AcuantFaceType",
+                        "usr": "c:@M@AcuantHGLiveness@E@AcuantFaceType"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "c:@M@AcuantHGLiveness@E@AcuantFaceType@AcuantFaceTypeFACE_MOVED",
+            "mangledName": "$s16AcuantHGLiveness0A8FaceTypeO10FACE_MOVEDyA2CmF",
+            "moduleName": "AcuantHGLiveness",
+            "declAttributes": [
+              "ObjC"
+            ],
+            "fixedbinaryorder": 2
+          },
+          {
+            "kind": "Var",
+            "name": "FACE_TOO_FAR",
+            "printedName": "FACE_TOO_FAR",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(AcuantHGLiveness.AcuantFaceType.Type) -> AcuantHGLiveness.AcuantFaceType",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "AcuantFaceType",
+                    "printedName": "AcuantHGLiveness.AcuantFaceType",
+                    "usr": "c:@M@AcuantHGLiveness@E@AcuantFaceType"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "AcuantHGLiveness.AcuantFaceType.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "AcuantFaceType",
+                        "printedName": "AcuantHGLiveness.AcuantFaceType",
+                        "usr": "c:@M@AcuantHGLiveness@E@AcuantFaceType"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "c:@M@AcuantHGLiveness@E@AcuantFaceType@AcuantFaceTypeFACE_TOO_FAR",
+            "mangledName": "$s16AcuantHGLiveness0A8FaceTypeO12FACE_TOO_FARyA2CmF",
+            "moduleName": "AcuantHGLiveness",
+            "declAttributes": [
+              "ObjC"
+            ],
+            "fixedbinaryorder": 3
+          },
+          {
+            "kind": "Var",
+            "name": "FACE_GOOD_DISTANCE",
+            "printedName": "FACE_GOOD_DISTANCE",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(AcuantHGLiveness.AcuantFaceType.Type) -> AcuantHGLiveness.AcuantFaceType",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "AcuantFaceType",
+                    "printedName": "AcuantHGLiveness.AcuantFaceType",
+                    "usr": "c:@M@AcuantHGLiveness@E@AcuantFaceType"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "AcuantHGLiveness.AcuantFaceType.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "AcuantFaceType",
+                        "printedName": "AcuantHGLiveness.AcuantFaceType",
+                        "usr": "c:@M@AcuantHGLiveness@E@AcuantFaceType"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "c:@M@AcuantHGLiveness@E@AcuantFaceType@AcuantFaceTypeFACE_GOOD_DISTANCE",
+            "mangledName": "$s16AcuantHGLiveness0A8FaceTypeO18FACE_GOOD_DISTANCEyA2CmF",
+            "moduleName": "AcuantHGLiveness",
+            "declAttributes": [
+              "ObjC"
+            ],
+            "fixedbinaryorder": 4
+          },
+          {
+            "kind": "Var",
+            "name": "FACE_NOT_IN_FRAME",
+            "printedName": "FACE_NOT_IN_FRAME",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(AcuantHGLiveness.AcuantFaceType.Type) -> AcuantHGLiveness.AcuantFaceType",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "AcuantFaceType",
+                    "printedName": "AcuantHGLiveness.AcuantFaceType",
+                    "usr": "c:@M@AcuantHGLiveness@E@AcuantFaceType"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "AcuantHGLiveness.AcuantFaceType.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "AcuantFaceType",
+                        "printedName": "AcuantHGLiveness.AcuantFaceType",
+                        "usr": "c:@M@AcuantHGLiveness@E@AcuantFaceType"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "c:@M@AcuantHGLiveness@E@AcuantFaceType@AcuantFaceTypeFACE_NOT_IN_FRAME",
+            "mangledName": "$s16AcuantHGLiveness0A8FaceTypeO17FACE_NOT_IN_FRAMEyA2CmF",
+            "moduleName": "AcuantHGLiveness",
+            "declAttributes": [
+              "ObjC"
+            ],
+            "fixedbinaryorder": 5
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(rawValue:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "AcuantHGLiveness.AcuantFaceType?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "AcuantFaceType",
+                    "printedName": "AcuantHGLiveness.AcuantFaceType",
+                    "usr": "c:@M@AcuantHGLiveness@E@AcuantFaceType"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:16AcuantHGLiveness0A8FaceTypeO8rawValueACSgSi_tcfc",
+            "mangledName": "$s16AcuantHGLiveness0A8FaceTypeO8rawValueACSgSi_tcfc",
+            "moduleName": "AcuantHGLiveness",
+            "implicit": true,
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Var",
+            "name": "rawValue",
+            "printedName": "rawValue",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:16AcuantHGLiveness0A8FaceTypeO8rawValueSivp",
+            "mangledName": "$s16AcuantHGLiveness0A8FaceTypeO8rawValueSivp",
+            "moduleName": "AcuantHGLiveness",
+            "implicit": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int",
+                    "printedName": "Swift.Int",
+                    "usr": "s:Si"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:16AcuantHGLiveness0A8FaceTypeO8rawValueSivg",
+                "mangledName": "$s16AcuantHGLiveness0A8FaceTypeO8rawValueSivg",
+                "moduleName": "AcuantHGLiveness",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          }
+        ],
+        "declKind": "Enum",
+        "usr": "c:@M@AcuantHGLiveness@E@AcuantFaceType",
+        "mangledName": "$s16AcuantHGLiveness0A8FaceTypeO",
+        "moduleName": "AcuantHGLiveness",
+        "declAttributes": [
+          "AccessControl",
+          "ObjC"
+        ],
+        "enumRawTypeName": "Int",
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Hashable",
+            "printedName": "Hashable",
+            "usr": "s:SH",
+            "mangledName": "$sSH"
+          },
+          {
+            "kind": "Conformance",
+            "name": "RawRepresentable",
+            "printedName": "RawRepresentable",
+            "children": [
+              {
+                "kind": "TypeWitness",
+                "name": "RawValue",
+                "printedName": "RawValue",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int",
+                    "printedName": "Swift.Int",
+                    "usr": "s:Si"
+                  }
+                ]
+              }
+            ],
+            "usr": "s:SY",
+            "mangledName": "$sSY"
+          }
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "HGLivenessDelegate",
+        "printedName": "HGLivenessDelegate",
+        "children": [
+          {
+            "kind": "Function",
+            "name": "liveFaceCaptured",
+            "printedName": "liveFaceCaptured(result:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "AcuantHGLiveness.HGLivenessResult?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "HGLivenessResult",
+                    "printedName": "AcuantHGLiveness.HGLivenessResult",
+                    "usr": "c:@M@AcuantHGLiveness@objc(cs)HGLivenessResult"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@AcuantHGLiveness@objc(pl)HGLivenessDelegate(im)liveFaceCapturedWithResult:",
+            "mangledName": "$s16AcuantHGLiveness0B8DelegateP16liveFaceCaptured6resultyAA0B6ResultCSg_tF",
+            "moduleName": "AcuantHGLiveness",
+            "genericSig": "<τ_0_0 where τ_0_0 : AcuantHGLiveness.HGLivenessDelegate>",
+            "sugared_genericSig": "<Self where Self : AcuantHGLiveness.HGLivenessDelegate>",
+            "protocolReq": true,
+            "declAttributes": [
+              "ObjC"
+            ],
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Protocol",
+        "usr": "c:@M@AcuantHGLiveness@objc(pl)HGLivenessDelegate",
+        "mangledName": "$s16AcuantHGLiveness0B8DelegateP",
+        "moduleName": "AcuantHGLiveness",
+        "genericSig": "<τ_0_0 : AnyObject>",
+        "sugared_genericSig": "<Self : AnyObject>",
+        "declAttributes": [
+          "AccessControl",
+          "ObjC"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "AcuantHGLiveness",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "UIKit",
+        "printedName": "UIKit",
+        "declKind": "Import",
+        "moduleName": "AcuantHGLiveness"
+      },
+      {
+        "kind": "Import",
+        "name": "AVFoundation",
+        "printedName": "AVFoundation",
+        "declKind": "Import",
+        "moduleName": "AcuantHGLiveness"
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "FaceCaptureSession",
+        "printedName": "FaceCaptureSession",
+        "children": [
+          {
+            "kind": "Function",
+            "name": "getFaceCaptureSession",
+            "printedName": "getFaceCaptureSession(delegate:captureDevice:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "FaceCaptureSession",
+                "printedName": "AcuantHGLiveness.FaceCaptureSession",
+                "usr": "c:@M@AcuantHGLiveness@objc(cs)FaceCaptureSession"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "AcuantHGLiveness.AcuantHGLiveFaceCaptureDelegate?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "AcuantHGLiveFaceCaptureDelegate",
+                    "printedName": "AcuantHGLiveness.AcuantHGLiveFaceCaptureDelegate",
+                    "usr": "c:@M@AcuantHGLiveness@objc(pl)AcuantHGLiveFaceCaptureDelegate"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "AVFoundation.AVCaptureDevice?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "AVCaptureDevice",
+                    "printedName": "AVFoundation.AVCaptureDevice",
+                    "usr": "c:objc(cs)AVCaptureDevice"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@AcuantHGLiveness@objc(cs)FaceCaptureSession(cm)getFaceCaptureSessionWithDelegate:captureDevice:",
+            "mangledName": "$s16AcuantHGLiveness18FaceCaptureSessionC03getcdE08delegate13captureDeviceAcA0a6HGLivecD8Delegate_pSg_So09AVCaptureI0CSgtFZ",
+            "moduleName": "AcuantHGLiveness",
+            "static": true,
+            "declAttributes": [
+              "AccessControl",
+              "ObjC"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "start",
+            "printedName": "start()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@AcuantHGLiveness@objc(cs)FaceCaptureSession(im)start",
+            "mangledName": "$s16AcuantHGLiveness18FaceCaptureSessionC5startyyF",
+            "moduleName": "AcuantHGLiveness",
+            "declAttributes": [
+              "AccessControl",
+              "ObjC"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "captureOutput",
+            "printedName": "captureOutput(_:didOutput:from:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "AVCaptureOutput",
+                "printedName": "AVFoundation.AVCaptureOutput",
+                "usr": "c:objc(cs)AVCaptureOutput"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "CMSampleBuffer",
+                "printedName": "CoreMedia.CMSampleBuffer",
+                "usr": "c:@T@CMSampleBufferRef"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "AVCaptureConnection",
+                "printedName": "AVFoundation.AVCaptureConnection",
+                "usr": "c:objc(cs)AVCaptureConnection"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@AcuantHGLiveness@objc(cs)FaceCaptureSession(im)captureOutput:didOutputSampleBuffer:fromConnection:",
+            "mangledName": "$s16AcuantHGLiveness18FaceCaptureSessionC13captureOutput_03didG04fromySo09AVCaptureG0C_So17CMSampleBufferRefaSo0J10ConnectionCtF",
+            "moduleName": "AcuantHGLiveness",
+            "objc_name": "captureOutput:didOutputSampleBuffer:fromConnection:",
+            "declAttributes": [
+              "ObjC",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "FaceCaptureSession",
+                "printedName": "AcuantHGLiveness.FaceCaptureSession",
+                "usr": "c:@M@AcuantHGLiveness@objc(cs)FaceCaptureSession"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "c:@M@AcuantHGLiveness@objc(cs)FaceCaptureSession(im)init",
+            "mangledName": "$s16AcuantHGLiveness18FaceCaptureSessionCACycfc",
+            "moduleName": "AcuantHGLiveness",
+            "overriding": true,
+            "implicit": true,
+            "objc_name": "init",
+            "declAttributes": [
+              "Dynamic",
+              "ObjC",
+              "Override"
+            ],
+            "init_kind": "Designated"
+          }
+        ],
+        "declKind": "Class",
+        "usr": "c:@M@AcuantHGLiveness@objc(cs)FaceCaptureSession",
+        "mangledName": "$s16AcuantHGLiveness18FaceCaptureSessionC",
+        "moduleName": "AcuantHGLiveness",
+        "declAttributes": [
+          "AccessControl",
+          "ObjCMembers",
+          "ObjC"
+        ],
+        "superclassUsr": "c:objc(cs)AVCaptureSession",
+        "inheritsConvenienceInitializers": true,
+        "superclassNames": [
+          "AVFoundation.AVCaptureSession",
+          "ObjectiveC.NSObject"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Hashable",
+            "printedName": "Hashable",
+            "usr": "s:SH",
+            "mangledName": "$sSH"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CVarArg",
+            "printedName": "CVarArg",
+            "usr": "s:s7CVarArgP",
+            "mangledName": "$ss7CVarArgP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObservingPublishing",
+            "printedName": "_KeyValueCodingAndObservingPublishing",
+            "usr": "s:10Foundation37_KeyValueCodingAndObservingPublishingP",
+            "mangledName": "$s10Foundation37_KeyValueCodingAndObservingPublishingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObserving",
+            "printedName": "_KeyValueCodingAndObserving",
+            "usr": "s:10Foundation27_KeyValueCodingAndObservingP",
+            "mangledName": "$s10Foundation27_KeyValueCodingAndObservingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomStringConvertible",
+            "printedName": "CustomStringConvertible",
+            "usr": "s:s23CustomStringConvertibleP",
+            "mangledName": "$ss23CustomStringConvertibleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomDebugStringConvertible",
+            "printedName": "CustomDebugStringConvertible",
+            "usr": "s:s28CustomDebugStringConvertibleP",
+            "mangledName": "$ss28CustomDebugStringConvertibleP"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "UIKit",
+        "printedName": "UIKit",
+        "declKind": "Import",
+        "moduleName": "AcuantHGLiveness",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "AcuantHGLiveness"
+      },
+      {
+        "kind": "Import",
+        "name": "AcuantCommon",
+        "printedName": "AcuantCommon",
+        "declKind": "Import",
+        "moduleName": "AcuantHGLiveness"
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "LiveFaceRectDetail",
+        "printedName": "LiveFaceRectDetail",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "width",
+            "printedName": "width",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Float",
+                "printedName": "Swift.Float",
+                "usr": "s:Sf"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@AcuantHGLiveness@objc(cs)LiveFaceRectDetail(py)width",
+            "mangledName": "$s16AcuantHGLiveness18LiveFaceRectDetailC5widthSfvp",
+            "moduleName": "AcuantHGLiveness",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl",
+              "ObjC"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Float",
+                    "printedName": "Swift.Float",
+                    "usr": "s:Sf"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@AcuantHGLiveness@objc(cs)LiveFaceRectDetail(im)width",
+                "mangledName": "$s16AcuantHGLiveness18LiveFaceRectDetailC5widthSfvg",
+                "moduleName": "AcuantHGLiveness",
+                "implicit": true,
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Float",
+                    "printedName": "Swift.Float",
+                    "usr": "s:Sf"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@AcuantHGLiveness@objc(cs)LiveFaceRectDetail(im)setWidth:",
+                "mangledName": "$s16AcuantHGLiveness18LiveFaceRectDetailC5widthSfvs",
+                "moduleName": "AcuantHGLiveness",
+                "implicit": true,
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:16AcuantHGLiveness18LiveFaceRectDetailC5widthSfvM",
+                "mangledName": "$s16AcuantHGLiveness18LiveFaceRectDetailC5widthSfvM",
+                "moduleName": "AcuantHGLiveness",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "height",
+            "printedName": "height",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Float",
+                "printedName": "Swift.Float",
+                "usr": "s:Sf"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@AcuantHGLiveness@objc(cs)LiveFaceRectDetail(py)height",
+            "mangledName": "$s16AcuantHGLiveness18LiveFaceRectDetailC6heightSfvp",
+            "moduleName": "AcuantHGLiveness",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl",
+              "ObjC"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Float",
+                    "printedName": "Swift.Float",
+                    "usr": "s:Sf"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@AcuantHGLiveness@objc(cs)LiveFaceRectDetail(im)height",
+                "mangledName": "$s16AcuantHGLiveness18LiveFaceRectDetailC6heightSfvg",
+                "moduleName": "AcuantHGLiveness",
+                "implicit": true,
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Float",
+                    "printedName": "Swift.Float",
+                    "usr": "s:Sf"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@AcuantHGLiveness@objc(cs)LiveFaceRectDetail(im)setHeight:",
+                "mangledName": "$s16AcuantHGLiveness18LiveFaceRectDetailC6heightSfvs",
+                "moduleName": "AcuantHGLiveness",
+                "implicit": true,
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:16AcuantHGLiveness18LiveFaceRectDetailC6heightSfvM",
+                "mangledName": "$s16AcuantHGLiveness18LiveFaceRectDetailC6heightSfvM",
+                "moduleName": "AcuantHGLiveness",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "x",
+            "printedName": "x",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Float",
+                "printedName": "Swift.Float",
+                "usr": "s:Sf"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@AcuantHGLiveness@objc(cs)LiveFaceRectDetail(py)x",
+            "mangledName": "$s16AcuantHGLiveness18LiveFaceRectDetailC1xSfvp",
+            "moduleName": "AcuantHGLiveness",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl",
+              "ObjC"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Float",
+                    "printedName": "Swift.Float",
+                    "usr": "s:Sf"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@AcuantHGLiveness@objc(cs)LiveFaceRectDetail(im)x",
+                "mangledName": "$s16AcuantHGLiveness18LiveFaceRectDetailC1xSfvg",
+                "moduleName": "AcuantHGLiveness",
+                "implicit": true,
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Float",
+                    "printedName": "Swift.Float",
+                    "usr": "s:Sf"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@AcuantHGLiveness@objc(cs)LiveFaceRectDetail(im)setX:",
+                "mangledName": "$s16AcuantHGLiveness18LiveFaceRectDetailC1xSfvs",
+                "moduleName": "AcuantHGLiveness",
+                "implicit": true,
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:16AcuantHGLiveness18LiveFaceRectDetailC1xSfvM",
+                "mangledName": "$s16AcuantHGLiveness18LiveFaceRectDetailC1xSfvM",
+                "moduleName": "AcuantHGLiveness",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "y",
+            "printedName": "y",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Float",
+                "printedName": "Swift.Float",
+                "usr": "s:Sf"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@AcuantHGLiveness@objc(cs)LiveFaceRectDetail(py)y",
+            "mangledName": "$s16AcuantHGLiveness18LiveFaceRectDetailC1ySfvp",
+            "moduleName": "AcuantHGLiveness",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl",
+              "ObjC"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Float",
+                    "printedName": "Swift.Float",
+                    "usr": "s:Sf"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@AcuantHGLiveness@objc(cs)LiveFaceRectDetail(im)y",
+                "mangledName": "$s16AcuantHGLiveness18LiveFaceRectDetailC1ySfvg",
+                "moduleName": "AcuantHGLiveness",
+                "implicit": true,
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Float",
+                    "printedName": "Swift.Float",
+                    "usr": "s:Sf"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@AcuantHGLiveness@objc(cs)LiveFaceRectDetail(im)setY:",
+                "mangledName": "$s16AcuantHGLiveness18LiveFaceRectDetailC1ySfvs",
+                "moduleName": "AcuantHGLiveness",
+                "implicit": true,
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:16AcuantHGLiveness18LiveFaceRectDetailC1ySfvM",
+                "mangledName": "$s16AcuantHGLiveness18LiveFaceRectDetailC1ySfvM",
+                "moduleName": "AcuantHGLiveness",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Function",
+            "name": "createInstance",
+            "printedName": "createInstance()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "LiveFaceRectDetail",
+                "printedName": "AcuantHGLiveness.LiveFaceRectDetail",
+                "usr": "c:@M@AcuantHGLiveness@objc(cs)LiveFaceRectDetail"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@AcuantHGLiveness@objc(cs)LiveFaceRectDetail(cm)createInstance",
+            "mangledName": "$s16AcuantHGLiveness18LiveFaceRectDetailC14createInstanceACyFZ",
+            "moduleName": "AcuantHGLiveness",
+            "static": true,
+            "declAttributes": [
+              "AccessControl",
+              "ObjC"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "mapCGRect",
+            "printedName": "mapCGRect(rect:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "CGRect",
+                "printedName": "CoreFoundation.CGRect",
+                "usr": "c:@S@CGRect"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@AcuantHGLiveness@objc(cs)LiveFaceRectDetail(im)mapCGRectWithRect:",
+            "mangledName": "$s16AcuantHGLiveness18LiveFaceRectDetailC9mapCGRect4rectySo0H0V_tF",
+            "moduleName": "AcuantHGLiveness",
+            "declAttributes": [
+              "AccessControl",
+              "ObjC"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "toCGRect",
+            "printedName": "toCGRect()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "CGRect",
+                "printedName": "CoreFoundation.CGRect",
+                "usr": "c:@S@CGRect"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@AcuantHGLiveness@objc(cs)LiveFaceRectDetail(im)toCGRect",
+            "mangledName": "$s16AcuantHGLiveness18LiveFaceRectDetailC8toCGRectSo0H0VyF",
+            "moduleName": "AcuantHGLiveness",
+            "declAttributes": [
+              "AccessControl",
+              "ObjC"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "LiveFaceRectDetail",
+                "printedName": "AcuantHGLiveness.LiveFaceRectDetail",
+                "usr": "c:@M@AcuantHGLiveness@objc(cs)LiveFaceRectDetail"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "c:@M@AcuantHGLiveness@objc(cs)LiveFaceRectDetail(im)init",
+            "mangledName": "$s16AcuantHGLiveness18LiveFaceRectDetailCACycfc",
+            "moduleName": "AcuantHGLiveness",
+            "overriding": true,
+            "implicit": true,
+            "objc_name": "init",
+            "declAttributes": [
+              "Dynamic",
+              "ObjC",
+              "Override"
+            ],
+            "init_kind": "Designated"
+          }
+        ],
+        "declKind": "Class",
+        "usr": "c:@M@AcuantHGLiveness@objc(cs)LiveFaceRectDetail",
+        "mangledName": "$s16AcuantHGLiveness18LiveFaceRectDetailC",
+        "moduleName": "AcuantHGLiveness",
+        "declAttributes": [
+          "AccessControl",
+          "ObjCMembers",
+          "ObjC"
+        ],
+        "superclassUsr": "c:objc(cs)NSObject",
+        "inheritsConvenienceInitializers": true,
+        "superclassNames": [
+          "ObjectiveC.NSObject"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Hashable",
+            "printedName": "Hashable",
+            "usr": "s:SH",
+            "mangledName": "$sSH"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CVarArg",
+            "printedName": "CVarArg",
+            "usr": "s:s7CVarArgP",
+            "mangledName": "$ss7CVarArgP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObservingPublishing",
+            "printedName": "_KeyValueCodingAndObservingPublishing",
+            "usr": "s:10Foundation37_KeyValueCodingAndObservingPublishingP",
+            "mangledName": "$s10Foundation37_KeyValueCodingAndObservingPublishingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObserving",
+            "printedName": "_KeyValueCodingAndObserving",
+            "usr": "s:10Foundation27_KeyValueCodingAndObservingP",
+            "mangledName": "$s10Foundation27_KeyValueCodingAndObservingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomStringConvertible",
+            "printedName": "CustomStringConvertible",
+            "usr": "s:s23CustomStringConvertibleP",
+            "mangledName": "$ss23CustomStringConvertibleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomDebugStringConvertible",
+            "printedName": "CustomDebugStringConvertible",
+            "usr": "s:s28CustomDebugStringConvertibleP",
+            "mangledName": "$ss28CustomDebugStringConvertibleP"
+          }
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "LiveFaceDetails",
+        "printedName": "LiveFaceDetails",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "isLiveFace",
+            "printedName": "isLiveFace",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@AcuantHGLiveness@objc(cs)LiveFaceDetails(py)isLiveFace",
+            "mangledName": "$s16AcuantHGLiveness15LiveFaceDetailsC02iscD0Sbvp",
+            "moduleName": "AcuantHGLiveness",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl",
+              "ObjC"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@AcuantHGLiveness@objc(cs)LiveFaceDetails(im)isLiveFace",
+                "mangledName": "$s16AcuantHGLiveness15LiveFaceDetailsC02iscD0Sbvg",
+                "moduleName": "AcuantHGLiveness",
+                "implicit": true,
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@AcuantHGLiveness@objc(cs)LiveFaceDetails(im)setIsLiveFace:",
+                "mangledName": "$s16AcuantHGLiveness15LiveFaceDetailsC02iscD0Sbvs",
+                "moduleName": "AcuantHGLiveness",
+                "implicit": true,
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:16AcuantHGLiveness15LiveFaceDetailsC02iscD0SbvM",
+                "mangledName": "$s16AcuantHGLiveness15LiveFaceDetailsC02iscD0SbvM",
+                "moduleName": "AcuantHGLiveness",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "faceRect",
+            "printedName": "faceRect",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "AcuantHGLiveness.LiveFaceRectDetail?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "LiveFaceRectDetail",
+                    "printedName": "AcuantHGLiveness.LiveFaceRectDetail",
+                    "usr": "c:@M@AcuantHGLiveness@objc(cs)LiveFaceRectDetail"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@AcuantHGLiveness@objc(cs)LiveFaceDetails(py)faceRect",
+            "mangledName": "$s16AcuantHGLiveness15LiveFaceDetailsC8faceRectAA0cdG6DetailCSgvp",
+            "moduleName": "AcuantHGLiveness",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl",
+              "ObjC"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "AcuantHGLiveness.LiveFaceRectDetail?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "LiveFaceRectDetail",
+                        "printedName": "AcuantHGLiveness.LiveFaceRectDetail",
+                        "usr": "c:@M@AcuantHGLiveness@objc(cs)LiveFaceRectDetail"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@AcuantHGLiveness@objc(cs)LiveFaceDetails(im)faceRect",
+                "mangledName": "$s16AcuantHGLiveness15LiveFaceDetailsC8faceRectAA0cdG6DetailCSgvg",
+                "moduleName": "AcuantHGLiveness",
+                "implicit": true,
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "AcuantHGLiveness.LiveFaceRectDetail?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "LiveFaceRectDetail",
+                        "printedName": "AcuantHGLiveness.LiveFaceRectDetail",
+                        "usr": "c:@M@AcuantHGLiveness@objc(cs)LiveFaceRectDetail"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@AcuantHGLiveness@objc(cs)LiveFaceDetails(im)setFaceRect:",
+                "mangledName": "$s16AcuantHGLiveness15LiveFaceDetailsC8faceRectAA0cdG6DetailCSgvs",
+                "moduleName": "AcuantHGLiveness",
+                "implicit": true,
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:16AcuantHGLiveness15LiveFaceDetailsC8faceRectAA0cdG6DetailCSgvM",
+                "mangledName": "$s16AcuantHGLiveness15LiveFaceDetailsC8faceRectAA0cdG6DetailCSgvM",
+                "moduleName": "AcuantHGLiveness",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "cleanAperture",
+            "printedName": "cleanAperture",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "AcuantHGLiveness.LiveFaceRectDetail?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "LiveFaceRectDetail",
+                    "printedName": "AcuantHGLiveness.LiveFaceRectDetail",
+                    "usr": "c:@M@AcuantHGLiveness@objc(cs)LiveFaceRectDetail"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@AcuantHGLiveness@objc(cs)LiveFaceDetails(py)cleanAperture",
+            "mangledName": "$s16AcuantHGLiveness15LiveFaceDetailsC13cleanApertureAA0cD10RectDetailCSgvp",
+            "moduleName": "AcuantHGLiveness",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl",
+              "ObjC"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "AcuantHGLiveness.LiveFaceRectDetail?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "LiveFaceRectDetail",
+                        "printedName": "AcuantHGLiveness.LiveFaceRectDetail",
+                        "usr": "c:@M@AcuantHGLiveness@objc(cs)LiveFaceRectDetail"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@AcuantHGLiveness@objc(cs)LiveFaceDetails(im)cleanAperture",
+                "mangledName": "$s16AcuantHGLiveness15LiveFaceDetailsC13cleanApertureAA0cD10RectDetailCSgvg",
+                "moduleName": "AcuantHGLiveness",
+                "implicit": true,
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "AcuantHGLiveness.LiveFaceRectDetail?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "LiveFaceRectDetail",
+                        "printedName": "AcuantHGLiveness.LiveFaceRectDetail",
+                        "usr": "c:@M@AcuantHGLiveness@objc(cs)LiveFaceRectDetail"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@AcuantHGLiveness@objc(cs)LiveFaceDetails(im)setCleanAperture:",
+                "mangledName": "$s16AcuantHGLiveness15LiveFaceDetailsC13cleanApertureAA0cD10RectDetailCSgvs",
+                "moduleName": "AcuantHGLiveness",
+                "implicit": true,
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:16AcuantHGLiveness15LiveFaceDetailsC13cleanApertureAA0cD10RectDetailCSgvM",
+                "mangledName": "$s16AcuantHGLiveness15LiveFaceDetailsC13cleanApertureAA0cD10RectDetailCSgvM",
+                "moduleName": "AcuantHGLiveness",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "image",
+            "printedName": "image",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "UIKit.UIImage?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "UIImage",
+                    "printedName": "UIKit.UIImage",
+                    "usr": "c:objc(cs)UIImage"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@AcuantHGLiveness@objc(cs)LiveFaceDetails(py)image",
+            "mangledName": "$s16AcuantHGLiveness15LiveFaceDetailsC5imageSo7UIImageCSgvp",
+            "moduleName": "AcuantHGLiveness",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl",
+              "ObjC"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "UIKit.UIImage?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "UIImage",
+                        "printedName": "UIKit.UIImage",
+                        "usr": "c:objc(cs)UIImage"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@AcuantHGLiveness@objc(cs)LiveFaceDetails(im)image",
+                "mangledName": "$s16AcuantHGLiveness15LiveFaceDetailsC5imageSo7UIImageCSgvg",
+                "moduleName": "AcuantHGLiveness",
+                "implicit": true,
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "UIKit.UIImage?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "UIImage",
+                        "printedName": "UIKit.UIImage",
+                        "usr": "c:objc(cs)UIImage"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@AcuantHGLiveness@objc(cs)LiveFaceDetails(im)setImage:",
+                "mangledName": "$s16AcuantHGLiveness15LiveFaceDetailsC5imageSo7UIImageCSgvs",
+                "moduleName": "AcuantHGLiveness",
+                "implicit": true,
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:16AcuantHGLiveness15LiveFaceDetailsC5imageSo7UIImageCSgvM",
+                "mangledName": "$s16AcuantHGLiveness15LiveFaceDetailsC5imageSo7UIImageCSgvM",
+                "moduleName": "AcuantHGLiveness",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "error",
+            "printedName": "error",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "AcuantCommon.AcuantError?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "AcuantError",
+                    "printedName": "AcuantCommon.AcuantError",
+                    "usr": "c:@M@AcuantCommon@objc(cs)AcuantError"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@AcuantHGLiveness@objc(cs)LiveFaceDetails(py)error",
+            "mangledName": "$s16AcuantHGLiveness15LiveFaceDetailsC5error0A6Common0A5ErrorCSgvp",
+            "moduleName": "AcuantHGLiveness",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl",
+              "ObjC"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "AcuantCommon.AcuantError?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "AcuantError",
+                        "printedName": "AcuantCommon.AcuantError",
+                        "usr": "c:@M@AcuantCommon@objc(cs)AcuantError"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@AcuantHGLiveness@objc(cs)LiveFaceDetails(im)error",
+                "mangledName": "$s16AcuantHGLiveness15LiveFaceDetailsC5error0A6Common0A5ErrorCSgvg",
+                "moduleName": "AcuantHGLiveness",
+                "implicit": true,
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "AcuantCommon.AcuantError?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "AcuantError",
+                        "printedName": "AcuantCommon.AcuantError",
+                        "usr": "c:@M@AcuantCommon@objc(cs)AcuantError"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@AcuantHGLiveness@objc(cs)LiveFaceDetails(im)setError:",
+                "mangledName": "$s16AcuantHGLiveness15LiveFaceDetailsC5error0A6Common0A5ErrorCSgvs",
+                "moduleName": "AcuantHGLiveness",
+                "implicit": true,
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:16AcuantHGLiveness15LiveFaceDetailsC5error0A6Common0A5ErrorCSgvM",
+                "mangledName": "$s16AcuantHGLiveness15LiveFaceDetailsC5error0A6Common0A5ErrorCSgvM",
+                "moduleName": "AcuantHGLiveness",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Function",
+            "name": "createInstance",
+            "printedName": "createInstance()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "LiveFaceDetails",
+                "printedName": "AcuantHGLiveness.LiveFaceDetails",
+                "usr": "c:@M@AcuantHGLiveness@objc(cs)LiveFaceDetails"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@AcuantHGLiveness@objc(cs)LiveFaceDetails(cm)createInstance",
+            "mangledName": "$s16AcuantHGLiveness15LiveFaceDetailsC14createInstanceACyFZ",
+            "moduleName": "AcuantHGLiveness",
+            "static": true,
+            "declAttributes": [
+              "AccessControl",
+              "ObjC"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "LiveFaceDetails",
+                "printedName": "AcuantHGLiveness.LiveFaceDetails",
+                "usr": "c:@M@AcuantHGLiveness@objc(cs)LiveFaceDetails"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "c:@M@AcuantHGLiveness@objc(cs)LiveFaceDetails(im)init",
+            "mangledName": "$s16AcuantHGLiveness15LiveFaceDetailsCACycfc",
+            "moduleName": "AcuantHGLiveness",
+            "overriding": true,
+            "implicit": true,
+            "objc_name": "init",
+            "declAttributes": [
+              "Dynamic",
+              "ObjC",
+              "Override"
+            ],
+            "init_kind": "Designated"
+          }
+        ],
+        "declKind": "Class",
+        "usr": "c:@M@AcuantHGLiveness@objc(cs)LiveFaceDetails",
+        "mangledName": "$s16AcuantHGLiveness15LiveFaceDetailsC",
+        "moduleName": "AcuantHGLiveness",
+        "declAttributes": [
+          "AccessControl",
+          "ObjCMembers",
+          "ObjC"
+        ],
+        "superclassUsr": "c:objc(cs)NSObject",
+        "inheritsConvenienceInitializers": true,
+        "superclassNames": [
+          "ObjectiveC.NSObject"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Hashable",
+            "printedName": "Hashable",
+            "usr": "s:SH",
+            "mangledName": "$sSH"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CVarArg",
+            "printedName": "CVarArg",
+            "usr": "s:s7CVarArgP",
+            "mangledName": "$ss7CVarArgP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObservingPublishing",
+            "printedName": "_KeyValueCodingAndObservingPublishing",
+            "usr": "s:10Foundation37_KeyValueCodingAndObservingPublishingP",
+            "mangledName": "$s10Foundation37_KeyValueCodingAndObservingPublishingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObserving",
+            "printedName": "_KeyValueCodingAndObserving",
+            "usr": "s:10Foundation27_KeyValueCodingAndObservingP",
+            "mangledName": "$s10Foundation27_KeyValueCodingAndObservingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomStringConvertible",
+            "printedName": "CustomStringConvertible",
+            "usr": "s:s23CustomStringConvertibleP",
+            "mangledName": "$ss23CustomStringConvertibleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomDebugStringConvertible",
+            "printedName": "CustomDebugStringConvertible",
+            "usr": "s:s28CustomDebugStringConvertibleP",
+            "mangledName": "$ss28CustomDebugStringConvertibleP"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "UIKit",
+        "printedName": "UIKit",
+        "declKind": "Import",
+        "moduleName": "AcuantHGLiveness",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "HGLivenessResult",
+        "printedName": "HGLivenessResult",
+        "children": [
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(image:jpegData:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "HGLivenessResult",
+                "printedName": "AcuantHGLiveness.HGLivenessResult",
+                "usr": "c:@M@AcuantHGLiveness@objc(cs)HGLivenessResult"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "UIImage",
+                "printedName": "UIKit.UIImage",
+                "usr": "c:objc(cs)UIImage"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Data",
+                "printedName": "Foundation.Data",
+                "usr": "s:10Foundation4DataV"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "c:@M@AcuantHGLiveness@objc(cs)HGLivenessResult(im)initWithImage:jpegData:",
+            "mangledName": "$s16AcuantHGLiveness0B6ResultC5image8jpegDataACSo7UIImageC_10Foundation0F0Vtcfc",
+            "moduleName": "AcuantHGLiveness",
+            "declAttributes": [
+              "AccessControl",
+              "ObjC"
+            ],
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "HGLivenessResult",
+                "printedName": "AcuantHGLiveness.HGLivenessResult",
+                "usr": "c:@M@AcuantHGLiveness@objc(cs)HGLivenessResult"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "c:@M@AcuantHGLiveness@objc(cs)HGLivenessResult(im)init",
+            "mangledName": "$s16AcuantHGLiveness0B6ResultCACycfc",
+            "moduleName": "AcuantHGLiveness",
+            "overriding": true,
+            "implicit": true,
+            "objc_name": "init",
+            "declAttributes": [
+              "Dynamic",
+              "ObjC",
+              "Override"
+            ],
+            "init_kind": "Designated"
+          }
+        ],
+        "declKind": "Class",
+        "usr": "c:@M@AcuantHGLiveness@objc(cs)HGLivenessResult",
+        "mangledName": "$s16AcuantHGLiveness0B6ResultC",
+        "moduleName": "AcuantHGLiveness",
+        "declAttributes": [
+          "AccessControl",
+          "ObjCMembers",
+          "ObjC"
+        ],
+        "superclassUsr": "c:objc(cs)NSObject",
+        "superclassNames": [
+          "ObjectiveC.NSObject"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Hashable",
+            "printedName": "Hashable",
+            "usr": "s:SH",
+            "mangledName": "$sSH"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CVarArg",
+            "printedName": "CVarArg",
+            "usr": "s:s7CVarArgP",
+            "mangledName": "$ss7CVarArgP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObservingPublishing",
+            "printedName": "_KeyValueCodingAndObservingPublishing",
+            "usr": "s:10Foundation37_KeyValueCodingAndObservingPublishingP",
+            "mangledName": "$s10Foundation37_KeyValueCodingAndObservingPublishingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObserving",
+            "printedName": "_KeyValueCodingAndObserving",
+            "usr": "s:10Foundation27_KeyValueCodingAndObservingP",
+            "mangledName": "$s10Foundation27_KeyValueCodingAndObservingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomStringConvertible",
+            "printedName": "CustomStringConvertible",
+            "usr": "s:s23CustomStringConvertibleP",
+            "mangledName": "$ss23CustomStringConvertibleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomDebugStringConvertible",
+            "printedName": "CustomDebugStringConvertible",
+            "usr": "s:s28CustomDebugStringConvertibleP",
+            "mangledName": "$ss28CustomDebugStringConvertibleP"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "AcuantHGLiveness",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "AcuantHGLiveFaceCaptureDelegate",
+        "printedName": "AcuantHGLiveFaceCaptureDelegate",
+        "children": [
+          {
+            "kind": "Function",
+            "name": "liveFaceDetailsCaptured",
+            "printedName": "liveFaceDetailsCaptured(liveFaceDetails:faceType:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "AcuantHGLiveness.LiveFaceDetails?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "LiveFaceDetails",
+                    "printedName": "AcuantHGLiveness.LiveFaceDetails",
+                    "usr": "c:@M@AcuantHGLiveness@objc(cs)LiveFaceDetails"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "AcuantFaceType",
+                "printedName": "AcuantHGLiveness.AcuantFaceType",
+                "usr": "c:@M@AcuantHGLiveness@E@AcuantFaceType"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@AcuantHGLiveness@objc(pl)AcuantHGLiveFaceCaptureDelegate(im)liveFaceDetailsCapturedWithLiveFaceDetails:faceType:",
+            "mangledName": "$s16AcuantHGLiveness0A25HGLiveFaceCaptureDelegateP04liveD15DetailsCaptured0gdH08faceTypeyAA04LivedH0CSg_AA0adK0OtF",
+            "moduleName": "AcuantHGLiveness",
+            "genericSig": "<τ_0_0 where τ_0_0 : AcuantHGLiveness.AcuantHGLiveFaceCaptureDelegate>",
+            "sugared_genericSig": "<Self where Self : AcuantHGLiveness.AcuantHGLiveFaceCaptureDelegate>",
+            "protocolReq": true,
+            "declAttributes": [
+              "ObjC"
+            ],
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Protocol",
+        "usr": "c:@M@AcuantHGLiveness@objc(pl)AcuantHGLiveFaceCaptureDelegate",
+        "mangledName": "$s16AcuantHGLiveness0A25HGLiveFaceCaptureDelegateP",
+        "moduleName": "AcuantHGLiveness",
+        "genericSig": "<τ_0_0 : AnyObject>",
+        "sugared_genericSig": "<Self : AnyObject>",
+        "declAttributes": [
+          "AccessControl",
+          "ObjC"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "UIKit",
+        "printedName": "UIKit",
+        "declKind": "Import",
+        "moduleName": "AcuantHGLiveness",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "AcuantHGLiveness"
+      }
+    ],
+    "json_format_version": 8
+  },
+  "ConstValues": [
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantHGLiveness\/AcuantHGLiveness\/HGLivenessDelegate.swift",
+      "kind": "IntegerLiteral",
+      "offset": 239,
+      "length": 14,
+      "value": "1"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantHGLiveness\/AcuantHGLiveness\/HGLivenessDelegate.swift",
+      "kind": "IntegerLiteral",
+      "offset": 263,
+      "length": 10,
+      "value": "2"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantHGLiveness\/AcuantHGLiveness\/HGLivenessDelegate.swift",
+      "kind": "IntegerLiteral",
+      "offset": 283,
+      "length": 12,
+      "value": "3"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantHGLiveness\/AcuantHGLiveness\/HGLivenessDelegate.swift",
+      "kind": "IntegerLiteral",
+      "offset": 305,
+      "length": 18,
+      "value": "4"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantHGLiveness\/AcuantHGLiveness\/HGLivenessDelegate.swift",
+      "kind": "IntegerLiteral",
+      "offset": 333,
+      "length": 17,
+      "value": "5"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantHGLiveness\/AcuantHGLiveness\/HGLivenessDelegate.swift",
+      "kind": "IntegerLiteral",
+      "offset": 239,
+      "length": 14,
+      "value": "1"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantHGLiveness\/AcuantHGLiveness\/HGLivenessDelegate.swift",
+      "kind": "IntegerLiteral",
+      "offset": 263,
+      "length": 10,
+      "value": "2"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantHGLiveness\/AcuantHGLiveness\/HGLivenessDelegate.swift",
+      "kind": "IntegerLiteral",
+      "offset": 283,
+      "length": 12,
+      "value": "3"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantHGLiveness\/AcuantHGLiveness\/HGLivenessDelegate.swift",
+      "kind": "IntegerLiteral",
+      "offset": 305,
+      "length": 18,
+      "value": "4"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantHGLiveness\/AcuantHGLiveness\/HGLivenessDelegate.swift",
+      "kind": "IntegerLiteral",
+      "offset": 333,
+      "length": 17,
+      "value": "5"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantHGLiveness\/AcuantHGLiveness\/FaceCaptureSession.swift",
+      "kind": "BooleanLiteral",
+      "offset": 523,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantHGLiveness\/AcuantHGLiveness\/FaceCaptureSession.swift",
+      "kind": "IntegerLiteral",
+      "offset": 560,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantHGLiveness\/AcuantHGLiveness\/FaceCaptureSession.swift",
+      "kind": "IntegerLiteral",
+      "offset": 595,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantHGLiveness\/AcuantHGLiveness\/FaceCaptureSession.swift",
+      "kind": "IntegerLiteral",
+      "offset": 675,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantHGLiveness\/AcuantHGLiveness\/FaceCaptureSession.swift",
+      "kind": "IntegerLiteral",
+      "offset": 728,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantHGLiveness\/AcuantHGLiveness\/FaceCaptureSession.swift",
+      "kind": "IntegerLiteral",
+      "offset": 734,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantHGLiveness\/AcuantHGLiveness\/FaceCaptureSession.swift",
+      "kind": "IntegerLiteral",
+      "offset": 782,
+      "length": 2,
+      "value": "25"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantHGLiveness\/AcuantHGLiveness\/FaceCaptureSession.swift",
+      "kind": "StringLiteral",
+      "offset": 837,
+      "length": 13,
+      "value": "\"serialQueue\""
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantHGLiveness\/AcuantHGLiveness\/LiveFaceDetails.swift",
+      "kind": "IntegerLiteral",
+      "offset": 268,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantHGLiveness\/AcuantHGLiveness\/LiveFaceDetails.swift",
+      "kind": "IntegerLiteral",
+      "offset": 301,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantHGLiveness\/AcuantHGLiveness\/LiveFaceDetails.swift",
+      "kind": "IntegerLiteral",
+      "offset": 329,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantHGLiveness\/AcuantHGLiveness\/LiveFaceDetails.swift",
+      "kind": "IntegerLiteral",
+      "offset": 357,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantHGLiveness\/AcuantHGLiveness\/LiveFaceDetails.swift",
+      "kind": "BooleanLiteral",
+      "offset": 1022,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantHGLiveness\/AcuantHGLiveness\/HGLivenessResult.swift",
+      "kind": "StringLiteral",
+      "offset": 191,
+      "length": 16,
+      "value": "\"AcuantHGLiveness.HGLivenessResult\""
+    }
+  ]
+}

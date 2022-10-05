@@ -13,8 +13,8 @@ import AcuantImagePreparation
 import AcuantCommon
 
 @objcMembers public class AcuantMrzCameraController: UIViewController {
-    @objc public enum MrzCameraState : Int {
-        case None = 0, Align = 1, MoveCloser = 2, TooClose = 3, Good = 4, Captured = 5
+    @objc public enum MrzCameraState: Int {
+        case None, Align, MoveCloser, TooClose, Reposition, Good, Captured
     }
     
     var captureSession: AcuantMrzCaptureSession!
@@ -35,8 +35,7 @@ import AcuantCommon
     
     public var options: CameraOptions!
     public var callback: ((AcuantMrzResult?) -> Void)?
-    public var customDisplayMessage: ((MrzCameraState) -> String) = {
-        state in
+    public var customDisplayMessage: ((MrzCameraState) -> String) = { state in
         switch state {
         case .None, .Align:
             return ""
@@ -48,6 +47,8 @@ import AcuantCommon
             return "Reading MRZ"
         case .Captured:
             return "Captured"
+        case .Reposition:
+            return "Reposition"
         }
     }
     
@@ -94,18 +95,14 @@ import AcuantCommon
         super.viewDidLayoutSubviews()
     }
     
-    override public func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // TODO: Dispose of any resources that can be recreated.
-    }
-    
     override public func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         super.viewWillTransition(to: size, with: coordinator)
 
         coordinator.animate(alongsideTransition: { [weak self] context in
             guard let self = self else { return }
 
-            self.rotateCameraPreview(to: self.view.window?.interfaceOrientation)
+            let newFrame = CGRect(origin: self.view.frame.origin, size: size)
+            self.rotateCameraPreview(to: self.view.window?.interfaceOrientation, frame: newFrame)
         })
     }
 
@@ -150,33 +147,33 @@ import AcuantCommon
         }
     }
 
-    private func rotateCameraPreview(to interfaceOrientation: UIInterfaceOrientation?) {
+    private func rotateCameraPreview(to interfaceOrientation: UIInterfaceOrientation?, frame: CGRect) {
         guard let connection = videoPreviewLayer.connection,
               connection.isVideoOrientationSupported,
               let orientation = interfaceOrientation else {
             return
         }
 
-        videoPreviewLayer.frame = view.bounds
+        videoPreviewLayer.frame = frame
         connection.videoOrientation = orientation.videoOrientation ?? .portrait
         if orientation.isLandscape {
-            cornerLayer.setHorizontalDefaultCorners(frame: view.bounds)
+            cornerLayer.setHorizontalDefaultCorners(frame: frame)
             messageLayer.transform = CATransform3DIdentity
-            messageLayer.setFrame(frame: view.bounds)
+            messageLayer.setFrame(frame: frame)
             imageLayer.transform = CATransform3DIdentity
-            imageLayer.setFrame(frame: view.bounds)
+            imageLayer.setFrame(frame: frame)
         } else {
-            cornerLayer.setFrame(frame: view.bounds)
+            cornerLayer.setFrame(frame: frame)
 
             if CATransform3DIsIdentity(messageLayer.transform) {
                 messageLayer.rotate(angle: 90)
             }
 
             if CATransform3DIsIdentity(imageLayer.transform) {
-                imageLayer.setFrame(frame: view.bounds)
+                imageLayer.setFrame(frame: frame)
                 imageLayer.rotate(angle: 90)
             }
-            messageLayer.setVerticalDefaultSettings(frame: view.bounds)
+            messageLayer.setVerticalDefaultSettings(frame: frame)
         }
         videoPreviewLayer.removeAllAnimations()
     }
@@ -185,7 +182,7 @@ import AcuantCommon
     private var dotCount = 0
     private var counter: Timer?
 
-    private func handleUi(color: CGColor, message: String = "", points: Array<CGPoint>? = nil, shouldShowOverlay: Bool = false){
+    private func handleUi(color: CGColor, message: String = "", points: [CGPoint]? = nil, shouldShowOverlay: Bool = false) {
         self.cornerLayer.setColor(color: color)
         
         if message.isEmpty {
@@ -204,6 +201,11 @@ import AcuantCommon
             self.messageLayer.isHidden = false
             self.messageLayer.string = message
             self.updateCorners(points: points)
+            if let orientation = view.window?.interfaceOrientation, orientation.isLandscape {
+                self.messageLayer.setDefaultSettings(frame: self.view.frame)
+            } else {
+                self.messageLayer.setVerticalDefaultSettings(frame: self.view.frame)
+            }
             
             if shouldShowOverlay {
                 self.shapeLayer.showBorder(color: color)
@@ -213,19 +215,21 @@ import AcuantCommon
         }
     }
     
-    private func updateCorners(points: Array<CGPoint>?){
-        if(points != nil && points?.count == 4){
-            let convertedPoints = scalePoints(points: points!)
-            let openSquarePath = UIBezierPath()
-            openSquarePath.move(to: convertedPoints[0])
-            openSquarePath.addLine(to: convertedPoints[1])
-            openSquarePath.addLine(to: convertedPoints[2])
-            openSquarePath.addLine(to: convertedPoints[3])
-            openSquarePath.addLine(to: convertedPoints[0])
-            
-            self.shapeLayer.path = openSquarePath.cgPath
-            self.cornerLayer.setCorners(point1: convertedPoints[0], point2: convertedPoints[1], point3: convertedPoints[2], point4: convertedPoints[3])
+    private func updateCorners(points: [CGPoint]?) {
+        guard let points = points, points.count == 4 else {
+            return
         }
+
+        let convertedPoints = scalePoints(points: points)
+        let openSquarePath = UIBezierPath()
+        openSquarePath.move(to: convertedPoints[0])
+        openSquarePath.addLine(to: convertedPoints[1])
+        openSquarePath.addLine(to: convertedPoints[2])
+        openSquarePath.addLine(to: convertedPoints[3])
+        openSquarePath.addLine(to: convertedPoints[0])
+
+        self.shapeLayer.path = openSquarePath.cgPath
+        self.cornerLayer.setCorners(point1: convertedPoints[0], point2: convertedPoints[1], point3: convertedPoints[2], point4: convertedPoints[3])
     }
 
     func startCameraView() {
@@ -261,6 +265,8 @@ import AcuantCommon
                         self.handleUi(color: self.options.colorBracketCloser, message: message, points: points)
                     case .TooClose:
                         self.handleUi(color: self.options.colorBracketCloser, message: message, points: points)
+                    case .Reposition:
+                        self.handleUi(color: self.options.colorReposition, message: message, points: points, shouldShowOverlay: true)
                     case .Good, .Captured:
                         if self.mrzResult != nil {
                             self.isCaptured = true
@@ -296,7 +302,7 @@ import AcuantCommon
         self.videoPreviewLayer.addSublayer(self.imageLayer)
         self.view.layer.addSublayer(self.videoPreviewLayer)
 
-        rotateCameraPreview(to: self.view.window?.interfaceOrientation)
+        rotateCameraPreview(to: self.view.window?.interfaceOrientation, frame: view.frame)
 
         if self.options.showBackButton {
             addNavigationBackButton()
