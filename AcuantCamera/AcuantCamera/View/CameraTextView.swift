@@ -31,9 +31,9 @@ public class CameraTextView: CATextLayer {
         super.init()
         self.opacity = 0.7
         if autoCapture {
-            self.string = NSLocalizedString("acuant_camera_align", comment: "")
+            self.string = "acuant_camera_align".localized
         } else {
-            self.string = NSLocalizedString("acuant_camera_manual_capture", comment: "")
+            self.string = "acuant_camera_manual_capture".localized
         }
         self.alignmentMode = CATextLayerAlignmentMode.center
         self.cornerRadius = 10
