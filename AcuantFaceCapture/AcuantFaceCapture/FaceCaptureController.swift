@@ -424,14 +424,23 @@ public class FaceCaptureController: UIViewController {
 open class FaceCaptureLanguageManager {
     static let shared = FaceCaptureLanguageManager()
 
-    var langCode: String?
+    var langCode: String? {
+        didSet {
+            if let appLanguage = langCode {
+                currentLanguage = appLanguage
+            } else {
+                currentLanguage = Locale.current.languageCode ?? "en"
+            }
+        }
+    }
+    
     private(set) var currentLanguage: String
 
     private init() {
         if let appLanguage = langCode {
             currentLanguage = appLanguage
         } else {
-            currentLanguage = Locale.current.languageCode!
+            currentLanguage = Locale.current.languageCode ?? "en"
         }
     }
     
