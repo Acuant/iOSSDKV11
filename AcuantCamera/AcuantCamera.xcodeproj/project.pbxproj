@@ -32,7 +32,7 @@
 		C2B8F11F22F1D61A009811A8 /* UIScreenExtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B8F11E22F1D61A009811A8 /* UIScreenExtn.swift */; };
 		C2DC4932224BBCD20003C0CA /* AcuantCommon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2C291F0221DC860005B4918 /* AcuantCommon.framework */; };
 		C2DC4933224BBCD20003C0CA /* AcuantImagePreparation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2BB6D6D221E0F65005AFC35 /* AcuantImagePreparation.framework */; };
-		CC0498452924AF7F000EF8AF /* LanguageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC0498442924AF7F000EF8AF /* LanguageManager.swift */; };
+		CC0498452924AF7F000EF8AF /* DocLanguageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC0498442924AF7F000EF8AF /* DocLanguageManager.swift */; };
 		D93A1361268F75A70047EB0E /* CameraPreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D93A1360268F75A70047EB0E /* CameraPreviewView.swift */; };
 		D95FF40E266FB9350054E7B9 /* UInterfaceOrientationExtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = D95FF40D266FB9350054E7B9 /* UInterfaceOrientationExtn.swift */; };
 		D95FF410266FC7E30054E7B9 /* UIWindowExtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = D95FF40F266FC7E30054E7B9 /* UIWindowExtn.swift */; };
@@ -75,7 +75,7 @@
 		C2B8F11E22F1D61A009811A8 /* UIScreenExtn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIScreenExtn.swift; sourceTree = "<group>"; };
 		C2BB6D6D221E0F65005AFC35 /* AcuantImagePreparation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = AcuantImagePreparation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2C291F0221DC860005B4918 /* AcuantCommon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = AcuantCommon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		CC0498442924AF7F000EF8AF /* LanguageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageManager.swift; sourceTree = "<group>"; };
+		CC0498442924AF7F000EF8AF /* DocLanguageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocLanguageManager.swift; sourceTree = "<group>"; };
 		D93A1360268F75A70047EB0E /* CameraPreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraPreviewView.swift; sourceTree = "<group>"; };
 		D95FF40D266FB9350054E7B9 /* UInterfaceOrientationExtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UInterfaceOrientationExtn.swift; sourceTree = "<group>"; };
 		D95FF40F266FC7E30054E7B9 /* UIWindowExtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIWindowExtn.swift; sourceTree = "<group>"; };
@@ -124,7 +124,6 @@
 		134F59D421FA0BA600CEDBFC /* AcuantCamera */ = {
 			isa = PBXGroup;
 			children = (
-				CC0498432924AF5F000EF8AF /* LanguageManager */,
 				836DD9A22315EA0800428964 /* View */,
 				8327AA4B2420161D00B524F9 /* Constant */,
 				8327AA4C2420165200B524F9 /* Camera */,
@@ -221,6 +220,7 @@
 		8327AA4C2420165200B524F9 /* Camera */ = {
 			isa = PBXGroup;
 			children = (
+				CC0498432924AF5F000EF8AF /* LanguageManager */,
 				D9B4821526BC3FED001C0CEC /* Barcode */,
 				8327AA472420086F00B524F9 /* Document */,
 				8327AA462420084100B524F9 /* Mrz */,
@@ -246,7 +246,7 @@
 		CC0498432924AF5F000EF8AF /* LanguageManager */ = {
 			isa = PBXGroup;
 			children = (
-				CC0498442924AF7F000EF8AF /* LanguageManager.swift */,
+				CC0498442924AF7F000EF8AF /* DocLanguageManager.swift */,
 			);
 			path = LanguageManager;
 			sourceTree = "<group>";
@@ -360,7 +360,7 @@
 				D95FF40E266FB9350054E7B9 /* UInterfaceOrientationExtn.swift in Sources */,
 				8327AA432420081100B524F9 /* StringExt.swift in Sources */,
 				D95FF414267177A60054E7B9 /* UILayerExtn.swift in Sources */,
-				CC0498452924AF7F000EF8AF /* LanguageManager.swift in Sources */,
+				CC0498452924AF7F000EF8AF /* DocLanguageManager.swift in Sources */,
 				76D00240233E7C7F00CE3DA8 /* CameraOptions.swift in Sources */,
 				C25D3BA9220B29BF003F3027 /* DocumentCaptureSession.swift in Sources */,
 				836DE49523204DA8005299E5 /* UIImageExtn.swift in Sources */,

@@ -1,5 +1,5 @@
 //
-//  LanguageManager.swift
+//  DocLanguageManager.swift
 //  AcuantCamera
 //
 //  Created by Ruzanna Sedrakyan on 16.11.22.

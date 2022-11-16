@@ -84,24 +84,16 @@
 		83F0BF7323D8B28E00140A06 /* AcuantFaceCapture */ = {
 			isa = PBXGroup;
 			children = (
-				CC0498482924B03F000EF8AF /* LanguageManager */,
 				D9676E1A27600F39001E8B4C /* Models */,
 				D9395F8426C727260057EE4D /* Extension */,
 				D9395F8326C726F60057EE4D /* View */,
+				CC0498492924B05B000EF8AF /* FaceCaptureLanguageManager.swift */,
 				83F0BFAA23D8B59D00140A06 /* FaceCaptureController.swift */,
 				83F0BFB923D8B81200140A06 /* AcuantFaceCaptureSession.swift */,
 				83F0BF7423D8B28E00140A06 /* AcuantFaceCapture.h */,
 				83F0BF7523D8B28E00140A06 /* Info.plist */,
 			);
 			path = AcuantFaceCapture;
-			sourceTree = "<group>";
-		};
-		CC0498482924B03F000EF8AF /* LanguageManager */ = {
-			isa = PBXGroup;
-			children = (
-				CC0498492924B05B000EF8AF /* FaceCaptureLanguageManager.swift */,
-			);
-			path = LanguageManager;
 			sourceTree = "<group>";
 		};
 		D9395F8326C726F60057EE4D /* View */ = {
