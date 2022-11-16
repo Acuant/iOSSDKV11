@@ -39,7 +39,7 @@ public class FaceCaptureController: UIViewController {
         super.viewDidLoad()
         
         if let currentLanguageCode = currentLangCode {
-            LanguageManager.shared.langCode = currentLanguageCode
+            FaceCaptureLanguageManager.shared.langCode = currentLanguageCode
         }
     }
 
@@ -92,7 +92,7 @@ public class FaceCaptureController: UIViewController {
                                                queue: .main) { [weak self] _ in
             guard let self = self, self.alertView == nil else { return }
 
-            let alertView = AlertView(frame: self.view.bounds, text: "acuant_face_camera_paused".localized)
+            let alertView = AlertView(frame: self.view.bounds, text: "acuant_face_camera_paused".localizedFaceCaptureString)
             self.view.addSubview(alertView)
             self.alertView = alertView
         }
@@ -117,7 +117,7 @@ public class FaceCaptureController: UIViewController {
 
         if interfaceOrientation.isLandscape {
             self.alertView = AlertView(frame: self.view.frame,
-                                       text: "acuant_face_camera_rotate_portrait".localized)
+                                       text: "acuant_face_camera_rotate_portrait".localizedFaceCaptureString)
             self.view.addSubview(self.alertView!)
             self.captureSession.stopRunning()
         } else if !captureSession.isRunning {
@@ -340,7 +340,7 @@ public class FaceCaptureController: UIViewController {
     func addMessage(messageKey: String, color: CGColor? = UIColor.red.cgColor, fontSize: CGFloat = 30){
         messageLayer.fontSize = fontSize
         messageLayer.foregroundColor = color
-        messageLayer.string = messageKey.localized
+        messageLayer.string = messageKey.localizedFaceCaptureString
         messageLayer.frame = getMessageRect()
     }
     
@@ -419,35 +419,3 @@ public class FaceCaptureController: UIViewController {
 }
 
 
-// MARK: - Custom Localization
-
-open class LanguageManager {
-    static let shared = LanguageManager()
-
-    var langCode: String?
-    private(set) var currentLanguage: String
-
-    private init() {
-        if let appLanguage = langCode {
-            currentLanguage = appLanguage
-        } else {
-            currentLanguage = Locale.current.languageCode!
-        }
-    }
-    
-    public static func localizedString(_ key: String, comment: String = "") -> String {
-        let bundle = Bundle.main
-        guard let path = bundle.path(forResource: LanguageManager.shared.currentLanguage, ofType: "lproj"),
-            let string = Bundle(path: path)?.localizedString(forKey: key, value: "", table: "") else {
-                return NSLocalizedString(key, comment: comment)
-        }
-        return string
-    }
-    
-}
-
-extension String {
-    var localized: String {
-        return LanguageManager.localizedString(self)
-    }
-}

@@ -73,7 +73,7 @@ import AcuantCommon
         self.view.addGestureRecognizer(gestureRecognizer)
         
         if let currentLanguageCode = currentLangCode {
-            LanguageManager.shared.langCode = currentLanguageCode
+            DocLanguageManager.shared.langCode = currentLanguageCode
         }
     }
     
@@ -140,7 +140,7 @@ import AcuantCommon
                                                queue: .main) { [weak self] _ in
             guard let self = self, self.alertView == nil else { return }
 
-            self.messageLayer.string = "acuant_camera_paused".localized
+            self.messageLayer.string = "acuant_camera_paused".localizedDocString
             let alertView = CameraAlertView(frame: self.view.bounds)
             self.view.addSubview(alertView)
             self.view.bringSubviewToFront(alertView)
@@ -155,7 +155,7 @@ import AcuantCommon
             self.alertView?.removeFromSuperview()
             self.alertView = nil
             if !self.autoCapture {
-                self.messageLayer.string = "acuant_camera_manual_capture".localized
+                self.messageLayer.string = "acuant_camera_manual_capture".localizedDocString
             }
         }
     }
@@ -353,7 +353,7 @@ import AcuantCommon
         }
         
         if let localString = localString {
-            self.cancelCapture(state: state, message: localString.localized)
+            self.cancelCapture(state: state, message: localString.localizedDocString)
         } else {
             self.setLookFromState(state: state)
         }
@@ -431,7 +431,7 @@ extension DocumentCameraController: DocumentCaptureDelegate {
     public func readyToCapture() {
         DispatchQueue.main.async {
             if self.messageLayer != nil {
-                self.messageLayer.string = "acuant_camera_capturing".localized
+                self.messageLayer.string = "acuant_camera_capturing".localizedDocString
                 if self.autoCapture {
                     self.setLookFromState(state: DocumentCameraController.CameraState.Capture)
                 } else {
@@ -482,7 +482,7 @@ extension DocumentCameraController: FrameAnalysisDelegate {
                         self.transitionState(state: CameraState.Hold)
 
                         if self.isDocumentMoved(points: scaledPoints) {
-                            self.cancelCapture(state: CameraState.Steady, message: "acuant_camera_hold_steady".localized)
+                            self.cancelCapture(state: CameraState.Steady, message: "acuant_camera_hold_steady".localizedDocString)
                         } else if !self.captured {
                            self.triggerCapture()
                         }
@@ -505,42 +505,10 @@ extension DocumentCameraController: AutoCaptureDelegate {
         self.autoCapture = autoCapture
         if !autoCapture {
             DispatchQueue.main.async {
-                self.messageLayer.string = "acuant_camera_manual_capture".localized
+                self.messageLayer.string = "acuant_camera_manual_capture".localizedDocString
             }
         }
     }
     
 }
 
-// MARK: - Custom Localization
-
-    class LanguageManager {
-    static let shared = LanguageManager()
-
-    var langCode: String?
-    private(set) var currentLanguage: String
-
-    private init() {
-        if let appLanguage = langCode {
-            currentLanguage = appLanguage
-        } else {
-            currentLanguage = Locale.current.languageCode!
-        }
-    }
-    
-    public static func localizedString(_ key: String, comment: String = "") -> String {
-        let bundle = Bundle.main
-        guard let path = bundle.path(forResource: LanguageManager.shared.currentLanguage, ofType: "lproj"),
-            let string = Bundle(path: path)?.localizedString(forKey: key, value: "", table: "") else {
-                return NSLocalizedString(key, comment: comment)
-        }
-        return string
-    }
-    
-}
-
-extension String {
-     var localized: String {
-        return LanguageManager.localizedString(self)
-    }
-}
