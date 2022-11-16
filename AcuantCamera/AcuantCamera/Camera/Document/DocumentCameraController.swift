@@ -528,7 +528,10 @@ extension DocumentCameraController: AutoCaptureDelegate {
         }
         
     private(set) var currentLanguage: String
-    
+        
+        private init() {
+        }
+        
     public static func localizedString(_ key: String, comment: String = "") -> String {
         let bundle = Bundle.main
         guard let path = bundle.path(forResource: DocLanguageManager.shared.currentLanguage, ofType: "lproj"),
