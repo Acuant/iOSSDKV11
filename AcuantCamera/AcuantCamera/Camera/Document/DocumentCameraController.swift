@@ -533,7 +533,7 @@ extension DocumentCameraController: AutoCaptureDelegate {
             if let appLanguage = langCode {
                 currentLanguage = appLanguage
             } else {
-                currentLanguage = Locale.current.languageCode!
+                currentLanguage = Locale.preferredLanguages[0]//Locale.current.languageCode!
             }
         }
         
