@@ -37,7 +37,7 @@ open class FaceCaptureLanguageManager {
 }
 
 extension String {
-    var localizedFaceCaptureString: String {
+    public var localizedFaceCaptureString: String {
         return FaceCaptureLanguageManager.localizedString(self)
     }
 }

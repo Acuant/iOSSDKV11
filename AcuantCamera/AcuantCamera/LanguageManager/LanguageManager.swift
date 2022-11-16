@@ -10,7 +10,7 @@ import UIKit
 
 // MARK: - Custom Localization
 
-    class DocLanguageManager {
+    open class DocLanguageManager {
     static let shared = DocLanguageManager()
 
     var langCode: String?
@@ -36,7 +36,7 @@ import UIKit
 }
 
 extension String {
-     var localizedDocString: String {
+     public var localizedDocString: String {
         return DocLanguageManager.localizedString(self)
     }
 }
