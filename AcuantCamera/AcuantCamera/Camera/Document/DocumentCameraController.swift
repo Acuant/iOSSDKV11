@@ -517,16 +517,17 @@ extension DocumentCameraController: AutoCaptureDelegate {
     open class DocLanguageManager {
     static let shared = DocLanguageManager()
 
-    var langCode: String?
-    private(set) var currentLanguage: String
-
-    private init() {
-        if let appLanguage = langCode {
-            currentLanguage = appLanguage
-        } else {
-            currentLanguage = Locale.current.languageCode!
+        var langCode: String? {
+            didSet {
+                if let appLanguage = langCode {
+                    currentLanguage = appLanguage
+                } else {
+                    currentLanguage = Locale.current.languageCode!
+                }
+            }
         }
-    }
+        
+    private(set) var currentLanguage: String
     
     public static func localizedString(_ key: String, comment: String = "") -> String {
         let bundle = Bundle.main
