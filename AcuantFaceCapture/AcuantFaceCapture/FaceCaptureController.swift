@@ -435,7 +435,7 @@ open class LanguageManager {
         }
     }
     
-    public static func localizedstring(_ key: String, comment: String = "") -> String {
+    public static func localizedString(_ key: String, comment: String = "") -> String {
         let bundle = Bundle.main
         guard let path = bundle.path(forResource: LanguageManager.shared.currentLanguage, ofType: "lproj"),
             let string = Bundle(path: path)?.localizedString(forKey: key, value: "", table: "") else {
@@ -447,7 +447,7 @@ open class LanguageManager {
 }
 
 extension String {
-    public var localized: String {
-        return LanguageManager.localizedstring(self)
+    var localized: String {
+        return LanguageManager.localizedString(self)
     }
 }
