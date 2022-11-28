@@ -361,10 +361,8 @@ public class FaceCaptureController: UIViewController {
         view.addSubview(backButton)
 
         NSLayoutConstraint.activate([
-            backButton.widthAnchor.constraint(equalToConstant: 50),
-            backButton.heightAnchor.constraint(equalToConstant: 50),
-            backButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 0),
-            backButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0)
+            backButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 15),
+            backButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -25)
         ])
     }
 
@@ -394,6 +392,7 @@ public class FaceCaptureController: UIViewController {
     func createMessageLayer() -> CATextLayer {
         messageLayer = CATextLayer()
         messageLayer.frame = getMessageRect()
+        messageLayer.isWrapped = true
         messageLayer.contentsScale = UIScreen.main.scale
         messageLayer.alignmentMode = CATextLayerAlignmentMode.center
         messageLayer.foregroundColor = UIColor.white.cgColor
@@ -409,12 +408,13 @@ public class FaceCaptureController: UIViewController {
     }
     
     func getMessageRect() -> CGRect {
+        let sidePadding = 16.0
         let width = view.safeAreaLayoutGuide.layoutFrame.size.width
         let topPadding = getSafeArea()
         let height = view.bounds.height * 0.17
         
         let padding = topPadding == 0 ? (height - topPadding)/4 : topPadding
-        return CGRect(x: 0, y: padding, width: width, height: height)
+        return CGRect(x: sidePadding, y: padding, width: width - 2.0 * sidePadding, height: height)
     }
 }
 

@@ -409,7 +409,7 @@ import AcuantCommon
         attribs[NSAttributedString.Key.foregroundColor]=UIColor.white
         attribs[NSAttributedString.Key.baselineOffset]=4
 
-        let str = NSMutableAttributedString.init(string: "BACK", attributes: attribs as [NSAttributedString.Key : Any])
+        let str = NSMutableAttributedString.init(string: "acuant_back_button".localizedDocString, attributes: attribs as [NSAttributedString.Key : Any])
         backButton.setAttributedTitle(str, for: .normal)
         backButton.addTarget(self, action: #selector(backTapped(_:)), for: .touchUpInside)
         backButton.isOpaque=true
