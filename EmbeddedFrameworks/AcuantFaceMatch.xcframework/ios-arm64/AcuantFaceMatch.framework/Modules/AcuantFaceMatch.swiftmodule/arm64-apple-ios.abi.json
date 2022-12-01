@@ -1206,21 +1206,21 @@
   },
   "ConstValues": [
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantFaceMatch\/AcuantFaceMatch\/FacialMatchResult.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantFaceMatch\/AcuantFaceMatch\/FacialMatchResult.swift",
       "kind": "BooleanLiteral",
       "offset": 259,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantFaceMatch\/AcuantFaceMatch\/FacialMatchResult.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantFaceMatch\/AcuantFaceMatch\/FacialMatchResult.swift",
       "kind": "IntegerLiteral",
       "offset": 339,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantFaceMatch\/AcuantFaceMatch\/FacialMatchData.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantFaceMatch\/AcuantFaceMatch\/FacialMatchData.swift",
       "kind": "StringLiteral",
       "offset": 188,
       "length": 15,

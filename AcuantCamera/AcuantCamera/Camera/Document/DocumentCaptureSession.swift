@@ -25,7 +25,7 @@ import AcuantImagePreparation
     private let DEFAULT_FRAME_THRESHOLD = 1
     private let FAST_FRAME_THRESHOLD = 3
     private let TOO_SLOW_FOR_AUTO_CAPTURE = 130
-    private let VIDEO_ZOOM_FACTOR = 1.6
+    private let DEFAULT_VIDEO_ZOOM_FACTOR = 1.6
     private var autoCapture = true
     weak private var autoCaptureDelegate: AutoCaptureDelegate?
     private var captureEnabled = true
@@ -121,13 +121,58 @@ import AcuantImagePreparation
            self.captureMetadataOutput.metadataObjectTypes = [.pdf417]
         }
         self.startRunning()
-        try? videoDevice.lockForConfiguration()
-        if videoDevice.maxAvailableVideoZoomFactor >= VIDEO_ZOOM_FACTOR {
-            videoDevice.videoZoomFactor = VIDEO_ZOOM_FACTOR
-        }
-        videoDevice.unlockForConfiguration()
+        applyZoom(captureDevice: videoDevice)
     }
 
+    private func applyZoom(captureDevice: AVCaptureDevice) {
+        if #available(iOS 15.0, *) {
+            let zoomFactor = getRecommendedZoomFactor(captureDevice: captureDevice)
+            try? captureDevice.lockForConfiguration()
+            captureDevice.videoZoomFactor = zoomFactor
+            captureDevice.unlockForConfiguration()
+        } else {
+            try? captureDevice.lockForConfiguration()
+            if captureDevice.maxAvailableVideoZoomFactor >= DEFAULT_VIDEO_ZOOM_FACTOR {
+                captureDevice.videoZoomFactor = DEFAULT_VIDEO_ZOOM_FACTOR
+            }
+            captureDevice.unlockForConfiguration()
+        }
+    }
+
+    @available(iOS 15.0, *)
+    private func getRecommendedZoomFactor(captureDevice: AVCaptureDevice) -> Double {
+        let deviceMinimumFocusDistance = Float(captureDevice.minimumFocusDistance)
+        guard deviceMinimumFocusDistance != -1 else { return DEFAULT_VIDEO_ZOOM_FACTOR }
+
+        let formatDimensions = CMVideoFormatDescriptionGetDimensions(captureDevice.activeFormat.formatDescription)
+        let rectOfInterestWidth = Float(formatDimensions.height) / Float(formatDimensions.width)
+        let deviceFieldOfView = captureDevice.activeFormat.videoFieldOfView
+        let minimumSubjectDistanceForDoc = minimumSubjectDistanceForDoc(fieldOfView: deviceFieldOfView,
+                                                                        minimumDocSizeInMillimeters: 85,
+                                                                        previewFillPercentage: rectOfInterestWidth)
+        var zoomFactor = 0.0
+        if minimumSubjectDistanceForDoc < deviceMinimumFocusDistance {
+            let optimalZoomFactor = Double(deviceMinimumFocusDistance / minimumSubjectDistanceForDoc)
+            if optimalZoomFactor <= captureDevice.maxAvailableVideoZoomFactor  {
+                zoomFactor = optimalZoomFactor
+            }
+        } else if DEFAULT_VIDEO_ZOOM_FACTOR <= captureDevice.maxAvailableVideoZoomFactor {
+            zoomFactor = DEFAULT_VIDEO_ZOOM_FACTOR
+        }
+
+        return zoomFactor
+    }
+    
+    private func minimumSubjectDistanceForDoc(fieldOfView: Float, minimumDocSizeInMillimeters: Float, previewFillPercentage: Float) -> Float {
+        let radians = degreesToRadians(fieldOfView / 2)
+        let filledDocSize = minimumDocSizeInMillimeters / previewFillPercentage
+        return filledDocSize / (2 * tan(radians))
+    }
+    
+    private func degreesToRadians(_ degrees: Float) -> Float {
+        return degrees * Float.pi / 180
+    }
+    
     private func imageFromSampleBuffer(sampleBuffer: CMSampleBuffer) -> UIImage? {
         guard let imageBuffer = CMSampleBufferGetImageBuffer(sampleBuffer) else { return nil }
         let ciImage = CIImage(cvPixelBuffer: imageBuffer)

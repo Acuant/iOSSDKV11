@@ -3,7 +3,7 @@ Pod::Spec.new do |s|
     s.swift_versions = ['5.5.2']
     s.ios.deployment_target = '11.0'
     s.name         = "AcuantiOSSDKV11"
-    s.version      = "11.5.7"
+    s.version      = "11.5.8"
     s.summary      = "Acuant's latest SDK with most advanced image capture technology and optimized user workflow  "
     s.description  = "Acuant's latest SDK with most advanced image capture technology and optimized user workflow.
 

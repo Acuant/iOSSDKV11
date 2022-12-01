@@ -6,7 +6,7 @@
 	<dict>
 		<key>Headers/AcuantCommon-Swift.h</key>
 		<data>
-		RI8X1JTdHcB0vcBIwcDFPsL80dk=
+		zInHtC8YkG2LIft+vnsZZD0AcOY=
 		</data>
 		<key>Headers/AcuantCommons.h</key>
 		<data>
@@ -14,47 +14,47 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		rJjfHeS0zoie0D8N2k/dbBD2bvw=
+		yJsfFIyKS2zLX9Cxqul0I3BjQ9g=
 		</data>
 		<key>Modules/AcuantCommon.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
 		<data>
-		xGdBCWkaYsV5Z+/4Pz3B8oDe9jM=
+		6EwDyp/GfarBi1IU8wW1wqjFECo=
 		</data>
 		<key>Modules/AcuantCommon.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		Dw4dPBXS0SisYGjIn4DWgy+EFIM=
+		L5w88nxgOtR+ulZPJ+nlcXEPDRY=
 		</data>
 		<key>Modules/AcuantCommon.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		J5ALChcvg6I9H3WJvjRUKbDFmRA=
+		lm9bLBpxz5i6qZAJDpM/nHb/pC4=
 		</data>
 		<key>Modules/AcuantCommon.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		Dw4dPBXS0SisYGjIn4DWgy+EFIM=
+		L5w88nxgOtR+ulZPJ+nlcXEPDRY=
 		</data>
 		<key>Modules/AcuantCommon.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		heUHJJkKR6HmNG+RMgcj0bJbLeo=
+		fjVjnMyFfMibZ0tvFF7KrrzzOUA=
 		</data>
 		<key>Modules/AcuantCommon.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<data>
-		xGdBCWkaYsV5Z+/4Pz3B8oDe9jM=
+		6EwDyp/GfarBi1IU8wW1wqjFECo=
 		</data>
 		<key>Modules/AcuantCommon.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		VtpGvvPy4+4bD6yNsxcPdmZPHkc=
+		kbxNdsVSbTxXwwPnHsynEliMkpo=
 		</data>
 		<key>Modules/AcuantCommon.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		L4X1F92BpoJnTGXC507WIONZTkM=
+		2/TCR5e5raKZSIlW0COZp6WIQXs=
 		</data>
 		<key>Modules/AcuantCommon.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		VtpGvvPy4+4bD6yNsxcPdmZPHkc=
+		kbxNdsVSbTxXwwPnHsynEliMkpo=
 		</data>
 		<key>Modules/AcuantCommon.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		r8gVK4ilIHTPlj3AjCQzOuj8c3E=
+		fWsYOoaYXe2t8lRdJMg/5Z5pePU=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -67,7 +67,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			MT7S7qN3F3WxX9Y6V/cBz/T3OaLHIyGzmaw1cB1hj28=
+			TNfb0jsgy6Wc0wlbEobODvJACWrNAUBWGa0InPQjT2A=
 			</data>
 		</dict>
 		<key>Headers/AcuantCommons.h</key>
@@ -81,70 +81,70 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			vPuazbHwgEsturHmKFpE7ahSHTs0RvZPz22rFRCzwr8=
+			M46D6MdNpCGB7yPGGWvCJQJ8ue42m+sKrGAl1WhnRvc=
 			</data>
 		</dict>
 		<key>Modules/AcuantCommon.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			wPPB8qllY3Jfe1IXreSJF1emxGPHCx5fj+LMqR2FLYo=
+			g7SLRWGBBif96OixIx0FwaxRoB+22Wy/IDAbtVd3Sh4=
 			</data>
 		</dict>
 		<key>Modules/AcuantCommon.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			YvjOr3Wo5QFeihIWWilScFNqCm0s3QEb+oZ19kDZxJs=
+			5cgWDwBbqVxQSRzpXVC2HkR0fVgJ+sRXqgxpcjQrObA=
 			</data>
 		</dict>
 		<key>Modules/AcuantCommon.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			wPPB8qllY3Jfe1IXreSJF1emxGPHCx5fj+LMqR2FLYo=
+			g7SLRWGBBif96OixIx0FwaxRoB+22Wy/IDAbtVd3Sh4=
 			</data>
 		</dict>
 		<key>Modules/AcuantCommon.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			IEwDlm+sCbmF7FzTYJBUoN+5L1Q2wngU7x3zU5HBg8Q=
+			Rk3BQDQdIGufjMmkfAxBnfa9HodOht6uADLviNwF5xw=
 			</data>
 		</dict>
 		<key>Modules/AcuantCommon.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			vPuazbHwgEsturHmKFpE7ahSHTs0RvZPz22rFRCzwr8=
+			M46D6MdNpCGB7yPGGWvCJQJ8ue42m+sKrGAl1WhnRvc=
 			</data>
 		</dict>
 		<key>Modules/AcuantCommon.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			vrhfth9IuqeWqddC0t4euMIdvR1KYMfJYwHBTvfF0V4=
+			dSRcRMCavrKEwDs+reuCUkMLRf3nqc597Vw4evlWIX0=
 			</data>
 		</dict>
 		<key>Modules/AcuantCommon.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			zhcX1qAMXfLALHlxl9EZJLOvBZGbfzR184Uhg4JR0B0=
+			bF+I8pt2ZOJc6txeylZetuQiEU4CN0aTWxTqOgS01To=
 			</data>
 		</dict>
 		<key>Modules/AcuantCommon.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			vrhfth9IuqeWqddC0t4euMIdvR1KYMfJYwHBTvfF0V4=
+			dSRcRMCavrKEwDs+reuCUkMLRf3nqc597Vw4evlWIX0=
 			</data>
 		</dict>
 		<key>Modules/AcuantCommon.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			AJJqOgZRptJf554Y53oqQASZ4jRaethwsjHY53FQyvw=
+			CyzHOGyGrbedLp+3ueG7VaL0RlrXFozPHE5s88Rzk8c=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

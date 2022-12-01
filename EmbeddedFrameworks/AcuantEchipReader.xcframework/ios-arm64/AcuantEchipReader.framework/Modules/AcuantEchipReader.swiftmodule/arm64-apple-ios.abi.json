@@ -24298,2744 +24298,2744 @@
   },
   "ConstValues": [
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/AcuantEchipReader\/Ozone\/Enum\/OzoneResultStatus.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/AcuantEchipReader\/Ozone\/Enum\/OzoneResultStatus.swift",
       "kind": "IntegerLiteral",
       "offset": 231,
       "length": 6,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/AcuantEchipReader\/Ozone\/Enum\/OzoneResultStatus.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/AcuantEchipReader\/Ozone\/Enum\/OzoneResultStatus.swift",
       "kind": "IntegerLiteral",
       "offset": 247,
       "length": 7,
       "value": "2"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/AcuantEchipReader\/Ozone\/Enum\/OzoneResultStatus.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/AcuantEchipReader\/Ozone\/Enum\/OzoneResultStatus.swift",
       "kind": "IntegerLiteral",
       "offset": 264,
       "length": 13,
       "value": "3"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/AcuantEchipReader\/Ozone\/Enum\/OzoneResultStatus.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/AcuantEchipReader\/Ozone\/Enum\/OzoneResultStatus.swift",
       "kind": "IntegerLiteral",
       "offset": 231,
       "length": 6,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/AcuantEchipReader\/Ozone\/Enum\/OzoneResultStatus.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/AcuantEchipReader\/Ozone\/Enum\/OzoneResultStatus.swift",
       "kind": "IntegerLiteral",
       "offset": 247,
       "length": 7,
       "value": "2"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/AcuantEchipReader\/Ozone\/Enum\/OzoneResultStatus.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/AcuantEchipReader\/Ozone\/Enum\/OzoneResultStatus.swift",
       "kind": "IntegerLiteral",
       "offset": 264,
       "length": 13,
       "value": "3"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/AcuantEchipReader\/Ozone\/Enum\/OzoneResultStatus.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/AcuantEchipReader\/Ozone\/Enum\/OzoneResultStatus.swift",
       "kind": "IntegerLiteral",
       "offset": 231,
       "length": 6,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/AcuantEchipReader\/Ozone\/Enum\/OzoneResultStatus.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/AcuantEchipReader\/Ozone\/Enum\/OzoneResultStatus.swift",
       "kind": "IntegerLiteral",
       "offset": 247,
       "length": 7,
       "value": "2"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/AcuantEchipReader\/Ozone\/Enum\/OzoneResultStatus.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/AcuantEchipReader\/Ozone\/Enum\/OzoneResultStatus.swift",
       "kind": "IntegerLiteral",
       "offset": 264,
       "length": 13,
       "value": "3"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroupParser.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroupParser.swift",
       "kind": "Array",
       "offset": 187,
       "length": 145,
       "value": "[\"Common\", \"DG1\", \"DG2\", \"DG3\", \"DG4\", \"DG5\", \"DG6\", \"DG7\", \"DG8\", \"DG9\", \"DG10\", \"DG11\", \"DG12\", \"DG13\", \"DG14\", \"DG15\", \"DG16\", \"SecurityData\"]"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroupParser.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroupParser.swift",
       "kind": "Array",
       "offset": 365,
       "length": 108,
       "value": "[0x60, 0x61, 0x75, 0x63, 0x76, 0x65, 0x66, 0x67, 0x68, 0x69, 0x6A, 0x6B, 0x6C, 0x6D, 0x6E, 0x6F, 0x70, 0x77]"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/ActiveAuthenticationInfo.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/ActiveAuthenticationInfo.swift",
       "kind": "StringLiteral",
       "offset": 208,
       "length": 24,
       "value": "\"AcuantEchipReader.ActiveAuthenticationInfo\""
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/DataGroup.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/DataGroup.swift",
       "kind": "Array",
       "offset": 290,
       "length": 2,
       "value": "[]"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/DataGroup.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/DataGroup.swift",
       "kind": "Array",
       "offset": 435,
       "length": 2,
       "value": "[]"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/DataGroup.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/DataGroup.swift",
       "kind": "IntegerLiteral",
       "offset": 457,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/SimpleASN1DumpParser.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/SimpleASN1DumpParser.swift",
       "kind": "IntegerLiteral",
       "offset": 242,
       "length": 2,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/SimpleASN1DumpParser.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/SimpleASN1DumpParser.swift",
       "kind": "IntegerLiteral",
       "offset": 267,
       "length": 2,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/SimpleASN1DumpParser.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/SimpleASN1DumpParser.swift",
       "kind": "IntegerLiteral",
       "offset": 296,
       "length": 2,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/SimpleASN1DumpParser.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/SimpleASN1DumpParser.swift",
       "kind": "IntegerLiteral",
       "offset": 322,
       "length": 2,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/SimpleASN1DumpParser.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/SimpleASN1DumpParser.swift",
       "kind": "StringLiteral",
       "offset": 353,
       "length": 2,
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/SimpleASN1DumpParser.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/SimpleASN1DumpParser.swift",
       "kind": "StringLiteral",
       "offset": 423,
       "length": 2,
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/SimpleASN1DumpParser.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/SimpleASN1DumpParser.swift",
       "kind": "StringLiteral",
       "offset": 499,
       "length": 2,
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/SimpleASN1DumpParser.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/SimpleASN1DumpParser.swift",
       "kind": "StringLiteral",
       "offset": 526,
       "length": 2,
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/DataGroup2.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/DataGroup2.swift",
       "kind": "IntegerLiteral",
       "offset": 243,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/DataGroup2.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/DataGroup2.swift",
       "kind": "IntegerLiteral",
       "offset": 295,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/DataGroup2.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/DataGroup2.swift",
       "kind": "IntegerLiteral",
       "offset": 348,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/DataGroup2.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/DataGroup2.swift",
       "kind": "IntegerLiteral",
       "offset": 407,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/DataGroup2.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/DataGroup2.swift",
       "kind": "IntegerLiteral",
       "offset": 468,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/DataGroup2.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/DataGroup2.swift",
       "kind": "IntegerLiteral",
       "offset": 522,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/DataGroup2.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/DataGroup2.swift",
       "kind": "IntegerLiteral",
       "offset": 567,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/DataGroup2.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/DataGroup2.swift",
       "kind": "IntegerLiteral",
       "offset": 614,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/DataGroup2.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/DataGroup2.swift",
       "kind": "IntegerLiteral",
       "offset": 662,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/DataGroup2.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/DataGroup2.swift",
       "kind": "IntegerLiteral",
       "offset": 712,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/DataGroup2.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/DataGroup2.swift",
       "kind": "IntegerLiteral",
       "offset": 761,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/DataGroup2.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/DataGroup2.swift",
       "kind": "IntegerLiteral",
       "offset": 809,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/DataGroup2.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/DataGroup2.swift",
       "kind": "IntegerLiteral",
       "offset": 868,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/DataGroup2.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/DataGroup2.swift",
       "kind": "IntegerLiteral",
       "offset": 920,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/DataGroup2.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/DataGroup2.swift",
       "kind": "IntegerLiteral",
       "offset": 972,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/DataGroup2.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/DataGroup2.swift",
       "kind": "IntegerLiteral",
       "offset": 1021,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/DataGroup2.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/DataGroup2.swift",
       "kind": "IntegerLiteral",
       "offset": 1071,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/DataGroup2.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/DataGroup2.swift",
       "kind": "IntegerLiteral",
       "offset": 1125,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/DataGroup2.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/DataGroup2.swift",
       "kind": "IntegerLiteral",
       "offset": 1174,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/DataGroup2.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/DataGroup2.swift",
       "kind": "IntegerLiteral",
       "offset": 1223,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/DataGroup2.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/DataGroup2.swift",
       "kind": "IntegerLiteral",
       "offset": 1269,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/DataGroup2.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/DataGroup2.swift",
       "kind": "Array",
       "offset": 1321,
       "length": 2,
       "value": "[]"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/AES_3DES_DESEncryption.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/AES_3DES_DESEncryption.swift",
       "kind": "IntegerLiteral",
       "offset": 9295,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/AES_3DES_DESEncryption.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/AES_3DES_DESEncryption.swift",
       "kind": "IntegerLiteral",
       "offset": 11071,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/ChipAuthenticationInfo.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/ChipAuthenticationInfo.swift",
       "kind": "StringLiteral",
       "offset": 171,
       "length": 22,
       "value": "\"AcuantEchipReader.ChipAuthenticationInfo\""
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/NFCPassportModel.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/NFCPassportModel.swift",
       "kind": "StringLiteral",
       "offset": 416,
       "length": 6,
       "value": "\"5F03\""
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/NFCPassportModel.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/NFCPassportModel.swift",
       "kind": "StringLiteral",
       "offset": 434,
       "length": 3,
       "value": "\"?\""
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/NFCPassportModel.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/NFCPassportModel.swift",
       "kind": "StringLiteral",
       "offset": 543,
       "length": 6,
       "value": "\"5F03\""
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/NFCPassportModel.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/NFCPassportModel.swift",
       "kind": "StringLiteral",
       "offset": 560,
       "length": 3,
       "value": "\"?\""
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/NFCPassportModel.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/NFCPassportModel.swift",
       "kind": "StringLiteral",
       "offset": 661,
       "length": 4,
       "value": "\"53\""
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/NFCPassportModel.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/NFCPassportModel.swift",
       "kind": "StringLiteral",
       "offset": 670,
       "length": 3,
       "value": "\"?\""
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/NFCPassportModel.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/NFCPassportModel.swift",
       "kind": "StringLiteral",
       "offset": 700,
       "length": 3,
       "value": "\"<\""
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/NFCPassportModel.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/NFCPassportModel.swift",
       "kind": "StringLiteral",
       "offset": 711,
       "length": 2,
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/NFCPassportModel.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/NFCPassportModel.swift",
       "kind": "StringLiteral",
       "offset": 811,
       "length": 4,
       "value": "\"5A\""
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/NFCPassportModel.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/NFCPassportModel.swift",
       "kind": "StringLiteral",
       "offset": 820,
       "length": 3,
       "value": "\"?\""
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/NFCPassportModel.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/NFCPassportModel.swift",
       "kind": "StringLiteral",
       "offset": 850,
       "length": 3,
       "value": "\"<\""
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/NFCPassportModel.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/NFCPassportModel.swift",
       "kind": "StringLiteral",
       "offset": 861,
       "length": 2,
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/NFCPassportModel.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/NFCPassportModel.swift",
       "kind": "StringLiteral",
       "offset": 962,
       "length": 6,
       "value": "\"5F28\""
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/NFCPassportModel.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/NFCPassportModel.swift",
       "kind": "StringLiteral",
       "offset": 973,
       "length": 3,
       "value": "\"?\""
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/NFCPassportModel.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/NFCPassportModel.swift",
       "kind": "StringLiteral",
       "offset": 1075,
       "length": 4,
       "value": "\"59\""
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/NFCPassportModel.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/NFCPassportModel.swift",
       "kind": "StringLiteral",
       "offset": 1084,
       "length": 3,
       "value": "\"?\""
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/NFCPassportModel.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/NFCPassportModel.swift",
       "kind": "StringLiteral",
       "offset": 1179,
       "length": 6,
       "value": "\"5F57\""
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/NFCPassportModel.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/NFCPassportModel.swift",
       "kind": "StringLiteral",
       "offset": 1190,
       "length": 3,
       "value": "\"?\""
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/NFCPassportModel.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/NFCPassportModel.swift",
       "kind": "StringLiteral",
       "offset": 1280,
       "length": 6,
       "value": "\"5F35\""
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/NFCPassportModel.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/NFCPassportModel.swift",
       "kind": "StringLiteral",
       "offset": 1291,
       "length": 3,
       "value": "\"?\""
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/NFCPassportModel.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/NFCPassportModel.swift",
       "kind": "StringLiteral",
       "offset": 1386,
       "length": 6,
       "value": "\"5F2C\""
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/NFCPassportModel.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/NFCPassportModel.swift",
       "kind": "StringLiteral",
       "offset": 1397,
       "length": 3,
       "value": "\"?\""
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/NFCPassportModel.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/NFCPassportModel.swift",
       "kind": "StringLiteral",
       "offset": 1504,
       "length": 4,
       "value": "\"5B\""
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/NFCPassportModel.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/NFCPassportModel.swift",
       "kind": "StringLiteral",
       "offset": 1513,
       "length": 3,
       "value": "\"?\""
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/NFCPassportModel.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/NFCPassportModel.swift",
       "kind": "StringLiteral",
       "offset": 1542,
       "length": 4,
       "value": "\"<<\""
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/NFCPassportModel.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/NFCPassportModel.swift",
       "kind": "IntegerLiteral",
       "offset": 1569,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/NFCPassportModel.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/NFCPassportModel.swift",
       "kind": "StringLiteral",
       "offset": 1597,
       "length": 3,
       "value": "\"<\""
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/NFCPassportModel.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/NFCPassportModel.swift",
       "kind": "StringLiteral",
       "offset": 1608,
       "length": 3,
       "value": "\" \""
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/NFCPassportModel.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/NFCPassportModel.swift",
       "kind": "StringLiteral",
       "offset": 1726,
       "length": 4,
       "value": "\"5B\""
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/NFCPassportModel.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/NFCPassportModel.swift",
       "kind": "StringLiteral",
       "offset": 1735,
       "length": 3,
       "value": "\"?\""
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/NFCPassportModel.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/NFCPassportModel.swift",
       "kind": "StringLiteral",
       "offset": 1764,
       "length": 4,
       "value": "\"<<\""
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/NFCPassportModel.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/NFCPassportModel.swift",
       "kind": "StringLiteral",
       "offset": 1789,
       "length": 2,
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/NFCPassportModel.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/NFCPassportModel.swift",
       "kind": "IntegerLiteral",
       "offset": 1809,
       "length": 1,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/NFCPassportModel.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/NFCPassportModel.swift",
       "kind": "StringLiteral",
       "offset": 1884,
       "length": 3,
       "value": "\"<\""
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/NFCPassportModel.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/NFCPassportModel.swift",
       "kind": "StringLiteral",
       "offset": 1895,
       "length": 3,
       "value": "\" \""
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/NFCPassportModel.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/NFCPassportModel.swift",
       "kind": "StringLiteral",
       "offset": 1986,
       "length": 3,
       "value": "\" \""
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/NFCPassportModel.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/NFCPassportModel.swift",
       "kind": "StringLiteral",
       "offset": 2180,
       "length": 6,
       "value": "\"5F1F\""
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/NFCPassportModel.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/NFCPassportModel.swift",
       "kind": "StringLiteral",
       "offset": 2191,
       "length": 11,
       "value": "\"NOT FOUND\""
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/NFCPassportModel.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/NFCPassportModel.swift",
       "kind": "StringLiteral",
       "offset": 3453,
       "length": 9,
       "value": "\"Unknown\""
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/NFCPassportModel.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/NFCPassportModel.swift",
       "kind": "Array",
       "offset": 3643,
       "length": 2,
       "value": "[]"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/NFCPassportModel.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/NFCPassportModel.swift",
       "kind": "Dictionary",
       "offset": 3866,
       "length": 3,
       "value": "[]"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/NFCPassportModel.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/NFCPassportModel.swift",
       "kind": "BooleanLiteral",
       "offset": 4323,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/NFCPassportModel.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/NFCPassportModel.swift",
       "kind": "BooleanLiteral",
       "offset": 4401,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/NFCPassportModel.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/NFCPassportModel.swift",
       "kind": "BooleanLiteral",
       "offset": 4468,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/NFCPassportModel.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/NFCPassportModel.swift",
       "kind": "BooleanLiteral",
       "offset": 4538,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/NFCPassportModel.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/NFCPassportModel.swift",
       "kind": "Array",
       "offset": 4614,
       "length": 2,
       "value": "[]"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/NFCPassportModel.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/NFCPassportModel.swift",
       "kind": "Array",
       "offset": 4687,
       "length": 2,
       "value": "[]"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/NFCPassportModel.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/NFCPassportModel.swift",
       "kind": "Array",
       "offset": 4749,
       "length": 2,
       "value": "[]"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/NFCPassportModel.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/NFCPassportModel.swift",
       "kind": "Dictionary",
       "offset": 6313,
       "length": 3,
       "value": "[]"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/NFCPassportModel.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/NFCPassportModel.swift",
       "kind": "BooleanLiteral",
       "offset": 8454,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/NFCPassportModel.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/NFCPassportModel.swift",
       "kind": "BooleanLiteral",
       "offset": 10982,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/X509Wrapper.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/X509Wrapper.swift",
       "kind": "StringLiteral",
       "offset": 344,
       "length": 25,
       "value": "\"Certificate fingerprint\""
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/X509Wrapper.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/X509Wrapper.swift",
       "kind": "StringLiteral",
       "offset": 392,
       "length": 8,
       "value": "\"Issuer\""
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/X509Wrapper.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/X509Wrapper.swift",
       "kind": "StringLiteral",
       "offset": 424,
       "length": 9,
       "value": "\"Subject\""
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/X509Wrapper.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/X509Wrapper.swift",
       "kind": "StringLiteral",
       "offset": 458,
       "length": 15,
       "value": "\"Serial number\""
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/X509Wrapper.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/X509Wrapper.swift",
       "kind": "StringLiteral",
       "offset": 504,
       "length": 21,
       "value": "\"Signature algorithm\""
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/X509Wrapper.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/X509Wrapper.swift",
       "kind": "StringLiteral",
       "offset": 556,
       "length": 22,
       "value": "\"Public key algorithm\""
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/X509Wrapper.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/X509Wrapper.swift",
       "kind": "StringLiteral",
       "offset": 600,
       "length": 12,
       "value": "\"Valid from\""
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/X509Wrapper.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/X509Wrapper.swift",
       "kind": "StringLiteral",
       "offset": 633,
       "length": 10,
       "value": "\"Valid to\""
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/X509Wrapper.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/X509Wrapper.swift",
       "kind": "StringLiteral",
       "offset": 344,
       "length": 25,
       "value": "\"Certificate fingerprint\""
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/X509Wrapper.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/X509Wrapper.swift",
       "kind": "StringLiteral",
       "offset": 392,
       "length": 8,
       "value": "\"Issuer\""
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/X509Wrapper.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/X509Wrapper.swift",
       "kind": "StringLiteral",
       "offset": 424,
       "length": 9,
       "value": "\"Subject\""
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/X509Wrapper.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/X509Wrapper.swift",
       "kind": "StringLiteral",
       "offset": 458,
       "length": 15,
       "value": "\"Serial number\""
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/X509Wrapper.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/X509Wrapper.swift",
       "kind": "StringLiteral",
       "offset": 504,
       "length": 21,
       "value": "\"Signature algorithm\""
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/X509Wrapper.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/X509Wrapper.swift",
       "kind": "StringLiteral",
       "offset": 556,
       "length": 22,
       "value": "\"Public key algorithm\""
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/X509Wrapper.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/X509Wrapper.swift",
       "kind": "StringLiteral",
       "offset": 600,
       "length": 12,
       "value": "\"Valid from\""
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/X509Wrapper.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/X509Wrapper.swift",
       "kind": "StringLiteral",
       "offset": 633,
       "length": 10,
       "value": "\"Valid to\""
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/AcuantEchipReader\/Ozone\/Service\/OzoneService.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/AcuantEchipReader\/Ozone\/Service\/OzoneService.swift",
       "kind": "StringLiteral",
       "offset": 265,
       "length": 12,
       "value": "\"AcuantEchipReader.OzoneService\""
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/Utils.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/Utils.swift",
       "kind": "Array",
       "offset": 1116,
       "length": 2,
       "value": "[]"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/Utils.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/Utils.swift",
       "kind": "BooleanLiteral",
       "offset": 1265,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/Utils.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/Utils.swift",
       "kind": "IntegerLiteral",
       "offset": 2483,
       "length": 1,
       "value": "2"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/DataGroup1.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/DataGroup1.swift",
       "kind": "Dictionary",
       "offset": 428,
       "length": 3,
       "value": "[]"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/AcuantEchipReader\/Enum\/AcuantDataGroupId.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/AcuantEchipReader\/Enum\/AcuantDataGroupId.swift",
       "kind": "IntegerLiteral",
       "offset": 233,
       "length": 3,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/AcuantEchipReader\/Enum\/AcuantDataGroupId.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/AcuantEchipReader\/Enum\/AcuantDataGroupId.swift",
       "kind": "IntegerLiteral",
       "offset": 246,
       "length": 3,
       "value": "2"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/AcuantEchipReader\/Enum\/AcuantDataGroupId.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/AcuantEchipReader\/Enum\/AcuantDataGroupId.swift",
       "kind": "IntegerLiteral",
       "offset": 259,
       "length": 3,
       "value": "3"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/AcuantEchipReader\/Enum\/AcuantDataGroupId.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/AcuantEchipReader\/Enum\/AcuantDataGroupId.swift",
       "kind": "IntegerLiteral",
       "offset": 272,
       "length": 3,
       "value": "4"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/AcuantEchipReader\/Enum\/AcuantDataGroupId.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/AcuantEchipReader\/Enum\/AcuantDataGroupId.swift",
       "kind": "IntegerLiteral",
       "offset": 285,
       "length": 3,
       "value": "5"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/AcuantEchipReader\/Enum\/AcuantDataGroupId.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/AcuantEchipReader\/Enum\/AcuantDataGroupId.swift",
       "kind": "IntegerLiteral",
       "offset": 298,
       "length": 3,
       "value": "6"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/AcuantEchipReader\/Enum\/AcuantDataGroupId.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/AcuantEchipReader\/Enum\/AcuantDataGroupId.swift",
       "kind": "IntegerLiteral",
       "offset": 311,
       "length": 3,
       "value": "7"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/AcuantEchipReader\/Enum\/AcuantDataGroupId.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/AcuantEchipReader\/Enum\/AcuantDataGroupId.swift",
       "kind": "IntegerLiteral",
       "offset": 324,
       "length": 3,
       "value": "8"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/AcuantEchipReader\/Enum\/AcuantDataGroupId.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/AcuantEchipReader\/Enum\/AcuantDataGroupId.swift",
       "kind": "IntegerLiteral",
       "offset": 337,
       "length": 3,
       "value": "9"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/AcuantEchipReader\/Enum\/AcuantDataGroupId.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/AcuantEchipReader\/Enum\/AcuantDataGroupId.swift",
       "kind": "IntegerLiteral",
       "offset": 350,
       "length": 4,
       "value": "10"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/AcuantEchipReader\/Enum\/AcuantDataGroupId.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/AcuantEchipReader\/Enum\/AcuantDataGroupId.swift",
       "kind": "IntegerLiteral",
       "offset": 364,
       "length": 4,
       "value": "11"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/AcuantEchipReader\/Enum\/AcuantDataGroupId.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/AcuantEchipReader\/Enum\/AcuantDataGroupId.swift",
       "kind": "IntegerLiteral",
       "offset": 378,
       "length": 4,
       "value": "12"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/AcuantEchipReader\/Enum\/AcuantDataGroupId.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/AcuantEchipReader\/Enum\/AcuantDataGroupId.swift",
       "kind": "IntegerLiteral",
       "offset": 392,
       "length": 4,
       "value": "13"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/AcuantEchipReader\/Enum\/AcuantDataGroupId.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/AcuantEchipReader\/Enum\/AcuantDataGroupId.swift",
       "kind": "IntegerLiteral",
       "offset": 406,
       "length": 4,
       "value": "14"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/AcuantEchipReader\/Enum\/AcuantDataGroupId.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/AcuantEchipReader\/Enum\/AcuantDataGroupId.swift",
       "kind": "IntegerLiteral",
       "offset": 420,
       "length": 4,
       "value": "15"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/AcuantEchipReader\/Enum\/AcuantDataGroupId.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/AcuantEchipReader\/Enum\/AcuantDataGroupId.swift",
       "kind": "IntegerLiteral",
       "offset": 434,
       "length": 4,
       "value": "16"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/AcuantEchipReader\/Enum\/AcuantDataGroupId.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/AcuantEchipReader\/Enum\/AcuantDataGroupId.swift",
       "kind": "IntegerLiteral",
       "offset": 448,
       "length": 3,
       "value": "17"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/AcuantEchipReader\/Enum\/AcuantDataGroupId.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/AcuantEchipReader\/Enum\/AcuantDataGroupId.swift",
       "kind": "IntegerLiteral",
       "offset": 461,
       "length": 7,
       "value": "18"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/AcuantEchipReader\/Enum\/AcuantDataGroupId.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/AcuantEchipReader\/Enum\/AcuantDataGroupId.swift",
       "kind": "IntegerLiteral",
       "offset": 233,
       "length": 3,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/AcuantEchipReader\/Enum\/AcuantDataGroupId.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/AcuantEchipReader\/Enum\/AcuantDataGroupId.swift",
       "kind": "IntegerLiteral",
       "offset": 246,
       "length": 3,
       "value": "2"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/AcuantEchipReader\/Enum\/AcuantDataGroupId.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/AcuantEchipReader\/Enum\/AcuantDataGroupId.swift",
       "kind": "IntegerLiteral",
       "offset": 259,
       "length": 3,
       "value": "3"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/AcuantEchipReader\/Enum\/AcuantDataGroupId.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/AcuantEchipReader\/Enum\/AcuantDataGroupId.swift",
       "kind": "IntegerLiteral",
       "offset": 272,
       "length": 3,
       "value": "4"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/AcuantEchipReader\/Enum\/AcuantDataGroupId.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/AcuantEchipReader\/Enum\/AcuantDataGroupId.swift",
       "kind": "IntegerLiteral",
       "offset": 285,
       "length": 3,
       "value": "5"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/AcuantEchipReader\/Enum\/AcuantDataGroupId.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/AcuantEchipReader\/Enum\/AcuantDataGroupId.swift",
       "kind": "IntegerLiteral",
       "offset": 298,
       "length": 3,
       "value": "6"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/AcuantEchipReader\/Enum\/AcuantDataGroupId.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/AcuantEchipReader\/Enum\/AcuantDataGroupId.swift",
       "kind": "IntegerLiteral",
       "offset": 311,
       "length": 3,
       "value": "7"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/AcuantEchipReader\/Enum\/AcuantDataGroupId.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/AcuantEchipReader\/Enum\/AcuantDataGroupId.swift",
       "kind": "IntegerLiteral",
       "offset": 324,
       "length": 3,
       "value": "8"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/AcuantEchipReader\/Enum\/AcuantDataGroupId.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/AcuantEchipReader\/Enum\/AcuantDataGroupId.swift",
       "kind": "IntegerLiteral",
       "offset": 337,
       "length": 3,
       "value": "9"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/AcuantEchipReader\/Enum\/AcuantDataGroupId.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/AcuantEchipReader\/Enum\/AcuantDataGroupId.swift",
       "kind": "IntegerLiteral",
       "offset": 350,
       "length": 4,
       "value": "10"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/AcuantEchipReader\/Enum\/AcuantDataGroupId.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/AcuantEchipReader\/Enum\/AcuantDataGroupId.swift",
       "kind": "IntegerLiteral",
       "offset": 364,
       "length": 4,
       "value": "11"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/AcuantEchipReader\/Enum\/AcuantDataGroupId.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/AcuantEchipReader\/Enum\/AcuantDataGroupId.swift",
       "kind": "IntegerLiteral",
       "offset": 378,
       "length": 4,
       "value": "12"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/AcuantEchipReader\/Enum\/AcuantDataGroupId.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/AcuantEchipReader\/Enum\/AcuantDataGroupId.swift",
       "kind": "IntegerLiteral",
       "offset": 392,
       "length": 4,
       "value": "13"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/AcuantEchipReader\/Enum\/AcuantDataGroupId.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/AcuantEchipReader\/Enum\/AcuantDataGroupId.swift",
       "kind": "IntegerLiteral",
       "offset": 406,
       "length": 4,
       "value": "14"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/AcuantEchipReader\/Enum\/AcuantDataGroupId.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/AcuantEchipReader\/Enum\/AcuantDataGroupId.swift",
       "kind": "IntegerLiteral",
       "offset": 420,
       "length": 4,
       "value": "15"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/AcuantEchipReader\/Enum\/AcuantDataGroupId.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/AcuantEchipReader\/Enum\/AcuantDataGroupId.swift",
       "kind": "IntegerLiteral",
       "offset": 434,
       "length": 4,
       "value": "16"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/AcuantEchipReader\/Enum\/AcuantDataGroupId.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/AcuantEchipReader\/Enum\/AcuantDataGroupId.swift",
       "kind": "IntegerLiteral",
       "offset": 448,
       "length": 3,
       "value": "17"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/AcuantEchipReader\/Enum\/AcuantDataGroupId.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/AcuantEchipReader\/Enum\/AcuantDataGroupId.swift",
       "kind": "IntegerLiteral",
       "offset": 461,
       "length": 7,
       "value": "18"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/AcuantEchipReader\/Enum\/AcuantDataGroupId.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/AcuantEchipReader\/Enum\/AcuantDataGroupId.swift",
       "kind": "IntegerLiteral",
       "offset": 233,
       "length": 3,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/AcuantEchipReader\/Enum\/AcuantDataGroupId.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/AcuantEchipReader\/Enum\/AcuantDataGroupId.swift",
       "kind": "IntegerLiteral",
       "offset": 246,
       "length": 3,
       "value": "2"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/AcuantEchipReader\/Enum\/AcuantDataGroupId.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/AcuantEchipReader\/Enum\/AcuantDataGroupId.swift",
       "kind": "IntegerLiteral",
       "offset": 259,
       "length": 3,
       "value": "3"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/AcuantEchipReader\/Enum\/AcuantDataGroupId.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/AcuantEchipReader\/Enum\/AcuantDataGroupId.swift",
       "kind": "IntegerLiteral",
       "offset": 272,
       "length": 3,
       "value": "4"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/AcuantEchipReader\/Enum\/AcuantDataGroupId.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/AcuantEchipReader\/Enum\/AcuantDataGroupId.swift",
       "kind": "IntegerLiteral",
       "offset": 285,
       "length": 3,
       "value": "5"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/AcuantEchipReader\/Enum\/AcuantDataGroupId.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/AcuantEchipReader\/Enum\/AcuantDataGroupId.swift",
       "kind": "IntegerLiteral",
       "offset": 298,
       "length": 3,
       "value": "6"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/AcuantEchipReader\/Enum\/AcuantDataGroupId.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/AcuantEchipReader\/Enum\/AcuantDataGroupId.swift",
       "kind": "IntegerLiteral",
       "offset": 311,
       "length": 3,
       "value": "7"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/AcuantEchipReader\/Enum\/AcuantDataGroupId.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/AcuantEchipReader\/Enum\/AcuantDataGroupId.swift",
       "kind": "IntegerLiteral",
       "offset": 324,
       "length": 3,
       "value": "8"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/AcuantEchipReader\/Enum\/AcuantDataGroupId.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/AcuantEchipReader\/Enum\/AcuantDataGroupId.swift",
       "kind": "IntegerLiteral",
       "offset": 337,
       "length": 3,
       "value": "9"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/AcuantEchipReader\/Enum\/AcuantDataGroupId.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/AcuantEchipReader\/Enum\/AcuantDataGroupId.swift",
       "kind": "IntegerLiteral",
       "offset": 350,
       "length": 4,
       "value": "10"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/AcuantEchipReader\/Enum\/AcuantDataGroupId.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/AcuantEchipReader\/Enum\/AcuantDataGroupId.swift",
       "kind": "IntegerLiteral",
       "offset": 364,
       "length": 4,
       "value": "11"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/AcuantEchipReader\/Enum\/AcuantDataGroupId.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/AcuantEchipReader\/Enum\/AcuantDataGroupId.swift",
       "kind": "IntegerLiteral",
       "offset": 378,
       "length": 4,
       "value": "12"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/AcuantEchipReader\/Enum\/AcuantDataGroupId.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/AcuantEchipReader\/Enum\/AcuantDataGroupId.swift",
       "kind": "IntegerLiteral",
       "offset": 392,
       "length": 4,
       "value": "13"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/AcuantEchipReader\/Enum\/AcuantDataGroupId.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/AcuantEchipReader\/Enum\/AcuantDataGroupId.swift",
       "kind": "IntegerLiteral",
       "offset": 406,
       "length": 4,
       "value": "14"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/AcuantEchipReader\/Enum\/AcuantDataGroupId.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/AcuantEchipReader\/Enum\/AcuantDataGroupId.swift",
       "kind": "IntegerLiteral",
       "offset": 420,
       "length": 4,
       "value": "15"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/AcuantEchipReader\/Enum\/AcuantDataGroupId.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/AcuantEchipReader\/Enum\/AcuantDataGroupId.swift",
       "kind": "IntegerLiteral",
       "offset": 434,
       "length": 4,
       "value": "16"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/AcuantEchipReader\/Enum\/AcuantDataGroupId.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/AcuantEchipReader\/Enum\/AcuantDataGroupId.swift",
       "kind": "IntegerLiteral",
       "offset": 448,
       "length": 3,
       "value": "17"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/AcuantEchipReader\/Enum\/AcuantDataGroupId.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/AcuantEchipReader\/Enum\/AcuantDataGroupId.swift",
       "kind": "IntegerLiteral",
       "offset": 461,
       "length": 7,
       "value": "18"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/BACHandler.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/BACHandler.swift",
       "kind": "Array",
       "offset": 258,
       "length": 9,
       "value": "[0, 0, 0, 1]"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/BACHandler.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/BACHandler.swift",
       "kind": "Array",
       "offset": 293,
       "length": 9,
       "value": "[0, 0, 0, 2]"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/BACHandler.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/BACHandler.swift",
       "kind": "Array",
       "offset": 341,
       "length": 2,
       "value": "[]"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/BACHandler.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/BACHandler.swift",
       "kind": "Array",
       "offset": 377,
       "length": 2,
       "value": "[]"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/BACHandler.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/BACHandler.swift",
       "kind": "Array",
       "offset": 409,
       "length": 2,
       "value": "[]"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/BACHandler.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/BACHandler.swift",
       "kind": "Array",
       "offset": 440,
       "length": 2,
       "value": "[]"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/BACHandler.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/BACHandler.swift",
       "kind": "Array",
       "offset": 475,
       "length": 2,
       "value": "[]"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/PACEInfo.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/PACEInfo.swift",
       "kind": "IntegerLiteral",
       "offset": 450,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/PACEInfo.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/PACEInfo.swift",
       "kind": "IntegerLiteral",
       "offset": 498,
       "length": 1,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/PACEInfo.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/PACEInfo.swift",
       "kind": "IntegerLiteral",
       "offset": 546,
       "length": 1,
       "value": "2"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/PACEInfo.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/PACEInfo.swift",
       "kind": "IntegerLiteral",
       "offset": 598,
       "length": 1,
       "value": "8"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/PACEInfo.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/PACEInfo.swift",
       "kind": "IntegerLiteral",
       "offset": 655,
       "length": 1,
       "value": "9"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/PACEInfo.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/PACEInfo.swift",
       "kind": "IntegerLiteral",
       "offset": 707,
       "length": 2,
       "value": "10"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/PACEInfo.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/PACEInfo.swift",
       "kind": "IntegerLiteral",
       "offset": 765,
       "length": 2,
       "value": "11"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/PACEInfo.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/PACEInfo.swift",
       "kind": "IntegerLiteral",
       "offset": 818,
       "length": 2,
       "value": "12"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/PACEInfo.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/PACEInfo.swift",
       "kind": "IntegerLiteral",
       "offset": 876,
       "length": 2,
       "value": "13"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/PACEInfo.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/PACEInfo.swift",
       "kind": "IntegerLiteral",
       "offset": 934,
       "length": 2,
       "value": "14"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/PACEInfo.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/PACEInfo.swift",
       "kind": "IntegerLiteral",
       "offset": 987,
       "length": 2,
       "value": "15"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/PACEInfo.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/PACEInfo.swift",
       "kind": "IntegerLiteral",
       "offset": 1045,
       "length": 2,
       "value": "16"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/PACEInfo.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/PACEInfo.swift",
       "kind": "IntegerLiteral",
       "offset": 1103,
       "length": 2,
       "value": "17"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/PACEInfo.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/PACEInfo.swift",
       "kind": "IntegerLiteral",
       "offset": 1156,
       "length": 2,
       "value": "18"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/PACEInfo.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/PACEInfo.swift",
       "kind": "StringLiteral",
       "offset": 316,
       "length": 8,
       "value": "\"AcuantEchipReader.PACEInfo\""
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/Logging.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/Logging.swift",
       "kind": "IntegerLiteral",
       "offset": 279,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/Logging.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/Logging.swift",
       "kind": "IntegerLiteral",
       "offset": 298,
       "length": 1,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/Logging.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/Logging.swift",
       "kind": "IntegerLiteral",
       "offset": 316,
       "length": 1,
       "value": "2"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/Logging.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/Logging.swift",
       "kind": "IntegerLiteral",
       "offset": 337,
       "length": 1,
       "value": "3"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/Logging.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/Logging.swift",
       "kind": "IntegerLiteral",
       "offset": 356,
       "length": 1,
       "value": "4"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/Logging.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/Logging.swift",
       "kind": "IntegerLiteral",
       "offset": 279,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/Logging.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/Logging.swift",
       "kind": "IntegerLiteral",
       "offset": 298,
       "length": 1,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/Logging.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/Logging.swift",
       "kind": "IntegerLiteral",
       "offset": 316,
       "length": 1,
       "value": "2"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/Logging.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/Logging.swift",
       "kind": "IntegerLiteral",
       "offset": 337,
       "length": 1,
       "value": "3"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/Logging.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/Logging.swift",
       "kind": "IntegerLiteral",
       "offset": 356,
       "length": 1,
       "value": "4"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/Logging.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/Logging.swift",
       "kind": "IntegerLiteral",
       "offset": 279,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/Logging.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/Logging.swift",
       "kind": "IntegerLiteral",
       "offset": 298,
       "length": 1,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/Logging.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/Logging.swift",
       "kind": "IntegerLiteral",
       "offset": 316,
       "length": 1,
       "value": "2"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/Logging.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/Logging.swift",
       "kind": "IntegerLiteral",
       "offset": 337,
       "length": 1,
       "value": "3"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/Logging.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/Logging.swift",
       "kind": "IntegerLiteral",
       "offset": 356,
       "length": 1,
       "value": "4"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/Logging.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/Logging.swift",
       "kind": "BooleanLiteral",
       "offset": 464,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/ChipAuthenticationHandler.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/ChipAuthenticationHandler.swift",
       "kind": "IntegerLiteral",
       "offset": 305,
       "length": 4,
       "value": "0x00"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/ChipAuthenticationHandler.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/ChipAuthenticationHandler.swift",
       "kind": "IntegerLiteral",
       "offset": 352,
       "length": 3,
       "value": "0x1"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/ChipAuthenticationHandler.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/ChipAuthenticationHandler.swift",
       "kind": "IntegerLiteral",
       "offset": 398,
       "length": 3,
       "value": "0x2"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/ChipAuthenticationHandler.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/ChipAuthenticationHandler.swift",
       "kind": "IntegerLiteral",
       "offset": 445,
       "length": 3,
       "value": "0x3"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/ChipAuthenticationHandler.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/ChipAuthenticationHandler.swift",
       "kind": "IntegerLiteral",
       "offset": 503,
       "length": 3,
       "value": "224"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/ChipAuthenticationHandler.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/ChipAuthenticationHandler.swift",
       "kind": "BooleanLiteral",
       "offset": 795,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/COM.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/COM.swift",
       "kind": "StringLiteral",
       "offset": 195,
       "length": 9,
       "value": "\"Unknown\""
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/COM.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/COM.swift",
       "kind": "StringLiteral",
       "offset": 259,
       "length": 9,
       "value": "\"Unknown\""
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/COM.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/COM.swift",
       "kind": "Array",
       "offset": 328,
       "length": 2,
       "value": "[]"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/AcuantEchipReader\/Constants\/AcuantCountryDataPageMap.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/AcuantEchipReader\/Constants\/AcuantCountryDataPageMap.swift",
       "kind": "Dictionary",
       "offset": 215,
       "length": 2983,
       "value": "[(\"AIA\", \"back\"), (\"ALB\", \"datapage\"), (\"AND\", \"back or datapage\"), (\"ARE\", \"back\"), (\"ARG\", \"back\"), (\"ARM\", \"back\"), (\"ATG\", \"back\"), (\"AUS\", \"pages 17\/18 or 23\/24\"), (\"AUT\", \"back\"), (\"AZE\", \"datapage\"), (\"BDI\", \"datapage\"), (\"BEL\", \"back\"), (\"BRG\", \"back\"), (\"BHR\", \"unknown\"), (\"BHS\", \"back or datapage\"), (\"BIH\", \"back\"), (\"BMU\", \"back\"), (\"BOL\", \"back\"), (\"BRA\", \"back\"), (\"BRN\", \"datapage\"), (\"BWA\", \"back\"), (\"CAN\", \"back\"), (\"CHE\", \"front\"), (\"CHL\", \"datapage\"), (\"CHN\", \"back\"), (\"CIV\", \"back\"), (\"CMR\", \"back\"), (\"COD\", \"back\"), (\"COG\", \"back\"), (\"COL\", \"datapage\"), (\"COM\", \"back\"), (\"CPV\", \"back\"), (\"CYM\", \"back\"), (\"CYP\", \"front\"), (\"CZE\", \"datapage\"), (\"DEU\", \"front or datapage\"), (\"DE\", \"front or datapage\"), (\"D\", \"front or datapage\"), (\"DNK\", \"datapage\"), (\"DZA\", \"back\"), (\"ESP\", \"back\"), (\"EST\", \"back\"), (\"EUE\", \"back\"), (\"FIN\", \"datapage\"), (\"FRA\", \"unknown\"), (\"GAB\", \"back\"), (\"GBR\", \"back or datapage\"), (\"GEO\", \"unknown\"), (\"GIB\", \"back\"), (\"GIN\", \"front\"), (\"GMB\", \"back\"), (\"GRC\", \"back\"), (\"GRD\", \"back\"), (\"HRV\", \"datapage\"), (\"HUN\", \"unknown\"), (\"IDN\", \"back\"), (\"IRL\", \"back or datapage\"), (\"IRN\", \"back\"), (\"ISL\", \"back\"), (\"ISR\", \"front\"), (\"ITA\", \"back\"), (\"JPN\", \"unknown\"), (\"KAZ\", \"back\"), (\"KEN\", \"back\"), (\"KGZ\", \"unknown\"), (\"KHM\", \"front\"), (\"KNA\", \"back\"), (\"KOR\", \"back\"), (\"KWT\", \"back\"), (\"LAO\", \"back\"), (\"LBN\", \"back\"), (\"LIE\", \"back\"), (\"LSO\", \"back\"), (\"LTU\", \"datapage or back\"), (\"LUX\", \"datapage or back\"), (\"LVA\", \"datapage\"), (\"MAR\", \"back\"), (\"MCO\", \"back\"), (\"MDA\", \"front or back\"), (\"MDG\", \"back\"), (\"MDV\", \"back\"), (\"MKD\", \"datapage\"), (\"MLT\", \"unknown\"), (\"MNE\", \"datapage\"), (\"MNG\", \"front\"), (\"MOZ\", \"back\"), (\"MRT\", \"datapage\"), (\"MSR\", \"back\"), (\"MYS\", \"back or datapage\"), (\"NAM\", \"back\"), (\"NER\", \"back\"), (\"NGA\", \"back\"), (\"NLD\", \"datapage\"), (\"NOR\", \"datapage\"), (\"NZL\", \"datapage\"), (\"OMN\", \"back\"), (\"PAN\", \"datapage\"), (\"PER\", \"back\"), (\"PHL\", \"back\"), (\"POL\", \"back or datapage\"), (\"PRT\", \"back\"), (\"PRY\", \"back\"), (\"QAT\", \"unknown\"), (\"RKS\", \"datapage or back\"), (\"ROU\", \"datapage\"), (\"RUS\", \"datapage\"), (\"RWA\", \"datapage\"), (\"SDN\", \"back\"), (\"SEN\", \"back\"), (\"SGP\", \"datapage\"), (\"SHN\", \"back\"), (\"SMR\", \"datapage\"), (\"SOM\", \"back\"), (\"SRB\", \"datapage\"), (\"SSD\", \"datapage\"), (\"SUR\", \"unknown\"), (\"SVK\", \"datapage\"), (\"SVN\", \"datapage\"), (\"SWE\", \"datapage\"), (\"TCA\", \"back\"), (\"TGO\", \"back\"), (\"THA\", \"back\"), (\"TJK\", \"datapage\"), (\"TKM\", \"datapage\"), (\"TLS\", \"datapage\"), (\"TUR\", \"back or datapage\"), (\"TWN\", \"back\"), (\"TZA\", \"unknown\"), (\"UKR\", \"back\"), (\"UNO\", \"back\"), (\"URY\", \"back\"), (\"USA\", \"back\"), (\"UZB\", \"back\"), (\"VAT\", \"back\"), (\"VEN\", \"unknown\"), (\"VGB\", \"back\"), (\"XBA\", \"back\"), (\"XOM\", \"back\"), (\"XPO\", \"unknown\")]"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/DataGroupId.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/DataGroupId.swift",
       "kind": "IntegerLiteral",
       "offset": 261,
       "length": 4,
       "value": "0x60"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/DataGroupId.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/DataGroupId.swift",
       "kind": "IntegerLiteral",
       "offset": 281,
       "length": 4,
       "value": "0x61"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/DataGroupId.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/DataGroupId.swift",
       "kind": "IntegerLiteral",
       "offset": 301,
       "length": 4,
       "value": "0x75"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/DataGroupId.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/DataGroupId.swift",
       "kind": "IntegerLiteral",
       "offset": 321,
       "length": 4,
       "value": "0x63"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/DataGroupId.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/DataGroupId.swift",
       "kind": "IntegerLiteral",
       "offset": 341,
       "length": 4,
       "value": "0x76"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/DataGroupId.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/DataGroupId.swift",
       "kind": "IntegerLiteral",
       "offset": 361,
       "length": 4,
       "value": "0x65"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/DataGroupId.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/DataGroupId.swift",
       "kind": "IntegerLiteral",
       "offset": 381,
       "length": 4,
       "value": "0x66"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/DataGroupId.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/DataGroupId.swift",
       "kind": "IntegerLiteral",
       "offset": 401,
       "length": 4,
       "value": "0x67"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/DataGroupId.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/DataGroupId.swift",
       "kind": "IntegerLiteral",
       "offset": 421,
       "length": 4,
       "value": "0x68"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/DataGroupId.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/DataGroupId.swift",
       "kind": "IntegerLiteral",
       "offset": 441,
       "length": 4,
       "value": "0x69"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/DataGroupId.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/DataGroupId.swift",
       "kind": "IntegerLiteral",
       "offset": 462,
       "length": 4,
       "value": "0x6A"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/DataGroupId.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/DataGroupId.swift",
       "kind": "IntegerLiteral",
       "offset": 483,
       "length": 4,
       "value": "0x6B"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/DataGroupId.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/DataGroupId.swift",
       "kind": "IntegerLiteral",
       "offset": 504,
       "length": 4,
       "value": "0x6C"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/DataGroupId.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/DataGroupId.swift",
       "kind": "IntegerLiteral",
       "offset": 525,
       "length": 4,
       "value": "0x6D"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/DataGroupId.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/DataGroupId.swift",
       "kind": "IntegerLiteral",
       "offset": 546,
       "length": 4,
       "value": "0x6E"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/DataGroupId.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/DataGroupId.swift",
       "kind": "IntegerLiteral",
       "offset": 567,
       "length": 4,
       "value": "0x6F"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/DataGroupId.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/DataGroupId.swift",
       "kind": "IntegerLiteral",
       "offset": 588,
       "length": 4,
       "value": "0x70"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/DataGroupId.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/DataGroupId.swift",
       "kind": "IntegerLiteral",
       "offset": 608,
       "length": 4,
       "value": "0x77"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/DataGroupId.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/DataGroupId.swift",
       "kind": "IntegerLiteral",
       "offset": 632,
       "length": 4,
       "value": "0x00"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/DataGroupId.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/DataGroupId.swift",
       "kind": "IntegerLiteral",
       "offset": 261,
       "length": 4,
       "value": "0x60"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/DataGroupId.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/DataGroupId.swift",
       "kind": "IntegerLiteral",
       "offset": 281,
       "length": 4,
       "value": "0x61"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/DataGroupId.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/DataGroupId.swift",
       "kind": "IntegerLiteral",
       "offset": 301,
       "length": 4,
       "value": "0x75"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/DataGroupId.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/DataGroupId.swift",
       "kind": "IntegerLiteral",
       "offset": 321,
       "length": 4,
       "value": "0x63"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/DataGroupId.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/DataGroupId.swift",
       "kind": "IntegerLiteral",
       "offset": 341,
       "length": 4,
       "value": "0x76"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/DataGroupId.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/DataGroupId.swift",
       "kind": "IntegerLiteral",
       "offset": 361,
       "length": 4,
       "value": "0x65"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/DataGroupId.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/DataGroupId.swift",
       "kind": "IntegerLiteral",
       "offset": 381,
       "length": 4,
       "value": "0x66"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/DataGroupId.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/DataGroupId.swift",
       "kind": "IntegerLiteral",
       "offset": 401,
       "length": 4,
       "value": "0x67"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/DataGroupId.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/DataGroupId.swift",
       "kind": "IntegerLiteral",
       "offset": 421,
       "length": 4,
       "value": "0x68"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/DataGroupId.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/DataGroupId.swift",
       "kind": "IntegerLiteral",
       "offset": 441,
       "length": 4,
       "value": "0x69"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/DataGroupId.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/DataGroupId.swift",
       "kind": "IntegerLiteral",
       "offset": 462,
       "length": 4,
       "value": "0x6A"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/DataGroupId.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/DataGroupId.swift",
       "kind": "IntegerLiteral",
       "offset": 483,
       "length": 4,
       "value": "0x6B"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/DataGroupId.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/DataGroupId.swift",
       "kind": "IntegerLiteral",
       "offset": 504,
       "length": 4,
       "value": "0x6C"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/DataGroupId.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/DataGroupId.swift",
       "kind": "IntegerLiteral",
       "offset": 525,
       "length": 4,
       "value": "0x6D"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/DataGroupId.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/DataGroupId.swift",
       "kind": "IntegerLiteral",
       "offset": 546,
       "length": 4,
       "value": "0x6E"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/DataGroupId.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/DataGroupId.swift",
       "kind": "IntegerLiteral",
       "offset": 567,
       "length": 4,
       "value": "0x6F"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/DataGroupId.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/DataGroupId.swift",
       "kind": "IntegerLiteral",
       "offset": 588,
       "length": 4,
       "value": "0x70"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/DataGroupId.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/DataGroupId.swift",
       "kind": "IntegerLiteral",
       "offset": 608,
       "length": 4,
       "value": "0x77"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/DataGroupId.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/DataGroupId.swift",
       "kind": "IntegerLiteral",
       "offset": 632,
       "length": 4,
       "value": "0x00"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/DataGroupId.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/DataGroupId.swift",
       "kind": "IntegerLiteral",
       "offset": 261,
       "length": 4,
       "value": "0x60"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/DataGroupId.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/DataGroupId.swift",
       "kind": "IntegerLiteral",
       "offset": 281,
       "length": 4,
       "value": "0x61"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/DataGroupId.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/DataGroupId.swift",
       "kind": "IntegerLiteral",
       "offset": 301,
       "length": 4,
       "value": "0x75"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/DataGroupId.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/DataGroupId.swift",
       "kind": "IntegerLiteral",
       "offset": 321,
       "length": 4,
       "value": "0x63"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/DataGroupId.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/DataGroupId.swift",
       "kind": "IntegerLiteral",
       "offset": 341,
       "length": 4,
       "value": "0x76"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/DataGroupId.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/DataGroupId.swift",
       "kind": "IntegerLiteral",
       "offset": 361,
       "length": 4,
       "value": "0x65"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/DataGroupId.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/DataGroupId.swift",
       "kind": "IntegerLiteral",
       "offset": 381,
       "length": 4,
       "value": "0x66"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/DataGroupId.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/DataGroupId.swift",
       "kind": "IntegerLiteral",
       "offset": 401,
       "length": 4,
       "value": "0x67"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/DataGroupId.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/DataGroupId.swift",
       "kind": "IntegerLiteral",
       "offset": 421,
       "length": 4,
       "value": "0x68"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/DataGroupId.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/DataGroupId.swift",
       "kind": "IntegerLiteral",
       "offset": 441,
       "length": 4,
       "value": "0x69"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/DataGroupId.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/DataGroupId.swift",
       "kind": "IntegerLiteral",
       "offset": 462,
       "length": 4,
       "value": "0x6A"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/DataGroupId.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/DataGroupId.swift",
       "kind": "IntegerLiteral",
       "offset": 483,
       "length": 4,
       "value": "0x6B"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/DataGroupId.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/DataGroupId.swift",
       "kind": "IntegerLiteral",
       "offset": 504,
       "length": 4,
       "value": "0x6C"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/DataGroupId.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/DataGroupId.swift",
       "kind": "IntegerLiteral",
       "offset": 525,
       "length": 4,
       "value": "0x6D"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/DataGroupId.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/DataGroupId.swift",
       "kind": "IntegerLiteral",
       "offset": 546,
       "length": 4,
       "value": "0x6E"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/DataGroupId.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/DataGroupId.swift",
       "kind": "IntegerLiteral",
       "offset": 567,
       "length": 4,
       "value": "0x6F"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/DataGroupId.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/DataGroupId.swift",
       "kind": "IntegerLiteral",
       "offset": 588,
       "length": 4,
       "value": "0x70"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/DataGroupId.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/DataGroupId.swift",
       "kind": "IntegerLiteral",
       "offset": 608,
       "length": 4,
       "value": "0x77"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/DataGroupId.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/DataGroupId.swift",
       "kind": "IntegerLiteral",
       "offset": 632,
       "length": 4,
       "value": "0x00"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/AcuantEchipReader\/EchipReader.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/AcuantEchipReader\/EchipReader.swift",
       "kind": "BooleanLiteral",
       "offset": 597,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/AcuantEchipReader\/EchipReader.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/AcuantEchipReader\/EchipReader.swift",
       "kind": "BooleanLiteral",
       "offset": 646,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/SecureMessagingSessionKeyGenerator.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/SecureMessagingSessionKeyGenerator.swift",
       "kind": "IntegerLiteral",
       "offset": 278,
       "length": 4,
       "value": "0x00"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/SecureMessagingSessionKeyGenerator.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/SecureMessagingSessionKeyGenerator.swift",
       "kind": "IntegerLiteral",
       "offset": 334,
       "length": 3,
       "value": "0x1"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/SecureMessagingSessionKeyGenerator.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/SecureMessagingSessionKeyGenerator.swift",
       "kind": "IntegerLiteral",
       "offset": 363,
       "length": 3,
       "value": "0x2"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/SecureMessagingSessionKeyGenerator.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/SecureMessagingSessionKeyGenerator.swift",
       "kind": "IntegerLiteral",
       "offset": 393,
       "length": 3,
       "value": "0x3"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/SecureMessagingSessionKeyGenerator.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/SecureMessagingSessionKeyGenerator.swift",
       "kind": "IntegerLiteral",
       "offset": 334,
       "length": 3,
       "value": "0x1"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/SecureMessagingSessionKeyGenerator.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/SecureMessagingSessionKeyGenerator.swift",
       "kind": "IntegerLiteral",
       "offset": 363,
       "length": 3,
       "value": "0x2"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/SecureMessagingSessionKeyGenerator.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/SecureMessagingSessionKeyGenerator.swift",
       "kind": "IntegerLiteral",
       "offset": 393,
       "length": 3,
       "value": "0x3"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/SecureMessagingSessionKeyGenerator.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/SecureMessagingSessionKeyGenerator.swift",
       "kind": "IntegerLiteral",
       "offset": 334,
       "length": 3,
       "value": "0x1"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/SecureMessagingSessionKeyGenerator.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/SecureMessagingSessionKeyGenerator.swift",
       "kind": "IntegerLiteral",
       "offset": 363,
       "length": 3,
       "value": "0x2"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/SecureMessagingSessionKeyGenerator.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/SecureMessagingSessionKeyGenerator.swift",
       "kind": "IntegerLiteral",
       "offset": 393,
       "length": 3,
       "value": "0x3"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/ChipAuthenticationPublicKeyInfo.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/ChipAuthenticationPublicKeyInfo.swift",
       "kind": "StringLiteral",
       "offset": 180,
       "length": 31,
       "value": "\"AcuantEchipReader.ChipAuthenticationPublicKeyInfo\""
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/SOD.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/SOD.swift",
       "kind": "Array",
       "offset": 2156,
       "length": 2,
       "value": "[]"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/PACEHandler.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/PACEHandler.swift",
       "kind": "IntegerLiteral",
       "offset": 833,
       "length": 4,
       "value": "0x01"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/PACEHandler.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/PACEHandler.swift",
       "kind": "IntegerLiteral",
       "offset": 894,
       "length": 4,
       "value": "0x02"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/PACEHandler.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/PACEHandler.swift",
       "kind": "IntegerLiteral",
       "offset": 982,
       "length": 4,
       "value": "0x03"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/PACEHandler.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/PACEHandler.swift",
       "kind": "IntegerLiteral",
       "offset": 1070,
       "length": 4,
       "value": "0x04"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/PACEHandler.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/PACEHandler.swift",
       "kind": "BooleanLiteral",
       "offset": 1240,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/PACEHandler.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/PACEHandler.swift",
       "kind": "StringLiteral",
       "offset": 1275,
       "length": 2,
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/PACEHandler.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/PACEHandler.swift",
       "kind": "Array",
       "offset": 1338,
       "length": 2,
       "value": "[]"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/PACEHandler.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/PACEHandler.swift",
       "kind": "IntegerLiteral",
       "offset": 1379,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/PACEHandler.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/PACEHandler.swift",
       "kind": "StringLiteral",
       "offset": 1416,
       "length": 2,
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/PACEHandler.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/PACEHandler.swift",
       "kind": "IntegerLiteral",
       "offset": 1459,
       "length": 2,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/PACEHandler.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/PACEHandler.swift",
       "kind": "StringLiteral",
       "offset": 1549,
       "length": 2,
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/PACEHandler.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/PACEHandler.swift",
       "kind": "StringLiteral",
       "offset": 1589,
       "length": 2,
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/PACEHandler.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/PACEHandler.swift",
       "kind": "StringLiteral",
       "offset": 1629,
       "length": 2,
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/PACEHandler.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/PACEHandler.swift",
       "kind": "IntegerLiteral",
       "offset": 1666,
       "length": 2,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/PACEHandler.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/PACEHandler.swift",
       "kind": "BooleanLiteral",
       "offset": 4506,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/DataGroup7.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/DataGroup7.swift",
       "kind": "Array",
       "offset": 253,
       "length": 2,
       "value": "[]"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/AcuantEchipReader\/Model\/AcuantPassportModel.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/AcuantEchipReader\/Model\/AcuantPassportModel.swift",
       "kind": "StringLiteral",
       "offset": 260,
       "length": 9,
       "value": "\"Default\""
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/AcuantEchipReader\/Model\/AcuantPassportModel.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/AcuantEchipReader\/Model\/AcuantPassportModel.swift",
       "kind": "StringLiteral",
       "offset": 298,
       "length": 19,
       "value": "\"National Passport\""
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/AcuantEchipReader\/Model\/AcuantPassportModel.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/AcuantEchipReader\/Model\/AcuantPassportModel.swift",
       "kind": "StringLiteral",
       "offset": 347,
       "length": 20,
       "value": "\"Emergency Passport\""
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/AcuantEchipReader\/Model\/AcuantPassportModel.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/AcuantEchipReader\/Model\/AcuantPassportModel.swift",
       "kind": "StringLiteral",
       "offset": 398,
       "length": 21,
       "value": "\"Diplomatic Passport\""
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/AcuantEchipReader\/Model\/AcuantPassportModel.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/AcuantEchipReader\/Model\/AcuantPassportModel.swift",
       "kind": "StringLiteral",
       "offset": 457,
       "length": 27,
       "value": "\"Official\/Service Passport\""
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/AcuantEchipReader\/Model\/AcuantPassportModel.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/AcuantEchipReader\/Model\/AcuantPassportModel.swift",
       "kind": "StringLiteral",
       "offset": 512,
       "length": 18,
       "value": "\"Refugee Passport\""
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/AcuantEchipReader\/Model\/AcuantPassportModel.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/AcuantEchipReader\/Model\/AcuantPassportModel.swift",
       "kind": "StringLiteral",
       "offset": 556,
       "length": 16,
       "value": "\"Alien Passport\""
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/AcuantEchipReader\/Model\/AcuantPassportModel.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/AcuantEchipReader\/Model\/AcuantPassportModel.swift",
       "kind": "StringLiteral",
       "offset": 602,
       "length": 20,
       "value": "\"Stateless Passport\""
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/AcuantEchipReader\/Model\/AcuantPassportModel.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/AcuantEchipReader\/Model\/AcuantPassportModel.swift",
       "kind": "StringLiteral",
       "offset": 649,
       "length": 17,
       "value": "\"Travel Document\""
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/AcuantEchipReader\/Model\/AcuantPassportModel.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/AcuantEchipReader\/Model\/AcuantPassportModel.swift",
       "kind": "StringLiteral",
       "offset": 695,
       "length": 19,
       "value": "\"Military Passport\""
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/AcuantEchipReader\/Model\/AcuantPassportModel.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/AcuantEchipReader\/Model\/AcuantPassportModel.swift",
       "kind": "StringLiteral",
       "offset": 260,
       "length": 9,
       "value": "\"Default\""
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/AcuantEchipReader\/Model\/AcuantPassportModel.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/AcuantEchipReader\/Model\/AcuantPassportModel.swift",
       "kind": "StringLiteral",
       "offset": 298,
       "length": 19,
       "value": "\"National Passport\""
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/AcuantEchipReader\/Model\/AcuantPassportModel.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/AcuantEchipReader\/Model\/AcuantPassportModel.swift",
       "kind": "StringLiteral",
       "offset": 347,
       "length": 20,
       "value": "\"Emergency Passport\""
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/AcuantEchipReader\/Model\/AcuantPassportModel.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/AcuantEchipReader\/Model\/AcuantPassportModel.swift",
       "kind": "StringLiteral",
       "offset": 398,
       "length": 21,
       "value": "\"Diplomatic Passport\""
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/AcuantEchipReader\/Model\/AcuantPassportModel.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/AcuantEchipReader\/Model\/AcuantPassportModel.swift",
       "kind": "StringLiteral",
       "offset": 457,
       "length": 27,
       "value": "\"Official\/Service Passport\""
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/AcuantEchipReader\/Model\/AcuantPassportModel.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/AcuantEchipReader\/Model\/AcuantPassportModel.swift",
       "kind": "StringLiteral",
       "offset": 512,
       "length": 18,
       "value": "\"Refugee Passport\""
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/AcuantEchipReader\/Model\/AcuantPassportModel.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/AcuantEchipReader\/Model\/AcuantPassportModel.swift",
       "kind": "StringLiteral",
       "offset": 556,
       "length": 16,
       "value": "\"Alien Passport\""
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/AcuantEchipReader\/Model\/AcuantPassportModel.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/AcuantEchipReader\/Model\/AcuantPassportModel.swift",
       "kind": "StringLiteral",
       "offset": 602,
       "length": 20,
       "value": "\"Stateless Passport\""
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/AcuantEchipReader\/Model\/AcuantPassportModel.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/AcuantEchipReader\/Model\/AcuantPassportModel.swift",
       "kind": "StringLiteral",
       "offset": 649,
       "length": 17,
       "value": "\"Travel Document\""
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/AcuantEchipReader\/Model\/AcuantPassportModel.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/AcuantEchipReader\/Model\/AcuantPassportModel.swift",
       "kind": "StringLiteral",
       "offset": 695,
       "length": 19,
       "value": "\"Military Passport\""
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/AcuantEchipReader\/Model\/AcuantPassportModel.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/AcuantEchipReader\/Model\/AcuantPassportModel.swift",
       "kind": "BooleanLiteral",
       "offset": 1835,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/OpenSSLUtils.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/OpenSSLUtils.swift",
       "kind": "BooleanLiteral",
       "offset": 245,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/AcuantEchipReader\/Model\/AcuantEchipSessionRequest.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/AcuantEchipReader\/Model\/AcuantEchipSessionRequest.swift",
       "kind": "BooleanLiteral",
       "offset": 495,
       "length": 4,
       "value": "true"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/PassportReader.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/PassportReader.swift",
       "kind": "IntegerLiteral",
       "offset": 420,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/PassportReader.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/PassportReader.swift",
       "kind": "Array",
       "offset": 535,
       "length": 2,
       "value": "[]"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/PassportReader.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/PassportReader.swift",
       "kind": "BooleanLiteral",
       "offset": 574,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/PassportReader.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/PassportReader.swift",
       "kind": "BooleanLiteral",
       "offset": 617,
       "length": 4,
       "value": "true"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/PassportReader.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/PassportReader.swift",
       "kind": "BooleanLiteral",
       "offset": 647,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/PassportReader.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/PassportReader.swift",
       "kind": "BooleanLiteral",
       "offset": 680,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/PassportReader.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/PassportReader.swift",
       "kind": "StringLiteral",
       "offset": 899,
       "length": 2,
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/PassportReader.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/PassportReader.swift",
       "kind": "BooleanLiteral",
       "offset": 1259,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/PassportReader.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/PassportReader.swift",
       "kind": "BooleanLiteral",
       "offset": 1497,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/PassportReader.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/PassportReader.swift",
       "kind": "Array",
       "offset": 2365,
       "length": 2,
       "value": "[]"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/PassportReader.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/PassportReader.swift",
       "kind": "BooleanLiteral",
       "offset": 2396,
       "length": 4,
       "value": "true"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/PassportReader.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/PassportReader.swift",
       "kind": "BooleanLiteral",
       "offset": 2418,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/PassportReader.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/PassportReader.swift",
       "kind": "BooleanLiteral",
       "offset": 2442,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/PassportReader.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/PassportReader.swift",
       "kind": "StringLiteral",
       "offset": 237,
       "length": 14,
       "value": "\"AcuantEchipReader.PassportReader\""
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/SecurityInfo.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/SecurityInfo.swift",
       "kind": "StringLiteral",
       "offset": 250,
       "length": 16,
       "value": "\"2.23.136.1.1.5\""
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/SecurityInfo.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/SecurityInfo.swift",
       "kind": "StringLiteral",
       "offset": 410,
       "length": 23,
       "value": "\"0.4.0.127.0.7.1.1.4.1\""
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/SecurityInfo.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/SecurityInfo.swift",
       "kind": "StringLiteral",
       "offset": 498,
       "length": 4,
       "value": "\".1\""
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/SecurityInfo.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/SecurityInfo.swift",
       "kind": "StringLiteral",
       "offset": 614,
       "length": 4,
       "value": "\".2\""
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/SecurityInfo.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/SecurityInfo.swift",
       "kind": "StringLiteral",
       "offset": 732,
       "length": 4,
       "value": "\".3\""
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/SecurityInfo.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/SecurityInfo.swift",
       "kind": "StringLiteral",
       "offset": 850,
       "length": 4,
       "value": "\".4\""
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/SecurityInfo.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/SecurityInfo.swift",
       "kind": "StringLiteral",
       "offset": 968,
       "length": 4,
       "value": "\".5\""
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/SecurityInfo.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/SecurityInfo.swift",
       "kind": "StringLiteral",
       "offset": 1089,
       "length": 4,
       "value": "\".6\""
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/SecurityInfo.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/SecurityInfo.swift",
       "kind": "StringLiteral",
       "offset": 1219,
       "length": 23,
       "value": "\"0.4.0.127.0.7.2.2.1.1\""
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/SecurityInfo.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/SecurityInfo.swift",
       "kind": "StringLiteral",
       "offset": 1275,
       "length": 23,
       "value": "\"0.4.0.127.0.7.2.2.1.2\""
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/SecurityInfo.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/SecurityInfo.swift",
       "kind": "StringLiteral",
       "offset": 1379,
       "length": 25,
       "value": "\"0.4.0.127.0.7.2.2.3.1.1\""
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/SecurityInfo.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/SecurityInfo.swift",
       "kind": "StringLiteral",
       "offset": 1450,
       "length": 25,
       "value": "\"0.4.0.127.0.7.2.2.3.2.1\""
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/SecurityInfo.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/SecurityInfo.swift",
       "kind": "StringLiteral",
       "offset": 1523,
       "length": 25,
       "value": "\"0.4.0.127.0.7.2.2.3.1.2\""
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/SecurityInfo.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/SecurityInfo.swift",
       "kind": "StringLiteral",
       "offset": 1596,
       "length": 25,
       "value": "\"0.4.0.127.0.7.2.2.3.1.3\""
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/SecurityInfo.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/SecurityInfo.swift",
       "kind": "StringLiteral",
       "offset": 1669,
       "length": 25,
       "value": "\"0.4.0.127.0.7.2.2.3.1.4\""
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/SecurityInfo.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/SecurityInfo.swift",
       "kind": "StringLiteral",
       "offset": 1744,
       "length": 25,
       "value": "\"0.4.0.127.0.7.2.2.3.2.2\""
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/SecurityInfo.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/SecurityInfo.swift",
       "kind": "StringLiteral",
       "offset": 1819,
       "length": 25,
       "value": "\"0.4.0.127.0.7.2.2.3.2.3\""
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/SecurityInfo.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/SecurityInfo.swift",
       "kind": "StringLiteral",
       "offset": 1894,
       "length": 25,
       "value": "\"0.4.0.127.0.7.2.2.3.2.4\""
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/SecurityInfo.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/SecurityInfo.swift",
       "kind": "StringLiteral",
       "offset": 1967,
       "length": 15,
       "value": "\"0.4.0.127.0.7\""
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/SecurityInfo.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/SecurityInfo.swift",
       "kind": "StringLiteral",
       "offset": 2017,
       "length": 8,
       "value": "\".2.2.4\""
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/SecurityInfo.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/SecurityInfo.swift",
       "kind": "StringLiteral",
       "offset": 2067,
       "length": 4,
       "value": "\".1\""
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/SecurityInfo.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/SecurityInfo.swift",
       "kind": "StringLiteral",
       "offset": 2132,
       "length": 4,
       "value": "\".1\""
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/SecurityInfo.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/SecurityInfo.swift",
       "kind": "StringLiteral",
       "offset": 2257,
       "length": 4,
       "value": "\".2\""
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/SecurityInfo.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/SecurityInfo.swift",
       "kind": "StringLiteral",
       "offset": 2386,
       "length": 4,
       "value": "\".3\""
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/SecurityInfo.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/SecurityInfo.swift",
       "kind": "StringLiteral",
       "offset": 2515,
       "length": 4,
       "value": "\".4\""
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/SecurityInfo.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/SecurityInfo.swift",
       "kind": "StringLiteral",
       "offset": 2628,
       "length": 4,
       "value": "\".2\""
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/SecurityInfo.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/SecurityInfo.swift",
       "kind": "StringLiteral",
       "offset": 2697,
       "length": 4,
       "value": "\".1\""
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/SecurityInfo.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/SecurityInfo.swift",
       "kind": "StringLiteral",
       "offset": 2828,
       "length": 4,
       "value": "\".2\""
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/SecurityInfo.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/SecurityInfo.swift",
       "kind": "StringLiteral",
       "offset": 2963,
       "length": 4,
       "value": "\".3\""
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/SecurityInfo.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/SecurityInfo.swift",
       "kind": "StringLiteral",
       "offset": 3098,
       "length": 4,
       "value": "\".4\""
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/SecurityInfo.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/SecurityInfo.swift",
       "kind": "StringLiteral",
       "offset": 3211,
       "length": 4,
       "value": "\".3\""
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/SecurityInfo.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/SecurityInfo.swift",
       "kind": "StringLiteral",
       "offset": 3276,
       "length": 4,
       "value": "\".1\""
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/SecurityInfo.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/SecurityInfo.swift",
       "kind": "StringLiteral",
       "offset": 3401,
       "length": 4,
       "value": "\".2\""
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/SecurityInfo.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/SecurityInfo.swift",
       "kind": "StringLiteral",
       "offset": 3530,
       "length": 4,
       "value": "\".3\""
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/SecurityInfo.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/SecurityInfo.swift",
       "kind": "StringLiteral",
       "offset": 3659,
       "length": 4,
       "value": "\".4\""
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/SecurityInfo.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/SecurityInfo.swift",
       "kind": "StringLiteral",
       "offset": 3772,
       "length": 4,
       "value": "\".4\""
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/SecurityInfo.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/SecurityInfo.swift",
       "kind": "StringLiteral",
       "offset": 3841,
       "length": 4,
       "value": "\".1\""
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/SecurityInfo.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/SecurityInfo.swift",
       "kind": "StringLiteral",
       "offset": 3972,
       "length": 4,
       "value": "\".2\""
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/SecurityInfo.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/SecurityInfo.swift",
       "kind": "StringLiteral",
       "offset": 4107,
       "length": 4,
       "value": "\".3\""
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/SecurityInfo.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/SecurityInfo.swift",
       "kind": "StringLiteral",
       "offset": 4242,
       "length": 4,
       "value": "\".4\""
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/SecurityInfo.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/SecurityInfo.swift",
       "kind": "StringLiteral",
       "offset": 4358,
       "length": 4,
       "value": "\".6\""
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/SecurityInfo.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/SecurityInfo.swift",
       "kind": "StringLiteral",
       "offset": 4433,
       "length": 4,
       "value": "\".2\""
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/SecurityInfo.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/SecurityInfo.swift",
       "kind": "StringLiteral",
       "offset": 4571,
       "length": 4,
       "value": "\".3\""
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/SecurityInfo.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/DataGroups\/SecurityInfo.swift",
       "kind": "StringLiteral",
       "offset": 4709,
       "length": 4,
       "value": "\".4\""
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/TagReader.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/TagReader.swift",
       "kind": "IntegerLiteral",
       "offset": 339,
       "length": 4,
       "value": "0xA0"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/TagReader.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantEchipReader\/NFCPassportReader\/Sources\/NFCPassportReader\/TagReader.swift",
       "kind": "IntegerLiteral",
       "offset": 5510,
       "length": 3,

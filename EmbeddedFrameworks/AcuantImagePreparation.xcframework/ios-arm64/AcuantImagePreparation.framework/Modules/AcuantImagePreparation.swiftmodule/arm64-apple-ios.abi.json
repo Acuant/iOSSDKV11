@@ -1776,154 +1776,154 @@
   },
   "ConstValues": [
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantImagePreparation\/AcuantImagePreparation\/Cropping\/CroppingWrapper.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantImagePreparation\/AcuantImagePreparation\/Cropping\/CroppingWrapper.swift",
       "kind": "IntegerLiteral",
       "offset": 251,
       "length": 1,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantImagePreparation\/AcuantImagePreparation\/Cropping\/CroppingWrapper.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantImagePreparation\/AcuantImagePreparation\/Cropping\/CroppingWrapper.swift",
       "kind": "IntegerLiteral",
       "offset": 283,
       "length": 1,
       "value": "2"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantImagePreparation\/AcuantImagePreparation\/Cropping\/CroppingWrapper.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantImagePreparation\/AcuantImagePreparation\/Cropping\/CroppingWrapper.swift",
       "kind": "IntegerLiteral",
       "offset": 321,
       "length": 3,
       "value": "600"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantImagePreparation\/AcuantImagePreparation\/Cropping\/CroppingWrapper.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantImagePreparation\/AcuantImagePreparation\/Cropping\/CroppingWrapper.swift",
       "kind": "FloatLiteral",
       "offset": 380,
       "length": 4,
       "value": "3.37"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantImagePreparation\/AcuantImagePreparation\/Cropping\/CroppingWrapper.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantImagePreparation\/AcuantImagePreparation\/Cropping\/CroppingWrapper.swift",
       "kind": "FloatLiteral",
       "offset": 440,
       "length": 4,
       "value": "4.92"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantImagePreparation\/AcuantImagePreparation\/Model\/DetectData.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantImagePreparation\/AcuantImagePreparation\/Model\/DetectData.swift",
       "kind": "StringLiteral",
       "offset": 212,
       "length": 10,
       "value": "\"AcuantImagePreparation.DetectData\""
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantImagePreparation\/AcuantImagePreparation\/Exif\/AcuantExifDataHelper.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantImagePreparation\/AcuantImagePreparation\/Exif\/AcuantExifDataHelper.swift",
       "kind": "Dictionary",
       "offset": 6406,
       "length": 4550,
       "value": "[(\"iPhone6,1\", \"iPhone 5S (GSM)\"), (\"iPhone6,2\", \"iPhone 5S (Global)\"), (\"iPhone7,1\", \"iPhone 6 Plus\"), (\"iPhone7,2\", \"iPhone 6\"), (\"iPhone8,1\", \"iPhone 6S\"), (\"iPhone8,2\", \"iPhone 6S Plus\"), (\"iPhone8,4\", \"iPhone SE\"), (\"iPhone9,1\", \"iPhone 7 (CDMA)\"), (\"iPhone9,3\", \"iPhone 7 (GSM)\"), (\"iPhone9,2\", \"iPhone 7 Plus (CDMA)\"), (\"iPhone9,4\", \"iPhone 7 Plus (GSM)\"), (\"iPhone10,1\", \"iPhone 8 (CDMA)\"), (\"iPhone10,4\", \"iPhone 8 (GSM)\"), (\"iPhone10,2\", \"iPhone 8 Plus (CDMA)\"), (\"iPhone10,5\", \"iPhone 8 Plus (GSM)\"), (\"iPhone10,3\", \"iPhone X (CDMA)\"), (\"iPhone10,6\", \"iPhone X (GSM)\"), (\"iPhone11,2\", \"iPhone XS\"), (\"iPhone11,4\", \"iPhone XS Max\"), (\"iPhone11,6\", \"iPhone XS Max China\"), (\"iPhone11,8\", \"iPhone XR\"), (\"iPhone12,1\", \"iPhone 11\"), (\"iPhone12,3\", \"iPhone 11 Pro\"), (\"iPhone12,5\", \"iPhone 11 Pro Max\"), (\"iPhone12,8\", \"iPhone SE (2nd Gen)\"), (\"iPhone13,1\", \"iPhone 12 Mini\"), (\"iPhone13,2\", \"iPhone 12\"), (\"iPhone13,3\", \"iPhone 12 Pro\"), (\"iPhone13,4\", \"iPhone 12 Pro Max\"), (\"iPhone14,2\", \"iPhone 13 Pro\"), (\"iPhone14,3\", \"iPhone 13 Pro Max\"), (\"iPhone14,4\", \"iPhone 13 Mini\"), (\"iPhone14,5\", \"iPhone 13\"), (\"iPad4,1\", \"iPad Air (WiFi)\"), (\"iPad4,2\", \"iPad Air (GSM+CDMA)\"), (\"iPad4,3\", \"1st Gen iPad Air (China)\"), (\"iPad4,4\", \"iPad mini Retina (WiFi)\"), (\"iPad4,5\", \"iPad mini Retina (GSM+CDMA)\"), (\"iPad4,6\", \"iPad mini Retina (China)\"), (\"iPad4,7\", \"iPad mini 3 (WiFi)\"), (\"iPad4,8\", \"iPad mini 3 (GSM+CDMA)\"), (\"iPad4,9\", \"iPad Mini 3 (China)\"), (\"iPad5,1\", \"iPad mini 4 (WiFi)\"), (\"iPad5,2\", \"4th Gen iPad mini (WiFi+Cellular)\"), (\"iPad5,3\", \"iPad Air 2 (WiFi)\"), (\"iPad5,4\", \"iPad Air 2 (Cellular)\"), (\"iPad6,3\", \"iPad Pro (9.7 inch, WiFi)\"), (\"iPad6,4\", \"iPad Pro (9.7 inch, WiFi+LTE)\"), (\"iPad6,7\", \"iPad Pro (12.9 inch, WiFi)\"), (\"iPad6,8\", \"iPad Pro (12.9 inch, WiFi+LTE)\"), (\"iPad6,11\", \"iPad (2017)\"), (\"iPad6,12\", \"iPad (2017)\"), (\"iPad7,1\", \"iPad Pro 2nd Gen (WiFi)\"), (\"iPad7,2\", \"iPad Pro 2nd Gen (WiFi+Cellular)\"), (\"iPad7,3\", \"iPad Pro 10.5-inch 2nd Gen\"), (\"iPad7,4\", \"iPad Pro 10.5-inch 2nd Gen\"), (\"iPad7,5\", \"iPad 6th Gen (WiFi)\"), (\"iPad7,6\", \"iPad 6th Gen (WiFi+Cellular)\"), (\"iPad7,11\", \"iPad 7th Gen 10.2-inch (WiFi)\"), (\"iPad7,12\", \"iPad 7th Gen 10.2-inch (WiFi+Cellular)\"), (\"iPad8,1\", \"iPad Pro 11 inch 3rd Gen (WiFi)\"), (\"iPad8,2\", \"iPad Pro 11 inch 3rd Gen (1TB, WiFi)\"), (\"iPad8,3\", \"iPad Pro 11 inch 3rd Gen (WiFi+Cellular)\"), (\"iPad8,4\", \"iPad Pro 11 inch 3rd Gen (1TB, WiFi+Cellular)\"), (\"iPad8,5\", \"iPad Pro 12.9 inch 3rd Gen (WiFi)\"), (\"iPad8,6\", \"iPad Pro 12.9 inch 3rd Gen (1TB, WiFi)\"), (\"iPad8,7\", \"iPad Pro 12.9 inch 3rd Gen (WiFi+Cellular)\"), (\"iPad8,8\", \"iPad Pro 12.9 inch 3rd Gen (1TB, WiFi+Cellular)\"), (\"iPad8,9\", \"iPad Pro 11 inch 4th Gen (WiFi)\"), (\"iPad8,10\", \"iPad Pro 11 inch 4th Gen (WiFi+Cellular)\"), (\"iPad8,11\", \"iPad Pro 12.9 inch 4th Gen (WiFi)\"), (\"iPad8,12\", \"iPad Pro 12.9 inch 4th Gen (WiFi+Cellular)\"), (\"iPad11,1\", \"iPad mini 5th Gen (WiFi)\"), (\"iPad11,2\", \"iPad mini 5th Gen\"), (\"iPad11,3\", \"iPad Air 3rd Gen (WiFi)\"), (\"iPad11,4\", \"iPad Air 3rd Gen\"), (\"iPad11,6\", \"iPad 8th Gen (WiFi)\"), (\"iPad11,7\", \"iPad 8th Gen (WiFi+Cellular)\"), (\"iPad12,1\", \"iPad 9th Gen (WiFi)\"), (\"iPad12,2\", \"iPad 9th Gen (WiFi+Cellular)\"), (\"iPad14,1\", \"iPad mini 6th Gen (WiFi)\"), (\"iPad14,2\", \"iPad mini 6th Gen (WiFi+Cellular)\"), (\"iPad13,1\", \"iPad Air 4th Gen (WiFi)\"), (\"iPad13,2\", \"iPad Air 4th Gen (WiFi+Cellular)\"), (\"iPad13,4\", \"iPad Pro 11 inch 5th Gen\"), (\"iPad13,5\", \"iPad Pro 11 inch 5th Gen\"), (\"iPad13,6\", \"iPad Pro 11 inch 5th Gen\"), (\"iPad13,7\", \"iPad Pro 11 inch 5th Gen\"), (\"iPad13,8\", \"iPad Pro 12.9 inch 5th Gen\"), (\"iPad13,9\", \"iPad Pro 12.9 inch 5th Gen\"), (\"iPad13,10\", \"iPad Pro 12.9 inch 5th Gen\"), (\"iPad13,11\", \"iPad Pro 12.9 inch 5th Gen\"), (\"iPod7,1\", \"iPod Touch 6th Generation\"), (\"iPod9,1\", \"iPod Touch 7th Generation\")]"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantImagePreparation\/AcuantImagePreparation\/ImagePreparation.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantImagePreparation\/AcuantImagePreparation\/ImagePreparation.swift",
       "kind": "BooleanLiteral",
       "offset": 289,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantImagePreparation\/AcuantImagePreparation\/ImagePreparation.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantImagePreparation\/AcuantImagePreparation\/ImagePreparation.swift",
       "kind": "BooleanLiteral",
       "offset": 330,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantImagePreparation\/AcuantImagePreparation\/ImagePreparation.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantImagePreparation\/AcuantImagePreparation\/ImagePreparation.swift",
       "kind": "BooleanLiteral",
       "offset": 598,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantImagePreparation\/AcuantImagePreparation\/ImagePreparation.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantImagePreparation\/AcuantImagePreparation\/ImagePreparation.swift",
       "kind": "BooleanLiteral",
       "offset": 642,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantImagePreparation\/AcuantImagePreparation\/Exif\/Model\/AcuantCVMLMetaData.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantImagePreparation\/AcuantImagePreparation\/Exif\/Model\/AcuantCVMLMetaData.swift",
       "kind": "IntegerLiteral",
       "offset": 464,
       "length": 2,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantImagePreparation\/AcuantImagePreparation\/Exif\/Model\/AcuantCVMLMetaData.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantImagePreparation\/AcuantImagePreparation\/Exif\/Model\/AcuantCVMLMetaData.swift",
       "kind": "IntegerLiteral",
       "offset": 494,
       "length": 2,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantImagePreparation\/AcuantImagePreparation\/Exif\/Model\/AcuantCVMLMetaData.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantImagePreparation\/AcuantImagePreparation\/Exif\/Model\/AcuantCVMLMetaData.swift",
       "kind": "IntegerLiteral",
       "offset": 573,
       "length": 2,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantImagePreparation\/AcuantImagePreparation\/Exif\/Model\/AcuantCVMLMetaData.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantImagePreparation\/AcuantImagePreparation\/Exif\/Model\/AcuantCVMLMetaData.swift",
       "kind": "IntegerLiteral",
       "offset": 603,
       "length": 2,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantImagePreparation\/AcuantImagePreparation\/Exif\/Model\/AcuantCVMLMetaData.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantImagePreparation\/AcuantImagePreparation\/Exif\/Model\/AcuantCVMLMetaData.swift",
       "kind": "IntegerLiteral",
       "offset": 682,
       "length": 2,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantImagePreparation\/AcuantImagePreparation\/Exif\/Model\/AcuantCVMLMetaData.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantImagePreparation\/AcuantImagePreparation\/Exif\/Model\/AcuantCVMLMetaData.swift",
       "kind": "IntegerLiteral",
       "offset": 708,
       "length": 2,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantImagePreparation\/AcuantImagePreparation\/Exif\/Model\/AcuantCVMLMetaData.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantImagePreparation\/AcuantImagePreparation\/Exif\/Model\/AcuantCVMLMetaData.swift",
       "kind": "IntegerLiteral",
       "offset": 738,
       "length": 2,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantImagePreparation\/AcuantImagePreparation\/Exif\/Model\/AcuantCVMLMetaData.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantImagePreparation\/AcuantImagePreparation\/Exif\/Model\/AcuantCVMLMetaData.swift",
       "kind": "BooleanLiteral",
       "offset": 816,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantImagePreparation\/AcuantImagePreparation\/Exif\/Model\/AcuantCVMLMetaData.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantImagePreparation\/AcuantImagePreparation\/Exif\/Model\/AcuantCVMLMetaData.swift",
       "kind": "IntegerLiteral",
       "offset": 845,
       "length": 2,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantImagePreparation\/AcuantImagePreparation\/Exif\/Model\/AcuantCVMLMetaData.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantImagePreparation\/AcuantImagePreparation\/Exif\/Model\/AcuantCVMLMetaData.swift",
       "kind": "StringLiteral",
       "offset": 877,
       "length": 2,
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/iosmobilesdk\/AcuantImagePreparation\/AcuantImagePreparation\/Exif\/Model\/AcuantCVMLMetaData.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/Acuant\/iosmobilesdk\/AcuantImagePreparation\/AcuantImagePreparation\/Exif\/Model\/AcuantCVMLMetaData.swift",
       "kind": "IntegerLiteral",
       "offset": 907,
       "length": 2,
