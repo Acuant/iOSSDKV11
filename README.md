@@ -1,6 +1,6 @@
-# Acuant iOS SDK v11.5.7
+# Acuant iOS SDK v11.5.8
 
-**October 2022**
+**December 2022**
 
 See [https://github.com/Acuant/iOSSDKV11/releases](https://github.com/Acuant/iOSSDKV11/releases) for release notes.
 
@@ -135,7 +135,7 @@ The SDK includes the following modules:
 		platform :ios, '11'
 		use_frameworks! # important
 		
-		pod 'AcuantiOSSDKV11', '~> 11.5.6' #for all packages
+		pod 'AcuantiOSSDKV11', '~> 11.5.8' #for all packages
 		
  Alternatively, use the following to add **independent** modules in the podfile:
 		
