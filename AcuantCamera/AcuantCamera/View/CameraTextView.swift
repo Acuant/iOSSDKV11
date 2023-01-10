@@ -39,6 +39,11 @@ public class CameraTextView: CATextLayer {
         self.cornerRadius = 10
         self.fontSize = textSizeDefault
         self.contentsScale = UIScreen.main.scale
+        
+        let newActions = [
+            "fontSize": NSNull(),
+        ]
+        self.actions = newActions
     }
 
     func setFrame(frame: CGRect) {
