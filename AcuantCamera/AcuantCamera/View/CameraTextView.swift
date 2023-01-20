@@ -39,11 +39,6 @@ public class CameraTextView: CATextLayer {
         self.cornerRadius = 10
         self.fontSize = textSizeDefault
         self.contentsScale = UIScreen.main.scale
-        
-        let newActions = [
-            "fontSize": NSNull(),
-        ]
-        self.actions = newActions
     }
 
     func setFrame(frame: CGRect) {
@@ -64,11 +59,18 @@ public class CameraTextView: CATextLayer {
     }
 
     private func fitTextToFrame() {
+        // Calculates the string size.
         var stringSize: CGSize  {
             get { return (string as? String)!.size(ofFont: UIFont(name: (font as! UIFont).fontName, size: fontSize)!) }
         }
+        
+        // Frame is rotating while font dimensions are stationary
+        let frameWidth = max(frame.width, frame.height)
+        let frameHeight = min(frame.width, frame.height)
+        
+        // Decreases the font size until criteria met
         let margin: CGFloat = 2
-        while max(frame.width, frame.height) <= max(stringSize.width, stringSize.height) + margin {
+        while (frameWidth <= stringSize.width + margin) || frameHeight <= stringSize.height + margin {
             fontSize -= 1
         }
     }
