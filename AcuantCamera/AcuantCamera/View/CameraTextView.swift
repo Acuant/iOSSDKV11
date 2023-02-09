@@ -31,9 +31,9 @@ public class CameraTextView: CATextLayer {
         super.init()
         self.opacity = 0.7
         if autoCapture {
-            self.string = NSLocalizedString("acuant_camera_align", comment: "")
+            self.string = "acuant_camera_align".localizedDocString
         } else {
-            self.string = NSLocalizedString("acuant_camera_manual_capture", comment: "")
+            self.string = "acuant_camera_manual_capture".localizedDocString
         }
         self.alignmentMode = CATextLayerAlignmentMode.center
         self.cornerRadius = 10
@@ -59,11 +59,18 @@ public class CameraTextView: CATextLayer {
     }
 
     private func fitTextToFrame() {
+        // Calculates the string size.
         var stringSize: CGSize  {
             get { return (string as? String)!.size(ofFont: UIFont(name: (font as! UIFont).fontName, size: fontSize)!) }
         }
+        
+        // Frame is rotating while font dimensions are stationary
+        let frameWidth = max(frame.width, frame.height)
+        let frameHeight = min(frame.width, frame.height)
+        
+        // Decreases the font size until criteria met
         let margin: CGFloat = 2
-        while max(frame.width, frame.height) <= max(stringSize.width, stringSize.height) + margin {
+        while (frameWidth <= stringSize.width + margin) || frameHeight <= stringSize.height + margin {
             fontSize -= 1
         }
     }

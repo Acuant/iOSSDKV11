@@ -32,9 +32,15 @@ public class FaceCaptureController: UIViewController {
     private var isNavigationHidden = false
     private let frameThrottleDuration = 0.2
     private var isCaptured = false
+    
+    public var currentLangCode: String?
 
     override public func viewDidLoad() {
         super.viewDidLoad()
+        
+        if let currentLanguageCode = currentLangCode {
+            FaceCaptureLanguageManager.shared.langCode = currentLanguageCode
+        }
     }
 
     override public func viewWillAppear(_ animated: Bool) {
@@ -86,7 +92,7 @@ public class FaceCaptureController: UIViewController {
                                                queue: .main) { [weak self] _ in
             guard let self = self, self.alertView == nil else { return }
 
-            let alertView = AlertView(frame: self.view.bounds, text: NSLocalizedString("acuant_face_camera_paused", comment: ""))
+            let alertView = AlertView(frame: self.view.bounds, text: "acuant_face_camera_paused".localizedFaceCaptureString)
             self.view.addSubview(alertView)
             self.alertView = alertView
         }
@@ -111,7 +117,7 @@ public class FaceCaptureController: UIViewController {
 
         if interfaceOrientation.isLandscape {
             self.alertView = AlertView(frame: self.view.frame,
-                                       text: NSLocalizedString("acuant_face_camera_rotate_portrait", comment: ""))
+                                       text: "acuant_face_camera_rotate_portrait".localizedFaceCaptureString)
             self.view.addSubview(self.alertView!)
             self.captureSession.stopRunning()
         } else if !captureSession.isRunning {
@@ -334,7 +340,7 @@ public class FaceCaptureController: UIViewController {
     func addMessage(messageKey: String, color: CGColor? = UIColor.red.cgColor, fontSize: CGFloat = 30){
         messageLayer.fontSize = fontSize
         messageLayer.foregroundColor = color
-        messageLayer.string = NSLocalizedString(messageKey, comment: "")
+        messageLayer.string = messageKey.localizedFaceCaptureString
         messageLayer.frame = getMessageRect()
     }
     
@@ -355,10 +361,8 @@ public class FaceCaptureController: UIViewController {
         view.addSubview(backButton)
 
         NSLayoutConstraint.activate([
-            backButton.widthAnchor.constraint(equalToConstant: 50),
-            backButton.heightAnchor.constraint(equalToConstant: 50),
-            backButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 0),
-            backButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0)
+            backButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 15),
+            backButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -25)
         ])
     }
 
@@ -388,6 +392,7 @@ public class FaceCaptureController: UIViewController {
     func createMessageLayer() -> CATextLayer {
         messageLayer = CATextLayer()
         messageLayer.frame = getMessageRect()
+        messageLayer.isWrapped = true
         messageLayer.contentsScale = UIScreen.main.scale
         messageLayer.alignmentMode = CATextLayerAlignmentMode.center
         messageLayer.foregroundColor = UIColor.white.cgColor
@@ -403,11 +408,55 @@ public class FaceCaptureController: UIViewController {
     }
     
     func getMessageRect() -> CGRect {
+        let sidePadding = 16.0
         let width = view.safeAreaLayoutGuide.layoutFrame.size.width
         let topPadding = getSafeArea()
         let height = view.bounds.height * 0.17
         
         let padding = topPadding == 0 ? (height - topPadding)/4 : topPadding
-        return CGRect(x: 0, y: padding, width: width, height: height)
+        return CGRect(x: sidePadding, y: padding, width: width - 2.0 * sidePadding, height: height)
+    }
+}
+
+
+// MARK: - Custom Localization
+
+open class FaceCaptureLanguageManager {
+    static let shared = FaceCaptureLanguageManager()
+
+    var langCode: String? {
+        didSet {
+            if let appLanguage = langCode {
+                currentLanguage = appLanguage
+            } else {
+                currentLanguage = Locale.current.languageCode ?? "en"
+            }
+        }
+    }
+    
+    private(set) var currentLanguage: String
+
+    private init() {
+        if let appLanguage = langCode {
+            currentLanguage = appLanguage
+        } else {
+            currentLanguage = Locale.current.languageCode ?? "en"
+        }
+    }
+    
+    public static func localizedString(_ key: String, comment: String = "") -> String {
+        let bundle = Bundle.main
+        guard let path = bundle.path(forResource: FaceCaptureLanguageManager.shared.currentLanguage, ofType: "lproj"),
+            let string = Bundle(path: path)?.localizedString(forKey: key, value: "", table: "") else {
+                return NSLocalizedString(key, comment: comment)
+        }
+        return string
+    }
+    
+}
+
+extension String {
+    public var localizedFaceCaptureString: String {
+        return FaceCaptureLanguageManager.localizedString(self)
     }
 }
