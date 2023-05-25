@@ -8,10 +8,10 @@
 import UIKit
 import Foundation
 
-@objc public protocol FrameAnalysisDelegate{
-    func onFrameAvailable(frameResult: FrameResult, points: Array<CGPoint>?)
+@objc public protocol FrameAnalysisDelegate {
+    func onFrameAvailable(frameResult: FrameResult, points: [CGPoint]?)
 }
 
-@objc public enum FrameResult : Int{
-    case NO_DOCUMENT, SMALL_DOCUMENT, BAD_ASPECT_RATIO, GOOD_DOCUMENT, DOCUMENT_NOT_IN_FRAME
+@objc public enum FrameResult: Int {
+    case noDocument, smallDocument, badAspectRatio, goodDocument, documentNotInFrame
 }

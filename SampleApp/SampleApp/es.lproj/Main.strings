@@ -1,27 +1,32 @@
 
 /* Class = "UILabel"; text = "IPLiveness Enabled"; ObjectID = "2FC-0f-szG"; */
-"2FC-0f-szG.text" = "IPLiveness Enabled";
+"2FC-0f-szG.text" = "IPLiveness Habilitado";
 
-/* Class = "UILabel"; text = "Auto Capture"; ObjectID = "2L4-ec-plx"; */
-"2L4-ec-plx.text" = "Auto Capture";
+/* Class = "UILabel"; text = "Detailed Auth"; ObjectID = "2L4-ec-plx"; */
+"2L4-ec-plx.text" = "Auth Detallada";
+
+/* Class = "UILabel"; text = "Auto Capture"; ObjectID = "Q4M-uM-UjV"; */
+"Q4M-uM-UjV.text" = "Captura Automática";
 
 /* Class = "UIButton"; normalTitle = "Health Insurance Card"; ObjectID = "9sA-2d-9CD"; */
 "9sA-2d-9CD.normalTitle" = "Health Insurance Card";
 
 /* Class = "UIButton"; normalTitle = "Back"; ObjectID = "LCY-ix-IzS"; */
-"LCY-ix-IzS.normalTitle" = "Back";
+"LCY-ix-IzS.normalTitle" = "Atrás";
 
 /* Class = "UIButton"; normalTitle = "Retry"; ObjectID = "LIf-1j-4Yd"; */
-"LIf-1j-4Yd.normalTitle" = "Retry";
+"LIf-1j-4Yd.normalTitle" = "Reintentar";
 
 /* Class = "UIButton"; normalTitle = "ID/Passport"; ObjectID = "UWo-um-OZM"; */
 "UWo-um-OZM.normalTitle" = "ID/Passport";
 
-/* Class = "UIButton"; normalTitle = "Retry"; ObjectID = "Xux-Bm-Hn7"; */
-"Xux-Bm-Hn7.normalTitle" = "Retry";
+/* Class = "UIButton"; normalTitle = "Retry"; ObjectID = "puP-4s-tym"; */
+"puP-4s-tym.normalTitle" = "Reintentar";
 
 /* Class = "UITextView"; text = "Could not classify the image"; ObjectID = "eeU-cz-tYc"; */
-"eeU-cz-tYc.text" = "Could not classify the image";
+"eeU-cz-tYc.text" = "No se pudo clasificar la imagen";
 
-/* Class = "UIButton"; normalTitle = "Confirm"; ObjectID = "elp-B2-bZ2"; */
-"elp-B2-bZ2.normalTitle" = "Confirm";
+/* Class = "UIButton"; normalTitle = "Confirm"; ObjectID = "Xxy-RN-WTb"; */
+"Xxy-RN-WTb.normalTitle" = "Confirmar";
+
+

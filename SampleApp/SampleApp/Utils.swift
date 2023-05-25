@@ -22,32 +22,4 @@ public class Utils {
         }
         return dateStr
     }
-    
-    public static func getAuthResultString(authResult:Int)->String {
-        var returnValue = "Unknown"
-        
-        switch authResult {
-        case 0:
-            returnValue = "Unknown"
-            break
-        case 1:
-            returnValue = "Passed"
-            break
-        case 2:
-            returnValue = "Failed"
-            break
-        case 3:
-            returnValue = "Skipped"
-            break
-        case 4:
-            returnValue = "Caution"
-            break
-        case 5:
-            returnValue = "Attention"
-            break
-        default:
-            returnValue = "Unknown"
-        }
-        return returnValue;
-    }
 }

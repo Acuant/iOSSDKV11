@@ -15,7 +15,6 @@ import AcuantImagePreparation
 class FaceLivenessCameraController: UIViewController, AcuantHGLiveFaceCaptureDelegate {
     
     weak public var delegate: HGLivenessDelegate?
-    private var captured = false
     private var captureSession: FaceCaptureSession!
     private var videoPreviewLayer: AVCaptureVideoPreviewLayer!
     private var overlayLayer: CAShapeLayer?
@@ -38,7 +37,6 @@ class FaceLivenessCameraController: UIViewController, AcuantHGLiveFaceCaptureDel
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        captured = false
         startCameraView()
         handleRotateToPortraitAlertIfPhone()
     }
@@ -50,9 +48,7 @@ class FaceLivenessCameraController: UIViewController, AcuantHGLiveFaceCaptureDel
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         
-        if (captureSession?.isRunning == true) {
-            captureSession.stopRunning()
-        }
+        captureSession.stop()
         NotificationCenter.default.removeObserver(self)
         (navigationController as? BaseNavigationController)?.resetToSupportedOrientations()
         navigationController?.setNavigationBarHidden(false, animated: false)
@@ -106,10 +102,10 @@ class FaceLivenessCameraController: UIViewController, AcuantHGLiveFaceCaptureDel
             self.alertView = AlertView(frame: self.view.frame,
                                        text: NSLocalizedString("acuant_face_camera_rotate_portrait", comment: ""))
             self.view.addSubview(self.alertView!)
-            self.captureSession.stopRunning()
+            self.captureSession.stop()
         } else if !captureSession.isRunning {
             self.alertView?.removeFromSuperview()
-            self.captureSession.startRunning()
+            self.captureSession.resume()
         }
     }
     
@@ -132,8 +128,7 @@ class FaceLivenessCameraController: UIViewController, AcuantHGLiveFaceCaptureDel
         if let frontCameraDevice = AVCaptureDevice.default(.builtInWideAngleCamera, for: AVMediaType.video, position: .front) {
             captureDevice = frontCameraDevice
         }
-        captureSession = HGLiveness.getFaceCaptureSession(delegate: self,captureDevice: captureDevice)
-        captureSession?.start()
+        captureSession = HGLiveness.getFaceCaptureSession(delegate: self, captureDevice: captureDevice)
         
         videoPreviewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
         videoPreviewLayer.videoGravity = .resizeAspectFill
@@ -150,7 +145,9 @@ class FaceLivenessCameraController: UIViewController, AcuantHGLiveFaceCaptureDel
         videoPreviewLayer.addSublayer(faceOval!)
         view.layer.addSublayer(videoPreviewLayer)
         
-        rotateCameraPreview(to: view.window?.interfaceOrientation)
+        captureSession?.start {
+            self.rotateCameraPreview(to: self.view.window?.interfaceOrientation)
+        }
     }
     
     func shouldSkipFrame(liveFaceDetails: LiveFaceDetails?, faceType: AcuantFaceType) -> Bool {
@@ -187,16 +184,31 @@ class FaceLivenessCameraController: UIViewController, AcuantHGLiveFaceCaptureDel
             addMessage(message: NSLocalizedString("hg_too_far_away", comment: ""))
         case .FACE_NOT_IN_FRAME:
             addMessage(message: NSLocalizedString("hg_move_in_frame", comment: ""))
-        case .FACE_GOOD_DISTANCE:
-            addMessage(message: NSLocalizedString("hg_blink", comment: ""), color: UIColor.green.cgColor)
+        case .FACE_HAS_ANGLE:
+            addMessage(message: NSLocalizedString("hg_has_angle", comment: ""))
         case .FACE_MOVED:
             addMessage(message: NSLocalizedString("hg_hold_steady", comment: ""))
+        case .FACE_GOOD_DISTANCE:
+            addMessage(message: NSLocalizedString("hg_blink", comment: ""), color: UIColor.green.cgColor)
         @unknown default:
             break
         }
         
-        if let faceDetails = liveFaceDetails,
-           let faceRect = liveFaceDetails?.faceRect,
+        toggleFaceOval(liveFaceDetails: liveFaceDetails)
+        if let faceDetails = liveFaceDetails, faceDetails.isLiveFace,
+           let image = faceDetails.image,
+           let resizedImage = ImagePreparation.resize(image: image,
+                                                   targetWidth: getTargetWidth(width: Int(image.size.width), height: Int(image.size.height))),
+           let signedImageData = ImagePreparation.sign(image: resizedImage) {
+            navigationController?.popViewController(animated: true)
+            delegate?.liveFaceCaptured(result: HGLivenessResult(image: resizedImage, jpegData: signedImageData))
+        } else {
+            delegate?.liveFaceCaptured(result: nil)
+        }
+    }
+
+    private func toggleFaceOval(liveFaceDetails: LiveFaceDetails?) {
+        if let faceRect = liveFaceDetails?.faceRect,
            let cleanAperture = liveFaceDetails?.cleanAperture {
             let rect = faceRect.toCGRect()
             let totalSize = cleanAperture.toCGRect()
@@ -216,21 +228,11 @@ class FaceLivenessCameraController: UIViewController, AcuantHGLiveFaceCaptureDel
             let faceRect = videoPreviewLayer.layerRectConverted(fromMetadataOutputRect: scaled)
             faceOval?.isHidden = false
             faceOval?.path = UIBezierPath(ovalIn: faceRect).cgPath
-
-            if faceDetails.isLiveFace, let image = faceDetails.image, !captured,
-               let resizedImage = ImagePreparation.resize(image: image,
-                                                          targetWidth: getTargetWidth(width: Int(image.size.width), height: Int(image.size.height))),
-               let signedImageData = ImagePreparation.sign(image: resizedImage) {
-                captured = true
-                faceDetails.image = resizedImage
-                navigationController?.popViewController(animated: true)
-                delegate?.liveFaceCaptured(result: HGLivenessResult(image: resizedImage, jpegData: signedImageData))
-            }
         } else if liveFaceDetails == nil || liveFaceDetails?.faceRect == nil {
             faceOval?.isHidden = true
         }
     }
-    
+
     private func createRectangleContainer(hSpace: Double, vSpace: Double) -> CGRect {
         let overlayRect = view.bounds
         let rectWidth = overlayRect.size.width

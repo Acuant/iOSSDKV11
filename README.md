@@ -1,6 +1,6 @@
-# Acuant iOS SDK v11.5.8
+# Acuant iOS SDK v11.6.0
 
-**December 2022**
+**May 2023**
 
 See [https://github.com/Acuant/iOSSDKV11/releases](https://github.com/Acuant/iOSSDKV11/releases) for release notes.
 
@@ -21,9 +21,9 @@ This document provides detailed information about the Acuant iOS SDK. The Acuant
 
 ----------
 
-## Updating to 11.5.6+
+## Updating to 11.6.0+
 
-Please see the provided [Migration Details](MigrationDetails.md) for information about updating to 11.5.6+
+Please see the provided [Migration Details](MigrationDetails.md) for information about updating to 11.6.0+
 
 ----------
 
@@ -52,7 +52,7 @@ The SDK includes the following modules:
 
 - Implemented using iOS native camera library
 - Uses **AcuantImagePreparation** for cropping
-- Uses **https://github.com/gali8/Tesseract-OCR-iOS** for OCR on device
+- Uses **https://github.com/SwiftyTesseract/libtesseract** for OCR on device
 
 **Acuant Image Preparation Library (AcuantImagePreparation):**
 
@@ -98,7 +98,7 @@ The SDK includes the following modules:
 	-	**AcuantEchipReader**
 		- OpenSSL.xcframework
  	-	**AcuantCamera**
- 		- TesseractOCR.framework
+		- libtesseract.xcframework (Do Not Embed)
  	-	**AcuantIPLiveness**
 	 	- iProov.xcframework
  		- SocketIO.xcframework
@@ -107,22 +107,6 @@ The SDK includes the following modules:
 	![](docs/embeded_framework.png)
 
 	**Note:** AcuantCamera and AcuantFaceCapture are open projects. You will have to add the source code to your solution for frameworks.
-
-1. Get Carthage [https://github.com/Carthage/Carthage](https://github.com/Carthage/Carthage)
-
-   **Note:** The SDK does not support downloading from Carthage. The usage of Carthage here is to simplify copying frameworks and slicing unwanted architectures.
-
-1. Open your project in Xcode and navigate to Build Phases tab in application project settings. Add a "New Run Script".
-
-1.  Add the following to the script.
-
-		/usr/local/bin/carthage copy-frameworks
-
-1. Create new inputFileList.xcfilelist and outputFileList.xcfilelist. Add only TesseractOCR.framework to both files. Do not add XCFrameworks. There's an example in repository.
-
-1. Add the .xcfilelist to your run script.
-
-	For additional information, please visit [https://github.com/Carthage/Carthage](https://github.com/Carthage/Carthage).
 
 ----------
 
@@ -374,186 +358,196 @@ Initialize without a Subscription ID:
 
 AcuantCamera is best used in portrait mode. Lock the orientation of the app before using Camera.
 
-1. Add localized strings in app's localizables as indicated [here](#language-localization).
+1. To get the document image and barcode string, implement ```DocumentCameraViewControllerDelegate``` protocol.
 
-1. Set up callbacks:
-		
-		// Returns the image and barcodeString captured from device
-		public protocol CameraCaptureDelegate {
-	    	func setCapturedImage(image:Image, barcodeString:String?)
-		}
-		
-1. Open the camera. Options can be defined through an options object. See **CameraOptions** for all configurable fields.
-		
-		let options = CameraOptions(autoCapture: true, hideNavigationBar: true)
-		let documentCameraController = DocumentCameraController.getCameraController(delegate:self!, cameraOptions: options)
-        
-		navigationController.pushViewController(documentCameraController, animated: false)
-        
- **Note:** When the camera is launched, the image processing speed is automatically checked.
+    ```swift
+    public protocol DocumentCameraViewControllerDelegate {
+      func onCaptured(image: Image, barcodeString: String?)
+    }
 
- * Live document detection and auto capture features are enabled if the device supports a speed of at least 130ms.
- * For devices that don't meet the processing threshold, tap to capture will be enabled. Live document detection and auto capture features are disabled and switched to tap to capture. The user will have to manually capture the document.
+    extension MyViewController: DocumentCameraViewControllerDelegate {
+      func onCaptured(image: Image, barcodeString: String?) {
+        if let result = image.image {
 
-1. Get the captured image:
+        } else {
+          //user has cancelled
+        }
+      }
+    }
+    ```
 
-		public protocol CameraCaptureDelegate {
-	    	func setCapturedImage(image:Image, barcodeString:String?)
-		}
-		
-1. User canceled:
-		
-		func setCapturedImage(image:Image, barcodeString:String?){
-			if let success = image.image{
-			}
-			else{
-				//user has canceled
-			}
-		}
-		
-		
-		
-**Using Custom UI with DocumentCaptureSession (see DocumentCameraController.swift for reference):**
+1. Customize, create, and open the camera. For all configurable fields, see [DocumentCameraOptions](#documentcameraoptions).
 
-1. Get the DocumentCaptureSession.
-		
-		public protocol DocumentCaptureDelegate {
-		    func readyToCapture() // gets called when triggering capture
-		    func documentCaptured(image:UIImage, barcodeString:String?) // gets called with captured result
-		}
-		
-		let captureSession = DocumentCaptureSession.getDocumentCaptureSession(
-			delegate: DocumentCaptureDelegate, // session callback
-			frameDelegate: FrameAnalysisDelegate, // frame analysis callback
-			autoCaptureDelegate: AutoCaptureDelegate, // enable frame analysis/auto capture
-			captureDevice: AVCaptureDevice?) // AV Capture Device 
-			
-1. Start the session, and then add the session to AVCaptureVideoPreviewLayer.
+    ```swift
+    let textForState: (DocumentCameraState) -> String = { state in
+      switch state {
+      case .align: return "ALIGN"
+      case .moveCloser: return "MOVE CLOSER"
+      case .tooClose: return "TOO CLOSE"
+      case .steady: return "HOLD STEADY"
+      case .hold: return "HOLD"
+      case .capture: return "CAPTURING"
+      @unknown default: return ""
+      }
+    }
+    let options = DocumentCameraOptions(autoCapture: true, hideNavigationBar: true, textForState: textForState)
+    let documentCameraViewController = DocumentCameraViewController(options: options)
+    documentCameraViewController.delegate = self
+    navigationController.pushViewController(documentCameraViewController, animated: false)
+    ```
 
-		captureSession.start() // will start the capture session.
-		let videoPreviewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
-		
-		//write your own custom UI code
+    **Note:** When the camera is launched, the image processing speed is automatically checked.
 
-		
-1. Receive Frame Results.
-		
-		public enum FrameResult : Int{
-		    case NO_DOCUMENT, // No document
-		    	SMALL_DOCUMENT, // Document is small
-		    	BAD_ASPECT_RATIO, // Document type does not match aspect ratio
-		    	GOOD_DOCUMENT, // Document is good to trigger capture
-		    	DOCUMENT_NOT_IN_FRAME // Document is not in frame
-		}
-		
-		public protocol FrameAnalysisDelegate{
-		    func onFrameAvailable(frameResult: FrameResult, points: Array<CGPoint>?)
-		}
-		
-1. Trigger capture.
+- Live document detection and auto capture features are enabled if the device supports a speed of at least 130ms.
+- For devices that don't meet the processing threshold, tap to capture will be enabled. Live document detection and auto capture features are disabled and switched to tap to capture. The user will have to manually capture the document.
 
-		captureSession.enableCapture()
-		
-1. DocumentCaptureDelegate will be executed with result
-	
-		func documentCaptured(image:UIImage, barcodeString:String?)
+**Using Custom UI with DocumentCaptureSession (see DocumentCameraViewController.swift for reference):**
 
-**Note:** **AcuantCamera** is dependent on **AcuantImagePreparation** and  **AcuantCommon**.
+1. To get the image and barcode string, implement ```DocumentCaptureSessionDelegate``` protocol.
+
+    ```swift
+    public protocol DocumentCaptureSessionDelegate {
+      func readyToCapture()
+      func documentCaptured(image: UIImage, barcodeString: String?)
+    }
+    ```
+
+2. (Optionally) Implement ```AutoCaptureDelegate``` and ```FrameAnalysisDelegate``` protocols to define the auto capture behavior and receive frame results respectively.
+
+    ```swift
+    public protocol AutoCaptureDelegate {
+      func getAutoCapture() -> Bool
+      func setAutoCapture(autoCapture: Bool)
+    }
+
+    public protocol FrameAnalysisDelegate {
+      func onFrameAvailable(frameResult: FrameResult, points: [CGPoint]?)
+    }
+
+    public enum FrameResult: Int {
+        case noDocument,
+        smallDocument,
+        badAspectRatio,
+        goodDocument,
+        documentNotInFrame
+    }
+    ```
+
+3. Create the capture session.
+
+    ```swift
+    let captureDevice = AVCaptureDevice.default(.builtInWideAngleCamera, for: AVMediaType.video, position: .back)!
+    let captureSession = DocumentCaptureSession(captureDevice: captureDevice)
+    captureSession.delegate = self
+    captureSession.autoCaptureDelegate = self //optional
+    captureSession.frameDelegate = self //optional
+    ```
+
+4. Add the capture session to AVCaptureVideoPreviewLayer and then start it.
+
+    ```swift
+    let videoPreviewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
+    captureSession.start()
+    //Starts the capture session asynchronously on a background queue and notifies 
+    //the caller once the session is started via a completion handler. 
+    //The completion handler is optional and will be called on the main queue.
+
+    //write your own custom UI code
+    ```
+
+5. Trigger capture.
+
+    ```swift
+    captureSession.enableCapture()
+    ```
+
+6. Stop the capture session.
+
+    ```swift
+    captureSession.stop() // stops the capture session asynchronously on a background queue
+    ```
+
+**Note:** **AcuantCamera** depends on **AcuantImagePreparation** and  **AcuantCommon**.
 
 ----------
+
 ### Capture a document barcode using AcuantCamera
 
 **Note:** During regular capture of a document, the camera attempts to read the barcode. Launch this camera mode only if the barcode is expected according to document classification and failed to read during normal capture of the relevant side.
 
-1. Add localized strings in app's localizables as indicated [here](#language-localization).
+1. To get the barcode string, implement ```BarcodeCameraViewControllerDelegate``` protocol.
 
-1. Set up delegate:
+    ```swift
+    public protocol BarcodeCameraDelegate: AnyObject {
+        func onCaptured(barcode: String?)
+    }
+    ```
 
-            @objc public protocol BarcodeCameraDelegate: AnyObject {
-                func captured(barcode: String?)
-            }
+2. Customize, create, and open the camera. For all configurable fields, see [BarcodeCameraOptions](#barcodecameraoptions).
 
-1. Open the camera:
-
-            let options = CameraOptions(timeInMsPerDigit: 1000,
-                                        digitsToShow: 20,
-                                        colorHold: UIColor.white.cgColor,
-                                        colorCapturing: UIColor.green.cgColor)
-            let barcodeCamera = BarcodeCameraViewController(options: options, delegate: self)
-            navigationController?.pushViewController(barcodeCamera, animated: false)
-
- **Note:** Be aware that **timeInMsPerDigit** will be used as the time to wait after the barcode is detected and **digitsToShow** (in seconds) will be used as a timeout. When the timeout is reached the camera will be closed.
+    ```swift
+    let options = BarcodeCameraOptions(waitTimeAfterCapturingInSeconds: 1, timeoutInSeconds: 20)
+    let barcodeCamera = BarcodeCameraViewController(options: options)
+    barcodeCamera.delegate = self
+    navigationController?.pushViewController(barcodeCamera, animated: false)
+    ```
 
 ----------
 ### Read MRZ using AcuantCamera
 
-1. Add Tesseract dependency. See https://github.com/gali8/Tesseract-OCR-iOS
+1. If you are manually integrating the SDK, make sure to link libtesseract.xcframework and select "Do Not Embed".
 
-1. Add the OCRB Training data to you project. We recommend using the training data resource in Assets directory of the Sample App. Please refer to https://www.raywenderlich.com/2010498-tesseract-ocr-tutorial-for-ios#toc-anchor-005.
+2. Add the OCRB Training data to your project in a referenced folder called ***tessdata***. Acuant recommends using the training data resource in the Assets directory of the Sample App. See https://www.kodeco.com/2010498-tesseract-ocr-tutorial-for-ios#toc-anchor-005.
 
-1. Set View Controller UI customizations.
+3. Implement ```MrzCameraViewControllerDelegate``` protocol to get the MRZ result.
 
-		public enum MrzCameraState: Int {
-			case None, Align, MoveCloser, TooClose, Reposition, Good, Captured
-		}
-		
-		let vc = AcuantMrzCameraController()
-		vc.options = CameraOptions()
-		
-		vc.customDisplayMessage: ((MrzCameraState) -> String) = { state in
-				switch state {
-					case .None, .Align:
-						return ""
-					case .MoveCloser:
-						return "Move Closer"
-					case .TooClose:
-						return "Too Close!"
-					case .Reposition:
-						return "Reposition"
-					case .Good:
-						return "Reading MRZ"
-					case .Captured:
-						return "Captured"
-				}
-		}
+    ```swift
+    public protocol MrzCameraViewControllerDelegate: AnyObject {
+      func onCaptured(mrz: AcuantMrzResult?)
+    }
+    ```
 
-		
-1. Set callback.
+4. Customize, create, and open the camera. For all configurable fields, see [MrzCameraOptions](#mrzcameraoptions) .
 
-		vc.callback: ((AcuantMrzResult?) -> Void)? = { [weak self] result in
-				if let success = result {
-					DispatchQueue.main.async {
-						//pop or dismiss the View Controller
-						self?.navigationController?.popViewController(animated: true)
-					}
-				} else {
-					//User Canceled
-				}
-		}	
+    ```swift
+    let textForState: (MrzCameraState) -> String = { state in
+      switch state {
+      case .none, .align: return ""
+      case .moveCloser: return "Move Closer"
+      case .tooClose: return "Too Close!"
+      case .good: return "Reading MRZ"
+      case .captured: return "Captured"
+      case .reposition: return "Reposition"
+      @unknown default: return ""
+      }
+    }
+    let options = MrzCameraOptions(textForState: textForState)
+    let mrzCameraViewController = MrzCameraViewController(options: options)
+    mrzCameraViewController.delegate = self
+    navigationController?.pushViewController(mrzCameraViewController, animated: false)
+    ```
 
-1. Present or Push the View Controller. Push is shown in example.
+5. Result.
 
-		self.navigationController?.pushViewController(controller, animated: false)
-
-1. Result.
-
-		public class AcuantMrzResult {
-			public var surName: String = ""
-			public var givenName: String = ""
-			public var country: String = ""
-			public var passportNumber: String = ""
-			public var nationality: String = ""
-			public var dob: String = ""
-			public var gender: String = ""
-			public var passportExpiration: String = ""
-			public var personalDocNumber: String = ""
-			public var threeLineMrz: Bool = false
-			public var checkSumResult1: Bool = false
-			public var checkSumResult2: Bool = false
-			public var checkSumResult3: Bool = false
-			public var checkSumResult4: Bool = false
-			public var checkSumResult5: Bool = false
-		}
+    ```swift
+    public class AcuantMrzResult {
+      public var surName: String = ""
+      public var givenName: String = ""
+      public var country: String = ""
+      public var passportNumber: String = ""
+      public var nationality: String = ""
+      public var dob: String = ""
+      public var gender: String = ""
+      public var passportExpiration: String = ""
+      public var personalDocNumber: String = ""
+      public var threeLineMrz: Bool = false
+      public var checkSumResult1: Bool = false
+      public var checkSumResult2: Bool = false
+      public var checkSumResult3: Bool = false
+      public var checkSumResult4: Bool = false
+      public var checkSumResult5: Bool = false
+    }
+    ```
 
 ----------
 ### AcuantEchipReader
@@ -922,18 +916,20 @@ This module checks for liveness (whether the subject is a live person) by using 
 		
 	enum AcuantFaceType : Int {
 	
-	    case NONE // No face
+		case NONE // No face was detected
+
+		case FACE_TOO_CLOSE // Face is too close to the camera
+
+		case FACE_MOVED // Face is no longer in its original position
+
+		case FACE_TOO_FAR // Face is too far from camera
+
+		case FACE_GOOD_DISTANCE // Face is at the appropriate distance and is in frame
 		
-	    case FACE_TOO_CLOSE // face is too close camera
-		
-	    case FACE_MOVED // face moved from its original position
-		
-	    case FACE_TOO_FAR // face is too far from camera
-			
-	    case FACE_NOT_IN_FRAME // face is not in frame
-	    
-	    case FACE_GOOD_DISTANCE // face is good distance and in frame
-    }
+		case FACE_NOT_IN_FRAME // Face is not in the frame
+
+		case FACE_HAS_ANGLE // Face is angled either roll or yaw
+	}
 
 	public protocol AcuantHGLiveFaceCaptureDelegate {
 			func liveFaceDetailsCaptured(liveFaceDetails: LiveFaceDetails?, faceType: HGLiveness.AcuantFaceType)
@@ -1044,17 +1040,6 @@ This module is used to match two facial images:
 
 In order to display texts in the corresponding language you need to add the following localizable strings to your app's localizable:
 
-#### AcuantCamera
-
-	"acuant_camera_align" = "ALIGN";
-	"acuant_camera_manual_capture" = "ALIGN & TAP";
-	"acuant_camera_move_closer" = "MOVE CLOSER";
-	"acuant_camera_hold_steady" = "HOLD STEADY";
-	"acuant_camera_capturing" = "CAPTURING";
-	"acuant_camera_outside_view" = "TOO CLOSE!";
-	"acuant_camera_paused" = "CAMERA PAUSED";
-	"acuant_camera_capture_barcode" = "CAPTURE BARCODE";
-
 #### AcuantFaceCapture
 
 	"acuant_face_camera_initial" = "Align face to start capture";
@@ -1122,6 +1107,7 @@ In order to display texts in the corresponding language you need to add the foll
 
 	public class AcuantErrorCodes{
 		public static let ERROR_InvalidCredentials = -1
+		public static let ERROR_InvalidEndpoint = -3
 		public static let ERROR_InitializationNotFinished = -4
 		public static let ERROR_Network = -5
 		public static let ERROR_InvalidJson = -6
@@ -1203,37 +1189,140 @@ In order to display texts in the corresponding language you need to add the foll
 		public init(){}
 	}
     
-### CameraOptions
+### DocumentCameraOptions
 
-	public class CameraOptions { 
-		public let timeInMsPerDigit: Int
-		public let digitsToShow: Int
-		public let allowBox: Bool
-		public let autoCapture: Bool
-		public let hideNavigationBar: Bool
-		public let bracketLengthInHorizontal: Int
-		public let bracketLengthInVertical: Int
-		public let defaultBracketMarginWidth: CGFloat
-		public let defaultBracketMarginHeight: CGFloat
-		public let colorHold: CGColor
-		public let colorCapturing: CGColor
-		public let colorReposition: CGColor
-		public let colorBracketAlign: CGColor
-		public let colorBracketCloser: CGColor
-		public let colorBracketHold: CGColor
-		public let colorBracketCapture: CGColor
-		public let defaultImageUrl: String
-		public let showBackButton: Bool
+```swift
+public class DocumentCameraOptions: CameraOptions {
+  public let countdownDigits: Int
+  public let timeInSecondsPerCountdownDigit: Double
+  public let textForManualCapture: String
+  public let textForState: (DocumentCameraState) -> String
+  public let colorForState: (DocumentCameraState) -> CGColor
+
+  public init(countdownDigits: Int = 2,
+              timeInSecondsPerCountdownDigit: Double = 0.9,
+              showDetectionBox: Bool = true,
+              autoCapture: Bool = true,
+              hideNavigationBar: Bool = true,
+              showBackButton: Bool = true,
+              bracketLengthInHorizontal: Int = 80,
+              bracketLengthInVertical: Int = 50,
+              defaultBracketMarginWidth: CGFloat = 0.5,
+              defaultBracketMarginHeight: CGFloat = 0.6,
+              textForManualCapture: String = "ALIGN & TAP",
+              textForState: @escaping (DocumentCameraState) -> String = { state in
+                switch state {
+                case .align: return "ALIGN"
+                case .moveCloser: return "MOVE CLOSER"
+                case .tooClose: return "TOO CLOSE"
+                case .steady: return "HOLD STEADY"
+                case .hold: return "HOLD"
+                case .capture: return "CAPTURING"
+                @unknown default: return ""
+                }
+              },
+              colorForState: @escaping (DocumentCameraState) -> CGColor = { state in
+                switch state {
+                case .align: return UIColor.black.cgColor
+                case .moveCloser: return UIColor.red.cgColor
+                case .tooClose: return UIColor.red.cgColor
+                case .steady: return UIColor.yellow.cgColor
+                case .hold: return UIColor.yellow.cgColor
+                case .capture: return UIColor.green.cgColor
+                @unknown default: return UIColor.black.cgColor
+                }
+              },
+              textForCameraPaused: String = "CAMERA PAUSED",
+              backButtonText: String = "BACK",
+              preventScreenshots: Bool = true)
+  }
+  ```
+
+### BarcodeCameraOptions
+
+```swift  
+public class BarcodeCameraOptions: CameraOptions {
+  public let waitTimeAfterCapturingInSeconds: Int
+  public let timeoutInSeconds: Int
+  public let textForState: (BarcodeCameraState) -> String
+  public let colorForState: (BarcodeCameraState) -> CGColor
+
+  public init(hideNavigationBar: Bool = true,
+              showBackButton: Bool = true,
+              waitTimeAfterCapturingInSeconds: Int = 1,
+              timeoutInSeconds: Int = 20,
+              textForState: @escaping (BarcodeCameraState) -> String = { state in
+                switch state {
+                case .align: return "CAPTURE BARCODE"
+                case .capturing: return "CAPTURING"
+                @unknown default: return ""
+                }
+              },
+              colorForState: @escaping (BarcodeCameraState) -> CGColor = { state in
+                switch state {
+                case .align: return UIColor.white.cgColor
+                case .capturing: return UIColor.green.cgColor
+                @unknown default: return UIColor.white.cgColor
+                }
+              },
+              textForCameraPaused: String = "CAMERA PAUSED",
+              backButtonText: String = "BACK",
+              placeholderImageName: String? = "barcode_placement_overlay",
+              preventScreenshots: Bool = true)
 	}
-    
+```
+
+### MrzCameraOptions
+
+```swift
+public class MrzCameraOptions: CameraOptions {
+  public let textForState: (MrzCameraState) -> String
+  public let colorForState: (MrzCameraState) -> CGColor
+
+  public init(showDetectionBox: Bool = true,
+              bracketLengthInHorizontal: Int = 50,
+              bracketLengthInVertical: Int = 40,
+              defaultBracketMarginWidth: CGFloat = 0.58,
+              defaultBracketMarginHeight: CGFloat = 0.63,
+              hideNavigationBar: Bool = true,
+              showBackButton: Bool = true,
+              placeholderImageName: String? = "Passport_placement_Overlay",
+              textForState: @escaping (MrzCameraState) -> String = { state in
+                switch state {
+                case .none, .align: return ""
+                case .moveCloser: return "Move Closer"
+                case .tooClose: return "Too Close!"
+                case .good: return "Reading MRZ"
+                case .captured: return "Captured"
+                case .reposition: return "Reposition"
+                @unknown default: return ""
+                }
+              },
+              colorForState: @escaping (MrzCameraState) -> CGColor = { state in
+                switch state {
+                case .none, .align: return UIColor.black.cgColor
+                case .moveCloser: return UIColor.red.cgColor
+                case .tooClose: return UIColor.red.cgColor
+                case .good: return UIColor.yellow.cgColor
+                case .captured: return UIColor.green.cgColor
+                case .reposition: return UIColor.red.cgColor
+                @unknown default: return UIColor.black.cgColor
+                }
+              },
+              textForCameraPaused: String = "CAMERA PAUSED",
+              backButtonText: String = "BACK",
+              preventScreenshots: Bool = true)
+}
+```
+
 ### IdOptions
 
 	public class IdOptions {
-		public var cardSide: CardSide = CardSide.Front
+		public var cardSide: DocumentSide = .front
 		public var isHealthCard: Bool = false
 		public var isRetrying: Bool = false
-		public var authenticationSensitivity: AuthenticationSensitivity = AuthenticationSensitivity.Normal
-		public var tamperSensitivity: TamperSensitivity = TamperSensitivity.Normal
+		public var authenticationSensitivity: AuthenticationSensitivity = AuthenticationSensitivity.normal
+		public var tamperSensitivity: TamperSensitivity = TamperSensitivity.normal
 		public var countryCode: String?
 	}
     

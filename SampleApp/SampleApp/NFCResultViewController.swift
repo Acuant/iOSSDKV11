@@ -103,12 +103,12 @@ class NFCResultViewController: UIViewController{
         data.append("\n Issuing Authority  : " + passport.issuingAuthority)
         data.append("\n Data Hash  : "  + (passport.passportDataValid ? "True" : "False"))
 
-        if passport.passportSigned != OzoneResultStatus.NOT_PERFORMED {
-            data.append("\n Document Signer  (Ozone): "  + (passport.passportSigned == OzoneResultStatus.SUCCESS ? "True" : "False"))
+        if passport.passportSigned != OzoneResultStatus.notPerformed {
+            data.append("\n Document Signer  (Ozone): "  + (passport.passportSigned == OzoneResultStatus.success ? "True" : "False"))
         }
 
-        if passport.passportCountrySigned != OzoneResultStatus.NOT_PERFORMED {
-            data.append("\n Country Signer (Ozone): "  +  (passport.passportCountrySigned == OzoneResultStatus.SUCCESS ? "True" : "False"))
+        if passport.passportCountrySigned != OzoneResultStatus.notPerformed {
+            data.append("\n Country Signer (Ozone): "  +  (passport.passportCountrySigned == OzoneResultStatus.success ? "True" : "False"))
         }
 
         if passport.BACStatus != AuthStatus.skipped {
@@ -130,14 +130,14 @@ class NFCResultViewController: UIViewController{
    
     }
     
-    private func mapOzoneResult(result: OzoneResultStatus) -> String{
-        switch(result){
-            case .SUCCESS:
-                return "True"
-            case .FAILED:
-                return  "False"
-            default:
-                return "Unknown"
+    private func mapOzoneResult(result: OzoneResultStatus) -> String {
+        switch result {
+        case .success:
+            return "True"
+        case .failed:
+            return  "False"
+        default:
+            return "Unknown"
         }
     }
 

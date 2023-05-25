@@ -12,22 +12,20 @@ import AVFoundation
 import AcuantCommon
 import AcuantImagePreparation
 
-@objcMembers public class DocumentCaptureSession: AVCaptureSession {
-
+@objcMembers public class DocumentCaptureSession: CameraCaptureSession {
     let stillImageOutput = AVCapturePhotoOutput()
     var croppedFrame: Image?
     var stringValue: String?
-    var captureDevice: AVCaptureDevice?
     var shouldShowBorder = true
-    weak var delegate: DocumentCaptureDelegate?
-    
-    private let context = CIContext()
+    weak var delegate: DocumentCaptureSessionDelegate?
+    weak var autoCaptureDelegate: AutoCaptureDelegate?
+    weak var frameDelegate: FrameAnalysisDelegate?
+
     private let DEFAULT_FRAME_THRESHOLD = 1
     private let FAST_FRAME_THRESHOLD = 3
     private let TOO_SLOW_FOR_AUTO_CAPTURE = 130
-    private let DEFAULT_VIDEO_ZOOM_FACTOR = 1.6
     private var autoCapture = true
-    weak private var autoCaptureDelegate: AutoCaptureDelegate?
+    
     private var captureEnabled = true
     private var captured = false
     private var cropping = false
@@ -37,147 +35,80 @@ import AcuantImagePreparation
     private var videoOutput: AVCaptureVideoDataOutput!
     private var captureMetadataOutput: AVCaptureMetadataOutput!
     private var devicePreviewResolutionLongerSide = CaptureConstants.CAMERA_PREVIEW_LONGER_SIDE_STANDARD
-    weak private var frameDelegate: FrameAnalysisDelegate?
     
-    public override init() {
-        super.init()
+    public init(captureDevice: AVCaptureDevice) {
+        let queue = DispatchQueue(label: "com.acuant.document-capture-session", qos: .userInteractive)
+        super.init(captureDevice: captureDevice, sessionQueue: queue)
+    }
+    
+    override func onConfigurationBegan() {
+        automaticallyConfiguresApplicationAudioSession = false
+        usesApplicationAudioSession = false
+        sessionPreset = .photo
+        setFocusMode(captureDevice: captureDevice)
+        add(captureDevice: captureDevice)
         if #available(iOS 13.0, *) {
             stillImageOutput.maxPhotoQualityPrioritization = .quality
         }
+
+        let formatDescription = captureDevice.activeFormat.formatDescription
+        let dimensions = CMVideoFormatDescriptionGetDimensions(formatDescription)
+        devicePreviewResolutionLongerSide = max(Int(dimensions.width), Int(dimensions.height))
+
+        configureVideoOutput()
+        configureImageOutput()
+        configureMetadataOutput()
     }
-    
-    public class func getDocumentCaptureSession(delegate: DocumentCaptureDelegate?,
-                                                frameDelegate: FrameAnalysisDelegate,
-                                                autoCaptureDelegate: AutoCaptureDelegate,
-                                                captureDevice: AVCaptureDevice?) -> DocumentCaptureSession {
-        return DocumentCaptureSession().getDocumentCaptureSession(delegate: delegate!,
-                                                                  frameDelegate: frameDelegate,
-                                                                  autoCaptureDelegate: autoCaptureDelegate,
-                                                                  captureDevice: captureDevice)
-    }
-    
-    private func getDocumentCaptureSession(delegate: DocumentCaptureDelegate?,
-                                           frameDelegate: FrameAnalysisDelegate,
-                                           autoCaptureDelegate: AutoCaptureDelegate,
-                                           captureDevice: AVCaptureDevice?) -> DocumentCaptureSession {
-        self.delegate = delegate
-        self.captureDevice = captureDevice
-        self.frameDelegate = frameDelegate
-        self.autoCaptureDelegate = autoCaptureDelegate
-        self.autoCapture = autoCaptureDelegate.getAutoCapture()
-        return self
-    }
-    
-    public func enableCapture() {
-        self.captureEnabled = true
-        self.captured = true
-        self.capturePhoto()
+
+    override func enableCapture() {
+        captureEnabled = true
+        captured = true
+        capturePhoto()
         DispatchQueue.main.async {
             self.delegate?.readyToCapture()
         }
     }
-    
-    public func start() {
-        guard let videoDevice = captureDevice else {
+
+    private func setFocusMode(captureDevice: AVCaptureDevice) {
+        if captureDevice.isFocusModeSupported(.continuousAutoFocus) {
+            try? captureDevice.lockForConfiguration()
+            captureDevice.focusMode = .continuousAutoFocus
+            captureDevice.unlockForConfiguration()
+        }
+    }
+
+    private func add(captureDevice: AVCaptureDevice) {
+        guard let input = try? AVCaptureDeviceInput(device: captureDevice), canAddInput(input) else {
             return
         }
+        addInput(input)
+    }
 
-        self.automaticallyConfiguresApplicationAudioSession = false
-        self.usesApplicationAudioSession = false
-        if videoDevice.isFocusModeSupported(.continuousAutoFocus) {
-            try? videoDevice.lockForConfiguration()
-            videoDevice.focusMode = .continuousAutoFocus
-            videoDevice.unlockForConfiguration()
-        }
-
-        self.input = try? AVCaptureDeviceInput(device: videoDevice)
-        if let input = self.input, self.canAddInput(input) {
-            self.addInput(input)
-        }
-
-        self.sessionPreset = .photo
-
-        let formatDescription = videoDevice.activeFormat.formatDescription
-        let dimensions = CMVideoFormatDescriptionGetDimensions(formatDescription)
-        self.devicePreviewResolutionLongerSide = max(Int(dimensions.width), Int(dimensions.height))
-           
-        self.videoOutput = AVCaptureVideoDataOutput()
-        self.videoOutput.alwaysDiscardsLateVideoFrames = true
+    private func configureVideoOutput() {
+        videoOutput = AVCaptureVideoDataOutput()
+        videoOutput.alwaysDiscardsLateVideoFrames = true
         let frameQueue = DispatchQueue(label: "com.acuant.frame.queue", qos: .userInteractive, attributes: .concurrent)
-        self.videoOutput.setSampleBufferDelegate(self, queue: frameQueue)
-        if self.canAddOutput(self.videoOutput){
-            self.addOutput(self.videoOutput)
+        videoOutput.setSampleBufferDelegate(self, queue: frameQueue)
+        if canAddOutput(videoOutput) {
+            addOutput(videoOutput)
         }
-        if self.canAddOutput(self.stillImageOutput) {
-            self.stillImageOutput.isLivePhotoCaptureEnabled = false
-            self.addOutput(self.stillImageOutput)
-        }
+    }
 
-        self.captureMetadataOutput = AVCaptureMetadataOutput()
+    private func configureImageOutput() {
+        if canAddOutput(stillImageOutput) {
+            stillImageOutput.isLivePhotoCaptureEnabled = false
+            addOutput(stillImageOutput)
+        }
+    }
+
+    private func configureMetadataOutput() {
+        captureMetadataOutput = AVCaptureMetadataOutput()
         let metadataQueue = DispatchQueue(label: "com.acuant.metadata.queue", qos: .userInteractive, attributes: .concurrent)
-        self.captureMetadataOutput.setMetadataObjectsDelegate(self, queue: metadataQueue)
-        if self.canAddOutput(self.captureMetadataOutput) {
-           self.addOutput(self.captureMetadataOutput)
-           self.captureMetadataOutput.metadataObjectTypes = [.pdf417]
+        captureMetadataOutput.setMetadataObjectsDelegate(self, queue: metadataQueue)
+        if canAddOutput(captureMetadataOutput) {
+           addOutput(captureMetadataOutput)
+           captureMetadataOutput.metadataObjectTypes = [.pdf417]
         }
-        self.startRunning()
-        applyZoom(captureDevice: videoDevice)
-    }
-
-    private func applyZoom(captureDevice: AVCaptureDevice) {
-        if #available(iOS 15.0, *) {
-            let zoomFactor = getRecommendedZoomFactor(captureDevice: captureDevice)
-            try? captureDevice.lockForConfiguration()
-            captureDevice.videoZoomFactor = zoomFactor
-            captureDevice.unlockForConfiguration()
-        } else {
-            try? captureDevice.lockForConfiguration()
-            if captureDevice.maxAvailableVideoZoomFactor >= DEFAULT_VIDEO_ZOOM_FACTOR {
-                captureDevice.videoZoomFactor = DEFAULT_VIDEO_ZOOM_FACTOR
-            }
-            captureDevice.unlockForConfiguration()
-        }
-    }
-
-    @available(iOS 15.0, *)
-    private func getRecommendedZoomFactor(captureDevice: AVCaptureDevice) -> Double {
-        let deviceMinimumFocusDistance = Float(captureDevice.minimumFocusDistance)
-        guard deviceMinimumFocusDistance != -1 else { return DEFAULT_VIDEO_ZOOM_FACTOR }
-
-        let formatDimensions = CMVideoFormatDescriptionGetDimensions(captureDevice.activeFormat.formatDescription)
-        let rectOfInterestWidth = Float(formatDimensions.height) / Float(formatDimensions.width)
-        let deviceFieldOfView = captureDevice.activeFormat.videoFieldOfView
-        let minimumSubjectDistanceForDoc = minimumSubjectDistanceForDoc(fieldOfView: deviceFieldOfView,
-                                                                        minimumDocSizeInMillimeters: 85,
-                                                                        previewFillPercentage: rectOfInterestWidth)
-        var zoomFactor = 0.0
-        if minimumSubjectDistanceForDoc < deviceMinimumFocusDistance {
-            let optimalZoomFactor = Double(deviceMinimumFocusDistance / minimumSubjectDistanceForDoc)
-            if optimalZoomFactor <= captureDevice.maxAvailableVideoZoomFactor  {
-                zoomFactor = optimalZoomFactor
-            }
-        } else if DEFAULT_VIDEO_ZOOM_FACTOR <= captureDevice.maxAvailableVideoZoomFactor {
-            zoomFactor = DEFAULT_VIDEO_ZOOM_FACTOR
-        }
-
-        return zoomFactor
-    }
-    
-    private func minimumSubjectDistanceForDoc(fieldOfView: Float, minimumDocSizeInMillimeters: Float, previewFillPercentage: Float) -> Float {
-        let radians = degreesToRadians(fieldOfView / 2)
-        let filledDocSize = minimumDocSizeInMillimeters / previewFillPercentage
-        return filledDocSize / (2 * tan(radians))
-    }
-    
-    private func degreesToRadians(_ degrees: Float) -> Float {
-        return degrees * Float.pi / 180
-    }
-    
-    private func imageFromSampleBuffer(sampleBuffer: CMSampleBuffer) -> UIImage? {
-        guard let imageBuffer = CMSampleBufferGetImageBuffer(sampleBuffer) else { return nil }
-        let ciImage = CIImage(cvPixelBuffer: imageBuffer)
-        guard let cgImage = context.createCGImage(ciImage, from: ciImage.extent) else { return nil }
-        return UIImage(cgImage: cgImage)
     }
 
     private func getFrameResult(basedOn detectedImage: Image?,
@@ -185,14 +116,14 @@ import AcuantImagePreparation
                                 smallerDocumentDPIRatio: Double,
                                 largerDocumentDPIRatio: Double) -> (frameResult: FrameResult, scaledPoints: [CGPoint]) {
         guard let croppedFrame = detectedImage else {
-            return (.NO_DOCUMENT, [])
+            return (.noDocument, [])
         }
 
         let frameSize = frame.size
         var scaledPoints = [CGPoint]()
         var resolutionThreshold = CaptureConstants.MANDATORY_RESOLUTION_THRESHOLD_DEFAULT
 
-        if self.shouldShowBorder {
+        if shouldShowBorder {
             croppedFrame.points.forEach{ point in
                 var scaled: CGPoint = CGPoint()
                 scaled.x = point.x/frameSize.width as CGFloat
@@ -212,16 +143,16 @@ import AcuantImagePreparation
 
         if croppedFrame.error?.errorCode == AcuantErrorCodes.ERROR_CouldNotCrop
             || croppedFrame.dpi < CaptureConstants.NO_DOCUMENT_DPI_THRESHOLD
-            || !self.isDocumentAligned(croppedFrame.points) {
-            return (.NO_DOCUMENT, scaledPoints)
+            || !isDocumentAligned(croppedFrame.points) {
+            return (.noDocument, scaledPoints)
         }   else if !croppedFrame.isCorrectAspectRatio {
-            return (.BAD_ASPECT_RATIO, scaledPoints)
+            return (.badAspectRatio, scaledPoints)
         } else if croppedFrame.error?.errorCode == AcuantErrorCodes.ERROR_LowResolutionImage, croppedFrame.dpi < resolutionThreshold {
-            return (.SMALL_DOCUMENT, scaledPoints)
+            return (.smallDocument, scaledPoints)
         } else if let rect = detectedRect, !frameRect.contains(rect) {
-            return (.DOCUMENT_NOT_IN_FRAME, scaledPoints)
+            return (.documentNotInFrame, scaledPoints)
         } else {
-            return (.GOOD_DOCUMENT, scaledPoints)
+            return (.goodDocument, scaledPoints)
         }
     }
     
@@ -237,11 +168,11 @@ import AcuantImagePreparation
     func capturePhoto() {
         let photoSetting = AVCapturePhotoSettings.init(format: [AVVideoCodecKey: AVVideoCodecType.jpeg])
         if #available(iOS 13.0, *) {
-            photoSetting.photoQualityPrioritization = .quality
+                        photoSetting.photoQualityPrioritization = .quality
         } else {
             photoSetting.isAutoStillImageStabilizationEnabled = true
         }
-        self.stillImageOutput.capturePhoto(with: photoSetting, delegate: self)
+        stillImageOutput.capturePhoto(with: photoSetting, delegate: self)
     }
 
     func detectImage(image: UIImage) -> Image? {
@@ -265,7 +196,7 @@ import AcuantImagePreparation
 extension DocumentCaptureSession: AVCaptureVideoDataOutputSampleBufferDelegate {
 
     public func captureOutput(_ output: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
-        guard let frame = imageFromSampleBuffer(sampleBuffer: sampleBuffer), !captured, !cropping, autoCapture else {
+        guard let frame = imageFrom(sampleBuffer: sampleBuffer), !captured, !cropping, autoCapture else {
             return
         }
 
@@ -275,9 +206,9 @@ extension DocumentCaptureSession: AVCaptureVideoDataOutputSampleBufferDelegate {
         let elapsed = CACurrentMediaTime() - startTime
 
         if !finishedTest {
-            for i in 0 ..< self.times.count {
-                if self.times[i] == -1 {
-                    self.times[i] = Int(elapsed * 1000)
+            for i in 0 ..< times.count {
+                if times[i] == -1 {
+                    times[i] = Int(elapsed * 1000)
                     if i == times.count - 1 {
                         break
                     } else {
@@ -331,26 +262,22 @@ extension DocumentCaptureSession: AVCaptureMetadataOutputObjectsDelegate {
 extension DocumentCaptureSession: AVCapturePhotoCaptureDelegate {
 
     public func photoOutput(_ output: AVCapturePhotoOutput, didFinishProcessingPhoto photo: AVCapturePhoto, error: Error?) {
-        // Check if there is any error in capturing
         guard error == nil else {
             print("Fail to capture photo: \(String(describing: error))")
             return
         }
-        
-        // Check if the pixel buffer could be converted to image data
+
         guard let imageData = photo.fileDataRepresentation() else {
             print("Fail to convert pixel buffer")
             return
         }
-        
-        // Check if UIImage could be initialized with image data
+
         guard let capturedImage = UIImage.init(data: imageData , scale: 1.0) else {
             print("Fail to convert image data to UIImage")
             return
         }
-        
+
         DispatchQueue.main.async {
-            self.captureDevice = nil
             self.stopRunning()
             self.delegate?.documentCaptured(image: capturedImage, barcodeString: self.stringValue)
             self.delegate = nil

@@ -5,16 +5,20 @@
 "Capture Barcode" = "Capture Barcode";
 "Barcode Expected" = "A barcode was expected but was not captured. Please try capturing the barcode";
 
-
 /* AcuantCamera */
 "acuant_camera_align" = "ALIGN";
 "acuant_camera_manual_capture" = "ALIGN & TAP";
 "acuant_camera_move_closer" = "MOVE CLOSER";
 "acuant_camera_hold_steady" = "HOLD STEADY";
+"acuant_camera_hold" = "HOLD";
 "acuant_camera_capturing" = "CAPTURING";
-"acuant_camera_outside_view" = "TOO CLOSE!";
+"acuant_camera_captured" = "CAPTURED";
+"acuant_camera_reposition" = "REPOSITION";
+"acuant_camera_reading_mrz" = "READING MRZ";
+"acuant_camera_too_close" = "TOO CLOSE!";
 "acuant_camera_paused" = "CAMERA PAUSED";
 "acuant_camera_capture_barcode" = "CAPTURE BARCODE";
+"acuant_camera_back_button_text" = "BACK";
 
 /* AcuantFaceCapture/AcuantPassiveLiveness */
 "acuant_face_camera_initial" = "Align face to start capture";
@@ -32,6 +36,7 @@
 "hg_too_close" = "Too Close! Move Away";
 "hg_too_far_away" = "Move Closer";
 "hg_move_in_frame" = "Move in Frame";
+"hg_has_angle" = "Face has Angle. Do not tilt";
 "hg_blink" = "Blink!";
 "hg_hold_steady" = "Hold Steady";
 "hg_align_face_and_blink" = "Align face to begin";

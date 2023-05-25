@@ -1,5 +1,5 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.7.1 (swiftlang-5.7.1.135.3 clang-1400.0.29.51)
+// swift-compiler-version: Apple Swift version 5.8 (swiftlang-5.8.0.124.2 clang-1403.0.22.11.100)
 // swift-module-flags: -target x86_64-apple-ios11.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name AcuantFaceMatch
 // swift-module-flags-ignorable: -enable-bare-slash-regex
 import AcuantCommon
@@ -12,18 +12,17 @@ import _StringProcessing
 @objc public protocol FacialMatchDelegate {
   @objc func facialMatchFinished(result: AcuantFaceMatch.FacialMatchResult?)
 }
-@objc @_inheritsConvenienceInitializers @objcMembers public class FacialMatchResult : ObjectiveC.NSObject {
+@objc @_inheritsConvenienceInitializers @objcMembers public class FacialMatchResult : ObjectiveC.NSObject, Swift.Decodable {
   @objc public var isMatch: Swift.Bool
   @objc public var transactionId: Swift.String?
   @objc public var score: Swift.Int
   @objc public var error: AcuantCommon.AcuantError?
-  @objc public static func initWithJSONDict(jsonDict: [Swift.String : Any]?) -> AcuantFaceMatch.FacialMatchResult
-  @objc public class func createInstance() -> AcuantFaceMatch.FacialMatchResult
   @objc override dynamic public init()
   @objc deinit
+  required public init(from decoder: any Swift.Decoder) throws
 }
 @objc @_inheritsConvenienceInitializers @objcMembers public class FaceMatch : ObjectiveC.NSObject {
-  @objc public class func processFacialMatch(facialData: AcuantFaceMatch.FacialMatchData, delegate: AcuantFaceMatch.FacialMatchDelegate)
+  @objc public class func processFacialMatch(facialData: AcuantFaceMatch.FacialMatchData, delegate: any AcuantFaceMatch.FacialMatchDelegate)
   @objc override dynamic public init()
   @objc deinit
 }

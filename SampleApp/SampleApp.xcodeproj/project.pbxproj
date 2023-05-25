@@ -58,6 +58,7 @@
 		C229E7B62224520700FFAC6F /* AcuantConfig.plist in Resources */ = {isa = PBXBuildFile; fileRef = C229E7B52224520700FFAC6F /* AcuantConfig.plist */; };
 		C2AD3AAA2273B8F200088F0A /* AcuantCamera.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C208049D2226E049004FA5BE /* AcuantCamera.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C2B08D5922C6AF31003F2CBE /* FaceLivenessCameraController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B08D5822C6AF31003F2CBE /* FaceLivenessCameraController.swift */; };
+		D943D32A2A20255C003B7F35 /* libtesseract.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = D943D3292A20255B003B7F35 /* libtesseract.xcframework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -137,8 +138,6 @@
 		8351094B22FB462B00CC8329 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		8351094F22FB463B00CC8329 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
 		8351095122FB463B00CC8329 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Main.strings; sourceTree = "<group>"; };
-		8351095422FB464A00CC8329 /* fil */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fil; path = fil.lproj/Main.strings; sourceTree = "<group>"; };
-		8351095522FB464A00CC8329 /* fil */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fil; path = fil.lproj/Localizable.strings; sourceTree = "<group>"; };
 		83576FF1243554E20091454C /* NFCViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NFCViewController.swift; sourceTree = "<group>"; };
 		83576FF2243554E20091454C /* NFCResultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NFCResultViewController.swift; sourceTree = "<group>"; };
 		83576FF5243555310091454C /* tessdata */ = {isa = PBXFileReference; lastKnownFileType = folder; name = tessdata; path = Assets.xcassets/tessdata; sourceTree = "<group>"; };
@@ -162,6 +161,7 @@
 		C20804982226E048004FA5BE /* AcuantCamera.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = AcuantCamera.xcodeproj; path = ../AcuantCamera/AcuantCamera.xcodeproj; sourceTree = "<group>"; };
 		C229E7B52224520700FFAC6F /* AcuantConfig.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = AcuantConfig.plist; sourceTree = "<group>"; };
 		C2B08D5822C6AF31003F2CBE /* FaceLivenessCameraController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FaceLivenessCameraController.swift; sourceTree = "<group>"; };
+		D943D3292A20255B003B7F35 /* libtesseract.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = libtesseract.xcframework; path = ../EmbeddedFrameworks/libtesseract.xcframework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -169,6 +169,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D943D32A2A20255C003B7F35 /* libtesseract.xcframework in Frameworks */,
 				AA1728B72673CDDF00E3E2CB /* AcuantEchipReader.xcframework in Frameworks */,
 				AA1728BF2673CDDF00E3E2CB /* AcuantImagePreparation.xcframework in Frameworks */,
 				AA08D0A3287DEBAB00C5A336 /* OpenSSL.xcframework in Frameworks */,
@@ -241,6 +242,7 @@
 		13AC662620EE954900F0D494 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D943D3292A20255B003B7F35 /* libtesseract.xcframework */,
 				AA08D0A2287DEBAB00C5A336 /* OpenSSL.xcframework */,
 				AA1728A82673CDDE00E3E2CB /* AcuantCommon.xcframework */,
 				AA1728A52673CDDE00E3E2CB /* AcuantDocumentProcessing.xcframework */,
@@ -294,7 +296,6 @@
 				13AC65D520EE8F8F00F0D494 /* Frameworks */,
 				13AC65D620EE8F8F00F0D494 /* Resources */,
 				C2AD3AA82273B8B200088F0A /* Embed Frameworks */,
-				83B3429B237B2A6300AB2834 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -330,7 +331,6 @@
 				en,
 				Base,
 				es,
-				fil,
 			);
 			mainGroup = 13AC65CF20EE8F8F00F0D494;
 			productRefGroup = 13AC65D920EE8F8F00F0D494 /* Products */;
@@ -385,28 +385,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		83B3429B237B2A6300AB2834 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"$(SRCROOT)/input.xcfilelist",
-			);
-			inputPaths = (
-			);
-			outputFileListPaths = (
-				"$(SRCROOT)/output.xcfilelist",
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n/usr/local/bin/carthage copy-frameworks\n";
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		13AC65D420EE8F8F00F0D494 /* Sources */ = {
@@ -469,7 +447,6 @@
 			children = (
 				8351094B22FB462B00CC8329 /* en */,
 				8351094F22FB463B00CC8329 /* es */,
-				8351095522FB464A00CC8329 /* fil */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
@@ -478,7 +455,6 @@
 			isa = PBXVariantGroup;
 			children = (
 				8351095122FB463B00CC8329 /* es */,
-				8351095422FB464A00CC8329 /* fil */,
 			);
 			name = Main.strings;
 			sourceTree = "<group>";

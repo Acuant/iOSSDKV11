@@ -49,13 +49,24 @@ public class AcuantMrzParser {
         startPos += 9
 
         result.checkSumDigit1 = firstLine[startPos]
+        startPos += 1
+
+        let isDocNumberLongerThanNineDigits = result.checkSumDigit1 == String(FILLER)
+        if isDocNumberLongerThanNineDigits {
+            let nextFiller = indexOf(str: firstLine, data: FILLER, offSetStart: startPos)
+            if nextFiller >= startPos + 2 {
+                result.passportNumber += getSubstring(str: firstLine, offsetStart: startPos, offsetEnd: nextFiller - 1)
+                result.checkSumDigit1 = firstLine[nextFiller - 1]
+                startPos = nextFiller
+            }
+        }
+
         let subPassportNumber = getPossibleSubstitution(text: result.passportNumber, checkSumDigit: result.checkSumDigit1)
         result.passportNumber = subPassportNumber.text
         result.checkSumDigit1 = subPassportNumber.checkSumDigit
         result.checkSumResult1 = checkSum(text: result.passportNumber, checkSumDigit: result.checkSumDigit1)
-        startPos += 1
 
-        result.optional1 = getSubstring(str: firstLine, offsetStart: startPos, offsetEnd: startPos + 15)
+        result.optional1 = getSubstring(str: firstLine, offsetStart: startPos, offsetEnd: firstLine.count)
 
         return result
     }
@@ -96,9 +107,18 @@ public class AcuantMrzParser {
         let optional2 = getSubstring(str: line, offsetStart: startPos, offsetEnd: startPos + 11)
         startPos += 11
         
-        let finalCheckString = "\(result.passportNumber)\(result.checkSumDigit1)\(result.optional1)\(result.dob)\(result.checkSumDigit2)\(result.passportExpiration)\(result.checkSumDigit3)\(optional2)"
+        var firstLine = "\(result.passportNumber)\(result.checkSumDigit1)\(result.optional1)"
+        if result.passportNumber.count > 9 {
+            let passportLine = "\(getSubstring(str: result.passportNumber, offsetStart: 0, offsetEnd: 9))\(FILLER)\(getSubstring(str: result.passportNumber, offsetStart: 9, offsetEnd: result.passportNumber.count))"
+            firstLine = "\(passportLine)\(result.checkSumDigit1)\(result.optional1)"
+        }
         
-        result.checkSumResult4 = checkSum(text: finalCheckString, checkSumDigit: line[startPos])
+        let finalCheckString = "\(firstLine)\(result.dob)\(result.checkSumDigit2)\(result.passportExpiration)\(result.checkSumDigit3)\(optional2)"
+
+        result.checkSumDigit4 = line[startPos]
+        let subFinalString = getPossibleSubstitution(text: finalCheckString, checkSumDigit: result.checkSumDigit4)
+        result.checkSumDigit4 = subFinalString.checkSumDigit
+        result.checkSumResult4 = checkSum(text: finalCheckString, checkSumDigit: result.checkSumDigit4)
         
         result.checkSumResult5 = true
 

@@ -3,89 +3,125 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		134F59D721FA0BA600CEDBFC /* AcuantCamera.h in Headers */ = {isa = PBXBuildFile; fileRef = 134F59D521FA0BA600CEDBFC /* AcuantCamera.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		134F59E621FA0C2B00CEDBFC /* DocumentCameraController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 134F59E421FA0C2B00CEDBFC /* DocumentCameraController.swift */; };
-		134F59E921FA0C8700CEDBFC /* CameraCaptureDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 134F59E821FA0C8700CEDBFC /* CameraCaptureDelegate.swift */; };
+		134F59E621FA0C2B00CEDBFC /* DocumentCameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 134F59E421FA0C2B00CEDBFC /* DocumentCameraViewController.swift */; };
+		134F59E921FA0C8700CEDBFC /* DocumentCameraViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 134F59E821FA0C8700CEDBFC /* DocumentCameraViewControllerDelegate.swift */; };
 		767F07FD255F356800830649 /* AutoCaptureDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767F07FC255F356800830649 /* AutoCaptureDelegate.swift */; };
 		76D00240233E7C7F00CE3DA8 /* CameraOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76D0023F233E7C7F00CE3DA8 /* CameraOptions.swift */; };
-		8327AA1D2420056700B524F9 /* AcuantMrzCaptureSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8327AA192420056700B524F9 /* AcuantMrzCaptureSession.swift */; };
-		8327AA212420056700B524F9 /* AcuantMrzCameraController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8327AA182420056700B524F9 /* AcuantMrzCameraController.swift */; };
-		8327AA27242005A900B524F9 /* TesseractOCR.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8327AA26242005A900B524F9 /* TesseractOCR.framework */; };
+		8327AA1D2420056700B524F9 /* MrzCaptureSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8327AA192420056700B524F9 /* MrzCaptureSession.swift */; };
+		8327AA212420056700B524F9 /* MrzCameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8327AA182420056700B524F9 /* MrzCameraViewController.swift */; };
 		8327AA422420081100B524F9 /* AcuantMrzParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8327AA3D2420081100B524F9 /* AcuantMrzParser.swift */; };
 		8327AA432420081100B524F9 /* StringExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8327AA3F2420081100B524F9 /* StringExt.swift */; };
 		8327AA442420081100B524F9 /* AcuantOcrDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8327AA402420081100B524F9 /* AcuantOcrDetector.swift */; };
 		8327AA452420081100B524F9 /* AcuantMrzResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8327AA412420081100B524F9 /* AcuantMrzResult.swift */; };
-		836DD9A42315EA1400428964 /* CameraDocumentOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 836DD9A32315EA1400428964 /* CameraDocumentOverlayView.swift */; };
-		836DD9A62315EA3000428964 /* CameraTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 836DD9A52315EA3000428964 /* CameraTextView.swift */; };
+		836DD9A42315EA1400428964 /* CameraRectangularLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 836DD9A32315EA1400428964 /* CameraRectangularLayer.swift */; };
+		836DD9A62315EA3000428964 /* CameraTextLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 836DD9A52315EA3000428964 /* CameraTextLayer.swift */; };
 		836DD9A82316096400428964 /* CameraCornerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 836DD9A72316096400428964 /* CameraCornerView.swift */; };
-		836DD9AA23160BA200428964 /* CameraCornerOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 836DD9A923160BA200428964 /* CameraCornerOverlayView.swift */; };
+		836DD9AA23160BA200428964 /* CameraCornerLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 836DD9A923160BA200428964 /* CameraCornerLayer.swift */; };
 		836DE49523204DA8005299E5 /* UIImageExtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 836DE49423204DA8005299E5 /* UIImageExtn.swift */; };
 		8387E200243284440051AF80 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8387E1FF243284440051AF80 /* Media.xcassets */; };
 		83BCAA012241961E00181B2A /* FrameAnalysisDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83BCAA002241961E00181B2A /* FrameAnalysisDelegate.swift */; };
 		C25D3BA9220B29BF003F3027 /* DocumentCaptureSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = C25D3BA8220B29BF003F3027 /* DocumentCaptureSession.swift */; };
-		C25D3BAB220B29EE003F3027 /* DocumentCaptureDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C25D3BAA220B29EE003F3027 /* DocumentCaptureDelegate.swift */; };
+		C25D3BAB220B29EE003F3027 /* DocumentCaptureSessionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C25D3BAA220B29EE003F3027 /* DocumentCaptureSessionDelegate.swift */; };
 		C2743A26222DE2E700302CE7 /* CaptureConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2743A25222DE2E700302CE7 /* CaptureConstants.swift */; };
 		C2B8F11F22F1D61A009811A8 /* UIScreenExtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B8F11E22F1D61A009811A8 /* UIScreenExtn.swift */; };
 		C2DC4932224BBCD20003C0CA /* AcuantCommon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2C291F0221DC860005B4918 /* AcuantCommon.framework */; };
 		C2DC4933224BBCD20003C0CA /* AcuantImagePreparation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2BB6D6D221E0F65005AFC35 /* AcuantImagePreparation.framework */; };
 		D93A1361268F75A70047EB0E /* CameraPreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D93A1360268F75A70047EB0E /* CameraPreviewView.swift */; };
+		D943D32D2A202570003B7F35 /* libtesseract.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = D943D32C2A202570003B7F35 /* libtesseract.xcframework */; };
 		D95FF40E266FB9350054E7B9 /* UInterfaceOrientationExtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = D95FF40D266FB9350054E7B9 /* UInterfaceOrientationExtn.swift */; };
 		D95FF410266FC7E30054E7B9 /* UIWindowExtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = D95FF40F266FC7E30054E7B9 /* UIWindowExtn.swift */; };
-		D95FF41226711ED00054E7B9 /* DocumentPlaceholderLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D95FF41126711ED00054E7B9 /* DocumentPlaceholderLayer.swift */; };
+		D95FF41226711ED00054E7B9 /* CameraImageLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D95FF41126711ED00054E7B9 /* CameraImageLayer.swift */; };
 		D95FF414267177A60054E7B9 /* UILayerExtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = D95FF413267177A60054E7B9 /* UILayerExtn.swift */; };
 		D95FF41626727D760054E7B9 /* StringExtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = D95FF41526727D760054E7B9 /* StringExtn.swift */; };
 		D95FF4402672EDBF0054E7B9 /* CameraAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D95FF43F2672EDBF0054E7B9 /* CameraAlertView.swift */; };
 		D9B4821726BC4177001C0CEC /* BarcodeCaptureSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9B4821626BC4177001C0CEC /* BarcodeCaptureSession.swift */; };
 		D9B4821926BC4EE2001C0CEC /* BarcodeCameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9B4821826BC4EE2001C0CEC /* BarcodeCameraViewController.swift */; };
-		D9B4821B26C18DC6001C0CEC /* BarcodeCameraDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9B4821A26C18DC6001C0CEC /* BarcodeCameraDelegate.swift */; };
-		D9B4821D26C18F1D001C0CEC /* BarcodeCaptureDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9B4821C26C18F1D001C0CEC /* BarcodeCaptureDelegate.swift */; };
+		D9B4821B26C18DC6001C0CEC /* BarcodeCameraViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9B4821A26C18DC6001C0CEC /* BarcodeCameraViewControllerDelegate.swift */; };
+		D9B4821D26C18F1D001C0CEC /* BarcodeCaptureSessionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9B4821C26C18F1D001C0CEC /* BarcodeCaptureSessionDelegate.swift */; };
+		D9C004D12A1E5FC100B36677 /* LanguageModelDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C004D02A1E5FC100B36677 /* LanguageModelDataSource.swift */; };
+		D9C004DA2A1E5FE600B36677 /* Tesseract+OCR.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C004D22A1E5FE600B36677 /* Tesseract+OCR.swift */; };
+		D9C004DB2A1E5FE600B36677 /* Tesseract+UIKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C004D32A1E5FE600B36677 /* Tesseract+UIKit.swift */; };
+		D9C004DC2A1E5FE600B36677 /* Tesseract+Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C004D42A1E5FE600B36677 /* Tesseract+Error.swift */; };
+		D9C004DD2A1E5FE600B36677 /* Tesseract+ConfigurationBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C004D52A1E5FE600B36677 /* Tesseract+ConfigurationBuilder.swift */; };
+		D9C004DE2A1E5FE600B36677 /* Tesseract+RecognizedBlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C004D62A1E5FE600B36677 /* Tesseract+RecognizedBlock.swift */; };
+		D9C004DF2A1E5FE600B36677 /* RecognitionLanguage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C004D72A1E5FE600B36677 /* RecognitionLanguage.swift */; };
+		D9C004E02A1E5FE600B36677 /* Tesseract.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C004D82A1E5FE600B36677 /* Tesseract.swift */; };
+		D9C004E12A1E5FE600B36677 /* Tesseract+Variable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C004D92A1E5FE600B36677 /* Tesseract+Variable.swift */; };
+		D9C0919B29411AA10020A361 /* BarcodeCameraOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C0919A29411AA10020A361 /* BarcodeCameraOptions.swift */; };
+		D9C0919D2947648A0020A361 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C0919C2947648A0020A361 /* CameraViewController.swift */; };
+		D9C0919F294768120020A361 /* CameraCaptureSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C0919E294768120020A361 /* CameraCaptureSession.swift */; };
+		D9C091A12948EE920020A361 /* MrzCameraViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C091A02948EE920020A361 /* MrzCameraViewControllerDelegate.swift */; };
+		D9C091A32948F7600020A361 /* MrzCameraOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C091A22948F7600020A361 /* MrzCameraOptions.swift */; };
+		D9C091A52948F7930020A361 /* DocumentCameraOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C091A42948F7930020A361 /* DocumentCameraOptions.swift */; };
+		D9C091A72948FB320020A361 /* MrzCaptureSessionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C091A62948FB320020A361 /* MrzCaptureSessionDelegate.swift */; };
 		D9D18E6E27BAA47E0048293A /* CGRectExtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9D18E6D27BAA47E0048293A /* CGRectExtn.swift */; };
+		D9DA83AF2A0D6783004C49C8 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = D9DA83AE2A0D6783004C49C8 /* libc++.tbd */; };
+		D9DA83B12A0D678E004C49C8 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = D9DA83B02A0D678E004C49C8 /* libz.tbd */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		134F59D221FA0BA600CEDBFC /* AcuantCamera.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AcuantCamera.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		134F59D521FA0BA600CEDBFC /* AcuantCamera.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AcuantCamera.h; sourceTree = "<group>"; };
 		134F59D621FA0BA600CEDBFC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		134F59E421FA0C2B00CEDBFC /* DocumentCameraController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DocumentCameraController.swift; sourceTree = "<group>"; };
-		134F59E821FA0C8700CEDBFC /* CameraCaptureDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraCaptureDelegate.swift; sourceTree = "<group>"; };
+		134F59E421FA0C2B00CEDBFC /* DocumentCameraViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DocumentCameraViewController.swift; sourceTree = "<group>"; };
+		134F59E821FA0C8700CEDBFC /* DocumentCameraViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentCameraViewControllerDelegate.swift; sourceTree = "<group>"; };
 		767F07FC255F356800830649 /* AutoCaptureDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoCaptureDelegate.swift; sourceTree = "<group>"; };
 		76D0023F233E7C7F00CE3DA8 /* CameraOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraOptions.swift; sourceTree = "<group>"; };
-		8327AA182420056700B524F9 /* AcuantMrzCameraController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AcuantMrzCameraController.swift; sourceTree = "<group>"; };
-		8327AA192420056700B524F9 /* AcuantMrzCaptureSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AcuantMrzCaptureSession.swift; sourceTree = "<group>"; };
-		8327AA26242005A900B524F9 /* TesseractOCR.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TesseractOCR.framework; path = ../SampleApp/Carthage/Build/iOS/TesseractOCR.framework; sourceTree = "<group>"; };
+		8327AA182420056700B524F9 /* MrzCameraViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MrzCameraViewController.swift; sourceTree = "<group>"; };
+		8327AA192420056700B524F9 /* MrzCaptureSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MrzCaptureSession.swift; sourceTree = "<group>"; };
 		8327AA3D2420081100B524F9 /* AcuantMrzParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AcuantMrzParser.swift; sourceTree = "<group>"; };
 		8327AA3F2420081100B524F9 /* StringExt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExt.swift; sourceTree = "<group>"; };
 		8327AA402420081100B524F9 /* AcuantOcrDetector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AcuantOcrDetector.swift; sourceTree = "<group>"; };
 		8327AA412420081100B524F9 /* AcuantMrzResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AcuantMrzResult.swift; sourceTree = "<group>"; };
-		836DD9A32315EA1400428964 /* CameraDocumentOverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraDocumentOverlayView.swift; sourceTree = "<group>"; };
-		836DD9A52315EA3000428964 /* CameraTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraTextView.swift; sourceTree = "<group>"; };
+		836DD9A32315EA1400428964 /* CameraRectangularLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraRectangularLayer.swift; sourceTree = "<group>"; };
+		836DD9A52315EA3000428964 /* CameraTextLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraTextLayer.swift; sourceTree = "<group>"; };
 		836DD9A72316096400428964 /* CameraCornerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraCornerView.swift; sourceTree = "<group>"; };
-		836DD9A923160BA200428964 /* CameraCornerOverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraCornerOverlayView.swift; sourceTree = "<group>"; };
+		836DD9A923160BA200428964 /* CameraCornerLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraCornerLayer.swift; sourceTree = "<group>"; };
 		836DE49423204DA8005299E5 /* UIImageExtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtn.swift; sourceTree = "<group>"; };
 		8387E1FF243284440051AF80 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
 		83BCAA002241961E00181B2A /* FrameAnalysisDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrameAnalysisDelegate.swift; sourceTree = "<group>"; };
 		C25D3BA8220B29BF003F3027 /* DocumentCaptureSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DocumentCaptureSession.swift; sourceTree = "<group>"; };
-		C25D3BAA220B29EE003F3027 /* DocumentCaptureDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DocumentCaptureDelegate.swift; sourceTree = "<group>"; };
+		C25D3BAA220B29EE003F3027 /* DocumentCaptureSessionDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DocumentCaptureSessionDelegate.swift; sourceTree = "<group>"; };
 		C2743A25222DE2E700302CE7 /* CaptureConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptureConstants.swift; sourceTree = "<group>"; };
 		C2B8F11E22F1D61A009811A8 /* UIScreenExtn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIScreenExtn.swift; sourceTree = "<group>"; };
 		C2BB6D6D221E0F65005AFC35 /* AcuantImagePreparation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = AcuantImagePreparation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2C291F0221DC860005B4918 /* AcuantCommon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = AcuantCommon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D93A1360268F75A70047EB0E /* CameraPreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraPreviewView.swift; sourceTree = "<group>"; };
+		D943D32C2A202570003B7F35 /* libtesseract.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = libtesseract.xcframework; path = ../EmbeddedFrameworks/libtesseract.xcframework; sourceTree = "<group>"; };
 		D95FF40D266FB9350054E7B9 /* UInterfaceOrientationExtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UInterfaceOrientationExtn.swift; sourceTree = "<group>"; };
 		D95FF40F266FC7E30054E7B9 /* UIWindowExtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIWindowExtn.swift; sourceTree = "<group>"; };
-		D95FF41126711ED00054E7B9 /* DocumentPlaceholderLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentPlaceholderLayer.swift; sourceTree = "<group>"; };
+		D95FF41126711ED00054E7B9 /* CameraImageLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraImageLayer.swift; sourceTree = "<group>"; };
 		D95FF413267177A60054E7B9 /* UILayerExtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILayerExtn.swift; sourceTree = "<group>"; };
 		D95FF41526727D760054E7B9 /* StringExtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtn.swift; sourceTree = "<group>"; };
 		D95FF43F2672EDBF0054E7B9 /* CameraAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraAlertView.swift; sourceTree = "<group>"; };
 		D9B4821626BC4177001C0CEC /* BarcodeCaptureSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarcodeCaptureSession.swift; sourceTree = "<group>"; };
 		D9B4821826BC4EE2001C0CEC /* BarcodeCameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarcodeCameraViewController.swift; sourceTree = "<group>"; };
-		D9B4821A26C18DC6001C0CEC /* BarcodeCameraDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarcodeCameraDelegate.swift; sourceTree = "<group>"; };
-		D9B4821C26C18F1D001C0CEC /* BarcodeCaptureDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarcodeCaptureDelegate.swift; sourceTree = "<group>"; };
+		D9B4821A26C18DC6001C0CEC /* BarcodeCameraViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarcodeCameraViewControllerDelegate.swift; sourceTree = "<group>"; };
+		D9B4821C26C18F1D001C0CEC /* BarcodeCaptureSessionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarcodeCaptureSessionDelegate.swift; sourceTree = "<group>"; };
+		D9C004D02A1E5FC100B36677 /* LanguageModelDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LanguageModelDataSource.swift; sourceTree = "<group>"; };
+		D9C004D22A1E5FE600B36677 /* Tesseract+OCR.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Tesseract+OCR.swift"; sourceTree = "<group>"; };
+		D9C004D32A1E5FE600B36677 /* Tesseract+UIKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Tesseract+UIKit.swift"; sourceTree = "<group>"; };
+		D9C004D42A1E5FE600B36677 /* Tesseract+Error.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Tesseract+Error.swift"; sourceTree = "<group>"; };
+		D9C004D52A1E5FE600B36677 /* Tesseract+ConfigurationBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Tesseract+ConfigurationBuilder.swift"; sourceTree = "<group>"; };
+		D9C004D62A1E5FE600B36677 /* Tesseract+RecognizedBlock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Tesseract+RecognizedBlock.swift"; sourceTree = "<group>"; };
+		D9C004D72A1E5FE600B36677 /* RecognitionLanguage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecognitionLanguage.swift; sourceTree = "<group>"; };
+		D9C004D82A1E5FE600B36677 /* Tesseract.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tesseract.swift; sourceTree = "<group>"; };
+		D9C004D92A1E5FE600B36677 /* Tesseract+Variable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Tesseract+Variable.swift"; sourceTree = "<group>"; };
+		D9C0919A29411AA10020A361 /* BarcodeCameraOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarcodeCameraOptions.swift; sourceTree = "<group>"; };
+		D9C0919C2947648A0020A361 /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
+		D9C0919E294768120020A361 /* CameraCaptureSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraCaptureSession.swift; sourceTree = "<group>"; };
+		D9C091A02948EE920020A361 /* MrzCameraViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MrzCameraViewControllerDelegate.swift; sourceTree = "<group>"; };
+		D9C091A22948F7600020A361 /* MrzCameraOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MrzCameraOptions.swift; sourceTree = "<group>"; };
+		D9C091A42948F7930020A361 /* DocumentCameraOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentCameraOptions.swift; sourceTree = "<group>"; };
+		D9C091A62948FB320020A361 /* MrzCaptureSessionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MrzCaptureSessionDelegate.swift; sourceTree = "<group>"; };
 		D9D18E6D27BAA47E0048293A /* CGRectExtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGRectExtn.swift; sourceTree = "<group>"; };
+		D9DA83AE2A0D6783004C49C8 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		D9DA83B02A0D678E004C49C8 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,8 +129,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D943D32D2A202570003B7F35 /* libtesseract.xcframework in Frameworks */,
+				D9DA83B12A0D678E004C49C8 /* libz.tbd in Frameworks */,
+				D9DA83AF2A0D6783004C49C8 /* libc++.tbd in Frameworks */,
 				C2DC4932224BBCD20003C0CA /* AcuantCommon.framework in Frameworks */,
-				8327AA27242005A900B524F9 /* TesseractOCR.framework in Frameworks */,
 				C2DC4933224BBCD20003C0CA /* AcuantImagePreparation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -136,9 +174,11 @@
 		134F59EA21FA0E0D00CEDBFC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D943D32C2A202570003B7F35 /* libtesseract.xcframework */,
+				D9DA83B02A0D678E004C49C8 /* libz.tbd */,
+				D9DA83AE2A0D6783004C49C8 /* libc++.tbd */,
 				C2BB6D6D221E0F65005AFC35 /* AcuantImagePreparation.framework */,
 				C2C291F0221DC860005B4918 /* AcuantCommon.framework */,
-				8327AA26242005A900B524F9 /* TesseractOCR.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -146,6 +186,7 @@
 		8327AA3C2420081100B524F9 /* OCR */ = {
 			isa = PBXGroup;
 			children = (
+				D92D81502A12B0AD0005BF99 /* Tesseract */,
 				8327AA3E2420081100B524F9 /* Utils */,
 				8327AA402420081100B524F9 /* AcuantOcrDetector.swift */,
 				8327AA412420081100B524F9 /* AcuantMrzResult.swift */,
@@ -166,8 +207,11 @@
 			isa = PBXGroup;
 			children = (
 				8327AA3C2420081100B524F9 /* OCR */,
-				8327AA192420056700B524F9 /* AcuantMrzCaptureSession.swift */,
-				8327AA182420056700B524F9 /* AcuantMrzCameraController.swift */,
+				D9C091A22948F7600020A361 /* MrzCameraOptions.swift */,
+				8327AA192420056700B524F9 /* MrzCaptureSession.swift */,
+				8327AA182420056700B524F9 /* MrzCameraViewController.swift */,
+				D9C091A02948EE920020A361 /* MrzCameraViewControllerDelegate.swift */,
+				D9C091A62948FB320020A361 /* MrzCaptureSessionDelegate.swift */,
 			);
 			path = Mrz;
 			sourceTree = "<group>";
@@ -177,7 +221,8 @@
 			children = (
 				8327AA492420092700B524F9 /* Delegate */,
 				C25D3BA8220B29BF003F3027 /* DocumentCaptureSession.swift */,
-				134F59E421FA0C2B00CEDBFC /* DocumentCameraController.swift */,
+				134F59E421FA0C2B00CEDBFC /* DocumentCameraViewController.swift */,
+				D9C091A42948F7930020A361 /* DocumentCameraOptions.swift */,
 			);
 			path = Document;
 			sourceTree = "<group>";
@@ -185,8 +230,8 @@
 		8327AA492420092700B524F9 /* Delegate */ = {
 			isa = PBXGroup;
 			children = (
-				C25D3BAA220B29EE003F3027 /* DocumentCaptureDelegate.swift */,
-				134F59E821FA0C8700CEDBFC /* CameraCaptureDelegate.swift */,
+				C25D3BAA220B29EE003F3027 /* DocumentCaptureSessionDelegate.swift */,
+				134F59E821FA0C8700CEDBFC /* DocumentCameraViewControllerDelegate.swift */,
 				83BCAA002241961E00181B2A /* FrameAnalysisDelegate.swift */,
 				767F07FC255F356800830649 /* AutoCaptureDelegate.swift */,
 			);
@@ -222,6 +267,8 @@
 				8327AA472420086F00B524F9 /* Document */,
 				8327AA462420084100B524F9 /* Mrz */,
 				76D0023F233E7C7F00CE3DA8 /* CameraOptions.swift */,
+				D9C0919C2947648A0020A361 /* CameraViewController.swift */,
+				D9C0919E294768120020A361 /* CameraCaptureSession.swift */,
 			);
 			path = Camera;
 			sourceTree = "<group>";
@@ -229,15 +276,31 @@
 		836DD9A22315EA0800428964 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				836DD9A32315EA1400428964 /* CameraDocumentOverlayView.swift */,
-				836DD9A52315EA3000428964 /* CameraTextView.swift */,
+				836DD9A32315EA1400428964 /* CameraRectangularLayer.swift */,
+				836DD9A52315EA3000428964 /* CameraTextLayer.swift */,
 				836DD9A72316096400428964 /* CameraCornerView.swift */,
-				836DD9A923160BA200428964 /* CameraCornerOverlayView.swift */,
-				D95FF41126711ED00054E7B9 /* DocumentPlaceholderLayer.swift */,
+				836DD9A923160BA200428964 /* CameraCornerLayer.swift */,
+				D95FF41126711ED00054E7B9 /* CameraImageLayer.swift */,
 				D95FF43F2672EDBF0054E7B9 /* CameraAlertView.swift */,
 				D93A1360268F75A70047EB0E /* CameraPreviewView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		D92D81502A12B0AD0005BF99 /* Tesseract */ = {
+			isa = PBXGroup;
+			children = (
+				D9C004D72A1E5FE600B36677 /* RecognitionLanguage.swift */,
+				D9C004D82A1E5FE600B36677 /* Tesseract.swift */,
+				D9C004D52A1E5FE600B36677 /* Tesseract+ConfigurationBuilder.swift */,
+				D9C004D42A1E5FE600B36677 /* Tesseract+Error.swift */,
+				D9C004D22A1E5FE600B36677 /* Tesseract+OCR.swift */,
+				D9C004D62A1E5FE600B36677 /* Tesseract+RecognizedBlock.swift */,
+				D9C004D32A1E5FE600B36677 /* Tesseract+UIKit.swift */,
+				D9C004D92A1E5FE600B36677 /* Tesseract+Variable.swift */,
+				D9C004D02A1E5FC100B36677 /* LanguageModelDataSource.swift */,
+			);
+			path = Tesseract;
 			sourceTree = "<group>";
 		};
 		D9B4821526BC3FED001C0CEC /* Barcode */ = {
@@ -245,8 +308,9 @@
 			children = (
 				D9B4821626BC4177001C0CEC /* BarcodeCaptureSession.swift */,
 				D9B4821826BC4EE2001C0CEC /* BarcodeCameraViewController.swift */,
-				D9B4821A26C18DC6001C0CEC /* BarcodeCameraDelegate.swift */,
-				D9B4821C26C18F1D001C0CEC /* BarcodeCaptureDelegate.swift */,
+				D9B4821A26C18DC6001C0CEC /* BarcodeCameraViewControllerDelegate.swift */,
+				D9B4821C26C18F1D001C0CEC /* BarcodeCaptureSessionDelegate.swift */,
+				D9C0919A29411AA10020A361 /* BarcodeCameraOptions.swift */,
 			);
 			path = Barcode;
 			sourceTree = "<group>";
@@ -331,38 +395,54 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D9B4821B26C18DC6001C0CEC /* BarcodeCameraDelegate.swift in Sources */,
+				D9B4821B26C18DC6001C0CEC /* BarcodeCameraViewControllerDelegate.swift in Sources */,
 				D95FF410266FC7E30054E7B9 /* UIWindowExtn.swift in Sources */,
+				D9C0919F294768120020A361 /* CameraCaptureSession.swift in Sources */,
 				D9D18E6E27BAA47E0048293A /* CGRectExtn.swift in Sources */,
+				D9C004E02A1E5FE600B36677 /* Tesseract.swift in Sources */,
+				D9C091A12948EE920020A361 /* MrzCameraViewControllerDelegate.swift in Sources */,
+				D9C0919D2947648A0020A361 /* CameraViewController.swift in Sources */,
+				D9C091A52948F7930020A361 /* DocumentCameraOptions.swift in Sources */,
+				D9C004DF2A1E5FE600B36677 /* RecognitionLanguage.swift in Sources */,
 				C2743A26222DE2E700302CE7 /* CaptureConstants.swift in Sources */,
 				8327AA452420081100B524F9 /* AcuantMrzResult.swift in Sources */,
+				D9C004DE2A1E5FE600B36677 /* Tesseract+RecognizedBlock.swift in Sources */,
+				D9C004DB2A1E5FE600B36677 /* Tesseract+UIKit.swift in Sources */,
 				8327AA422420081100B524F9 /* AcuantMrzParser.swift in Sources */,
 				D9B4821926BC4EE2001C0CEC /* BarcodeCameraViewController.swift in Sources */,
-				C25D3BAB220B29EE003F3027 /* DocumentCaptureDelegate.swift in Sources */,
+				C25D3BAB220B29EE003F3027 /* DocumentCaptureSessionDelegate.swift in Sources */,
 				C2B8F11F22F1D61A009811A8 /* UIScreenExtn.swift in Sources */,
+				D9C004D12A1E5FC100B36677 /* LanguageModelDataSource.swift in Sources */,
 				767F07FD255F356800830649 /* AutoCaptureDelegate.swift in Sources */,
-				134F59E621FA0C2B00CEDBFC /* DocumentCameraController.swift in Sources */,
-				8327AA1D2420056700B524F9 /* AcuantMrzCaptureSession.swift in Sources */,
-				836DD9A62315EA3000428964 /* CameraTextView.swift in Sources */,
-				836DD9A42315EA1400428964 /* CameraDocumentOverlayView.swift in Sources */,
+				134F59E621FA0C2B00CEDBFC /* DocumentCameraViewController.swift in Sources */,
+				D9C0919B29411AA10020A361 /* BarcodeCameraOptions.swift in Sources */,
+				8327AA1D2420056700B524F9 /* MrzCaptureSession.swift in Sources */,
+				836DD9A62315EA3000428964 /* CameraTextLayer.swift in Sources */,
+				836DD9A42315EA1400428964 /* CameraRectangularLayer.swift in Sources */,
 				D93A1361268F75A70047EB0E /* CameraPreviewView.swift in Sources */,
 				D95FF40E266FB9350054E7B9 /* UInterfaceOrientationExtn.swift in Sources */,
 				8327AA432420081100B524F9 /* StringExt.swift in Sources */,
+				D9C004E12A1E5FE600B36677 /* Tesseract+Variable.swift in Sources */,
 				D95FF414267177A60054E7B9 /* UILayerExtn.swift in Sources */,
 				76D00240233E7C7F00CE3DA8 /* CameraOptions.swift in Sources */,
 				C25D3BA9220B29BF003F3027 /* DocumentCaptureSession.swift in Sources */,
 				836DE49523204DA8005299E5 /* UIImageExtn.swift in Sources */,
-				D9B4821D26C18F1D001C0CEC /* BarcodeCaptureDelegate.swift in Sources */,
+				D9B4821D26C18F1D001C0CEC /* BarcodeCaptureSessionDelegate.swift in Sources */,
 				8327AA442420081100B524F9 /* AcuantOcrDetector.swift in Sources */,
 				836DD9A82316096400428964 /* CameraCornerView.swift in Sources */,
-				8327AA212420056700B524F9 /* AcuantMrzCameraController.swift in Sources */,
+				8327AA212420056700B524F9 /* MrzCameraViewController.swift in Sources */,
 				D95FF4402672EDBF0054E7B9 /* CameraAlertView.swift in Sources */,
+				D9C004DA2A1E5FE600B36677 /* Tesseract+OCR.swift in Sources */,
 				D9B4821726BC4177001C0CEC /* BarcodeCaptureSession.swift in Sources */,
+				D9C091A72948FB320020A361 /* MrzCaptureSessionDelegate.swift in Sources */,
+				D9C004DC2A1E5FE600B36677 /* Tesseract+Error.swift in Sources */,
 				83BCAA012241961E00181B2A /* FrameAnalysisDelegate.swift in Sources */,
 				D95FF41626727D760054E7B9 /* StringExtn.swift in Sources */,
-				134F59E921FA0C8700CEDBFC /* CameraCaptureDelegate.swift in Sources */,
-				836DD9AA23160BA200428964 /* CameraCornerOverlayView.swift in Sources */,
-				D95FF41226711ED00054E7B9 /* DocumentPlaceholderLayer.swift in Sources */,
+				134F59E921FA0C8700CEDBFC /* DocumentCameraViewControllerDelegate.swift in Sources */,
+				D9C091A32948F7600020A361 /* MrzCameraOptions.swift in Sources */,
+				836DD9AA23160BA200428964 /* CameraCornerLayer.swift in Sources */,
+				D95FF41226711ED00054E7B9 /* CameraImageLayer.swift in Sources */,
+				D9C004DD2A1E5FE600B36677 /* Tesseract+ConfigurationBuilder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -502,10 +582,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(PROJECT_DIR)/../SampleApp/Carthage/Build/iOS",
-					"$(PROJECT_DIR)/../EmbeddedFrameworks",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/../EmbeddedFrameworks";
 				INFOPLIST_FILE = AcuantCamera/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
@@ -535,10 +612,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(PROJECT_DIR)/../SampleApp/Carthage/Build/iOS",
-					"$(PROJECT_DIR)/../EmbeddedFrameworks",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/../EmbeddedFrameworks";
 				INFOPLIST_FILE = AcuantCamera/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;

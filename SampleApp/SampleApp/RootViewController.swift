@@ -247,20 +247,20 @@ class RootViewController: UIViewController{
         ipLivenessSetupResult = nil
         livenessString = nil
         faceCapturedImage = nil
-        self.idOptions.cardSide = CardSide.Front
+        self.idOptions.cardSide = DocumentSide.front
         self.createInstance()
     }
     
     public func confirmImage(image: AcuantImage) {
         if isKeyless {
-            if image.isPassport || self.idOptions.cardSide == CardSide.Back {
+            if image.isPassport || self.idOptions.cardSide == DocumentSide.back {
                 self.showKeylessHGLiveness()
             } else {
                 let alert = UIAlertController(title: NSLocalizedString("Back Side?", comment: ""),
                                               message: NSLocalizedString("Scan the back side of the ID document", comment: ""),
                                               preferredStyle: UIAlertController.Style.alert)
                 alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default) { action -> Void in
-                    self.idOptions.cardSide = CardSide.Back
+                    self.idOptions.cardSide = DocumentSide.back
                     self.showDocumentCaptureCamera()
                 })
                 self.present(alert, animated: true, completion: nil)
@@ -286,29 +286,23 @@ class RootViewController: UIViewController{
     }
     
     
-    public func retryCapture(){
+    public func retryCapture() {
         showDocumentCaptureCamera()
     }
     
-    public func retryClassification(){
+    public func retryClassification() {
         self.idOptions.isRetrying = true
         showDocumentCaptureCamera()
     }
     
-    func isBackSideRequired(classification:Classification?)->Bool{
-        if(classification == nil){
+    func isBackSideRequired(classification: Classification) -> Bool {
+        guard let supportedImages = classification.type?.supportedImages else {
             return false
         }
-        var isBackSideRequired : Bool = false
-        let supportedImages : [Dictionary<String, Int>]? = classification?.type?.supportedImages as? [Dictionary<String, Int>]
-        if(supportedImages != nil){
-            for image in supportedImages!{
-                if(image["Light"]==0 && image["Side"]==1){
-                    isBackSideRequired = true
-                }
-            }
-        }
-        return isBackSideRequired
+
+        return supportedImages.contains(where: {
+            $0.light == .white && $0.side == .back
+        })
     }
 }
 
@@ -357,9 +351,9 @@ extension RootViewController{
 
 //MARK: - AcuantCamera: CameraCaptureDelegate
 
-extension RootViewController: CameraCaptureDelegate {
+extension RootViewController: DocumentCameraViewControllerDelegate {
 
-    public func setCapturedImage(image: Image, barcodeString: String?) {
+    public func onCaptured(image: Image, barcodeString: String?) {
         guard image.image != nil else {
             return
         }
@@ -388,26 +382,54 @@ extension RootViewController: CameraCaptureDelegate {
         }
     }
     
-    func showDocumentCaptureCamera(){
-        //handler in .requestAccess is needed to process user's answer to our request
-        AVCaptureDevice.requestAccess(for: .video) { [weak self] success in
-            if success { // if request is granted (success is true)
+    func showDocumentCaptureCamera() {
+        //Handler in .requestAccess is needed to process user's answer to our request
+        AVCaptureDevice.requestAccess(for: .video) { [weak self] isPermissionGranted in
+            guard let self = self else { return }
+
+            if isPermissionGranted {
                 DispatchQueue.main.async {
-                    let options = CameraOptions(digitsToShow: 2, autoCapture:self!.autoCapture, hideNavigationBar: true)
-                    let documentCameraController = DocumentCameraController.getCameraController(delegate:self!, cameraOptions: options)
-                    self!.navigationController?.pushViewController(documentCameraController, animated: false)
-                    
+                    let textForState: (DocumentCameraState) -> String = { state in
+                        switch state {
+                        case .align: return NSLocalizedString("acuant_camera_align", comment: "")
+                        case .moveCloser: return NSLocalizedString("acuant_camera_move_closer", comment: "")
+                        case .tooClose: return NSLocalizedString("acuant_camera_too_close", comment: "")
+                        case .steady: return NSLocalizedString("acuant_camera_hold_steady", comment: "")
+                        case .hold: return NSLocalizedString("acuant_camera_hold", comment: "")
+                        case .capture: return NSLocalizedString("acuant_camera_capturing", comment: "")
+                        @unknown default: return ""
+                        }
+                    }
+                    let colorForState: (DocumentCameraState) -> CGColor = { state in
+                        switch state {
+                        case .align: return UIColor.black.cgColor
+                        case .moveCloser: return UIColor.red.cgColor
+                        case .tooClose: return UIColor.red.cgColor
+                        case .steady: return UIColor.yellow.cgColor
+                        case .hold: return UIColor.yellow.cgColor
+                        case .capture: return UIColor.green.cgColor
+                        @unknown default: return UIColor.black.cgColor
+                        }
+                    }
+                    let options = DocumentCameraOptions(countdownDigits: 2,
+                                                        autoCapture: self.autoCapture,
+                                                        textForState: textForState,
+                                                        colorForState: colorForState,
+                                                        textForManualCapture: NSLocalizedString("acuant_camera_manual_capture", comment: ""),
+                                                        backButtonText: NSLocalizedString("acuant_camera_back_button_text", comment: ""))
+                    let documentCameraViewController = DocumentCameraViewController(options: options)
+                    documentCameraViewController.delegate = self
+                    self.navigationController?.pushViewController(documentCameraViewController, animated: false)
                 }
-            } else { // if request is denied (success is false)
-                // Create Alert
+            } else {
                 let alert = UIAlertController(title: "Camera", message: "Camera access is absolutely necessary to use this app", preferredStyle: .alert)
                 
                 // Add "OK" Button to alert, pressing it will bring you to the settings app
                 alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
                     UIApplication.shared.open(URL(string: UIApplication.openSettingsURLString)!)
                 }))
-                // Show the alert with animation
-                self!.present(alert, animated: true)
+
+                self.present(alert, animated: true)
             }
         }
     }
@@ -453,36 +475,34 @@ extension RootViewController: UploadImageDelegate {
         if error == nil {
             self.idOptions.isRetrying = false
             if self.idOptions.isHealthCard {
-                if self.idOptions.cardSide == CardSide.Front {
+                if self.idOptions.cardSide == DocumentSide.front {
                     self.handleHealthcardFront()
                 } else {
                     DocumentProcessing.getData(instanceId: self.documentInstance!, isHealthCard: true, delegate: self)
                     self.showProgressView(text: "Processing...")
                 }
             } else {
-                if self.idOptions.cardSide == CardSide.Front {
-                    if self.isBackSideRequired(classification: classification) {
-                        isDocumentWithBarcode = classification?.type?.referenceDocumentDataTypes?.contains(0) ?? false
+                if self.idOptions.cardSide == DocumentSide.front {
+                    if let classification = classification, self.isBackSideRequired(classification: classification) {
+                        isDocumentWithBarcode = classification.type?.referenceDocumentDataTypes?.contains(.barcode2D) ?? false
                         let alert = UIAlertController(title: NSLocalizedString("Back Side?", comment: ""), message: NSLocalizedString("Scan the back side of the ID document", comment: ""), preferredStyle:UIAlertController.Style.alert)
                         alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default)
                         { action -> Void in
-                            self.idOptions.cardSide = CardSide.Back
+                            self.idOptions.cardSide = DocumentSide.back
                             self.showDocumentCaptureCamera()
                         })
                         self.present(alert, animated: true, completion: nil)
                     } else {
                         self.getIdDataAndStartFace()
                     }
-                } else if idOptions.cardSide == .Back, isDocumentWithBarcode, idData.barcodeString == nil {
+                } else if idOptions.cardSide == .back, isDocumentWithBarcode, idData.barcodeString == nil {
                     let alert = UIAlertController(title: NSLocalizedString("Capture Barcode", comment: ""),
                                                   message: NSLocalizedString("Barcode Expected", comment: ""),
                                                   preferredStyle: .alert)
                     alert.addAction(UIAlertAction(title: "OK", style: .default) { _ in
-                        let options = CameraOptions(timeInMsPerDigit: 1000,
-                                                    digitsToShow: 20,
-                                                    colorHold: UIColor.white.cgColor,
-                                                    colorCapturing: UIColor.green.cgColor)
-                        let barcodeCamera = BarcodeCameraViewController(options: options, delegate: self)
+                        let options = BarcodeCameraOptions(waitTimeAfterCapturingInSeconds: 1, timeoutInSeconds: 20)
+                        let barcodeCamera = BarcodeCameraViewController(options: options)
+                        barcodeCamera.delegate = self
                         self.navigationController?.pushViewController(barcodeCamera, animated: false)
                     })
                     present(alert, animated: true, completion: nil)
@@ -507,7 +527,7 @@ extension RootViewController: UploadImageDelegate {
         let alert = UIAlertController(title: NSLocalizedString("Back Side?", comment: ""), message: NSLocalizedString("Scan the back side of the medical insurance card", comment: ""), preferredStyle:UIAlertController.Style.alert)
         alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default)
         { action -> Void in
-            self.idOptions.cardSide = CardSide.Back
+            self.idOptions.cardSide = DocumentSide.back
             self.showDocumentCaptureCamera()
         })
         alert.addAction(UIAlertAction(title: "SKIP", style: UIAlertAction.Style.default)
@@ -531,10 +551,10 @@ extension RootViewController: UploadImageDelegate {
 func appendDetailed(dataArray: inout Array<String>, result: IDResult) {
     
     dataArray.append("Authentication Starts")
-    dataArray.append("Authentication Overall : \(Utils.getAuthResultString(authResult: result.result))")
-    if (result.alerts?.actions != nil) {
-        for alert in result.alerts!.actions! {
-            if(alert.result != "1") {
+    dataArray.append("Authentication Overall : \(result.result?.name ?? "Not supported")")
+    if let alerts = result.alerts {
+        for alert in alerts {
+            if alert.result != .passed {
                 dataArray.append("\(alert.actionDescription ?? "nil") : \(alert.disposition ?? "nil")")
             }
         }
@@ -543,10 +563,11 @@ func appendDetailed(dataArray: inout Array<String>, result: IDResult) {
     dataArray.append("")
 }
 
-extension RootViewController:GetDataDelegate{
+extension RootViewController: GetDataDelegate {
+
     func processingResultReceived(processingResult: ProcessingResult) {
-        if(processingResult.error == nil){
-            if(self.idOptions.isHealthCard){
+        if processingResult.error == nil {
+            if self.idOptions.isHealthCard {
                 let healthCardResult = processingResult as! HealthInsuranceCardResult
                 let frontImage = healthCardResult.frontImage
                 let backImage = healthCardResult.backImage
@@ -563,65 +584,53 @@ extension RootViewController:GetDataDelegate{
                 }
                 
                 showHealthCardResult(data: dataArray, front: frontImage, back: backImage)
-                DocumentProcessing.deleteInstance(instanceId: healthCardResult.instanceID!,type:DeleteType.MedicalCard, delegate: self)
+                DocumentProcessing.deleteInstance(instanceId: healthCardResult.instanceID!, type: DeleteType.MedicalCard, delegate: self)
                 
-            }else{
+            } else {
                 let idResult = processingResult as! IDResult
-                if(idResult.fields == nil){
-                    self.hideProgressView()
-                    CustomAlerts.displayError(message: "Could not extract data")
-                    getDataGroup.leave()
-                    return
-                }else if(idResult.fields!.documentFields == nil){
-                    self.hideProgressView()
-                    CustomAlerts.displayError(message: "Could not extract data")
-                    getDataGroup.leave()
-                    return
-                }else if(idResult.fields!.documentFields!.count==0){
+                guard let fields = idResult.fields, !fields.isEmpty else {
                     self.hideProgressView()
                     CustomAlerts.displayError(message: "Could not extract data")
                     getDataGroup.leave()
                     return
                 }
-                let fields : Array<DocumentField>! = idResult.fields!.documentFields!
                 
-                var frontImageUri: String? = nil
-                var backImageUri: String? = nil
-                var signImageUri: String? = nil
-                var faceImageUri: String? = nil
+                var frontImageUri: String?
+                var backImageUri: String?
+                var signImageUri: String?
+                var faceImageUri: String?
+                var dataArray = [String]()
                 
-                var dataArray = Array<String>()
-                
-                if (!detailedAuth) {
-                    dataArray.append("Authentication Result : \(Utils.getAuthResultString(authResult: idResult.result))")
+                if !detailedAuth {
+                    dataArray.append("Authentication Result : \(idResult.result?.name ?? "Not supported")")
                 } else {
                     appendDetailed(dataArray: &dataArray, result: idResult)
                 }
-                //var images = [String:UIImage]()
-                for field in fields{
-                    if(field.type == "string"){
+
+                for field in fields {
+                    if field.type == "string" {
                         dataArray.append("\(field.key!) : \(field.value!)")
-                    }else if(field.type == "datetime"){
+                    } else if field.type == "datetime" {
                         dataArray.append("\(field.key!) : \(Utils.dateFieldToDateString(dateStr: field.value!)!)")
-                    }else if (field.key == "Photo" && field.type == "uri") {
+                    } else if field.key == "Photo", field.type == "uri" {
                         faceImageUri = field.value
                         capturedFaceImageUrl = faceImageUri
-                    } else if (field.key == "Signature" && field.type == "uri") {
+                    } else if field.key == "Signature" && field.type == "uri" {
                         signImageUri = field.value
                     }
                 }
                 
-                for image in (idResult.images?.images!)! {
-                    if (image.side == 0) {
+                for image in idResult.images! {
+                    if case .front = image.side {
                         frontImageUri = image.uri
-                    } else if (image.side == 1) {
+                    } else if case .back = image.side {
                         backImageUri = image.uri
                     }
                 }
                 
                 self.showResult(data: dataArray, front: frontImageUri, back: backImageUri, sign: signImageUri, face: faceImageUri)
             }
-        }else{
+        } else {
             self.hideProgressView()
             if let msg = processingResult.error?.errorDescription {
                 CustomAlerts.displayError(message: msg)
@@ -629,22 +638,22 @@ extension RootViewController:GetDataDelegate{
         }
     }
     
-    func showResult(data:Array<String>?,front:String?,back:String?,sign:String?,face:String?){
+    func showResult(data: [String]?, front: String?, back: String?, sign: String?, face: String?) {
         self.getDataGroup.leave()
-        self.showResultGroup.notify(queue: .main){
+        self.showResultGroup.notify(queue: .main) {
             self.hideProgressView()
             let storyBoard = UIStoryboard.init(name: "Main", bundle: nil)
             let resultViewController = storyBoard.instantiateViewController(withIdentifier: "ResultViewController") as! ResultViewController
             resultViewController.data = data
             
-            if(self.livenessString != nil){
+            if let livenessText = self.livenessString {
                 resultViewController.data?.insert("", at: 0)
-                resultViewController.data?.insert(self.livenessString!, at: 0)
+                resultViewController.data?.insert(livenessText, at: 0)
             }
             
-            if(self.capturedFacialMatchResult != nil){
-                resultViewController.data?.insert("Face matched : \(self.capturedFacialMatchResult!.isMatch)", at: 0)
-                resultViewController.data?.insert("Face Match score : \(self.capturedFacialMatchResult!.score)", at: 0)
+            if let facialMatchResult = self.capturedFacialMatchResult {
+                resultViewController.data?.insert("Face matched : \(facialMatchResult.isMatch)", at: 0)
+                resultViewController.data?.insert("Face Match score : \(facialMatchResult.score)", at: 0)
             }
             
             resultViewController.frontImageUrl = front
@@ -657,15 +666,12 @@ extension RootViewController:GetDataDelegate{
         }
     }
     
-    func showHealthCardResult(data:Array<String>?,front:UIImage?,back:UIImage?){
+    func showHealthCardResult(data: [String]? ,front: UIImage?, back: UIImage?) {
         DispatchQueue.main.async {
             self.hideProgressView()
             let storyBoard = UIStoryboard.init(name: "Main", bundle: nil)
             let resultViewController = storyBoard.instantiateViewController(withIdentifier: "ResultViewController") as! ResultViewController
-            
-            
             resultViewController.data = data
-            
             resultViewController.front = front
             resultViewController.back = back
             self.navigationController?.pushViewController(resultViewController, animated: true)
@@ -673,7 +679,7 @@ extension RootViewController:GetDataDelegate{
     }
 }
 
-extension RootViewController:DeleteDelegate{
+extension RootViewController: DeleteDelegate {
     func instanceDeleted(success: Bool) {
         print()
     }
@@ -765,19 +771,18 @@ extension RootViewController : LivenessTestResultDelegate{
 extension RootViewController {
     private func processPassiveLiveness(imageData: Data) {
         self.faceProcessingGroup.enter()
-        PassiveLiveness.postLiveness(request: AcuantLivenessRequest(jpegData: imageData)) { [weak self]
-            (result, error) in
-            if(result != nil && (result?.result == AcuantLivenessAssessment.Live || result?.result == AcuantLivenessAssessment.NotLive)){
-                self?.livenessString = "Liveness : \(result!.result.rawValue)"
-            }
-            else{
+        PassiveLiveness.postLiveness(request: AcuantLivenessRequest(jpegData: imageData)) { [weak self] result, error in
+            if let livenessResult = result,
+               (livenessResult.result == AcuantLivenessAssessment.live || livenessResult.result == AcuantLivenessAssessment.notLive) {
+                self?.livenessString = "Liveness : \(livenessResult.result.rawValue)"
+            } else {
                 self?.livenessString = "Liveness : \(result?.result.rawValue ?? "Unknown") \(error?.errorCode?.rawValue ?? "") \(error?.description ?? "")"
             }
             self?.faceProcessingGroup.leave()
         }
     }
     
-    public func showPassiveLiveness(){
+    public func showPassiveLiveness() {
         DispatchQueue.main.async {
             let controller = FaceCaptureController()
             controller.callback = { [weak self] faceCaptureResult in
@@ -789,7 +794,7 @@ extension RootViewController {
                     self.processFacialMatch(imageData: result.jpegData)
                 }
                 
-                self.faceProcessingGroup.notify(queue: .main){
+                self.faceProcessingGroup.notify(queue: .main) {
                     self.showResultGroup.leave()
                 }
             }
@@ -797,19 +802,14 @@ extension RootViewController {
         }
     }
     
-    func showFacialCaptureInterface(){
+    func showFacialCaptureInterface() {
         self.showResultGroup.enter()
-        
         let faceIndex = livenessOption.selectedSegmentIndex
-        
-        if(faceIndex == 1){
+        if faceIndex == 1 {
             self.showPassiveLiveness()
-            
-        }
-        else if (faceIndex == 2){
+        } else if faceIndex == 2 {
             IPLiveness.performLivenessSetup(delegate: self)
-        }
-        else{
+        } else {
             self.showResultGroup.leave()
         }
     }
@@ -878,44 +878,31 @@ extension RootViewController: MrzHelpViewControllerDelegate {
 
     @available (iOS 13, *)
     private func showMrzCamera() {
-        let controller = AcuantMrzCameraController()
-        controller.customDisplayMessage = { state in
+        let textForState: (MrzCameraState) -> String = { state in
             switch state {
-            case .None, .Align:
-                return ""
-            case .MoveCloser:
-                return "Move Closer"
-            case .TooClose:
-                return "Too Close!"
-            case .Reposition:
-                return "Reposition"
-            case .Good:
-                return "Reading MRZ"
-            case .Captured:
-                return "Captured"
+            case .align: return NSLocalizedString("acuant_camera_align", comment: "")
+            case .moveCloser: return NSLocalizedString("acuant_camera_move_closer", comment: "")
+            case .tooClose: return NSLocalizedString("acuant_camera_too_close", comment: "")
+            case .reposition: return NSLocalizedString("acuant_camera_reposition", comment: "")
+            case .good: return NSLocalizedString("acuant_camera_reading_mrz", comment: "")
+            case .captured: return NSLocalizedString("acuant_camera_captured", comment: "")
+            case .none: return ""
+            @unknown default: return ""
             }
         }
-        controller.callback = { [weak self] result in
-            if let success = result {
-                DispatchQueue.main.async {
-                    self?.navigationController?.popViewController(animated: true)
-                    let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                    let vc = storyboard.instantiateViewController(withIdentifier: "NFCViewController") as! NFCViewController
-                    vc.result = success
-                    self?.navigationController?.pushViewController(vc, animated: true)
-                }
-            }
-        }
-
-        navigationController?.pushViewController(controller, animated: false)
+        let options = MrzCameraOptions(textForState: textForState,
+                                       backButtonText: NSLocalizedString("acuant_camera_back_button_text", comment: ""))
+        let mrzCameraViewController = MrzCameraViewController(options: options)
+        mrzCameraViewController.delegate = self
+        navigationController?.pushViewController(mrzCameraViewController, animated: false)
     }
 }
 
 //MARK: - AcuantCamera: BarcodeCameraDelegate
 
-extension RootViewController: BarcodeCameraDelegate {
+extension RootViewController: BarcodeCameraViewControllerDelegate {
 
-    func captured(barcode: String?) {
+    func onCaptured(barcode: String?) {
         guard let barcode = barcode, let documentInstanceId = documentInstance else {
             getIdDataAndStartFace()
             return
@@ -923,5 +910,23 @@ extension RootViewController: BarcodeCameraDelegate {
         
         idData.barcodeString = barcode
         DocumentProcessing.uploadBarcode(instanceId: documentInstanceId, barcodeString: barcode, delegate: self)
+    }
+}
+
+// MARK: - MrzCameraViewControllerDelegate
+
+extension RootViewController: MrzCameraViewControllerDelegate {
+    func onCaptured(mrz: AcuantCamera.AcuantMrzResult?) {
+        guard let success = mrz else { return }
+
+        DispatchQueue.main.async {
+            self.navigationController?.popViewController(animated: true)
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            if #available(iOS 13, *) {
+                let vc = storyboard.instantiateViewController(withIdentifier: "NFCViewController") as! NFCViewController
+                vc.result = success
+                self.navigationController?.pushViewController(vc, animated: true)
+            }
+        }
     }
 }

@@ -1,5 +1,5 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.7.1 (swiftlang-5.7.1.135.3 clang-1400.0.29.51)
+// swift-compiler-version: Apple Swift version 5.8 (swiftlang-5.8.0.124.2 clang-1403.0.22.11.100)
 // swift-module-flags: -target arm64-apple-ios11.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name AcuantHGLiveness
 // swift-module-flags-ignorable: -enable-bare-slash-regex
 import AVFoundation
@@ -10,7 +10,7 @@ import UIKit
 import _Concurrency
 import _StringProcessing
 @objc @_inheritsConvenienceInitializers @objcMembers public class HGLiveness : ObjectiveC.NSObject {
-  @objc public class func getFaceCaptureSession(delegate: AcuantHGLiveness.AcuantHGLiveFaceCaptureDelegate?, captureDevice: AVFoundation.AVCaptureDevice?) -> AcuantHGLiveness.FaceCaptureSession
+  @objc public class func getFaceCaptureSession(delegate: (any AcuantHGLiveness.AcuantHGLiveFaceCaptureDelegate)?, captureDevice: AVFoundation.AVCaptureDevice?) -> AcuantHGLiveness.FaceCaptureSession
   @objc override dynamic public init()
   @objc deinit
 }
@@ -21,6 +21,7 @@ import _StringProcessing
   case FACE_TOO_FAR
   case FACE_GOOD_DISTANCE
   case FACE_NOT_IN_FRAME
+  case FACE_HAS_ANGLE
   public init?(rawValue: Swift.Int)
   public typealias RawValue = Swift.Int
   public var rawValue: Swift.Int {
@@ -30,12 +31,19 @@ import _StringProcessing
 @objc public protocol HGLivenessDelegate {
   @objc func liveFaceCaptured(result: AcuantHGLiveness.HGLivenessResult?)
 }
-@objc @_inheritsConvenienceInitializers @objcMembers public class FaceCaptureSession : AVFoundation.AVCaptureSession, AVFoundation.AVCaptureVideoDataOutputSampleBufferDelegate {
-  @objc public class func getFaceCaptureSession(delegate: AcuantHGLiveness.AcuantHGLiveFaceCaptureDelegate?, captureDevice: AVFoundation.AVCaptureDevice?) -> AcuantHGLiveness.FaceCaptureSession
-  @objc public func start()
-  @objc public func captureOutput(_ output: AVFoundation.AVCaptureOutput, didOutput sampleBuffer: CoreMedia.CMSampleBuffer, from connection: AVFoundation.AVCaptureConnection)
+@objc @_inheritsConvenienceInitializers @objcMembers public class FaceCaptureSession : AVFoundation.AVCaptureSession {
+  @objc public class func getFaceCaptureSession(delegate: (any AcuantHGLiveness.AcuantHGLiveFaceCaptureDelegate)?, captureDevice: AVFoundation.AVCaptureDevice?) -> AcuantHGLiveness.FaceCaptureSession
+  @objc public func start(completion: (() -> Swift.Void)? = nil)
+  @objc public func stop()
+  @objc public func resume()
   @objc override dynamic public init()
   @objc deinit
+}
+extension AcuantHGLiveness.FaceCaptureSession : AVFoundation.AVCaptureMetadataOutputObjectsDelegate {
+  @objc dynamic public func metadataOutput(_ output: AVFoundation.AVCaptureMetadataOutput, didOutput metadataObjects: [AVFoundation.AVMetadataObject], from connection: AVFoundation.AVCaptureConnection)
+}
+extension AcuantHGLiveness.FaceCaptureSession : AVFoundation.AVCaptureVideoDataOutputSampleBufferDelegate {
+  @objc dynamic public func captureOutput(_ output: AVFoundation.AVCaptureOutput, didOutput sampleBuffer: CoreMedia.CMSampleBuffer, from connection: AVFoundation.AVCaptureConnection)
 }
 @objc @_inheritsConvenienceInitializers @objcMembers public class LiveFaceRectDetail : ObjectiveC.NSObject {
   @objc public var width: Swift.Float
@@ -59,6 +67,8 @@ import _StringProcessing
   @objc deinit
 }
 @objc @objcMembers public class HGLivenessResult : ObjectiveC.NSObject {
+  @objc final public let image: UIKit.UIImage
+  @objc final public let jpegData: Foundation.Data
   @objc public init(image: UIKit.UIImage, jpegData: Foundation.Data)
   @objc deinit
 }

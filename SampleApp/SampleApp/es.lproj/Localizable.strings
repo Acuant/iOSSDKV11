@@ -10,10 +10,15 @@
 "acuant_camera_manual_capture" = "ALINEAR Y TOCAR";
 "acuant_camera_move_closer" = "MUÉVETE MAS CERCA";
 "acuant_camera_hold_steady" = "MANTENER ESTABLE";
+"acuant_camera_hold" = "MANTENER";
 "acuant_camera_capturing" = "CAPTURANDO";
-"acuant_camera_outside_view" = "MUY CERCA!";
+"acuant_camera_captured" = "CAPTURADO";
+"acuant_camera_reposition" = "REPOSICIONAR";
+"acuant_camera_reading_mrz" = "LEYENDO MRZ";
+"acuant_camera_too_close" = "MUY CERCA!";
 "acuant_camera_paused" = "CÁMARA EN PAUSA";
 "acuant_camera_capture_barcode" = "CAPTURAR CÓDIGO DE BARRAS";
+"acuant_camera_back_button_text" = "ATRÁS";
 
 /* AcuantFaceCapture/AcuantPassiveLiveness */
 "acuant_face_camera_initial" = "Alinear la cara para\n comenzar a capturar";
@@ -31,6 +36,7 @@
 "hg_too_close" = "Demasiado cerca";
 "hg_too_far_away" = "Muévete mas cerca";
 "hg_move_in_frame" = "Moverse en cuadro";
+"hg_has_angle" = "La cara tiene ángulo.\nNo inclinar";
 "hg_blink" = "Parpadeo!";
 "hg_hold_steady" = "Mantener estable";
 "hg_align_face_and_blink" = "Alinear la cara para comenzar";

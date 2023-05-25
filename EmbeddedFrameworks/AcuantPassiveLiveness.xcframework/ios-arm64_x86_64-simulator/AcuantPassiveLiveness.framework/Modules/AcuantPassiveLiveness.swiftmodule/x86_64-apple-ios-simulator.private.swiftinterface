@@ -1,5 +1,5 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.7.1 (swiftlang-5.7.1.135.3 clang-1400.0.29.51)
+// swift-compiler-version: Apple Swift version 5.8 (swiftlang-5.8.0.124.2 clang-1403.0.22.11.100)
 // swift-module-flags: -target x86_64-apple-ios11.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name AcuantPassiveLiveness
 // swift-module-flags-ignorable: -enable-bare-slash-regex
 import AcuantCommon
@@ -10,11 +10,11 @@ import Swift
 import UIKit
 import _Concurrency
 import _StringProcessing
-public enum AcuantLivenessAssessment : Swift.String {
-  case Error
-  case PoorQuality
-  case Live
-  case NotLive
+public enum AcuantLivenessAssessment : Swift.String, Swift.Decodable {
+  case error
+  case poorQuality
+  case live
+  case notLive
   public init?(rawValue: Swift.String)
   public typealias RawValue = Swift.String
   public var rawValue: Swift.String {
@@ -26,35 +26,36 @@ public class AcuantLivenessRequest {
   public init(jpegData: Foundation.Data)
   @objc deinit
 }
-public class AcuantLivenessError {
+public class AcuantLivenessError : Swift.Decodable {
   final public let errorCode: AcuantPassiveLiveness.AcuantLivenessErrorCode?
   final public let description: Swift.String?
   public init(errorCode: AcuantPassiveLiveness.AcuantLivenessErrorCode? = nil, description: Swift.String? = nil)
   @objc deinit
+  required public init(from decoder: any Swift.Decoder) throws
 }
 @_hasMissingDesignatedInitializers public class PassiveLiveness {
   public class func postLiveness(request: AcuantPassiveLiveness.AcuantLivenessRequest, callback: @escaping (AcuantPassiveLiveness.AcuantLivenessResponse?, AcuantPassiveLiveness.AcuantLivenessError?) -> ())
   @objc deinit
 }
-public class AcuantLivenessResponse {
+public class AcuantLivenessResponse : Swift.Decodable {
   final public let score: Swift.Int
   final public let result: AcuantPassiveLiveness.AcuantLivenessAssessment
-  public init(score: Swift.Int, result: AcuantPassiveLiveness.AcuantLivenessAssessment)
+  required public init(from decoder: any Swift.Decoder) throws
   @objc deinit
 }
-public enum AcuantLivenessErrorCode : Swift.String {
-  case Unknown
-  case FaceTooClose
-  case FaceNotFound
-  case FaceTooSmall
-  case FaceAngleTooLarge
-  case FailedToReadImage
-  case InvalidRequest
-  case InvalidRequestSettings
-  case Unauthorized
-  case NotFound
-  case InternalError
-  case InvalidJson
+public enum AcuantLivenessErrorCode : Swift.String, Swift.Decodable {
+  case unknown
+  case faceTooClose
+  case faceNotFound
+  case faceTooSmall
+  case faceAngleTooLarge
+  case failedToReadImage
+  case invalidRequest
+  case invalidRequestSettings
+  case unauthorized
+  case notFound
+  case internalError
+  case invalidJson
   public init?(rawValue: Swift.String)
   public typealias RawValue = Swift.String
   public var rawValue: Swift.String {

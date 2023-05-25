@@ -52,7 +52,7 @@ class CameraPreviewView: UIView {
     }
     
     private func createTextLayerAccesibilityElement() -> UIAccessibilityElement? {
-        guard let cameraTextLayer = layer.sublayers?.first(where: { $0 is CameraTextView }) as? CameraTextView else {
+        guard let cameraTextLayer = layer.sublayers?.first(where: { $0 is CameraTextLayer }) as? CameraTextLayer else {
             return nil
         }
 

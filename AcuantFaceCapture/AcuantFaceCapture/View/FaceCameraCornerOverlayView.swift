@@ -45,50 +45,50 @@ class FaceCameraCornerOverlayView: CALayer {
         self.setDefaultCorners(frame: frame)
     }
     
-    public func setColor(color: CGColor){
+    public func setColor(color: CGColor) {
         corners.forEach { c in
             c.strokeColor = color
         }
     }
     
-    internal func getCorners(current: [CGPoint?], p1: CGPoint, p2:CGPoint) -> [CGPoint?]{
-        var topLeft : CGPoint? = current[0]
-        var topRight : CGPoint? = current[1]
+    internal func getCorners(current: [CGPoint?], p1: CGPoint, p2: CGPoint) -> [CGPoint?] {
+        var topLeft: CGPoint? = current[0]
+        var topRight: CGPoint? = current[1]
         var bottomRight: CGPoint? = current[2]
-        var bottomLeft : CGPoint? = current[3]
+        var bottomLeft: CGPoint? = current[3]
         
-        if(p1.x > p2.x && p1.y > p2.y){
+        if p1.x > p2.x && p1.y > p2.y {
             topLeft = p2
             bottomRight = p1
-        }
-        else if(p1.x < p2.x && p1.y < p2.y){
+        } else if p1.x < p2.x && p1.y < p2.y {
             topLeft = p1
             bottomRight = p2
-        }
-        else if(p1.x > p2.x && p1.y < p2.y){
+        } else if p1.x > p2.x && p1.y < p2.y {
             topRight = p1
             bottomLeft = p2
-        }
-        else{
+        } else {
             topRight = p2
             bottomLeft = p1
         }
         return [topLeft, topRight, bottomRight, bottomLeft]
     }
     
-    internal func getCorners(point1: CGPoint, point2: CGPoint, point3: CGPoint, point4: CGPoint) -> [CGPoint?]{
+    internal func getCorners(point1: CGPoint, point2: CGPoint, point3: CGPoint, point4: CGPoint) -> [CGPoint?] {
         let pointArray: [CGPoint?] = [nil, nil, nil, nil]
         let updated = getCorners(current: pointArray, p1: point1, p2: point3)
         return getCorners(current: updated, p1: point2, p2: point4)
     }
     
-    internal func setCorners(point1: CGPoint, point2: CGPoint, point3: CGPoint, point4: CGPoint){
+    internal func setCorners(point1: CGPoint, point2: CGPoint, point3: CGPoint, point4: CGPoint) {
         let corners = getCorners(point1: point1, point2: point2, point3: point3, point4: point4)
+        guard let topLeft = corners[0], let topRight = corners[1], let bottomRight = corners[2], let bottomLeft = corners[3] else {
+            return
+        }
         
-        animate(x: Int(corners[0]!.x), y: Int(corners[0]!.y), offsetx:bracketWidth!, offsety:bracketHeight!, view: self.corners[0])
-        animate(x: Int(corners[1]!.x), y: Int(corners[1]!.y), offsetx:-bracketWidth!, offsety: bracketHeight!, view:  self.corners[1])
-        animate(x: Int(corners[2]!.x), y: Int(corners[2]!.y), offsetx:-bracketWidth!, offsety: -bracketHeight!, view:  self.corners[2])
-        animate(x: Int(corners[3]!.x), y: Int(corners[3]!.y), offsetx:bracketWidth!, offsety: -bracketHeight!, view:  self.corners[3])
+        animate(x: Int(topLeft.x), y: Int(topLeft.y), offsetx:bracketWidth!, offsety:bracketHeight!, view: self.corners[0])
+        animate(x: Int(topRight.x), y: Int(topRight.y), offsetx:-bracketWidth!, offsety: bracketHeight!, view:  self.corners[1])
+        animate(x: Int(bottomRight.x), y: Int(bottomRight.y), offsetx:-bracketWidth!, offsety: -bracketHeight!, view:  self.corners[2])
+        animate(x: Int(bottomLeft.x), y: Int(bottomLeft.y), offsetx:bracketWidth!, offsety: -bracketHeight!, view:  self.corners[3])
     }
 
     internal func setDefaultCorners(frame: CGRect){

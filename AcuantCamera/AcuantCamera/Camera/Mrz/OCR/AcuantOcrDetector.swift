@@ -7,30 +7,26 @@
 //
 
 import Foundation
-import TesseractOCR
 
 public class AcuantOcrDetector {
-    let tesseract: G8Tesseract?
-    var isInitalized = false
+    let tesseract: Tesseract
         
-    public init(){
-        tesseract = G8Tesseract(language: "OCRB")
-        if let success = tesseract {
-            isInitalized = true
-            success.pageSegmentationMode = .auto
-            success.charWhitelist = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ<"
+    public init() {
+        tesseract = Tesseract(language: .custom("OCRB"), engineMode: .tesseractOnly)
+        tesseract.configure {
+            set(.allowlist, value: "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ<")
+            set(.pageSegmentationMode, value: String.integer(3)) //automatic page segmentation
         }
     }
     
     public func detect(image: UIImage) -> String? {
-        if self.isInitalized {
-            self.tesseract!.image = image
-            if self.tesseract!.recognize() {
-                return self.tesseract!.recognizedText!
-            } else {
-                return nil
-            }
+        if case .success(let recognizedText) = tesseract.performOCR(on: image) {
+            return recognizedText
         }
         return nil
     }
+}
+
+extension Tesseract.Variable {
+  static let pageSegmentationMode = Tesseract.Variable("tessedit_pageseg_mode")
 }

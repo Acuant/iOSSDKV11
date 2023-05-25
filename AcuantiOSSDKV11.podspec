@@ -3,7 +3,7 @@ Pod::Spec.new do |s|
     s.swift_versions = ['5.5.2']
     s.ios.deployment_target = '11.0'
     s.name         = "AcuantiOSSDKV11"
-    s.version      = "11.5.8"
+    s.version      = "11.6.0"
     s.summary      = "Acuant's latest SDK with most advanced image capture technology and optimized user workflow  "
     s.description  = "Acuant's latest SDK with most advanced image capture technology and optimized user workflow.
 
@@ -15,16 +15,11 @@ Pod::Spec.new do |s|
     s.license      = {
           :type => 'commercial',
           :text => <<-LICENSE
-                  Copyright 2021 Acuant, Inc. All Rights Reserved.
+                  Copyright 2023 Acuant, Inc. All Rights Reserved.
                   LICENSE
     }
     s.author             = { "Acuant Inc" => "smaltsev@acuant.com" }
     s.source       = { :git => "https://github.com/Acuant/iOSSDKV11.git", :tag =>    "#{s.version}" }
-    
-    s.pod_target_xcconfig = {
-        'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64'
-    }
-    s.user_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
 
     s.subspec 'AcuantCommon' do |acuantCommon|
         acuantCommon.ios.deployment_target = '11.0'
@@ -116,9 +111,11 @@ Pod::Spec.new do |s|
              mrz.source_files =
                "AcuantCamera/AcuantCamera/Camera/Mrz/*.{h,swift}",
                "AcuantCamera/AcuantCamera/Camera/Mrz/OCR/*.{h,swift}",
+               "AcuantCamera/AcuantCamera/Camera/Mrz/OCR/Tesseract/*.{h,swift}",
                "AcuantCamera/AcuantCamera/Camera/Mrz/OCR/Utils/*.{h,swift}"
              mrz.dependency "#{s.name}/AcuantCamera/Common"
-             mrz.ios.vendored_frameworks = "EmbeddedFrameworks/TesseractOCR.framework"
+             mrz.ios.vendored_frameworks = "EmbeddedFrameworks/libtesseract.xcframework"
+             mrz.pod_target_xcconfig = { 'OTHER_LDFLAGS' => '-lc++ -lz' }
          end
 
         acuantCamera.subspec 'Barcode' do |barcode|

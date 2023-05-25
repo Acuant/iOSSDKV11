@@ -58,11 +58,9 @@ public class FaceCaptureController: UIViewController {
     override public func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
 
-        if (captureSession?.isRunning == true) {
-            captureSession.stopRunning()
-        }
-        navigationController?.setNavigationBarHidden(self.isNavigationHidden, animated: false)
+        captureSession.stop()
         NotificationCenter.default.removeObserver(self)
+        navigationController?.setNavigationBarHidden(self.isNavigationHidden, animated: false)
     }
 
     public override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
@@ -71,7 +69,8 @@ public class FaceCaptureController: UIViewController {
         coordinator.animate(alongsideTransition: { [weak self] context in
             guard let self = self else { return }
 
-            self.rotateCameraPreview(to: self.view.window?.faceCaptureInterfaceOrientation)
+            let newFrame = CGRect(origin: self.view.frame.origin, size: size)
+            self.rotateCameraPreview(to: self.view.window?.faceCaptureInterfaceOrientation, frame: newFrame)
             self.handleRotateToPortraitAlertIfPhone()
         })
     }
@@ -113,123 +112,122 @@ public class FaceCaptureController: UIViewController {
             self.alertView = AlertView(frame: self.view.frame,
                                        text: NSLocalizedString("acuant_face_camera_rotate_portrait", comment: ""))
             self.view.addSubview(self.alertView!)
-            self.captureSession.stopRunning()
+            self.captureSession.stop()
         } else if !captureSession.isRunning {
             self.alertView?.removeFromSuperview()
-            self.captureSession.startRunning()
+            self.captureSession.resume()
         }
     }
 
     func startCameraView() {
-        if let frontCameraDevice = AVCaptureDevice.default(.builtInWideAngleCamera, for: AVMediaType.video, position: .front) {
+        guard let frontCameraDevice = AVCaptureDevice.default(.builtInWideAngleCamera, for: AVMediaType.video, position: .front) else {
+            navigationController?.popViewController(animated: true)
+            return
+        }
+
+        captureSession = AcuantFaceCaptureSession(captureDevice: frontCameraDevice) { [weak self] faceResult in
+            if self?.shouldSkipFrame(faceType: faceResult.state) ?? true {
+                return
+            }
             
-            captureSession = AcuantFaceCaptureSession(captureDevice: frontCameraDevice) { [weak self]
-                faceResult in
-                
-                if self?.shouldSkipFrame(faceType: faceResult.state) ?? true {
-                    return
-                }
-                
-                DispatchQueue.main.async {
-                    self?.handleOval(state: faceResult.state, faceRect: faceResult.faceRect, aperture: faceResult.cleanAperture);
-                    switch(faceResult.state){
-                    case AcuantFaceState.NONE:
-                        self?.cancelCountdown()
-                        self?.addMessage(messageKey: "acuant_face_camera_initial", color: self?.options?.fontColorDefault, fontSize: 25)
-                    case AcuantFaceState.FACE_TOO_CLOSE:
-                        self?.cancelCountdown()
-                        self?.addMessage(messageKey: "acuant_face_camera_face_too_close", color: self?.options?.fontColorError, fontSize: 25)
-                    case AcuantFaceState.FACE_TOO_FAR:
-                        self?.cancelCountdown()
-                        self?.addMessage(messageKey: "acuant_face_camera_face_too_far", color: self?.options?.fontColorError)
-                    case AcuantFaceState.FACE_HAS_ANGLE:
-                        self?.cancelCountdown()
-                        self?.addMessage(messageKey: "acuant_face_camera_face_has_angle", color: self?.options?.fontColorError, fontSize: 25)
-                    case AcuantFaceState.FACE_NOT_IN_FRAME:
-                        self?.cancelCountdown()
-                        self?.addMessage(messageKey: "acuant_face_camera_face_not_in_frame", color: self?.options?.fontColorError)
-                    case AcuantFaceState.FACE_MOVED:
-                        self?.cancelCountdown()
-                        self?.addMessage(messageKey: "acuant_face_camera_face_moved", color: self?.options?.fontColorError)
-                    case AcuantFaceState.FACE_GOOD_DISTANCE:
-                        if let image = faceResult.image {
-                            self?.handleCountdown(image: image)
-                        }
+            DispatchQueue.main.async {
+                self?.handleOval(state: faceResult.state, faceRect: faceResult.faceRect, aperture: faceResult.cleanAperture)
+                switch faceResult.state {
+                case AcuantFaceState.NONE:
+                    self?.cancelCountdown()
+                    self?.addMessage(messageKey: "acuant_face_camera_initial", color: self?.options?.fontColorDefault, fontSize: 25)
+                case AcuantFaceState.FACE_TOO_CLOSE:
+                    self?.cancelCountdown()
+                    self?.addMessage(messageKey: "acuant_face_camera_face_too_close", color: self?.options?.fontColorError, fontSize: 25)
+                case AcuantFaceState.FACE_TOO_FAR:
+                    self?.cancelCountdown()
+                    self?.addMessage(messageKey: "acuant_face_camera_face_too_far", color: self?.options?.fontColorError)
+                case AcuantFaceState.FACE_HAS_ANGLE:
+                    self?.cancelCountdown()
+                    self?.addMessage(messageKey: "acuant_face_camera_face_has_angle", color: self?.options?.fontColorError, fontSize: 25)
+                case AcuantFaceState.FACE_NOT_IN_FRAME:
+                    self?.cancelCountdown()
+                    self?.addMessage(messageKey: "acuant_face_camera_face_not_in_frame", color: self?.options?.fontColorError)
+                case AcuantFaceState.FACE_MOVED:
+                    self?.cancelCountdown()
+                    self?.addMessage(messageKey: "acuant_face_camera_face_moved", color: self?.options?.fontColorError)
+                case AcuantFaceState.FACE_GOOD_DISTANCE:
+                    if let image = faceResult.image {
+                        self?.handleCountdown(image: image)
                     }
                 }
             }
-            
-            captureSession?.start()
-            videoPreviewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
-            videoPreviewLayer.videoGravity = .resizeAspectFill
-            videoPreviewLayer.frame = view.layer.bounds
-
-            overlayView = createSemiTransparentOverlay()
-            view.addSubview(overlayView!)
-
-            topOverlayLayer = createTopOverlay()
-            videoPreviewLayer.addSublayer(topOverlayLayer)
-
-            messageLayer = createMessageLayer()
-            videoPreviewLayer.addSublayer(messageLayer)
-            
-            cornerlayer = FaceCameraCornerOverlayView()
-            cornerlayer.setFrame(frame: view.frame)
-            
-            if options!.showOval {
-                faceOval = CAShapeLayer()
-                faceOval?.fillColor = UIColor.clear.cgColor
-                faceOval?.strokeColor = options!.bracketColorGood
-                faceOval?.opacity = 0.5
-                faceOval?.lineWidth = 5.0
-                videoPreviewLayer.addSublayer(faceOval!)
-            }
-            
-            videoPreviewLayer.addSublayer(cornerlayer)
-            
-            if let image = UIImage(named: options!.defaultImageUrl) {
-                imageLayer = ImagePlaceholderLayer(image: image, bounds: view.bounds)
-                videoPreviewLayer.addSublayer(imageLayer!)
-            }
-            
-            view.layer.addSublayer(videoPreviewLayer)
-            rotateCameraPreview(to: view.window?.faceCaptureInterfaceOrientation)
-            addNavigationBackButton()
-        } else {
-            navigationController?.popViewController(animated: true)
         }
+
+        videoPreviewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
+        videoPreviewLayer.videoGravity = .resizeAspectFill
+        videoPreviewLayer.frame = view.layer.bounds
+
+        overlayView = createSemiTransparentOverlay()
+        view.addSubview(overlayView!)
+
+        topOverlayLayer = createTopOverlay()
+        videoPreviewLayer.addSublayer(topOverlayLayer)
+
+        messageLayer = createMessageLayer()
+        videoPreviewLayer.addSublayer(messageLayer)
+
+        cornerlayer = FaceCameraCornerOverlayView()
+        cornerlayer.setFrame(frame: view.frame)
+
+        if options!.showOval {
+            faceOval = CAShapeLayer()
+            faceOval?.fillColor = UIColor.clear.cgColor
+            faceOval?.strokeColor = options!.bracketColorGood
+            faceOval?.opacity = 0.5
+            faceOval?.lineWidth = 5.0
+            videoPreviewLayer.addSublayer(faceOval!)
+        }
+
+        videoPreviewLayer.addSublayer(cornerlayer)
+
+        if let image = UIImage(named: options!.defaultImageUrl) {
+            imageLayer = ImagePlaceholderLayer(image: image, bounds: view.bounds)
+            videoPreviewLayer.addSublayer(imageLayer!)
+        }
+
+        view.layer.addSublayer(videoPreviewLayer)
+
+        captureSession?.start {
+            self.rotateCameraPreview(to: self.view.window?.faceCaptureInterfaceOrientation, frame: self.view.frame)
+        }
+        addNavigationBackButton()
     }
 
-    private func rotateCameraPreview(to interfaceOrientation: UIInterfaceOrientation?) {
+    private func rotateCameraPreview(to interfaceOrientation: UIInterfaceOrientation?, frame: CGRect) {
         guard let connection = videoPreviewLayer.connection,
               connection.isVideoOrientationSupported,
               let orientation = interfaceOrientation else {
             return
         }
 
-        videoPreviewLayer.frame = view.bounds
+        videoPreviewLayer.frame = frame
         connection.videoOrientation = orientation.faceCaptureVideoOrientation ?? .portrait
 
         topOverlayLayer.path = createRectanglePath().cgPath
-        imageLayer?.setFrame(view.bounds)
+        imageLayer?.setFrame(frame)
 
         if orientation.isLandscape {
-            cornerlayer.setHorizontalDefaultCorners(frame: view.bounds)
+            cornerlayer.setHorizontalDefaultCorners(frame: frame)
         } else {
-            cornerlayer.setDefaultCorners(frame: view.bounds)
+            cornerlayer.setDefaultCorners(frame: frame)
         }
         videoPreviewLayer.removeAllAnimations()
     }
 
-    private func cancelCountdown(){
+    private func cancelCountdown() {
         currentTimer = nil
     }
 
-    private func getTargetWidth(width: Int, height: Int) -> Int{
-        if(width > height){
+    private func getTargetWidth(width: Int, height: Int) -> Int {
+        if width > height {
             return Int(720 * (Float(width)/Float(height)))
-        }
-        else{
+        } else {
             return 720
         }
     }
@@ -257,18 +255,17 @@ public class FaceCaptureController: UIViewController {
         }
     }
     
-    func handleImage(state: AcuantFaceState){
-        if let defaultImg = imageLayer{
-            if(state == .NONE){
+    func handleImage(state: AcuantFaceState) {
+        if let defaultImg = imageLayer {
+            if state == .NONE {
                 defaultImg.isHidden = false
-            }
-            else{
+            } else {
                 defaultImg.isHidden = true
             }
         }
     }
     
-    func handleOval(state: AcuantFaceState, faceRect: CGRect?, aperture: CGRect?){
+    func handleOval(state: AcuantFaceState, faceRect: CGRect?, aperture: CGRect?) {
         handleImage(state: state)
         setLookFromState(state: state)
         
@@ -300,12 +297,13 @@ public class FaceCaptureController: UIViewController {
         }
     }
     
-    func shouldSkipFrame(faceType: AcuantFaceState) -> Bool{
+    func shouldSkipFrame(faceType: AcuantFaceState) -> Bool {
         var skipFrame = false
-        if(currentFrameTime < 0 || (faceType == AcuantFaceState.FACE_GOOD_DISTANCE) || CFAbsoluteTimeGetCurrent() - currentFrameTime >= self.frameThrottleDuration){
+        if currentFrameTime < 0
+            || (faceType == AcuantFaceState.FACE_GOOD_DISTANCE)
+            || CFAbsoluteTimeGetCurrent() - currentFrameTime >= self.frameThrottleDuration {
             currentFrameTime = CFAbsoluteTimeGetCurrent()
-        }
-        else{
+        } else {
             skipFrame = true
         }
         return skipFrame
@@ -362,10 +360,8 @@ public class FaceCaptureController: UIViewController {
         ])
     }
 
-    @objc internal func backTapped(_ sender: Any){
-        if let userCallback = callback{
-            userCallback(nil)
-        }
+    @objc internal func backTapped(_ sender: Any) {
+        callback?(nil)
         self.navigationController?.popViewController(animated: true)
     }
 
@@ -374,13 +370,10 @@ public class FaceCaptureController: UIViewController {
         switch state {
         case .FACE_GOOD_DISTANCE:
             color = self.options!.bracketColorGood
-            break;
         case .NONE:
             color = self.options!.bracketColorDefault
-            break;
         default:
             color = self.options!.bracketColorError
-            break;
         }
         self.cornerlayer.setColor(color: color)
     }

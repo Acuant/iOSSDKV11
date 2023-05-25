@@ -5,24 +5,14 @@
     "printedName": "TopLevel",
     "children": [
       {
-        "kind": "Import",
-        "name": "Foundation",
-        "printedName": "Foundation",
-        "declKind": "Import",
-        "moduleName": "AcuantPassiveLiveness",
-        "declAttributes": [
-          "RawDocComment"
-        ]
-      },
-      {
         "kind": "TypeDecl",
         "name": "AcuantLivenessAssessment",
         "printedName": "AcuantLivenessAssessment",
         "children": [
           {
             "kind": "Var",
-            "name": "Error",
-            "printedName": "Error",
+            "name": "error",
+            "printedName": "error",
             "children": [
               {
                 "kind": "TypeFunc",
@@ -52,14 +42,14 @@
               }
             ],
             "declKind": "EnumElement",
-            "usr": "s:21AcuantPassiveLiveness0aC10AssessmentO5ErroryA2CmF",
-            "mangledName": "$s21AcuantPassiveLiveness0aC10AssessmentO5ErroryA2CmF",
+            "usr": "s:21AcuantPassiveLiveness0aC10AssessmentO5erroryA2CmF",
+            "mangledName": "$s21AcuantPassiveLiveness0aC10AssessmentO5erroryA2CmF",
             "moduleName": "AcuantPassiveLiveness"
           },
           {
             "kind": "Var",
-            "name": "PoorQuality",
-            "printedName": "PoorQuality",
+            "name": "poorQuality",
+            "printedName": "poorQuality",
             "children": [
               {
                 "kind": "TypeFunc",
@@ -89,14 +79,14 @@
               }
             ],
             "declKind": "EnumElement",
-            "usr": "s:21AcuantPassiveLiveness0aC10AssessmentO11PoorQualityyA2CmF",
-            "mangledName": "$s21AcuantPassiveLiveness0aC10AssessmentO11PoorQualityyA2CmF",
+            "usr": "s:21AcuantPassiveLiveness0aC10AssessmentO11poorQualityyA2CmF",
+            "mangledName": "$s21AcuantPassiveLiveness0aC10AssessmentO11poorQualityyA2CmF",
             "moduleName": "AcuantPassiveLiveness"
           },
           {
             "kind": "Var",
-            "name": "Live",
-            "printedName": "Live",
+            "name": "live",
+            "printedName": "live",
             "children": [
               {
                 "kind": "TypeFunc",
@@ -126,14 +116,14 @@
               }
             ],
             "declKind": "EnumElement",
-            "usr": "s:21AcuantPassiveLiveness0aC10AssessmentO4LiveyA2CmF",
-            "mangledName": "$s21AcuantPassiveLiveness0aC10AssessmentO4LiveyA2CmF",
+            "usr": "s:21AcuantPassiveLiveness0aC10AssessmentO4liveyA2CmF",
+            "mangledName": "$s21AcuantPassiveLiveness0aC10AssessmentO4liveyA2CmF",
             "moduleName": "AcuantPassiveLiveness"
           },
           {
             "kind": "Var",
-            "name": "NotLive",
-            "printedName": "NotLive",
+            "name": "notLive",
+            "printedName": "notLive",
             "children": [
               {
                 "kind": "TypeFunc",
@@ -163,8 +153,8 @@
               }
             ],
             "declKind": "EnumElement",
-            "usr": "s:21AcuantPassiveLiveness0aC10AssessmentO7NotLiveyA2CmF",
-            "mangledName": "$s21AcuantPassiveLiveness0aC10AssessmentO7NotLiveyA2CmF",
+            "usr": "s:21AcuantPassiveLiveness0aC10AssessmentO7notLiveyA2CmF",
+            "mangledName": "$s21AcuantPassiveLiveness0aC10AssessmentO7notLiveyA2CmF",
             "moduleName": "AcuantPassiveLiveness"
           },
           {
@@ -245,7 +235,8 @@
         "mangledName": "$s21AcuantPassiveLiveness0aC10AssessmentO",
         "moduleName": "AcuantPassiveLiveness",
         "declAttributes": [
-          "AccessControl"
+          "AccessControl",
+          "RawDocComment"
         ],
         "enumRawTypeName": "String",
         "conformances": [
@@ -284,6 +275,13 @@
             ],
             "usr": "s:SY",
             "mangledName": "$sSY"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Decodable",
+            "printedName": "Decodable",
+            "usr": "s:Se",
+            "mangledName": "$sSe"
           }
         ]
       },
@@ -391,16 +389,6 @@
         "moduleName": "AcuantPassiveLiveness",
         "declAttributes": [
           "AccessControl"
-        ]
-      },
-      {
-        "kind": "Import",
-        "name": "Foundation",
-        "printedName": "Foundation",
-        "declKind": "Import",
-        "moduleName": "AcuantPassiveLiveness",
-        "declAttributes": [
-          "RawDocComment"
         ]
       },
       {
@@ -586,6 +574,35 @@
               "AccessControl"
             ],
             "init_kind": "Designated"
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(from:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "AcuantLivenessError",
+                "printedName": "AcuantPassiveLiveness.AcuantLivenessError",
+                "usr": "s:21AcuantPassiveLiveness0aC5ErrorC"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Decoder",
+                "printedName": "Swift.Decoder",
+                "usr": "s:s7DecoderP"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:21AcuantPassiveLiveness0aC5ErrorC4fromACs7Decoder_p_tKcfc",
+            "mangledName": "$s21AcuantPassiveLiveness0aC5ErrorC4fromACs7Decoder_p_tKcfc",
+            "moduleName": "AcuantPassiveLiveness",
+            "implicit": true,
+            "declAttributes": [
+              "Required"
+            ],
+            "throwing": true,
+            "init_kind": "Designated"
           }
         ],
         "declKind": "Class",
@@ -593,7 +610,17 @@
         "mangledName": "$s21AcuantPassiveLiveness0aC5ErrorC",
         "moduleName": "AcuantPassiveLiveness",
         "declAttributes": [
-          "AccessControl"
+          "AccessControl",
+          "RawDocComment"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Decodable",
+            "printedName": "Decodable",
+            "usr": "s:Se",
+            "mangledName": "$sSe"
+          }
         ]
       },
       {
@@ -816,7 +843,7 @@
           {
             "kind": "Constructor",
             "name": "init",
-            "printedName": "init(score:result:)",
+            "printedName": "init(from:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -826,24 +853,20 @@
               },
               {
                 "kind": "TypeNominal",
-                "name": "Int",
-                "printedName": "Swift.Int",
-                "usr": "s:Si"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "AcuantLivenessAssessment",
-                "printedName": "AcuantPassiveLiveness.AcuantLivenessAssessment",
-                "usr": "s:21AcuantPassiveLiveness0aC10AssessmentO"
+                "name": "Decoder",
+                "printedName": "Swift.Decoder",
+                "usr": "s:s7DecoderP"
               }
             ],
             "declKind": "Constructor",
-            "usr": "s:21AcuantPassiveLiveness0aC8ResponseC5score6resultACSi_AA0aC10AssessmentOtcfc",
-            "mangledName": "$s21AcuantPassiveLiveness0aC8ResponseC5score6resultACSi_AA0aC10AssessmentOtcfc",
+            "usr": "s:21AcuantPassiveLiveness0aC8ResponseC4fromACs7Decoder_p_tKcfc",
+            "mangledName": "$s21AcuantPassiveLiveness0aC8ResponseC4fromACs7Decoder_p_tKcfc",
             "moduleName": "AcuantPassiveLiveness",
             "declAttributes": [
+              "Required",
               "AccessControl"
             ],
+            "throwing": true,
             "init_kind": "Designated"
           }
         ],
@@ -853,6 +876,15 @@
         "moduleName": "AcuantPassiveLiveness",
         "declAttributes": [
           "AccessControl"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Decodable",
+            "printedName": "Decodable",
+            "usr": "s:Se",
+            "mangledName": "$sSe"
+          }
         ]
       },
       {
@@ -887,24 +919,14 @@
         "moduleName": "AcuantPassiveLiveness"
       },
       {
-        "kind": "Import",
-        "name": "Foundation",
-        "printedName": "Foundation",
-        "declKind": "Import",
-        "moduleName": "AcuantPassiveLiveness",
-        "declAttributes": [
-          "RawDocComment"
-        ]
-      },
-      {
         "kind": "TypeDecl",
         "name": "AcuantLivenessErrorCode",
         "printedName": "AcuantLivenessErrorCode",
         "children": [
           {
             "kind": "Var",
-            "name": "Unknown",
-            "printedName": "Unknown",
+            "name": "unknown",
+            "printedName": "unknown",
             "children": [
               {
                 "kind": "TypeFunc",
@@ -934,14 +956,14 @@
               }
             ],
             "declKind": "EnumElement",
-            "usr": "s:21AcuantPassiveLiveness0aC9ErrorCodeO7UnknownyA2CmF",
-            "mangledName": "$s21AcuantPassiveLiveness0aC9ErrorCodeO7UnknownyA2CmF",
+            "usr": "s:21AcuantPassiveLiveness0aC9ErrorCodeO7unknownyA2CmF",
+            "mangledName": "$s21AcuantPassiveLiveness0aC9ErrorCodeO7unknownyA2CmF",
             "moduleName": "AcuantPassiveLiveness"
           },
           {
             "kind": "Var",
-            "name": "FaceTooClose",
-            "printedName": "FaceTooClose",
+            "name": "faceTooClose",
+            "printedName": "faceTooClose",
             "children": [
               {
                 "kind": "TypeFunc",
@@ -971,14 +993,14 @@
               }
             ],
             "declKind": "EnumElement",
-            "usr": "s:21AcuantPassiveLiveness0aC9ErrorCodeO12FaceTooCloseyA2CmF",
-            "mangledName": "$s21AcuantPassiveLiveness0aC9ErrorCodeO12FaceTooCloseyA2CmF",
+            "usr": "s:21AcuantPassiveLiveness0aC9ErrorCodeO12faceTooCloseyA2CmF",
+            "mangledName": "$s21AcuantPassiveLiveness0aC9ErrorCodeO12faceTooCloseyA2CmF",
             "moduleName": "AcuantPassiveLiveness"
           },
           {
             "kind": "Var",
-            "name": "FaceNotFound",
-            "printedName": "FaceNotFound",
+            "name": "faceNotFound",
+            "printedName": "faceNotFound",
             "children": [
               {
                 "kind": "TypeFunc",
@@ -1008,14 +1030,14 @@
               }
             ],
             "declKind": "EnumElement",
-            "usr": "s:21AcuantPassiveLiveness0aC9ErrorCodeO12FaceNotFoundyA2CmF",
-            "mangledName": "$s21AcuantPassiveLiveness0aC9ErrorCodeO12FaceNotFoundyA2CmF",
+            "usr": "s:21AcuantPassiveLiveness0aC9ErrorCodeO12faceNotFoundyA2CmF",
+            "mangledName": "$s21AcuantPassiveLiveness0aC9ErrorCodeO12faceNotFoundyA2CmF",
             "moduleName": "AcuantPassiveLiveness"
           },
           {
             "kind": "Var",
-            "name": "FaceTooSmall",
-            "printedName": "FaceTooSmall",
+            "name": "faceTooSmall",
+            "printedName": "faceTooSmall",
             "children": [
               {
                 "kind": "TypeFunc",
@@ -1045,14 +1067,14 @@
               }
             ],
             "declKind": "EnumElement",
-            "usr": "s:21AcuantPassiveLiveness0aC9ErrorCodeO12FaceTooSmallyA2CmF",
-            "mangledName": "$s21AcuantPassiveLiveness0aC9ErrorCodeO12FaceTooSmallyA2CmF",
+            "usr": "s:21AcuantPassiveLiveness0aC9ErrorCodeO12faceTooSmallyA2CmF",
+            "mangledName": "$s21AcuantPassiveLiveness0aC9ErrorCodeO12faceTooSmallyA2CmF",
             "moduleName": "AcuantPassiveLiveness"
           },
           {
             "kind": "Var",
-            "name": "FaceAngleTooLarge",
-            "printedName": "FaceAngleTooLarge",
+            "name": "faceAngleTooLarge",
+            "printedName": "faceAngleTooLarge",
             "children": [
               {
                 "kind": "TypeFunc",
@@ -1082,14 +1104,14 @@
               }
             ],
             "declKind": "EnumElement",
-            "usr": "s:21AcuantPassiveLiveness0aC9ErrorCodeO17FaceAngleTooLargeyA2CmF",
-            "mangledName": "$s21AcuantPassiveLiveness0aC9ErrorCodeO17FaceAngleTooLargeyA2CmF",
+            "usr": "s:21AcuantPassiveLiveness0aC9ErrorCodeO17faceAngleTooLargeyA2CmF",
+            "mangledName": "$s21AcuantPassiveLiveness0aC9ErrorCodeO17faceAngleTooLargeyA2CmF",
             "moduleName": "AcuantPassiveLiveness"
           },
           {
             "kind": "Var",
-            "name": "FailedToReadImage",
-            "printedName": "FailedToReadImage",
+            "name": "failedToReadImage",
+            "printedName": "failedToReadImage",
             "children": [
               {
                 "kind": "TypeFunc",
@@ -1119,14 +1141,14 @@
               }
             ],
             "declKind": "EnumElement",
-            "usr": "s:21AcuantPassiveLiveness0aC9ErrorCodeO17FailedToReadImageyA2CmF",
-            "mangledName": "$s21AcuantPassiveLiveness0aC9ErrorCodeO17FailedToReadImageyA2CmF",
+            "usr": "s:21AcuantPassiveLiveness0aC9ErrorCodeO17failedToReadImageyA2CmF",
+            "mangledName": "$s21AcuantPassiveLiveness0aC9ErrorCodeO17failedToReadImageyA2CmF",
             "moduleName": "AcuantPassiveLiveness"
           },
           {
             "kind": "Var",
-            "name": "InvalidRequest",
-            "printedName": "InvalidRequest",
+            "name": "invalidRequest",
+            "printedName": "invalidRequest",
             "children": [
               {
                 "kind": "TypeFunc",
@@ -1156,14 +1178,14 @@
               }
             ],
             "declKind": "EnumElement",
-            "usr": "s:21AcuantPassiveLiveness0aC9ErrorCodeO14InvalidRequestyA2CmF",
-            "mangledName": "$s21AcuantPassiveLiveness0aC9ErrorCodeO14InvalidRequestyA2CmF",
+            "usr": "s:21AcuantPassiveLiveness0aC9ErrorCodeO14invalidRequestyA2CmF",
+            "mangledName": "$s21AcuantPassiveLiveness0aC9ErrorCodeO14invalidRequestyA2CmF",
             "moduleName": "AcuantPassiveLiveness"
           },
           {
             "kind": "Var",
-            "name": "InvalidRequestSettings",
-            "printedName": "InvalidRequestSettings",
+            "name": "invalidRequestSettings",
+            "printedName": "invalidRequestSettings",
             "children": [
               {
                 "kind": "TypeFunc",
@@ -1193,14 +1215,14 @@
               }
             ],
             "declKind": "EnumElement",
-            "usr": "s:21AcuantPassiveLiveness0aC9ErrorCodeO22InvalidRequestSettingsyA2CmF",
-            "mangledName": "$s21AcuantPassiveLiveness0aC9ErrorCodeO22InvalidRequestSettingsyA2CmF",
+            "usr": "s:21AcuantPassiveLiveness0aC9ErrorCodeO22invalidRequestSettingsyA2CmF",
+            "mangledName": "$s21AcuantPassiveLiveness0aC9ErrorCodeO22invalidRequestSettingsyA2CmF",
             "moduleName": "AcuantPassiveLiveness"
           },
           {
             "kind": "Var",
-            "name": "Unauthorized",
-            "printedName": "Unauthorized",
+            "name": "unauthorized",
+            "printedName": "unauthorized",
             "children": [
               {
                 "kind": "TypeFunc",
@@ -1230,14 +1252,14 @@
               }
             ],
             "declKind": "EnumElement",
-            "usr": "s:21AcuantPassiveLiveness0aC9ErrorCodeO12UnauthorizedyA2CmF",
-            "mangledName": "$s21AcuantPassiveLiveness0aC9ErrorCodeO12UnauthorizedyA2CmF",
+            "usr": "s:21AcuantPassiveLiveness0aC9ErrorCodeO12unauthorizedyA2CmF",
+            "mangledName": "$s21AcuantPassiveLiveness0aC9ErrorCodeO12unauthorizedyA2CmF",
             "moduleName": "AcuantPassiveLiveness"
           },
           {
             "kind": "Var",
-            "name": "NotFound",
-            "printedName": "NotFound",
+            "name": "notFound",
+            "printedName": "notFound",
             "children": [
               {
                 "kind": "TypeFunc",
@@ -1267,14 +1289,14 @@
               }
             ],
             "declKind": "EnumElement",
-            "usr": "s:21AcuantPassiveLiveness0aC9ErrorCodeO8NotFoundyA2CmF",
-            "mangledName": "$s21AcuantPassiveLiveness0aC9ErrorCodeO8NotFoundyA2CmF",
+            "usr": "s:21AcuantPassiveLiveness0aC9ErrorCodeO8notFoundyA2CmF",
+            "mangledName": "$s21AcuantPassiveLiveness0aC9ErrorCodeO8notFoundyA2CmF",
             "moduleName": "AcuantPassiveLiveness"
           },
           {
             "kind": "Var",
-            "name": "InternalError",
-            "printedName": "InternalError",
+            "name": "internalError",
+            "printedName": "internalError",
             "children": [
               {
                 "kind": "TypeFunc",
@@ -1304,14 +1326,14 @@
               }
             ],
             "declKind": "EnumElement",
-            "usr": "s:21AcuantPassiveLiveness0aC9ErrorCodeO08InternalD0yA2CmF",
-            "mangledName": "$s21AcuantPassiveLiveness0aC9ErrorCodeO08InternalD0yA2CmF",
+            "usr": "s:21AcuantPassiveLiveness0aC9ErrorCodeO08internalD0yA2CmF",
+            "mangledName": "$s21AcuantPassiveLiveness0aC9ErrorCodeO08internalD0yA2CmF",
             "moduleName": "AcuantPassiveLiveness"
           },
           {
             "kind": "Var",
-            "name": "InvalidJson",
-            "printedName": "InvalidJson",
+            "name": "invalidJson",
+            "printedName": "invalidJson",
             "children": [
               {
                 "kind": "TypeFunc",
@@ -1341,8 +1363,8 @@
               }
             ],
             "declKind": "EnumElement",
-            "usr": "s:21AcuantPassiveLiveness0aC9ErrorCodeO11InvalidJsonyA2CmF",
-            "mangledName": "$s21AcuantPassiveLiveness0aC9ErrorCodeO11InvalidJsonyA2CmF",
+            "usr": "s:21AcuantPassiveLiveness0aC9ErrorCodeO11invalidJsonyA2CmF",
+            "mangledName": "$s21AcuantPassiveLiveness0aC9ErrorCodeO11invalidJsonyA2CmF",
             "moduleName": "AcuantPassiveLiveness"
           },
           {
@@ -1423,7 +1445,8 @@
         "mangledName": "$s21AcuantPassiveLiveness0aC9ErrorCodeO",
         "moduleName": "AcuantPassiveLiveness",
         "declAttributes": [
-          "AccessControl"
+          "AccessControl",
+          "RawDocComment"
         ],
         "enumRawTypeName": "String",
         "conformances": [
@@ -1462,11 +1485,516 @@
             ],
             "usr": "s:SY",
             "mangledName": "$sSY"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Decodable",
+            "printedName": "Decodable",
+            "usr": "s:Se",
+            "mangledName": "$sSe"
           }
         ]
       }
     ],
     "json_format_version": 8
   },
-  "ConstValues": []
+  "ConstValues": [
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantPassiveLiveness\/AcuantPassiveLiveness\/Enum\/AcuantLivenessAssessment.swift",
+      "kind": "StringLiteral",
+      "offset": 240,
+      "length": 7,
+      "value": "\"Error\""
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantPassiveLiveness\/AcuantPassiveLiveness\/Enum\/AcuantLivenessAssessment.swift",
+      "kind": "StringLiteral",
+      "offset": 271,
+      "length": 13,
+      "value": "\"PoorQuality\""
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantPassiveLiveness\/AcuantPassiveLiveness\/Enum\/AcuantLivenessAssessment.swift",
+      "kind": "StringLiteral",
+      "offset": 301,
+      "length": 6,
+      "value": "\"Live\""
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantPassiveLiveness\/AcuantPassiveLiveness\/Enum\/AcuantLivenessAssessment.swift",
+      "kind": "StringLiteral",
+      "offset": 327,
+      "length": 9,
+      "value": "\"NotLive\""
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantPassiveLiveness\/AcuantPassiveLiveness\/Enum\/AcuantLivenessAssessment.swift",
+      "kind": "StringLiteral",
+      "offset": 240,
+      "length": 7,
+      "value": "\"Error\""
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantPassiveLiveness\/AcuantPassiveLiveness\/Enum\/AcuantLivenessAssessment.swift",
+      "kind": "StringLiteral",
+      "offset": 271,
+      "length": 13,
+      "value": "\"PoorQuality\""
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantPassiveLiveness\/AcuantPassiveLiveness\/Enum\/AcuantLivenessAssessment.swift",
+      "kind": "StringLiteral",
+      "offset": 301,
+      "length": 6,
+      "value": "\"Live\""
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantPassiveLiveness\/AcuantPassiveLiveness\/Enum\/AcuantLivenessAssessment.swift",
+      "kind": "StringLiteral",
+      "offset": 327,
+      "length": 9,
+      "value": "\"NotLive\""
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantPassiveLiveness\/AcuantPassiveLiveness\/Model\/AcuantLivenessError.swift",
+      "kind": "StringLiteral",
+      "offset": 360,
+      "length": 11,
+      "value": "\"ErrorCode\""
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantPassiveLiveness\/AcuantPassiveLiveness\/Model\/AcuantLivenessError.swift",
+      "kind": "StringLiteral",
+      "offset": 399,
+      "length": 7,
+      "value": "\"Error\""
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantPassiveLiveness\/AcuantPassiveLiveness\/Model\/AcuantLivenessError.swift",
+      "kind": "StringLiteral",
+      "offset": 360,
+      "length": 11,
+      "value": "\"ErrorCode\""
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantPassiveLiveness\/AcuantPassiveLiveness\/Model\/AcuantLivenessError.swift",
+      "kind": "StringLiteral",
+      "offset": 399,
+      "length": 7,
+      "value": "\"Error\""
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantPassiveLiveness\/AcuantPassiveLiveness\/Model\/LivenessResponse.swift",
+      "kind": "StringLiteral",
+      "offset": 426,
+      "length": 16,
+      "value": "\"LivenessResult\""
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantPassiveLiveness\/AcuantPassiveLiveness\/Model\/LivenessResponse.swift",
+      "kind": "StringLiteral",
+      "offset": 475,
+      "length": 7,
+      "value": "\"Error\""
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantPassiveLiveness\/AcuantPassiveLiveness\/Model\/LivenessResponse.swift",
+      "kind": "StringLiteral",
+      "offset": 508,
+      "length": 11,
+      "value": "\"ErrorCode\""
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantPassiveLiveness\/AcuantPassiveLiveness\/Model\/LivenessResponse.swift",
+      "kind": "StringLiteral",
+      "offset": 426,
+      "length": 16,
+      "value": "\"LivenessResult\""
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantPassiveLiveness\/AcuantPassiveLiveness\/Model\/LivenessResponse.swift",
+      "kind": "StringLiteral",
+      "offset": 475,
+      "length": 7,
+      "value": "\"Error\""
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantPassiveLiveness\/AcuantPassiveLiveness\/Model\/LivenessResponse.swift",
+      "kind": "StringLiteral",
+      "offset": 508,
+      "length": 11,
+      "value": "\"ErrorCode\""
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantPassiveLiveness\/AcuantPassiveLiveness\/Model\/LivenessInfo.swift",
+      "kind": "StringLiteral",
+      "offset": 314,
+      "length": 10,
+      "value": "\"Settings\""
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantPassiveLiveness\/AcuantPassiveLiveness\/Model\/LivenessInfo.swift",
+      "kind": "StringLiteral",
+      "offset": 346,
+      "length": 7,
+      "value": "\"Image\""
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantPassiveLiveness\/AcuantPassiveLiveness\/Model\/LivenessInfo.swift",
+      "kind": "StringLiteral",
+      "offset": 314,
+      "length": 10,
+      "value": "\"Settings\""
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantPassiveLiveness\/AcuantPassiveLiveness\/Model\/LivenessInfo.swift",
+      "kind": "StringLiteral",
+      "offset": 346,
+      "length": 7,
+      "value": "\"Image\""
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantPassiveLiveness\/AcuantPassiveLiveness\/Model\/LivenessInfo.swift",
+      "kind": "StringLiteral",
+      "offset": 560,
+      "length": 16,
+      "value": "\"SubscriptionId\""
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantPassiveLiveness\/AcuantPassiveLiveness\/Model\/LivenessInfo.swift",
+      "kind": "StringLiteral",
+      "offset": 560,
+      "length": 16,
+      "value": "\"SubscriptionId\""
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantPassiveLiveness\/AcuantPassiveLiveness\/Model\/LivenessInfo.swift",
+      "kind": "StringLiteral",
+      "offset": 715,
+      "length": 4,
+      "value": "\"OS\""
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantPassiveLiveness\/AcuantPassiveLiveness\/Model\/LivenessInfo.swift",
+      "kind": "StringLiteral",
+      "offset": 715,
+      "length": 4,
+      "value": "\"OS\""
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantPassiveLiveness\/AcuantPassiveLiveness\/Model\/AcuantLivenessResponse.swift",
+      "kind": "StringLiteral",
+      "offset": 372,
+      "length": 7,
+      "value": "\"Score\""
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantPassiveLiveness\/AcuantPassiveLiveness\/Model\/AcuantLivenessResponse.swift",
+      "kind": "StringLiteral",
+      "offset": 402,
+      "length": 20,
+      "value": "\"LivenessAssessment\""
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantPassiveLiveness\/AcuantPassiveLiveness\/Model\/AcuantLivenessResponse.swift",
+      "kind": "StringLiteral",
+      "offset": 372,
+      "length": 7,
+      "value": "\"Score\""
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantPassiveLiveness\/AcuantPassiveLiveness\/Model\/AcuantLivenessResponse.swift",
+      "kind": "StringLiteral",
+      "offset": 402,
+      "length": 20,
+      "value": "\"LivenessAssessment\""
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantPassiveLiveness\/AcuantPassiveLiveness\/Service\/PassiveLivenessService.swift",
+      "kind": "StringLiteral",
+      "offset": 803,
+      "length": 44,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantPassiveLiveness\/AcuantPassiveLiveness\/Service\/PassiveLivenessService.swift",
+      "kind": "StringLiteral",
+      "offset": 830,
+      "length": 1,
+      "value": "\"\/api\/v1\/liveness\""
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantPassiveLiveness\/AcuantPassiveLiveness\/Service\/PassiveLivenessService.swift",
+      "kind": "StringLiteral",
+      "offset": 1216,
+      "length": 5,
+      "value": "\"IOS\""
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantPassiveLiveness\/AcuantPassiveLiveness\/Service\/PassiveLivenessService.swift",
+      "kind": "StringLiteral",
+      "offset": 1649,
+      "length": 6,
+      "value": "\"post\""
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantPassiveLiveness\/AcuantPassiveLiveness\/Service\/PassiveLivenessService.swift",
+      "kind": "StringLiteral",
+      "offset": 1780,
+      "length": 15,
+      "value": "\"Authorization\""
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantPassiveLiveness\/AcuantPassiveLiveness\/Service\/PassiveLivenessService.swift",
+      "kind": "StringLiteral",
+      "offset": 1825,
+      "length": 18,
+      "value": "\"application\/json\""
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantPassiveLiveness\/AcuantPassiveLiveness\/Service\/PassiveLivenessService.swift",
+      "kind": "StringLiteral",
+      "offset": 1865,
+      "length": 8,
+      "value": "\"Accept\""
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantPassiveLiveness\/AcuantPassiveLiveness\/Service\/PassiveLivenessService.swift",
+      "kind": "StringLiteral",
+      "offset": 1903,
+      "length": 18,
+      "value": "\"application\/json\""
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantPassiveLiveness\/AcuantPassiveLiveness\/Service\/PassiveLivenessService.swift",
+      "kind": "StringLiteral",
+      "offset": 1943,
+      "length": 14,
+      "value": "\"Content-Type\""
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantPassiveLiveness\/AcuantPassiveLiveness\/Service\/PassiveLivenessService.swift",
+      "kind": "IntegerLiteral",
+      "offset": 2156,
+      "length": 3,
+      "value": "200"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantPassiveLiveness\/AcuantPassiveLiveness\/Service\/PassiveLivenessService.swift",
+      "kind": "IntegerLiteral",
+      "offset": 2850,
+      "length": 3,
+      "value": "401"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantPassiveLiveness\/AcuantPassiveLiveness\/Service\/PassiveLivenessService.swift",
+      "kind": "StringLiteral",
+      "offset": 3298,
+      "length": 31,
+      "value": "\"Internal Error. Invalid JSON.\""
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantPassiveLiveness\/AcuantPassiveLiveness\/Service\/PassiveLivenessService.swift",
+      "kind": "StringLiteral",
+      "offset": 3404,
+      "length": 22,
+      "value": "\"Invalid Credentials.\""
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantPassiveLiveness\/AcuantPassiveLiveness\/Service\/PassiveLivenessService.swift",
+      "kind": "StringLiteral",
+      "offset": 3502,
+      "length": 18,
+      "value": "\"Invalid Request.\""
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantPassiveLiveness\/AcuantPassiveLiveness\/Service\/PassiveLivenessService.swift",
+      "kind": "FloatLiteral",
+      "offset": 4252,
+      "length": 3,
+      "value": "0.8"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantPassiveLiveness\/AcuantPassiveLiveness\/Service\/PassiveLivenessService.swift",
+      "kind": "IntegerLiteral",
+      "offset": 4443,
+      "length": 3,
+      "value": "720"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantPassiveLiveness\/AcuantPassiveLiveness\/Service\/PassiveLivenessService.swift",
+      "kind": "StringLiteral",
+      "offset": 5338,
+      "length": 25,
+      "value": "\"CILanczosScaleTransform\""
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantPassiveLiveness\/AcuantPassiveLiveness\/Enum\/AcuantLivenessErrorCode.swift",
+      "kind": "StringLiteral",
+      "offset": 236,
+      "length": 9,
+      "value": "\"Unknown\""
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantPassiveLiveness\/AcuantPassiveLiveness\/Enum\/AcuantLivenessErrorCode.swift",
+      "kind": "StringLiteral",
+      "offset": 270,
+      "length": 14,
+      "value": "\"FaceTooClose\""
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantPassiveLiveness\/AcuantPassiveLiveness\/Enum\/AcuantLivenessErrorCode.swift",
+      "kind": "StringLiteral",
+      "offset": 309,
+      "length": 14,
+      "value": "\"FaceNotFound\""
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantPassiveLiveness\/AcuantPassiveLiveness\/Enum\/AcuantLivenessErrorCode.swift",
+      "kind": "StringLiteral",
+      "offset": 348,
+      "length": 14,
+      "value": "\"FaceTooSmall\""
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantPassiveLiveness\/AcuantPassiveLiveness\/Enum\/AcuantLivenessErrorCode.swift",
+      "kind": "StringLiteral",
+      "offset": 392,
+      "length": 19,
+      "value": "\"FaceAngleTooLarge\""
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantPassiveLiveness\/AcuantPassiveLiveness\/Enum\/AcuantLivenessErrorCode.swift",
+      "kind": "StringLiteral",
+      "offset": 441,
+      "length": 19,
+      "value": "\"FailedToReadImage\""
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantPassiveLiveness\/AcuantPassiveLiveness\/Enum\/AcuantLivenessErrorCode.swift",
+      "kind": "StringLiteral",
+      "offset": 487,
+      "length": 16,
+      "value": "\"InvalidRequest\""
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantPassiveLiveness\/AcuantPassiveLiveness\/Enum\/AcuantLivenessErrorCode.swift",
+      "kind": "StringLiteral",
+      "offset": 538,
+      "length": 24,
+      "value": "\"InvalidRequestSettings\""
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantPassiveLiveness\/AcuantPassiveLiveness\/Enum\/AcuantLivenessErrorCode.swift",
+      "kind": "StringLiteral",
+      "offset": 587,
+      "length": 14,
+      "value": "\"Unauthorized\""
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantPassiveLiveness\/AcuantPassiveLiveness\/Enum\/AcuantLivenessErrorCode.swift",
+      "kind": "StringLiteral",
+      "offset": 622,
+      "length": 10,
+      "value": "\"NotFound\""
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantPassiveLiveness\/AcuantPassiveLiveness\/Enum\/AcuantLivenessErrorCode.swift",
+      "kind": "StringLiteral",
+      "offset": 658,
+      "length": 15,
+      "value": "\"InternalError\""
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantPassiveLiveness\/AcuantPassiveLiveness\/Enum\/AcuantLivenessErrorCode.swift",
+      "kind": "StringLiteral",
+      "offset": 697,
+      "length": 13,
+      "value": "\"InvalidJson\""
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantPassiveLiveness\/AcuantPassiveLiveness\/Enum\/AcuantLivenessErrorCode.swift",
+      "kind": "StringLiteral",
+      "offset": 236,
+      "length": 9,
+      "value": "\"Unknown\""
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantPassiveLiveness\/AcuantPassiveLiveness\/Enum\/AcuantLivenessErrorCode.swift",
+      "kind": "StringLiteral",
+      "offset": 270,
+      "length": 14,
+      "value": "\"FaceTooClose\""
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantPassiveLiveness\/AcuantPassiveLiveness\/Enum\/AcuantLivenessErrorCode.swift",
+      "kind": "StringLiteral",
+      "offset": 309,
+      "length": 14,
+      "value": "\"FaceNotFound\""
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantPassiveLiveness\/AcuantPassiveLiveness\/Enum\/AcuantLivenessErrorCode.swift",
+      "kind": "StringLiteral",
+      "offset": 348,
+      "length": 14,
+      "value": "\"FaceTooSmall\""
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantPassiveLiveness\/AcuantPassiveLiveness\/Enum\/AcuantLivenessErrorCode.swift",
+      "kind": "StringLiteral",
+      "offset": 392,
+      "length": 19,
+      "value": "\"FaceAngleTooLarge\""
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantPassiveLiveness\/AcuantPassiveLiveness\/Enum\/AcuantLivenessErrorCode.swift",
+      "kind": "StringLiteral",
+      "offset": 441,
+      "length": 19,
+      "value": "\"FailedToReadImage\""
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantPassiveLiveness\/AcuantPassiveLiveness\/Enum\/AcuantLivenessErrorCode.swift",
+      "kind": "StringLiteral",
+      "offset": 487,
+      "length": 16,
+      "value": "\"InvalidRequest\""
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantPassiveLiveness\/AcuantPassiveLiveness\/Enum\/AcuantLivenessErrorCode.swift",
+      "kind": "StringLiteral",
+      "offset": 538,
+      "length": 24,
+      "value": "\"InvalidRequestSettings\""
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantPassiveLiveness\/AcuantPassiveLiveness\/Enum\/AcuantLivenessErrorCode.swift",
+      "kind": "StringLiteral",
+      "offset": 587,
+      "length": 14,
+      "value": "\"Unauthorized\""
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantPassiveLiveness\/AcuantPassiveLiveness\/Enum\/AcuantLivenessErrorCode.swift",
+      "kind": "StringLiteral",
+      "offset": 622,
+      "length": 10,
+      "value": "\"NotFound\""
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantPassiveLiveness\/AcuantPassiveLiveness\/Enum\/AcuantLivenessErrorCode.swift",
+      "kind": "StringLiteral",
+      "offset": 658,
+      "length": 15,
+      "value": "\"InternalError\""
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantPassiveLiveness\/AcuantPassiveLiveness\/Enum\/AcuantLivenessErrorCode.swift",
+      "kind": "StringLiteral",
+      "offset": 697,
+      "length": 13,
+      "value": "\"InvalidJson\""
+    }
+  ]
 }

@@ -6,7 +6,7 @@
 	<dict>
 		<key>Headers/AcuantFaceMatch-Swift.h</key>
 		<data>
-		YtsGcHoRVmbWDpW43twSQKVv4vU=
+		iz685nP01WdORtmIRtVVbyogdYk=
 		</data>
 		<key>Headers/AcuantFaceMatch.h</key>
 		<data>
@@ -14,47 +14,47 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		ZQiU8na0yzWp+ka1EiU60POGBuM=
+		mwUgRSh68jHmmwfGptx4bzmhXhI=
 		</data>
 		<key>Modules/AcuantFaceMatch.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
 		<data>
-		4+QXbdeMXKQOg80O81pfdTXgEnY=
+		e0wbFaE1ss7JY8Srj92mMew3GA0=
 		</data>
 		<key>Modules/AcuantFaceMatch.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		Fs2bK8WKIf3cEP64T+zAPXx2FFg=
+		TVt6E25tkz4EfPmvtbf6CeorMjY=
 		</data>
 		<key>Modules/AcuantFaceMatch.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		+YzR1V0hD9dNrO2ts64GrZ72wMs=
+		DG/QS78XHrSo9LFeAyhNMyHVv+M=
 		</data>
 		<key>Modules/AcuantFaceMatch.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		Fs2bK8WKIf3cEP64T+zAPXx2FFg=
+		TVt6E25tkz4EfPmvtbf6CeorMjY=
 		</data>
 		<key>Modules/AcuantFaceMatch.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		r2V4tCkxKLx76BHy1NIGs0Fffg8=
+		0rNLTvZ22u3LBIvCq1caa4B1c1o=
 		</data>
 		<key>Modules/AcuantFaceMatch.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<data>
-		4+QXbdeMXKQOg80O81pfdTXgEnY=
+		e0wbFaE1ss7JY8Srj92mMew3GA0=
 		</data>
 		<key>Modules/AcuantFaceMatch.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		CajiFjXvI50fYKorsQumnyeVlM4=
+		A/IL57OnYj5cpQoYps//mASMySY=
 		</data>
 		<key>Modules/AcuantFaceMatch.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		7vub4v1efnvpS++YI81mqBlAldk=
+		KL1Jjxi3tTWD7JH4BJeMOOKt7y0=
 		</data>
 		<key>Modules/AcuantFaceMatch.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		CajiFjXvI50fYKorsQumnyeVlM4=
+		A/IL57OnYj5cpQoYps//mASMySY=
 		</data>
 		<key>Modules/AcuantFaceMatch.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		qkyvU+RrlbFvCrU7Pm+iFJUzUmY=
+		4h7QQr5RjiWydzeLvCyZL1jZL4Y=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -67,7 +67,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			aGAC10HXqKv0X3TGriaX9bns08L6SaobBV3WR065TdE=
+			XtWvkhrR4EJj/eN440MGKHY5gr1NZJSCPxFx93cRVLU=
 			</data>
 		</dict>
 		<key>Headers/AcuantFaceMatch.h</key>
@@ -81,70 +81,70 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			k1suUAeMp0oo3k8BQh+3f3X1t/Oq2sQDPJLmWSxnHZY=
+			D1j+w7AlBcRBEc73T1yYtBqF8yMFWQaZDHv3D6/e/4U=
 			</data>
 		</dict>
 		<key>Modules/AcuantFaceMatch.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			qVLdQyId0UbgI10p0cMNmWnOjMF5NO5TrCc7WemBsW0=
+			gb2N3nJZWoxkVvvGOgHKtpWk80xf6jdk4sCJbhXdxWo=
 			</data>
 		</dict>
 		<key>Modules/AcuantFaceMatch.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			8z3Wc+jeK35mZ/Uf9gOrQBagnY2it/jrE4oeF0RtRyk=
+			nVX6JhFRCcq1d+EEDigHUtKPKwazn+Rm9fvk1z103Fs=
 			</data>
 		</dict>
 		<key>Modules/AcuantFaceMatch.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			qVLdQyId0UbgI10p0cMNmWnOjMF5NO5TrCc7WemBsW0=
+			gb2N3nJZWoxkVvvGOgHKtpWk80xf6jdk4sCJbhXdxWo=
 			</data>
 		</dict>
 		<key>Modules/AcuantFaceMatch.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			vKEtS0VixGE42oRGeplR3Sl5rRRitFf0tWhatI1yTcY=
+			UJtmqVHwzQVtoH2wBhBqTQfp9U++nDP7gemZfv6c1Es=
 			</data>
 		</dict>
 		<key>Modules/AcuantFaceMatch.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			k1suUAeMp0oo3k8BQh+3f3X1t/Oq2sQDPJLmWSxnHZY=
+			D1j+w7AlBcRBEc73T1yYtBqF8yMFWQaZDHv3D6/e/4U=
 			</data>
 		</dict>
 		<key>Modules/AcuantFaceMatch.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			zkdvOe6JW2qh6z4okYb6HYRHvWlwjCcNJrWHoqrd/hc=
+			96eaTauq2SW6t0DJU/Mc/WEFjWCXrsSsH0cCdVrceu0=
 			</data>
 		</dict>
 		<key>Modules/AcuantFaceMatch.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			zEIGA/l5PC/mMQqTXjWD1cY2YPfEGszDyj0awkMSO0U=
+			R8LZb6DhScFAd2VLwKz8EOaTr+M65KVjH47w4YKoDgc=
 			</data>
 		</dict>
 		<key>Modules/AcuantFaceMatch.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			zkdvOe6JW2qh6z4okYb6HYRHvWlwjCcNJrWHoqrd/hc=
+			96eaTauq2SW6t0DJU/Mc/WEFjWCXrsSsH0cCdVrceu0=
 			</data>
 		</dict>
 		<key>Modules/AcuantFaceMatch.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			9QtaB6IuR/9HlxBVv2lU9R+wbP8cZWhdwS7d7Yo8rN8=
+			LWFqycArK0Hmo4kPKoVojz6ESPEsFWiUVZRwSJxfVKQ=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
