@@ -30,7 +30,9 @@ Please see the provided [Migration Details](MigrationDetails.md) for information
 ## Prerequisites
 
 - iOS version 11.0 or later
-- Xcode 14+
+- Xcode 14.0-14.2
+
+**Note:** Xcode v14.3 contains a known issue with an IPLiveness dependency when integrating that module via CocoaPods. While we investigate a workaround, Acuant recommends that clients using IPLiveness via CocoaPods continue to use (or downgrade to) Xcode 14.2.
 
 ## Modules
 
@@ -119,7 +121,7 @@ The SDK includes the following modules:
 		platform :ios, '11'
 		use_frameworks! # important
 		
-		pod 'AcuantiOSSDKV11', '~> 11.5.8' #for all packages
+		pod 'AcuantiOSSDKV11', '~> 11.6.0' #for all packages
 		
  Alternatively, use the following to add **independent** modules in the podfile:
 		
