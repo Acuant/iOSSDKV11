@@ -41,7 +41,7 @@ import AVFoundation
 
     func onConfigurationBegan() { }
 
-    func enableCapture() { }
+    public func enableCapture() { }
 
     func imageFrom(sampleBuffer: CMSampleBuffer) -> UIImage? {
         guard let imageBuffer = CMSampleBufferGetImageBuffer(sampleBuffer) else { return nil }

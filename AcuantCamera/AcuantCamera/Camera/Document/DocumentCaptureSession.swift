@@ -17,9 +17,6 @@ import AcuantImagePreparation
     var croppedFrame: Image?
     var stringValue: String?
     var shouldShowBorder = true
-    weak var delegate: DocumentCaptureSessionDelegate?
-    weak var autoCaptureDelegate: AutoCaptureDelegate?
-    weak var frameDelegate: FrameAnalysisDelegate?
 
     private let DEFAULT_FRAME_THRESHOLD = 1
     private let FAST_FRAME_THRESHOLD = 3
@@ -36,6 +33,10 @@ import AcuantImagePreparation
     private var captureMetadataOutput: AVCaptureMetadataOutput!
     private var devicePreviewResolutionLongerSide = CaptureConstants.CAMERA_PREVIEW_LONGER_SIDE_STANDARD
     
+    public weak var delegate: DocumentCaptureSessionDelegate?
+    public weak var autoCaptureDelegate: AutoCaptureDelegate?
+    public weak var frameDelegate: FrameAnalysisDelegate?
+
     public init(captureDevice: AVCaptureDevice) {
         let queue = DispatchQueue(label: "com.acuant.document-capture-session", qos: .userInteractive)
         super.init(captureDevice: captureDevice, sessionQueue: queue)
@@ -60,7 +61,7 @@ import AcuantImagePreparation
         configureMetadataOutput()
     }
 
-    override func enableCapture() {
+    override public func enableCapture() {
         captureEnabled = true
         captured = true
         capturePhoto()

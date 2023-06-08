@@ -3732,238 +3732,42 @@
   },
   "ConstValues": [
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantIPLiveness\/AcuantIPLiveness\/IProovLiveness.swift",
-      "kind": "StringLiteral",
-      "offset": 552,
-      "length": 70,
-      "value": "\"\""
-    },
-    {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantIPLiveness\/AcuantIPLiveness\/IProovLiveness.swift",
-      "kind": "StringLiteral",
-      "offset": 574,
-      "length": 1,
-      "value": "\"\/api\/v1\/Liveness?subscriptionId=\""
-    },
-    {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantIPLiveness\/AcuantIPLiveness\/IProovLiveness.swift",
-      "kind": "StringLiteral",
-      "offset": 621,
-      "length": 2,
-      "value": "\"\""
-    },
-    {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantIPLiveness\/AcuantIPLiveness\/IProovLiveness.swift",
-      "kind": "StringLiteral",
-      "offset": 1043,
-      "length": 6,
-      "value": "\"post\""
-    },
-    {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantIPLiveness\/AcuantIPLiveness\/IProovLiveness.swift",
-      "kind": "StringLiteral",
-      "offset": 1075,
-      "length": 33,
-      "value": "\"application\/json; charset=utf-8\""
-    },
-    {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantIPLiveness\/AcuantIPLiveness\/IProovLiveness.swift",
-      "kind": "StringLiteral",
-      "offset": 1130,
-      "length": 14,
-      "value": "\"Content-Type\""
-    },
-    {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantIPLiveness\/AcuantIPLiveness\/IProovLiveness.swift",
-      "kind": "IntegerLiteral",
-      "offset": 1367,
-      "length": 3,
-      "value": "200"
-    },
-    {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantIPLiveness\/AcuantIPLiveness\/IProovLiveness.swift",
-      "kind": "Array",
-      "offset": 1456,
-      "length": 2,
-      "value": "[]"
-    },
-    {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantIPLiveness\/AcuantIPLiveness\/IProovLiveness.swift",
-      "kind": "StringLiteral",
-      "offset": 1514,
-      "length": 7,
-      "value": "\"Token\""
-    },
-    {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantIPLiveness\/AcuantIPLiveness\/IProovLiveness.swift",
-      "kind": "StringLiteral",
-      "offset": 1558,
-      "length": 8,
-      "value": "\"UserId\""
-    },
-    {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantIPLiveness\/AcuantIPLiveness\/IProovLiveness.swift",
-      "kind": "StringLiteral",
-      "offset": 1603,
-      "length": 8,
-      "value": "\"ApiKey\""
-    },
-    {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantIPLiveness\/AcuantIPLiveness\/IProovLiveness.swift",
-      "kind": "StringLiteral",
-      "offset": 1653,
-      "length": 13,
-      "value": "\"ApiEndpoint\""
-    },
-    {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantIPLiveness\/AcuantIPLiveness\/IProovLiveness.swift",
-      "kind": "StringLiteral",
-      "offset": 5355,
-      "length": 102,
-      "value": "\"\""
-    },
-    {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantIPLiveness\/AcuantIPLiveness\/IProovLiveness.swift",
-      "kind": "StringLiteral",
-      "offset": 5377,
-      "length": 1,
-      "value": "\"\/api\/v1\/Liveness?token=\""
-    },
-    {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantIPLiveness\/AcuantIPLiveness\/IProovLiveness.swift",
-      "kind": "StringLiteral",
-      "offset": 5408,
-      "length": 1,
-      "value": "\"&userId=\""
-    },
-    {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantIPLiveness\/AcuantIPLiveness\/IProovLiveness.swift",
-      "kind": "StringLiteral",
-      "offset": 5425,
-      "length": 1,
-      "value": "\"&subscriptionId=\""
-    },
-    {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantIPLiveness\/AcuantIPLiveness\/IProovLiveness.swift",
-      "kind": "StringLiteral",
-      "offset": 5456,
-      "length": 2,
-      "value": "\"\""
-    },
-    {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantIPLiveness\/AcuantIPLiveness\/IProovLiveness.swift",
-      "kind": "StringLiteral",
-      "offset": 5889,
-      "length": 5,
-      "value": "\"get\""
-    },
-    {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantIPLiveness\/AcuantIPLiveness\/IProovLiveness.swift",
-      "kind": "IntegerLiteral",
-      "offset": 6119,
-      "length": 3,
-      "value": "200"
-    },
-    {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantIPLiveness\/AcuantIPLiveness\/IProovLiveness.swift",
-      "kind": "StringLiteral",
-      "offset": 6344,
-      "length": 8,
-      "value": "\"IsLive\""
-    },
-    {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantIPLiveness\/AcuantIPLiveness\/IProovLiveness.swift",
-      "kind": "BooleanLiteral",
-      "offset": 6366,
-      "length": 5,
-      "value": "false"
-    },
-    {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantIPLiveness\/AcuantIPLiveness\/IProovLiveness.swift",
-      "kind": "StringLiteral",
-      "offset": 6465,
-      "length": 7,
-      "value": "\"Image\""
-    },
-    {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantIPLiveness\/AcuantIPLiveness\/IProovLiveness.swift",
-      "kind": "BooleanLiteral",
-      "offset": 6751,
-      "length": 4,
-      "value": "true"
-    },
-    {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantIPLiveness\/AcuantIPLiveness\/IProovLiveness.swift",
-      "kind": "BooleanLiteral",
-      "offset": 7048,
-      "length": 5,
-      "value": "false"
-    },
-    {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantIPLiveness\/AcuantIPLiveness\/IProovLiveness.swift",
-      "kind": "StringLiteral",
-      "offset": 8071,
-      "length": 15,
-      "value": "\"Authorization\""
-    },
-    {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantIPLiveness\/AcuantIPLiveness\/IProovLiveness.swift",
-      "kind": "IntegerLiteral",
-      "offset": 8132,
-      "length": 2,
-      "value": "60"
-    },
-    {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantIPLiveness\/AcuantIPLiveness\/IProovLiveness.swift",
-      "kind": "StringLiteral",
-      "offset": 8160,
-      "length": 33,
-      "value": "\"application\/json; charset=utf-8\""
-    },
-    {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantIPLiveness\/AcuantIPLiveness\/IProovLiveness.swift",
-      "kind": "StringLiteral",
-      "offset": 8215,
-      "length": 8,
-      "value": "\"Accept\""
-    },
-    {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantIPLiveness\/AcuantIPLiveness\/LivenessSetupResult.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/acuant\/mobile-sdk-v11-ios\/AcuantIPLiveness\/AcuantIPLiveness\/LivenessSetupResult.swift",
       "kind": "StringLiteral",
       "offset": 202,
       "length": 19,
       "value": "\"AcuantIPLiveness.LivenessSetupResult\""
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantIPLiveness\/AcuantIPLiveness\/LivenessUiOptions.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/acuant\/mobile-sdk-v11-ios\/AcuantIPLiveness\/AcuantIPLiveness\/LivenessUiOptions.swift",
       "kind": "IntegerLiteral",
       "offset": 2297,
       "length": 6,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantIPLiveness\/AcuantIPLiveness\/LivenessUiOptions.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/acuant\/mobile-sdk-v11-ios\/AcuantIPLiveness\/AcuantIPLiveness\/LivenessUiOptions.swift",
       "kind": "IntegerLiteral",
       "offset": 2318,
       "length": 7,
       "value": "2"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantIPLiveness\/AcuantIPLiveness\/LivenessUiOptions.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/acuant\/mobile-sdk-v11-ios\/AcuantIPLiveness\/AcuantIPLiveness\/LivenessUiOptions.swift",
       "kind": "IntegerLiteral",
       "offset": 2297,
       "length": 6,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantIPLiveness\/AcuantIPLiveness\/LivenessUiOptions.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/acuant\/mobile-sdk-v11-ios\/AcuantIPLiveness\/AcuantIPLiveness\/LivenessUiOptions.swift",
       "kind": "IntegerLiteral",
       "offset": 2318,
       "length": 7,
       "value": "2"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantIPLiveness\/AcuantIPLiveness\/LivenessTestResult.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/acuant\/mobile-sdk-v11-ios\/AcuantIPLiveness\/AcuantIPLiveness\/LivenessTestResult.swift",
       "kind": "BooleanLiteral",
       "offset": 289,
       "length": 5,

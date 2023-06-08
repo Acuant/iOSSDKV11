@@ -1,5 +1,5 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.8 (swiftlang-5.8.0.124.2 clang-1403.0.22.11.100)
+// swift-compiler-version: Apple Swift version 5.7.2 (swiftlang-5.7.2.135.5 clang-1400.0.29.51)
 // swift-module-flags: -target x86_64-apple-ios11.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name AcuantImagePreparation
 // swift-module-flags-ignorable: -enable-bare-slash-regex
 import AVFoundation
@@ -15,8 +15,8 @@ public class CameraMetaData : Swift.Codable {
   public init()
   public func setCaptureType(captureType: Swift.String) -> AcuantImagePreparation.CameraMetaData
   @objc deinit
-  public func encode(to encoder: any Swift.Encoder) throws
-  required public init(from decoder: any Swift.Decoder) throws
+  public func encode(to encoder: Swift.Encoder) throws
+  required public init(from decoder: Swift.Decoder) throws
 }
 @objc @_hasMissingDesignatedInitializers @objcMembers public class DetectData : ObjectiveC.NSObject {
   @objc public class func newInstance(image: UIKit.UIImage) -> AcuantImagePreparation.DetectData
@@ -35,7 +35,7 @@ public class CameraMetaData : Swift.Codable {
   @objc deinit
 }
 @objc @_inheritsConvenienceInitializers @objcMembers public class ImagePreparation : ObjectiveC.NSObject {
-  @objc public class func initialize(delegate: (any AcuantImagePreparation.InitializationDelegate)?)
+  @objc public class func initialize(delegate: AcuantImagePreparation.InitializationDelegate?)
   @objc public class func resize(image: UIKit.UIImage, targetWidth: Swift.Int) -> UIKit.UIImage?
   @objc public class func crop(data: AcuantImagePreparation.CroppingData) -> AcuantCommon.Image
   public class func createCameraImage(image: UIKit.UIImage, data: AcuantImagePreparation.CameraMetaData) -> AcuantCommon.Image

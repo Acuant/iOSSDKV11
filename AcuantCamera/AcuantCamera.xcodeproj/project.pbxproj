@@ -31,8 +31,17 @@
 		C2B8F11F22F1D61A009811A8 /* UIScreenExtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B8F11E22F1D61A009811A8 /* UIScreenExtn.swift */; };
 		C2DC4932224BBCD20003C0CA /* AcuantCommon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2C291F0221DC860005B4918 /* AcuantCommon.framework */; };
 		C2DC4933224BBCD20003C0CA /* AcuantImagePreparation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2BB6D6D221E0F65005AFC35 /* AcuantImagePreparation.framework */; };
+		D9124B1F2A326D6A002A6DF5 /* libtesseract.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9124B1E2A326D6A002A6DF5 /* libtesseract.xcframework */; };
+		D9124B2B2A326DB7002A6DF5 /* Tesseract+ConfigurationBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9124B222A326DB6002A6DF5 /* Tesseract+ConfigurationBuilder.swift */; };
+		D9124B2C2A326DB7002A6DF5 /* Tesseract.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9124B232A326DB6002A6DF5 /* Tesseract.swift */; };
+		D9124B2D2A326DB7002A6DF5 /* Tesseract+Variable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9124B242A326DB6002A6DF5 /* Tesseract+Variable.swift */; };
+		D9124B2E2A326DB7002A6DF5 /* RecognitionLanguage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9124B252A326DB6002A6DF5 /* RecognitionLanguage.swift */; };
+		D9124B2F2A326DB7002A6DF5 /* LanguageModelDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9124B262A326DB6002A6DF5 /* LanguageModelDataSource.swift */; };
+		D9124B302A326DB7002A6DF5 /* Tesseract+OCR.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9124B272A326DB6002A6DF5 /* Tesseract+OCR.swift */; };
+		D9124B312A326DB7002A6DF5 /* Tesseract+RecognizedBlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9124B282A326DB6002A6DF5 /* Tesseract+RecognizedBlock.swift */; };
+		D9124B322A326DB7002A6DF5 /* Tesseract+Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9124B292A326DB6002A6DF5 /* Tesseract+Error.swift */; };
+		D9124B332A326DB7002A6DF5 /* Tesseract+UIKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9124B2A2A326DB7002A6DF5 /* Tesseract+UIKit.swift */; };
 		D93A1361268F75A70047EB0E /* CameraPreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D93A1360268F75A70047EB0E /* CameraPreviewView.swift */; };
-		D943D32D2A202570003B7F35 /* libtesseract.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = D943D32C2A202570003B7F35 /* libtesseract.xcframework */; };
 		D95FF40E266FB9350054E7B9 /* UInterfaceOrientationExtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = D95FF40D266FB9350054E7B9 /* UInterfaceOrientationExtn.swift */; };
 		D95FF410266FC7E30054E7B9 /* UIWindowExtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = D95FF40F266FC7E30054E7B9 /* UIWindowExtn.swift */; };
 		D95FF41226711ED00054E7B9 /* CameraImageLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D95FF41126711ED00054E7B9 /* CameraImageLayer.swift */; };
@@ -43,15 +52,6 @@
 		D9B4821926BC4EE2001C0CEC /* BarcodeCameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9B4821826BC4EE2001C0CEC /* BarcodeCameraViewController.swift */; };
 		D9B4821B26C18DC6001C0CEC /* BarcodeCameraViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9B4821A26C18DC6001C0CEC /* BarcodeCameraViewControllerDelegate.swift */; };
 		D9B4821D26C18F1D001C0CEC /* BarcodeCaptureSessionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9B4821C26C18F1D001C0CEC /* BarcodeCaptureSessionDelegate.swift */; };
-		D9C004D12A1E5FC100B36677 /* LanguageModelDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C004D02A1E5FC100B36677 /* LanguageModelDataSource.swift */; };
-		D9C004DA2A1E5FE600B36677 /* Tesseract+OCR.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C004D22A1E5FE600B36677 /* Tesseract+OCR.swift */; };
-		D9C004DB2A1E5FE600B36677 /* Tesseract+UIKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C004D32A1E5FE600B36677 /* Tesseract+UIKit.swift */; };
-		D9C004DC2A1E5FE600B36677 /* Tesseract+Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C004D42A1E5FE600B36677 /* Tesseract+Error.swift */; };
-		D9C004DD2A1E5FE600B36677 /* Tesseract+ConfigurationBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C004D52A1E5FE600B36677 /* Tesseract+ConfigurationBuilder.swift */; };
-		D9C004DE2A1E5FE600B36677 /* Tesseract+RecognizedBlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C004D62A1E5FE600B36677 /* Tesseract+RecognizedBlock.swift */; };
-		D9C004DF2A1E5FE600B36677 /* RecognitionLanguage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C004D72A1E5FE600B36677 /* RecognitionLanguage.swift */; };
-		D9C004E02A1E5FE600B36677 /* Tesseract.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C004D82A1E5FE600B36677 /* Tesseract.swift */; };
-		D9C004E12A1E5FE600B36677 /* Tesseract+Variable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C004D92A1E5FE600B36677 /* Tesseract+Variable.swift */; };
 		D9C0919B29411AA10020A361 /* BarcodeCameraOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C0919A29411AA10020A361 /* BarcodeCameraOptions.swift */; };
 		D9C0919D2947648A0020A361 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C0919C2947648A0020A361 /* CameraViewController.swift */; };
 		D9C0919F294768120020A361 /* CameraCaptureSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C0919E294768120020A361 /* CameraCaptureSession.swift */; };
@@ -91,8 +91,17 @@
 		C2B8F11E22F1D61A009811A8 /* UIScreenExtn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIScreenExtn.swift; sourceTree = "<group>"; };
 		C2BB6D6D221E0F65005AFC35 /* AcuantImagePreparation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = AcuantImagePreparation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2C291F0221DC860005B4918 /* AcuantCommon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = AcuantCommon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D9124B1E2A326D6A002A6DF5 /* libtesseract.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = libtesseract.xcframework; path = ../EmbeddedFrameworks/libtesseract.xcframework; sourceTree = "<group>"; };
+		D9124B222A326DB6002A6DF5 /* Tesseract+ConfigurationBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Tesseract+ConfigurationBuilder.swift"; sourceTree = "<group>"; };
+		D9124B232A326DB6002A6DF5 /* Tesseract.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tesseract.swift; sourceTree = "<group>"; };
+		D9124B242A326DB6002A6DF5 /* Tesseract+Variable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Tesseract+Variable.swift"; sourceTree = "<group>"; };
+		D9124B252A326DB6002A6DF5 /* RecognitionLanguage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecognitionLanguage.swift; sourceTree = "<group>"; };
+		D9124B262A326DB6002A6DF5 /* LanguageModelDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LanguageModelDataSource.swift; sourceTree = "<group>"; };
+		D9124B272A326DB6002A6DF5 /* Tesseract+OCR.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Tesseract+OCR.swift"; sourceTree = "<group>"; };
+		D9124B282A326DB6002A6DF5 /* Tesseract+RecognizedBlock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Tesseract+RecognizedBlock.swift"; sourceTree = "<group>"; };
+		D9124B292A326DB6002A6DF5 /* Tesseract+Error.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Tesseract+Error.swift"; sourceTree = "<group>"; };
+		D9124B2A2A326DB7002A6DF5 /* Tesseract+UIKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Tesseract+UIKit.swift"; sourceTree = "<group>"; };
 		D93A1360268F75A70047EB0E /* CameraPreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraPreviewView.swift; sourceTree = "<group>"; };
-		D943D32C2A202570003B7F35 /* libtesseract.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = libtesseract.xcframework; path = ../EmbeddedFrameworks/libtesseract.xcframework; sourceTree = "<group>"; };
 		D95FF40D266FB9350054E7B9 /* UInterfaceOrientationExtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UInterfaceOrientationExtn.swift; sourceTree = "<group>"; };
 		D95FF40F266FC7E30054E7B9 /* UIWindowExtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIWindowExtn.swift; sourceTree = "<group>"; };
 		D95FF41126711ED00054E7B9 /* CameraImageLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraImageLayer.swift; sourceTree = "<group>"; };
@@ -103,15 +112,6 @@
 		D9B4821826BC4EE2001C0CEC /* BarcodeCameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarcodeCameraViewController.swift; sourceTree = "<group>"; };
 		D9B4821A26C18DC6001C0CEC /* BarcodeCameraViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarcodeCameraViewControllerDelegate.swift; sourceTree = "<group>"; };
 		D9B4821C26C18F1D001C0CEC /* BarcodeCaptureSessionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarcodeCaptureSessionDelegate.swift; sourceTree = "<group>"; };
-		D9C004D02A1E5FC100B36677 /* LanguageModelDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LanguageModelDataSource.swift; sourceTree = "<group>"; };
-		D9C004D22A1E5FE600B36677 /* Tesseract+OCR.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Tesseract+OCR.swift"; sourceTree = "<group>"; };
-		D9C004D32A1E5FE600B36677 /* Tesseract+UIKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Tesseract+UIKit.swift"; sourceTree = "<group>"; };
-		D9C004D42A1E5FE600B36677 /* Tesseract+Error.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Tesseract+Error.swift"; sourceTree = "<group>"; };
-		D9C004D52A1E5FE600B36677 /* Tesseract+ConfigurationBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Tesseract+ConfigurationBuilder.swift"; sourceTree = "<group>"; };
-		D9C004D62A1E5FE600B36677 /* Tesseract+RecognizedBlock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Tesseract+RecognizedBlock.swift"; sourceTree = "<group>"; };
-		D9C004D72A1E5FE600B36677 /* RecognitionLanguage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecognitionLanguage.swift; sourceTree = "<group>"; };
-		D9C004D82A1E5FE600B36677 /* Tesseract.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tesseract.swift; sourceTree = "<group>"; };
-		D9C004D92A1E5FE600B36677 /* Tesseract+Variable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Tesseract+Variable.swift"; sourceTree = "<group>"; };
 		D9C0919A29411AA10020A361 /* BarcodeCameraOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarcodeCameraOptions.swift; sourceTree = "<group>"; };
 		D9C0919C2947648A0020A361 /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 		D9C0919E294768120020A361 /* CameraCaptureSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraCaptureSession.swift; sourceTree = "<group>"; };
@@ -129,7 +129,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D943D32D2A202570003B7F35 /* libtesseract.xcframework in Frameworks */,
+				D9124B1F2A326D6A002A6DF5 /* libtesseract.xcframework in Frameworks */,
 				D9DA83B12A0D678E004C49C8 /* libz.tbd in Frameworks */,
 				D9DA83AF2A0D6783004C49C8 /* libc++.tbd in Frameworks */,
 				C2DC4932224BBCD20003C0CA /* AcuantCommon.framework in Frameworks */,
@@ -174,7 +174,7 @@
 		134F59EA21FA0E0D00CEDBFC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				D943D32C2A202570003B7F35 /* libtesseract.xcframework */,
+				D9124B1E2A326D6A002A6DF5 /* libtesseract.xcframework */,
 				D9DA83B02A0D678E004C49C8 /* libz.tbd */,
 				D9DA83AE2A0D6783004C49C8 /* libc++.tbd */,
 				C2BB6D6D221E0F65005AFC35 /* AcuantImagePreparation.framework */,
@@ -290,15 +290,15 @@
 		D92D81502A12B0AD0005BF99 /* Tesseract */ = {
 			isa = PBXGroup;
 			children = (
-				D9C004D72A1E5FE600B36677 /* RecognitionLanguage.swift */,
-				D9C004D82A1E5FE600B36677 /* Tesseract.swift */,
-				D9C004D52A1E5FE600B36677 /* Tesseract+ConfigurationBuilder.swift */,
-				D9C004D42A1E5FE600B36677 /* Tesseract+Error.swift */,
-				D9C004D22A1E5FE600B36677 /* Tesseract+OCR.swift */,
-				D9C004D62A1E5FE600B36677 /* Tesseract+RecognizedBlock.swift */,
-				D9C004D32A1E5FE600B36677 /* Tesseract+UIKit.swift */,
-				D9C004D92A1E5FE600B36677 /* Tesseract+Variable.swift */,
-				D9C004D02A1E5FC100B36677 /* LanguageModelDataSource.swift */,
+				D9124B262A326DB6002A6DF5 /* LanguageModelDataSource.swift */,
+				D9124B252A326DB6002A6DF5 /* RecognitionLanguage.swift */,
+				D9124B232A326DB6002A6DF5 /* Tesseract.swift */,
+				D9124B222A326DB6002A6DF5 /* Tesseract+ConfigurationBuilder.swift */,
+				D9124B292A326DB6002A6DF5 /* Tesseract+Error.swift */,
+				D9124B272A326DB6002A6DF5 /* Tesseract+OCR.swift */,
+				D9124B282A326DB6002A6DF5 /* Tesseract+RecognizedBlock.swift */,
+				D9124B2A2A326DB7002A6DF5 /* Tesseract+UIKit.swift */,
+				D9124B242A326DB6002A6DF5 /* Tesseract+Variable.swift */,
 			);
 			path = Tesseract;
 			sourceTree = "<group>";
@@ -399,31 +399,33 @@
 				D95FF410266FC7E30054E7B9 /* UIWindowExtn.swift in Sources */,
 				D9C0919F294768120020A361 /* CameraCaptureSession.swift in Sources */,
 				D9D18E6E27BAA47E0048293A /* CGRectExtn.swift in Sources */,
-				D9C004E02A1E5FE600B36677 /* Tesseract.swift in Sources */,
 				D9C091A12948EE920020A361 /* MrzCameraViewControllerDelegate.swift in Sources */,
 				D9C0919D2947648A0020A361 /* CameraViewController.swift in Sources */,
+				D9124B312A326DB7002A6DF5 /* Tesseract+RecognizedBlock.swift in Sources */,
 				D9C091A52948F7930020A361 /* DocumentCameraOptions.swift in Sources */,
-				D9C004DF2A1E5FE600B36677 /* RecognitionLanguage.swift in Sources */,
+				D9124B302A326DB7002A6DF5 /* Tesseract+OCR.swift in Sources */,
+				D9124B2C2A326DB7002A6DF5 /* Tesseract.swift in Sources */,
 				C2743A26222DE2E700302CE7 /* CaptureConstants.swift in Sources */,
 				8327AA452420081100B524F9 /* AcuantMrzResult.swift in Sources */,
-				D9C004DE2A1E5FE600B36677 /* Tesseract+RecognizedBlock.swift in Sources */,
-				D9C004DB2A1E5FE600B36677 /* Tesseract+UIKit.swift in Sources */,
 				8327AA422420081100B524F9 /* AcuantMrzParser.swift in Sources */,
+				D9124B2F2A326DB7002A6DF5 /* LanguageModelDataSource.swift in Sources */,
 				D9B4821926BC4EE2001C0CEC /* BarcodeCameraViewController.swift in Sources */,
 				C25D3BAB220B29EE003F3027 /* DocumentCaptureSessionDelegate.swift in Sources */,
 				C2B8F11F22F1D61A009811A8 /* UIScreenExtn.swift in Sources */,
-				D9C004D12A1E5FC100B36677 /* LanguageModelDataSource.swift in Sources */,
+				D9124B2B2A326DB7002A6DF5 /* Tesseract+ConfigurationBuilder.swift in Sources */,
 				767F07FD255F356800830649 /* AutoCaptureDelegate.swift in Sources */,
 				134F59E621FA0C2B00CEDBFC /* DocumentCameraViewController.swift in Sources */,
 				D9C0919B29411AA10020A361 /* BarcodeCameraOptions.swift in Sources */,
+				D9124B2E2A326DB7002A6DF5 /* RecognitionLanguage.swift in Sources */,
 				8327AA1D2420056700B524F9 /* MrzCaptureSession.swift in Sources */,
 				836DD9A62315EA3000428964 /* CameraTextLayer.swift in Sources */,
 				836DD9A42315EA1400428964 /* CameraRectangularLayer.swift in Sources */,
 				D93A1361268F75A70047EB0E /* CameraPreviewView.swift in Sources */,
 				D95FF40E266FB9350054E7B9 /* UInterfaceOrientationExtn.swift in Sources */,
+				D9124B322A326DB7002A6DF5 /* Tesseract+Error.swift in Sources */,
 				8327AA432420081100B524F9 /* StringExt.swift in Sources */,
-				D9C004E12A1E5FE600B36677 /* Tesseract+Variable.swift in Sources */,
 				D95FF414267177A60054E7B9 /* UILayerExtn.swift in Sources */,
+				D9124B2D2A326DB7002A6DF5 /* Tesseract+Variable.swift in Sources */,
 				76D00240233E7C7F00CE3DA8 /* CameraOptions.swift in Sources */,
 				C25D3BA9220B29BF003F3027 /* DocumentCaptureSession.swift in Sources */,
 				836DE49523204DA8005299E5 /* UIImageExtn.swift in Sources */,
@@ -432,17 +434,15 @@
 				836DD9A82316096400428964 /* CameraCornerView.swift in Sources */,
 				8327AA212420056700B524F9 /* MrzCameraViewController.swift in Sources */,
 				D95FF4402672EDBF0054E7B9 /* CameraAlertView.swift in Sources */,
-				D9C004DA2A1E5FE600B36677 /* Tesseract+OCR.swift in Sources */,
 				D9B4821726BC4177001C0CEC /* BarcodeCaptureSession.swift in Sources */,
 				D9C091A72948FB320020A361 /* MrzCaptureSessionDelegate.swift in Sources */,
-				D9C004DC2A1E5FE600B36677 /* Tesseract+Error.swift in Sources */,
 				83BCAA012241961E00181B2A /* FrameAnalysisDelegate.swift in Sources */,
 				D95FF41626727D760054E7B9 /* StringExtn.swift in Sources */,
 				134F59E921FA0C8700CEDBFC /* DocumentCameraViewControllerDelegate.swift in Sources */,
 				D9C091A32948F7600020A361 /* MrzCameraOptions.swift in Sources */,
+				D9124B332A326DB7002A6DF5 /* Tesseract+UIKit.swift in Sources */,
 				836DD9AA23160BA200428964 /* CameraCornerLayer.swift in Sources */,
 				D95FF41226711ED00054E7B9 /* CameraImageLayer.swift in Sources */,
-				D9C004DD2A1E5FE600B36677 /* Tesseract+ConfigurationBuilder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

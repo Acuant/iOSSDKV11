@@ -1,6 +1,6 @@
-# Acuant iOS SDK v11.6.0
+# Acuant iOS SDK v11.6.1
 
-**May 2023**
+**June 2023**
 
 See [https://github.com/Acuant/iOSSDKV11/releases](https://github.com/Acuant/iOSSDKV11/releases) for release notes.
 
@@ -21,7 +21,7 @@ This document provides detailed information about the Acuant iOS SDK. The Acuant
 
 ----------
 
-## Updating to 11.6.0+
+## Updating to 11.6.1+
 
 Please see the provided [Migration Details](MigrationDetails.md) for information about updating to 11.6.0+
 
@@ -121,7 +121,7 @@ The SDK includes the following modules:
 		platform :ios, '11'
 		use_frameworks! # important
 		
-		pod 'AcuantiOSSDKV11', '~> 11.6.0' #for all packages
+		pod 'AcuantiOSSDKV11', '~> 11.6.1' #for all packages
 		
  Alternatively, use the following to add **independent** modules in the podfile:
 		
@@ -480,7 +480,7 @@ AcuantCamera is best used in portrait mode. Lock the orientation of the app befo
 1. To get the barcode string, implement ```BarcodeCameraViewControllerDelegate``` protocol.
 
     ```swift
-    public protocol BarcodeCameraDelegate: AnyObject {
+    public protocol BarcodeCameraViewControllerDelegate: AnyObject {
         func onCaptured(barcode: String?)
     }
     ```

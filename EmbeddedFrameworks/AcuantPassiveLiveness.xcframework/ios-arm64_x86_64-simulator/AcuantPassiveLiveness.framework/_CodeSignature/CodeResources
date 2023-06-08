@@ -6,7 +6,7 @@
 	<dict>
 		<key>Headers/AcuantPassiveLiveness-Swift.h</key>
 		<data>
-		f7MVjdzSvdpD2xhe56DwdHKHKBU=
+		EdjTzgJSOY0JWBQO08wxiCLYcYo=
 		</data>
 		<key>Headers/AcuantPassiveLiveness.h</key>
 		<data>
@@ -14,47 +14,47 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		M9mLSzHjxQVZ4ky3Ali1BpIQf04=
+		DRIU1vk14lJrkJiGgDDzWMZvmzM=
 		</data>
 		<key>Modules/AcuantPassiveLiveness.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
 		<data>
-		yTaBSi8xcJ6lo+mEfhabVD8kfqg=
+		6jb8IT71yKG84HzJ0BUccHYtHOk=
 		</data>
 		<key>Modules/AcuantPassiveLiveness.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		qcMN0PEpTe4TNFT2yTdkGFv0AxY=
+		0XqfnL5b2PO1oJlcsBhhQeVhziw=
 		</data>
 		<key>Modules/AcuantPassiveLiveness.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		QsemmBuGF8A50q9gyJxVDvY11Uo=
+		AABzo1ENpeCwbA59Aqr+2xUP5Sc=
 		</data>
 		<key>Modules/AcuantPassiveLiveness.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		qcMN0PEpTe4TNFT2yTdkGFv0AxY=
+		0XqfnL5b2PO1oJlcsBhhQeVhziw=
 		</data>
 		<key>Modules/AcuantPassiveLiveness.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		9PxIP3lmy53/OoZbsK4Kb3IDxS4=
+		fewnrwgpkYOyU9bJTn96Aozo69E=
 		</data>
 		<key>Modules/AcuantPassiveLiveness.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<data>
-		yTaBSi8xcJ6lo+mEfhabVD8kfqg=
+		6jb8IT71yKG84HzJ0BUccHYtHOk=
 		</data>
 		<key>Modules/AcuantPassiveLiveness.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		fs9FB2ph+gyXQwkkVyzh26qxhjI=
+		dOdzkOKQeMcNy8Tdsa3ni9aDT9I=
 		</data>
 		<key>Modules/AcuantPassiveLiveness.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		cC3Sm5/qxgBTnRfCw2N7c9w4Ucg=
+		5ZOQAj20kcxEiOHLeDDnC8Nrw5o=
 		</data>
 		<key>Modules/AcuantPassiveLiveness.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		fs9FB2ph+gyXQwkkVyzh26qxhjI=
+		dOdzkOKQeMcNy8Tdsa3ni9aDT9I=
 		</data>
 		<key>Modules/AcuantPassiveLiveness.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		OWgW+Sp5QCCZcyrZosd9XJP+i0M=
+		+zJOot0u1kh0l9VCtFAfLDENDi4=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -67,7 +67,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			325dkOuV2TgHDzfW82qagjB+kifHJ35gLMEuWUMDaiE=
+			4QtZChSdaynZJnUVhhK3LPwP+iCwMfFktwlh3snQ6ok=
 			</data>
 		</dict>
 		<key>Headers/AcuantPassiveLiveness.h</key>
@@ -81,70 +81,70 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			CtrJZFRyMa4eMezp1OJzo7gQyAEEKsEvYZRRO0V8dJU=
+			LCDYDcZHGv5szkEjKKjZKnDyZRtUUTAvm8q5+O3BC7I=
 			</data>
 		</dict>
 		<key>Modules/AcuantPassiveLiveness.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			SvMiqYsPSlJwO9/MgpU8WbmvAq7v1nz0CeLXLr2Dmd4=
+			B77bO2NNyf4A+R/+VE1UHvIFySpW/FO8wzLYI2FL7X4=
 			</data>
 		</dict>
 		<key>Modules/AcuantPassiveLiveness.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			clONaEbL94HTO/xSjT+pZN4kYQGaXORlKC8NuipIW94=
+			dw3bW9Hm7cLH0ldAi7EolKAprxzQix1KuVuAMBINRXw=
 			</data>
 		</dict>
 		<key>Modules/AcuantPassiveLiveness.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			SvMiqYsPSlJwO9/MgpU8WbmvAq7v1nz0CeLXLr2Dmd4=
+			B77bO2NNyf4A+R/+VE1UHvIFySpW/FO8wzLYI2FL7X4=
 			</data>
 		</dict>
 		<key>Modules/AcuantPassiveLiveness.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			d5+g1ZJo3N2E5YB8t9N7Sy2mexIA55T6vwLVu1uECqQ=
+			nNY4yKE2vPvSD8Jg6ZcEFJh/NlQhrYPStbywGht8sX0=
 			</data>
 		</dict>
 		<key>Modules/AcuantPassiveLiveness.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			CtrJZFRyMa4eMezp1OJzo7gQyAEEKsEvYZRRO0V8dJU=
+			LCDYDcZHGv5szkEjKKjZKnDyZRtUUTAvm8q5+O3BC7I=
 			</data>
 		</dict>
 		<key>Modules/AcuantPassiveLiveness.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			GiKC/OYGjm6JlHPBkvC8b0glSAld10zAvPrSjmknxKc=
+			WExcxuov2YbId/Djb/FGxmBzbeuG7HnPxyV2z5XqUoA=
 			</data>
 		</dict>
 		<key>Modules/AcuantPassiveLiveness.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			iQHneaaSZ5FvL542d1w9Z/xUNTtk2DXAWU+ZKkVpnBo=
+			s5oKtYbUSVsbad7N64/WUEG4jGJHySK1GFNCrWoXhhg=
 			</data>
 		</dict>
 		<key>Modules/AcuantPassiveLiveness.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			GiKC/OYGjm6JlHPBkvC8b0glSAld10zAvPrSjmknxKc=
+			WExcxuov2YbId/Djb/FGxmBzbeuG7HnPxyV2z5XqUoA=
 			</data>
 		</dict>
 		<key>Modules/AcuantPassiveLiveness.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			VN3lBcfNEPazJ8N1Bq/yKGCPuhE+ZJFmVM/y5+PgY94=
+			6BtCVSoIx5TZ7bVP0yvOqykjO/1+VOskVJLY8xlnKus=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

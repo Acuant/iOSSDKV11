@@ -2599,522 +2599,200 @@
   },
   "ConstValues": [
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantHGLiveness\/AcuantHGLiveness\/HGLivenessDelegate.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/acuant\/mobile-sdk-v11-ios\/AcuantHGLiveness\/AcuantHGLiveness\/HGLivenessDelegate.swift",
       "kind": "IntegerLiteral",
       "offset": 239,
       "length": 14,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantHGLiveness\/AcuantHGLiveness\/HGLivenessDelegate.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/acuant\/mobile-sdk-v11-ios\/AcuantHGLiveness\/AcuantHGLiveness\/HGLivenessDelegate.swift",
       "kind": "IntegerLiteral",
       "offset": 263,
       "length": 10,
       "value": "2"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantHGLiveness\/AcuantHGLiveness\/HGLivenessDelegate.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/acuant\/mobile-sdk-v11-ios\/AcuantHGLiveness\/AcuantHGLiveness\/HGLivenessDelegate.swift",
       "kind": "IntegerLiteral",
       "offset": 283,
       "length": 12,
       "value": "3"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantHGLiveness\/AcuantHGLiveness\/HGLivenessDelegate.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/acuant\/mobile-sdk-v11-ios\/AcuantHGLiveness\/AcuantHGLiveness\/HGLivenessDelegate.swift",
       "kind": "IntegerLiteral",
       "offset": 305,
       "length": 18,
       "value": "4"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantHGLiveness\/AcuantHGLiveness\/HGLivenessDelegate.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/acuant\/mobile-sdk-v11-ios\/AcuantHGLiveness\/AcuantHGLiveness\/HGLivenessDelegate.swift",
       "kind": "IntegerLiteral",
       "offset": 333,
       "length": 17,
       "value": "5"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantHGLiveness\/AcuantHGLiveness\/HGLivenessDelegate.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/acuant\/mobile-sdk-v11-ios\/AcuantHGLiveness\/AcuantHGLiveness\/HGLivenessDelegate.swift",
       "kind": "IntegerLiteral",
       "offset": 360,
       "length": 14,
       "value": "6"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantHGLiveness\/AcuantHGLiveness\/HGLivenessDelegate.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/acuant\/mobile-sdk-v11-ios\/AcuantHGLiveness\/AcuantHGLiveness\/HGLivenessDelegate.swift",
       "kind": "IntegerLiteral",
       "offset": 239,
       "length": 14,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantHGLiveness\/AcuantHGLiveness\/HGLivenessDelegate.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/acuant\/mobile-sdk-v11-ios\/AcuantHGLiveness\/AcuantHGLiveness\/HGLivenessDelegate.swift",
       "kind": "IntegerLiteral",
       "offset": 263,
       "length": 10,
       "value": "2"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantHGLiveness\/AcuantHGLiveness\/HGLivenessDelegate.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/acuant\/mobile-sdk-v11-ios\/AcuantHGLiveness\/AcuantHGLiveness\/HGLivenessDelegate.swift",
       "kind": "IntegerLiteral",
       "offset": 283,
       "length": 12,
       "value": "3"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantHGLiveness\/AcuantHGLiveness\/HGLivenessDelegate.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/acuant\/mobile-sdk-v11-ios\/AcuantHGLiveness\/AcuantHGLiveness\/HGLivenessDelegate.swift",
       "kind": "IntegerLiteral",
       "offset": 305,
       "length": 18,
       "value": "4"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantHGLiveness\/AcuantHGLiveness\/HGLivenessDelegate.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/acuant\/mobile-sdk-v11-ios\/AcuantHGLiveness\/AcuantHGLiveness\/HGLivenessDelegate.swift",
       "kind": "IntegerLiteral",
       "offset": 333,
       "length": 17,
       "value": "5"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantHGLiveness\/AcuantHGLiveness\/HGLivenessDelegate.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/acuant\/mobile-sdk-v11-ios\/AcuantHGLiveness\/AcuantHGLiveness\/HGLivenessDelegate.swift",
       "kind": "IntegerLiteral",
       "offset": 360,
       "length": 14,
       "value": "6"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantHGLiveness\/AcuantHGLiveness\/FaceCaptureSession.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/acuant\/mobile-sdk-v11-ios\/AcuantHGLiveness\/AcuantHGLiveness\/FaceCaptureSession.swift",
       "kind": "BooleanLiteral",
       "offset": 540,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantHGLiveness\/AcuantHGLiveness\/FaceCaptureSession.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/acuant\/mobile-sdk-v11-ios\/AcuantHGLiveness\/AcuantHGLiveness\/FaceCaptureSession.swift",
       "kind": "IntegerLiteral",
       "offset": 577,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantHGLiveness\/AcuantHGLiveness\/FaceCaptureSession.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/acuant\/mobile-sdk-v11-ios\/AcuantHGLiveness\/AcuantHGLiveness\/FaceCaptureSession.swift",
       "kind": "IntegerLiteral",
       "offset": 612,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantHGLiveness\/AcuantHGLiveness\/FaceCaptureSession.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/acuant\/mobile-sdk-v11-ios\/AcuantHGLiveness\/AcuantHGLiveness\/FaceCaptureSession.swift",
       "kind": "IntegerLiteral",
       "offset": 692,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantHGLiveness\/AcuantHGLiveness\/FaceCaptureSession.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/acuant\/mobile-sdk-v11-ios\/AcuantHGLiveness\/AcuantHGLiveness\/FaceCaptureSession.swift",
       "kind": "IntegerLiteral",
       "offset": 745,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantHGLiveness\/AcuantHGLiveness\/FaceCaptureSession.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/acuant\/mobile-sdk-v11-ios\/AcuantHGLiveness\/AcuantHGLiveness\/FaceCaptureSession.swift",
       "kind": "IntegerLiteral",
       "offset": 751,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantHGLiveness\/AcuantHGLiveness\/FaceCaptureSession.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/acuant\/mobile-sdk-v11-ios\/AcuantHGLiveness\/AcuantHGLiveness\/FaceCaptureSession.swift",
       "kind": "IntegerLiteral",
       "offset": 789,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantHGLiveness\/AcuantHGLiveness\/FaceCaptureSession.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/acuant\/mobile-sdk-v11-ios\/AcuantHGLiveness\/AcuantHGLiveness\/FaceCaptureSession.swift",
       "kind": "IntegerLiteral",
       "offset": 840,
       "length": 2,
       "value": "15"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantHGLiveness\/AcuantHGLiveness\/FaceCaptureSession.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/acuant\/mobile-sdk-v11-ios\/AcuantHGLiveness\/AcuantHGLiveness\/FaceCaptureSession.swift",
       "kind": "IntegerLiteral",
       "offset": 900,
       "length": 1,
       "value": "8"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantHGLiveness\/AcuantHGLiveness\/FaceCaptureSession.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/acuant\/mobile-sdk-v11-ios\/AcuantHGLiveness\/AcuantHGLiveness\/FaceCaptureSession.swift",
       "kind": "StringLiteral",
       "offset": 954,
       "length": 31,
       "value": "\"com.acuant.hg-capture-session\""
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantHGLiveness\/AcuantHGLiveness\/FaceCaptureSession.swift",
-      "kind": "BooleanLiteral",
-      "offset": 1434,
-      "length": 5,
-      "value": "false"
-    },
-    {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantHGLiveness\/AcuantHGLiveness\/FaceCaptureSession.swift",
-      "kind": "StringLiteral",
-      "offset": 2987,
-      "length": 28,
-      "value": "\"com.acuant.hg-video-output\""
-    },
-    {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantHGLiveness\/AcuantHGLiveness\/FaceCaptureSession.swift",
-      "kind": "StringLiteral",
-      "offset": 3333,
-      "length": 31,
-      "value": "\"com.acuant.hg-metadata-output\""
-    },
-    {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantHGLiveness\/AcuantHGLiveness\/FaceCaptureSession.swift",
-      "kind": "FloatLiteral",
-      "offset": 3797,
-      "length": 3,
-      "value": "0.2"
-    },
-    {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantHGLiveness\/AcuantHGLiveness\/FaceCaptureSession.swift",
-      "kind": "FloatLiteral",
-      "offset": 3834,
-      "length": 3,
-      "value": "0.5"
-    },
-    {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantHGLiveness\/AcuantHGLiveness\/FaceCaptureSession.swift",
-      "kind": "FloatLiteral",
-      "offset": 4052,
-      "length": 4,
-      "value": "0.11"
-    },
-    {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantHGLiveness\/AcuantHGLiveness\/FaceCaptureSession.swift",
-      "kind": "FloatLiteral",
-      "offset": 4081,
-      "length": 4,
-      "value": "0.13"
-    },
-    {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantHGLiveness\/AcuantHGLiveness\/FaceCaptureSession.swift",
-      "kind": "IntegerLiteral",
-      "offset": 4897,
-      "length": 1,
-      "value": "0"
-    },
-    {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantHGLiveness\/AcuantHGLiveness\/FaceCaptureSession.swift",
-      "kind": "IntegerLiteral",
-      "offset": 5011,
-      "length": 1,
-      "value": "0"
-    },
-    {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantHGLiveness\/AcuantHGLiveness\/FaceCaptureSession.swift",
-      "kind": "IntegerLiteral",
-      "offset": 5304,
-      "length": 2,
-      "value": "10"
-    },
-    {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantHGLiveness\/AcuantHGLiveness\/FaceCaptureSession.swift",
-      "kind": "IntegerLiteral",
-      "offset": 5329,
-      "length": 3,
-      "value": "340"
-    },
-    {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantHGLiveness\/AcuantHGLiveness\/FaceCaptureSession.swift",
-      "kind": "BooleanLiteral",
-      "offset": 5419,
-      "length": 5,
-      "value": "false"
-    },
-    {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantHGLiveness\/AcuantHGLiveness\/FaceCaptureSession.swift",
-      "kind": "IntegerLiteral",
-      "offset": 6122,
-      "length": 1,
-      "value": "8"
-    },
-    {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantHGLiveness\/AcuantHGLiveness\/FaceCaptureSession.swift",
-      "kind": "IntegerLiteral",
-      "offset": 6172,
-      "length": 1,
-      "value": "3"
-    },
-    {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantHGLiveness\/AcuantHGLiveness\/FaceCaptureSession.swift",
-      "kind": "IntegerLiteral",
-      "offset": 6223,
-      "length": 1,
-      "value": "1"
-    },
-    {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantHGLiveness\/AcuantHGLiveness\/FaceCaptureSession.swift",
-      "kind": "IntegerLiteral",
-      "offset": 6261,
-      "length": 1,
-      "value": "6"
-    },
-    {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantHGLiveness\/AcuantHGLiveness\/FaceCaptureSession.swift",
-      "kind": "BooleanLiteral",
-      "offset": 7588,
-      "length": 4,
-      "value": "true"
-    },
-    {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantHGLiveness\/AcuantHGLiveness\/FaceCaptureSession.swift",
-      "kind": "BooleanLiteral",
-      "offset": 8238,
-      "length": 4,
-      "value": "true"
-    },
-    {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantHGLiveness\/AcuantHGLiveness\/FaceCaptureSession.swift",
-      "kind": "BooleanLiteral",
-      "offset": 8551,
-      "length": 5,
-      "value": "false"
-    },
-    {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantHGLiveness\/AcuantHGLiveness\/FaceCaptureSession.swift",
-      "kind": "BooleanLiteral",
-      "offset": 8731,
-      "length": 5,
-      "value": "false"
-    },
-    {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantHGLiveness\/AcuantHGLiveness\/FaceCaptureSession.swift",
-      "kind": "BooleanLiteral",
-      "offset": 8854,
-      "length": 5,
-      "value": "false"
-    },
-    {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantHGLiveness\/AcuantHGLiveness\/FaceCaptureSession.swift",
-      "kind": "IntegerLiteral",
-      "offset": 8945,
-      "length": 1,
-      "value": "0"
-    },
-    {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantHGLiveness\/AcuantHGLiveness\/FaceCaptureSession.swift",
-      "kind": "IntegerLiteral",
-      "offset": 8987,
-      "length": 1,
-      "value": "0"
-    },
-    {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantHGLiveness\/AcuantHGLiveness\/FaceCaptureSession.swift",
-      "kind": "IntegerLiteral",
-      "offset": 9193,
-      "length": 1,
-      "value": "0"
-    },
-    {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantHGLiveness\/AcuantHGLiveness\/FaceCaptureSession.swift",
-      "kind": "BooleanLiteral",
-      "offset": 9231,
-      "length": 5,
-      "value": "false"
-    },
-    {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantHGLiveness\/AcuantHGLiveness\/FaceCaptureSession.swift",
-      "kind": "IntegerLiteral",
-      "offset": 9275,
-      "length": 1,
-      "value": "0"
-    },
-    {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantHGLiveness\/AcuantHGLiveness\/FaceCaptureSession.swift",
-      "kind": "IntegerLiteral",
-      "offset": 9313,
-      "length": 1,
-      "value": "0"
-    },
-    {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantHGLiveness\/AcuantHGLiveness\/FaceCaptureSession.swift",
-      "kind": "IntegerLiteral",
-      "offset": 10560,
-      "length": 1,
-      "value": "1"
-    },
-    {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantHGLiveness\/AcuantHGLiveness\/FaceCaptureSession.swift",
-      "kind": "IntegerLiteral",
-      "offset": 10614,
-      "length": 1,
-      "value": "0"
-    },
-    {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantHGLiveness\/AcuantHGLiveness\/FaceCaptureSession.swift",
-      "kind": "IntegerLiteral",
-      "offset": 10760,
-      "length": 1,
-      "value": "1"
-    },
-    {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantHGLiveness\/AcuantHGLiveness\/FaceCaptureSession.swift",
-      "kind": "IntegerLiteral",
-      "offset": 10950,
-      "length": 1,
-      "value": "2"
-    },
-    {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantHGLiveness\/AcuantHGLiveness\/FaceCaptureSession.swift",
-      "kind": "IntegerLiteral",
-      "offset": 11039,
-      "length": 1,
-      "value": "1"
-    },
-    {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantHGLiveness\/AcuantHGLiveness\/FaceCaptureSession.swift",
-      "kind": "IntegerLiteral",
-      "offset": 11187,
-      "length": 1,
-      "value": "1"
-    },
-    {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantHGLiveness\/AcuantHGLiveness\/FaceCaptureSession.swift",
-      "kind": "IntegerLiteral",
-      "offset": 11611,
-      "length": 1,
-      "value": "2"
-    },
-    {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantHGLiveness\/AcuantHGLiveness\/FaceCaptureSession.swift",
-      "kind": "BooleanLiteral",
-      "offset": 11701,
-      "length": 4,
-      "value": "true"
-    },
-    {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantHGLiveness\/AcuantHGLiveness\/FaceCaptureSession.swift",
-      "kind": "IntegerLiteral",
-      "offset": 11756,
-      "length": 1,
-      "value": "0"
-    },
-    {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantHGLiveness\/AcuantHGLiveness\/FaceCaptureSession.swift",
-      "kind": "IntegerLiteral",
-      "offset": 11806,
-      "length": 1,
-      "value": "0"
-    },
-    {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantHGLiveness\/AcuantHGLiveness\/FaceCaptureSession.swift",
-      "kind": "BooleanLiteral",
-      "offset": 11876,
-      "length": 5,
-      "value": "false"
-    },
-    {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantHGLiveness\/AcuantHGLiveness\/FaceCaptureSession.swift",
-      "kind": "BooleanLiteral",
-      "offset": 12175,
-      "length": 5,
-      "value": "false"
-    },
-    {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantHGLiveness\/AcuantHGLiveness\/FaceCaptureSession.swift",
-      "kind": "IntegerLiteral",
-      "offset": 12228,
-      "length": 1,
-      "value": "0"
-    },
-    {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantHGLiveness\/AcuantHGLiveness\/FaceCaptureSession.swift",
-      "kind": "IntegerLiteral",
-      "offset": 12274,
-      "length": 1,
-      "value": "0"
-    },
-    {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantHGLiveness\/AcuantHGLiveness\/LiveFaceDetails.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/acuant\/mobile-sdk-v11-ios\/AcuantHGLiveness\/AcuantHGLiveness\/LiveFaceDetails.swift",
       "kind": "IntegerLiteral",
       "offset": 268,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantHGLiveness\/AcuantHGLiveness\/LiveFaceDetails.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/acuant\/mobile-sdk-v11-ios\/AcuantHGLiveness\/AcuantHGLiveness\/LiveFaceDetails.swift",
       "kind": "IntegerLiteral",
       "offset": 301,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantHGLiveness\/AcuantHGLiveness\/LiveFaceDetails.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/acuant\/mobile-sdk-v11-ios\/AcuantHGLiveness\/AcuantHGLiveness\/LiveFaceDetails.swift",
       "kind": "IntegerLiteral",
       "offset": 329,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantHGLiveness\/AcuantHGLiveness\/LiveFaceDetails.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/acuant\/mobile-sdk-v11-ios\/AcuantHGLiveness\/AcuantHGLiveness\/LiveFaceDetails.swift",
       "kind": "IntegerLiteral",
       "offset": 357,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantHGLiveness\/AcuantHGLiveness\/LiveFaceDetails.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/acuant\/mobile-sdk-v11-ios\/AcuantHGLiveness\/AcuantHGLiveness\/LiveFaceDetails.swift",
       "kind": "BooleanLiteral",
       "offset": 1022,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantHGLiveness\/AcuantHGLiveness\/HGLivenessResult.swift",
+      "filePath": "\/Users\/smaltsev\/Documents\/acuant\/mobile-sdk-v11-ios\/AcuantHGLiveness\/AcuantHGLiveness\/HGLivenessResult.swift",
       "kind": "StringLiteral",
       "offset": 191,
       "length": 16,
       "value": "\"AcuantHGLiveness.HGLivenessResult\""
-    },
-    {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantHGLiveness\/AcuantHGLiveness\/UIImageExtn.swift",
-      "kind": "BooleanLiteral",
-      "offset": 619,
-      "length": 4,
-      "value": "true"
-    },
-    {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantHGLiveness\/AcuantHGLiveness\/UIImageExtn.swift",
-      "kind": "IntegerLiteral",
-      "offset": 777,
-      "length": 1,
-      "value": "2"
-    },
-    {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantHGLiveness\/AcuantHGLiveness\/UIImageExtn.swift",
-      "kind": "IntegerLiteral",
-      "offset": 798,
-      "length": 1,
-      "value": "2"
-    },
-    {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantHGLiveness\/AcuantHGLiveness\/UIImageExtn.swift",
-      "kind": "IntegerLiteral",
-      "offset": 936,
-      "length": 1,
-      "value": "2"
-    },
-    {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantHGLiveness\/AcuantHGLiveness\/UIImageExtn.swift",
-      "kind": "IntegerLiteral",
-      "offset": 960,
-      "length": 1,
-      "value": "2"
     }
   ]
 }
