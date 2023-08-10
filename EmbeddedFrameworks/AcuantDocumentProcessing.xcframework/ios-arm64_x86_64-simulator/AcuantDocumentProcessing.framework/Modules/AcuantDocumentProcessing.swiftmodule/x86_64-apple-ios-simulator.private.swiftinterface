@@ -1,5 +1,5 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.7.2 (swiftlang-5.7.2.135.5 clang-1400.0.29.51)
+// swift-compiler-version: Apple Swift version 5.8.1 (swiftlang-5.8.0.124.5 clang-1403.0.22.11.100)
 // swift-module-flags: -target x86_64-apple-ios11.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name AcuantDocumentProcessing
 // swift-module-flags-ignorable: -enable-bare-slash-regex
 import AcuantCommon
@@ -33,7 +33,7 @@ import _StringProcessing
   @objc final public let classificationDetails: AcuantDocumentProcessing.ClassificationDetails?
   @objc final public let type: AcuantDocumentProcessing.DocumentType?
   @objc deinit
-  required public init(from decoder: Swift.Decoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
 }
 @objc @objcMembers public class HealthInsuranceCardResult : AcuantDocumentProcessing.ProcessingResult, Swift.Decodable {
   @objc final public let copayEr: Swift.String?
@@ -67,15 +67,15 @@ import _StringProcessing
   @objc final public let rxId: Swift.String?
   @objc final public let rxPcn: Swift.String?
   @objc final public let addresses: [AcuantDocumentProcessing.Address]?
-  @objc final public let planCodes: [Swift.String]?
-  @objc final public let telephones: [Swift.String : Swift.String]?
-  @objc final public let emails: [Swift.String : Swift.String]?
-  @objc final public let webs: [Swift.String : Swift.String]?
+  @objc final public let planCodes: [AcuantDocumentProcessing.PlanCode]?
+  @objc final public let telephones: [AcuantDocumentProcessing.LabelValuePair]?
+  @objc final public let emails: [AcuantDocumentProcessing.LabelValuePair]?
+  @objc final public let webs: [AcuantDocumentProcessing.LabelValuePair]?
   @objc final public let transactionId: Swift.String?
   @objc public var instanceID: Swift.String?
   @objc final public let frontImage: UIKit.UIImage?
   @objc final public let backImage: UIKit.UIImage?
-  required public init(from decoder: Swift.Decoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
   @objc deinit
 }
 @objc @_hasMissingDesignatedInitializers @objcMembers public class DeviceInfo : ObjectiveC.NSObject, Swift.Codable {
@@ -84,8 +84,8 @@ import _StringProcessing
   @objc final public let serialNumber: Swift.String?
   @objc final public let type: AcuantDocumentProcessing.DeviceType?
   @objc deinit
-  public func encode(to encoder: Swift.Encoder) throws
-  required public init(from decoder: Swift.Decoder) throws
+  public func encode(to encoder: any Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
 }
 @objc public protocol CreateInstanceDelegate {
   @objc func instanceCreated(instanceId: Swift.String?, error: AcuantCommon.AcuantError?)
@@ -110,7 +110,7 @@ import _StringProcessing
   }
   @objc final public let model: Swift.String?
   @objc deinit
-  required public init(from decoder: Swift.Decoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
 }
 @objc public enum DocumentElement : Swift.Int, Swift.Decodable {
   case unknown, none, photo, data, substrate, overlay
@@ -130,7 +130,7 @@ import _StringProcessing
   @objc final public let key: Swift.String?
   @objc final public let rectangle: AcuantDocumentProcessing.Rectangle?
   @objc deinit
-  required public init(from decoder: Swift.Decoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
 }
 @objc public enum DocumentProcessMode : Swift.Int, Swift.Codable {
   case `default`, captureData, authenticate, barcode
@@ -185,7 +185,7 @@ import _StringProcessing
     get
   }
   @objc deinit
-  required public init(from decoder: Swift.Decoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
 }
 @objc public enum GenderType : Swift.Int, Swift.Decodable {
   case unspecified, male, female, unknown
@@ -206,13 +206,18 @@ import _StringProcessing
   }
   @objc public var photo: Swift.String?
   @objc deinit
-  required public init(from decoder: Swift.Decoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
 }
 public class EvaluatedImageData {
   final public let imageBytes: Foundation.NSData
   final public let barcodeString: Swift.String?
   public init(imageBytes: Foundation.NSData, barcodeString: Swift.String?)
   @objc deinit
+}
+@objc @objcMembers public class PlanCode : ObjectiveC.NSObject, Swift.Decodable {
+  @objc final public let planCode: Swift.String?
+  @objc deinit
+  required public init(from decoder: any Swift.Decoder) throws
 }
 @objc public enum AuthenticationSensitivity : Swift.Int, Swift.Codable {
   case normal, high, low
@@ -318,7 +323,7 @@ public class EvaluatedImageData {
   final public let documentDataTypes: [AcuantDocumentProcessing.DocumentDataType]?
   @objc final public let supportedImages: [AcuantDocumentProcessing.DocumentImageType]
   @objc deinit
-  required public init(from decoder: Swift.Decoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
 }
 @objc public enum LightSource : Swift.Int, Swift.Decodable {
   case white, nearInfrared, ultravioletA, coaxialWhite, coaxialNearInfrared
@@ -346,7 +351,7 @@ public class EvaluatedImageData {
     get
   }
   @objc deinit
-  required public init(from decoder: Swift.Decoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
 }
 @objc @objcMembers public class DocumentImage : ObjectiveC.NSObject, Swift.Decodable {
   @objc final public let id: Swift.String
@@ -367,11 +372,16 @@ public class EvaluatedImageData {
   @objc final public let mimeType: Swift.String?
   @objc final public let uri: Swift.String?
   @objc deinit
-  required public init(from decoder: Swift.Decoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
 }
 @objc @objcMembers public class Address : ObjectiveC.NSObject, Swift.Decodable {
+  @objc final public let fullAddress: Swift.String?
+  @objc final public let street: Swift.String?
+  @objc final public let city: Swift.String?
+  @objc final public let state: Swift.String?
+  @objc final public let zip: Swift.String?
   @objc deinit
-  required public init(from decoder: Swift.Decoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
 }
 @objc public enum DocumentDataSource : Swift.Int, Swift.Codable {
   case none, barcode1D, barcode2D, contactlessChip, machineReadableZone, magneticStripe, visualInspectionZone, other
@@ -396,7 +406,7 @@ public class EvaluatedImageData {
   @objc final public let value: Swift.String?
   @objc final public let dataFieldReference: [Swift.String]?
   @objc deinit
-  required public init(from decoder: Swift.Decoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
 }
 @objc @objcMembers public class Rectangle : ObjectiveC.NSObject, Swift.Decodable {
   @objc final public let height: Swift.Int
@@ -404,18 +414,18 @@ public class EvaluatedImageData {
   @objc final public let x: Swift.Int
   @objc final public let y: Swift.Int
   @objc deinit
-  required public init(from decoder: Swift.Decoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
 }
 @objc public protocol GetDataDelegate {
   @objc func processingResultReceived(processingResult: AcuantDocumentProcessing.ProcessingResult)
 }
 @objc @_inheritsConvenienceInitializers @objcMembers public class DocumentProcessing : ObjectiveC.NSObject {
-  @objc public class func createInstance(options: AcuantDocumentProcessing.IdOptions, delegate: AcuantDocumentProcessing.CreateInstanceDelegate)
-  @objc public class func uploadImage(instancdId: Swift.String, data: AcuantDocumentProcessing.IdData, options: AcuantDocumentProcessing.IdOptions, delegate: AcuantDocumentProcessing.UploadImageDelegate)
-  public class func uploadImage(instancdId: Swift.String, data: AcuantDocumentProcessing.EvaluatedImageData, options: AcuantDocumentProcessing.IdOptions, delegate: AcuantDocumentProcessing.UploadImageDelegate)
-  @objc public class func uploadBarcode(instanceId: Swift.String, barcodeString: Swift.String, delegate: AcuantDocumentProcessing.UploadImageDelegate)
-  @objc public class func getData(instanceId: Swift.String, isHealthCard: Swift.Bool, delegate: AcuantDocumentProcessing.GetDataDelegate)
-  @objc public class func deleteInstance(instanceId: Swift.String, type: AcuantCommon.DeleteType, delegate: AcuantDocumentProcessing.DeleteDelegate)
+  @objc public class func createInstance(options: AcuantDocumentProcessing.IdOptions, delegate: any AcuantDocumentProcessing.CreateInstanceDelegate)
+  @objc public class func uploadImage(instancdId: Swift.String, data: AcuantDocumentProcessing.IdData, options: AcuantDocumentProcessing.IdOptions, delegate: any AcuantDocumentProcessing.UploadImageDelegate)
+  public class func uploadImage(instancdId: Swift.String, data: AcuantDocumentProcessing.EvaluatedImageData, options: AcuantDocumentProcessing.IdOptions, delegate: any AcuantDocumentProcessing.UploadImageDelegate)
+  @objc public class func uploadBarcode(instanceId: Swift.String, barcodeString: Swift.String, delegate: any AcuantDocumentProcessing.UploadImageDelegate)
+  @objc public class func getData(instanceId: Swift.String, isHealthCard: Swift.Bool, delegate: any AcuantDocumentProcessing.GetDataDelegate)
+  @objc public class func deleteInstance(instanceId: Swift.String, type: AcuantCommon.DeleteType, delegate: any AcuantDocumentProcessing.DeleteDelegate)
   @objc override dynamic public init()
   @objc deinit
 }
@@ -431,7 +441,7 @@ public class EvaluatedImageData {
   @objc final public let type: Swift.String?
   @objc final public let value: Swift.String?
   @objc deinit
-  required public init(from decoder: Swift.Decoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
 }
 @objc @objcMembers public class Subscription : ObjectiveC.NSObject, Swift.Decodable {
   @objc final public let id: Swift.String
@@ -445,13 +455,19 @@ public class EvaluatedImageData {
   @objc final public let name: Swift.String?
   @objc final public let storePII: Swift.Bool
   @objc deinit
-  required public init(from decoder: Swift.Decoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
+}
+@objc @objcMembers public class LabelValuePair : ObjectiveC.NSObject, Swift.Decodable {
+  @objc final public let label: Swift.String?
+  @objc final public let value: Swift.String?
+  @objc deinit
+  required public init(from decoder: any Swift.Decoder) throws
 }
 @objc @objcMembers public class ClassificationDetails : ObjectiveC.NSObject, Swift.Decodable {
   @objc final public let front: AcuantDocumentProcessing.DocumentType?
   @objc final public let back: AcuantDocumentProcessing.DocumentType?
   @objc deinit
-  required public init(from decoder: Swift.Decoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
 }
 @objc public enum SensorType : Swift.Int, Swift.Codable {
   case unknown, camera, scanner, mobile
@@ -469,8 +485,8 @@ public class EvaluatedImageData {
     get
   }
   @objc deinit
-  public func encode(to encoder: Swift.Encoder) throws
-  required public init(from decoder: Swift.Decoder) throws
+  public func encode(to encoder: any Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
 }
 @objc @_inheritsConvenienceInitializers @objcMembers public class ProcessingResult : ObjectiveC.NSObject {
   @objc public var error: AcuantCommon.AcuantError?

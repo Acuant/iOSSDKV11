@@ -1,5 +1,5 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.7.2 (swiftlang-5.7.2.135.5 clang-1400.0.29.51)
+// swift-compiler-version: Apple Swift version 5.8.1 (swiftlang-5.8.0.124.5 clang-1403.0.22.11.100)
 // swift-module-flags: -target x86_64-apple-ios11.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name AcuantIPLiveness
 // swift-module-flags-ignorable: -enable-bare-slash-regex
 import AcuantCommon
@@ -35,9 +35,9 @@ import iProov
   @objc func livenessTestResultReceiveFailed(error: AcuantCommon.AcuantError)
 }
 @objc @_inheritsConvenienceInitializers @objcMembers public class IPLiveness : ObjectiveC.NSObject {
-  @objc public class func performLivenessSetup(delegate: AcuantIPLiveness.LivenessSetupDelegate)
-  @objc public class func performLivenessTest(setupResult: AcuantIPLiveness.LivenessSetupResult, delegate: AcuantIPLiveness.LivenessTestDelegate)
-  @objc public class func getLivenessTestResult(token: Swift.String, userId: Swift.String, delegate: AcuantIPLiveness.LivenessTestResultDelegate)
+  @objc public class func performLivenessSetup(delegate: any AcuantIPLiveness.LivenessSetupDelegate)
+  @objc public class func performLivenessTest(setupResult: AcuantIPLiveness.LivenessSetupResult, delegate: any AcuantIPLiveness.LivenessTestDelegate)
+  @objc public class func getLivenessTestResult(token: Swift.String, userId: Swift.String, delegate: any AcuantIPLiveness.LivenessTestResultDelegate)
   @objc override dynamic public init()
   @objc deinit
 }
@@ -57,7 +57,7 @@ import iProov
   @objc public var logoImage: UIKit.UIImage?
   @available(*, deprecated, message: "This option is no longer supported, setting it will not change anything")
   public var scanLineDisabled: Swift.Bool?
-  @objc weak public var delegate: iProov.IProovPresentationDelegate?
+  @objc weak public var delegate: (any iProov.IProovPresentationDelegate)?
   @objc public func toIProovOptions() -> iProov.Options
   @objc override dynamic public init()
   @objc deinit

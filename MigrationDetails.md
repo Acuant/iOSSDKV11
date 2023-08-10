@@ -2,6 +2,67 @@
 
 ----------
 
+## v11.6.2
+
+### Important information about upgrading from iOS SDK version 11.6.0 to version 11.6.2+
+
+The health insurance models have been updated. In particular, the ```planCodes```, ```telephones```, ```emails```, ```webs``` properties of ```HealthInsuranceCardResult``` model have changed its types as follows:
+
+  ```swift
+  public class HealthInsuranceCardResult {
+    public let copayEr: String?
+    public let copayOv: String?
+    public let copaySp: String?
+    public let copayUc: String?
+    public let coverage: String?
+    public let contractCode: String?
+    public let dateOfBirth: String?
+    public let deductible: String?
+    public let effectiveDate: String?
+    public let employer: String?
+    public let expirationDate: String?
+    public let firstName: String?
+    public let groupName: String?
+    public let groupNumber: String?
+    public let issuerNumber: String?
+    public let lastName: String?
+    public let memberId: String?
+    public let memberName: String?
+    public let middleName: String?
+    public let namePrefix: String?
+    public let nameSuffix: String?
+    public let other: String?
+    public let payerId: String?
+    public let planAdmin: String?
+    public let planProvider: String?
+    public let planType: String?
+    public let rxBin: String?
+    public let rxGroup: String?
+    public let rxId: String?
+    public let rxPcn: String?
+    public let addresses: [Address]?
+    public let planCodes: [PlanCode]?
+    public let telephones: [LabelValuePair]?
+    public let emails: [LabelValuePair]?
+    public let webs: [LabelValuePair]?
+    public let transactionId: String?
+    public var instanceID: String?
+    public let frontImage: UIImage?
+    public let backImage: UIImage?
+  }
+  ```
+
+  ```swift
+  public class LabelValuePair {
+    public let label: String?
+    public let value: String?
+  }
+
+  public class PlanCode {
+    public let planCode: String?
+  }
+  ```
+
 ## v11.6.0
 
 ### Important information about upgrading from iOS SDK version 11.5.x to version 11.6.0+
@@ -20,7 +81,7 @@
 
     ```swift
     public protocol DocumentCameraViewControllerDelegate {
-      func setCapturedImage(image: Image, barcodeString: String?)
+      func onCaptured(image: Image, barcodeString: String?)
     }
 
     ```
@@ -28,8 +89,8 @@
     Instead of
 
     ```swift
-    public protocol DocumentCameraViewControllerDelegate {
-      func onCaptured(image: Image, barcodeString: String?)
+    public protocol CameraCaptureDelegate {
+      func setCapturedImage(image: Image, barcodeString: String?)
     }
     ```
 

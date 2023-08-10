@@ -1,6 +1,6 @@
-# Acuant iOS SDK v11.6.1
+# Acuant iOS SDK v11.6.2
 
-**June 2023**
+**August 2023**
 
 See [https://github.com/Acuant/iOSSDKV11/releases](https://github.com/Acuant/iOSSDKV11/releases) for release notes.
 
@@ -21,9 +21,9 @@ This document provides detailed information about the Acuant iOS SDK. The Acuant
 
 ----------
 
-## Updating to 11.6.1+
+## Updating to 11.6.2+
 
-Please see the provided [Migration Details](MigrationDetails.md) for information about updating to 11.6.0+
+Please see the provided [Migration Details](MigrationDetails.md) for information about updating to 11.6.2+
 
 ----------
 

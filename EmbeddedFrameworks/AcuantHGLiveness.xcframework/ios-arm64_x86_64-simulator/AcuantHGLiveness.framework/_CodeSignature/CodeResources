@@ -6,7 +6,7 @@
 	<dict>
 		<key>Headers/AcuantHGLiveness-Swift.h</key>
 		<data>
-		lVgPOKMAUkhQlXu4BgaZWaxwXsE=
+		9uz/voIOOfszzi6ZXBEdsVw0IgU=
 		</data>
 		<key>Headers/MiniLiveFaceSDK.h</key>
 		<data>
@@ -14,47 +14,47 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		iWFqg8NaPaAY9Yf5DUWBP4IGIPw=
+		wHW1+Sziv/ou8m1AV7udNwLE0is=
 		</data>
 		<key>Modules/AcuantHGLiveness.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
 		<data>
-		quVr1e+D8X4ejOJX2IXgL70QJrU=
+		UzWFpeVRTWifmaLlItLh05W10UQ=
 		</data>
 		<key>Modules/AcuantHGLiveness.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		cxedPj4sk6EfcXlkkEKNRhcSROQ=
+		QMsmTQ7dLHsAwXwKOHg0cVnmJtc=
 		</data>
 		<key>Modules/AcuantHGLiveness.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		9r95QckdebcJCormJ3c9ncV5kLQ=
+		gb+m5g6/XwPChrPQ0eHUAK+eUGg=
 		</data>
 		<key>Modules/AcuantHGLiveness.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		cxedPj4sk6EfcXlkkEKNRhcSROQ=
+		QMsmTQ7dLHsAwXwKOHg0cVnmJtc=
 		</data>
 		<key>Modules/AcuantHGLiveness.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		d+sJ0ZmjwzO0/F/yyVm6hABaueQ=
+		GEVDHtMMpMrXWz8jQh8ZrqHx9HY=
 		</data>
 		<key>Modules/AcuantHGLiveness.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<data>
-		quVr1e+D8X4ejOJX2IXgL70QJrU=
+		UzWFpeVRTWifmaLlItLh05W10UQ=
 		</data>
 		<key>Modules/AcuantHGLiveness.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		AKtXFKCg44oiP/WpUuCmdGxQQnI=
+		j1DqCRAcDZjU1VIPPil/3e+i5H4=
 		</data>
 		<key>Modules/AcuantHGLiveness.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		stnemylLJ6I7BGySMLbCFadAb2w=
+		4R3pG8101CqDLgippTjuSxT3Z8E=
 		</data>
 		<key>Modules/AcuantHGLiveness.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		AKtXFKCg44oiP/WpUuCmdGxQQnI=
+		j1DqCRAcDZjU1VIPPil/3e+i5H4=
 		</data>
 		<key>Modules/AcuantHGLiveness.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		sG4v1irTSIo9cHbcg8U+40nNwyU=
+		hy4z5iLx9eTsVOxJz4ET/fODEwU=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -67,7 +67,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			u1JweRL4X2mG9f/Se3vKr8lyr5VG/xmwBpd4mo0LfFQ=
+			V11zS3gMhHqxhqq5VoO5M5riwSX2OpWreFrQ/AC+v2Y=
 			</data>
 		</dict>
 		<key>Headers/MiniLiveFaceSDK.h</key>
@@ -81,70 +81,70 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			j9Cim4oZhoCipJXM9rbA8r2PNlyFahHO2GPTH1OjvDU=
+			cUQ/RLwws160mdeVEf+xjIGpT9HhFwM0r6rm4kJ0GYQ=
 			</data>
 		</dict>
 		<key>Modules/AcuantHGLiveness.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			nndORwK0tjzX7F/0sNu5aH26HNJkmJ5vh/hB9gq4HNQ=
+			j+gd85ZQgwQbk3/tD8PIgrwTheisAxf0MVM5ig6Z5fc=
 			</data>
 		</dict>
 		<key>Modules/AcuantHGLiveness.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			ZDjGBYcV8yTCSyYkdOc4KGHcopHfAsq2Yp6TefmrFzc=
+			/FzCiBjsTJSfpFnWQneqDs4FHFgeX2UqhfyAcs02b9A=
 			</data>
 		</dict>
 		<key>Modules/AcuantHGLiveness.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			nndORwK0tjzX7F/0sNu5aH26HNJkmJ5vh/hB9gq4HNQ=
+			j+gd85ZQgwQbk3/tD8PIgrwTheisAxf0MVM5ig6Z5fc=
 			</data>
 		</dict>
 		<key>Modules/AcuantHGLiveness.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			T0tYB3HLi6shhc0VuIyuOzhtnCTHcUoJ6Y4wHMqt+eE=
+			g6oB6J3xwYF/sfsVnXX+hks2z/qLYx/yKSD5/Mo3H5M=
 			</data>
 		</dict>
 		<key>Modules/AcuantHGLiveness.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			j9Cim4oZhoCipJXM9rbA8r2PNlyFahHO2GPTH1OjvDU=
+			cUQ/RLwws160mdeVEf+xjIGpT9HhFwM0r6rm4kJ0GYQ=
 			</data>
 		</dict>
 		<key>Modules/AcuantHGLiveness.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			NReBdbqGn1b4oL8h+GEGLHBZ8kVzzGXYRWzUnNPss3o=
+			p5XE8e+yv5jijAYTB7kdgPEr4ODH8ZzQGesAGHvasDs=
 			</data>
 		</dict>
 		<key>Modules/AcuantHGLiveness.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			tbCGcLqARIkJFr+YgQJb3TL9wb7D1cCGbUZiX0qBCew=
+			888LjbtyCFhppFKHIgAphFFToDCKcV68yuWtcZgKSUY=
 			</data>
 		</dict>
 		<key>Modules/AcuantHGLiveness.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			NReBdbqGn1b4oL8h+GEGLHBZ8kVzzGXYRWzUnNPss3o=
+			p5XE8e+yv5jijAYTB7kdgPEr4ODH8ZzQGesAGHvasDs=
 			</data>
 		</dict>
 		<key>Modules/AcuantHGLiveness.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			4gc74++sQd0NGnDsApsZyjhGXswS+C82QXi368GIGqk=
+			QCwV2GOKfLDe1f0SyOBtdzLjUt/oOXMoK3v0atz0xEo=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

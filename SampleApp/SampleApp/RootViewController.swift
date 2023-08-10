@@ -573,11 +573,34 @@ extension RootViewController: GetDataDelegate {
                 let backImage = healthCardResult.backImage
                 let mirrored_object = Mirror(reflecting: healthCardResult)
                 var dataArray = Array<String>()
-                for (_, attr) in mirrored_object.children.enumerated() {
+                //This is just a quick example of how to get some of the basic info.
+                //In a real implementations you should pick each field individually
+                for attr in mirrored_object.children {
                     if let property_name = attr.label as String? {
+                        if property_name == "frontImageString" || property_name == "backImageString" {
+                            continue
+                        }
                         if let property_value = attr.value as? String {
-                            if(property_value != ""){
-                                dataArray.append("\(property_name) : \(property_value)")
+                            if property_value != "" {
+                                dataArray.append("\(property_name): \(property_value)")
+                            }
+                        } else if let addresses = attr.value as? [Address] {
+                            for (index, address) in addresses.enumerated() {
+                                if let fullAddress = address.fullAddress {
+                                    dataArray.append("Address \(index + 1): \(fullAddress)")
+                                }
+                            }
+                        } else if let labelValuePairs = attr.value as? [LabelValuePair] {
+                            for pair in labelValuePairs {
+                                if let label = pair.label, let value = pair.value {
+                                    dataArray.append("\(label): \(value)")
+                                }
+                            }
+                        } else if let planCodes = attr.value as? [PlanCode] {
+                            for (index, planCode) in planCodes.enumerated() {
+                                if let code = planCode.planCode {
+                                    dataArray.append("Plan Code \(index + 1): \(code)")
+                                }
                             }
                         }
                     }
