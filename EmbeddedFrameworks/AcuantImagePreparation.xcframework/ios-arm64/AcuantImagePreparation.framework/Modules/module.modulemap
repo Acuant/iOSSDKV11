@@ -1,7 +1,7 @@
 framework module AcuantImagePreparation {
   umbrella header "AcuantImagePreparation.h"
-
   export *
+
   module * { export * }
 }
 

@@ -1,7 +1,7 @@
 framework module AcuantFaceMatch {
   umbrella header "AcuantFaceMatch.h"
-
   export *
+
   module * { export * }
 }
 

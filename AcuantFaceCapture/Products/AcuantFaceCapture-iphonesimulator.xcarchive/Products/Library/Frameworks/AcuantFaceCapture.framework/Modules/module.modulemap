@@ -1,0 +1,11 @@
+framework module AcuantFaceCapture {
+  umbrella header "AcuantFaceCapture.h"
+
+  export *
+  module * { export * }
+}
+
+module AcuantFaceCapture.Swift {
+  header "AcuantFaceCapture-Swift.h"
+  requires objc
+}

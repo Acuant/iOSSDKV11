@@ -1,5 +1,5 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.8.1 (swiftlang-5.8.0.124.5 clang-1403.0.22.11.100)
+// swift-compiler-version: Apple Swift version 5.9 (swiftlang-5.9.0.128.108 clang-1500.0.40.1)
 // swift-module-flags: -target arm64-apple-ios11.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name AcuantCommon
 // swift-module-flags-ignorable: -enable-bare-slash-regex
 import Foundation
@@ -7,6 +7,7 @@ import Swift
 import UIKit
 import _Concurrency
 import _StringProcessing
+import _SwiftConcurrencyShims
 public protocol IAcuantInitializer {
   func initialize(packages: [any AcuantCommon.IAcuantPackage], callback: @escaping (AcuantCommon.AcuantError?) -> ()) -> Foundation.URLSessionTask?
 }
@@ -26,9 +27,6 @@ public class AcuantInitializer : AcuantCommon.IAcuantInitializer {
     get
   }
   public var hasLiveCapture: Swift.Bool {
-    get
-  }
-  public var ipLiveness: Swift.Bool {
     get
   }
   @objc deinit
@@ -96,7 +94,6 @@ public protocol IAcuantPackage {
   @objc public static let ERROR_LowResolutionImage: Swift.Int
   @objc public static let ERROR_BlurryImage: Swift.Int
   @objc public static let ERROR_ImageWithGlare: Swift.Int
-  @objc public static let ERROR_CouldNotGetIPLivenessToken: Swift.Int
   @objc public static let ERROR_NotALiveFace: Swift.Int
   @objc public static let ERROR_CouldNotAccessLivenessData: Swift.Int
   @objc public static let ERROR_CouldNotAccessCredential: Swift.Int
@@ -151,7 +148,6 @@ public protocol IAcuantPackage {
   @objc public static let ERROR_DESC_LowResolutionImage: Swift.String
   @objc public static let ERROR_DESC_BlurryImage: Swift.String
   @objc public static let ERROR_DESC_ImageWithGlare: Swift.String
-  @objc public static let ERROR_DESC_CouldNotGetIPLivenessToken: Swift.String
   @objc public static let ERROR_DESC_NotALiveFace: Swift.String
   @objc public static let ERROR_DESC_CouldNotAccessLivenessData: Swift.String
   @objc public static let ERROR_DESC_ERROR_CouldNotAccessCredential: Swift.String
@@ -184,7 +180,6 @@ public protocol IAcuantPackage {
   @objc public var frmEndpoint: Swift.String?
   @objc public var idEndpoint: Swift.String?
   @objc public var passiveLivenessEndpoint: Swift.String?
-  @objc public var ipLivenessEndpoint: Swift.String?
   @objc public var healthInsuranceEndpoint: Swift.String?
   @objc @AcuantCommon.HasValidDomain public var acasEndpoint: Swift.String? {
     @objc get

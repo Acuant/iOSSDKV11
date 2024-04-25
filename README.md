@@ -1,6 +1,6 @@
-# Acuant iOS SDK v11.6.2
+# Acuant iOS SDK v11.6.3
 
-**August 2023**
+**April 2024**
 
 See [https://github.com/Acuant/iOSSDKV11/releases](https://github.com/Acuant/iOSSDKV11/releases) for release notes.
 
@@ -21,18 +21,16 @@ This document provides detailed information about the Acuant iOS SDK. The Acuant
 
 ----------
 
-## Updating to 11.6.2+
+## Updating to 11.6.3+
 
-Please see the provided [Migration Details](MigrationDetails.md) for information about updating to 11.6.2+
+Please see the provided [Migration Details](MigrationDetails.md) for information about updating to 11.6.3+
 
 ----------
 
 ## Prerequisites
 
 - iOS version 11.0 or later
-- Xcode 14.0-14.2
-
-**Note:** Xcode v14.3 contains a known issue with an IPLiveness dependency when integrating that module via CocoaPods. While we investigate a workaround, Acuant recommends that clients using IPLiveness via CocoaPods continue to use (or downgrade to) Xcode 14.2.
+- Xcode 15+
 
 ## Modules
 
@@ -77,14 +75,6 @@ The SDK includes the following modules:
 
 - Uses iOS native camera library to capture facial liveness using a proprietary algorithm
 
-**Acuant IP Liveness Library (AcuantIPLiveness):**
-
-- Uses proprietary algorithm to detect a live person
-
-**Note:** IP Liveness is now referred to in the UI as Enhanced Liveness. 
-
-
-
 ----------
 ### Manual Setup
 
@@ -101,10 +91,6 @@ The SDK includes the following modules:
 		- OpenSSL.xcframework
  	-	**AcuantCamera**
 		- libtesseract.xcframework (Do Not Embed)
- 	-	**AcuantIPLiveness**
-	 	- iProov.xcframework
- 		- SocketIO.xcframework
- 		- Starscream.xcframework
 
 	![](docs/embeded_framework.png)
 
@@ -156,12 +142,6 @@ The SDK includes the following modules:
 
 			pod 'AcuantiOSSDKV11/AcuantHGLiveness'
 			dependency AcuantCommon
-			
- - AcuantIPLiveness
-
-			pod 'AcuantiOSSDKV11/AcuantIPLiveness'
-			dependency AcuantCommon
-			dependency iProov
 
  - AcuantPassiveLiveness
 
@@ -178,25 +158,6 @@ The SDK includes the following modules:
 			pod 'AcuantiOSSDKV11/AcuantEchipReader'
 			dependency AcuantCommon
 			dependency OpenSSL
-		
-2. Enable "BUILD\_LIBRARY\_FOR\_DISTRIBUTION" for all Acuant pod frameworks in Build Settings.
-
-	- Using Cocoapods. Add to your Podfile.
-		
-			post_install do |installer|
-				installer.pods_project.targets.each do |target|
-					if ['AcuantiOSSDKV11', 'Socket.IO-Client-Swift', 'Starscream'].include? target.name
-						target.build_configurations.each do |config|
-							config.build_settings['BUILD_LIBRARY_FOR_DISTRIBUTION'] = 'YES'
-						end
-					end
-				end
-			end
-	
-	- Manually
-	
-		![](docs/cocoapodsetup.png)
-		
 
 ----------
 
@@ -944,83 +905,6 @@ This module checks for liveness (whether the subject is a live person) by using 
 
 ----------
 
-### AcuantIPLiveness
-
-The **AcuantIPLiveness** module checks whether the subject is a live person.
-
-1. Add localized strings in app's localizables as indicated [here](#language-localization).
-
-1. Run the setup:
-
-
-    	IPLiveness.performLivenessSetup(delegate:LivenessSetupDelegate)
-
-    	public protocol LivenessSetupDelegate{
-    		func livenessSetupSucceeded(result:LivenessSetupResult) // Called when setup succeeds
-    		func livenessSetupFailed(error:AcuantError) // Called when setup failed
-		}
-
-    	public class LivenessSetupResult {
-    		public var apiKey : String
-    		public var token : String
-    		public var userId : String
-    		public var apiEndpoint : String
-   
-		}
-		
-2. Perform the Liveness test: 
-		
-	**Note:** You can customize the UI as needed by using **LivenessSetupResult**.
-
-		// Adjust various colors for the camera preview:
-		setupResult.ui.lineColor = .white
-		setupResult.ui.backgroundColor = .black
-		setupResult.ui.loadingTintColor = .lightGray
-		setupResult.ui.notReadyTintColor = .orange
-		setupResult.ui.readyTintColor = .green
-
-		setupResult.ui.title = "title" // Specify a custom title to be shown. Defaults to nil which will show an auto generated message. Set to empty string ("") to hide the message entirely.
-		setupResult.ui.regularFont = "SomeFont"
-		setupResult.ui.boldFont = "SomeFont-Bold"
-		setupResult.ui.fonts = ["SomeFont", "SomeFont-Bold"] // If using custom fonts, specify them here (don't forget to add them to your Info.plist!)
-		setupResult.ui.logoImage = UIImage(named: "foo")
-		setupResult.ui.scanLineDisabled = false // Disables the vertical sweeping scanline while flashing
-		setupResult.ui.autoStartDisabled = false // Disable the "auto start" countdown functionality. The user will have to tap the screen to start liveness test
-
-		IPLiveness.performLivenessTest(setupResult:LivenessSetupResult, delegate:LivenessTestDelegate)
-		
-		public protocol LivenessTestDelegate{
-			func livenessTestCompleted() // This is for the test; called when Enroll is complete
-			func livenessTestCompletedWithError(error:AcuantError?) // This is for the test; called when Enroll is complete and error occured
-			func livenessTestProcessing(progress: Double, message: String) // This is for real-time notifications of progress of liveness test. It will be called after user captures live face. It is intended to be used for custom UI progress notification.
-			func livenessTestConnecting() // Will be called before face capture starts. Use for custom UI while test is connecting.
-			func livenessTestConnected() // Will be called as face capture starts. Can usually be blank or can be used to clear any custom connecting UI if needed.
-
-		}
-		
-3. Get the liveness test result:
-	
-		IPLiveness.getLivenessTestResult(token:String,userId:String,delegate:LivenessTestResultDelegate)
-		
-		public protocol LivenessTestResultDelegate{
-    		func livenessTestResultReceived(result:LivenessResult) // Called when test result was received successfully
-    		func livenessTestResultReceiveFailed(error:AcuantError) // Called when test result was not received
-		}
-
-		public class LivenessTestResult {
-    		public var passedLivenessTest : Bool = false
-    		public var image : UIImage? = nil
-    	
-		}
-
-The following is a list of dependencies:
-
-- **iProov.xcframework**
-- **SocketIO.xcframework**
-- **Startscream.xcframework**
-
-----------
-
 ### AcuantFaceMatch
 
 This module is used to match two facial images:
@@ -1054,54 +938,6 @@ In order to display texts in the corresponding language you need to add the foll
 	"acuant_face_camera_capturing_1" = "Capturing\n1...";
 	"acuant_face_camera_rotate_portrait" = "Face can only be captured in portrait";
 	"acuant_face_camera_paused" = "Camera paused";
-
-### AcuantIPLiveness
-
-	"IProov_LanguageFile" = "en-US";
-	"IProov_PromptTapToBegin" = "Tap the screen to begin";
-	"IProov_PromptTooFar" = "Move closer";
-	"IProov_PromptTooBright" = "Go somewhere shadier";
-	"IProov_PromptLivenessScanCompleted" = "Scan completed";
-	"IProov_PromptGenuinePresenceAlignFace" = "Put your face in the oval";
-	"IProov_PromptLivenessAlignFace" = "Fill the oval with your face";
-	"IProov_PromptLivenessNoTarget" = "Put your face in the frame";
-	"IProov_ProgressStreaming" = "Streaming…";
-	"IProov_ProgressStreamingSlow" = "Streaming, network is slow…";
-	"IProov_PromptScanning" = "Scanning…";
-	"IProov_ProgressIdentifyingFace" = "Identifying face…";
-	"IProov_ProgressConfirmingIdentity" = "Confirming identity…";
-	"IProov_ProgressAssessingGenuinePresence" = "Assessing genuine presence…";
-	"IProov_ProgressAssessingLiveness" = "Assessing liveness…";
-	"IProov_ProgressLoading" = "Loading…";
-	"IProov_ProgressCreatingIdentity" = "Creating identity…";
-	"IProov_ProgressFindingFace" = "Finding face…";
-	"IProov_Authenticate" = "Authenticate";
-	"IProov_Enrol" = "Enrol";
-	"IProov_MessageFormat" = "%@ to %@";
-	"IProov_PromptTooClose" = "Too close";
-	"IProov_FailureMotionTooMuchMovement" = "Please do not move while iProoving";
-	"IProov_FailureLightingFlashReflectionTooLow" = "Ambient light too strong or screen brightness too low";
-	"IProov_FailureLightingBacklit" = "Strong light source detected behind you";
-	"IProov_FailureLightingTooDark" = "Your environment appears too dark";
-	"IProov_FailureLightingFaceTooBright" = "Too much light detected on your face";
-	"IProov_FailureMotionTooMuchMouthMovement" = "Please do not talk while iProoving";
-	"IProov_MessageFormatWithUsername" = "%@ as %@ to %@";
-	"IProov_PromptRollTooHigh" = "Avoid tilting your head";
-	"IProov_PromptRollTooLow" = "Avoid tilting your head";
-	"IProov_PromptYawTooLow" = "Turn slightly to your right";
-	"IProov_PromptYawTooHigh" = "Turn slightly to your left";
-	"IProov_PromptPitchTooHigh" = "Hold the device at eye level";
-	"IProov_PromptPitchTooLow" = "Hold the device at eye level";
-	"IProov_ErrorNetwork" = "Network error";
-	"IProov_ErrorCameraPermissionDenied" = "Camera permission denied";
-	"IProov_ErrorCameraPermissionDeniedMessageIos" = "Please allow camera access for this app in iOS Settings";
-	"IProov_ErrorServer" = "Server error";
-	"IProov_ErrorUnexpected" = "Unexpected error";
-	"IProov_ErrorCaptureAlreadyActive" = "An existing capture is already in progress";
-	"IProov_PromptGetReady" = "Get ready…";
-	"IProov_PromptGrantPermission" = "Grant Camera Access";
-	"IProov_PromptGrantPermissionMessage" = "Camera access must be granted to use iProov";
-	"IProov_FailureAmbiguousOutcome" = "Ambiguous outcome";
 
 ----------
 
@@ -1358,21 +1194,13 @@ public class MrzCameraOptions: CameraOptions {
 
 		public func getRawDataGroup(dgId: AcuantDataGroupId) -> [UInt8]?
 	}
-	
-----------
 
+----------
 
 ## Frequently Asked Questions
 
 ### Why do I get "No such module" error in Xcode when using "import AcuantCamera" when using CocoaPods
 **AcuantCamera** and **AcuantFaceCapture** are open projects and must be compiled by the user. With CocoaPods, both are compiled into pods name **AcuantiOSSDKV11** in which `import AcuantiOSSDKV11` must be used in Xcode. Using `import AcuantCamera` and `import AcuantFaceCapture` will not work.
-
-### Why does the Code signing “AcuantCommon.framework” error occur when I archive the sample application?
-
-Acuant provides support for all CPU architectures that are required by simulators and devices. However, when exporting or publishing to the Test Flight/App Store, the simulator architectures (i386 and x86(64)) should be removed from the framework binaries. 
-
-1. Archive the application. 
-2. Select the archive and then click **Distribute app> App store > Export**.
 
 ### How do I obfuscate my iOS application?
 
@@ -1380,7 +1208,7 @@ Acuant does not provide obfuscation tools, however several third-party tools, in
 
 -------------------------------------------------------------
 
-**Copyright 2022 Acuant Inc. All rights reserved.**
+**Copyright 2024 Acuant Inc. All rights reserved.**
 
 This document contains proprietary and confidential information and creative works owned by Acuant and its respective licensors, if any. Any use, copying, publication, distribution, display, modification, or transmission of such technology, in whole or in part, in any form or by any means, without the prior express written permission of Acuant is strictly prohibited. Except where expressly provided by Acuant in writing, possession of this information shall not be construed to confer any license or rights under any Acuant intellectual property rights, whether by estoppel, implication, or otherwise.
 

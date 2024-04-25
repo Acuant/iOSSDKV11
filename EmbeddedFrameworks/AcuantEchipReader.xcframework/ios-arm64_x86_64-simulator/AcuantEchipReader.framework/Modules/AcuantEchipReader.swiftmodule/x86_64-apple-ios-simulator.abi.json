@@ -4001,6 +4001,12 @@
                 "mangledName": "$s17AcuantEchipReader9DataGroupC13datagroupTypeAA0dE2IdOvM",
                 "moduleName": "AcuantEchipReader",
                 "implicit": true,
+                "intro_Macosx": "10.15",
+                "intro_iOS": "13",
+                "declAttributes": [
+                  "Available",
+                  "Available"
+                ],
                 "accessorKind": "_modify"
               }
             ]
@@ -12954,6 +12960,10 @@
                 "mangledName": "$s17AcuantEchipReader10BACHandlerC5ksencSays5UInt8VGvM",
                 "moduleName": "AcuantEchipReader",
                 "implicit": true,
+                "intro_iOS": "13",
+                "declAttributes": [
+                  "Available"
+                ],
                 "accessorKind": "_modify"
               }
             ]
@@ -13064,6 +13074,10 @@
                 "mangledName": "$s17AcuantEchipReader10BACHandlerC5ksmacSays5UInt8VGvM",
                 "moduleName": "AcuantEchipReader",
                 "implicit": true,
+                "intro_iOS": "13",
+                "declAttributes": [
+                  "Available"
+                ],
                 "accessorKind": "_modify"
               }
             ]
@@ -13174,6 +13188,10 @@
                 "mangledName": "$s17AcuantEchipReader10BACHandlerC4kifdSays5UInt8VGvM",
                 "moduleName": "AcuantEchipReader",
                 "implicit": true,
+                "intro_iOS": "13",
+                "declAttributes": [
+                  "Available"
+                ],
                 "accessorKind": "_modify"
               }
             ]
@@ -20132,6 +20150,10 @@
                 "mangledName": "$s17AcuantEchipReader0A13PassportModelC12documentTypeSSvM",
                 "moduleName": "AcuantEchipReader",
                 "implicit": true,
+                "intro_iOS": "13",
+                "declAttributes": [
+                  "Available"
+                ],
                 "accessorKind": "_modify"
               }
             ]
@@ -20217,6 +20239,10 @@
                 "mangledName": "$s17AcuantEchipReader0A13PassportModelC15documentSubTypeSSvM",
                 "moduleName": "AcuantEchipReader",
                 "implicit": true,
+                "intro_iOS": "13",
+                "declAttributes": [
+                  "Available"
+                ],
                 "accessorKind": "_modify"
               }
             ]
@@ -20302,6 +20328,10 @@
                 "mangledName": "$s17AcuantEchipReader0A13PassportModelC12documentCodeSSvM",
                 "moduleName": "AcuantEchipReader",
                 "implicit": true,
+                "intro_iOS": "13",
+                "declAttributes": [
+                  "Available"
+                ],
                 "accessorKind": "_modify"
               }
             ]
@@ -20388,6 +20418,10 @@
                 "mangledName": "$s17AcuantEchipReader0A13PassportModelC22translatedDocumentTypeAA010TranslatedgH0OvM",
                 "moduleName": "AcuantEchipReader",
                 "implicit": true,
+                "intro_iOS": "13",
+                "declAttributes": [
+                  "Available"
+                ],
                 "accessorKind": "_modify"
               }
             ]
@@ -20473,6 +20507,10 @@
                 "mangledName": "$s17AcuantEchipReader0A13PassportModelC14personalNumberSSvM",
                 "moduleName": "AcuantEchipReader",
                 "implicit": true,
+                "intro_iOS": "13",
+                "declAttributes": [
+                  "Available"
+                ],
                 "accessorKind": "_modify"
               }
             ]
@@ -20558,6 +20596,10 @@
                 "mangledName": "$s17AcuantEchipReader0A13PassportModelC14documentNumberSSvM",
                 "moduleName": "AcuantEchipReader",
                 "implicit": true,
+                "intro_iOS": "13",
+                "declAttributes": [
+                  "Available"
+                ],
                 "accessorKind": "_modify"
               }
             ]
@@ -20643,6 +20685,10 @@
                 "mangledName": "$s17AcuantEchipReader0A13PassportModelC16issuingAuthoritySSvM",
                 "moduleName": "AcuantEchipReader",
                 "implicit": true,
+                "intro_iOS": "13",
+                "declAttributes": [
+                  "Available"
+                ],
                 "accessorKind": "_modify"
               }
             ]
@@ -20728,6 +20774,10 @@
                 "mangledName": "$s17AcuantEchipReader0A13PassportModelC18documentExpiryDateSSvM",
                 "moduleName": "AcuantEchipReader",
                 "implicit": true,
+                "intro_iOS": "13",
+                "declAttributes": [
+                  "Available"
+                ],
                 "accessorKind": "_modify"
               }
             ]
@@ -20813,6 +20863,10 @@
                 "mangledName": "$s17AcuantEchipReader0A13PassportModelC9firstNameSSvM",
                 "moduleName": "AcuantEchipReader",
                 "implicit": true,
+                "intro_iOS": "13",
+                "declAttributes": [
+                  "Available"
+                ],
                 "accessorKind": "_modify"
               }
             ]
@@ -20898,6 +20952,10 @@
                 "mangledName": "$s17AcuantEchipReader0A13PassportModelC8lastNameSSvM",
                 "moduleName": "AcuantEchipReader",
                 "implicit": true,
+                "intro_iOS": "13",
+                "declAttributes": [
+                  "Available"
+                ],
                 "accessorKind": "_modify"
               }
             ]
@@ -20983,6 +21041,10 @@
                 "mangledName": "$s17AcuantEchipReader0A13PassportModelC11dateOfBirthSSvM",
                 "moduleName": "AcuantEchipReader",
                 "implicit": true,
+                "intro_iOS": "13",
+                "declAttributes": [
+                  "Available"
+                ],
                 "accessorKind": "_modify"
               }
             ]
@@ -21068,6 +21130,10 @@
                 "mangledName": "$s17AcuantEchipReader0A13PassportModelC6genderSSvM",
                 "moduleName": "AcuantEchipReader",
                 "implicit": true,
+                "intro_iOS": "13",
+                "declAttributes": [
+                  "Available"
+                ],
                 "accessorKind": "_modify"
               }
             ]
@@ -21153,6 +21219,10 @@
                 "mangledName": "$s17AcuantEchipReader0A13PassportModelC11nationalitySSvM",
                 "moduleName": "AcuantEchipReader",
                 "implicit": true,
+                "intro_iOS": "13",
+                "declAttributes": [
+                  "Available"
+                ],
                 "accessorKind": "_modify"
               }
             ]
@@ -21263,6 +21333,10 @@
                 "mangledName": "$s17AcuantEchipReader0A13PassportModelC5imageSo7UIImageCSgvM",
                 "moduleName": "AcuantEchipReader",
                 "implicit": true,
+                "intro_iOS": "13",
+                "declAttributes": [
+                  "Available"
+                ],
                 "accessorKind": "_modify"
               }
             ]
@@ -21373,6 +21447,10 @@
                 "mangledName": "$s17AcuantEchipReader0A13PassportModelC14signatureImageSo7UIImageCSgvM",
                 "moduleName": "AcuantEchipReader",
                 "implicit": true,
+                "intro_iOS": "13",
+                "declAttributes": [
+                  "Available"
+                ],
                 "accessorKind": "_modify"
               }
             ]
@@ -21459,6 +21537,10 @@
                 "mangledName": "$s17AcuantEchipReader0A13PassportModelC14passportSignedAA17OzoneResultStatusOvM",
                 "moduleName": "AcuantEchipReader",
                 "implicit": true,
+                "intro_iOS": "13",
+                "declAttributes": [
+                  "Available"
+                ],
                 "accessorKind": "_modify"
               }
             ]
@@ -21545,6 +21627,10 @@
                 "mangledName": "$s17AcuantEchipReader0A13PassportModelC21passportCountrySignedAA17OzoneResultStatusOvM",
                 "moduleName": "AcuantEchipReader",
                 "implicit": true,
+                "intro_iOS": "13",
+                "declAttributes": [
+                  "Available"
+                ],
                 "accessorKind": "_modify"
               }
             ]
@@ -21631,6 +21717,10 @@
                 "mangledName": "$s17AcuantEchipReader0A13PassportModelC10PACEStatusAA10AuthStatusOvM",
                 "moduleName": "AcuantEchipReader",
                 "implicit": true,
+                "intro_iOS": "13",
+                "declAttributes": [
+                  "Available"
+                ],
                 "accessorKind": "_modify"
               }
             ]
@@ -21717,6 +21807,10 @@
                 "mangledName": "$s17AcuantEchipReader0A13PassportModelC9BACStatusAA10AuthStatusOvM",
                 "moduleName": "AcuantEchipReader",
                 "implicit": true,
+                "intro_iOS": "13",
+                "declAttributes": [
+                  "Available"
+                ],
                 "accessorKind": "_modify"
               }
             ]
@@ -21803,6 +21897,10 @@
                 "mangledName": "$s17AcuantEchipReader0A13PassportModelC24chipAuthenticationStatusAA04AuthH0OvM",
                 "moduleName": "AcuantEchipReader",
                 "implicit": true,
+                "intro_iOS": "13",
+                "declAttributes": [
+                  "Available"
+                ],
                 "accessorKind": "_modify"
               }
             ]
@@ -21889,6 +21987,10 @@
                 "mangledName": "$s17AcuantEchipReader0A13PassportModelC26activeAuthenticationStatusAA04AuthH0OvM",
                 "moduleName": "AcuantEchipReader",
                 "implicit": true,
+                "intro_iOS": "13",
+                "declAttributes": [
+                  "Available"
+                ],
                 "accessorKind": "_modify"
               }
             ]
@@ -21975,6 +22077,10 @@
                 "mangledName": "$s17AcuantEchipReader0A13PassportModelC17passportDataValidSbvM",
                 "moduleName": "AcuantEchipReader",
                 "implicit": true,
+                "intro_iOS": "13",
+                "declAttributes": [
+                  "Available"
+                ],
                 "accessorKind": "_modify"
               }
             ]
@@ -22085,6 +22191,10 @@
                 "mangledName": "$s17AcuantEchipReader0A13PassportModelC3ageSiSgvM",
                 "moduleName": "AcuantEchipReader",
                 "implicit": true,
+                "intro_iOS": "13",
+                "declAttributes": [
+                  "Available"
+                ],
                 "accessorKind": "_modify"
               }
             ]
@@ -22195,6 +22305,10 @@
                 "mangledName": "$s17AcuantEchipReader0A13PassportModelC9isExpiredSbSgvM",
                 "moduleName": "AcuantEchipReader",
                 "implicit": true,
+                "intro_iOS": "13",
+                "declAttributes": [
+                  "Available"
+                ],
                 "accessorKind": "_modify"
               }
             ]
@@ -22357,6 +22471,12 @@
                 "mangledName": "$s17AcuantEchipReader13DataGroupHashV2idSSvM",
                 "moduleName": "AcuantEchipReader",
                 "implicit": true,
+                "intro_Macosx": "10.15",
+                "intro_iOS": "13",
+                "declAttributes": [
+                  "Available",
+                  "Available"
+                ],
                 "accessorKind": "_modify"
               }
             ]
@@ -22442,6 +22562,12 @@
                 "mangledName": "$s17AcuantEchipReader13DataGroupHashV03sodF0SSvM",
                 "moduleName": "AcuantEchipReader",
                 "implicit": true,
+                "intro_Macosx": "10.15",
+                "intro_iOS": "13",
+                "declAttributes": [
+                  "Available",
+                  "Available"
+                ],
                 "accessorKind": "_modify"
               }
             ]
@@ -22527,6 +22653,12 @@
                 "mangledName": "$s17AcuantEchipReader13DataGroupHashV08computedF0SSvM",
                 "moduleName": "AcuantEchipReader",
                 "implicit": true,
+                "intro_Macosx": "10.15",
+                "intro_iOS": "13",
+                "declAttributes": [
+                  "Available",
+                  "Available"
+                ],
                 "accessorKind": "_modify"
               }
             ]
@@ -22612,6 +22744,12 @@
                 "mangledName": "$s17AcuantEchipReader13DataGroupHashV5matchSbvM",
                 "moduleName": "AcuantEchipReader",
                 "implicit": true,
+                "intro_Macosx": "10.15",
+                "intro_iOS": "13",
+                "declAttributes": [
+                  "Available",
+                  "Available"
+                ],
                 "accessorKind": "_modify"
               }
             ]
@@ -23391,6 +23529,10 @@
                 "mangledName": "$s17AcuantEchipReader12ResponseAPDUV4dataSays5UInt8VGvM",
                 "moduleName": "AcuantEchipReader",
                 "implicit": true,
+                "intro_iOS": "13",
+                "declAttributes": [
+                  "Available"
+                ],
                 "accessorKind": "_modify"
               }
             ]
@@ -23476,6 +23618,10 @@
                 "mangledName": "$s17AcuantEchipReader12ResponseAPDUV3sw1s5UInt8VvM",
                 "moduleName": "AcuantEchipReader",
                 "implicit": true,
+                "intro_iOS": "13",
+                "declAttributes": [
+                  "Available"
+                ],
                 "accessorKind": "_modify"
               }
             ]
@@ -23561,6 +23707,10 @@
                 "mangledName": "$s17AcuantEchipReader12ResponseAPDUV3sw2s5UInt8VvM",
                 "moduleName": "AcuantEchipReader",
                 "implicit": true,
+                "intro_iOS": "13",
+                "declAttributes": [
+                  "Available"
+                ],
                 "accessorKind": "_modify"
               }
             ]
@@ -23735,6 +23885,10 @@
                 "mangledName": "$s17AcuantEchipReader08PassportC0C32passiveAuthenticationUsesOpenSSLSbvM",
                 "moduleName": "AcuantEchipReader",
                 "implicit": true,
+                "intro_iOS": "13",
+                "declAttributes": [
+                  "Available"
+                ],
                 "accessorKind": "_modify"
               }
             ]

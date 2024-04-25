@@ -1,4 +1,0 @@
-framework module AcuantIPLiveness {
-  header "AcuantIPLiveness-Swift.h"
-  requires objc
-}

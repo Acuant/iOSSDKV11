@@ -3,7 +3,7 @@ Pod::Spec.new do |s|
     s.swift_versions = ['5.5.2']
     s.ios.deployment_target = '11.0'
     s.name         = "AcuantiOSSDKV11"
-    s.version      = "11.6.2"
+    s.version      = "11.6.3"
     s.summary      = "Acuant's latest SDK with most advanced image capture technology and optimized user workflow  "
     s.description  = "Acuant's latest SDK with most advanced image capture technology and optimized user workflow.
 
@@ -15,7 +15,7 @@ Pod::Spec.new do |s|
     s.license      = {
           :type => 'commercial',
           :text => <<-LICENSE
-                  Copyright 2023 Acuant, Inc. All Rights Reserved.
+                  Copyright 2024 Acuant, Inc. All Rights Reserved.
                   LICENSE
     }
     s.author             = { "Acuant Inc" => "smaltsev@acuant.com" }
@@ -64,15 +64,6 @@ Pod::Spec.new do |s|
         acuantHG.ios.vendored_frameworks = "EmbeddedFrameworks/AcuantHGLiveness.xcframework"
         
         acuantHG.dependency "#{s.name}/AcuantCommon"
-    end
-    
-    s.subspec 'AcuantIPLiveness' do |acuantIP|
-        acuantIP.ios.deployment_target = '11.0'
-
-        acuantIP.ios.vendored_frameworks = "EmbeddedFrameworks/AcuantIPLiveness.xcframework"
-        
-        acuantIP.dependency "#{s.name}/AcuantCommon"
-        acuantIP.dependency 'iProov', '~> 9.2.0'
     end
     
     s.subspec 'AcuantEchipReader' do |acuantEchip|

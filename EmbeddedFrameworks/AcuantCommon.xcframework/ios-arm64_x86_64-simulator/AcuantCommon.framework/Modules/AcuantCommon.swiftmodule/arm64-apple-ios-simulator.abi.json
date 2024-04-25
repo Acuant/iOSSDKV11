@@ -401,50 +401,6 @@
                 "accessorKind": "get"
               }
             ]
-          },
-          {
-            "kind": "Var",
-            "name": "ipLiveness",
-            "printedName": "ipLiveness",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Bool",
-                "printedName": "Swift.Bool",
-                "usr": "s:Sb"
-              }
-            ],
-            "declKind": "Var",
-            "usr": "s:12AcuantCommon20SecureAuthorizationsC10ipLivenessSbvp",
-            "mangledName": "$s12AcuantCommon20SecureAuthorizationsC10ipLivenessSbvp",
-            "moduleName": "AcuantCommon",
-            "declAttributes": [
-              "HasStorage",
-              "SetterAccess",
-              "AccessControl"
-            ],
-            "hasStorage": true,
-            "accessors": [
-              {
-                "kind": "Accessor",
-                "name": "Get",
-                "printedName": "Get()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Bool",
-                    "printedName": "Swift.Bool",
-                    "usr": "s:Sb"
-                  }
-                ],
-                "declKind": "Accessor",
-                "usr": "s:12AcuantCommon20SecureAuthorizationsC10ipLivenessSbvg",
-                "mangledName": "$s12AcuantCommon20SecureAuthorizationsC10ipLivenessSbvg",
-                "moduleName": "AcuantCommon",
-                "implicit": true,
-                "accessorKind": "get"
-              }
-            ]
           }
         ],
         "declKind": "Class",
@@ -3255,59 +3211,6 @@
           },
           {
             "kind": "Var",
-            "name": "ERROR_CouldNotGetIPLivenessToken",
-            "printedName": "ERROR_CouldNotGetIPLivenessToken",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Int",
-                "printedName": "Swift.Int",
-                "usr": "s:Si"
-              }
-            ],
-            "declKind": "Var",
-            "usr": "c:@M@AcuantCommon@objc(cs)AcuantErrorCodes(cpy)ERROR_CouldNotGetIPLivenessToken",
-            "mangledName": "$s12AcuantCommon0A10ErrorCodesC32ERROR_CouldNotGetIPLivenessTokenSivpZ",
-            "moduleName": "AcuantCommon",
-            "static": true,
-            "declAttributes": [
-              "HasInitialValue",
-              "Final",
-              "HasStorage",
-              "AccessControl",
-              "ObjC"
-            ],
-            "isLet": true,
-            "hasStorage": true,
-            "accessors": [
-              {
-                "kind": "Accessor",
-                "name": "Get",
-                "printedName": "Get()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Int",
-                    "printedName": "Swift.Int",
-                    "usr": "s:Si"
-                  }
-                ],
-                "declKind": "Accessor",
-                "usr": "c:@M@AcuantCommon@objc(cs)AcuantErrorCodes(cm)ERROR_CouldNotGetIPLivenessToken",
-                "mangledName": "$s12AcuantCommon0A10ErrorCodesC32ERROR_CouldNotGetIPLivenessTokenSivgZ",
-                "moduleName": "AcuantCommon",
-                "static": true,
-                "implicit": true,
-                "declAttributes": [
-                  "Final",
-                  "ObjC"
-                ],
-                "accessorKind": "get"
-              }
-            ]
-          },
-          {
-            "kind": "Var",
             "name": "ERROR_NotALiveFace",
             "printedName": "ERROR_NotALiveFace",
             "children": [
@@ -5634,59 +5537,6 @@
           },
           {
             "kind": "Var",
-            "name": "ERROR_DESC_CouldNotGetIPLivenessToken",
-            "printedName": "ERROR_DESC_CouldNotGetIPLivenessToken",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "String",
-                "printedName": "Swift.String",
-                "usr": "s:SS"
-              }
-            ],
-            "declKind": "Var",
-            "usr": "c:@M@AcuantCommon@objc(cs)AcuantErrorDescriptions(cpy)ERROR_DESC_CouldNotGetIPLivenessToken",
-            "mangledName": "$s12AcuantCommon0A17ErrorDescriptionsC37ERROR_DESC_CouldNotGetIPLivenessTokenSSvpZ",
-            "moduleName": "AcuantCommon",
-            "static": true,
-            "declAttributes": [
-              "HasInitialValue",
-              "Final",
-              "HasStorage",
-              "AccessControl",
-              "ObjC"
-            ],
-            "isLet": true,
-            "hasStorage": true,
-            "accessors": [
-              {
-                "kind": "Accessor",
-                "name": "Get",
-                "printedName": "Get()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "String",
-                    "printedName": "Swift.String",
-                    "usr": "s:SS"
-                  }
-                ],
-                "declKind": "Accessor",
-                "usr": "c:@M@AcuantCommon@objc(cs)AcuantErrorDescriptions(cm)ERROR_DESC_CouldNotGetIPLivenessToken",
-                "mangledName": "$s12AcuantCommon0A17ErrorDescriptionsC37ERROR_DESC_CouldNotGetIPLivenessTokenSSvgZ",
-                "moduleName": "AcuantCommon",
-                "static": true,
-                "implicit": true,
-                "declAttributes": [
-                  "Final",
-                  "ObjC"
-                ],
-                "accessorKind": "get"
-              }
-            ]
-          },
-          {
-            "kind": "Var",
             "name": "ERROR_DESC_NotALiveFace",
             "printedName": "ERROR_DESC_NotALiveFace",
             "children": [
@@ -7073,123 +6923,6 @@
           },
           {
             "kind": "Var",
-            "name": "ipLivenessEndpoint",
-            "printedName": "ipLivenessEndpoint",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Optional",
-                "printedName": "Swift.String?",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "String",
-                    "printedName": "Swift.String",
-                    "usr": "s:SS"
-                  }
-                ],
-                "usr": "s:Sq"
-              }
-            ],
-            "declKind": "Var",
-            "usr": "c:@M@AcuantCommon@objc(cs)Endpoints(py)ipLivenessEndpoint",
-            "mangledName": "$s12AcuantCommon9EndpointsC18ipLivenessEndpointSSSgvp",
-            "moduleName": "AcuantCommon",
-            "declAttributes": [
-              "HasInitialValue",
-              "HasStorage",
-              "AccessControl",
-              "ObjC"
-            ],
-            "hasStorage": true,
-            "accessors": [
-              {
-                "kind": "Accessor",
-                "name": "Get",
-                "printedName": "Get()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Optional",
-                    "printedName": "Swift.String?",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "String",
-                        "printedName": "Swift.String",
-                        "usr": "s:SS"
-                      }
-                    ],
-                    "usr": "s:Sq"
-                  }
-                ],
-                "declKind": "Accessor",
-                "usr": "c:@M@AcuantCommon@objc(cs)Endpoints(im)ipLivenessEndpoint",
-                "mangledName": "$s12AcuantCommon9EndpointsC18ipLivenessEndpointSSSgvg",
-                "moduleName": "AcuantCommon",
-                "implicit": true,
-                "declAttributes": [
-                  "ObjC"
-                ],
-                "accessorKind": "get"
-              },
-              {
-                "kind": "Accessor",
-                "name": "Set",
-                "printedName": "Set()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Void",
-                    "printedName": "()"
-                  },
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Optional",
-                    "printedName": "Swift.String?",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "String",
-                        "printedName": "Swift.String",
-                        "usr": "s:SS"
-                      }
-                    ],
-                    "usr": "s:Sq"
-                  }
-                ],
-                "declKind": "Accessor",
-                "usr": "c:@M@AcuantCommon@objc(cs)Endpoints(im)setIpLivenessEndpoint:",
-                "mangledName": "$s12AcuantCommon9EndpointsC18ipLivenessEndpointSSSgvs",
-                "moduleName": "AcuantCommon",
-                "implicit": true,
-                "declAttributes": [
-                  "ObjC"
-                ],
-                "accessorKind": "set"
-              },
-              {
-                "kind": "Accessor",
-                "name": "Modify",
-                "printedName": "Modify()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Void",
-                    "printedName": "()"
-                  }
-                ],
-                "declKind": "Accessor",
-                "usr": "s:12AcuantCommon9EndpointsC18ipLivenessEndpointSSSgvM",
-                "mangledName": "$s12AcuantCommon9EndpointsC18ipLivenessEndpointSSSgvM",
-                "moduleName": "AcuantCommon",
-                "implicit": true,
-                "accessorKind": "_modify"
-              }
-            ]
-          },
-          {
-            "kind": "Var",
             "name": "healthInsuranceEndpoint",
             "printedName": "healthInsuranceEndpoint",
             "children": [
@@ -8147,6 +7880,13 @@
     {
       "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantCommon\/AcuantCommon\/Initializer\/Model\/SecureAuthorizations.swift",
       "kind": "BooleanLiteral",
+      "offset": 513,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantCommon\/AcuantCommon\/Initializer\/Model\/SecureAuthorizations.swift",
+      "kind": "BooleanLiteral",
       "offset": 549,
       "length": 5,
       "value": "false"
@@ -8154,49 +7894,35 @@
     {
       "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantCommon\/AcuantCommon\/Initializer\/Model\/SecureAuthorizations.swift",
       "kind": "BooleanLiteral",
-      "offset": 576,
+      "offset": 588,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantCommon\/AcuantCommon\/Initializer\/Model\/SecureAuthorizations.swift",
       "kind": "BooleanLiteral",
-      "offset": 606,
-      "length": 5,
-      "value": "false"
-    },
-    {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantCommon\/AcuantCommon\/Initializer\/Model\/SecureAuthorizations.swift",
-      "kind": "BooleanLiteral",
-      "offset": 632,
-      "length": 5,
-      "value": "false"
-    },
-    {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantCommon\/AcuantCommon\/Initializer\/Model\/SecureAuthorizations.swift",
-      "kind": "BooleanLiteral",
-      "offset": 997,
+      "offset": 916,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantCommon\/AcuantCommon\/Initializer\/Model\/SecureAuthorizations.swift",
       "kind": "Array",
-      "offset": 1088,
+      "offset": 1007,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantCommon\/AcuantCommon\/Initializer\/Model\/SecureAuthorizations.swift",
       "kind": "StringLiteral",
-      "offset": 1255,
+      "offset": 1174,
       "length": 3,
       "value": "\",\""
     },
     {
       "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantCommon\/AcuantCommon\/Initializer\/Model\/SecureAuthorizations.swift",
       "kind": "StringLiteral",
-      "offset": 1834,
+      "offset": 1678,
       "length": 3,
       "value": "\",\""
     },
@@ -8609,77 +8335,70 @@
     {
       "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantCommon\/AcuantCommon\/AcuantErrorCodes.swift",
       "kind": "IntegerLiteral",
-      "offset": 1525,
-      "length": 3,
-      "value": "-24"
-    },
-    {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantCommon\/AcuantCommon\/AcuantErrorCodes.swift",
-      "kind": "IntegerLiteral",
-      "offset": 1572,
+      "offset": 1511,
       "length": 3,
       "value": "-25"
     },
     {
       "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantCommon\/AcuantCommon\/AcuantErrorCodes.swift",
       "kind": "IntegerLiteral",
-      "offset": 1633,
+      "offset": 1572,
       "length": 3,
       "value": "-26"
     },
     {
       "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantCommon\/AcuantCommon\/AcuantErrorCodes.swift",
       "kind": "IntegerLiteral",
-      "offset": 1692,
+      "offset": 1631,
       "length": 3,
       "value": "-27"
     },
     {
       "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantCommon\/AcuantCommon\/AcuantErrorCodes.swift",
       "kind": "IntegerLiteral",
-      "offset": 1749,
+      "offset": 1688,
       "length": 3,
       "value": "-28"
     },
     {
       "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantCommon\/AcuantCommon\/AcuantErrorCodes.swift",
       "kind": "IntegerLiteral",
-      "offset": 1801,
+      "offset": 1740,
       "length": 3,
       "value": "-29"
     },
     {
       "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantCommon\/AcuantCommon\/AcuantErrorCodes.swift",
       "kind": "IntegerLiteral",
-      "offset": 1871,
+      "offset": 1810,
       "length": 3,
       "value": "-50"
     },
     {
       "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantCommon\/AcuantCommon\/AcuantErrorCodes.swift",
       "kind": "IntegerLiteral",
-      "offset": 1925,
+      "offset": 1864,
       "length": 3,
       "value": "-51"
     },
     {
       "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantCommon\/AcuantCommon\/AcuantErrorCodes.swift",
       "kind": "IntegerLiteral",
-      "offset": 1992,
+      "offset": 1931,
       "length": 3,
       "value": "-60"
     },
     {
       "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantCommon\/AcuantCommon\/AcuantErrorCodes.swift",
       "kind": "IntegerLiteral",
-      "offset": 2041,
+      "offset": 1980,
       "length": 3,
       "value": "-61"
     },
     {
       "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantCommon\/AcuantCommon\/AcuantErrorCodes.swift",
       "kind": "IntegerLiteral",
-      "offset": 2100,
+      "offset": 2039,
       "length": 3,
       "value": "-62"
     },
@@ -8700,287 +8419,280 @@
     {
       "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantCommon\/AcuantCommon\/Credential.swift",
       "kind": "StringLiteral",
-      "offset": 694,
+      "offset": 598,
       "length": 14,
       "value": "\"frm_endpoint\""
     },
     {
       "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantCommon\/AcuantCommon\/Credential.swift",
       "kind": "StringLiteral",
-      "offset": 776,
+      "offset": 680,
       "length": 19,
       "value": "\"assureid_endpoint\""
     },
     {
       "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantCommon\/AcuantCommon\/Credential.swift",
       "kind": "StringLiteral",
-      "offset": 876,
+      "offset": 780,
       "length": 14,
       "value": "\"med_endpoint\""
     },
     {
       "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantCommon\/AcuantCommon\/Credential.swift",
       "kind": "StringLiteral",
-      "offset": 971,
+      "offset": 875,
       "length": 27,
       "value": "\"passive_liveness_endpoint\""
     },
     {
       "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantCommon\/AcuantCommon\/Credential.swift",
       "kind": "StringLiteral",
-      "offset": 1074,
-      "length": 22,
-      "value": "\"ip_liveness_endpoint\""
-    },
-    {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantCommon\/AcuantCommon\/Credential.swift",
-      "kind": "StringLiteral",
-      "offset": 1191,
+      "offset": 972,
       "length": 15,
       "value": "\"acas_endpoint\""
     },
     {
       "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantCommon\/AcuantCommon\/Credential.swift",
       "kind": "StringLiteral",
-      "offset": 1222,
+      "offset": 1003,
       "length": 25,
       "value": "\"https:\/\/acas.acuant.net\""
     },
     {
       "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantCommon\/AcuantCommon\/Credential.swift",
       "kind": "StringLiteral",
-      "offset": 1323,
+      "offset": 1104,
       "length": 16,
       "value": "\"ozone_endpoint\""
     },
     {
       "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantCommon\/AcuantCommon\/Credential.swift",
       "kind": "StringLiteral",
-      "offset": 1355,
+      "offset": 1136,
       "length": 26,
       "value": "\"https:\/\/ozone.acuant.net\""
     },
     {
       "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantCommon\/AcuantCommon\/Credential.swift",
       "kind": "StringLiteral",
-      "offset": 1495,
+      "offset": 1276,
       "length": 17,
       "value": "\"acuant_username\""
     },
     {
       "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantCommon\/AcuantCommon\/Credential.swift",
       "kind": "StringLiteral",
-      "offset": 1584,
+      "offset": 1365,
       "length": 17,
       "value": "\"acuant_password\""
     },
     {
       "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantCommon\/AcuantCommon\/Credential.swift",
       "kind": "StringLiteral",
-      "offset": 1677,
+      "offset": 1458,
       "length": 21,
       "value": "\"acuant_subscription\""
     },
     {
       "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantCommon\/AcuantCommon\/Credential.swift",
       "kind": "BooleanLiteral",
-      "offset": 2923,
+      "offset": 2704,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantCommon\/AcuantCommon\/Credential.swift",
       "kind": "BooleanLiteral",
-      "offset": 2953,
+      "offset": 2734,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantCommon\/AcuantCommon\/Credential.swift",
       "kind": "BooleanLiteral",
-      "offset": 3211,
+      "offset": 2992,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantCommon\/AcuantCommon\/Credential.swift",
       "kind": "BooleanLiteral",
-      "offset": 3255,
+      "offset": 3036,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantCommon\/AcuantCommon\/Credential.swift",
       "kind": "StringLiteral",
-      "offset": 4067,
+      "offset": 3848,
       "length": 23,
       "value": "\"Bearer \""
     },
     {
       "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantCommon\/AcuantCommon\/Credential.swift",
       "kind": "StringLiteral",
-      "offset": 4089,
+      "offset": 3870,
       "length": 1,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantCommon\/AcuantCommon\/Credential.swift",
       "kind": "IntegerLiteral",
-      "offset": 4384,
+      "offset": 4165,
       "length": 2,
       "value": "37"
     },
     {
       "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantCommon\/AcuantCommon\/Credential.swift",
       "kind": "IntegerLiteral",
-      "offset": 4445,
+      "offset": 4226,
       "length": 2,
       "value": "36"
     },
     {
       "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantCommon\/AcuantCommon\/Credential.swift",
       "kind": "StringLiteral",
-      "offset": 4453,
+      "offset": 4234,
       "length": 3,
       "value": "\";\""
     },
     {
       "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantCommon\/AcuantCommon\/Credential.swift",
       "kind": "StringLiteral",
-      "offset": 4479,
+      "offset": 4260,
       "length": 25,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantCommon\/AcuantCommon\/Credential.swift",
       "kind": "StringLiteral",
-      "offset": 4491,
+      "offset": 4272,
       "length": 1,
       "value": "\":\""
     },
     {
       "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantCommon\/AcuantCommon\/Credential.swift",
       "kind": "StringLiteral",
-      "offset": 4503,
+      "offset": 4284,
       "length": 35,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantCommon\/AcuantCommon\/Credential.swift",
       "kind": "StringLiteral",
-      "offset": 4657,
+      "offset": 4438,
       "length": 41,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantCommon\/AcuantCommon\/Credential.swift",
       "kind": "StringLiteral",
-      "offset": 4673,
+      "offset": 4454,
       "length": 1,
       "value": "\";\""
     },
     {
       "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantCommon\/AcuantCommon\/Credential.swift",
       "kind": "StringLiteral",
-      "offset": 4685,
+      "offset": 4466,
       "length": 1,
       "value": "\":\""
     },
     {
       "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantCommon\/AcuantCommon\/Credential.swift",
       "kind": "StringLiteral",
-      "offset": 4697,
+      "offset": 4478,
       "length": 35,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantCommon\/AcuantCommon\/Credential.swift",
       "kind": "StringLiteral",
-      "offset": 4758,
+      "offset": 4539,
       "length": 47,
       "value": "\"Basic \""
     },
     {
       "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantCommon\/AcuantCommon\/Credential.swift",
       "kind": "StringLiteral",
-      "offset": 4801,
+      "offset": 4582,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantCommon\/AcuantCommon\/Credential.swift",
       "kind": "StringLiteral",
-      "offset": 4804,
+      "offset": 4585,
       "length": 1,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantCommon\/AcuantCommon\/Credential.swift",
       "kind": "Dictionary",
-      "offset": 5591,
+      "offset": 5372,
       "length": 3,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantCommon\/AcuantCommon\/Credential.swift",
       "kind": "StringLiteral",
-      "offset": 5677,
+      "offset": 5458,
       "length": 17,
       "value": "\"acuant_username\""
     },
     {
       "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantCommon\/AcuantCommon\/Credential.swift",
       "kind": "StringLiteral",
-      "offset": 5823,
+      "offset": 5604,
       "length": 17,
       "value": "\"acuant_password\""
     },
     {
       "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantCommon\/AcuantCommon\/Credential.swift",
       "kind": "StringLiteral",
-      "offset": 5973,
+      "offset": 5754,
       "length": 21,
       "value": "\"acuant_subscription\""
     },
     {
       "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantCommon\/AcuantCommon\/Credential.swift",
       "kind": "StringLiteral",
-      "offset": 6241,
+      "offset": 6022,
       "length": 19,
       "value": "\"assureid_endpoint\""
     },
     {
       "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantCommon\/AcuantCommon\/Credential.swift",
       "kind": "StringLiteral",
-      "offset": 6428,
+      "offset": 6209,
       "length": 14,
       "value": "\"med_endpoint\""
     },
     {
       "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantCommon\/AcuantCommon\/Credential.swift",
       "kind": "StringLiteral",
-      "offset": 6611,
+      "offset": 6392,
       "length": 14,
       "value": "\"frm_endpoint\""
     },
     {
       "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantCommon\/AcuantCommon\/Credential.swift",
       "kind": "StringLiteral",
-      "offset": 6738,
+      "offset": 6519,
       "length": 14,
       "value": "\"AcuantConfig\""
     },
     {
       "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantCommon\/AcuantCommon\/Credential.swift",
       "kind": "StringLiteral",
-      "offset": 6762,
+      "offset": 6543,
       "length": 7,
       "value": "\"plist\""
     },
     {
       "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantCommon\/AcuantCommon\/Credential.swift",
       "kind": "BooleanLiteral",
-      "offset": 6833,
+      "offset": 6614,
       "length": 4,
       "value": "true"
     },
@@ -9134,77 +8846,70 @@
     {
       "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantCommon\/AcuantCommon\/AcuantErrorDescriptions.swift",
       "kind": "StringLiteral",
-      "offset": 2034,
-      "length": 35,
-      "value": "\"Could not get face liveness token\""
-    },
-    {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantCommon\/AcuantCommon\/AcuantErrorDescriptions.swift",
-      "kind": "StringLiteral",
-      "offset": 2118,
+      "offset": 2020,
       "length": 17,
       "value": "\"Not a live face\""
     },
     {
       "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantCommon\/AcuantCommon\/AcuantErrorDescriptions.swift",
       "kind": "StringLiteral",
-      "offset": 2198,
+      "offset": 2100,
       "length": 32,
       "value": "\"Could not access liveness data\""
     },
     {
       "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantCommon\/AcuantCommon\/AcuantErrorDescriptions.swift",
       "kind": "StringLiteral",
-      "offset": 2297,
+      "offset": 2199,
       "length": 26,
       "value": "\"Could not get credential\""
     },
     {
       "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantCommon\/AcuantCommon\/AcuantErrorDescriptions.swift",
       "kind": "StringLiteral",
-      "offset": 2382,
+      "offset": 2284,
       "length": 24,
       "value": "\"User canceled activity\""
     },
     {
       "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantCommon\/AcuantCommon\/AcuantErrorDescriptions.swift",
       "kind": "StringLiteral",
-      "offset": 2461,
+      "offset": 2363,
       "length": 21,
       "value": "\"Invalid Parameters.\""
     },
     {
       "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantCommon\/AcuantCommon\/AcuantErrorDescriptions.swift",
       "kind": "StringLiteral",
-      "offset": 2537,
+      "offset": 2439,
       "length": 31,
       "value": "\"Ozone returned invalid format\""
     },
     {
       "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantCommon\/AcuantCommon\/AcuantErrorDescriptions.swift",
       "kind": "StringLiteral",
-      "offset": 2629,
+      "offset": 2531,
       "length": 38,
       "value": "\"Credentials not authorized for ozone\""
     },
     {
       "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantCommon\/AcuantCommon\/AcuantErrorDescriptions.swift",
       "kind": "StringLiteral",
-      "offset": 2719,
+      "offset": 2621,
       "length": 68,
       "value": "\"Error reading eChip. Connection lost to passport or incorrect key.\""
     },
     {
       "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantCommon\/AcuantCommon\/AcuantErrorDescriptions.swift",
       "kind": "StringLiteral",
-      "offset": 2838,
+      "offset": 2740,
       "length": 79,
       "value": "\"Tag Tech list was null. Most likely means unsupported passport\/not a passport\""
     },
     {
       "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantCommon\/AcuantCommon\/AcuantErrorDescriptions.swift",
       "kind": "StringLiteral",
-      "offset": 2978,
+      "offset": 2880,
       "length": 71,
       "value": "\"Decryption key formatted incorrectly. Check DOB, DOE, and doc number.\""
     },
@@ -9265,13 +8970,6 @@
       "value": "\"chipExtract\""
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantCommon\/AcuantCommon\/Initializer\/Constant\/AcasAttribute.swift",
-      "kind": "StringLiteral",
-      "offset": 380,
-      "length": 10,
-      "value": "\"liveness\""
-    },
-    {
       "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantCommon\/AcuantCommon\/Utils.swift",
       "kind": "FloatLiteral",
       "offset": 132,
@@ -9283,7 +8981,7 @@
       "kind": "StringLiteral",
       "offset": 185,
       "length": 8,
-      "value": "\"11.6.2\""
+      "value": "\"11.6.3\""
     }
   ]
 }

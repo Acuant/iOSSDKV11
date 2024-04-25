@@ -1,0 +1,4289 @@
+{
+  "ABIRoot": {
+    "kind": "Root",
+    "name": "TopLevel",
+    "printedName": "TopLevel",
+    "children": [
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "AcuantFaceCapture",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "UIKit",
+        "printedName": "UIKit",
+        "declKind": "Import",
+        "moduleName": "AcuantFaceCapture"
+      },
+      {
+        "kind": "Import",
+        "name": "AVFoundation",
+        "printedName": "AVFoundation",
+        "declKind": "Import",
+        "moduleName": "AcuantFaceCapture"
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "AcuantFaceCaptureSession",
+        "printedName": "AcuantFaceCaptureSession",
+        "children": [
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(captureDevice:callback:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "AcuantFaceCaptureSession",
+                "printedName": "AcuantFaceCapture.AcuantFaceCaptureSession",
+                "usr": "c:@M@AcuantFaceCapture@objc(cs)AcuantFaceCaptureSession"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "AVCaptureDevice",
+                "printedName": "AVFoundation.AVCaptureDevice",
+                "usr": "c:objc(cs)AVCaptureDevice"
+              },
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(AcuantFaceCapture.AcuantFaceDetails) -> ()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "AcuantFaceDetails",
+                    "printedName": "AcuantFaceCapture.AcuantFaceDetails",
+                    "usr": "c:@M@AcuantFaceCapture@objc(cs)AcuantFaceDetails"
+                  }
+                ]
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "c:@M@AcuantFaceCapture@objc(cs)AcuantFaceCaptureSession(im)initWithCaptureDevice:callback:",
+            "mangledName": "$s17AcuantFaceCapture0abC7SessionC13captureDevice8callbackACSo09AVCaptureF0C_yAA0aB7DetailsCctcfc",
+            "moduleName": "AcuantFaceCapture",
+            "declAttributes": [
+              "AccessControl",
+              "ObjC"
+            ],
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Function",
+            "name": "start",
+            "printedName": "start(completion:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "(() -> ())?",
+                "children": [
+                  {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "() -> ()",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Void",
+                        "printedName": "()"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Void",
+                        "printedName": "()"
+                      }
+                    ]
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@AcuantFaceCapture@objc(cs)AcuantFaceCaptureSession(im)startWithCompletion:",
+            "mangledName": "$s17AcuantFaceCapture0abC7SessionC5start10completionyyycSg_tF",
+            "moduleName": "AcuantFaceCapture",
+            "declAttributes": [
+              "AccessControl",
+              "ObjC"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "stop",
+            "printedName": "stop()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@AcuantFaceCapture@objc(cs)AcuantFaceCaptureSession(im)stop",
+            "mangledName": "$s17AcuantFaceCapture0abC7SessionC4stopyyF",
+            "moduleName": "AcuantFaceCapture",
+            "declAttributes": [
+              "AccessControl",
+              "ObjC"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "resume",
+            "printedName": "resume()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@AcuantFaceCapture@objc(cs)AcuantFaceCaptureSession(im)resume",
+            "mangledName": "$s17AcuantFaceCapture0abC7SessionC6resumeyyF",
+            "moduleName": "AcuantFaceCapture",
+            "declAttributes": [
+              "AccessControl",
+              "ObjC"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "AcuantFaceCaptureSession",
+                "printedName": "AcuantFaceCapture.AcuantFaceCaptureSession",
+                "usr": "c:@M@AcuantFaceCapture@objc(cs)AcuantFaceCaptureSession"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "c:@M@AcuantFaceCapture@objc(cs)AcuantFaceCaptureSession(im)init",
+            "mangledName": "$s17AcuantFaceCapture0abC7SessionCACycfc",
+            "moduleName": "AcuantFaceCapture",
+            "overriding": true,
+            "implicit": true,
+            "objc_name": "init",
+            "declAttributes": [
+              "Dynamic",
+              "ObjC",
+              "Override"
+            ],
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Function",
+            "name": "metadataOutput",
+            "printedName": "metadataOutput(_:didOutput:from:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "AVCaptureMetadataOutput",
+                "printedName": "AVFoundation.AVCaptureMetadataOutput",
+                "usr": "c:objc(cs)AVCaptureMetadataOutput"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Array",
+                "printedName": "[AVFoundation.AVMetadataObject]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "AVMetadataObject",
+                    "printedName": "AVFoundation.AVMetadataObject",
+                    "usr": "c:objc(cs)AVMetadataObject"
+                  }
+                ],
+                "usr": "s:Sa"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "AVCaptureConnection",
+                "printedName": "AVFoundation.AVCaptureConnection",
+                "usr": "c:objc(cs)AVCaptureConnection"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@CM@AcuantFaceCapture@objc(cs)AcuantFaceCaptureSession(im)captureOutput:didOutputMetadataObjects:fromConnection:",
+            "mangledName": "$s17AcuantFaceCapture0abC7SessionC14metadataOutput_03didF04fromySo017AVCaptureMetadataF0C_SaySo16AVMetadataObjectCGSo0I10ConnectionCtF",
+            "moduleName": "AcuantFaceCapture",
+            "objc_name": "captureOutput:didOutputMetadataObjects:fromConnection:",
+            "declAttributes": [
+              "Dynamic",
+              "ObjC",
+              "AccessControl"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "captureOutput",
+            "printedName": "captureOutput(_:didOutput:from:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "AVCaptureOutput",
+                "printedName": "AVFoundation.AVCaptureOutput",
+                "usr": "c:objc(cs)AVCaptureOutput"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "CMSampleBuffer",
+                "printedName": "CoreMedia.CMSampleBuffer",
+                "usr": "c:@T@CMSampleBufferRef"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "AVCaptureConnection",
+                "printedName": "AVFoundation.AVCaptureConnection",
+                "usr": "c:objc(cs)AVCaptureConnection"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@CM@AcuantFaceCapture@objc(cs)AcuantFaceCaptureSession(im)captureOutput:didOutputSampleBuffer:fromConnection:",
+            "mangledName": "$s17AcuantFaceCapture0abC7SessionC13captureOutput_03didF04fromySo09AVCaptureF0C_So17CMSampleBufferRefaSo0I10ConnectionCtF",
+            "moduleName": "AcuantFaceCapture",
+            "objc_name": "captureOutput:didOutputSampleBuffer:fromConnection:",
+            "declAttributes": [
+              "Dynamic",
+              "ObjC",
+              "AccessControl"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Class",
+        "usr": "c:@M@AcuantFaceCapture@objc(cs)AcuantFaceCaptureSession",
+        "mangledName": "$s17AcuantFaceCapture0abC7SessionC",
+        "moduleName": "AcuantFaceCapture",
+        "declAttributes": [
+          "AccessControl",
+          "ObjCMembers",
+          "ObjC"
+        ],
+        "superclassUsr": "c:objc(cs)AVCaptureSession",
+        "superclassNames": [
+          "AVFoundation.AVCaptureSession",
+          "ObjectiveC.NSObject"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Hashable",
+            "printedName": "Hashable",
+            "usr": "s:SH",
+            "mangledName": "$sSH"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CVarArg",
+            "printedName": "CVarArg",
+            "usr": "s:s7CVarArgP",
+            "mangledName": "$ss7CVarArgP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObservingPublishing",
+            "printedName": "_KeyValueCodingAndObservingPublishing",
+            "usr": "s:10Foundation37_KeyValueCodingAndObservingPublishingP",
+            "mangledName": "$s10Foundation37_KeyValueCodingAndObservingPublishingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObserving",
+            "printedName": "_KeyValueCodingAndObserving",
+            "usr": "s:10Foundation27_KeyValueCodingAndObservingP",
+            "mangledName": "$s10Foundation27_KeyValueCodingAndObservingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomStringConvertible",
+            "printedName": "CustomStringConvertible",
+            "usr": "s:s23CustomStringConvertibleP",
+            "mangledName": "$ss23CustomStringConvertibleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomDebugStringConvertible",
+            "printedName": "CustomDebugStringConvertible",
+            "usr": "s:s28CustomDebugStringConvertibleP",
+            "mangledName": "$ss28CustomDebugStringConvertibleP"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "AcuantFaceCapture",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "UIKit",
+        "printedName": "UIKit",
+        "declKind": "Import",
+        "moduleName": "AcuantFaceCapture"
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "FaceCameraOptions",
+        "printedName": "FaceCameraOptions",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "totalCaptureTime",
+            "printedName": "totalCaptureTime",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@AcuantFaceCapture@objc(cs)FaceCameraOptions(py)totalCaptureTime",
+            "mangledName": "$s17AcuantFaceCapture0B13CameraOptionsC05totalC4TimeSivp",
+            "moduleName": "AcuantFaceCapture",
+            "declAttributes": [
+              "Final",
+              "HasStorage",
+              "AccessControl",
+              "ObjC"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int",
+                    "printedName": "Swift.Int",
+                    "usr": "s:Si"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@AcuantFaceCapture@objc(cs)FaceCameraOptions(im)totalCaptureTime",
+                "mangledName": "$s17AcuantFaceCapture0B13CameraOptionsC05totalC4TimeSivg",
+                "moduleName": "AcuantFaceCapture",
+                "implicit": true,
+                "declAttributes": [
+                  "Final",
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "bracketColorDefault",
+            "printedName": "bracketColorDefault",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "CGColor",
+                "printedName": "CoreGraphics.CGColor",
+                "usr": "c:@T@CGColorRef"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@AcuantFaceCapture@objc(cs)FaceCameraOptions(py)bracketColorDefault",
+            "mangledName": "$s17AcuantFaceCapture0B13CameraOptionsC19bracketColorDefaultSo10CGColorRefavp",
+            "moduleName": "AcuantFaceCapture",
+            "declAttributes": [
+              "Final",
+              "HasStorage",
+              "AccessControl",
+              "ObjC"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "CGColor",
+                    "printedName": "CoreGraphics.CGColor",
+                    "usr": "c:@T@CGColorRef"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@AcuantFaceCapture@objc(cs)FaceCameraOptions(im)bracketColorDefault",
+                "mangledName": "$s17AcuantFaceCapture0B13CameraOptionsC19bracketColorDefaultSo10CGColorRefavg",
+                "moduleName": "AcuantFaceCapture",
+                "implicit": true,
+                "declAttributes": [
+                  "Final",
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "bracketColorError",
+            "printedName": "bracketColorError",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "CGColor",
+                "printedName": "CoreGraphics.CGColor",
+                "usr": "c:@T@CGColorRef"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@AcuantFaceCapture@objc(cs)FaceCameraOptions(py)bracketColorError",
+            "mangledName": "$s17AcuantFaceCapture0B13CameraOptionsC17bracketColorErrorSo10CGColorRefavp",
+            "moduleName": "AcuantFaceCapture",
+            "declAttributes": [
+              "Final",
+              "HasStorage",
+              "AccessControl",
+              "ObjC"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "CGColor",
+                    "printedName": "CoreGraphics.CGColor",
+                    "usr": "c:@T@CGColorRef"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@AcuantFaceCapture@objc(cs)FaceCameraOptions(im)bracketColorError",
+                "mangledName": "$s17AcuantFaceCapture0B13CameraOptionsC17bracketColorErrorSo10CGColorRefavg",
+                "moduleName": "AcuantFaceCapture",
+                "implicit": true,
+                "declAttributes": [
+                  "Final",
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "bracketColorGood",
+            "printedName": "bracketColorGood",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "CGColor",
+                "printedName": "CoreGraphics.CGColor",
+                "usr": "c:@T@CGColorRef"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@AcuantFaceCapture@objc(cs)FaceCameraOptions(py)bracketColorGood",
+            "mangledName": "$s17AcuantFaceCapture0B13CameraOptionsC16bracketColorGoodSo10CGColorRefavp",
+            "moduleName": "AcuantFaceCapture",
+            "declAttributes": [
+              "Final",
+              "HasStorage",
+              "AccessControl",
+              "ObjC"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "CGColor",
+                    "printedName": "CoreGraphics.CGColor",
+                    "usr": "c:@T@CGColorRef"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@AcuantFaceCapture@objc(cs)FaceCameraOptions(im)bracketColorGood",
+                "mangledName": "$s17AcuantFaceCapture0B13CameraOptionsC16bracketColorGoodSo10CGColorRefavg",
+                "moduleName": "AcuantFaceCapture",
+                "implicit": true,
+                "declAttributes": [
+                  "Final",
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "fontColorDefault",
+            "printedName": "fontColorDefault",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "CGColor",
+                "printedName": "CoreGraphics.CGColor",
+                "usr": "c:@T@CGColorRef"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@AcuantFaceCapture@objc(cs)FaceCameraOptions(py)fontColorDefault",
+            "mangledName": "$s17AcuantFaceCapture0B13CameraOptionsC16fontColorDefaultSo10CGColorRefavp",
+            "moduleName": "AcuantFaceCapture",
+            "declAttributes": [
+              "Final",
+              "HasStorage",
+              "AccessControl",
+              "ObjC"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "CGColor",
+                    "printedName": "CoreGraphics.CGColor",
+                    "usr": "c:@T@CGColorRef"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@AcuantFaceCapture@objc(cs)FaceCameraOptions(im)fontColorDefault",
+                "mangledName": "$s17AcuantFaceCapture0B13CameraOptionsC16fontColorDefaultSo10CGColorRefavg",
+                "moduleName": "AcuantFaceCapture",
+                "implicit": true,
+                "declAttributes": [
+                  "Final",
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "fontColorError",
+            "printedName": "fontColorError",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "CGColor",
+                "printedName": "CoreGraphics.CGColor",
+                "usr": "c:@T@CGColorRef"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@AcuantFaceCapture@objc(cs)FaceCameraOptions(py)fontColorError",
+            "mangledName": "$s17AcuantFaceCapture0B13CameraOptionsC14fontColorErrorSo10CGColorRefavp",
+            "moduleName": "AcuantFaceCapture",
+            "declAttributes": [
+              "Final",
+              "HasStorage",
+              "AccessControl",
+              "ObjC"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "CGColor",
+                    "printedName": "CoreGraphics.CGColor",
+                    "usr": "c:@T@CGColorRef"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@AcuantFaceCapture@objc(cs)FaceCameraOptions(im)fontColorError",
+                "mangledName": "$s17AcuantFaceCapture0B13CameraOptionsC14fontColorErrorSo10CGColorRefavg",
+                "moduleName": "AcuantFaceCapture",
+                "implicit": true,
+                "declAttributes": [
+                  "Final",
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "fontColorGood",
+            "printedName": "fontColorGood",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "CGColor",
+                "printedName": "CoreGraphics.CGColor",
+                "usr": "c:@T@CGColorRef"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@AcuantFaceCapture@objc(cs)FaceCameraOptions(py)fontColorGood",
+            "mangledName": "$s17AcuantFaceCapture0B13CameraOptionsC13fontColorGoodSo10CGColorRefavp",
+            "moduleName": "AcuantFaceCapture",
+            "declAttributes": [
+              "Final",
+              "HasStorage",
+              "AccessControl",
+              "ObjC"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "CGColor",
+                    "printedName": "CoreGraphics.CGColor",
+                    "usr": "c:@T@CGColorRef"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@AcuantFaceCapture@objc(cs)FaceCameraOptions(im)fontColorGood",
+                "mangledName": "$s17AcuantFaceCapture0B13CameraOptionsC13fontColorGoodSo10CGColorRefavg",
+                "moduleName": "AcuantFaceCapture",
+                "implicit": true,
+                "declAttributes": [
+                  "Final",
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "defaultImageUrl",
+            "printedName": "defaultImageUrl",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@AcuantFaceCapture@objc(cs)FaceCameraOptions(py)defaultImageUrl",
+            "mangledName": "$s17AcuantFaceCapture0B13CameraOptionsC15defaultImageUrlSSvp",
+            "moduleName": "AcuantFaceCapture",
+            "declAttributes": [
+              "Final",
+              "HasStorage",
+              "AccessControl",
+              "ObjC"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@AcuantFaceCapture@objc(cs)FaceCameraOptions(im)defaultImageUrl",
+                "mangledName": "$s17AcuantFaceCapture0B13CameraOptionsC15defaultImageUrlSSvg",
+                "moduleName": "AcuantFaceCapture",
+                "implicit": true,
+                "declAttributes": [
+                  "Final",
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "showOval",
+            "printedName": "showOval",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@AcuantFaceCapture@objc(cs)FaceCameraOptions(py)showOval",
+            "mangledName": "$s17AcuantFaceCapture0B13CameraOptionsC8showOvalSbvp",
+            "moduleName": "AcuantFaceCapture",
+            "declAttributes": [
+              "Final",
+              "HasStorage",
+              "AccessControl",
+              "ObjC"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@AcuantFaceCapture@objc(cs)FaceCameraOptions(im)showOval",
+                "mangledName": "$s17AcuantFaceCapture0B13CameraOptionsC8showOvalSbvg",
+                "moduleName": "AcuantFaceCapture",
+                "implicit": true,
+                "declAttributes": [
+                  "Final",
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(totalCaptureTime:bracketColorDefault:bracketColorError:bracketColorGood:fontColorDefault:fontColorError:fontColorGood:defaultImageUrl:showOval:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "FaceCameraOptions",
+                "printedName": "AcuantFaceCapture.FaceCameraOptions",
+                "usr": "c:@M@AcuantFaceCapture@objc(cs)FaceCameraOptions"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "hasDefaultArg": true,
+                "usr": "s:Si"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "CGColor",
+                "printedName": "CoreGraphics.CGColor",
+                "hasDefaultArg": true,
+                "usr": "c:@T@CGColorRef"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "CGColor",
+                "printedName": "CoreGraphics.CGColor",
+                "hasDefaultArg": true,
+                "usr": "c:@T@CGColorRef"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "CGColor",
+                "printedName": "CoreGraphics.CGColor",
+                "hasDefaultArg": true,
+                "usr": "c:@T@CGColorRef"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "CGColor",
+                "printedName": "CoreGraphics.CGColor",
+                "hasDefaultArg": true,
+                "usr": "c:@T@CGColorRef"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "CGColor",
+                "printedName": "CoreGraphics.CGColor",
+                "hasDefaultArg": true,
+                "usr": "c:@T@CGColorRef"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "CGColor",
+                "printedName": "CoreGraphics.CGColor",
+                "hasDefaultArg": true,
+                "usr": "c:@T@CGColorRef"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "hasDefaultArg": true,
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "hasDefaultArg": true,
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "c:@M@AcuantFaceCapture@objc(cs)FaceCameraOptions(im)initWithTotalCaptureTime:bracketColorDefault:bracketColorError:bracketColorGood:fontColorDefault:fontColorError:fontColorGood:defaultImageUrl:showOval:",
+            "mangledName": "$s17AcuantFaceCapture0B13CameraOptionsC05totalC4Time19bracketColorDefault0hI5Error0hI4Good04fontiJ00miK00miL015defaultImageUrl8showOvalACSi_So10CGColorRefaA5NSSSbtcfc",
+            "moduleName": "AcuantFaceCapture",
+            "declAttributes": [
+              "AccessControl",
+              "ObjC"
+            ],
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "FaceCameraOptions",
+                "printedName": "AcuantFaceCapture.FaceCameraOptions",
+                "usr": "c:@M@AcuantFaceCapture@objc(cs)FaceCameraOptions"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "c:@M@AcuantFaceCapture@objc(cs)FaceCameraOptions(im)init",
+            "mangledName": "$s17AcuantFaceCapture0B13CameraOptionsCACycfc",
+            "moduleName": "AcuantFaceCapture",
+            "overriding": true,
+            "implicit": true,
+            "objc_name": "init",
+            "declAttributes": [
+              "Dynamic",
+              "ObjC",
+              "Override"
+            ],
+            "init_kind": "Designated"
+          }
+        ],
+        "declKind": "Class",
+        "usr": "c:@M@AcuantFaceCapture@objc(cs)FaceCameraOptions",
+        "mangledName": "$s17AcuantFaceCapture0B13CameraOptionsC",
+        "moduleName": "AcuantFaceCapture",
+        "declAttributes": [
+          "AccessControl",
+          "ObjCMembers",
+          "ObjC"
+        ],
+        "superclassUsr": "c:objc(cs)NSObject",
+        "superclassNames": [
+          "ObjectiveC.NSObject"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Hashable",
+            "printedName": "Hashable",
+            "usr": "s:SH",
+            "mangledName": "$sSH"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CVarArg",
+            "printedName": "CVarArg",
+            "usr": "s:s7CVarArgP",
+            "mangledName": "$ss7CVarArgP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObservingPublishing",
+            "printedName": "_KeyValueCodingAndObservingPublishing",
+            "usr": "s:10Foundation37_KeyValueCodingAndObservingPublishingP",
+            "mangledName": "$s10Foundation37_KeyValueCodingAndObservingPublishingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObserving",
+            "printedName": "_KeyValueCodingAndObserving",
+            "usr": "s:10Foundation27_KeyValueCodingAndObservingP",
+            "mangledName": "$s10Foundation27_KeyValueCodingAndObservingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomStringConvertible",
+            "printedName": "CustomStringConvertible",
+            "usr": "s:s23CustomStringConvertibleP",
+            "mangledName": "$ss23CustomStringConvertibleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomDebugStringConvertible",
+            "printedName": "CustomDebugStringConvertible",
+            "usr": "s:s28CustomDebugStringConvertibleP",
+            "mangledName": "$ss28CustomDebugStringConvertibleP"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "UIKit",
+        "printedName": "UIKit",
+        "declKind": "Import",
+        "moduleName": "AcuantFaceCapture",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "AVFoundation",
+        "printedName": "AVFoundation",
+        "declKind": "Import",
+        "moduleName": "AcuantFaceCapture"
+      },
+      {
+        "kind": "Import",
+        "name": "UIKit",
+        "printedName": "UIKit",
+        "declKind": "Import",
+        "moduleName": "AcuantFaceCapture",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "AcuantFaceCapture",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "UIKit",
+        "printedName": "UIKit",
+        "declKind": "Import",
+        "moduleName": "AcuantFaceCapture"
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "AcuantFaceDetails",
+        "printedName": "AcuantFaceDetails",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "image",
+            "printedName": "image",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "UIKit.UIImage?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "UIImage",
+                    "printedName": "UIKit.UIImage",
+                    "usr": "c:objc(cs)UIImage"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@AcuantFaceCapture@objc(cs)AcuantFaceDetails(py)image",
+            "mangledName": "$s17AcuantFaceCapture0aB7DetailsC5imageSo7UIImageCSgvp",
+            "moduleName": "AcuantFaceCapture",
+            "declAttributes": [
+              "Final",
+              "HasStorage",
+              "AccessControl",
+              "ObjC"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "UIKit.UIImage?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "UIImage",
+                        "printedName": "UIKit.UIImage",
+                        "usr": "c:objc(cs)UIImage"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@AcuantFaceCapture@objc(cs)AcuantFaceDetails(im)image",
+                "mangledName": "$s17AcuantFaceCapture0aB7DetailsC5imageSo7UIImageCSgvg",
+                "moduleName": "AcuantFaceCapture",
+                "implicit": true,
+                "declAttributes": [
+                  "Final",
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "state",
+            "printedName": "state",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "AcuantFaceState",
+                "printedName": "AcuantFaceCapture.AcuantFaceState",
+                "usr": "c:@M@AcuantFaceCapture@E@AcuantFaceState"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@AcuantFaceCapture@objc(cs)AcuantFaceDetails(py)state",
+            "mangledName": "$s17AcuantFaceCapture0aB7DetailsC5stateAA0aB5StateOvp",
+            "moduleName": "AcuantFaceCapture",
+            "declAttributes": [
+              "Final",
+              "HasStorage",
+              "AccessControl",
+              "ObjC"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "AcuantFaceState",
+                    "printedName": "AcuantFaceCapture.AcuantFaceState",
+                    "usr": "c:@M@AcuantFaceCapture@E@AcuantFaceState"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@AcuantFaceCapture@objc(cs)AcuantFaceDetails(im)state",
+                "mangledName": "$s17AcuantFaceCapture0aB7DetailsC5stateAA0aB5StateOvg",
+                "moduleName": "AcuantFaceCapture",
+                "implicit": true,
+                "declAttributes": [
+                  "Final",
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "faceRect",
+            "printedName": "faceRect",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "CoreFoundation.CGRect?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "CGRect",
+                    "printedName": "CoreFoundation.CGRect",
+                    "usr": "c:@S@CGRect"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:17AcuantFaceCapture0aB7DetailsC8faceRectSo6CGRectVSgvp",
+            "mangledName": "$s17AcuantFaceCapture0aB7DetailsC8faceRectSo6CGRectVSgvp",
+            "moduleName": "AcuantFaceCapture",
+            "declAttributes": [
+              "Final",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "CoreFoundation.CGRect?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "CGRect",
+                        "printedName": "CoreFoundation.CGRect",
+                        "usr": "c:@S@CGRect"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:17AcuantFaceCapture0aB7DetailsC8faceRectSo6CGRectVSgvg",
+                "mangledName": "$s17AcuantFaceCapture0aB7DetailsC8faceRectSo6CGRectVSgvg",
+                "moduleName": "AcuantFaceCapture",
+                "implicit": true,
+                "declAttributes": [
+                  "Final"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "cleanAperture",
+            "printedName": "cleanAperture",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "CoreFoundation.CGRect?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "CGRect",
+                    "printedName": "CoreFoundation.CGRect",
+                    "usr": "c:@S@CGRect"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:17AcuantFaceCapture0aB7DetailsC13cleanApertureSo6CGRectVSgvp",
+            "mangledName": "$s17AcuantFaceCapture0aB7DetailsC13cleanApertureSo6CGRectVSgvp",
+            "moduleName": "AcuantFaceCapture",
+            "declAttributes": [
+              "Final",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "CoreFoundation.CGRect?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "CGRect",
+                        "printedName": "CoreFoundation.CGRect",
+                        "usr": "c:@S@CGRect"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:17AcuantFaceCapture0aB7DetailsC13cleanApertureSo6CGRectVSgvg",
+                "mangledName": "$s17AcuantFaceCapture0aB7DetailsC13cleanApertureSo6CGRectVSgvg",
+                "moduleName": "AcuantFaceCapture",
+                "implicit": true,
+                "declAttributes": [
+                  "Final"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(state:image:cleanAperture:faceRect:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "AcuantFaceDetails",
+                "printedName": "AcuantFaceCapture.AcuantFaceDetails",
+                "usr": "c:@M@AcuantFaceCapture@objc(cs)AcuantFaceDetails"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "AcuantFaceState",
+                "printedName": "AcuantFaceCapture.AcuantFaceState",
+                "usr": "c:@M@AcuantFaceCapture@E@AcuantFaceState"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "UIKit.UIImage?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "UIImage",
+                    "printedName": "UIKit.UIImage",
+                    "usr": "c:objc(cs)UIImage"
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "CoreFoundation.CGRect?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "CGRect",
+                    "printedName": "CoreFoundation.CGRect",
+                    "usr": "c:@S@CGRect"
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "CoreFoundation.CGRect?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "CGRect",
+                    "printedName": "CoreFoundation.CGRect",
+                    "usr": "c:@S@CGRect"
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:17AcuantFaceCapture0aB7DetailsC5state5image13cleanAperture8faceRectAcA0aB5StateO_So7UIImageCSgSo6CGRectVSgAOtcfc",
+            "mangledName": "$s17AcuantFaceCapture0aB7DetailsC5state5image13cleanAperture8faceRectAcA0aB5StateO_So7UIImageCSgSo6CGRectVSgAOtcfc",
+            "moduleName": "AcuantFaceCapture",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "AcuantFaceDetails",
+                "printedName": "AcuantFaceCapture.AcuantFaceDetails",
+                "usr": "c:@M@AcuantFaceCapture@objc(cs)AcuantFaceDetails"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "c:@M@AcuantFaceCapture@objc(cs)AcuantFaceDetails(im)init",
+            "mangledName": "$s17AcuantFaceCapture0aB7DetailsCACycfc",
+            "moduleName": "AcuantFaceCapture",
+            "overriding": true,
+            "implicit": true,
+            "objc_name": "init",
+            "declAttributes": [
+              "Dynamic",
+              "ObjC",
+              "Override"
+            ],
+            "init_kind": "Designated"
+          }
+        ],
+        "declKind": "Class",
+        "usr": "c:@M@AcuantFaceCapture@objc(cs)AcuantFaceDetails",
+        "mangledName": "$s17AcuantFaceCapture0aB7DetailsC",
+        "moduleName": "AcuantFaceCapture",
+        "declAttributes": [
+          "AccessControl",
+          "ObjCMembers",
+          "ObjC"
+        ],
+        "superclassUsr": "c:objc(cs)NSObject",
+        "superclassNames": [
+          "ObjectiveC.NSObject"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Hashable",
+            "printedName": "Hashable",
+            "usr": "s:SH",
+            "mangledName": "$sSH"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CVarArg",
+            "printedName": "CVarArg",
+            "usr": "s:s7CVarArgP",
+            "mangledName": "$ss7CVarArgP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObservingPublishing",
+            "printedName": "_KeyValueCodingAndObservingPublishing",
+            "usr": "s:10Foundation37_KeyValueCodingAndObservingPublishingP",
+            "mangledName": "$s10Foundation37_KeyValueCodingAndObservingPublishingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObserving",
+            "printedName": "_KeyValueCodingAndObserving",
+            "usr": "s:10Foundation27_KeyValueCodingAndObservingP",
+            "mangledName": "$s10Foundation27_KeyValueCodingAndObservingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomStringConvertible",
+            "printedName": "CustomStringConvertible",
+            "usr": "s:s23CustomStringConvertibleP",
+            "mangledName": "$ss23CustomStringConvertibleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomDebugStringConvertible",
+            "printedName": "CustomDebugStringConvertible",
+            "usr": "s:s28CustomDebugStringConvertibleP",
+            "mangledName": "$ss28CustomDebugStringConvertibleP"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "AcuantFaceCapture",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "AcuantFaceState",
+        "printedName": "AcuantFaceState",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "NONE",
+            "printedName": "NONE",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(AcuantFaceCapture.AcuantFaceState.Type) -> AcuantFaceCapture.AcuantFaceState",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "AcuantFaceState",
+                    "printedName": "AcuantFaceCapture.AcuantFaceState",
+                    "usr": "c:@M@AcuantFaceCapture@E@AcuantFaceState"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "AcuantFaceCapture.AcuantFaceState.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "AcuantFaceState",
+                        "printedName": "AcuantFaceCapture.AcuantFaceState",
+                        "usr": "c:@M@AcuantFaceCapture@E@AcuantFaceState"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "c:@M@AcuantFaceCapture@E@AcuantFaceState@AcuantFaceStateNONE",
+            "mangledName": "$s17AcuantFaceCapture0aB5StateO4NONEyA2CmF",
+            "moduleName": "AcuantFaceCapture",
+            "declAttributes": [
+              "ObjC"
+            ],
+            "fixedbinaryorder": 0
+          },
+          {
+            "kind": "Var",
+            "name": "FACE_TOO_CLOSE",
+            "printedName": "FACE_TOO_CLOSE",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(AcuantFaceCapture.AcuantFaceState.Type) -> AcuantFaceCapture.AcuantFaceState",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "AcuantFaceState",
+                    "printedName": "AcuantFaceCapture.AcuantFaceState",
+                    "usr": "c:@M@AcuantFaceCapture@E@AcuantFaceState"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "AcuantFaceCapture.AcuantFaceState.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "AcuantFaceState",
+                        "printedName": "AcuantFaceCapture.AcuantFaceState",
+                        "usr": "c:@M@AcuantFaceCapture@E@AcuantFaceState"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "c:@M@AcuantFaceCapture@E@AcuantFaceState@AcuantFaceStateFACE_TOO_CLOSE",
+            "mangledName": "$s17AcuantFaceCapture0aB5StateO14FACE_TOO_CLOSEyA2CmF",
+            "moduleName": "AcuantFaceCapture",
+            "declAttributes": [
+              "ObjC"
+            ],
+            "fixedbinaryorder": 1
+          },
+          {
+            "kind": "Var",
+            "name": "FACE_MOVED",
+            "printedName": "FACE_MOVED",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(AcuantFaceCapture.AcuantFaceState.Type) -> AcuantFaceCapture.AcuantFaceState",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "AcuantFaceState",
+                    "printedName": "AcuantFaceCapture.AcuantFaceState",
+                    "usr": "c:@M@AcuantFaceCapture@E@AcuantFaceState"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "AcuantFaceCapture.AcuantFaceState.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "AcuantFaceState",
+                        "printedName": "AcuantFaceCapture.AcuantFaceState",
+                        "usr": "c:@M@AcuantFaceCapture@E@AcuantFaceState"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "c:@M@AcuantFaceCapture@E@AcuantFaceState@AcuantFaceStateFACE_MOVED",
+            "mangledName": "$s17AcuantFaceCapture0aB5StateO10FACE_MOVEDyA2CmF",
+            "moduleName": "AcuantFaceCapture",
+            "declAttributes": [
+              "ObjC"
+            ],
+            "fixedbinaryorder": 2
+          },
+          {
+            "kind": "Var",
+            "name": "FACE_TOO_FAR",
+            "printedName": "FACE_TOO_FAR",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(AcuantFaceCapture.AcuantFaceState.Type) -> AcuantFaceCapture.AcuantFaceState",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "AcuantFaceState",
+                    "printedName": "AcuantFaceCapture.AcuantFaceState",
+                    "usr": "c:@M@AcuantFaceCapture@E@AcuantFaceState"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "AcuantFaceCapture.AcuantFaceState.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "AcuantFaceState",
+                        "printedName": "AcuantFaceCapture.AcuantFaceState",
+                        "usr": "c:@M@AcuantFaceCapture@E@AcuantFaceState"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "c:@M@AcuantFaceCapture@E@AcuantFaceState@AcuantFaceStateFACE_TOO_FAR",
+            "mangledName": "$s17AcuantFaceCapture0aB5StateO12FACE_TOO_FARyA2CmF",
+            "moduleName": "AcuantFaceCapture",
+            "declAttributes": [
+              "ObjC"
+            ],
+            "fixedbinaryorder": 3
+          },
+          {
+            "kind": "Var",
+            "name": "FACE_GOOD_DISTANCE",
+            "printedName": "FACE_GOOD_DISTANCE",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(AcuantFaceCapture.AcuantFaceState.Type) -> AcuantFaceCapture.AcuantFaceState",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "AcuantFaceState",
+                    "printedName": "AcuantFaceCapture.AcuantFaceState",
+                    "usr": "c:@M@AcuantFaceCapture@E@AcuantFaceState"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "AcuantFaceCapture.AcuantFaceState.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "AcuantFaceState",
+                        "printedName": "AcuantFaceCapture.AcuantFaceState",
+                        "usr": "c:@M@AcuantFaceCapture@E@AcuantFaceState"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "c:@M@AcuantFaceCapture@E@AcuantFaceState@AcuantFaceStateFACE_GOOD_DISTANCE",
+            "mangledName": "$s17AcuantFaceCapture0aB5StateO18FACE_GOOD_DISTANCEyA2CmF",
+            "moduleName": "AcuantFaceCapture",
+            "declAttributes": [
+              "ObjC"
+            ],
+            "fixedbinaryorder": 4
+          },
+          {
+            "kind": "Var",
+            "name": "FACE_NOT_IN_FRAME",
+            "printedName": "FACE_NOT_IN_FRAME",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(AcuantFaceCapture.AcuantFaceState.Type) -> AcuantFaceCapture.AcuantFaceState",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "AcuantFaceState",
+                    "printedName": "AcuantFaceCapture.AcuantFaceState",
+                    "usr": "c:@M@AcuantFaceCapture@E@AcuantFaceState"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "AcuantFaceCapture.AcuantFaceState.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "AcuantFaceState",
+                        "printedName": "AcuantFaceCapture.AcuantFaceState",
+                        "usr": "c:@M@AcuantFaceCapture@E@AcuantFaceState"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "c:@M@AcuantFaceCapture@E@AcuantFaceState@AcuantFaceStateFACE_NOT_IN_FRAME",
+            "mangledName": "$s17AcuantFaceCapture0aB5StateO17FACE_NOT_IN_FRAMEyA2CmF",
+            "moduleName": "AcuantFaceCapture",
+            "declAttributes": [
+              "ObjC"
+            ],
+            "fixedbinaryorder": 5
+          },
+          {
+            "kind": "Var",
+            "name": "FACE_HAS_ANGLE",
+            "printedName": "FACE_HAS_ANGLE",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(AcuantFaceCapture.AcuantFaceState.Type) -> AcuantFaceCapture.AcuantFaceState",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "AcuantFaceState",
+                    "printedName": "AcuantFaceCapture.AcuantFaceState",
+                    "usr": "c:@M@AcuantFaceCapture@E@AcuantFaceState"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "AcuantFaceCapture.AcuantFaceState.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "AcuantFaceState",
+                        "printedName": "AcuantFaceCapture.AcuantFaceState",
+                        "usr": "c:@M@AcuantFaceCapture@E@AcuantFaceState"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "c:@M@AcuantFaceCapture@E@AcuantFaceState@AcuantFaceStateFACE_HAS_ANGLE",
+            "mangledName": "$s17AcuantFaceCapture0aB5StateO14FACE_HAS_ANGLEyA2CmF",
+            "moduleName": "AcuantFaceCapture",
+            "declAttributes": [
+              "ObjC"
+            ],
+            "fixedbinaryorder": 6
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(rawValue:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "AcuantFaceCapture.AcuantFaceState?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "AcuantFaceState",
+                    "printedName": "AcuantFaceCapture.AcuantFaceState",
+                    "usr": "c:@M@AcuantFaceCapture@E@AcuantFaceState"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:17AcuantFaceCapture0aB5StateO8rawValueACSgSi_tcfc",
+            "mangledName": "$s17AcuantFaceCapture0aB5StateO8rawValueACSgSi_tcfc",
+            "moduleName": "AcuantFaceCapture",
+            "implicit": true,
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Var",
+            "name": "rawValue",
+            "printedName": "rawValue",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:17AcuantFaceCapture0aB5StateO8rawValueSivp",
+            "mangledName": "$s17AcuantFaceCapture0aB5StateO8rawValueSivp",
+            "moduleName": "AcuantFaceCapture",
+            "implicit": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int",
+                    "printedName": "Swift.Int",
+                    "usr": "s:Si"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:17AcuantFaceCapture0aB5StateO8rawValueSivg",
+                "mangledName": "$s17AcuantFaceCapture0aB5StateO8rawValueSivg",
+                "moduleName": "AcuantFaceCapture",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          }
+        ],
+        "declKind": "Enum",
+        "usr": "c:@M@AcuantFaceCapture@E@AcuantFaceState",
+        "mangledName": "$s17AcuantFaceCapture0aB5StateO",
+        "moduleName": "AcuantFaceCapture",
+        "declAttributes": [
+          "AccessControl",
+          "ObjC"
+        ],
+        "enumRawTypeName": "Int",
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Hashable",
+            "printedName": "Hashable",
+            "usr": "s:SH",
+            "mangledName": "$sSH"
+          },
+          {
+            "kind": "Conformance",
+            "name": "RawRepresentable",
+            "printedName": "RawRepresentable",
+            "children": [
+              {
+                "kind": "TypeWitness",
+                "name": "RawValue",
+                "printedName": "RawValue",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int",
+                    "printedName": "Swift.Int",
+                    "usr": "s:Si"
+                  }
+                ]
+              }
+            ],
+            "usr": "s:SY",
+            "mangledName": "$sSY"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "AcuantFaceCapture",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "AcuantFaceCapture",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "UIKit",
+        "printedName": "UIKit",
+        "declKind": "Import",
+        "moduleName": "AcuantFaceCapture"
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "AcuantFaceCapture",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "UIKit",
+        "printedName": "UIKit",
+        "declKind": "Import",
+        "moduleName": "AcuantFaceCapture"
+      },
+      {
+        "kind": "Import",
+        "name": "AVFoundation",
+        "printedName": "AVFoundation",
+        "declKind": "Import",
+        "moduleName": "AcuantFaceCapture"
+      },
+      {
+        "kind": "Import",
+        "name": "AcuantImagePreparation",
+        "printedName": "AcuantImagePreparation",
+        "declKind": "Import",
+        "moduleName": "AcuantFaceCapture"
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "FaceCaptureController",
+        "printedName": "FaceCaptureController",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "callback",
+            "printedName": "callback",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "((AcuantFaceCapture.FaceCaptureResult?) -> ())?",
+                "children": [
+                  {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "(AcuantFaceCapture.FaceCaptureResult?) -> ()",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Void",
+                        "printedName": "()"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Optional",
+                        "printedName": "AcuantFaceCapture.FaceCaptureResult?",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "FaceCaptureResult",
+                            "printedName": "AcuantFaceCapture.FaceCaptureResult",
+                            "usr": "c:@M@AcuantFaceCapture@objc(cs)FaceCaptureResult"
+                          }
+                        ],
+                        "usr": "s:Sq"
+                      }
+                    ]
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:17AcuantFaceCapture0bC10ControllerC8callbackyAA0bC6ResultCSgcSgvp",
+            "mangledName": "$s17AcuantFaceCapture0bC10ControllerC8callbackyAA0bC6ResultCSgcSgvp",
+            "moduleName": "AcuantFaceCapture",
+            "declAttributes": [
+              "Custom",
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "((AcuantFaceCapture.FaceCaptureResult?) -> ())?",
+                    "children": [
+                      {
+                        "kind": "TypeFunc",
+                        "name": "Function",
+                        "printedName": "(AcuantFaceCapture.FaceCaptureResult?) -> ()",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Void",
+                            "printedName": "()"
+                          },
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Optional",
+                            "printedName": "AcuantFaceCapture.FaceCaptureResult?",
+                            "children": [
+                              {
+                                "kind": "TypeNominal",
+                                "name": "FaceCaptureResult",
+                                "printedName": "AcuantFaceCapture.FaceCaptureResult",
+                                "usr": "c:@M@AcuantFaceCapture@objc(cs)FaceCaptureResult"
+                              }
+                            ],
+                            "usr": "s:Sq"
+                          }
+                        ]
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:17AcuantFaceCapture0bC10ControllerC8callbackyAA0bC6ResultCSgcSgvg",
+                "mangledName": "$s17AcuantFaceCapture0bC10ControllerC8callbackyAA0bC6ResultCSgcSgvg",
+                "moduleName": "AcuantFaceCapture",
+                "implicit": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "((AcuantFaceCapture.FaceCaptureResult?) -> ())?",
+                    "children": [
+                      {
+                        "kind": "TypeFunc",
+                        "name": "Function",
+                        "printedName": "(AcuantFaceCapture.FaceCaptureResult?) -> ()",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Void",
+                            "printedName": "()"
+                          },
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Optional",
+                            "printedName": "AcuantFaceCapture.FaceCaptureResult?",
+                            "children": [
+                              {
+                                "kind": "TypeNominal",
+                                "name": "FaceCaptureResult",
+                                "printedName": "AcuantFaceCapture.FaceCaptureResult",
+                                "usr": "c:@M@AcuantFaceCapture@objc(cs)FaceCaptureResult"
+                              }
+                            ],
+                            "usr": "s:Sq"
+                          }
+                        ]
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:17AcuantFaceCapture0bC10ControllerC8callbackyAA0bC6ResultCSgcSgvs",
+                "mangledName": "$s17AcuantFaceCapture0bC10ControllerC8callbackyAA0bC6ResultCSgcSgvs",
+                "moduleName": "AcuantFaceCapture",
+                "implicit": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:17AcuantFaceCapture0bC10ControllerC8callbackyAA0bC6ResultCSgcSgvM",
+                "mangledName": "$s17AcuantFaceCapture0bC10ControllerC8callbackyAA0bC6ResultCSgcSgvM",
+                "moduleName": "AcuantFaceCapture",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "options",
+            "printedName": "options",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "AcuantFaceCapture.FaceCameraOptions?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "FaceCameraOptions",
+                    "printedName": "AcuantFaceCapture.FaceCameraOptions",
+                    "usr": "c:@M@AcuantFaceCapture@objc(cs)FaceCameraOptions"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:17AcuantFaceCapture0bC10ControllerC7optionsAA0B13CameraOptionsCSgvp",
+            "mangledName": "$s17AcuantFaceCapture0bC10ControllerC7optionsAA0B13CameraOptionsCSgvp",
+            "moduleName": "AcuantFaceCapture",
+            "declAttributes": [
+              "Custom",
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "AcuantFaceCapture.FaceCameraOptions?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "FaceCameraOptions",
+                        "printedName": "AcuantFaceCapture.FaceCameraOptions",
+                        "usr": "c:@M@AcuantFaceCapture@objc(cs)FaceCameraOptions"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:17AcuantFaceCapture0bC10ControllerC7optionsAA0B13CameraOptionsCSgvg",
+                "mangledName": "$s17AcuantFaceCapture0bC10ControllerC7optionsAA0B13CameraOptionsCSgvg",
+                "moduleName": "AcuantFaceCapture",
+                "implicit": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "AcuantFaceCapture.FaceCameraOptions?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "FaceCameraOptions",
+                        "printedName": "AcuantFaceCapture.FaceCameraOptions",
+                        "usr": "c:@M@AcuantFaceCapture@objc(cs)FaceCameraOptions"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:17AcuantFaceCapture0bC10ControllerC7optionsAA0B13CameraOptionsCSgvs",
+                "mangledName": "$s17AcuantFaceCapture0bC10ControllerC7optionsAA0B13CameraOptionsCSgvs",
+                "moduleName": "AcuantFaceCapture",
+                "implicit": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:17AcuantFaceCapture0bC10ControllerC7optionsAA0B13CameraOptionsCSgvM",
+                "mangledName": "$s17AcuantFaceCapture0bC10ControllerC7optionsAA0B13CameraOptionsCSgvM",
+                "moduleName": "AcuantFaceCapture",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Function",
+            "name": "viewDidLoad",
+            "printedName": "viewDidLoad()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@AcuantFaceCapture@objc(cs)FaceCaptureController(im)viewDidLoad",
+            "mangledName": "$s17AcuantFaceCapture0bC10ControllerC11viewDidLoadyyF",
+            "moduleName": "AcuantFaceCapture",
+            "overriding": true,
+            "objc_name": "viewDidLoad",
+            "declAttributes": [
+              "Dynamic",
+              "ObjC",
+              "Custom",
+              "AccessControl",
+              "Override"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "viewWillAppear",
+            "printedName": "viewWillAppear(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@AcuantFaceCapture@objc(cs)FaceCaptureController(im)viewWillAppear:",
+            "mangledName": "$s17AcuantFaceCapture0bC10ControllerC14viewWillAppearyySbF",
+            "moduleName": "AcuantFaceCapture",
+            "overriding": true,
+            "objc_name": "viewWillAppear:",
+            "declAttributes": [
+              "Dynamic",
+              "ObjC",
+              "Custom",
+              "AccessControl",
+              "Override"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "viewDidAppear",
+            "printedName": "viewDidAppear(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@AcuantFaceCapture@objc(cs)FaceCaptureController(im)viewDidAppear:",
+            "mangledName": "$s17AcuantFaceCapture0bC10ControllerC13viewDidAppearyySbF",
+            "moduleName": "AcuantFaceCapture",
+            "overriding": true,
+            "objc_name": "viewDidAppear:",
+            "declAttributes": [
+              "Dynamic",
+              "ObjC",
+              "Custom",
+              "AccessControl",
+              "Override"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Var",
+            "name": "prefersStatusBarHidden",
+            "printedName": "prefersStatusBarHidden",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@AcuantFaceCapture@objc(cs)FaceCaptureController(py)prefersStatusBarHidden",
+            "mangledName": "$s17AcuantFaceCapture0bC10ControllerC22prefersStatusBarHiddenSbvp",
+            "moduleName": "AcuantFaceCapture",
+            "overriding": true,
+            "objc_name": "prefersStatusBarHidden",
+            "declAttributes": [
+              "Dynamic",
+              "ObjC",
+              "Custom",
+              "AccessControl",
+              "Override"
+            ],
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@AcuantFaceCapture@objc(cs)FaceCaptureController(im)prefersStatusBarHidden",
+                "mangledName": "$s17AcuantFaceCapture0bC10ControllerC22prefersStatusBarHiddenSbvg",
+                "moduleName": "AcuantFaceCapture",
+                "overriding": true,
+                "objc_name": "prefersStatusBarHidden",
+                "declAttributes": [
+                  "Dynamic",
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Function",
+            "name": "viewWillDisappear",
+            "printedName": "viewWillDisappear(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@AcuantFaceCapture@objc(cs)FaceCaptureController(im)viewWillDisappear:",
+            "mangledName": "$s17AcuantFaceCapture0bC10ControllerC17viewWillDisappearyySbF",
+            "moduleName": "AcuantFaceCapture",
+            "overriding": true,
+            "objc_name": "viewWillDisappear:",
+            "declAttributes": [
+              "Dynamic",
+              "ObjC",
+              "Custom",
+              "AccessControl",
+              "Override"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "viewWillTransition",
+            "printedName": "viewWillTransition(to:with:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "CGSize",
+                "printedName": "CoreFoundation.CGSize",
+                "usr": "c:@S@CGSize"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "UIViewControllerTransitionCoordinator",
+                "printedName": "UIKit.UIViewControllerTransitionCoordinator",
+                "usr": "c:objc(pl)UIViewControllerTransitionCoordinator"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@AcuantFaceCapture@objc(cs)FaceCaptureController(im)viewWillTransitionToSize:withTransitionCoordinator:",
+            "mangledName": "$s17AcuantFaceCapture0bC10ControllerC18viewWillTransition2to4withySo6CGSizeV_So06UIViewdG11Coordinator_ptF",
+            "moduleName": "AcuantFaceCapture",
+            "overriding": true,
+            "objc_name": "viewWillTransitionToSize:withTransitionCoordinator:",
+            "declAttributes": [
+              "Dynamic",
+              "ObjC",
+              "Custom",
+              "Override",
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "viewDidLayoutSubviews",
+            "printedName": "viewDidLayoutSubviews()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@AcuantFaceCapture@objc(cs)FaceCaptureController(im)viewDidLayoutSubviews",
+            "mangledName": "$s17AcuantFaceCapture0bC10ControllerC21viewDidLayoutSubviewsyyF",
+            "moduleName": "AcuantFaceCapture",
+            "overriding": true,
+            "objc_name": "viewDidLayoutSubviews",
+            "declAttributes": [
+              "Dynamic",
+              "ObjC",
+              "Custom",
+              "Override",
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "setLookFromState",
+            "printedName": "setLookFromState(state:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "AcuantFaceState",
+                "printedName": "AcuantFaceCapture.AcuantFaceState",
+                "usr": "c:@M@AcuantFaceCapture@E@AcuantFaceState"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:17AcuantFaceCapture0bC10ControllerC16setLookFromState5stateyAA0abH0O_tF",
+            "mangledName": "$s17AcuantFaceCapture0bC10ControllerC16setLookFromState5stateyAA0abH0O_tF",
+            "moduleName": "AcuantFaceCapture",
+            "declAttributes": [
+              "Custom",
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(nibName:bundle:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "FaceCaptureController",
+                "printedName": "AcuantFaceCapture.FaceCaptureController",
+                "usr": "c:@M@AcuantFaceCapture@objc(cs)FaceCaptureController"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Foundation.Bundle?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bundle",
+                    "printedName": "Foundation.Bundle",
+                    "usr": "c:objc(cs)NSBundle"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "c:@M@AcuantFaceCapture@objc(cs)FaceCaptureController(im)initWithNibName:bundle:",
+            "mangledName": "$s17AcuantFaceCapture0bC10ControllerC7nibName6bundleACSSSg_So8NSBundleCSgtcfc",
+            "moduleName": "AcuantFaceCapture",
+            "overriding": true,
+            "implicit": true,
+            "objc_name": "initWithNibName:bundle:",
+            "declAttributes": [
+              "Dynamic",
+              "ObjC",
+              "Custom",
+              "Override"
+            ],
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(coder:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "AcuantFaceCapture.FaceCaptureController?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "FaceCaptureController",
+                    "printedName": "AcuantFaceCapture.FaceCaptureController",
+                    "usr": "c:@M@AcuantFaceCapture@objc(cs)FaceCaptureController"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "NSCoder",
+                "printedName": "Foundation.NSCoder",
+                "usr": "c:objc(cs)NSCoder"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "c:@M@AcuantFaceCapture@objc(cs)FaceCaptureController(im)initWithCoder:",
+            "mangledName": "$s17AcuantFaceCapture0bC10ControllerC5coderACSgSo7NSCoderC_tcfc",
+            "moduleName": "AcuantFaceCapture",
+            "overriding": true,
+            "implicit": true,
+            "objc_name": "initWithCoder:",
+            "declAttributes": [
+              "Dynamic",
+              "ObjC",
+              "Custom",
+              "Required"
+            ],
+            "init_kind": "Designated"
+          }
+        ],
+        "declKind": "Class",
+        "usr": "c:@M@AcuantFaceCapture@objc(cs)FaceCaptureController",
+        "mangledName": "$s17AcuantFaceCapture0bC10ControllerC",
+        "moduleName": "AcuantFaceCapture",
+        "declAttributes": [
+          "Custom",
+          "AccessControl",
+          "ObjC"
+        ],
+        "superclassUsr": "c:objc(cs)UIViewController",
+        "inheritsConvenienceInitializers": true,
+        "superclassNames": [
+          "UIKit.UIViewController",
+          "UIKit.UIResponder",
+          "ObjectiveC.NSObject"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Hashable",
+            "printedName": "Hashable",
+            "usr": "s:SH",
+            "mangledName": "$sSH"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CVarArg",
+            "printedName": "CVarArg",
+            "usr": "s:s7CVarArgP",
+            "mangledName": "$ss7CVarArgP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObservingPublishing",
+            "printedName": "_KeyValueCodingAndObservingPublishing",
+            "usr": "s:10Foundation37_KeyValueCodingAndObservingPublishingP",
+            "mangledName": "$s10Foundation37_KeyValueCodingAndObservingPublishingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObserving",
+            "printedName": "_KeyValueCodingAndObserving",
+            "usr": "s:10Foundation27_KeyValueCodingAndObservingP",
+            "mangledName": "$s10Foundation27_KeyValueCodingAndObservingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomStringConvertible",
+            "printedName": "CustomStringConvertible",
+            "usr": "s:s23CustomStringConvertibleP",
+            "mangledName": "$ss23CustomStringConvertibleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomDebugStringConvertible",
+            "printedName": "CustomDebugStringConvertible",
+            "usr": "s:s28CustomDebugStringConvertibleP",
+            "mangledName": "$ss28CustomDebugStringConvertibleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Sendable",
+            "printedName": "Sendable",
+            "usr": "s:s8SendableP",
+            "mangledName": "$ss8SendableP"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "UIKit",
+        "printedName": "UIKit",
+        "declKind": "Import",
+        "moduleName": "AcuantFaceCapture",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "FaceCaptureResult",
+        "printedName": "FaceCaptureResult",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "image",
+            "printedName": "image",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "UIImage",
+                "printedName": "UIKit.UIImage",
+                "usr": "c:objc(cs)UIImage"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@AcuantFaceCapture@objc(cs)FaceCaptureResult(py)image",
+            "mangledName": "$s17AcuantFaceCapture0bC6ResultC5imageSo7UIImageCvp",
+            "moduleName": "AcuantFaceCapture",
+            "declAttributes": [
+              "Final",
+              "HasStorage",
+              "AccessControl",
+              "ObjC"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "UIImage",
+                    "printedName": "UIKit.UIImage",
+                    "usr": "c:objc(cs)UIImage"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@AcuantFaceCapture@objc(cs)FaceCaptureResult(im)image",
+                "mangledName": "$s17AcuantFaceCapture0bC6ResultC5imageSo7UIImageCvg",
+                "moduleName": "AcuantFaceCapture",
+                "implicit": true,
+                "declAttributes": [
+                  "Final",
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "jpegData",
+            "printedName": "jpegData",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Data",
+                "printedName": "Foundation.Data",
+                "usr": "s:10Foundation4DataV"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@AcuantFaceCapture@objc(cs)FaceCaptureResult(py)jpegData",
+            "mangledName": "$s17AcuantFaceCapture0bC6ResultC8jpegData10Foundation0F0Vvp",
+            "moduleName": "AcuantFaceCapture",
+            "declAttributes": [
+              "Final",
+              "HasStorage",
+              "AccessControl",
+              "ObjC"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Data",
+                    "printedName": "Foundation.Data",
+                    "usr": "s:10Foundation4DataV"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@AcuantFaceCapture@objc(cs)FaceCaptureResult(im)jpegData",
+                "mangledName": "$s17AcuantFaceCapture0bC6ResultC8jpegData10Foundation0F0Vvg",
+                "moduleName": "AcuantFaceCapture",
+                "implicit": true,
+                "declAttributes": [
+                  "Final",
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "FaceCaptureResult",
+                "printedName": "AcuantFaceCapture.FaceCaptureResult",
+                "usr": "c:@M@AcuantFaceCapture@objc(cs)FaceCaptureResult"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "c:@M@AcuantFaceCapture@objc(cs)FaceCaptureResult(im)init",
+            "mangledName": "$s17AcuantFaceCapture0bC6ResultCACycfc",
+            "moduleName": "AcuantFaceCapture",
+            "overriding": true,
+            "implicit": true,
+            "objc_name": "init",
+            "declAttributes": [
+              "Dynamic",
+              "ObjC",
+              "Override"
+            ],
+            "init_kind": "Designated"
+          }
+        ],
+        "declKind": "Class",
+        "usr": "c:@M@AcuantFaceCapture@objc(cs)FaceCaptureResult",
+        "mangledName": "$s17AcuantFaceCapture0bC6ResultC",
+        "moduleName": "AcuantFaceCapture",
+        "declAttributes": [
+          "AccessControl",
+          "ObjCMembers",
+          "ObjC"
+        ],
+        "superclassUsr": "c:objc(cs)NSObject",
+        "hasMissingDesignatedInitializers": true,
+        "superclassNames": [
+          "ObjectiveC.NSObject"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Hashable",
+            "printedName": "Hashable",
+            "usr": "s:SH",
+            "mangledName": "$sSH"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CVarArg",
+            "printedName": "CVarArg",
+            "usr": "s:s7CVarArgP",
+            "mangledName": "$ss7CVarArgP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObservingPublishing",
+            "printedName": "_KeyValueCodingAndObservingPublishing",
+            "usr": "s:10Foundation37_KeyValueCodingAndObservingPublishingP",
+            "mangledName": "$s10Foundation37_KeyValueCodingAndObservingPublishingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObserving",
+            "printedName": "_KeyValueCodingAndObserving",
+            "usr": "s:10Foundation27_KeyValueCodingAndObservingP",
+            "mangledName": "$s10Foundation27_KeyValueCodingAndObservingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomStringConvertible",
+            "printedName": "CustomStringConvertible",
+            "usr": "s:s23CustomStringConvertibleP",
+            "mangledName": "$ss23CustomStringConvertibleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomDebugStringConvertible",
+            "printedName": "CustomDebugStringConvertible",
+            "usr": "s:s28CustomDebugStringConvertibleP",
+            "mangledName": "$ss28CustomDebugStringConvertibleP"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "UIKit",
+        "printedName": "UIKit",
+        "declKind": "Import",
+        "moduleName": "AcuantFaceCapture",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "AcuantFaceCapture",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "UIKit",
+        "printedName": "UIKit",
+        "declKind": "Import",
+        "moduleName": "AcuantFaceCapture"
+      },
+      {
+        "kind": "Import",
+        "name": "UIKit",
+        "printedName": "UIKit",
+        "declKind": "Import",
+        "moduleName": "AcuantFaceCapture",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      }
+    ],
+    "json_format_version": 8
+  },
+  "ConstValues": [
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantFaceCapture\/AcuantFaceCapture\/AcuantFaceCaptureSession.swift",
+      "kind": "BooleanLiteral",
+      "offset": 561,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantFaceCapture\/AcuantFaceCapture\/AcuantFaceCaptureSession.swift",
+      "kind": "IntegerLiteral",
+      "offset": 616,
+      "length": 2,
+      "value": "15"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantFaceCapture\/AcuantFaceCapture\/AcuantFaceCaptureSession.swift",
+      "kind": "IntegerLiteral",
+      "offset": 671,
+      "length": 1,
+      "value": "8"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantFaceCapture\/AcuantFaceCapture\/AcuantFaceCaptureSession.swift",
+      "kind": "IntegerLiteral",
+      "offset": 708,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantFaceCapture\/AcuantFaceCapture\/AcuantFaceCaptureSession.swift",
+      "kind": "StringLiteral",
+      "offset": 804,
+      "length": 33,
+      "value": "\"com.acuant.face-capture-session\""
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantFaceCapture\/AcuantFaceCapture\/AcuantFaceCaptureSession.swift",
+      "kind": "BooleanLiteral",
+      "offset": 1124,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantFaceCapture\/AcuantFaceCapture\/AcuantFaceCaptureSession.swift",
+      "kind": "StringLiteral",
+      "offset": 2371,
+      "length": 30,
+      "value": "\"com.acuant.face-video-output\""
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantFaceCapture\/AcuantFaceCapture\/AcuantFaceCaptureSession.swift",
+      "kind": "StringLiteral",
+      "offset": 2719,
+      "length": 33,
+      "value": "\"com.acuant.face-metadata-output\""
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantFaceCapture\/AcuantFaceCapture\/AcuantFaceCaptureSession.swift",
+      "kind": "BooleanLiteral",
+      "offset": 3525,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantFaceCapture\/AcuantFaceCapture\/AcuantFaceCaptureSession.swift",
+      "kind": "IntegerLiteral",
+      "offset": 3684,
+      "length": 1,
+      "value": "2"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantFaceCapture\/AcuantFaceCapture\/AcuantFaceCaptureSession.swift",
+      "kind": "IntegerLiteral",
+      "offset": 3705,
+      "length": 1,
+      "value": "2"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantFaceCapture\/AcuantFaceCapture\/AcuantFaceCaptureSession.swift",
+      "kind": "IntegerLiteral",
+      "offset": 3845,
+      "length": 1,
+      "value": "2"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantFaceCapture\/AcuantFaceCapture\/AcuantFaceCaptureSession.swift",
+      "kind": "IntegerLiteral",
+      "offset": 3870,
+      "length": 1,
+      "value": "2"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantFaceCapture\/AcuantFaceCapture\/AcuantFaceCaptureSession.swift",
+      "kind": "FloatLiteral",
+      "offset": 4539,
+      "length": 5,
+      "value": "0.235"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantFaceCapture\/AcuantFaceCapture\/AcuantFaceCaptureSession.swift",
+      "kind": "FloatLiteral",
+      "offset": 4611,
+      "length": 5,
+      "value": "0.385"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantFaceCapture\/AcuantFaceCapture\/AcuantFaceCaptureSession.swift",
+      "kind": "IntegerLiteral",
+      "offset": 4672,
+      "length": 1,
+      "value": "1"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantFaceCapture\/AcuantFaceCapture\/AcuantFaceCaptureSession.swift",
+      "kind": "FloatLiteral",
+      "offset": 4807,
+      "length": 3,
+      "value": "0.5"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantFaceCapture\/AcuantFaceCapture\/AcuantFaceCaptureSession.swift",
+      "kind": "FloatLiteral",
+      "offset": 4868,
+      "length": 4,
+      "value": "0.55"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantFaceCapture\/AcuantFaceCapture\/AcuantFaceCaptureSession.swift",
+      "kind": "IntegerLiteral",
+      "offset": 5814,
+      "length": 2,
+      "value": "10"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantFaceCapture\/AcuantFaceCapture\/AcuantFaceCaptureSession.swift",
+      "kind": "IntegerLiteral",
+      "offset": 5839,
+      "length": 3,
+      "value": "340"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantFaceCapture\/AcuantFaceCapture\/AcuantFaceCaptureSession.swift",
+      "kind": "IntegerLiteral",
+      "offset": 5979,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantFaceCapture\/AcuantFaceCapture\/AcuantFaceCaptureSession.swift",
+      "kind": "IntegerLiteral",
+      "offset": 6093,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantFaceCapture\/AcuantFaceCapture\/AcuantFaceCaptureSession.swift",
+      "kind": "BooleanLiteral",
+      "offset": 6263,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantFaceCapture\/AcuantFaceCapture\/AcuantFaceCaptureSession.swift",
+      "kind": "IntegerLiteral",
+      "offset": 6957,
+      "length": 1,
+      "value": "8"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantFaceCapture\/AcuantFaceCapture\/AcuantFaceCaptureSession.swift",
+      "kind": "IntegerLiteral",
+      "offset": 7007,
+      "length": 1,
+      "value": "3"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantFaceCapture\/AcuantFaceCapture\/AcuantFaceCaptureSession.swift",
+      "kind": "IntegerLiteral",
+      "offset": 7058,
+      "length": 1,
+      "value": "1"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantFaceCapture\/AcuantFaceCapture\/AcuantFaceCaptureSession.swift",
+      "kind": "IntegerLiteral",
+      "offset": 7096,
+      "length": 1,
+      "value": "6"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantFaceCapture\/AcuantFaceCapture\/AcuantFaceCaptureSession.swift",
+      "kind": "StringLiteral",
+      "offset": 239,
+      "length": 24,
+      "value": "\"AcuantFaceCapture.AcuantFaceCaptureSession\""
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantFaceCapture\/AcuantFaceCapture\/AcuantFaceCaptureSession.swift",
+      "kind": "BooleanLiteral",
+      "offset": 8426,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantFaceCapture\/AcuantFaceCapture\/AcuantFaceCaptureSession.swift",
+      "kind": "BooleanLiteral",
+      "offset": 9125,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantFaceCapture\/AcuantFaceCapture\/AcuantFaceCaptureSession.swift",
+      "kind": "BooleanLiteral",
+      "offset": 9490,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantFaceCapture\/AcuantFaceCapture\/AcuantFaceCaptureSession.swift",
+      "kind": "BooleanLiteral",
+      "offset": 9670,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantFaceCapture\/AcuantFaceCapture\/AcuantFaceCaptureSession.swift",
+      "kind": "BooleanLiteral",
+      "offset": 9794,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantFaceCapture\/AcuantFaceCapture\/AcuantFaceCaptureSession.swift",
+      "kind": "IntegerLiteral",
+      "offset": 9953,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantFaceCapture\/AcuantFaceCapture\/AcuantFaceCaptureSession.swift",
+      "kind": "BooleanLiteral",
+      "offset": 9991,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantFaceCapture\/AcuantFaceCapture\/AcuantFaceCaptureSession.swift",
+      "kind": "IntegerLiteral",
+      "offset": 10887,
+      "length": 1,
+      "value": "2"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantFaceCapture\/AcuantFaceCapture\/AcuantFaceCaptureSession.swift",
+      "kind": "BooleanLiteral",
+      "offset": 11133,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantFaceCapture\/AcuantFaceCapture\/Models\/FaceCameraOptions.swift",
+      "kind": "IntegerLiteral",
+      "offset": 646,
+      "length": 1,
+      "value": "2"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantFaceCapture\/AcuantFaceCapture\/Models\/FaceCameraOptions.swift",
+      "kind": "StringLiteral",
+      "offset": 1088,
+      "length": 31,
+      "value": "\"acuant_default_face_image.png\""
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantFaceCapture\/AcuantFaceCapture\/Models\/FaceCameraOptions.swift",
+      "kind": "BooleanLiteral",
+      "offset": 1154,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantFaceCapture\/AcuantFaceCapture\/Models\/FaceCameraOptions.swift",
+      "kind": "StringLiteral",
+      "offset": 215,
+      "length": 17,
+      "value": "\"AcuantFaceCapture.FaceCameraOptions\""
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantFaceCapture\/AcuantFaceCapture\/View\/AlertView.swift",
+      "kind": "IntegerLiteral",
+      "offset": 572,
+      "length": 2,
+      "value": "18"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantFaceCapture\/AcuantFaceCapture\/View\/AlertView.swift",
+      "kind": "BooleanLiteral",
+      "offset": 638,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantFaceCapture\/AcuantFaceCapture\/View\/AlertView.swift",
+      "kind": "IntegerLiteral",
+      "offset": 786,
+      "length": 3,
+      "value": "300"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantFaceCapture\/AcuantFaceCapture\/View\/AlertView.swift",
+      "kind": "IntegerLiteral",
+      "offset": 855,
+      "length": 2,
+      "value": "50"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantFaceCapture\/AcuantFaceCapture\/View\/AlertView.swift",
+      "kind": "FloatLiteral",
+      "offset": 1063,
+      "length": 3,
+      "value": "0.8"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantFaceCapture\/AcuantFaceCapture\/View\/AlertView.swift",
+      "kind": "BooleanLiteral",
+      "offset": 1102,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantFaceCapture\/AcuantFaceCapture\/View\/AlertView.swift",
+      "kind": "StringLiteral",
+      "offset": 166,
+      "length": 9,
+      "value": "\"AcuantFaceCapture.AlertView\""
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantFaceCapture\/AcuantFaceCapture\/Models\/AcuantFaceDetails.swift",
+      "kind": "StringLiteral",
+      "offset": 212,
+      "length": 17,
+      "value": "\"AcuantFaceCapture.AcuantFaceDetails\""
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantFaceCapture\/AcuantFaceCapture\/Models\/AcuantFaceState.swift",
+      "kind": "IntegerLiteral",
+      "offset": 234,
+      "length": 14,
+      "value": "1"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantFaceCapture\/AcuantFaceCapture\/Models\/AcuantFaceState.swift",
+      "kind": "IntegerLiteral",
+      "offset": 258,
+      "length": 10,
+      "value": "2"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantFaceCapture\/AcuantFaceCapture\/Models\/AcuantFaceState.swift",
+      "kind": "IntegerLiteral",
+      "offset": 278,
+      "length": 12,
+      "value": "3"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantFaceCapture\/AcuantFaceCapture\/Models\/AcuantFaceState.swift",
+      "kind": "IntegerLiteral",
+      "offset": 300,
+      "length": 18,
+      "value": "4"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantFaceCapture\/AcuantFaceCapture\/Models\/AcuantFaceState.swift",
+      "kind": "IntegerLiteral",
+      "offset": 328,
+      "length": 17,
+      "value": "5"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantFaceCapture\/AcuantFaceCapture\/Models\/AcuantFaceState.swift",
+      "kind": "IntegerLiteral",
+      "offset": 355,
+      "length": 14,
+      "value": "6"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantFaceCapture\/AcuantFaceCapture\/Models\/AcuantFaceState.swift",
+      "kind": "IntegerLiteral",
+      "offset": 234,
+      "length": 14,
+      "value": "1"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantFaceCapture\/AcuantFaceCapture\/Models\/AcuantFaceState.swift",
+      "kind": "IntegerLiteral",
+      "offset": 258,
+      "length": 10,
+      "value": "2"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantFaceCapture\/AcuantFaceCapture\/Models\/AcuantFaceState.swift",
+      "kind": "IntegerLiteral",
+      "offset": 278,
+      "length": 12,
+      "value": "3"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantFaceCapture\/AcuantFaceCapture\/Models\/AcuantFaceState.swift",
+      "kind": "IntegerLiteral",
+      "offset": 300,
+      "length": 18,
+      "value": "4"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantFaceCapture\/AcuantFaceCapture\/Models\/AcuantFaceState.swift",
+      "kind": "IntegerLiteral",
+      "offset": 328,
+      "length": 17,
+      "value": "5"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantFaceCapture\/AcuantFaceCapture\/Models\/AcuantFaceState.swift",
+      "kind": "IntegerLiteral",
+      "offset": 355,
+      "length": 14,
+      "value": "6"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantFaceCapture\/AcuantFaceCapture\/View\/FaceCameraCornerView.swift",
+      "kind": "BooleanLiteral",
+      "offset": 459,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantFaceCapture\/AcuantFaceCapture\/View\/FaceCameraCornerView.swift",
+      "kind": "BooleanLiteral",
+      "offset": 491,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantFaceCapture\/AcuantFaceCapture\/View\/FaceCameraCornerView.swift",
+      "kind": "IntegerLiteral",
+      "offset": 613,
+      "length": 8,
+      "value": "1"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantFaceCapture\/AcuantFaceCapture\/View\/FaceCameraCornerView.swift",
+      "kind": "IntegerLiteral",
+      "offset": 635,
+      "length": 11,
+      "value": "2"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantFaceCapture\/AcuantFaceCapture\/View\/FaceCameraCornerView.swift",
+      "kind": "IntegerLiteral",
+      "offset": 660,
+      "length": 10,
+      "value": "3"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantFaceCapture\/AcuantFaceCapture\/View\/FaceCameraCornerView.swift",
+      "kind": "IntegerLiteral",
+      "offset": 613,
+      "length": 8,
+      "value": "1"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantFaceCapture\/AcuantFaceCapture\/View\/FaceCameraCornerView.swift",
+      "kind": "IntegerLiteral",
+      "offset": 635,
+      "length": 11,
+      "value": "2"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantFaceCapture\/AcuantFaceCapture\/View\/FaceCameraCornerView.swift",
+      "kind": "IntegerLiteral",
+      "offset": 660,
+      "length": 10,
+      "value": "3"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantFaceCapture\/AcuantFaceCapture\/View\/FaceCameraCornerView.swift",
+      "kind": "IntegerLiteral",
+      "offset": 613,
+      "length": 8,
+      "value": "1"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantFaceCapture\/AcuantFaceCapture\/View\/FaceCameraCornerView.swift",
+      "kind": "IntegerLiteral",
+      "offset": 635,
+      "length": 11,
+      "value": "2"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantFaceCapture\/AcuantFaceCapture\/View\/FaceCameraCornerView.swift",
+      "kind": "IntegerLiteral",
+      "offset": 660,
+      "length": 10,
+      "value": "3"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantFaceCapture\/AcuantFaceCapture\/View\/FaceCameraCornerView.swift",
+      "kind": "IntegerLiteral",
+      "offset": 886,
+      "length": 1,
+      "value": "2"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantFaceCapture\/AcuantFaceCapture\/View\/FaceCameraCornerView.swift",
+      "kind": "BooleanLiteral",
+      "offset": 1164,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantFaceCapture\/AcuantFaceCapture\/View\/FaceCameraCornerView.swift",
+      "kind": "BooleanLiteral",
+      "offset": 1443,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantFaceCapture\/AcuantFaceCapture\/View\/FaceCameraCornerView.swift",
+      "kind": "BooleanLiteral",
+      "offset": 1474,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantFaceCapture\/AcuantFaceCapture\/View\/FaceCameraCornerView.swift",
+      "kind": "StringLiteral",
+      "offset": 1564,
+      "length": 9,
+      "value": "\"opacity\""
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantFaceCapture\/AcuantFaceCapture\/View\/FaceCameraCornerView.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1646,
+      "length": 1,
+      "value": "1"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantFaceCapture\/AcuantFaceCapture\/View\/FaceCameraCornerView.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1683,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantFaceCapture\/AcuantFaceCapture\/View\/FaceCameraCornerView.swift",
+      "kind": "FloatLiteral",
+      "offset": 1718,
+      "length": 4,
+      "value": "0.45"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantFaceCapture\/AcuantFaceCapture\/View\/FaceCameraCornerView.swift",
+      "kind": "BooleanLiteral",
+      "offset": 1835,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantFaceCapture\/AcuantFaceCapture\/View\/FaceCameraCornerView.swift",
+      "kind": "StringLiteral",
+      "offset": 1894,
+      "length": 9,
+      "value": "\"opacity\""
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantFaceCapture\/AcuantFaceCapture\/View\/FaceCameraCornerView.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1972,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantFaceCapture\/AcuantFaceCapture\/FaceCaptureController.swift",
+      "kind": "FloatLiteral",
+      "offset": 867,
+      "length": 4,
+      "value": "-1.0"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantFaceCapture\/AcuantFaceCapture\/FaceCaptureController.swift",
+      "kind": "BooleanLiteral",
+      "offset": 985,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantFaceCapture\/AcuantFaceCapture\/FaceCaptureController.swift",
+      "kind": "FloatLiteral",
+      "offset": 1031,
+      "length": 3,
+      "value": "0.2"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantFaceCapture\/AcuantFaceCapture\/FaceCaptureController.swift",
+      "kind": "BooleanLiteral",
+      "offset": 1064,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantFaceCapture\/AcuantFaceCapture\/FaceCaptureController.swift",
+      "kind": "BooleanLiteral",
+      "offset": 1332,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantFaceCapture\/AcuantFaceCapture\/FaceCaptureController.swift",
+      "kind": "BooleanLiteral",
+      "offset": 1396,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantFaceCapture\/AcuantFaceCapture\/FaceCaptureController.swift",
+      "kind": "BooleanLiteral",
+      "offset": 1412,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantFaceCapture\/AcuantFaceCapture\/FaceCaptureController.swift",
+      "kind": "BooleanLiteral",
+      "offset": 1767,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantFaceCapture\/AcuantFaceCapture\/FaceCaptureController.swift",
+      "kind": "BooleanLiteral",
+      "offset": 2059,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantFaceCapture\/AcuantFaceCapture\/FaceCaptureController.swift",
+      "kind": "StringLiteral",
+      "offset": 3185,
+      "length": 27,
+      "value": "\"acuant_face_camera_paused\""
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantFaceCapture\/AcuantFaceCapture\/FaceCaptureController.swift",
+      "kind": "StringLiteral",
+      "offset": 3223,
+      "length": 2,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantFaceCapture\/AcuantFaceCapture\/FaceCaptureController.swift",
+      "kind": "StringLiteral",
+      "offset": 4151,
+      "length": 36,
+      "value": "\"acuant_face_camera_rotate_portrait\""
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantFaceCapture\/AcuantFaceCapture\/FaceCaptureController.swift",
+      "kind": "StringLiteral",
+      "offset": 4198,
+      "length": 2,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantFaceCapture\/AcuantFaceCapture\/FaceCaptureController.swift",
+      "kind": "BooleanLiteral",
+      "offset": 4673,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantFaceCapture\/AcuantFaceCapture\/FaceCaptureController.swift",
+      "kind": "BooleanLiteral",
+      "offset": 4889,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantFaceCapture\/AcuantFaceCapture\/FaceCaptureController.swift",
+      "kind": "StringLiteral",
+      "offset": 5288,
+      "length": 28,
+      "value": "\"acuant_face_camera_initial\""
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantFaceCapture\/AcuantFaceCapture\/FaceCaptureController.swift",
+      "kind": "IntegerLiteral",
+      "offset": 5368,
+      "length": 2,
+      "value": "25"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantFaceCapture\/AcuantFaceCapture\/FaceCaptureController.swift",
+      "kind": "StringLiteral",
+      "offset": 5518,
+      "length": 35,
+      "value": "\"acuant_face_camera_face_too_close\""
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantFaceCapture\/AcuantFaceCapture\/FaceCaptureController.swift",
+      "kind": "IntegerLiteral",
+      "offset": 5603,
+      "length": 2,
+      "value": "25"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantFaceCapture\/AcuantFaceCapture\/FaceCaptureController.swift",
+      "kind": "StringLiteral",
+      "offset": 5751,
+      "length": 33,
+      "value": "\"acuant_face_camera_face_too_far\""
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantFaceCapture\/AcuantFaceCapture\/FaceCaptureController.swift",
+      "kind": "StringLiteral",
+      "offset": 5970,
+      "length": 35,
+      "value": "\"acuant_face_camera_face_has_angle\""
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantFaceCapture\/AcuantFaceCapture\/FaceCaptureController.swift",
+      "kind": "IntegerLiteral",
+      "offset": 6055,
+      "length": 2,
+      "value": "25"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantFaceCapture\/AcuantFaceCapture\/FaceCaptureController.swift",
+      "kind": "StringLiteral",
+      "offset": 6208,
+      "length": 38,
+      "value": "\"acuant_face_camera_face_not_in_frame\""
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantFaceCapture\/AcuantFaceCapture\/FaceCaptureController.swift",
+      "kind": "StringLiteral",
+      "offset": 6428,
+      "length": 31,
+      "value": "\"acuant_face_camera_face_moved\""
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantFaceCapture\/AcuantFaceCapture\/FaceCaptureController.swift",
+      "kind": "FloatLiteral",
+      "offset": 7537,
+      "length": 3,
+      "value": "0.5"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantFaceCapture\/AcuantFaceCapture\/FaceCaptureController.swift",
+      "kind": "FloatLiteral",
+      "offset": 7575,
+      "length": 3,
+      "value": "5.0"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantFaceCapture\/AcuantFaceCapture\/FaceCaptureController.swift",
+      "kind": "IntegerLiteral",
+      "offset": 9126,
+      "length": 3,
+      "value": "720"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantFaceCapture\/AcuantFaceCapture\/FaceCaptureController.swift",
+      "kind": "IntegerLiteral",
+      "offset": 9198,
+      "length": 3,
+      "value": "720"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantFaceCapture\/AcuantFaceCapture\/FaceCaptureController.swift",
+      "kind": "IntegerLiteral",
+      "offset": 9525,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantFaceCapture\/AcuantFaceCapture\/FaceCaptureController.swift",
+      "kind": "StringLiteral",
+      "offset": 9569,
+      "length": 38,
+      "value": "\"acuant_face_camera_capturing_\""
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantFaceCapture\/AcuantFaceCapture\/FaceCaptureController.swift",
+      "kind": "StringLiteral",
+      "offset": 9606,
+      "length": 38,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantFaceCapture\/AcuantFaceCapture\/FaceCaptureController.swift",
+      "kind": "BooleanLiteral",
+      "offset": 9712,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantFaceCapture\/AcuantFaceCapture\/FaceCaptureController.swift",
+      "kind": "BooleanLiteral",
+      "offset": 9784,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantFaceCapture\/AcuantFaceCapture\/FaceCaptureController.swift",
+      "kind": "BooleanLiteral",
+      "offset": 10562,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantFaceCapture\/AcuantFaceCapture\/FaceCaptureController.swift",
+      "kind": "BooleanLiteral",
+      "offset": 10627,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantFaceCapture\/AcuantFaceCapture\/FaceCaptureController.swift",
+      "kind": "IntegerLiteral",
+      "offset": 10996,
+      "length": 3,
+      "value": "150"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantFaceCapture\/AcuantFaceCapture\/FaceCaptureController.swift",
+      "kind": "IntegerLiteral",
+      "offset": 11054,
+      "length": 1,
+      "value": "1"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantFaceCapture\/AcuantFaceCapture\/FaceCaptureController.swift",
+      "kind": "IntegerLiteral",
+      "offset": 11194,
+      "length": 3,
+      "value": "150"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantFaceCapture\/AcuantFaceCapture\/FaceCaptureController.swift",
+      "kind": "IntegerLiteral",
+      "offset": 11503,
+      "length": 1,
+      "value": "1"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantFaceCapture\/AcuantFaceCapture\/FaceCaptureController.swift",
+      "kind": "IntegerLiteral",
+      "offset": 11717,
+      "length": 3,
+      "value": "150"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantFaceCapture\/AcuantFaceCapture\/FaceCaptureController.swift",
+      "kind": "BooleanLiteral",
+      "offset": 11884,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantFaceCapture\/AcuantFaceCapture\/FaceCaptureController.swift",
+      "kind": "BooleanLiteral",
+      "offset": 12486,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantFaceCapture\/AcuantFaceCapture\/FaceCaptureController.swift",
+      "kind": "BooleanLiteral",
+      "offset": 12880,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantFaceCapture\/AcuantFaceCapture\/FaceCaptureController.swift",
+      "kind": "IntegerLiteral",
+      "offset": 12916,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantFaceCapture\/AcuantFaceCapture\/FaceCaptureController.swift",
+      "kind": "BooleanLiteral",
+      "offset": 13174,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantFaceCapture\/AcuantFaceCapture\/FaceCaptureController.swift",
+      "kind": "IntegerLiteral",
+      "offset": 13493,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantFaceCapture\/AcuantFaceCapture\/FaceCaptureController.swift",
+      "kind": "IntegerLiteral",
+      "offset": 13503,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantFaceCapture\/AcuantFaceCapture\/FaceCaptureController.swift",
+      "kind": "IntegerLiteral",
+      "offset": 13512,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantFaceCapture\/AcuantFaceCapture\/FaceCaptureController.swift",
+      "kind": "FloatLiteral",
+      "offset": 13522,
+      "length": 3,
+      "value": "0.6"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantFaceCapture\/AcuantFaceCapture\/FaceCaptureController.swift",
+      "kind": "FloatLiteral",
+      "offset": 13658,
+      "length": 4,
+      "value": "0.17"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantFaceCapture\/AcuantFaceCapture\/FaceCaptureController.swift",
+      "kind": "IntegerLiteral",
+      "offset": 13707,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantFaceCapture\/AcuantFaceCapture\/FaceCaptureController.swift",
+      "kind": "IntegerLiteral",
+      "offset": 13713,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantFaceCapture\/AcuantFaceCapture\/FaceCaptureController.swift",
+      "kind": "FloatLiteral",
+      "offset": 13938,
+      "length": 3,
+      "value": "0.1"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantFaceCapture\/AcuantFaceCapture\/FaceCaptureController.swift",
+      "kind": "IntegerLiteral",
+      "offset": 14069,
+      "length": 2,
+      "value": "30"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantFaceCapture\/AcuantFaceCapture\/FaceCaptureController.swift",
+      "kind": "StringLiteral",
+      "offset": 14229,
+      "length": 2,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantFaceCapture\/AcuantFaceCapture\/FaceCaptureController.swift",
+      "kind": "Dictionary",
+      "offset": 14381,
+      "length": 3,
+      "value": "[]"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantFaceCapture\/AcuantFaceCapture\/FaceCaptureController.swift",
+      "kind": "IntegerLiteral",
+      "offset": 14458,
+      "length": 2,
+      "value": "20"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantFaceCapture\/AcuantFaceCapture\/FaceCaptureController.swift",
+      "kind": "IntegerLiteral",
+      "offset": 14590,
+      "length": 1,
+      "value": "4"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantFaceCapture\/AcuantFaceCapture\/FaceCaptureController.swift",
+      "kind": "StringLiteral",
+      "offset": 14650,
+      "length": 5,
+      "value": "\"ⓧ\""
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantFaceCapture\/AcuantFaceCapture\/FaceCaptureController.swift",
+      "kind": "BooleanLiteral",
+      "offset": 14919,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantFaceCapture\/AcuantFaceCapture\/FaceCaptureController.swift",
+      "kind": "BooleanLiteral",
+      "offset": 15047,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantFaceCapture\/AcuantFaceCapture\/FaceCaptureController.swift",
+      "kind": "IntegerLiteral",
+      "offset": 15192,
+      "length": 2,
+      "value": "50"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantFaceCapture\/AcuantFaceCapture\/FaceCaptureController.swift",
+      "kind": "IntegerLiteral",
+      "offset": 15261,
+      "length": 2,
+      "value": "50"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantFaceCapture\/AcuantFaceCapture\/FaceCaptureController.swift",
+      "kind": "IntegerLiteral",
+      "offset": 15345,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantFaceCapture\/AcuantFaceCapture\/FaceCaptureController.swift",
+      "kind": "IntegerLiteral",
+      "offset": 15438,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantFaceCapture\/AcuantFaceCapture\/FaceCaptureController.swift",
+      "kind": "BooleanLiteral",
+      "offset": 15597,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantFaceCapture\/AcuantFaceCapture\/FaceCaptureController.swift",
+      "kind": "IntegerLiteral",
+      "offset": 16560,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantFaceCapture\/AcuantFaceCapture\/FaceCaptureController.swift",
+      "kind": "FloatLiteral",
+      "offset": 16770,
+      "length": 4,
+      "value": "0.17"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantFaceCapture\/AcuantFaceCapture\/FaceCaptureController.swift",
+      "kind": "IntegerLiteral",
+      "offset": 16820,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantFaceCapture\/AcuantFaceCapture\/FaceCaptureController.swift",
+      "kind": "IntegerLiteral",
+      "offset": 16846,
+      "length": 1,
+      "value": "4"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantFaceCapture\/AcuantFaceCapture\/FaceCaptureController.swift",
+      "kind": "IntegerLiteral",
+      "offset": 16886,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantFaceCapture\/AcuantFaceCapture\/Models\/FaceCaptureResult.swift",
+      "kind": "StringLiteral",
+      "offset": 194,
+      "length": 17,
+      "value": "\"AcuantFaceCapture.FaceCaptureResult\""
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantFaceCapture\/AcuantFaceCapture\/View\/FaceCameraCornerOverlayView.swift",
+      "kind": "IntegerLiteral",
+      "offset": 588,
+      "length": 2,
+      "value": "50"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantFaceCapture\/AcuantFaceCapture\/View\/FaceCameraCornerOverlayView.swift",
+      "kind": "IntegerLiteral",
+      "offset": 640,
+      "length": 2,
+      "value": "50"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantFaceCapture\/AcuantFaceCapture\/View\/FaceCameraCornerOverlayView.swift",
+      "kind": "FloatLiteral",
+      "offset": 698,
+      "length": 3,
+      "value": "0.4"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantFaceCapture\/AcuantFaceCapture\/View\/FaceCameraCornerOverlayView.swift",
+      "kind": "FloatLiteral",
+      "offset": 758,
+      "length": 3,
+      "value": "0.5"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantFaceCapture\/AcuantFaceCapture\/View\/FaceCameraCornerOverlayView.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1700,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantFaceCapture\/AcuantFaceCapture\/View\/FaceCameraCornerOverlayView.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1744,
+      "length": 1,
+      "value": "1"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantFaceCapture\/AcuantFaceCapture\/View\/FaceCameraCornerOverlayView.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1791,
+      "length": 1,
+      "value": "2"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantFaceCapture\/AcuantFaceCapture\/View\/FaceCameraCornerOverlayView.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1837,
+      "length": 1,
+      "value": "3"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantFaceCapture\/AcuantFaceCapture\/View\/FaceCameraCornerOverlayView.swift",
+      "kind": "Array",
+      "offset": 2447,
+      "length": 20,
+      "value": "[nil, nil, nil, nil]"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantFaceCapture\/AcuantFaceCapture\/View\/FaceCameraCornerOverlayView.swift",
+      "kind": "IntegerLiteral",
+      "offset": 2857,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantFaceCapture\/AcuantFaceCapture\/View\/FaceCameraCornerOverlayView.swift",
+      "kind": "IntegerLiteral",
+      "offset": 2884,
+      "length": 1,
+      "value": "1"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantFaceCapture\/AcuantFaceCapture\/View\/FaceCameraCornerOverlayView.swift",
+      "kind": "IntegerLiteral",
+      "offset": 2914,
+      "length": 1,
+      "value": "2"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantFaceCapture\/AcuantFaceCapture\/View\/FaceCameraCornerOverlayView.swift",
+      "kind": "IntegerLiteral",
+      "offset": 2943,
+      "length": 1,
+      "value": "3"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantFaceCapture\/AcuantFaceCapture\/View\/FaceCameraCornerOverlayView.swift",
+      "kind": "IntegerLiteral",
+      "offset": 3111,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantFaceCapture\/AcuantFaceCapture\/View\/FaceCameraCornerOverlayView.swift",
+      "kind": "IntegerLiteral",
+      "offset": 3240,
+      "length": 1,
+      "value": "1"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantFaceCapture\/AcuantFaceCapture\/View\/FaceCameraCornerOverlayView.swift",
+      "kind": "IntegerLiteral",
+      "offset": 3376,
+      "length": 1,
+      "value": "2"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantFaceCapture\/AcuantFaceCapture\/View\/FaceCameraCornerOverlayView.swift",
+      "kind": "IntegerLiteral",
+      "offset": 3509,
+      "length": 1,
+      "value": "3"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantFaceCapture\/AcuantFaceCapture\/View\/FaceCameraCornerOverlayView.swift",
+      "kind": "IntegerLiteral",
+      "offset": 3619,
+      "length": 1,
+      "value": "2"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantFaceCapture\/AcuantFaceCapture\/View\/FaceCameraCornerOverlayView.swift",
+      "kind": "IntegerLiteral",
+      "offset": 3643,
+      "length": 1,
+      "value": "2"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantFaceCapture\/AcuantFaceCapture\/View\/FaceCameraCornerOverlayView.swift",
+      "kind": "IntegerLiteral",
+      "offset": 3959,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantFaceCapture\/AcuantFaceCapture\/View\/FaceCameraCornerOverlayView.swift",
+      "kind": "IntegerLiteral",
+      "offset": 4113,
+      "length": 1,
+      "value": "1"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantFaceCapture\/AcuantFaceCapture\/View\/FaceCameraCornerOverlayView.swift",
+      "kind": "IntegerLiteral",
+      "offset": 4268,
+      "length": 1,
+      "value": "2"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantFaceCapture\/AcuantFaceCapture\/View\/FaceCameraCornerOverlayView.swift",
+      "kind": "IntegerLiteral",
+      "offset": 4422,
+      "length": 1,
+      "value": "3"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantFaceCapture\/AcuantFaceCapture\/View\/FaceCameraCornerOverlayView.swift",
+      "kind": "IntegerLiteral",
+      "offset": 4534,
+      "length": 1,
+      "value": "2"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantFaceCapture\/AcuantFaceCapture\/View\/FaceCameraCornerOverlayView.swift",
+      "kind": "IntegerLiteral",
+      "offset": 4558,
+      "length": 1,
+      "value": "2"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantFaceCapture\/AcuantFaceCapture\/View\/FaceCameraCornerOverlayView.swift",
+      "kind": "IntegerLiteral",
+      "offset": 4867,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantFaceCapture\/AcuantFaceCapture\/View\/FaceCameraCornerOverlayView.swift",
+      "kind": "IntegerLiteral",
+      "offset": 5021,
+      "length": 1,
+      "value": "1"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantFaceCapture\/AcuantFaceCapture\/View\/FaceCameraCornerOverlayView.swift",
+      "kind": "IntegerLiteral",
+      "offset": 5176,
+      "length": 1,
+      "value": "2"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantFaceCapture\/AcuantFaceCapture\/View\/FaceCameraCornerOverlayView.swift",
+      "kind": "IntegerLiteral",
+      "offset": 5330,
+      "length": 1,
+      "value": "3"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantFaceCapture\/AcuantFaceCapture\/View\/FaceCameraCornerOverlayView.swift",
+      "kind": "StringLiteral",
+      "offset": 6001,
+      "length": 6,
+      "value": "\"path\""
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantFaceCapture\/AcuantFaceCapture\/View\/FaceCameraCornerOverlayView.swift",
+      "kind": "IntegerLiteral",
+      "offset": 6038,
+      "length": 1,
+      "value": "1"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantFaceCapture\/AcuantFaceCapture\/View\/FaceCameraCornerOverlayView.swift",
+      "kind": "BooleanLiteral",
+      "offset": 6569,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantFaceCapture\/AcuantFaceCapture\/View\/FaceCameraCornerOverlayView.swift",
+      "kind": "StringLiteral",
+      "offset": 199,
+      "length": 27,
+      "value": "\"AcuantFaceCapture.FaceCameraCornerOverlayView\""
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantFaceCapture\/AcuantFaceCapture\/View\/ImagePlaceholderLayer.swift",
+      "kind": "FloatLiteral",
+      "offset": 357,
+      "length": 3,
+      "value": "0.6"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantFaceCapture\/AcuantFaceCapture\/View\/ImagePlaceholderLayer.swift",
+      "kind": "IntegerLiteral",
+      "offset": 674,
+      "length": 1,
+      "value": "2"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantFaceCapture\/AcuantFaceCapture\/View\/ImagePlaceholderLayer.swift",
+      "kind": "IntegerLiteral",
+      "offset": 697,
+      "length": 1,
+      "value": "4"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantFaceCapture\/AcuantFaceCapture\/View\/ImagePlaceholderLayer.swift",
+      "kind": "IntegerLiteral",
+      "offset": 751,
+      "length": 1,
+      "value": "2"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantFaceCapture\/AcuantFaceCapture\/View\/ImagePlaceholderLayer.swift",
+      "kind": "IntegerLiteral",
+      "offset": 775,
+      "length": 1,
+      "value": "4"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantFaceCapture\/AcuantFaceCapture\/View\/ImagePlaceholderLayer.swift",
+      "kind": "IntegerLiteral",
+      "offset": 832,
+      "length": 1,
+      "value": "2"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantFaceCapture\/AcuantFaceCapture\/View\/ImagePlaceholderLayer.swift",
+      "kind": "IntegerLiteral",
+      "offset": 891,
+      "length": 1,
+      "value": "2"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantFaceCapture\/AcuantFaceCapture\/View\/ImagePlaceholderLayer.swift",
+      "kind": "StringLiteral",
+      "offset": 173,
+      "length": 21,
+      "value": "\"AcuantFaceCapture.ImagePlaceholderLayer\""
+    }
+  ]
+}

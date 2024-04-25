@@ -13,7 +13,6 @@ import AcuantCommon
 import AcuantDocumentProcessing
 import AcuantFaceMatch
 import AcuantHGLiveness
-import AcuantIPLiveness
 import AcuantPassiveLiveness
 import AcuantFaceCapture
 import AVFoundation
@@ -41,8 +40,6 @@ class RootViewController: UIViewController{
     
     public var idOptions = IdOptions()
     public var idData = IdData()
-    
-    public var ipLivenessSetupResult : LivenessSetupResult? = nil
     
     var autoCapture = true
     var detailedAuth = true
@@ -130,13 +127,7 @@ class RootViewController: UIViewController{
         
         task?.resume()
     }
-    
-    func addEnhancedLiveness() {
-        if livenessOption.numberOfSegments == 2 {
-            livenessOption.insertSegment(withTitle: "Enhanced", at: livenessOption.numberOfSegments, animated: true)
-        }
-    }
-    
+
     private func initialize() {
         let initalizer: IAcuantInitializer = AcuantInitializer()
         var packages: [IAcuantPackage] = [ImagePreparationPackage()]
@@ -160,10 +151,6 @@ class RootViewController: UIViewController{
                         CustomAlerts.displayError(message: "\(error.errorCode) : " + msg)
                     }
                 } else {
-                    if Credential.authorization().ipLiveness {
-                        self.addEnhancedLiveness()
-                    }
-
                     self.mrzButton.isHidden = !Credential.authorization().hasOzone && !Credential.authorization().chipExtract
                     self.livenessStackView.isHidden = self.isKeyless
                     self.detailedAuthStackView.isHidden = self.isKeyless
@@ -244,7 +231,6 @@ class RootViewController: UIViewController{
         capturedFaceImageUrl = nil
         capturedFacialMatchResult = nil
         documentInstance = nil
-        ipLivenessSetupResult = nil
         livenessString = nil
         faceCapturedImage = nil
         self.idOptions.cardSide = DocumentSide.front
@@ -709,87 +695,7 @@ extension RootViewController: DeleteDelegate {
 }
 //DocumentProcessing - END ============
 
-//IPLiveness - START ============
-
-extension RootViewController : LivenessSetupDelegate{
-    func livenessSetupSucceeded(result: LivenessSetupResult) {
-        ipLivenessSetupResult = result
-        result.ui.title = ""
-        IPLiveness.performLivenessTest(setupResult: result, delegate: self)
-    }
-    
-    func livenessSetupFailed(error: AcuantError) {
-        livenessTestFailed(error: error)
-    }
-}
-
-extension RootViewController : LivenessTestDelegate{
-    func livenessTestCompleted() {
-        if(ipLivenessSetupResult != nil){
-            IPLiveness.getLivenessTestResult(token: ipLivenessSetupResult!.token, userId: ipLivenessSetupResult!.userId, delegate: self)
-        }
-        else{
-            print("Liveness test delegate failure")
-            livenessTestFailed(error: AcuantError())
-        }
-    }
-    
-    func livenessTestProcessing(progress: Double, message: String) {
-        DispatchQueue.main.async {
-            self.showProgressView(text: "\(Int(progress * 100))%")
-        }
-    }
-    
-    func livenessTestConnecting() {
-        DispatchQueue.main.async {
-            self.showProgressView(text: "Connecting...")
-        }
-    }
-    
-    func livenessTestConnected() {
-        DispatchQueue.main.async {
-            self.hideProgressView()
-        }
-    }
-    
-    func livenessTestCompletedWithError(error: AcuantError?) {
-        livenessTestFailed(error: error ?? AcuantError())
-    }
-}
-
-extension RootViewController : LivenessTestResultDelegate{
-
-    func livenessTestResultReceived(result: LivenessTestResult) {
-        if(result.passedLivenessTest){
-            self.livenessString =  "IP Liveness : true"
-        }
-        else{
-            self.livenessString =  "IP Liveness : false"
-        }
-        self.faceCapturedImage = result.image
-        if let jpegData = result.image?.jpegData(compressionQuality: 1.0) {
-            processFacialMatch(imageData: jpegData)
-        }
-        
-        self.faceProcessingGroup.notify(queue: .main) {
-            self.showResultGroup.leave()
-        }
-    }
-    
-    func livenessTestResultReceiveFailed(error: AcuantError) {
-        livenessTestFailed(error: error)
-    }
-    
-    func livenessTestFailed(error:AcuantError) {
-        self.livenessString = "IP Liveness : failed"
-        self.showResultGroup.leave()
-    }
-}
-
-//IPLiveness - END ============
-
 //Passive Liveness + FaceCapture - START ============
-
 
 extension RootViewController {
     private func processPassiveLiveness(imageData: Data) {
@@ -830,8 +736,6 @@ extension RootViewController {
         let faceIndex = livenessOption.selectedSegmentIndex
         if faceIndex == 1 {
             self.showPassiveLiveness()
-        } else if faceIndex == 2 {
-            IPLiveness.performLivenessSetup(delegate: self)
         } else {
             self.showResultGroup.leave()
         }

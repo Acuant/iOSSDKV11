@@ -1,7 +1,3 @@
-
-/* Class = "UILabel"; text = "IPLiveness Enabled"; ObjectID = "2FC-0f-szG"; */
-"2FC-0f-szG.text" = "IPLiveness Habilitado";
-
 /* Class = "UILabel"; text = "Detailed Auth"; ObjectID = "2L4-ec-plx"; */
 "2L4-ec-plx.text" = "Auth Detallada";
 
@@ -28,5 +24,3 @@
 
 /* Class = "UIButton"; normalTitle = "Confirm"; ObjectID = "Xxy-RN-WTb"; */
 "Xxy-RN-WTb.normalTitle" = "Confirmar";
-
-

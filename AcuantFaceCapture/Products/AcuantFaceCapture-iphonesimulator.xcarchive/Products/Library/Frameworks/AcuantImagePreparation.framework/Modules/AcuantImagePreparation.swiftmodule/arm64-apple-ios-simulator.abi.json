@@ -1,0 +1,2843 @@
+{
+  "ABIRoot": {
+    "kind": "Root",
+    "name": "TopLevel",
+    "printedName": "TopLevel",
+    "children": [
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "AcuantImagePreparation",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "CameraMetaData",
+        "printedName": "CameraMetaData",
+        "children": [
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "CameraMetaData",
+                "printedName": "AcuantImagePreparation.CameraMetaData",
+                "usr": "s:22AcuantImagePreparation14CameraMetaDataC"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:22AcuantImagePreparation14CameraMetaDataCACycfc",
+            "mangledName": "$s22AcuantImagePreparation14CameraMetaDataCACycfc",
+            "moduleName": "AcuantImagePreparation",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Function",
+            "name": "setCaptureType",
+            "printedName": "setCaptureType(captureType:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "CameraMetaData",
+                "printedName": "AcuantImagePreparation.CameraMetaData",
+                "usr": "s:22AcuantImagePreparation14CameraMetaDataC"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:22AcuantImagePreparation14CameraMetaDataC14setCaptureType07captureI0ACSS_tF",
+            "mangledName": "$s22AcuantImagePreparation14CameraMetaDataC14setCaptureType07captureI0ACSS_tF",
+            "moduleName": "AcuantImagePreparation",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(from:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "CameraMetaData",
+                "printedName": "AcuantImagePreparation.CameraMetaData",
+                "usr": "s:22AcuantImagePreparation14CameraMetaDataC"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Decoder",
+                "printedName": "Swift.Decoder",
+                "usr": "s:s7DecoderP"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:22AcuantImagePreparation14CameraMetaDataC4fromACs7Decoder_p_tKcfc",
+            "mangledName": "$s22AcuantImagePreparation14CameraMetaDataC4fromACs7Decoder_p_tKcfc",
+            "moduleName": "AcuantImagePreparation",
+            "implicit": true,
+            "declAttributes": [
+              "Required"
+            ],
+            "throwing": true,
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Function",
+            "name": "encode",
+            "printedName": "encode(to:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Encoder",
+                "printedName": "Swift.Encoder",
+                "usr": "s:s7EncoderP"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:22AcuantImagePreparation14CameraMetaDataC6encode2toys7Encoder_p_tKF",
+            "mangledName": "$s22AcuantImagePreparation14CameraMetaDataC6encode2toys7Encoder_p_tKF",
+            "moduleName": "AcuantImagePreparation",
+            "implicit": true,
+            "throwing": true,
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Class",
+        "usr": "s:22AcuantImagePreparation14CameraMetaDataC",
+        "mangledName": "$s22AcuantImagePreparation14CameraMetaDataC",
+        "moduleName": "AcuantImagePreparation",
+        "declAttributes": [
+          "AccessControl"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Decodable",
+            "printedName": "Decodable",
+            "usr": "s:Se",
+            "mangledName": "$sSe"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Encodable",
+            "printedName": "Encodable",
+            "usr": "s:SE",
+            "mangledName": "$sSE"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "AcuantImagePreparation",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "AcuantImagePreparation",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "UIKit",
+        "printedName": "UIKit",
+        "declKind": "Import",
+        "moduleName": "AcuantImagePreparation"
+      },
+      {
+        "kind": "Import",
+        "name": "AcuantCommon",
+        "printedName": "AcuantCommon",
+        "declKind": "Import",
+        "moduleName": "AcuantImagePreparation",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "AcuantImagePreparation"
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "AcuantImagePreparation",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "UIKit",
+        "printedName": "UIKit",
+        "declKind": "Import",
+        "moduleName": "AcuantImagePreparation"
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "DetectData",
+        "printedName": "DetectData",
+        "children": [
+          {
+            "kind": "Function",
+            "name": "newInstance",
+            "printedName": "newInstance(image:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "DetectData",
+                "printedName": "AcuantImagePreparation.DetectData",
+                "usr": "c:@M@AcuantImagePreparation@objc(cs)DetectData"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "UIImage",
+                "printedName": "UIKit.UIImage",
+                "usr": "c:objc(cs)UIImage"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@AcuantImagePreparation@objc(cs)DetectData(cm)newInstanceWithImage:",
+            "mangledName": "$s22AcuantImagePreparation10DetectDataC11newInstance5imageACSo7UIImageC_tFZ",
+            "moduleName": "AcuantImagePreparation",
+            "static": true,
+            "declAttributes": [
+              "AccessControl",
+              "ObjC"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "DetectData",
+                "printedName": "AcuantImagePreparation.DetectData",
+                "usr": "c:@M@AcuantImagePreparation@objc(cs)DetectData"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "c:@M@AcuantImagePreparation@objc(cs)DetectData(im)init",
+            "mangledName": "$s22AcuantImagePreparation10DetectDataCACycfc",
+            "moduleName": "AcuantImagePreparation",
+            "overriding": true,
+            "implicit": true,
+            "objc_name": "init",
+            "declAttributes": [
+              "Dynamic",
+              "ObjC",
+              "Override"
+            ],
+            "init_kind": "Designated"
+          }
+        ],
+        "declKind": "Class",
+        "usr": "c:@M@AcuantImagePreparation@objc(cs)DetectData",
+        "mangledName": "$s22AcuantImagePreparation10DetectDataC",
+        "moduleName": "AcuantImagePreparation",
+        "declAttributes": [
+          "AccessControl",
+          "ObjCMembers",
+          "ObjC"
+        ],
+        "superclassUsr": "c:objc(cs)NSObject",
+        "hasMissingDesignatedInitializers": true,
+        "superclassNames": [
+          "ObjectiveC.NSObject"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Hashable",
+            "printedName": "Hashable",
+            "usr": "s:SH",
+            "mangledName": "$sSH"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CVarArg",
+            "printedName": "CVarArg",
+            "usr": "s:s7CVarArgP",
+            "mangledName": "$ss7CVarArgP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObservingPublishing",
+            "printedName": "_KeyValueCodingAndObservingPublishing",
+            "usr": "s:10Foundation37_KeyValueCodingAndObservingPublishingP",
+            "mangledName": "$s10Foundation37_KeyValueCodingAndObservingPublishingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObserving",
+            "printedName": "_KeyValueCodingAndObserving",
+            "usr": "s:10Foundation27_KeyValueCodingAndObservingP",
+            "mangledName": "$s10Foundation27_KeyValueCodingAndObservingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomStringConvertible",
+            "printedName": "CustomStringConvertible",
+            "usr": "s:s23CustomStringConvertibleP",
+            "mangledName": "$ss23CustomStringConvertibleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomDebugStringConvertible",
+            "printedName": "CustomDebugStringConvertible",
+            "usr": "s:s28CustomDebugStringConvertibleP",
+            "mangledName": "$ss28CustomDebugStringConvertibleP"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "AcuantImagePreparation",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "AcuantCommon",
+        "printedName": "AcuantCommon",
+        "declKind": "Import",
+        "moduleName": "AcuantImagePreparation"
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "InitializationDelegate",
+        "printedName": "InitializationDelegate",
+        "children": [
+          {
+            "kind": "Function",
+            "name": "initializationFinished",
+            "printedName": "initializationFinished(error:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "AcuantCommon.AcuantError?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "AcuantError",
+                    "printedName": "AcuantCommon.AcuantError",
+                    "usr": "c:@M@AcuantCommon@objc(cs)AcuantError"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@AcuantImagePreparation@objc(pl)InitializationDelegate(im)initializationFinishedWithError:",
+            "mangledName": "$s22AcuantImagePreparation22InitializationDelegateP22initializationFinished5errory0A6Common0A5ErrorCSg_tF",
+            "moduleName": "AcuantImagePreparation",
+            "genericSig": "<τ_0_0 where τ_0_0 : AcuantImagePreparation.InitializationDelegate>",
+            "sugared_genericSig": "<Self where Self : AcuantImagePreparation.InitializationDelegate>",
+            "protocolReq": true,
+            "declAttributes": [
+              "ObjC"
+            ],
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Protocol",
+        "usr": "c:@M@AcuantImagePreparation@objc(pl)InitializationDelegate",
+        "mangledName": "$s22AcuantImagePreparation22InitializationDelegateP",
+        "moduleName": "AcuantImagePreparation",
+        "genericSig": "<τ_0_0 : AnyObject>",
+        "sugared_genericSig": "<Self : AnyObject>",
+        "declAttributes": [
+          "AccessControl",
+          "ObjC"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "AcuantImagePreparation",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "AcuantCommon",
+        "printedName": "AcuantCommon",
+        "declKind": "Import",
+        "moduleName": "AcuantImagePreparation"
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "AcuantImagePreparation",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "AcuantImagePreparation",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "AcuantImage",
+        "printedName": "AcuantImage",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "image",
+            "printedName": "image",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "UIImage",
+                "printedName": "UIKit.UIImage",
+                "usr": "c:objc(cs)UIImage"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:22AcuantImagePreparation0aB0C5imageSo7UIImageCvp",
+            "mangledName": "$s22AcuantImagePreparation0aB0C5imageSo7UIImageCvp",
+            "moduleName": "AcuantImagePreparation",
+            "declAttributes": [
+              "Final",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "UIImage",
+                    "printedName": "UIKit.UIImage",
+                    "usr": "c:objc(cs)UIImage"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:22AcuantImagePreparation0aB0C5imageSo7UIImageCvg",
+                "mangledName": "$s22AcuantImagePreparation0aB0C5imageSo7UIImageCvg",
+                "moduleName": "AcuantImagePreparation",
+                "implicit": true,
+                "declAttributes": [
+                  "Final"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "data",
+            "printedName": "data",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "NSData",
+                "printedName": "Foundation.NSData",
+                "usr": "c:objc(cs)NSData"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:22AcuantImagePreparation0aB0C4dataSo6NSDataCvp",
+            "mangledName": "$s22AcuantImagePreparation0aB0C4dataSo6NSDataCvp",
+            "moduleName": "AcuantImagePreparation",
+            "declAttributes": [
+              "Final",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "NSData",
+                    "printedName": "Foundation.NSData",
+                    "usr": "c:objc(cs)NSData"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:22AcuantImagePreparation0aB0C4dataSo6NSDataCvg",
+                "mangledName": "$s22AcuantImagePreparation0aB0C4dataSo6NSDataCvg",
+                "moduleName": "AcuantImagePreparation",
+                "implicit": true,
+                "declAttributes": [
+                  "Final"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "sharpness",
+            "printedName": "sharpness",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:22AcuantImagePreparation0aB0C9sharpnessSivp",
+            "mangledName": "$s22AcuantImagePreparation0aB0C9sharpnessSivp",
+            "moduleName": "AcuantImagePreparation",
+            "declAttributes": [
+              "Final",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int",
+                    "printedName": "Swift.Int",
+                    "usr": "s:Si"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:22AcuantImagePreparation0aB0C9sharpnessSivg",
+                "mangledName": "$s22AcuantImagePreparation0aB0C9sharpnessSivg",
+                "moduleName": "AcuantImagePreparation",
+                "implicit": true,
+                "declAttributes": [
+                  "Final"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "glare",
+            "printedName": "glare",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:22AcuantImagePreparation0aB0C5glareSivp",
+            "mangledName": "$s22AcuantImagePreparation0aB0C5glareSivp",
+            "moduleName": "AcuantImagePreparation",
+            "declAttributes": [
+              "Final",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int",
+                    "printedName": "Swift.Int",
+                    "usr": "s:Si"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:22AcuantImagePreparation0aB0C5glareSivg",
+                "mangledName": "$s22AcuantImagePreparation0aB0C5glareSivg",
+                "moduleName": "AcuantImagePreparation",
+                "implicit": true,
+                "declAttributes": [
+                  "Final"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "dpi",
+            "printedName": "dpi",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:22AcuantImagePreparation0aB0C3dpiSivp",
+            "mangledName": "$s22AcuantImagePreparation0aB0C3dpiSivp",
+            "moduleName": "AcuantImagePreparation",
+            "declAttributes": [
+              "Final",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int",
+                    "printedName": "Swift.Int",
+                    "usr": "s:Si"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:22AcuantImagePreparation0aB0C3dpiSivg",
+                "mangledName": "$s22AcuantImagePreparation0aB0C3dpiSivg",
+                "moduleName": "AcuantImagePreparation",
+                "implicit": true,
+                "declAttributes": [
+                  "Final"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "isPassport",
+            "printedName": "isPassport",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:22AcuantImagePreparation0aB0C10isPassportSbvp",
+            "mangledName": "$s22AcuantImagePreparation0aB0C10isPassportSbvp",
+            "moduleName": "AcuantImagePreparation",
+            "declAttributes": [
+              "Final",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:22AcuantImagePreparation0aB0C10isPassportSbvg",
+                "mangledName": "$s22AcuantImagePreparation0aB0C10isPassportSbvg",
+                "moduleName": "AcuantImagePreparation",
+                "implicit": true,
+                "declAttributes": [
+                  "Final"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          }
+        ],
+        "declKind": "Class",
+        "usr": "s:22AcuantImagePreparation0aB0C",
+        "mangledName": "$s22AcuantImagePreparation0aB0C",
+        "moduleName": "AcuantImagePreparation",
+        "declAttributes": [
+          "AccessControl"
+        ],
+        "hasMissingDesignatedInitializers": true
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "AcuantImagePreparation",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "AVFoundation",
+        "printedName": "AVFoundation",
+        "declKind": "Import",
+        "moduleName": "AcuantImagePreparation"
+      },
+      {
+        "kind": "Import",
+        "name": "AcuantCommon",
+        "printedName": "AcuantCommon",
+        "declKind": "Import",
+        "moduleName": "AcuantImagePreparation"
+      },
+      {
+        "kind": "Import",
+        "name": "CoreImage",
+        "printedName": "CoreImage",
+        "declKind": "Import",
+        "moduleName": "AcuantImagePreparation"
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "ImagePreparation",
+        "printedName": "ImagePreparation",
+        "children": [
+          {
+            "kind": "Function",
+            "name": "initialize",
+            "printedName": "initialize(delegate:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "AcuantImagePreparation.InitializationDelegate?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "InitializationDelegate",
+                    "printedName": "AcuantImagePreparation.InitializationDelegate",
+                    "usr": "c:@M@AcuantImagePreparation@objc(pl)InitializationDelegate"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@AcuantImagePreparation@objc(cs)ImagePreparation(cm)initializeWithDelegate:",
+            "mangledName": "$s22AcuantImagePreparation0bC0C10initialize8delegateyAA22InitializationDelegate_pSg_tFZ",
+            "moduleName": "AcuantImagePreparation",
+            "static": true,
+            "declAttributes": [
+              "AccessControl",
+              "ObjC"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "resize",
+            "printedName": "resize(image:targetWidth:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "UIKit.UIImage?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "UIImage",
+                    "printedName": "UIKit.UIImage",
+                    "usr": "c:objc(cs)UIImage"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "UIImage",
+                "printedName": "UIKit.UIImage",
+                "usr": "c:objc(cs)UIImage"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@AcuantImagePreparation@objc(cs)ImagePreparation(cm)resizeWithImage:targetWidth:",
+            "mangledName": "$s22AcuantImagePreparation0bC0C6resize5image11targetWidthSo7UIImageCSgAH_SitFZ",
+            "moduleName": "AcuantImagePreparation",
+            "static": true,
+            "declAttributes": [
+              "AccessControl",
+              "ObjC"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "crop",
+            "printedName": "crop(data:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Image",
+                "printedName": "AcuantCommon.Image",
+                "usr": "c:@M@AcuantCommon@objc(cs)Image"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "CroppingData",
+                "printedName": "AcuantImagePreparation.CroppingData",
+                "usr": "c:@M@AcuantImagePreparation@objc(cs)CroppingData"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@AcuantImagePreparation@objc(cs)ImagePreparation(cm)cropWithData:",
+            "mangledName": "$s22AcuantImagePreparation0bC0C4crop4data0A6Common0B0CAA12CroppingDataC_tFZ",
+            "moduleName": "AcuantImagePreparation",
+            "static": true,
+            "declAttributes": [
+              "AccessControl",
+              "ObjC"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "createCameraImage",
+            "printedName": "createCameraImage(image:data:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Image",
+                "printedName": "AcuantCommon.Image",
+                "usr": "c:@M@AcuantCommon@objc(cs)Image"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "UIImage",
+                "printedName": "UIKit.UIImage",
+                "usr": "c:objc(cs)UIImage"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "CameraMetaData",
+                "printedName": "AcuantImagePreparation.CameraMetaData",
+                "usr": "s:22AcuantImagePreparation14CameraMetaDataC"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:22AcuantImagePreparation0bC0C012createCameraB05image4data0A6Common0B0CSo7UIImageC_AA0E8MetaDataCtFZ",
+            "mangledName": "$s22AcuantImagePreparation0bC0C012createCameraB05image4data0A6Common0B0CSo7UIImageC_AA0E8MetaDataCtFZ",
+            "moduleName": "AcuantImagePreparation",
+            "static": true,
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "evaluateImage",
+            "printedName": "evaluateImage(data:callback:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "CroppingData",
+                "printedName": "AcuantImagePreparation.CroppingData",
+                "usr": "c:@M@AcuantImagePreparation@objc(cs)CroppingData"
+              },
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(AcuantImagePreparation.AcuantImage?, AcuantCommon.AcuantError?) -> ()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Tuple",
+                    "printedName": "(AcuantImagePreparation.AcuantImage?, AcuantCommon.AcuantError?)",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Optional",
+                        "printedName": "AcuantImagePreparation.AcuantImage?",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "AcuantImage",
+                            "printedName": "AcuantImagePreparation.AcuantImage",
+                            "usr": "s:22AcuantImagePreparation0aB0C"
+                          }
+                        ],
+                        "usr": "s:Sq"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Optional",
+                        "printedName": "AcuantCommon.AcuantError?",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "AcuantError",
+                            "printedName": "AcuantCommon.AcuantError",
+                            "usr": "c:@M@AcuantCommon@objc(cs)AcuantError"
+                          }
+                        ],
+                        "usr": "s:Sq"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:22AcuantImagePreparation0bC0C08evaluateB04data8callbackyAA12CroppingDataC_yAA0aB0CSg_0A6Common0A5ErrorCSgtctFZ",
+            "mangledName": "$s22AcuantImagePreparation0bC0C08evaluateB04data8callbackyAA12CroppingDataC_yAA0aB0CSg_0A6Common0A5ErrorCSgtctFZ",
+            "moduleName": "AcuantImagePreparation",
+            "static": true,
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "evaluateImage",
+            "printedName": "evaluateImage(image:callback:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "UIImage",
+                "printedName": "UIKit.UIImage",
+                "usr": "c:objc(cs)UIImage"
+              },
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(AcuantImagePreparation.AcuantImage?, AcuantCommon.AcuantError?) -> ()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Tuple",
+                    "printedName": "(AcuantImagePreparation.AcuantImage?, AcuantCommon.AcuantError?)",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Optional",
+                        "printedName": "AcuantImagePreparation.AcuantImage?",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "AcuantImage",
+                            "printedName": "AcuantImagePreparation.AcuantImage",
+                            "usr": "s:22AcuantImagePreparation0aB0C"
+                          }
+                        ],
+                        "usr": "s:Sq"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Optional",
+                        "printedName": "AcuantCommon.AcuantError?",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "AcuantError",
+                            "printedName": "AcuantCommon.AcuantError",
+                            "usr": "c:@M@AcuantCommon@objc(cs)AcuantError"
+                          }
+                        ],
+                        "usr": "s:Sq"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:22AcuantImagePreparation0bC0C08evaluateB05image8callbackySo7UIImageC_yAA0aB0CSg_0A6Common0A5ErrorCSgtctFZ",
+            "mangledName": "$s22AcuantImagePreparation0bC0C08evaluateB05image8callbackySo7UIImageC_yAA0aB0CSg_0A6Common0A5ErrorCSgtctFZ",
+            "moduleName": "AcuantImagePreparation",
+            "static": true,
+            "deprecated": true,
+            "declAttributes": [
+              "AccessControl",
+              "Available"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "cropMrz",
+            "printedName": "cropMrz(detectData:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Image",
+                "printedName": "AcuantCommon.Image",
+                "usr": "c:@M@AcuantCommon@objc(cs)Image"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "DetectData",
+                "printedName": "AcuantImagePreparation.DetectData",
+                "usr": "c:@M@AcuantImagePreparation@objc(cs)DetectData"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@AcuantImagePreparation@objc(cs)ImagePreparation(cm)cropMrzWithDetectData:",
+            "mangledName": "$s22AcuantImagePreparation0bC0C7cropMrz10detectData0A6Common0B0CAA06DetectG0C_tFZ",
+            "moduleName": "AcuantImagePreparation",
+            "static": true,
+            "declAttributes": [
+              "AccessControl",
+              "ObjC"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "cropMrz",
+            "printedName": "cropMrz(data:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Image",
+                "printedName": "AcuantCommon.Image",
+                "usr": "c:@M@AcuantCommon@objc(cs)Image"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "CroppingData",
+                "printedName": "AcuantImagePreparation.CroppingData",
+                "usr": "c:@M@AcuantImagePreparation@objc(cs)CroppingData"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@AcuantImagePreparation@objc(cs)ImagePreparation(cm)cropMrzWithData:",
+            "mangledName": "$s22AcuantImagePreparation0bC0C7cropMrz4data0A6Common0B0CAA12CroppingDataC_tFZ",
+            "moduleName": "AcuantImagePreparation",
+            "static": true,
+            "declAttributes": [
+              "AccessControl",
+              "ObjC"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "detect",
+            "printedName": "detect(detectData:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Image",
+                "printedName": "AcuantCommon.Image",
+                "usr": "c:@M@AcuantCommon@objc(cs)Image"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "DetectData",
+                "printedName": "AcuantImagePreparation.DetectData",
+                "usr": "c:@M@AcuantImagePreparation@objc(cs)DetectData"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@AcuantImagePreparation@objc(cs)ImagePreparation(cm)detectWithDetectData:",
+            "mangledName": "$s22AcuantImagePreparation0bC0C6detect0D4Data0A6Common0B0CAA06DetectE0C_tFZ",
+            "moduleName": "AcuantImagePreparation",
+            "static": true,
+            "declAttributes": [
+              "AccessControl",
+              "ObjC"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "detect",
+            "printedName": "detect(data:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Image",
+                "printedName": "AcuantCommon.Image",
+                "usr": "c:@M@AcuantCommon@objc(cs)Image"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "CroppingData",
+                "printedName": "AcuantImagePreparation.CroppingData",
+                "usr": "c:@M@AcuantImagePreparation@objc(cs)CroppingData"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@AcuantImagePreparation@objc(cs)ImagePreparation(cm)detectWithData:",
+            "mangledName": "$s22AcuantImagePreparation0bC0C6detect4data0A6Common0B0CAA12CroppingDataC_tFZ",
+            "moduleName": "AcuantImagePreparation",
+            "static": true,
+            "declAttributes": [
+              "AccessControl",
+              "ObjC"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "sharpness",
+            "printedName": "sharpness(image:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "UIImage",
+                "printedName": "UIKit.UIImage",
+                "usr": "c:objc(cs)UIImage"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@AcuantImagePreparation@objc(cs)ImagePreparation(cm)sharpnessWithImage:",
+            "mangledName": "$s22AcuantImagePreparation0bC0C9sharpness5imageSiSo7UIImageC_tFZ",
+            "moduleName": "AcuantImagePreparation",
+            "static": true,
+            "declAttributes": [
+              "AccessControl",
+              "ObjC"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "glare",
+            "printedName": "glare(image:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "UIImage",
+                "printedName": "UIKit.UIImage",
+                "usr": "c:objc(cs)UIImage"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@AcuantImagePreparation@objc(cs)ImagePreparation(cm)glareWithImage:",
+            "mangledName": "$s22AcuantImagePreparation0bC0C5glare5imageSiSo7UIImageC_tFZ",
+            "moduleName": "AcuantImagePreparation",
+            "static": true,
+            "declAttributes": [
+              "AccessControl",
+              "ObjC"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "sign",
+            "printedName": "sign(image:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Foundation.Data?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Data",
+                    "printedName": "Foundation.Data",
+                    "usr": "s:10Foundation4DataV"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "UIImage",
+                "printedName": "UIKit.UIImage",
+                "usr": "c:objc(cs)UIImage"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@AcuantImagePreparation@objc(cs)ImagePreparation(cm)signWithImage:",
+            "mangledName": "$s22AcuantImagePreparation0bC0C4sign5image10Foundation4DataVSgSo7UIImageC_tFZ",
+            "moduleName": "AcuantImagePreparation",
+            "static": true,
+            "declAttributes": [
+              "AccessControl",
+              "ObjC"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "ImagePreparation",
+                "printedName": "AcuantImagePreparation.ImagePreparation",
+                "usr": "c:@M@AcuantImagePreparation@objc(cs)ImagePreparation"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "c:@M@AcuantImagePreparation@objc(cs)ImagePreparation(im)init",
+            "mangledName": "$s22AcuantImagePreparation0bC0CACycfc",
+            "moduleName": "AcuantImagePreparation",
+            "overriding": true,
+            "implicit": true,
+            "objc_name": "init",
+            "declAttributes": [
+              "Dynamic",
+              "ObjC",
+              "Override"
+            ],
+            "init_kind": "Designated"
+          }
+        ],
+        "declKind": "Class",
+        "usr": "c:@M@AcuantImagePreparation@objc(cs)ImagePreparation",
+        "mangledName": "$s22AcuantImagePreparation0bC0C",
+        "moduleName": "AcuantImagePreparation",
+        "declAttributes": [
+          "AccessControl",
+          "ObjCMembers",
+          "ObjC"
+        ],
+        "superclassUsr": "c:objc(cs)NSObject",
+        "inheritsConvenienceInitializers": true,
+        "superclassNames": [
+          "ObjectiveC.NSObject"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Hashable",
+            "printedName": "Hashable",
+            "usr": "s:SH",
+            "mangledName": "$sSH"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CVarArg",
+            "printedName": "CVarArg",
+            "usr": "s:s7CVarArgP",
+            "mangledName": "$ss7CVarArgP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObservingPublishing",
+            "printedName": "_KeyValueCodingAndObservingPublishing",
+            "usr": "s:10Foundation37_KeyValueCodingAndObservingPublishingP",
+            "mangledName": "$s10Foundation37_KeyValueCodingAndObservingPublishingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObserving",
+            "printedName": "_KeyValueCodingAndObserving",
+            "usr": "s:10Foundation27_KeyValueCodingAndObservingP",
+            "mangledName": "$s10Foundation27_KeyValueCodingAndObservingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomStringConvertible",
+            "printedName": "CustomStringConvertible",
+            "usr": "s:s23CustomStringConvertibleP",
+            "mangledName": "$ss23CustomStringConvertibleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomDebugStringConvertible",
+            "printedName": "CustomDebugStringConvertible",
+            "usr": "s:s28CustomDebugStringConvertibleP",
+            "mangledName": "$ss28CustomDebugStringConvertibleP"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "AcuantImagePreparation",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "UIKit",
+        "printedName": "UIKit",
+        "declKind": "Import",
+        "moduleName": "AcuantImagePreparation"
+      },
+      {
+        "kind": "Import",
+        "name": "AcuantCommon",
+        "printedName": "AcuantCommon",
+        "declKind": "Import",
+        "moduleName": "AcuantImagePreparation"
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "CroppingData",
+        "printedName": "CroppingData",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "image",
+            "printedName": "image",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "UIKit.UIImage?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "UIImage",
+                    "printedName": "UIKit.UIImage",
+                    "usr": "c:objc(cs)UIImage"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@AcuantImagePreparation@objc(cs)CroppingData(py)image",
+            "mangledName": "$s22AcuantImagePreparation12CroppingDataC5imageSo7UIImageCSgvp",
+            "moduleName": "AcuantImagePreparation",
+            "deprecated": true,
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl",
+              "Available",
+              "ObjC"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "UIKit.UIImage?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "UIImage",
+                        "printedName": "UIKit.UIImage",
+                        "usr": "c:objc(cs)UIImage"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@AcuantImagePreparation@objc(cs)CroppingData(im)image",
+                "mangledName": "$s22AcuantImagePreparation12CroppingDataC5imageSo7UIImageCSgvg",
+                "moduleName": "AcuantImagePreparation",
+                "implicit": true,
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "UIKit.UIImage?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "UIImage",
+                        "printedName": "UIKit.UIImage",
+                        "usr": "c:objc(cs)UIImage"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@AcuantImagePreparation@objc(cs)CroppingData(im)setImage:",
+                "mangledName": "$s22AcuantImagePreparation12CroppingDataC5imageSo7UIImageCSgvs",
+                "moduleName": "AcuantImagePreparation",
+                "implicit": true,
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:22AcuantImagePreparation12CroppingDataC5imageSo7UIImageCSgvM",
+                "mangledName": "$s22AcuantImagePreparation12CroppingDataC5imageSo7UIImageCSgvM",
+                "moduleName": "AcuantImagePreparation",
+                "deprecated": true,
+                "implicit": true,
+                "declAttributes": [
+                  "Available"
+                ],
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Function",
+            "name": "newInstance",
+            "printedName": "newInstance(image:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "CroppingData",
+                "printedName": "AcuantImagePreparation.CroppingData",
+                "usr": "c:@M@AcuantImagePreparation@objc(cs)CroppingData"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Image",
+                "printedName": "AcuantCommon.Image",
+                "usr": "c:@M@AcuantCommon@objc(cs)Image"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@AcuantImagePreparation@objc(cs)CroppingData(cm)newInstanceWithImage:",
+            "mangledName": "$s22AcuantImagePreparation12CroppingDataC11newInstance5imageAC0A6Common0B0C_tFZ",
+            "moduleName": "AcuantImagePreparation",
+            "static": true,
+            "declAttributes": [
+              "AccessControl",
+              "ObjC"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "newInstance",
+            "printedName": "newInstance()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "CroppingData",
+                "printedName": "AcuantImagePreparation.CroppingData",
+                "usr": "c:@M@AcuantImagePreparation@objc(cs)CroppingData"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@AcuantImagePreparation@objc(cs)CroppingData(cm)newInstance",
+            "mangledName": "$s22AcuantImagePreparation12CroppingDataC11newInstanceACyFZ",
+            "moduleName": "AcuantImagePreparation",
+            "static": true,
+            "deprecated": true,
+            "declAttributes": [
+              "AccessControl",
+              "Available",
+              "ObjC"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "CroppingData",
+                "printedName": "AcuantImagePreparation.CroppingData",
+                "usr": "c:@M@AcuantImagePreparation@objc(cs)CroppingData"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "c:@M@AcuantImagePreparation@objc(cs)CroppingData(im)init",
+            "mangledName": "$s22AcuantImagePreparation12CroppingDataCACycfc",
+            "moduleName": "AcuantImagePreparation",
+            "deprecated": true,
+            "overriding": true,
+            "objc_name": "init",
+            "declAttributes": [
+              "Dynamic",
+              "ObjC",
+              "Override",
+              "AccessControl",
+              "Available"
+            ],
+            "init_kind": "Designated"
+          }
+        ],
+        "declKind": "Class",
+        "usr": "c:@M@AcuantImagePreparation@objc(cs)CroppingData",
+        "mangledName": "$s22AcuantImagePreparation12CroppingDataC",
+        "moduleName": "AcuantImagePreparation",
+        "declAttributes": [
+          "AccessControl",
+          "ObjCMembers",
+          "ObjC"
+        ],
+        "superclassUsr": "c:objc(cs)NSObject",
+        "hasMissingDesignatedInitializers": true,
+        "inheritsConvenienceInitializers": true,
+        "superclassNames": [
+          "ObjectiveC.NSObject"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Hashable",
+            "printedName": "Hashable",
+            "usr": "s:SH",
+            "mangledName": "$sSH"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CVarArg",
+            "printedName": "CVarArg",
+            "usr": "s:s7CVarArgP",
+            "mangledName": "$ss7CVarArgP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObservingPublishing",
+            "printedName": "_KeyValueCodingAndObservingPublishing",
+            "usr": "s:10Foundation37_KeyValueCodingAndObservingPublishingP",
+            "mangledName": "$s10Foundation37_KeyValueCodingAndObservingPublishingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObserving",
+            "printedName": "_KeyValueCodingAndObserving",
+            "usr": "s:10Foundation27_KeyValueCodingAndObservingP",
+            "mangledName": "$s10Foundation27_KeyValueCodingAndObservingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomStringConvertible",
+            "printedName": "CustomStringConvertible",
+            "usr": "s:s23CustomStringConvertibleP",
+            "mangledName": "$ss23CustomStringConvertibleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomDebugStringConvertible",
+            "printedName": "CustomDebugStringConvertible",
+            "usr": "s:s28CustomDebugStringConvertibleP",
+            "mangledName": "$ss28CustomDebugStringConvertibleP"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "AcuantImagePreparation",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "AcuantCommon",
+        "printedName": "AcuantCommon",
+        "declKind": "Import",
+        "moduleName": "AcuantImagePreparation"
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "ImagePreparationPackage",
+        "printedName": "ImagePreparationPackage",
+        "children": [
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "ImagePreparationPackage",
+                "printedName": "AcuantImagePreparation.ImagePreparationPackage",
+                "usr": "s:22AcuantImagePreparation0bC7PackageC"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:22AcuantImagePreparation0bC7PackageCACycfc",
+            "mangledName": "$s22AcuantImagePreparation0bC7PackageCACycfc",
+            "moduleName": "AcuantImagePreparation",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Function",
+            "name": "initialize",
+            "printedName": "initialize()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:22AcuantImagePreparation0bC7PackageC10initializeyyF",
+            "mangledName": "$s22AcuantImagePreparation0bC7PackageC10initializeyyF",
+            "moduleName": "AcuantImagePreparation",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Class",
+        "usr": "s:22AcuantImagePreparation0bC7PackageC",
+        "mangledName": "$s22AcuantImagePreparation0bC7PackageC",
+        "moduleName": "AcuantImagePreparation",
+        "declAttributes": [
+          "AccessControl"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "IAcuantPackage",
+            "printedName": "IAcuantPackage",
+            "usr": "s:12AcuantCommon14IAcuantPackageP",
+            "mangledName": "$s12AcuantCommon14IAcuantPackageP"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "AcuantImagePreparation",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      }
+    ],
+    "json_format_version": 8
+  },
+  "ConstValues": [
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/Exif\/Model\/CameraMetaData.swift",
+      "kind": "StringLiteral",
+      "offset": 294,
+      "length": 75,
+      "value": "\"NOT SPECIFIED (implementer's custom camera did not call the right method)\""
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/Exif\/Model\/AcuantMetaData.swift",
+      "kind": "BooleanLiteral",
+      "offset": 1563,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/UIImageExtn.swift",
+      "kind": "BooleanLiteral",
+      "offset": 619,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/UIImageExtn.swift",
+      "kind": "IntegerLiteral",
+      "offset": 777,
+      "length": 1,
+      "value": "2"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/UIImageExtn.swift",
+      "kind": "IntegerLiteral",
+      "offset": 798,
+      "length": 1,
+      "value": "2"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/UIImageExtn.swift",
+      "kind": "IntegerLiteral",
+      "offset": 936,
+      "length": 1,
+      "value": "2"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/UIImageExtn.swift",
+      "kind": "IntegerLiteral",
+      "offset": 960,
+      "length": 1,
+      "value": "2"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/Cropping\/CroppingWrapper.swift",
+      "kind": "IntegerLiteral",
+      "offset": 251,
+      "length": 1,
+      "value": "1"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/Cropping\/CroppingWrapper.swift",
+      "kind": "IntegerLiteral",
+      "offset": 283,
+      "length": 1,
+      "value": "2"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/Cropping\/CroppingWrapper.swift",
+      "kind": "IntegerLiteral",
+      "offset": 321,
+      "length": 3,
+      "value": "600"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/Cropping\/CroppingWrapper.swift",
+      "kind": "FloatLiteral",
+      "offset": 380,
+      "length": 4,
+      "value": "3.37"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/Cropping\/CroppingWrapper.swift",
+      "kind": "FloatLiteral",
+      "offset": 440,
+      "length": 4,
+      "value": "4.92"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/Cropping\/CroppingWrapper.swift",
+      "kind": "IntegerLiteral",
+      "offset": 560,
+      "length": 1,
+      "value": "2"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/Cropping\/CroppingWrapper.swift",
+      "kind": "IntegerLiteral",
+      "offset": 582,
+      "length": 1,
+      "value": "2"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/Cropping\/CroppingWrapper.swift",
+      "kind": "IntegerLiteral",
+      "offset": 691,
+      "length": 1,
+      "value": "4"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/Cropping\/CroppingWrapper.swift",
+      "kind": "IntegerLiteral",
+      "offset": 744,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/Cropping\/CroppingWrapper.swift",
+      "kind": "IntegerLiteral",
+      "offset": 759,
+      "length": 1,
+      "value": "1"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/Cropping\/CroppingWrapper.swift",
+      "kind": "IntegerLiteral",
+      "offset": 812,
+      "length": 1,
+      "value": "1"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/Cropping\/CroppingWrapper.swift",
+      "kind": "IntegerLiteral",
+      "offset": 827,
+      "length": 1,
+      "value": "2"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/Cropping\/CroppingWrapper.swift",
+      "kind": "IntegerLiteral",
+      "offset": 880,
+      "length": 1,
+      "value": "2"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/Cropping\/CroppingWrapper.swift",
+      "kind": "IntegerLiteral",
+      "offset": 895,
+      "length": 1,
+      "value": "3"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/Cropping\/CroppingWrapper.swift",
+      "kind": "IntegerLiteral",
+      "offset": 948,
+      "length": 1,
+      "value": "3"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/Cropping\/CroppingWrapper.swift",
+      "kind": "IntegerLiteral",
+      "offset": 963,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/Cropping\/CroppingWrapper.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1029,
+      "length": 1,
+      "value": "2"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/Cropping\/CroppingWrapper.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1080,
+      "length": 1,
+      "value": "2"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/Cropping\/CroppingWrapper.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1365,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/Cropping\/CroppingWrapper.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1376,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/Cropping\/CroppingWrapper.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1806,
+      "length": 3,
+      "value": "300"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/Cropping\/CroppingWrapper.swift",
+      "kind": "IntegerLiteral",
+      "offset": 2333,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/Cropping\/CroppingWrapper.swift",
+      "kind": "IntegerLiteral",
+      "offset": 2388,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/Cropping\/CroppingWrapper.swift",
+      "kind": "IntegerLiteral",
+      "offset": 2441,
+      "length": 1,
+      "value": "1"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/Cropping\/CroppingWrapper.swift",
+      "kind": "IntegerLiteral",
+      "offset": 2504,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/Cropping\/CroppingWrapper.swift",
+      "kind": "IntegerLiteral",
+      "offset": 2580,
+      "length": 1,
+      "value": "1"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/Cropping\/CroppingWrapper.swift",
+      "kind": "IntegerLiteral",
+      "offset": 2656,
+      "length": 1,
+      "value": "2"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/Cropping\/CroppingWrapper.swift",
+      "kind": "IntegerLiteral",
+      "offset": 2732,
+      "length": 1,
+      "value": "3"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/Cropping\/CroppingWrapper.swift",
+      "kind": "BooleanLiteral",
+      "offset": 3484,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/Cropping\/CroppingWrapper.swift",
+      "kind": "IntegerLiteral",
+      "offset": 4135,
+      "length": 3,
+      "value": "300"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/Cropping\/CroppingWrapper.swift",
+      "kind": "IntegerLiteral",
+      "offset": 4610,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/Cropping\/CroppingWrapper.swift",
+      "kind": "IntegerLiteral",
+      "offset": 4662,
+      "length": 1,
+      "value": "1"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/Cropping\/CroppingWrapper.swift",
+      "kind": "IntegerLiteral",
+      "offset": 5035,
+      "length": 1,
+      "value": "2"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/Cropping\/CroppingWrapper.swift",
+      "kind": "IntegerLiteral",
+      "offset": 5098,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/Cropping\/CroppingWrapper.swift",
+      "kind": "IntegerLiteral",
+      "offset": 5174,
+      "length": 1,
+      "value": "1"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/Cropping\/CroppingWrapper.swift",
+      "kind": "IntegerLiteral",
+      "offset": 5250,
+      "length": 1,
+      "value": "2"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/Cropping\/CroppingWrapper.swift",
+      "kind": "IntegerLiteral",
+      "offset": 5326,
+      "length": 1,
+      "value": "3"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/Cropping\/CroppingWrapper.swift",
+      "kind": "BooleanLiteral",
+      "offset": 5868,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/Cropping\/CroppingWrapper.swift",
+      "kind": "IntegerLiteral",
+      "offset": 6308,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/Cropping\/CroppingWrapper.swift",
+      "kind": "IntegerLiteral",
+      "offset": 6373,
+      "length": 1,
+      "value": "2"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/Cropping\/CroppingWrapper.swift",
+      "kind": "IntegerLiteral",
+      "offset": 6989,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/Cropping\/CroppingWrapper.swift",
+      "kind": "IntegerLiteral",
+      "offset": 7103,
+      "length": 1,
+      "value": "1"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/Cropping\/CroppingWrapper.swift",
+      "kind": "IntegerLiteral",
+      "offset": 7166,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/Cropping\/CroppingWrapper.swift",
+      "kind": "IntegerLiteral",
+      "offset": 7242,
+      "length": 1,
+      "value": "1"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/Cropping\/CroppingWrapper.swift",
+      "kind": "IntegerLiteral",
+      "offset": 7318,
+      "length": 1,
+      "value": "2"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/Cropping\/CroppingWrapper.swift",
+      "kind": "IntegerLiteral",
+      "offset": 7394,
+      "length": 1,
+      "value": "3"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/Cropping\/CroppingWrapper.swift",
+      "kind": "IntegerLiteral",
+      "offset": 7710,
+      "length": 3,
+      "value": "100"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/Cropping\/CroppingWrapper.swift",
+      "kind": "IntegerLiteral",
+      "offset": 7863,
+      "length": 3,
+      "value": "100"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/Cropping\/CroppingWrapper.swift",
+      "kind": "IntegerLiteral",
+      "offset": 8159,
+      "length": 3,
+      "value": "100"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/Cropping\/CroppingWrapper.swift",
+      "kind": "IntegerLiteral",
+      "offset": 8180,
+      "length": 3,
+      "value": "100"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/Cropping\/CroppingWrapper.swift",
+      "kind": "BooleanLiteral",
+      "offset": 8357,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/Cropping\/CroppingWrapper.swift",
+      "kind": "FloatLiteral",
+      "offset": 8364,
+      "length": 3,
+      "value": "0.0"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/Cropping\/CroppingWrapper.swift",
+      "kind": "IntegerLiteral",
+      "offset": 8408,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/Cropping\/CroppingWrapper.swift",
+      "kind": "IntegerLiteral",
+      "offset": 8414,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/Cropping\/CroppingWrapper.swift",
+      "kind": "IntegerLiteral",
+      "offset": 8804,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/Cropping\/CroppingWrapper.swift",
+      "kind": "IntegerLiteral",
+      "offset": 8827,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/Cropping\/CroppingWrapper.swift",
+      "kind": "BooleanLiteral",
+      "offset": 9008,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/Cropping\/CroppingWrapper.swift",
+      "kind": "FloatLiteral",
+      "offset": 9056,
+      "length": 3,
+      "value": "5.0"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/Cropping\/CroppingWrapper.swift",
+      "kind": "FloatLiteral",
+      "offset": 9105,
+      "length": 7,
+      "value": "1.58870"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/Cropping\/CroppingWrapper.swift",
+      "kind": "FloatLiteral",
+      "offset": 9158,
+      "length": 10,
+      "value": "1.41915551"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/Cropping\/CroppingWrapper.swift",
+      "kind": "IntegerLiteral",
+      "offset": 9206,
+      "length": 3,
+      "value": "100"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/Cropping\/CroppingWrapper.swift",
+      "kind": "IntegerLiteral",
+      "offset": 9231,
+      "length": 3,
+      "value": "100"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/Cropping\/CroppingWrapper.swift",
+      "kind": "IntegerLiteral",
+      "offset": 9287,
+      "length": 3,
+      "value": "100"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/Cropping\/CroppingWrapper.swift",
+      "kind": "IntegerLiteral",
+      "offset": 9312,
+      "length": 3,
+      "value": "100"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/Cropping\/CroppingWrapper.swift",
+      "kind": "BooleanLiteral",
+      "offset": 9429,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/Model\/DetectData.swift",
+      "kind": "StringLiteral",
+      "offset": 212,
+      "length": 10,
+      "value": "\"AcuantImagePreparation.DetectData\""
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/Exif\/AcuantExifDataHelper.swift",
+      "kind": "StringLiteral",
+      "offset": 580,
+      "length": 21,
+      "value": "\"yyyy:MM:dd HH:mm:ss\""
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/Exif\/AcuantExifDataHelper.swift",
+      "kind": "StringLiteral",
+      "offset": 648,
+      "length": 5,
+      "value": "\"UTC\""
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/Exif\/AcuantExifDataHelper.swift",
+      "kind": "IntegerLiteral",
+      "offset": 2052,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/Exif\/AcuantExifDataHelper.swift",
+      "kind": "IntegerLiteral",
+      "offset": 2118,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/Exif\/AcuantExifDataHelper.swift",
+      "kind": "StringLiteral",
+      "offset": 2351,
+      "length": 42,
+      "value": "\"Acuant iOS SDK \""
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/Exif\/AcuantExifDataHelper.swift",
+      "kind": "StringLiteral",
+      "offset": 2392,
+      "length": 2,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/Exif\/AcuantExifDataHelper.swift",
+      "kind": "StringLiteral",
+      "offset": 2716,
+      "length": 3,
+      "value": "\"=\""
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/Exif\/AcuantExifDataHelper.swift",
+      "kind": "IntegerLiteral",
+      "offset": 2728,
+      "length": 3,
+      "value": "100"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/Exif\/AcuantExifDataHelper.swift",
+      "kind": "IntegerLiteral",
+      "offset": 3011,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/Exif\/AcuantExifDataHelper.swift",
+      "kind": "IntegerLiteral",
+      "offset": 3077,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/Exif\/AcuantExifDataHelper.swift",
+      "kind": "StringLiteral",
+      "offset": 3302,
+      "length": 42,
+      "value": "\"Acuant iOS SDK \""
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/Exif\/AcuantExifDataHelper.swift",
+      "kind": "StringLiteral",
+      "offset": 3343,
+      "length": 2,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/Exif\/AcuantExifDataHelper.swift",
+      "kind": "StringLiteral",
+      "offset": 3581,
+      "length": 3,
+      "value": "\"=\""
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/Exif\/AcuantExifDataHelper.swift",
+      "kind": "IntegerLiteral",
+      "offset": 3593,
+      "length": 3,
+      "value": "100"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/Exif\/AcuantExifDataHelper.swift",
+      "kind": "FloatLiteral",
+      "offset": 3883,
+      "length": 3,
+      "value": "1.0"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/Exif\/AcuantExifDataHelper.swift",
+      "kind": "IntegerLiteral",
+      "offset": 4336,
+      "length": 1,
+      "value": "1"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/Exif\/AcuantExifDataHelper.swift",
+      "kind": "IntegerLiteral",
+      "offset": 4411,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/Exif\/AcuantExifDataHelper.swift",
+      "kind": "FloatLiteral",
+      "offset": 4700,
+      "length": 3,
+      "value": "1.0"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/Exif\/AcuantExifDataHelper.swift",
+      "kind": "IntegerLiteral",
+      "offset": 5114,
+      "length": 1,
+      "value": "1"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/Exif\/AcuantExifDataHelper.swift",
+      "kind": "IntegerLiteral",
+      "offset": 5189,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/Exif\/AcuantExifDataHelper.swift",
+      "kind": "StringLiteral",
+      "offset": 5314,
+      "length": 5,
+      "value": "\"ID3\""
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/Exif\/AcuantExifDataHelper.swift",
+      "kind": "FloatLiteral",
+      "offset": 5803,
+      "length": 3,
+      "value": "1.0"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/Exif\/AcuantExifDataHelper.swift",
+      "kind": "IntegerLiteral",
+      "offset": 6187,
+      "length": 1,
+      "value": "1"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/Exif\/AcuantExifDataHelper.swift",
+      "kind": "IntegerLiteral",
+      "offset": 6262,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/Exif\/AcuantExifDataHelper.swift",
+      "kind": "Dictionary",
+      "offset": 6406,
+      "length": 4550,
+      "value": "[(\"iPhone6,1\", \"iPhone 5S (GSM)\"), (\"iPhone6,2\", \"iPhone 5S (Global)\"), (\"iPhone7,1\", \"iPhone 6 Plus\"), (\"iPhone7,2\", \"iPhone 6\"), (\"iPhone8,1\", \"iPhone 6S\"), (\"iPhone8,2\", \"iPhone 6S Plus\"), (\"iPhone8,4\", \"iPhone SE\"), (\"iPhone9,1\", \"iPhone 7 (CDMA)\"), (\"iPhone9,3\", \"iPhone 7 (GSM)\"), (\"iPhone9,2\", \"iPhone 7 Plus (CDMA)\"), (\"iPhone9,4\", \"iPhone 7 Plus (GSM)\"), (\"iPhone10,1\", \"iPhone 8 (CDMA)\"), (\"iPhone10,4\", \"iPhone 8 (GSM)\"), (\"iPhone10,2\", \"iPhone 8 Plus (CDMA)\"), (\"iPhone10,5\", \"iPhone 8 Plus (GSM)\"), (\"iPhone10,3\", \"iPhone X (CDMA)\"), (\"iPhone10,6\", \"iPhone X (GSM)\"), (\"iPhone11,2\", \"iPhone XS\"), (\"iPhone11,4\", \"iPhone XS Max\"), (\"iPhone11,6\", \"iPhone XS Max China\"), (\"iPhone11,8\", \"iPhone XR\"), (\"iPhone12,1\", \"iPhone 11\"), (\"iPhone12,3\", \"iPhone 11 Pro\"), (\"iPhone12,5\", \"iPhone 11 Pro Max\"), (\"iPhone12,8\", \"iPhone SE (2nd Gen)\"), (\"iPhone13,1\", \"iPhone 12 Mini\"), (\"iPhone13,2\", \"iPhone 12\"), (\"iPhone13,3\", \"iPhone 12 Pro\"), (\"iPhone13,4\", \"iPhone 12 Pro Max\"), (\"iPhone14,2\", \"iPhone 13 Pro\"), (\"iPhone14,3\", \"iPhone 13 Pro Max\"), (\"iPhone14,4\", \"iPhone 13 Mini\"), (\"iPhone14,5\", \"iPhone 13\"), (\"iPad4,1\", \"iPad Air (WiFi)\"), (\"iPad4,2\", \"iPad Air (GSM+CDMA)\"), (\"iPad4,3\", \"1st Gen iPad Air (China)\"), (\"iPad4,4\", \"iPad mini Retina (WiFi)\"), (\"iPad4,5\", \"iPad mini Retina (GSM+CDMA)\"), (\"iPad4,6\", \"iPad mini Retina (China)\"), (\"iPad4,7\", \"iPad mini 3 (WiFi)\"), (\"iPad4,8\", \"iPad mini 3 (GSM+CDMA)\"), (\"iPad4,9\", \"iPad Mini 3 (China)\"), (\"iPad5,1\", \"iPad mini 4 (WiFi)\"), (\"iPad5,2\", \"4th Gen iPad mini (WiFi+Cellular)\"), (\"iPad5,3\", \"iPad Air 2 (WiFi)\"), (\"iPad5,4\", \"iPad Air 2 (Cellular)\"), (\"iPad6,3\", \"iPad Pro (9.7 inch, WiFi)\"), (\"iPad6,4\", \"iPad Pro (9.7 inch, WiFi+LTE)\"), (\"iPad6,7\", \"iPad Pro (12.9 inch, WiFi)\"), (\"iPad6,8\", \"iPad Pro (12.9 inch, WiFi+LTE)\"), (\"iPad6,11\", \"iPad (2017)\"), (\"iPad6,12\", \"iPad (2017)\"), (\"iPad7,1\", \"iPad Pro 2nd Gen (WiFi)\"), (\"iPad7,2\", \"iPad Pro 2nd Gen (WiFi+Cellular)\"), (\"iPad7,3\", \"iPad Pro 10.5-inch 2nd Gen\"), (\"iPad7,4\", \"iPad Pro 10.5-inch 2nd Gen\"), (\"iPad7,5\", \"iPad 6th Gen (WiFi)\"), (\"iPad7,6\", \"iPad 6th Gen (WiFi+Cellular)\"), (\"iPad7,11\", \"iPad 7th Gen 10.2-inch (WiFi)\"), (\"iPad7,12\", \"iPad 7th Gen 10.2-inch (WiFi+Cellular)\"), (\"iPad8,1\", \"iPad Pro 11 inch 3rd Gen (WiFi)\"), (\"iPad8,2\", \"iPad Pro 11 inch 3rd Gen (1TB, WiFi)\"), (\"iPad8,3\", \"iPad Pro 11 inch 3rd Gen (WiFi+Cellular)\"), (\"iPad8,4\", \"iPad Pro 11 inch 3rd Gen (1TB, WiFi+Cellular)\"), (\"iPad8,5\", \"iPad Pro 12.9 inch 3rd Gen (WiFi)\"), (\"iPad8,6\", \"iPad Pro 12.9 inch 3rd Gen (1TB, WiFi)\"), (\"iPad8,7\", \"iPad Pro 12.9 inch 3rd Gen (WiFi+Cellular)\"), (\"iPad8,8\", \"iPad Pro 12.9 inch 3rd Gen (1TB, WiFi+Cellular)\"), (\"iPad8,9\", \"iPad Pro 11 inch 4th Gen (WiFi)\"), (\"iPad8,10\", \"iPad Pro 11 inch 4th Gen (WiFi+Cellular)\"), (\"iPad8,11\", \"iPad Pro 12.9 inch 4th Gen (WiFi)\"), (\"iPad8,12\", \"iPad Pro 12.9 inch 4th Gen (WiFi+Cellular)\"), (\"iPad11,1\", \"iPad mini 5th Gen (WiFi)\"), (\"iPad11,2\", \"iPad mini 5th Gen\"), (\"iPad11,3\", \"iPad Air 3rd Gen (WiFi)\"), (\"iPad11,4\", \"iPad Air 3rd Gen\"), (\"iPad11,6\", \"iPad 8th Gen (WiFi)\"), (\"iPad11,7\", \"iPad 8th Gen (WiFi+Cellular)\"), (\"iPad12,1\", \"iPad 9th Gen (WiFi)\"), (\"iPad12,2\", \"iPad 9th Gen (WiFi+Cellular)\"), (\"iPad14,1\", \"iPad mini 6th Gen (WiFi)\"), (\"iPad14,2\", \"iPad mini 6th Gen (WiFi+Cellular)\"), (\"iPad13,1\", \"iPad Air 4th Gen (WiFi)\"), (\"iPad13,2\", \"iPad Air 4th Gen (WiFi+Cellular)\"), (\"iPad13,4\", \"iPad Pro 11 inch 5th Gen\"), (\"iPad13,5\", \"iPad Pro 11 inch 5th Gen\"), (\"iPad13,6\", \"iPad Pro 11 inch 5th Gen\"), (\"iPad13,7\", \"iPad Pro 11 inch 5th Gen\"), (\"iPad13,8\", \"iPad Pro 12.9 inch 5th Gen\"), (\"iPad13,9\", \"iPad Pro 12.9 inch 5th Gen\"), (\"iPad13,10\", \"iPad Pro 12.9 inch 5th Gen\"), (\"iPad13,11\", \"iPad Pro 12.9 inch 5th Gen\"), (\"iPod7,1\", \"iPod Touch 6th Generation\"), (\"iPod9,1\", \"iPod Touch 7th Generation\")]"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/Exif\/AcuantExifDataHelper.swift",
+      "kind": "StringLiteral",
+      "offset": 11202,
+      "length": 2,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/Exif\/AcuantExifDataHelper.swift",
+      "kind": "IntegerLiteral",
+      "offset": 11294,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/ImagePreparation.swift",
+      "kind": "BooleanLiteral",
+      "offset": 289,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/ImagePreparation.swift",
+      "kind": "BooleanLiteral",
+      "offset": 330,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/ImagePreparation.swift",
+      "kind": "BooleanLiteral",
+      "offset": 598,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/ImagePreparation.swift",
+      "kind": "BooleanLiteral",
+      "offset": 642,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/ImagePreparation.swift",
+      "kind": "BooleanLiteral",
+      "offset": 751,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/ImagePreparation.swift",
+      "kind": "StringLiteral",
+      "offset": 810,
+      "length": 35,
+      "value": "\"com.acuant.AcuantImagePreparation\""
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/ImagePreparation.swift",
+      "kind": "BooleanLiteral",
+      "offset": 916,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/ImagePreparation.swift",
+      "kind": "StringLiteral",
+      "offset": 1160,
+      "length": 32,
+      "value": "\"\/AssureIDService\/subscriptions\""
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/ImagePreparation.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1863,
+      "length": 2,
+      "value": "60"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/ImagePreparation.swift",
+      "kind": "StringLiteral",
+      "offset": 2042,
+      "length": 15,
+      "value": "\"Authorization\""
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/ImagePreparation.swift",
+      "kind": "StringLiteral",
+      "offset": 2104,
+      "length": 18,
+      "value": "\"application\/json\""
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/ImagePreparation.swift",
+      "kind": "StringLiteral",
+      "offset": 2144,
+      "length": 8,
+      "value": "\"Accept\""
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/ImagePreparation.swift",
+      "kind": "IntegerLiteral",
+      "offset": 2424,
+      "length": 3,
+      "value": "200"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/ImagePreparation.swift",
+      "kind": "IntegerLiteral",
+      "offset": 3018,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/ImagePreparation.swift",
+      "kind": "StringLiteral",
+      "offset": 3232,
+      "length": 4,
+      "value": "\"Id\""
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/ImagePreparation.swift",
+      "kind": "BooleanLiteral",
+      "offset": 3515,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/ImagePreparation.swift",
+      "kind": "StringLiteral",
+      "offset": 3652,
+      "length": 21,
+      "value": "\"DocumentProcessMode\""
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/ImagePreparation.swift",
+      "kind": "IntegerLiteral",
+      "offset": 3757,
+      "length": 1,
+      "value": "2"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/ImagePreparation.swift",
+      "kind": "BooleanLiteral",
+      "offset": 4756,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/ImagePreparation.swift",
+      "kind": "BooleanLiteral",
+      "offset": 6719,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/ImagePreparation.swift",
+      "kind": "StringLiteral",
+      "offset": 8857,
+      "length": 39,
+      "value": "\"iOS \""
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/ImagePreparation.swift",
+      "kind": "StringLiteral",
+      "offset": 8895,
+      "length": 2,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/ImagePreparation.swift",
+      "kind": "StringLiteral",
+      "offset": 9134,
+      "length": 5,
+      "value": "\"ID3\""
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/ImagePreparation.swift",
+      "kind": "StringLiteral",
+      "offset": 9141,
+      "length": 5,
+      "value": "\"ID1\""
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/ImagePreparation.swift",
+      "kind": "IntegerLiteral",
+      "offset": 9175,
+      "length": 4,
+      "value": "1000"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/ImagePreparation.swift",
+      "kind": "IntegerLiteral",
+      "offset": 9270,
+      "length": 4,
+      "value": "1000"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/ImagePreparation.swift",
+      "kind": "IntegerLiteral",
+      "offset": 9353,
+      "length": 4,
+      "value": "1000"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/ImagePreparation.swift",
+      "kind": "IntegerLiteral",
+      "offset": 9468,
+      "length": 4,
+      "value": "1000"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/ImagePreparation.swift",
+      "kind": "StringLiteral",
+      "offset": 9868,
+      "length": 22,
+      "value": "\"Fatal Error Occurred\""
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/ImagePreparation.swift",
+      "kind": "BooleanLiteral",
+      "offset": 10568,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/ImagePreparation.swift",
+      "kind": "BooleanLiteral",
+      "offset": 12226,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/ImagePreparation.swift",
+      "kind": "BooleanLiteral",
+      "offset": 13005,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/ImagePreparation.swift",
+      "kind": "IntegerLiteral",
+      "offset": 13032,
+      "length": 2,
+      "value": "-1"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/ImagePreparation.swift",
+      "kind": "BooleanLiteral",
+      "offset": 13212,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/ImagePreparation.swift",
+      "kind": "IntegerLiteral",
+      "offset": 13239,
+      "length": 2,
+      "value": "-1"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/Model\/CroppingData.swift",
+      "kind": "StringLiteral",
+      "offset": 914,
+      "length": 78,
+      "value": "\"NOT SPECIFIED (implementer used deprecated constructor that lacks this data)\""
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/Model\/CroppingData.swift",
+      "kind": "StringLiteral",
+      "offset": 1105,
+      "length": 8,
+      "value": "\"MANUAL\""
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/Model\/CroppingData.swift",
+      "kind": "Array",
+      "offset": 1829,
+      "length": 2,
+      "value": "[]"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/Model\/CroppingData.swift",
+      "kind": "StringLiteral",
+      "offset": 2021,
+      "length": 13,
+      "value": "\"captureType\""
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/Model\/CroppingData.swift",
+      "kind": "StringLiteral",
+      "offset": 2051,
+      "length": 8,
+      "value": "\"MANUAL\""
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/Model\/CroppingData.swift",
+      "kind": "IntegerLiteral",
+      "offset": 2419,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/Exif\/Model\/AcuantCVMLMetaData.swift",
+      "kind": "IntegerLiteral",
+      "offset": 464,
+      "length": 2,
+      "value": "-1"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/Exif\/Model\/AcuantCVMLMetaData.swift",
+      "kind": "IntegerLiteral",
+      "offset": 494,
+      "length": 2,
+      "value": "-1"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/Exif\/Model\/AcuantCVMLMetaData.swift",
+      "kind": "IntegerLiteral",
+      "offset": 573,
+      "length": 2,
+      "value": "-1"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/Exif\/Model\/AcuantCVMLMetaData.swift",
+      "kind": "IntegerLiteral",
+      "offset": 603,
+      "length": 2,
+      "value": "-1"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/Exif\/Model\/AcuantCVMLMetaData.swift",
+      "kind": "IntegerLiteral",
+      "offset": 682,
+      "length": 2,
+      "value": "-1"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/Exif\/Model\/AcuantCVMLMetaData.swift",
+      "kind": "IntegerLiteral",
+      "offset": 708,
+      "length": 2,
+      "value": "-1"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/Exif\/Model\/AcuantCVMLMetaData.swift",
+      "kind": "IntegerLiteral",
+      "offset": 738,
+      "length": 2,
+      "value": "-1"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/Exif\/Model\/AcuantCVMLMetaData.swift",
+      "kind": "BooleanLiteral",
+      "offset": 816,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/Exif\/Model\/AcuantCVMLMetaData.swift",
+      "kind": "IntegerLiteral",
+      "offset": 845,
+      "length": 2,
+      "value": "-1"
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/Exif\/Model\/AcuantCVMLMetaData.swift",
+      "kind": "StringLiteral",
+      "offset": 877,
+      "length": 2,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/Exif\/Model\/AcuantCVMLMetaData.swift",
+      "kind": "IntegerLiteral",
+      "offset": 907,
+      "length": 2,
+      "value": "-1"
+    }
+  ]
+}

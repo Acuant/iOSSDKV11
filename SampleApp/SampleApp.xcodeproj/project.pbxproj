@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 60;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -43,16 +43,8 @@
 		AA1728BA2673CDDF00E3E2CB /* AcuantHGLiveness.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = AA1728A72673CDDE00E3E2CB /* AcuantHGLiveness.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		AA1728BB2673CDDF00E3E2CB /* AcuantCommon.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA1728A82673CDDE00E3E2CB /* AcuantCommon.xcframework */; };
 		AA1728BC2673CDDF00E3E2CB /* AcuantCommon.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = AA1728A82673CDDE00E3E2CB /* AcuantCommon.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		AA1728BD2673CDDF00E3E2CB /* iProov.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA1728A92673CDDE00E3E2CB /* iProov.xcframework */; };
-		AA1728BE2673CDDF00E3E2CB /* iProov.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = AA1728A92673CDDE00E3E2CB /* iProov.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		AA1728BF2673CDDF00E3E2CB /* AcuantImagePreparation.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA1728AA2673CDDE00E3E2CB /* AcuantImagePreparation.xcframework */; };
 		AA1728C02673CDDF00E3E2CB /* AcuantImagePreparation.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = AA1728AA2673CDDE00E3E2CB /* AcuantImagePreparation.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		AA1728C32673CDDF00E3E2CB /* SocketIO.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA1728AC2673CDDE00E3E2CB /* SocketIO.xcframework */; };
-		AA1728C42673CDDF00E3E2CB /* SocketIO.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = AA1728AC2673CDDE00E3E2CB /* SocketIO.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		AA1728C52673CDDF00E3E2CB /* Starscream.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA1728AD2673CDDE00E3E2CB /* Starscream.xcframework */; };
-		AA1728C62673CDDF00E3E2CB /* Starscream.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = AA1728AD2673CDDE00E3E2CB /* Starscream.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		AA1728C72673CDDF00E3E2CB /* AcuantIPLiveness.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA1728AE2673CDDE00E3E2CB /* AcuantIPLiveness.xcframework */; };
-		AA1728C82673CDDF00E3E2CB /* AcuantIPLiveness.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = AA1728AE2673CDDE00E3E2CB /* AcuantIPLiveness.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		AAD8A20C26DD94C1007920C2 /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD8A20B26DD94C1007920C2 /* AlertView.swift */; };
 		AAD8A20E26DD9515007920C2 /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD8A20D26DD9515007920C2 /* BaseNavigationController.swift */; };
 		C229E7B62224520700FFAC6F /* AcuantConfig.plist in Resources */ = {isa = PBXBuildFile; fileRef = C229E7B52224520700FFAC6F /* AcuantConfig.plist */; };
@@ -102,16 +94,12 @@
 				AA1728B82673CDDF00E3E2CB /* AcuantEchipReader.xcframework in Embed Frameworks */,
 				AA1728C02673CDDF00E3E2CB /* AcuantImagePreparation.xcframework in Embed Frameworks */,
 				AA08D0A4287DEBAB00C5A336 /* OpenSSL.xcframework in Embed Frameworks */,
-				AA1728BE2673CDDF00E3E2CB /* iProov.xcframework in Embed Frameworks */,
 				AA1728B02673CDDE00E3E2CB /* AcuantPassiveLiveness.xcframework in Embed Frameworks */,
 				83248A8423ECB05D00A264F2 /* AcuantFaceCapture.framework in Embed Frameworks */,
 				AA1728B22673CDDF00E3E2CB /* AcuantFaceMatch.xcframework in Embed Frameworks */,
 				C2AD3AAA2273B8F200088F0A /* AcuantCamera.framework in Embed Frameworks */,
 				AA1728BC2673CDDF00E3E2CB /* AcuantCommon.xcframework in Embed Frameworks */,
-				AA1728C62673CDDF00E3E2CB /* Starscream.xcframework in Embed Frameworks */,
-				AA1728C42673CDDF00E3E2CB /* SocketIO.xcframework in Embed Frameworks */,
 				AA1728B62673CDDF00E3E2CB /* AcuantDocumentProcessing.xcframework in Embed Frameworks */,
-				AA1728C82673CDDF00E3E2CB /* AcuantIPLiveness.xcframework in Embed Frameworks */,
 				AA1728BA2673CDDF00E3E2CB /* AcuantHGLiveness.xcframework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -145,17 +133,13 @@
 		83C977F522C69D9A00FC8C53 /* CheckConnection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckConnection.swift; sourceTree = "<group>"; };
 		AA08D0A2287DEBAB00C5A336 /* OpenSSL.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = OpenSSL.xcframework; path = ../EmbeddedFrameworks/OpenSSL.xcframework; sourceTree = "<group>"; };
 		AA1728A02673CDC900E3E2CB /* MrzHelpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MrzHelpViewController.swift; path = SampleApp/MrzHelpViewController.swift; sourceTree = "<group>"; };
-		AA1728A22673CDDE00E3E2CB /* AcuantPassiveLiveness.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = AcuantPassiveLiveness.xcframework; path = ../EmbeddedFrameworks/AcuantPassiveLiveness.xcframework; sourceTree = "<group>"; };
-		AA1728A32673CDDE00E3E2CB /* AcuantFaceMatch.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = AcuantFaceMatch.xcframework; path = ../EmbeddedFrameworks/AcuantFaceMatch.xcframework; sourceTree = "<group>"; };
-		AA1728A52673CDDE00E3E2CB /* AcuantDocumentProcessing.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = AcuantDocumentProcessing.xcframework; path = ../EmbeddedFrameworks/AcuantDocumentProcessing.xcframework; sourceTree = "<group>"; };
-		AA1728A62673CDDE00E3E2CB /* AcuantEchipReader.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = AcuantEchipReader.xcframework; path = ../EmbeddedFrameworks/AcuantEchipReader.xcframework; sourceTree = "<group>"; };
-		AA1728A72673CDDE00E3E2CB /* AcuantHGLiveness.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = AcuantHGLiveness.xcframework; path = ../EmbeddedFrameworks/AcuantHGLiveness.xcframework; sourceTree = "<group>"; };
-		AA1728A82673CDDE00E3E2CB /* AcuantCommon.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = AcuantCommon.xcframework; path = ../EmbeddedFrameworks/AcuantCommon.xcframework; sourceTree = "<group>"; };
-		AA1728A92673CDDE00E3E2CB /* iProov.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = iProov.xcframework; path = ../EmbeddedFrameworks/iProov.xcframework; sourceTree = "<group>"; };
-		AA1728AA2673CDDE00E3E2CB /* AcuantImagePreparation.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = AcuantImagePreparation.xcframework; path = ../EmbeddedFrameworks/AcuantImagePreparation.xcframework; sourceTree = "<group>"; };
-		AA1728AC2673CDDE00E3E2CB /* SocketIO.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = SocketIO.xcframework; path = ../EmbeddedFrameworks/SocketIO.xcframework; sourceTree = "<group>"; };
-		AA1728AD2673CDDE00E3E2CB /* Starscream.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = Starscream.xcframework; path = ../EmbeddedFrameworks/Starscream.xcframework; sourceTree = "<group>"; };
-		AA1728AE2673CDDE00E3E2CB /* AcuantIPLiveness.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = AcuantIPLiveness.xcframework; path = ../EmbeddedFrameworks/AcuantIPLiveness.xcframework; sourceTree = "<group>"; };
+		AA1728A22673CDDE00E3E2CB /* AcuantPassiveLiveness.xcframework */ = {isa = PBXFileReference; expectedSignature = "AppleDeveloperProgram:E67326HC5Q:Acuant Inc."; lastKnownFileType = wrapper.xcframework; name = AcuantPassiveLiveness.xcframework; path = ../EmbeddedFrameworks/AcuantPassiveLiveness.xcframework; sourceTree = "<group>"; };
+		AA1728A32673CDDE00E3E2CB /* AcuantFaceMatch.xcframework */ = {isa = PBXFileReference; expectedSignature = "AppleDeveloperProgram:E67326HC5Q:Acuant Inc."; lastKnownFileType = wrapper.xcframework; name = AcuantFaceMatch.xcframework; path = ../EmbeddedFrameworks/AcuantFaceMatch.xcframework; sourceTree = "<group>"; };
+		AA1728A52673CDDE00E3E2CB /* AcuantDocumentProcessing.xcframework */ = {isa = PBXFileReference; expectedSignature = "AppleDeveloperProgram:E67326HC5Q:Acuant Inc."; lastKnownFileType = wrapper.xcframework; name = AcuantDocumentProcessing.xcframework; path = ../EmbeddedFrameworks/AcuantDocumentProcessing.xcframework; sourceTree = "<group>"; };
+		AA1728A62673CDDE00E3E2CB /* AcuantEchipReader.xcframework */ = {isa = PBXFileReference; expectedSignature = "AppleDeveloperProgram:E67326HC5Q:Acuant Inc."; lastKnownFileType = wrapper.xcframework; name = AcuantEchipReader.xcframework; path = ../EmbeddedFrameworks/AcuantEchipReader.xcframework; sourceTree = "<group>"; };
+		AA1728A72673CDDE00E3E2CB /* AcuantHGLiveness.xcframework */ = {isa = PBXFileReference; expectedSignature = "AppleDeveloperProgram:E67326HC5Q:Acuant Inc."; lastKnownFileType = wrapper.xcframework; name = AcuantHGLiveness.xcframework; path = ../EmbeddedFrameworks/AcuantHGLiveness.xcframework; sourceTree = "<group>"; };
+		AA1728A82673CDDE00E3E2CB /* AcuantCommon.xcframework */ = {isa = PBXFileReference; expectedSignature = "AppleDeveloperProgram:E67326HC5Q:Acuant Inc."; lastKnownFileType = wrapper.xcframework; name = AcuantCommon.xcframework; path = ../EmbeddedFrameworks/AcuantCommon.xcframework; sourceTree = "<group>"; };
+		AA1728AA2673CDDE00E3E2CB /* AcuantImagePreparation.xcframework */ = {isa = PBXFileReference; expectedSignature = "AppleDeveloperProgram:E67326HC5Q:Acuant Inc."; lastKnownFileType = wrapper.xcframework; name = AcuantImagePreparation.xcframework; path = ../EmbeddedFrameworks/AcuantImagePreparation.xcframework; sourceTree = "<group>"; };
 		AAD8A20B26DD94C1007920C2 /* AlertView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AlertView.swift; path = View/AlertView.swift; sourceTree = "<group>"; };
 		AAD8A20D26DD9515007920C2 /* BaseNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
 		C20804982226E048004FA5BE /* AcuantCamera.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = AcuantCamera.xcodeproj; path = ../AcuantCamera/AcuantCamera.xcodeproj; sourceTree = "<group>"; };
@@ -173,16 +157,12 @@
 				AA1728B72673CDDF00E3E2CB /* AcuantEchipReader.xcframework in Frameworks */,
 				AA1728BF2673CDDF00E3E2CB /* AcuantImagePreparation.xcframework in Frameworks */,
 				AA08D0A3287DEBAB00C5A336 /* OpenSSL.xcframework in Frameworks */,
-				AA1728BD2673CDDF00E3E2CB /* iProov.xcframework in Frameworks */,
 				AA1728AF2673CDDE00E3E2CB /* AcuantPassiveLiveness.xcframework in Frameworks */,
 				838DEB5124356128004B5DE3 /* AcuantCamera.framework in Frameworks */,
 				AA1728B12673CDDF00E3E2CB /* AcuantFaceMatch.xcframework in Frameworks */,
 				83248A8323ECB05D00A264F2 /* AcuantFaceCapture.framework in Frameworks */,
 				AA1728BB2673CDDF00E3E2CB /* AcuantCommon.xcframework in Frameworks */,
-				AA1728C52673CDDF00E3E2CB /* Starscream.xcframework in Frameworks */,
-				AA1728C32673CDDF00E3E2CB /* SocketIO.xcframework in Frameworks */,
 				AA1728B52673CDDF00E3E2CB /* AcuantDocumentProcessing.xcframework in Frameworks */,
-				AA1728C72673CDDF00E3E2CB /* AcuantIPLiveness.xcframework in Frameworks */,
 				AA1728B92673CDDF00E3E2CB /* AcuantHGLiveness.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -250,11 +230,7 @@
 				AA1728A32673CDDE00E3E2CB /* AcuantFaceMatch.xcframework */,
 				AA1728A72673CDDE00E3E2CB /* AcuantHGLiveness.xcframework */,
 				AA1728AA2673CDDE00E3E2CB /* AcuantImagePreparation.xcframework */,
-				AA1728AE2673CDDE00E3E2CB /* AcuantIPLiveness.xcframework */,
 				AA1728A22673CDDE00E3E2CB /* AcuantPassiveLiveness.xcframework */,
-				AA1728A92673CDDE00E3E2CB /* iProov.xcframework */,
-				AA1728AC2673CDDE00E3E2CB /* SocketIO.xcframework */,
-				AA1728AD2673CDDE00E3E2CB /* Starscream.xcframework */,
 				83248A7D23ECAFF500A264F2 /* AcuantFaceCapture.xcodeproj */,
 				C20804982226E048004FA5BE /* AcuantCamera.xcodeproj */,
 			);
