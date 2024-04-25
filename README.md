@@ -1,4 +1,4 @@
-# Acuant iOS SDK v11.6.3
+# Acuant iOS SDK v11.6.4
 
 **April 2024**
 
@@ -21,9 +21,9 @@ This document provides detailed information about the Acuant iOS SDK. The Acuant
 
 ----------
 
-## Updating to 11.6.3+
+## Updating to 11.6.4+
 
-Please see the provided [Migration Details](MigrationDetails.md) for information about updating to 11.6.3+
+Please see the provided [Migration Details](MigrationDetails.md) for information about updating to 11.6.4+
 
 ----------
 
