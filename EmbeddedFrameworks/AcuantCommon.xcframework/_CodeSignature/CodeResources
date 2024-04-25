@@ -6,7 +6,7 @@
 	<dict>
 		<key>ios-arm64/AcuantCommon.framework/AcuantCommon</key>
 		<data>
-		6KLwH2XG4kylFTJcjRp1WtFJFyY=
+		eb+FwDNYbKFy9myjyfJkxghiuKo=
 		</data>
 		<key>ios-arm64/AcuantCommon.framework/Headers/AcuantCommon-Swift.h</key>
 		<data>
@@ -22,7 +22,7 @@
 		</data>
 		<key>ios-arm64/AcuantCommon.framework/Modules/AcuantCommon.swiftmodule/arm64-apple-ios.abi.json</key>
 		<data>
-		uPu2/la6qK7LGCE19BQY7QpPhTI=
+		2KHd8brTsYWGJYMdG+DNGeKRW1s=
 		</data>
 		<key>ios-arm64/AcuantCommon.framework/Modules/AcuantCommon.swiftmodule/arm64-apple-ios.private.swiftinterface</key>
 		<data>
@@ -46,7 +46,7 @@
 		</data>
 		<key>ios-arm64_x86_64-simulator/AcuantCommon.framework/AcuantCommon</key>
 		<data>
-		b40BBd0apafEFfH/D/dzHKNVQtg=
+		kn5S41P7BZiWZTnbqz+Z8VFpYrw=
 		</data>
 		<key>ios-arm64_x86_64-simulator/AcuantCommon.framework/Headers/AcuantCommon-Swift.h</key>
 		<data>
@@ -62,7 +62,7 @@
 		</data>
 		<key>ios-arm64_x86_64-simulator/AcuantCommon.framework/Modules/AcuantCommon.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
 		<data>
-		uPu2/la6qK7LGCE19BQY7QpPhTI=
+		2KHd8brTsYWGJYMdG+DNGeKRW1s=
 		</data>
 		<key>ios-arm64_x86_64-simulator/AcuantCommon.framework/Modules/AcuantCommon.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
@@ -78,7 +78,7 @@
 		</data>
 		<key>ios-arm64_x86_64-simulator/AcuantCommon.framework/Modules/AcuantCommon.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<data>
-		uPu2/la6qK7LGCE19BQY7QpPhTI=
+		2KHd8brTsYWGJYMdG+DNGeKRW1s=
 		</data>
 		<key>ios-arm64_x86_64-simulator/AcuantCommon.framework/Modules/AcuantCommon.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
@@ -102,7 +102,7 @@
 		</data>
 		<key>ios-arm64_x86_64-simulator/AcuantCommon.framework/_CodeSignature/CodeResources</key>
 		<data>
-		2JFp3vkzAuuIGbtQvDN0v3hGtwc=
+		MdAyH2/ALvHjmBnqgfp6TQbX6Bk=
 		</data>
 	</dict>
 	<key>files2</key>
@@ -111,11 +111,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			6KLwH2XG4kylFTJcjRp1WtFJFyY=
+			eb+FwDNYbKFy9myjyfJkxghiuKo=
 			</data>
 			<key>hash2</key>
 			<data>
-			0TkFIk15gwgEmWcYfT/B3R01hb//qmKdabUKj0cWSac=
+			NrZQBAjzbJ6H2lZ4+UtRSjK7QubVtTD+rxTYxd1sJvQ=
 			</data>
 		</dict>
 		<key>ios-arm64/AcuantCommon.framework/Headers/AcuantCommon-Swift.h</key>
@@ -155,11 +155,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			uPu2/la6qK7LGCE19BQY7QpPhTI=
+			2KHd8brTsYWGJYMdG+DNGeKRW1s=
 			</data>
 			<key>hash2</key>
 			<data>
-			VyEJ0hs2TSvhSh0Xu7lABXJpacWN6wZREs9gKlhuIZY=
+			hYma2w7V98vuZqWCTGT/SFzJLqkDRebFfpiAHqH7OeQ=
 			</data>
 		</dict>
 		<key>ios-arm64/AcuantCommon.framework/Modules/AcuantCommon.swiftmodule/arm64-apple-ios.private.swiftinterface</key>
@@ -221,11 +221,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			b40BBd0apafEFfH/D/dzHKNVQtg=
+			kn5S41P7BZiWZTnbqz+Z8VFpYrw=
 			</data>
 			<key>hash2</key>
 			<data>
-			i15eFUzuGyzQQSHMvp4n6jw4GQ+bE+P+adnjEPY1Mco=
+			e6GL5dzD8mBA1AhciYB6I0DTAZIWh0uolFwzTgZOfd0=
 			</data>
 		</dict>
 		<key>ios-arm64_x86_64-simulator/AcuantCommon.framework/Headers/AcuantCommon-Swift.h</key>
@@ -265,11 +265,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			uPu2/la6qK7LGCE19BQY7QpPhTI=
+			2KHd8brTsYWGJYMdG+DNGeKRW1s=
 			</data>
 			<key>hash2</key>
 			<data>
-			VyEJ0hs2TSvhSh0Xu7lABXJpacWN6wZREs9gKlhuIZY=
+			hYma2w7V98vuZqWCTGT/SFzJLqkDRebFfpiAHqH7OeQ=
 			</data>
 		</dict>
 		<key>ios-arm64_x86_64-simulator/AcuantCommon.framework/Modules/AcuantCommon.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
@@ -309,11 +309,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			uPu2/la6qK7LGCE19BQY7QpPhTI=
+			2KHd8brTsYWGJYMdG+DNGeKRW1s=
 			</data>
 			<key>hash2</key>
 			<data>
-			VyEJ0hs2TSvhSh0Xu7lABXJpacWN6wZREs9gKlhuIZY=
+			hYma2w7V98vuZqWCTGT/SFzJLqkDRebFfpiAHqH7OeQ=
 			</data>
 		</dict>
 		<key>ios-arm64_x86_64-simulator/AcuantCommon.framework/Modules/AcuantCommon.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
@@ -375,11 +375,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			2JFp3vkzAuuIGbtQvDN0v3hGtwc=
+			MdAyH2/ALvHjmBnqgfp6TQbX6Bk=
 			</data>
 			<key>hash2</key>
 			<data>
-			GoFBNtptz13m6XsgaljA8ZsAdmna/nNc/K4UoDKA+0U=
+			3vCT1bKTXnLJeft5alU1wXZFp4uzQurRtIkhpC3vCLw=
 			</data>
 		</dict>
 	</dict>

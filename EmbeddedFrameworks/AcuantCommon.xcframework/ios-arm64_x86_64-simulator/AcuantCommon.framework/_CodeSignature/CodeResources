@@ -18,7 +18,7 @@
 		</data>
 		<key>Modules/AcuantCommon.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
 		<data>
-		uPu2/la6qK7LGCE19BQY7QpPhTI=
+		2KHd8brTsYWGJYMdG+DNGeKRW1s=
 		</data>
 		<key>Modules/AcuantCommon.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
@@ -34,11 +34,11 @@
 		</data>
 		<key>Modules/AcuantCommon.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		H0WJ3DjVtSgBTIB9O/sL1OHRZNs=
+		HLId9pBIyvMGLbJYLPyxPhpeRw0=
 		</data>
 		<key>Modules/AcuantCommon.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<data>
-		uPu2/la6qK7LGCE19BQY7QpPhTI=
+		2KHd8brTsYWGJYMdG+DNGeKRW1s=
 		</data>
 		<key>Modules/AcuantCommon.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
@@ -54,7 +54,7 @@
 		</data>
 		<key>Modules/AcuantCommon.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		XwW/s5vc/SceIK3F60BQxwh68kM=
+		CJzDwDZMOHBkAzTpx5eNHOOx8BA=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -85,7 +85,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			VyEJ0hs2TSvhSh0Xu7lABXJpacWN6wZREs9gKlhuIZY=
+			hYma2w7V98vuZqWCTGT/SFzJLqkDRebFfpiAHqH7OeQ=
 			</data>
 		</dict>
 		<key>Modules/AcuantCommon.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
@@ -113,14 +113,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			BRZ7Jd/roKIV+wOxx2UBnZP0Wakksv/5sJOhwNeSH/w=
+			f5X/2XKYI2p3zzAq/XdVxn06pPwHQgo96xOSVyUXPdU=
 			</data>
 		</dict>
 		<key>Modules/AcuantCommon.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			VyEJ0hs2TSvhSh0Xu7lABXJpacWN6wZREs9gKlhuIZY=
+			hYma2w7V98vuZqWCTGT/SFzJLqkDRebFfpiAHqH7OeQ=
 			</data>
 		</dict>
 		<key>Modules/AcuantCommon.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
@@ -148,7 +148,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			wrqcWsEUTV6RFl2wmX7ilBuSGcC/VFwZblEnry7MnW4=
+			FfEfSIMGgNR1u7mO5eFWcic8mVLiUVeby8oec1c5Lic=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

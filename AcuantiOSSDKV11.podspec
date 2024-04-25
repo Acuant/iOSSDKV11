@@ -3,7 +3,7 @@ Pod::Spec.new do |s|
     s.swift_versions = ['5.5.2']
     s.ios.deployment_target = '11.0'
     s.name         = "AcuantiOSSDKV11"
-    s.version      = "11.6.3"
+    s.version      = "11.6.4"
     s.summary      = "Acuant's latest SDK with most advanced image capture technology and optimized user workflow  "
     s.description  = "Acuant's latest SDK with most advanced image capture technology and optimized user workflow.
 
@@ -83,7 +83,7 @@ Pod::Spec.new do |s|
             "AcuantFaceCapture/AcuantFaceCapture/View/*.{h,swift}",
             "AcuantFaceCapture/AcuantFaceCapture/Models/*.{h,swift}",
             "AcuantFaceCapture/AcuantFaceCapture/Extension/*.{h,swift}"
-
+        acuantFaceCapture.resource_bundles = { 'AcuantFaceCaptureAssets' => [ 'AcuantFaceCapture/AcuantFaceCapture/*.xcprivacy'] }
         acuantFaceCapture.dependency "#{s.name}/AcuantCommon"
         acuantFaceCapture.dependency "#{s.name}/AcuantImagePreparation"
     end
@@ -120,7 +120,7 @@ Pod::Spec.new do |s|
                 "AcuantCamera/AcuantCamera/Extension/*.{h,swift}",
                 "AcuantCamera/AcuantCamera/Constant/*.{h,swift}",
                 "AcuantCamera/AcuantCamera/Camera/*.{h,swift}"
-            common.resource_bundles = { 'AcuantCameraAssets' => [ 'AcuantCamera/AcuantCamera/*.xcassets'] }
+            common.resource_bundles = { 'AcuantCameraAssets' => [ 'AcuantCamera/AcuantCamera/*.xcassets', 'AcuantCamera/AcuantCamera/*.xcprivacy'] }
         end
 
         acuantCamera.source_files = "AcuantCamera/AcuantCamera/*.{h,swift}"
