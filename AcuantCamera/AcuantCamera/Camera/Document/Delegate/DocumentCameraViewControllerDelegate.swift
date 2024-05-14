@@ -6,6 +6,7 @@
 //  Copyright © 2019 Tapas Behera. All rights reserved.
 //
 
+import Foundation
 import AcuantCommon
 
 @objc public protocol DocumentCameraViewControllerDelegate {

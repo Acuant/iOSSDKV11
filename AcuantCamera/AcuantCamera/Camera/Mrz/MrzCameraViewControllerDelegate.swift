@@ -6,6 +6,8 @@
 //  Copyright © 2022 Acuant. All rights reserved.
 //
 
+import Foundation
+
 @objc public protocol MrzCameraViewControllerDelegate: AnyObject {
     func onCaptured(mrz: AcuantMrzResult?)
 }

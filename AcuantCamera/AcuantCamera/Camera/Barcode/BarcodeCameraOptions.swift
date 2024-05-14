@@ -6,6 +6,9 @@
 //  Copyright © 2022 Acuant. All rights reserved.
 //
 
+import Foundation
+import UIKit
+
 @objc public enum BarcodeCameraState: Int {
     case align
     case capturing

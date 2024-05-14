@@ -6,6 +6,9 @@
 //  Copyright © 2022 Acuant. All rights reserved.
 //
 
+import Foundation
+import UIKit
+
 @objc public enum DocumentCameraState: Int {
     case align, moveCloser, tooClose, steady, hold, capture
 }

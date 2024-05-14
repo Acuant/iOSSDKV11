@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 public class AcuantOcrDetector {
     let tesseract: Tesseract

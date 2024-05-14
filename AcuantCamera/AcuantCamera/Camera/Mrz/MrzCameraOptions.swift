@@ -6,6 +6,9 @@
 //  Copyright © 2022 Acuant. All rights reserved.
 //
 
+import UIKit
+import Foundation
+
 @objc public enum MrzCameraState: Int {
     case none, align, moveCloser, tooClose, reposition, good, captured
 }

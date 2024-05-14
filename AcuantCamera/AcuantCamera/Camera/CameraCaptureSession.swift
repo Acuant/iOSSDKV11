@@ -6,6 +6,7 @@
 //  Copyright © 2022 Acuant. All rights reserved.
 //
 
+import UIKit
 import Foundation
 import AVFoundation
 

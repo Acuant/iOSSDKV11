@@ -6,6 +6,8 @@
 //  Copyright © 2020 Acuant. All rights reserved.
 //
 
+import Foundation
+
 @objc public protocol AutoCaptureDelegate {
     func getAutoCapture() -> Bool
     func setAutoCapture(autoCapture: Bool)

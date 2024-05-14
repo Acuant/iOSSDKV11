@@ -6,6 +6,8 @@
 //  Copyright © 2022 Acuant. All rights reserved.
 //
 
+import Foundation
+
 extension CGRect {
 
     init?(points: [CGPoint]) {

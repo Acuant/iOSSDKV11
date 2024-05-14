@@ -6,6 +6,8 @@
 //  Copyright © 2021 Acuant. All rights reserved.
 //
 
+import Foundation
+
 @objc public protocol BarcodeCaptureSessionDelegate: AnyObject {
     func captured(barcode: String?)
 }

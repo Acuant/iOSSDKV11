@@ -6,6 +6,8 @@
 //  Copyright © 2021 Acuant. All rights reserved.
 //
 
+import Foundation
+
 @objc public protocol BarcodeCameraViewControllerDelegate: AnyObject {
     func onCaptured(barcode: String?)
 }
