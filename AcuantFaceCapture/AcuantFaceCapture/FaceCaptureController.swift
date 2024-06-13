@@ -324,7 +324,7 @@ public class FaceCaptureController: UIViewController {
     }
 
     func createSemiTransparentOverlay() -> UIView {
-        let view = UIView(frame: view.bounds)
+        let view = UIView(frame: self.view.bounds)
         view.backgroundColor = UIColor.black.withAlphaComponent(0.1)
         return view
     }
