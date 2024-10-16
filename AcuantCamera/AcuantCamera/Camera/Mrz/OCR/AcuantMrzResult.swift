@@ -25,6 +25,7 @@ import Foundation
     public var checkSumResult4: Bool = false
     public var checkSumResult5: Bool = false
     public var threeLineMrz: Bool = false
+    public var capturedImage: UIImage? = nil
     var checkSumDigit1: String = ""
     var checkSumDigit2: String = ""
     var checkSumDigit3: String = ""

@@ -6,7 +6,7 @@
 	<dict>
 		<key>Headers/AcuantImagePreparation-Swift.h</key>
 		<data>
-		75IgXLqezoTTMbzjX33zWvmMsag=
+		89Z+83VB1EEWIQPikXRZwvDRCBY=
 		</data>
 		<key>Headers/AcuantImagePreparation.h</key>
 		<data>
@@ -14,7 +14,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		mvtqj0uGDQ10o1lYzXRU/Jtq1W8=
+		1foI9psivweeiGo3ITU+jD7ELq4=
 		</data>
 		<key>LICENSE.rst</key>
 		<data>
@@ -22,43 +22,43 @@
 		</data>
 		<key>Modules/AcuantImagePreparation.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
 		<data>
-		jZm0Fk86cv6iYy3FY6ZFToGSVUs=
+		Js83SF1cce0IPd6wuke3SMgs+bc=
 		</data>
 		<key>Modules/AcuantImagePreparation.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		2BPJwCks0EaokPe6pgPM6HlnWb8=
+		pAwN5oOcqlPlhBYi5M0UnBgVZqw=
 		</data>
 		<key>Modules/AcuantImagePreparation.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		9DLNjS5AJAZMpKLYj3gEUJNu10o=
+		AU6v4IRdmInCyLktuYDv2cHQzcM=
 		</data>
 		<key>Modules/AcuantImagePreparation.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		2BPJwCks0EaokPe6pgPM6HlnWb8=
+		pAwN5oOcqlPlhBYi5M0UnBgVZqw=
 		</data>
 		<key>Modules/AcuantImagePreparation.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		NVBWHtfGQPglC3Gypq8JUcVn4EU=
+		mmGG3XJoFSH92OcbIHhz+Cv58RM=
 		</data>
 		<key>Modules/AcuantImagePreparation.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<data>
-		jZm0Fk86cv6iYy3FY6ZFToGSVUs=
+		Js83SF1cce0IPd6wuke3SMgs+bc=
 		</data>
 		<key>Modules/AcuantImagePreparation.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		UHZRWMzVl9XhE1eD//KdS/8mZC0=
+		F5J0OVBZM3BCuLLRLb5RLMNj760=
 		</data>
 		<key>Modules/AcuantImagePreparation.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		ZtlOwcx90+mcuasHdw1oO+9DmnM=
+		pKPGVknoxRJuSZaaS1eoEAlUeV4=
 		</data>
 		<key>Modules/AcuantImagePreparation.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		UHZRWMzVl9XhE1eD//KdS/8mZC0=
+		F5J0OVBZM3BCuLLRLb5RLMNj760=
 		</data>
 		<key>Modules/AcuantImagePreparation.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		b8k/xGEhEXHwNt9FekeuXWnwa9Q=
+		VGq1M02yujskaaxwWGbqHlyTthc=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -79,7 +79,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			C2OMsaJr1SbnUoT08IEdo0sS1kiailyRmUC63EBhlVE=
+			6bsHyDEpc0KZdJ/hBQUZEC2U1XYkxwibCgo0t+Aq4M8=
 			</data>
 		</dict>
 		<key>Headers/AcuantImagePreparation.h</key>
@@ -100,70 +100,70 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			dNAB31sYiFc08G08JZaxdHahUILoOsqioMDNplRu8cs=
+			SAL5XP+++HxGZAaVnS96QMNGwdbwhpuOu2jZ+I5crKk=
 			</data>
 		</dict>
 		<key>Modules/AcuantImagePreparation.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			ErJ30mSR6CYir9Egsz2UGogUy2jEmAL0tl/MMlg3QF4=
+			Pifc8dfHLcSqpWUAi+hxVgYUu1Q4hSYF0K4WohZmQ18=
 			</data>
 		</dict>
 		<key>Modules/AcuantImagePreparation.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			I9zAHz+ZiuC+mqhUDxHrZ7azN/995uzBtuLUS5vW06M=
+			f9wlkBE3a81klt+oJ48OoD74PaYSvwkrC/8iUAaudHs=
 			</data>
 		</dict>
 		<key>Modules/AcuantImagePreparation.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			ErJ30mSR6CYir9Egsz2UGogUy2jEmAL0tl/MMlg3QF4=
+			Pifc8dfHLcSqpWUAi+hxVgYUu1Q4hSYF0K4WohZmQ18=
 			</data>
 		</dict>
 		<key>Modules/AcuantImagePreparation.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			FYK+KxasO4DY0foi47DxKh2cdRArpfX174j3sLe2fGU=
+			gQzoJkJ6gj/w0WmndU84lZ9ltcJEzTXVnXWO7QDT8+g=
 			</data>
 		</dict>
 		<key>Modules/AcuantImagePreparation.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			dNAB31sYiFc08G08JZaxdHahUILoOsqioMDNplRu8cs=
+			SAL5XP+++HxGZAaVnS96QMNGwdbwhpuOu2jZ+I5crKk=
 			</data>
 		</dict>
 		<key>Modules/AcuantImagePreparation.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			JmF0DpV9o8afiyuKn3Y/J4g8VxvcZltOwj8Fnvfs0QE=
+			2vY7atyP/JsaDkLkcPcv2mfF1r9z7MEUdQUZ106eJ+Y=
 			</data>
 		</dict>
 		<key>Modules/AcuantImagePreparation.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			JNuAmYWmmp4DZ83YbJbVoKQl0NGSCbGQHHVgrUqjgS0=
+			oCRy1YMxATPw0GwMDZS/WBZZ9f77lFpSXXnuut5E23w=
 			</data>
 		</dict>
 		<key>Modules/AcuantImagePreparation.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			JmF0DpV9o8afiyuKn3Y/J4g8VxvcZltOwj8Fnvfs0QE=
+			2vY7atyP/JsaDkLkcPcv2mfF1r9z7MEUdQUZ106eJ+Y=
 			</data>
 		</dict>
 		<key>Modules/AcuantImagePreparation.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			h/Xs57uTKxHOFHe8CdyDJnvxrcl+Y9pSSOM25KIC3y0=
+			gxlnRP21948EUNjEMAKYX2dGG0wLMFj2LLVOvPeQ8GU=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

@@ -14,6 +14,7 @@ import AcuantEchipReader
 @available (iOS 13, *)
 class NFCViewController: UIViewController, UITextFieldDelegate, OzoneServiceDelegate {
     
+    @IBOutlet weak var capturedImageView: UIImageView!
     @IBOutlet weak var passportNumberTextView: UITextField!
     
     @IBOutlet weak var expiryTextView: UITextField!
@@ -37,6 +38,7 @@ class NFCViewController: UIViewController, UITextFieldDelegate, OzoneServiceDele
         self.passportNumberTextView.text = result.passportNumber
         self.expiryTextView.text = result.passportExpiration
         self.dobTextView.text = result.dob
+        self.capturedImageView.image = result.capturedImage
         
         let tapGestureRecogniser = UITapGestureRecognizer(target: self, action: #selector(tap))
         view.addGestureRecognizer(tapGestureRecogniser)

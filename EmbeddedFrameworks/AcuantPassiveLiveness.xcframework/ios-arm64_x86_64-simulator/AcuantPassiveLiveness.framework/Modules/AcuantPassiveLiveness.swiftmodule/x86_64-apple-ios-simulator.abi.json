@@ -589,7 +589,7 @@
               {
                 "kind": "TypeNominal",
                 "name": "Decoder",
-                "printedName": "Swift.Decoder",
+                "printedName": "any Swift.Decoder",
                 "usr": "s:s7DecoderP"
               }
             ],
@@ -854,7 +854,7 @@
               {
                 "kind": "TypeNominal",
                 "name": "Decoder",
-                "printedName": "Swift.Decoder",
+                "printedName": "any Swift.Decoder",
                 "usr": "s:s7DecoderP"
               }
             ],
@@ -1500,497 +1500,378 @@
   },
   "ConstValues": [
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantPassiveLiveness\/AcuantPassiveLiveness\/Enum\/AcuantLivenessAssessment.swift",
+      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantPassiveLiveness\/AcuantPassiveLiveness\/Enum\/AcuantLivenessAssessment.swift",
       "kind": "StringLiteral",
       "offset": 240,
       "length": 7,
       "value": "\"Error\""
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantPassiveLiveness\/AcuantPassiveLiveness\/Enum\/AcuantLivenessAssessment.swift",
+      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantPassiveLiveness\/AcuantPassiveLiveness\/Enum\/AcuantLivenessAssessment.swift",
       "kind": "StringLiteral",
       "offset": 271,
       "length": 13,
       "value": "\"PoorQuality\""
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantPassiveLiveness\/AcuantPassiveLiveness\/Enum\/AcuantLivenessAssessment.swift",
+      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantPassiveLiveness\/AcuantPassiveLiveness\/Enum\/AcuantLivenessAssessment.swift",
       "kind": "StringLiteral",
       "offset": 301,
       "length": 6,
       "value": "\"Live\""
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantPassiveLiveness\/AcuantPassiveLiveness\/Enum\/AcuantLivenessAssessment.swift",
+      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantPassiveLiveness\/AcuantPassiveLiveness\/Enum\/AcuantLivenessAssessment.swift",
       "kind": "StringLiteral",
       "offset": 327,
       "length": 9,
       "value": "\"NotLive\""
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantPassiveLiveness\/AcuantPassiveLiveness\/Enum\/AcuantLivenessAssessment.swift",
+      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantPassiveLiveness\/AcuantPassiveLiveness\/Enum\/AcuantLivenessAssessment.swift",
       "kind": "StringLiteral",
       "offset": 240,
       "length": 7,
       "value": "\"Error\""
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantPassiveLiveness\/AcuantPassiveLiveness\/Enum\/AcuantLivenessAssessment.swift",
+      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantPassiveLiveness\/AcuantPassiveLiveness\/Enum\/AcuantLivenessAssessment.swift",
       "kind": "StringLiteral",
       "offset": 271,
       "length": 13,
       "value": "\"PoorQuality\""
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantPassiveLiveness\/AcuantPassiveLiveness\/Enum\/AcuantLivenessAssessment.swift",
+      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantPassiveLiveness\/AcuantPassiveLiveness\/Enum\/AcuantLivenessAssessment.swift",
       "kind": "StringLiteral",
       "offset": 301,
       "length": 6,
       "value": "\"Live\""
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantPassiveLiveness\/AcuantPassiveLiveness\/Enum\/AcuantLivenessAssessment.swift",
+      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantPassiveLiveness\/AcuantPassiveLiveness\/Enum\/AcuantLivenessAssessment.swift",
       "kind": "StringLiteral",
       "offset": 327,
       "length": 9,
       "value": "\"NotLive\""
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantPassiveLiveness\/AcuantPassiveLiveness\/Model\/AcuantLivenessError.swift",
+      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantPassiveLiveness\/AcuantPassiveLiveness\/Model\/AcuantLivenessError.swift",
       "kind": "StringLiteral",
       "offset": 360,
       "length": 11,
       "value": "\"ErrorCode\""
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantPassiveLiveness\/AcuantPassiveLiveness\/Model\/AcuantLivenessError.swift",
+      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantPassiveLiveness\/AcuantPassiveLiveness\/Model\/AcuantLivenessError.swift",
       "kind": "StringLiteral",
       "offset": 399,
       "length": 7,
       "value": "\"Error\""
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantPassiveLiveness\/AcuantPassiveLiveness\/Model\/AcuantLivenessError.swift",
+      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantPassiveLiveness\/AcuantPassiveLiveness\/Model\/AcuantLivenessError.swift",
       "kind": "StringLiteral",
       "offset": 360,
       "length": 11,
       "value": "\"ErrorCode\""
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantPassiveLiveness\/AcuantPassiveLiveness\/Model\/AcuantLivenessError.swift",
+      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantPassiveLiveness\/AcuantPassiveLiveness\/Model\/AcuantLivenessError.swift",
       "kind": "StringLiteral",
       "offset": 399,
       "length": 7,
       "value": "\"Error\""
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantPassiveLiveness\/AcuantPassiveLiveness\/Model\/LivenessResponse.swift",
+      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantPassiveLiveness\/AcuantPassiveLiveness\/Model\/LivenessResponse.swift",
       "kind": "StringLiteral",
       "offset": 426,
       "length": 16,
       "value": "\"LivenessResult\""
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantPassiveLiveness\/AcuantPassiveLiveness\/Model\/LivenessResponse.swift",
+      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantPassiveLiveness\/AcuantPassiveLiveness\/Model\/LivenessResponse.swift",
       "kind": "StringLiteral",
       "offset": 475,
       "length": 7,
       "value": "\"Error\""
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantPassiveLiveness\/AcuantPassiveLiveness\/Model\/LivenessResponse.swift",
+      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantPassiveLiveness\/AcuantPassiveLiveness\/Model\/LivenessResponse.swift",
       "kind": "StringLiteral",
       "offset": 508,
       "length": 11,
       "value": "\"ErrorCode\""
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantPassiveLiveness\/AcuantPassiveLiveness\/Model\/LivenessResponse.swift",
+      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantPassiveLiveness\/AcuantPassiveLiveness\/Model\/LivenessResponse.swift",
       "kind": "StringLiteral",
       "offset": 426,
       "length": 16,
       "value": "\"LivenessResult\""
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantPassiveLiveness\/AcuantPassiveLiveness\/Model\/LivenessResponse.swift",
+      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantPassiveLiveness\/AcuantPassiveLiveness\/Model\/LivenessResponse.swift",
       "kind": "StringLiteral",
       "offset": 475,
       "length": 7,
       "value": "\"Error\""
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantPassiveLiveness\/AcuantPassiveLiveness\/Model\/LivenessResponse.swift",
+      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantPassiveLiveness\/AcuantPassiveLiveness\/Model\/LivenessResponse.swift",
       "kind": "StringLiteral",
       "offset": 508,
       "length": 11,
       "value": "\"ErrorCode\""
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantPassiveLiveness\/AcuantPassiveLiveness\/Model\/LivenessInfo.swift",
+      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantPassiveLiveness\/AcuantPassiveLiveness\/Model\/LivenessInfo.swift",
       "kind": "StringLiteral",
       "offset": 314,
       "length": 10,
       "value": "\"Settings\""
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantPassiveLiveness\/AcuantPassiveLiveness\/Model\/LivenessInfo.swift",
+      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantPassiveLiveness\/AcuantPassiveLiveness\/Model\/LivenessInfo.swift",
       "kind": "StringLiteral",
       "offset": 346,
       "length": 7,
       "value": "\"Image\""
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantPassiveLiveness\/AcuantPassiveLiveness\/Model\/LivenessInfo.swift",
+      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantPassiveLiveness\/AcuantPassiveLiveness\/Model\/LivenessInfo.swift",
       "kind": "StringLiteral",
       "offset": 314,
       "length": 10,
       "value": "\"Settings\""
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantPassiveLiveness\/AcuantPassiveLiveness\/Model\/LivenessInfo.swift",
+      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantPassiveLiveness\/AcuantPassiveLiveness\/Model\/LivenessInfo.swift",
       "kind": "StringLiteral",
       "offset": 346,
       "length": 7,
       "value": "\"Image\""
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantPassiveLiveness\/AcuantPassiveLiveness\/Model\/LivenessInfo.swift",
+      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantPassiveLiveness\/AcuantPassiveLiveness\/Model\/LivenessInfo.swift",
       "kind": "StringLiteral",
       "offset": 560,
       "length": 16,
       "value": "\"SubscriptionId\""
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantPassiveLiveness\/AcuantPassiveLiveness\/Model\/LivenessInfo.swift",
+      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantPassiveLiveness\/AcuantPassiveLiveness\/Model\/LivenessInfo.swift",
       "kind": "StringLiteral",
       "offset": 560,
       "length": 16,
       "value": "\"SubscriptionId\""
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantPassiveLiveness\/AcuantPassiveLiveness\/Model\/LivenessInfo.swift",
+      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantPassiveLiveness\/AcuantPassiveLiveness\/Model\/LivenessInfo.swift",
       "kind": "StringLiteral",
       "offset": 715,
       "length": 4,
       "value": "\"OS\""
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantPassiveLiveness\/AcuantPassiveLiveness\/Model\/LivenessInfo.swift",
+      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantPassiveLiveness\/AcuantPassiveLiveness\/Model\/LivenessInfo.swift",
       "kind": "StringLiteral",
       "offset": 715,
       "length": 4,
       "value": "\"OS\""
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantPassiveLiveness\/AcuantPassiveLiveness\/Model\/AcuantLivenessResponse.swift",
+      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantPassiveLiveness\/AcuantPassiveLiveness\/Model\/AcuantLivenessResponse.swift",
       "kind": "StringLiteral",
       "offset": 372,
       "length": 7,
       "value": "\"Score\""
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantPassiveLiveness\/AcuantPassiveLiveness\/Model\/AcuantLivenessResponse.swift",
+      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantPassiveLiveness\/AcuantPassiveLiveness\/Model\/AcuantLivenessResponse.swift",
       "kind": "StringLiteral",
       "offset": 402,
       "length": 20,
       "value": "\"LivenessAssessment\""
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantPassiveLiveness\/AcuantPassiveLiveness\/Model\/AcuantLivenessResponse.swift",
+      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantPassiveLiveness\/AcuantPassiveLiveness\/Model\/AcuantLivenessResponse.swift",
       "kind": "StringLiteral",
       "offset": 372,
       "length": 7,
       "value": "\"Score\""
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantPassiveLiveness\/AcuantPassiveLiveness\/Model\/AcuantLivenessResponse.swift",
+      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantPassiveLiveness\/AcuantPassiveLiveness\/Model\/AcuantLivenessResponse.swift",
       "kind": "StringLiteral",
       "offset": 402,
       "length": 20,
       "value": "\"LivenessAssessment\""
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantPassiveLiveness\/AcuantPassiveLiveness\/Service\/PassiveLivenessService.swift",
-      "kind": "StringLiteral",
-      "offset": 803,
-      "length": 44,
-      "value": "\"\""
-    },
-    {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantPassiveLiveness\/AcuantPassiveLiveness\/Service\/PassiveLivenessService.swift",
-      "kind": "StringLiteral",
-      "offset": 830,
-      "length": 1,
-      "value": "\"\/api\/v1\/liveness\""
-    },
-    {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantPassiveLiveness\/AcuantPassiveLiveness\/Service\/PassiveLivenessService.swift",
-      "kind": "StringLiteral",
-      "offset": 1216,
-      "length": 5,
-      "value": "\"IOS\""
-    },
-    {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantPassiveLiveness\/AcuantPassiveLiveness\/Service\/PassiveLivenessService.swift",
-      "kind": "StringLiteral",
-      "offset": 1649,
-      "length": 6,
-      "value": "\"post\""
-    },
-    {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantPassiveLiveness\/AcuantPassiveLiveness\/Service\/PassiveLivenessService.swift",
-      "kind": "StringLiteral",
-      "offset": 1780,
-      "length": 15,
-      "value": "\"Authorization\""
-    },
-    {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantPassiveLiveness\/AcuantPassiveLiveness\/Service\/PassiveLivenessService.swift",
-      "kind": "StringLiteral",
-      "offset": 1825,
-      "length": 18,
-      "value": "\"application\/json\""
-    },
-    {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantPassiveLiveness\/AcuantPassiveLiveness\/Service\/PassiveLivenessService.swift",
-      "kind": "StringLiteral",
-      "offset": 1865,
-      "length": 8,
-      "value": "\"Accept\""
-    },
-    {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantPassiveLiveness\/AcuantPassiveLiveness\/Service\/PassiveLivenessService.swift",
-      "kind": "StringLiteral",
-      "offset": 1903,
-      "length": 18,
-      "value": "\"application\/json\""
-    },
-    {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantPassiveLiveness\/AcuantPassiveLiveness\/Service\/PassiveLivenessService.swift",
-      "kind": "StringLiteral",
-      "offset": 1943,
-      "length": 14,
-      "value": "\"Content-Type\""
-    },
-    {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantPassiveLiveness\/AcuantPassiveLiveness\/Service\/PassiveLivenessService.swift",
-      "kind": "IntegerLiteral",
-      "offset": 2156,
-      "length": 3,
-      "value": "200"
-    },
-    {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantPassiveLiveness\/AcuantPassiveLiveness\/Service\/PassiveLivenessService.swift",
-      "kind": "IntegerLiteral",
-      "offset": 2850,
-      "length": 3,
-      "value": "401"
-    },
-    {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantPassiveLiveness\/AcuantPassiveLiveness\/Service\/PassiveLivenessService.swift",
-      "kind": "StringLiteral",
-      "offset": 3298,
-      "length": 31,
-      "value": "\"Internal Error. Invalid JSON.\""
-    },
-    {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantPassiveLiveness\/AcuantPassiveLiveness\/Service\/PassiveLivenessService.swift",
-      "kind": "StringLiteral",
-      "offset": 3404,
-      "length": 22,
-      "value": "\"Invalid Credentials.\""
-    },
-    {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantPassiveLiveness\/AcuantPassiveLiveness\/Service\/PassiveLivenessService.swift",
-      "kind": "StringLiteral",
-      "offset": 3502,
-      "length": 18,
-      "value": "\"Invalid Request.\""
-    },
-    {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantPassiveLiveness\/AcuantPassiveLiveness\/Service\/PassiveLivenessService.swift",
-      "kind": "FloatLiteral",
-      "offset": 4252,
-      "length": 3,
-      "value": "0.8"
-    },
-    {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantPassiveLiveness\/AcuantPassiveLiveness\/Service\/PassiveLivenessService.swift",
-      "kind": "IntegerLiteral",
-      "offset": 4443,
-      "length": 3,
-      "value": "720"
-    },
-    {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantPassiveLiveness\/AcuantPassiveLiveness\/Service\/PassiveLivenessService.swift",
-      "kind": "StringLiteral",
-      "offset": 5338,
-      "length": 25,
-      "value": "\"CILanczosScaleTransform\""
-    },
-    {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantPassiveLiveness\/AcuantPassiveLiveness\/Enum\/AcuantLivenessErrorCode.swift",
+      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantPassiveLiveness\/AcuantPassiveLiveness\/Enum\/AcuantLivenessErrorCode.swift",
       "kind": "StringLiteral",
       "offset": 236,
       "length": 9,
       "value": "\"Unknown\""
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantPassiveLiveness\/AcuantPassiveLiveness\/Enum\/AcuantLivenessErrorCode.swift",
+      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantPassiveLiveness\/AcuantPassiveLiveness\/Enum\/AcuantLivenessErrorCode.swift",
       "kind": "StringLiteral",
       "offset": 270,
       "length": 14,
       "value": "\"FaceTooClose\""
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantPassiveLiveness\/AcuantPassiveLiveness\/Enum\/AcuantLivenessErrorCode.swift",
+      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantPassiveLiveness\/AcuantPassiveLiveness\/Enum\/AcuantLivenessErrorCode.swift",
       "kind": "StringLiteral",
       "offset": 309,
       "length": 14,
       "value": "\"FaceNotFound\""
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantPassiveLiveness\/AcuantPassiveLiveness\/Enum\/AcuantLivenessErrorCode.swift",
+      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantPassiveLiveness\/AcuantPassiveLiveness\/Enum\/AcuantLivenessErrorCode.swift",
       "kind": "StringLiteral",
       "offset": 348,
       "length": 14,
       "value": "\"FaceTooSmall\""
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantPassiveLiveness\/AcuantPassiveLiveness\/Enum\/AcuantLivenessErrorCode.swift",
+      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantPassiveLiveness\/AcuantPassiveLiveness\/Enum\/AcuantLivenessErrorCode.swift",
       "kind": "StringLiteral",
       "offset": 392,
       "length": 19,
       "value": "\"FaceAngleTooLarge\""
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantPassiveLiveness\/AcuantPassiveLiveness\/Enum\/AcuantLivenessErrorCode.swift",
+      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantPassiveLiveness\/AcuantPassiveLiveness\/Enum\/AcuantLivenessErrorCode.swift",
       "kind": "StringLiteral",
       "offset": 441,
       "length": 19,
       "value": "\"FailedToReadImage\""
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantPassiveLiveness\/AcuantPassiveLiveness\/Enum\/AcuantLivenessErrorCode.swift",
+      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantPassiveLiveness\/AcuantPassiveLiveness\/Enum\/AcuantLivenessErrorCode.swift",
       "kind": "StringLiteral",
       "offset": 487,
       "length": 16,
       "value": "\"InvalidRequest\""
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantPassiveLiveness\/AcuantPassiveLiveness\/Enum\/AcuantLivenessErrorCode.swift",
+      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantPassiveLiveness\/AcuantPassiveLiveness\/Enum\/AcuantLivenessErrorCode.swift",
       "kind": "StringLiteral",
       "offset": 538,
       "length": 24,
       "value": "\"InvalidRequestSettings\""
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantPassiveLiveness\/AcuantPassiveLiveness\/Enum\/AcuantLivenessErrorCode.swift",
+      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantPassiveLiveness\/AcuantPassiveLiveness\/Enum\/AcuantLivenessErrorCode.swift",
       "kind": "StringLiteral",
       "offset": 587,
       "length": 14,
       "value": "\"Unauthorized\""
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantPassiveLiveness\/AcuantPassiveLiveness\/Enum\/AcuantLivenessErrorCode.swift",
+      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantPassiveLiveness\/AcuantPassiveLiveness\/Enum\/AcuantLivenessErrorCode.swift",
       "kind": "StringLiteral",
       "offset": 622,
       "length": 10,
       "value": "\"NotFound\""
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantPassiveLiveness\/AcuantPassiveLiveness\/Enum\/AcuantLivenessErrorCode.swift",
+      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantPassiveLiveness\/AcuantPassiveLiveness\/Enum\/AcuantLivenessErrorCode.swift",
       "kind": "StringLiteral",
       "offset": 658,
       "length": 15,
       "value": "\"InternalError\""
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantPassiveLiveness\/AcuantPassiveLiveness\/Enum\/AcuantLivenessErrorCode.swift",
+      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantPassiveLiveness\/AcuantPassiveLiveness\/Enum\/AcuantLivenessErrorCode.swift",
       "kind": "StringLiteral",
       "offset": 697,
       "length": 13,
       "value": "\"InvalidJson\""
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantPassiveLiveness\/AcuantPassiveLiveness\/Enum\/AcuantLivenessErrorCode.swift",
+      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantPassiveLiveness\/AcuantPassiveLiveness\/Enum\/AcuantLivenessErrorCode.swift",
       "kind": "StringLiteral",
       "offset": 236,
       "length": 9,
       "value": "\"Unknown\""
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantPassiveLiveness\/AcuantPassiveLiveness\/Enum\/AcuantLivenessErrorCode.swift",
+      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantPassiveLiveness\/AcuantPassiveLiveness\/Enum\/AcuantLivenessErrorCode.swift",
       "kind": "StringLiteral",
       "offset": 270,
       "length": 14,
       "value": "\"FaceTooClose\""
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantPassiveLiveness\/AcuantPassiveLiveness\/Enum\/AcuantLivenessErrorCode.swift",
+      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantPassiveLiveness\/AcuantPassiveLiveness\/Enum\/AcuantLivenessErrorCode.swift",
       "kind": "StringLiteral",
       "offset": 309,
       "length": 14,
       "value": "\"FaceNotFound\""
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantPassiveLiveness\/AcuantPassiveLiveness\/Enum\/AcuantLivenessErrorCode.swift",
+      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantPassiveLiveness\/AcuantPassiveLiveness\/Enum\/AcuantLivenessErrorCode.swift",
       "kind": "StringLiteral",
       "offset": 348,
       "length": 14,
       "value": "\"FaceTooSmall\""
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantPassiveLiveness\/AcuantPassiveLiveness\/Enum\/AcuantLivenessErrorCode.swift",
+      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantPassiveLiveness\/AcuantPassiveLiveness\/Enum\/AcuantLivenessErrorCode.swift",
       "kind": "StringLiteral",
       "offset": 392,
       "length": 19,
       "value": "\"FaceAngleTooLarge\""
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantPassiveLiveness\/AcuantPassiveLiveness\/Enum\/AcuantLivenessErrorCode.swift",
+      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantPassiveLiveness\/AcuantPassiveLiveness\/Enum\/AcuantLivenessErrorCode.swift",
       "kind": "StringLiteral",
       "offset": 441,
       "length": 19,
       "value": "\"FailedToReadImage\""
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantPassiveLiveness\/AcuantPassiveLiveness\/Enum\/AcuantLivenessErrorCode.swift",
+      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantPassiveLiveness\/AcuantPassiveLiveness\/Enum\/AcuantLivenessErrorCode.swift",
       "kind": "StringLiteral",
       "offset": 487,
       "length": 16,
       "value": "\"InvalidRequest\""
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantPassiveLiveness\/AcuantPassiveLiveness\/Enum\/AcuantLivenessErrorCode.swift",
+      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantPassiveLiveness\/AcuantPassiveLiveness\/Enum\/AcuantLivenessErrorCode.swift",
       "kind": "StringLiteral",
       "offset": 538,
       "length": 24,
       "value": "\"InvalidRequestSettings\""
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantPassiveLiveness\/AcuantPassiveLiveness\/Enum\/AcuantLivenessErrorCode.swift",
+      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantPassiveLiveness\/AcuantPassiveLiveness\/Enum\/AcuantLivenessErrorCode.swift",
       "kind": "StringLiteral",
       "offset": 587,
       "length": 14,
       "value": "\"Unauthorized\""
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantPassiveLiveness\/AcuantPassiveLiveness\/Enum\/AcuantLivenessErrorCode.swift",
+      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantPassiveLiveness\/AcuantPassiveLiveness\/Enum\/AcuantLivenessErrorCode.swift",
       "kind": "StringLiteral",
       "offset": 622,
       "length": 10,
       "value": "\"NotFound\""
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantPassiveLiveness\/AcuantPassiveLiveness\/Enum\/AcuantLivenessErrorCode.swift",
+      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantPassiveLiveness\/AcuantPassiveLiveness\/Enum\/AcuantLivenessErrorCode.swift",
       "kind": "StringLiteral",
       "offset": 658,
       "length": 15,
       "value": "\"InternalError\""
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantPassiveLiveness\/AcuantPassiveLiveness\/Enum\/AcuantLivenessErrorCode.swift",
+      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantPassiveLiveness\/AcuantPassiveLiveness\/Enum\/AcuantLivenessErrorCode.swift",
       "kind": "StringLiteral",
       "offset": 697,
       "length": 13,

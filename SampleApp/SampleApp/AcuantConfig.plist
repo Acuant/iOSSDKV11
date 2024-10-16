@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-<plist version="1.0">
+<plist version="1.0">
 <dict>
-    <key>acuant_username</key>
-    <string>xxx</string>
-    <key>acuant_password</key>
-    <string>xxx</string>
-    <key>acuant_subscription</key>
-    <string>xxx</string>
-    <key>frm_endpoint</key>
-    <string>https://frm.acuant.net</string>
-    <key>passive_liveness_endpoint</key>
-    <string>https://us.passlive.acuant.net</string>
-    <key>med_endpoint</key>
-    <string>https://medicscan.acuant.net</string>
-    <key>assureid_endpoint</key>
-    <string>https://services.assureid.net</string>
-    <key>acas_endpoint</key>
-    <string>https://acas.acuant.net</string>
-    <key>ozone_endpoint</key>
-    <string>https://ozone.acuant.net</string>
+	<key>acuant_username</key>
+	<string>*****</string>
+	<key>acuant_password</key>
+	<string>*****</string>
+	<key>acuant_subscription</key>
+	<string>*****</string>
+	<key>frm_endpoint</key>
+	<string>*****</string>
+	<key>passive_liveness_endpoint</key>
+	<string>*****</string>
+	<key>med_endpoint</key>
+	<string>*****</string>
+	<key>assureid_endpoint</key>
+	<string>*****</string>
+	<key>acas_endpoint</key>
+	<string>*****</string>
+	<key>ozone_endpoint</key>
+	<string>*****</string>
 </dict>
 </plist>

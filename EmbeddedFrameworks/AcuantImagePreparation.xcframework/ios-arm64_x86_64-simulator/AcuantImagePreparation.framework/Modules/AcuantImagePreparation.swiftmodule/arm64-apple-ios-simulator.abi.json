@@ -81,7 +81,7 @@
               {
                 "kind": "TypeNominal",
                 "name": "Decoder",
-                "printedName": "Swift.Decoder",
+                "printedName": "any Swift.Decoder",
                 "usr": "s:s7DecoderP"
               }
             ],
@@ -109,7 +109,7 @@
               {
                 "kind": "TypeNominal",
                 "name": "Encoder",
-                "printedName": "Swift.Encoder",
+                "printedName": "any Swift.Encoder",
                 "usr": "s:s7EncoderP"
               }
             ],
@@ -795,12 +795,12 @@
               {
                 "kind": "TypeNominal",
                 "name": "Optional",
-                "printedName": "AcuantImagePreparation.InitializationDelegate?",
+                "printedName": "(any AcuantImagePreparation.InitializationDelegate)?",
                 "children": [
                   {
                     "kind": "TypeNominal",
                     "name": "InitializationDelegate",
-                    "printedName": "AcuantImagePreparation.InitializationDelegate",
+                    "printedName": "any AcuantImagePreparation.InitializationDelegate",
                     "usr": "c:@M@AcuantImagePreparation@objc(pl)InitializationDelegate"
                   }
                 ],
@@ -1776,1064 +1776,154 @@
   },
   "ConstValues": [
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/Exif\/Model\/CameraMetaData.swift",
-      "kind": "StringLiteral",
-      "offset": 294,
-      "length": 75,
-      "value": "\"NOT SPECIFIED (implementer's custom camera did not call the right method)\""
-    },
-    {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/Exif\/Model\/AcuantMetaData.swift",
-      "kind": "BooleanLiteral",
-      "offset": 1563,
-      "length": 4,
-      "value": "true"
-    },
-    {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/UIImageExtn.swift",
-      "kind": "BooleanLiteral",
-      "offset": 619,
-      "length": 4,
-      "value": "true"
-    },
-    {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/UIImageExtn.swift",
-      "kind": "IntegerLiteral",
-      "offset": 777,
-      "length": 1,
-      "value": "2"
-    },
-    {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/UIImageExtn.swift",
-      "kind": "IntegerLiteral",
-      "offset": 798,
-      "length": 1,
-      "value": "2"
-    },
-    {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/UIImageExtn.swift",
-      "kind": "IntegerLiteral",
-      "offset": 936,
-      "length": 1,
-      "value": "2"
-    },
-    {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/UIImageExtn.swift",
-      "kind": "IntegerLiteral",
-      "offset": 960,
-      "length": 1,
-      "value": "2"
-    },
-    {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/Cropping\/CroppingWrapper.swift",
+      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/Cropping\/CroppingWrapper.swift",
       "kind": "IntegerLiteral",
       "offset": 251,
       "length": 1,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/Cropping\/CroppingWrapper.swift",
+      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/Cropping\/CroppingWrapper.swift",
       "kind": "IntegerLiteral",
       "offset": 283,
       "length": 1,
       "value": "2"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/Cropping\/CroppingWrapper.swift",
+      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/Cropping\/CroppingWrapper.swift",
       "kind": "IntegerLiteral",
       "offset": 321,
       "length": 3,
       "value": "600"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/Cropping\/CroppingWrapper.swift",
+      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/Cropping\/CroppingWrapper.swift",
       "kind": "FloatLiteral",
       "offset": 380,
       "length": 4,
       "value": "3.37"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/Cropping\/CroppingWrapper.swift",
+      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/Cropping\/CroppingWrapper.swift",
       "kind": "FloatLiteral",
       "offset": 440,
       "length": 4,
       "value": "4.92"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/Cropping\/CroppingWrapper.swift",
-      "kind": "IntegerLiteral",
-      "offset": 560,
-      "length": 1,
-      "value": "2"
-    },
-    {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/Cropping\/CroppingWrapper.swift",
-      "kind": "IntegerLiteral",
-      "offset": 582,
-      "length": 1,
-      "value": "2"
-    },
-    {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/Cropping\/CroppingWrapper.swift",
-      "kind": "IntegerLiteral",
-      "offset": 691,
-      "length": 1,
-      "value": "4"
-    },
-    {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/Cropping\/CroppingWrapper.swift",
-      "kind": "IntegerLiteral",
-      "offset": 744,
-      "length": 1,
-      "value": "0"
-    },
-    {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/Cropping\/CroppingWrapper.swift",
-      "kind": "IntegerLiteral",
-      "offset": 759,
-      "length": 1,
-      "value": "1"
-    },
-    {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/Cropping\/CroppingWrapper.swift",
-      "kind": "IntegerLiteral",
-      "offset": 812,
-      "length": 1,
-      "value": "1"
-    },
-    {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/Cropping\/CroppingWrapper.swift",
-      "kind": "IntegerLiteral",
-      "offset": 827,
-      "length": 1,
-      "value": "2"
-    },
-    {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/Cropping\/CroppingWrapper.swift",
-      "kind": "IntegerLiteral",
-      "offset": 880,
-      "length": 1,
-      "value": "2"
-    },
-    {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/Cropping\/CroppingWrapper.swift",
-      "kind": "IntegerLiteral",
-      "offset": 895,
-      "length": 1,
-      "value": "3"
-    },
-    {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/Cropping\/CroppingWrapper.swift",
-      "kind": "IntegerLiteral",
-      "offset": 948,
-      "length": 1,
-      "value": "3"
-    },
-    {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/Cropping\/CroppingWrapper.swift",
-      "kind": "IntegerLiteral",
-      "offset": 963,
-      "length": 1,
-      "value": "0"
-    },
-    {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/Cropping\/CroppingWrapper.swift",
-      "kind": "IntegerLiteral",
-      "offset": 1029,
-      "length": 1,
-      "value": "2"
-    },
-    {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/Cropping\/CroppingWrapper.swift",
-      "kind": "IntegerLiteral",
-      "offset": 1080,
-      "length": 1,
-      "value": "2"
-    },
-    {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/Cropping\/CroppingWrapper.swift",
-      "kind": "IntegerLiteral",
-      "offset": 1365,
-      "length": 1,
-      "value": "0"
-    },
-    {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/Cropping\/CroppingWrapper.swift",
-      "kind": "IntegerLiteral",
-      "offset": 1376,
-      "length": 1,
-      "value": "0"
-    },
-    {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/Cropping\/CroppingWrapper.swift",
-      "kind": "IntegerLiteral",
-      "offset": 1806,
-      "length": 3,
-      "value": "300"
-    },
-    {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/Cropping\/CroppingWrapper.swift",
-      "kind": "IntegerLiteral",
-      "offset": 2333,
-      "length": 1,
-      "value": "0"
-    },
-    {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/Cropping\/CroppingWrapper.swift",
-      "kind": "IntegerLiteral",
-      "offset": 2388,
-      "length": 1,
-      "value": "0"
-    },
-    {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/Cropping\/CroppingWrapper.swift",
-      "kind": "IntegerLiteral",
-      "offset": 2441,
-      "length": 1,
-      "value": "1"
-    },
-    {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/Cropping\/CroppingWrapper.swift",
-      "kind": "IntegerLiteral",
-      "offset": 2504,
-      "length": 1,
-      "value": "0"
-    },
-    {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/Cropping\/CroppingWrapper.swift",
-      "kind": "IntegerLiteral",
-      "offset": 2580,
-      "length": 1,
-      "value": "1"
-    },
-    {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/Cropping\/CroppingWrapper.swift",
-      "kind": "IntegerLiteral",
-      "offset": 2656,
-      "length": 1,
-      "value": "2"
-    },
-    {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/Cropping\/CroppingWrapper.swift",
-      "kind": "IntegerLiteral",
-      "offset": 2732,
-      "length": 1,
-      "value": "3"
-    },
-    {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/Cropping\/CroppingWrapper.swift",
-      "kind": "BooleanLiteral",
-      "offset": 3484,
-      "length": 4,
-      "value": "true"
-    },
-    {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/Cropping\/CroppingWrapper.swift",
-      "kind": "IntegerLiteral",
-      "offset": 4135,
-      "length": 3,
-      "value": "300"
-    },
-    {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/Cropping\/CroppingWrapper.swift",
-      "kind": "IntegerLiteral",
-      "offset": 4610,
-      "length": 1,
-      "value": "0"
-    },
-    {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/Cropping\/CroppingWrapper.swift",
-      "kind": "IntegerLiteral",
-      "offset": 4662,
-      "length": 1,
-      "value": "1"
-    },
-    {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/Cropping\/CroppingWrapper.swift",
-      "kind": "IntegerLiteral",
-      "offset": 5035,
-      "length": 1,
-      "value": "2"
-    },
-    {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/Cropping\/CroppingWrapper.swift",
-      "kind": "IntegerLiteral",
-      "offset": 5098,
-      "length": 1,
-      "value": "0"
-    },
-    {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/Cropping\/CroppingWrapper.swift",
-      "kind": "IntegerLiteral",
-      "offset": 5174,
-      "length": 1,
-      "value": "1"
-    },
-    {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/Cropping\/CroppingWrapper.swift",
-      "kind": "IntegerLiteral",
-      "offset": 5250,
-      "length": 1,
-      "value": "2"
-    },
-    {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/Cropping\/CroppingWrapper.swift",
-      "kind": "IntegerLiteral",
-      "offset": 5326,
-      "length": 1,
-      "value": "3"
-    },
-    {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/Cropping\/CroppingWrapper.swift",
-      "kind": "BooleanLiteral",
-      "offset": 5868,
-      "length": 4,
-      "value": "true"
-    },
-    {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/Cropping\/CroppingWrapper.swift",
-      "kind": "IntegerLiteral",
-      "offset": 6308,
-      "length": 1,
-      "value": "0"
-    },
-    {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/Cropping\/CroppingWrapper.swift",
-      "kind": "IntegerLiteral",
-      "offset": 6373,
-      "length": 1,
-      "value": "2"
-    },
-    {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/Cropping\/CroppingWrapper.swift",
-      "kind": "IntegerLiteral",
-      "offset": 6989,
-      "length": 1,
-      "value": "0"
-    },
-    {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/Cropping\/CroppingWrapper.swift",
-      "kind": "IntegerLiteral",
-      "offset": 7103,
-      "length": 1,
-      "value": "1"
-    },
-    {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/Cropping\/CroppingWrapper.swift",
-      "kind": "IntegerLiteral",
-      "offset": 7166,
-      "length": 1,
-      "value": "0"
-    },
-    {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/Cropping\/CroppingWrapper.swift",
-      "kind": "IntegerLiteral",
-      "offset": 7242,
-      "length": 1,
-      "value": "1"
-    },
-    {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/Cropping\/CroppingWrapper.swift",
-      "kind": "IntegerLiteral",
-      "offset": 7318,
-      "length": 1,
-      "value": "2"
-    },
-    {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/Cropping\/CroppingWrapper.swift",
-      "kind": "IntegerLiteral",
-      "offset": 7394,
-      "length": 1,
-      "value": "3"
-    },
-    {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/Cropping\/CroppingWrapper.swift",
-      "kind": "IntegerLiteral",
-      "offset": 7710,
-      "length": 3,
-      "value": "100"
-    },
-    {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/Cropping\/CroppingWrapper.swift",
-      "kind": "IntegerLiteral",
-      "offset": 7863,
-      "length": 3,
-      "value": "100"
-    },
-    {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/Cropping\/CroppingWrapper.swift",
-      "kind": "IntegerLiteral",
-      "offset": 8159,
-      "length": 3,
-      "value": "100"
-    },
-    {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/Cropping\/CroppingWrapper.swift",
-      "kind": "IntegerLiteral",
-      "offset": 8180,
-      "length": 3,
-      "value": "100"
-    },
-    {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/Cropping\/CroppingWrapper.swift",
-      "kind": "BooleanLiteral",
-      "offset": 8357,
-      "length": 5,
-      "value": "false"
-    },
-    {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/Cropping\/CroppingWrapper.swift",
-      "kind": "FloatLiteral",
-      "offset": 8364,
-      "length": 3,
-      "value": "0.0"
-    },
-    {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/Cropping\/CroppingWrapper.swift",
-      "kind": "IntegerLiteral",
-      "offset": 8408,
-      "length": 1,
-      "value": "0"
-    },
-    {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/Cropping\/CroppingWrapper.swift",
-      "kind": "IntegerLiteral",
-      "offset": 8414,
-      "length": 1,
-      "value": "0"
-    },
-    {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/Cropping\/CroppingWrapper.swift",
-      "kind": "IntegerLiteral",
-      "offset": 8804,
-      "length": 1,
-      "value": "0"
-    },
-    {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/Cropping\/CroppingWrapper.swift",
-      "kind": "IntegerLiteral",
-      "offset": 8827,
-      "length": 1,
-      "value": "0"
-    },
-    {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/Cropping\/CroppingWrapper.swift",
-      "kind": "BooleanLiteral",
-      "offset": 9008,
-      "length": 5,
-      "value": "false"
-    },
-    {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/Cropping\/CroppingWrapper.swift",
-      "kind": "FloatLiteral",
-      "offset": 9056,
-      "length": 3,
-      "value": "5.0"
-    },
-    {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/Cropping\/CroppingWrapper.swift",
-      "kind": "FloatLiteral",
-      "offset": 9105,
-      "length": 7,
-      "value": "1.58870"
-    },
-    {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/Cropping\/CroppingWrapper.swift",
-      "kind": "FloatLiteral",
-      "offset": 9158,
-      "length": 10,
-      "value": "1.41915551"
-    },
-    {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/Cropping\/CroppingWrapper.swift",
-      "kind": "IntegerLiteral",
-      "offset": 9206,
-      "length": 3,
-      "value": "100"
-    },
-    {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/Cropping\/CroppingWrapper.swift",
-      "kind": "IntegerLiteral",
-      "offset": 9231,
-      "length": 3,
-      "value": "100"
-    },
-    {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/Cropping\/CroppingWrapper.swift",
-      "kind": "IntegerLiteral",
-      "offset": 9287,
-      "length": 3,
-      "value": "100"
-    },
-    {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/Cropping\/CroppingWrapper.swift",
-      "kind": "IntegerLiteral",
-      "offset": 9312,
-      "length": 3,
-      "value": "100"
-    },
-    {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/Cropping\/CroppingWrapper.swift",
-      "kind": "BooleanLiteral",
-      "offset": 9429,
-      "length": 4,
-      "value": "true"
-    },
-    {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/Model\/DetectData.swift",
+      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/Model\/DetectData.swift",
       "kind": "StringLiteral",
       "offset": 212,
       "length": 10,
       "value": "\"AcuantImagePreparation.DetectData\""
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/Exif\/AcuantExifDataHelper.swift",
-      "kind": "StringLiteral",
-      "offset": 580,
-      "length": 21,
-      "value": "\"yyyy:MM:dd HH:mm:ss\""
-    },
-    {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/Exif\/AcuantExifDataHelper.swift",
-      "kind": "StringLiteral",
-      "offset": 648,
-      "length": 5,
-      "value": "\"UTC\""
-    },
-    {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/Exif\/AcuantExifDataHelper.swift",
-      "kind": "IntegerLiteral",
-      "offset": 2052,
-      "length": 1,
-      "value": "0"
-    },
-    {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/Exif\/AcuantExifDataHelper.swift",
-      "kind": "IntegerLiteral",
-      "offset": 2118,
-      "length": 1,
-      "value": "0"
-    },
-    {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/Exif\/AcuantExifDataHelper.swift",
-      "kind": "StringLiteral",
-      "offset": 2351,
-      "length": 42,
-      "value": "\"Acuant iOS SDK \""
-    },
-    {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/Exif\/AcuantExifDataHelper.swift",
-      "kind": "StringLiteral",
-      "offset": 2392,
-      "length": 2,
-      "value": "\"\""
-    },
-    {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/Exif\/AcuantExifDataHelper.swift",
-      "kind": "StringLiteral",
-      "offset": 2716,
-      "length": 3,
-      "value": "\"=\""
-    },
-    {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/Exif\/AcuantExifDataHelper.swift",
-      "kind": "IntegerLiteral",
-      "offset": 2728,
-      "length": 3,
-      "value": "100"
-    },
-    {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/Exif\/AcuantExifDataHelper.swift",
-      "kind": "IntegerLiteral",
-      "offset": 3011,
-      "length": 1,
-      "value": "0"
-    },
-    {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/Exif\/AcuantExifDataHelper.swift",
-      "kind": "IntegerLiteral",
-      "offset": 3077,
-      "length": 1,
-      "value": "0"
-    },
-    {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/Exif\/AcuantExifDataHelper.swift",
-      "kind": "StringLiteral",
-      "offset": 3302,
-      "length": 42,
-      "value": "\"Acuant iOS SDK \""
-    },
-    {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/Exif\/AcuantExifDataHelper.swift",
-      "kind": "StringLiteral",
-      "offset": 3343,
-      "length": 2,
-      "value": "\"\""
-    },
-    {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/Exif\/AcuantExifDataHelper.swift",
-      "kind": "StringLiteral",
-      "offset": 3581,
-      "length": 3,
-      "value": "\"=\""
-    },
-    {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/Exif\/AcuantExifDataHelper.swift",
-      "kind": "IntegerLiteral",
-      "offset": 3593,
-      "length": 3,
-      "value": "100"
-    },
-    {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/Exif\/AcuantExifDataHelper.swift",
-      "kind": "FloatLiteral",
-      "offset": 3883,
-      "length": 3,
-      "value": "1.0"
-    },
-    {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/Exif\/AcuantExifDataHelper.swift",
-      "kind": "IntegerLiteral",
-      "offset": 4336,
-      "length": 1,
-      "value": "1"
-    },
-    {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/Exif\/AcuantExifDataHelper.swift",
-      "kind": "IntegerLiteral",
-      "offset": 4411,
-      "length": 1,
-      "value": "0"
-    },
-    {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/Exif\/AcuantExifDataHelper.swift",
-      "kind": "FloatLiteral",
-      "offset": 4700,
-      "length": 3,
-      "value": "1.0"
-    },
-    {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/Exif\/AcuantExifDataHelper.swift",
-      "kind": "IntegerLiteral",
-      "offset": 5114,
-      "length": 1,
-      "value": "1"
-    },
-    {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/Exif\/AcuantExifDataHelper.swift",
-      "kind": "IntegerLiteral",
-      "offset": 5189,
-      "length": 1,
-      "value": "0"
-    },
-    {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/Exif\/AcuantExifDataHelper.swift",
-      "kind": "StringLiteral",
-      "offset": 5314,
-      "length": 5,
-      "value": "\"ID3\""
-    },
-    {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/Exif\/AcuantExifDataHelper.swift",
-      "kind": "FloatLiteral",
-      "offset": 5803,
-      "length": 3,
-      "value": "1.0"
-    },
-    {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/Exif\/AcuantExifDataHelper.swift",
-      "kind": "IntegerLiteral",
-      "offset": 6187,
-      "length": 1,
-      "value": "1"
-    },
-    {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/Exif\/AcuantExifDataHelper.swift",
-      "kind": "IntegerLiteral",
-      "offset": 6262,
-      "length": 1,
-      "value": "0"
-    },
-    {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/Exif\/AcuantExifDataHelper.swift",
+      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/Exif\/AcuantExifDataHelper.swift",
       "kind": "Dictionary",
       "offset": 6406,
       "length": 4550,
       "value": "[(\"iPhone6,1\", \"iPhone 5S (GSM)\"), (\"iPhone6,2\", \"iPhone 5S (Global)\"), (\"iPhone7,1\", \"iPhone 6 Plus\"), (\"iPhone7,2\", \"iPhone 6\"), (\"iPhone8,1\", \"iPhone 6S\"), (\"iPhone8,2\", \"iPhone 6S Plus\"), (\"iPhone8,4\", \"iPhone SE\"), (\"iPhone9,1\", \"iPhone 7 (CDMA)\"), (\"iPhone9,3\", \"iPhone 7 (GSM)\"), (\"iPhone9,2\", \"iPhone 7 Plus (CDMA)\"), (\"iPhone9,4\", \"iPhone 7 Plus (GSM)\"), (\"iPhone10,1\", \"iPhone 8 (CDMA)\"), (\"iPhone10,4\", \"iPhone 8 (GSM)\"), (\"iPhone10,2\", \"iPhone 8 Plus (CDMA)\"), (\"iPhone10,5\", \"iPhone 8 Plus (GSM)\"), (\"iPhone10,3\", \"iPhone X (CDMA)\"), (\"iPhone10,6\", \"iPhone X (GSM)\"), (\"iPhone11,2\", \"iPhone XS\"), (\"iPhone11,4\", \"iPhone XS Max\"), (\"iPhone11,6\", \"iPhone XS Max China\"), (\"iPhone11,8\", \"iPhone XR\"), (\"iPhone12,1\", \"iPhone 11\"), (\"iPhone12,3\", \"iPhone 11 Pro\"), (\"iPhone12,5\", \"iPhone 11 Pro Max\"), (\"iPhone12,8\", \"iPhone SE (2nd Gen)\"), (\"iPhone13,1\", \"iPhone 12 Mini\"), (\"iPhone13,2\", \"iPhone 12\"), (\"iPhone13,3\", \"iPhone 12 Pro\"), (\"iPhone13,4\", \"iPhone 12 Pro Max\"), (\"iPhone14,2\", \"iPhone 13 Pro\"), (\"iPhone14,3\", \"iPhone 13 Pro Max\"), (\"iPhone14,4\", \"iPhone 13 Mini\"), (\"iPhone14,5\", \"iPhone 13\"), (\"iPad4,1\", \"iPad Air (WiFi)\"), (\"iPad4,2\", \"iPad Air (GSM+CDMA)\"), (\"iPad4,3\", \"1st Gen iPad Air (China)\"), (\"iPad4,4\", \"iPad mini Retina (WiFi)\"), (\"iPad4,5\", \"iPad mini Retina (GSM+CDMA)\"), (\"iPad4,6\", \"iPad mini Retina (China)\"), (\"iPad4,7\", \"iPad mini 3 (WiFi)\"), (\"iPad4,8\", \"iPad mini 3 (GSM+CDMA)\"), (\"iPad4,9\", \"iPad Mini 3 (China)\"), (\"iPad5,1\", \"iPad mini 4 (WiFi)\"), (\"iPad5,2\", \"4th Gen iPad mini (WiFi+Cellular)\"), (\"iPad5,3\", \"iPad Air 2 (WiFi)\"), (\"iPad5,4\", \"iPad Air 2 (Cellular)\"), (\"iPad6,3\", \"iPad Pro (9.7 inch, WiFi)\"), (\"iPad6,4\", \"iPad Pro (9.7 inch, WiFi+LTE)\"), (\"iPad6,7\", \"iPad Pro (12.9 inch, WiFi)\"), (\"iPad6,8\", \"iPad Pro (12.9 inch, WiFi+LTE)\"), (\"iPad6,11\", \"iPad (2017)\"), (\"iPad6,12\", \"iPad (2017)\"), (\"iPad7,1\", \"iPad Pro 2nd Gen (WiFi)\"), (\"iPad7,2\", \"iPad Pro 2nd Gen (WiFi+Cellular)\"), (\"iPad7,3\", \"iPad Pro 10.5-inch 2nd Gen\"), (\"iPad7,4\", \"iPad Pro 10.5-inch 2nd Gen\"), (\"iPad7,5\", \"iPad 6th Gen (WiFi)\"), (\"iPad7,6\", \"iPad 6th Gen (WiFi+Cellular)\"), (\"iPad7,11\", \"iPad 7th Gen 10.2-inch (WiFi)\"), (\"iPad7,12\", \"iPad 7th Gen 10.2-inch (WiFi+Cellular)\"), (\"iPad8,1\", \"iPad Pro 11 inch 3rd Gen (WiFi)\"), (\"iPad8,2\", \"iPad Pro 11 inch 3rd Gen (1TB, WiFi)\"), (\"iPad8,3\", \"iPad Pro 11 inch 3rd Gen (WiFi+Cellular)\"), (\"iPad8,4\", \"iPad Pro 11 inch 3rd Gen (1TB, WiFi+Cellular)\"), (\"iPad8,5\", \"iPad Pro 12.9 inch 3rd Gen (WiFi)\"), (\"iPad8,6\", \"iPad Pro 12.9 inch 3rd Gen (1TB, WiFi)\"), (\"iPad8,7\", \"iPad Pro 12.9 inch 3rd Gen (WiFi+Cellular)\"), (\"iPad8,8\", \"iPad Pro 12.9 inch 3rd Gen (1TB, WiFi+Cellular)\"), (\"iPad8,9\", \"iPad Pro 11 inch 4th Gen (WiFi)\"), (\"iPad8,10\", \"iPad Pro 11 inch 4th Gen (WiFi+Cellular)\"), (\"iPad8,11\", \"iPad Pro 12.9 inch 4th Gen (WiFi)\"), (\"iPad8,12\", \"iPad Pro 12.9 inch 4th Gen (WiFi+Cellular)\"), (\"iPad11,1\", \"iPad mini 5th Gen (WiFi)\"), (\"iPad11,2\", \"iPad mini 5th Gen\"), (\"iPad11,3\", \"iPad Air 3rd Gen (WiFi)\"), (\"iPad11,4\", \"iPad Air 3rd Gen\"), (\"iPad11,6\", \"iPad 8th Gen (WiFi)\"), (\"iPad11,7\", \"iPad 8th Gen (WiFi+Cellular)\"), (\"iPad12,1\", \"iPad 9th Gen (WiFi)\"), (\"iPad12,2\", \"iPad 9th Gen (WiFi+Cellular)\"), (\"iPad14,1\", \"iPad mini 6th Gen (WiFi)\"), (\"iPad14,2\", \"iPad mini 6th Gen (WiFi+Cellular)\"), (\"iPad13,1\", \"iPad Air 4th Gen (WiFi)\"), (\"iPad13,2\", \"iPad Air 4th Gen (WiFi+Cellular)\"), (\"iPad13,4\", \"iPad Pro 11 inch 5th Gen\"), (\"iPad13,5\", \"iPad Pro 11 inch 5th Gen\"), (\"iPad13,6\", \"iPad Pro 11 inch 5th Gen\"), (\"iPad13,7\", \"iPad Pro 11 inch 5th Gen\"), (\"iPad13,8\", \"iPad Pro 12.9 inch 5th Gen\"), (\"iPad13,9\", \"iPad Pro 12.9 inch 5th Gen\"), (\"iPad13,10\", \"iPad Pro 12.9 inch 5th Gen\"), (\"iPad13,11\", \"iPad Pro 12.9 inch 5th Gen\"), (\"iPod7,1\", \"iPod Touch 6th Generation\"), (\"iPod9,1\", \"iPod Touch 7th Generation\")]"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/Exif\/AcuantExifDataHelper.swift",
-      "kind": "StringLiteral",
-      "offset": 11202,
-      "length": 2,
-      "value": "\"\""
-    },
-    {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/Exif\/AcuantExifDataHelper.swift",
-      "kind": "IntegerLiteral",
-      "offset": 11294,
-      "length": 1,
-      "value": "0"
-    },
-    {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/ImagePreparation.swift",
+      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/ImagePreparation.swift",
       "kind": "BooleanLiteral",
       "offset": 289,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/ImagePreparation.swift",
+      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/ImagePreparation.swift",
       "kind": "BooleanLiteral",
       "offset": 330,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/ImagePreparation.swift",
+      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/ImagePreparation.swift",
       "kind": "BooleanLiteral",
       "offset": 598,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/ImagePreparation.swift",
+      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/ImagePreparation.swift",
       "kind": "BooleanLiteral",
       "offset": 642,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/ImagePreparation.swift",
-      "kind": "BooleanLiteral",
-      "offset": 751,
-      "length": 5,
-      "value": "false"
-    },
-    {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/ImagePreparation.swift",
-      "kind": "StringLiteral",
-      "offset": 810,
-      "length": 35,
-      "value": "\"com.acuant.AcuantImagePreparation\""
-    },
-    {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/ImagePreparation.swift",
-      "kind": "BooleanLiteral",
-      "offset": 916,
-      "length": 5,
-      "value": "false"
-    },
-    {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/ImagePreparation.swift",
-      "kind": "StringLiteral",
-      "offset": 1160,
-      "length": 32,
-      "value": "\"\/AssureIDService\/subscriptions\""
-    },
-    {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/ImagePreparation.swift",
-      "kind": "IntegerLiteral",
-      "offset": 1863,
-      "length": 2,
-      "value": "60"
-    },
-    {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/ImagePreparation.swift",
-      "kind": "StringLiteral",
-      "offset": 2042,
-      "length": 15,
-      "value": "\"Authorization\""
-    },
-    {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/ImagePreparation.swift",
-      "kind": "StringLiteral",
-      "offset": 2104,
-      "length": 18,
-      "value": "\"application\/json\""
-    },
-    {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/ImagePreparation.swift",
-      "kind": "StringLiteral",
-      "offset": 2144,
-      "length": 8,
-      "value": "\"Accept\""
-    },
-    {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/ImagePreparation.swift",
-      "kind": "IntegerLiteral",
-      "offset": 2424,
-      "length": 3,
-      "value": "200"
-    },
-    {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/ImagePreparation.swift",
-      "kind": "IntegerLiteral",
-      "offset": 3018,
-      "length": 1,
-      "value": "0"
-    },
-    {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/ImagePreparation.swift",
-      "kind": "StringLiteral",
-      "offset": 3232,
-      "length": 4,
-      "value": "\"Id\""
-    },
-    {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/ImagePreparation.swift",
-      "kind": "BooleanLiteral",
-      "offset": 3515,
-      "length": 4,
-      "value": "true"
-    },
-    {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/ImagePreparation.swift",
-      "kind": "StringLiteral",
-      "offset": 3652,
-      "length": 21,
-      "value": "\"DocumentProcessMode\""
-    },
-    {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/ImagePreparation.swift",
-      "kind": "IntegerLiteral",
-      "offset": 3757,
-      "length": 1,
-      "value": "2"
-    },
-    {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/ImagePreparation.swift",
-      "kind": "BooleanLiteral",
-      "offset": 4756,
-      "length": 4,
-      "value": "true"
-    },
-    {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/ImagePreparation.swift",
-      "kind": "BooleanLiteral",
-      "offset": 6719,
-      "length": 5,
-      "value": "false"
-    },
-    {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/ImagePreparation.swift",
-      "kind": "StringLiteral",
-      "offset": 8857,
-      "length": 39,
-      "value": "\"iOS \""
-    },
-    {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/ImagePreparation.swift",
-      "kind": "StringLiteral",
-      "offset": 8895,
-      "length": 2,
-      "value": "\"\""
-    },
-    {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/ImagePreparation.swift",
-      "kind": "StringLiteral",
-      "offset": 9134,
-      "length": 5,
-      "value": "\"ID3\""
-    },
-    {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/ImagePreparation.swift",
-      "kind": "StringLiteral",
-      "offset": 9141,
-      "length": 5,
-      "value": "\"ID1\""
-    },
-    {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/ImagePreparation.swift",
-      "kind": "IntegerLiteral",
-      "offset": 9175,
-      "length": 4,
-      "value": "1000"
-    },
-    {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/ImagePreparation.swift",
-      "kind": "IntegerLiteral",
-      "offset": 9270,
-      "length": 4,
-      "value": "1000"
-    },
-    {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/ImagePreparation.swift",
-      "kind": "IntegerLiteral",
-      "offset": 9353,
-      "length": 4,
-      "value": "1000"
-    },
-    {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/ImagePreparation.swift",
-      "kind": "IntegerLiteral",
-      "offset": 9468,
-      "length": 4,
-      "value": "1000"
-    },
-    {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/ImagePreparation.swift",
-      "kind": "StringLiteral",
-      "offset": 9868,
-      "length": 22,
-      "value": "\"Fatal Error Occurred\""
-    },
-    {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/ImagePreparation.swift",
-      "kind": "BooleanLiteral",
-      "offset": 10568,
-      "length": 5,
-      "value": "false"
-    },
-    {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/ImagePreparation.swift",
-      "kind": "BooleanLiteral",
-      "offset": 12226,
-      "length": 5,
-      "value": "false"
-    },
-    {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/ImagePreparation.swift",
-      "kind": "BooleanLiteral",
-      "offset": 13005,
-      "length": 5,
-      "value": "false"
-    },
-    {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/ImagePreparation.swift",
-      "kind": "IntegerLiteral",
-      "offset": 13032,
-      "length": 2,
-      "value": "-1"
-    },
-    {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/ImagePreparation.swift",
-      "kind": "BooleanLiteral",
-      "offset": 13212,
-      "length": 5,
-      "value": "false"
-    },
-    {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/ImagePreparation.swift",
-      "kind": "IntegerLiteral",
-      "offset": 13239,
-      "length": 2,
-      "value": "-1"
-    },
-    {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/Model\/CroppingData.swift",
-      "kind": "StringLiteral",
-      "offset": 914,
-      "length": 78,
-      "value": "\"NOT SPECIFIED (implementer used deprecated constructor that lacks this data)\""
-    },
-    {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/Model\/CroppingData.swift",
-      "kind": "StringLiteral",
-      "offset": 1105,
-      "length": 8,
-      "value": "\"MANUAL\""
-    },
-    {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/Model\/CroppingData.swift",
-      "kind": "Array",
-      "offset": 1829,
-      "length": 2,
-      "value": "[]"
-    },
-    {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/Model\/CroppingData.swift",
-      "kind": "StringLiteral",
-      "offset": 2021,
-      "length": 13,
-      "value": "\"captureType\""
-    },
-    {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/Model\/CroppingData.swift",
-      "kind": "StringLiteral",
-      "offset": 2051,
-      "length": 8,
-      "value": "\"MANUAL\""
-    },
-    {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/Model\/CroppingData.swift",
-      "kind": "IntegerLiteral",
-      "offset": 2419,
-      "length": 1,
-      "value": "0"
-    },
-    {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/Exif\/Model\/AcuantCVMLMetaData.swift",
+      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/Exif\/Model\/AcuantCVMLMetaData.swift",
       "kind": "IntegerLiteral",
       "offset": 464,
       "length": 2,
       "value": "-1"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/Exif\/Model\/AcuantCVMLMetaData.swift",
+      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/Exif\/Model\/AcuantCVMLMetaData.swift",
       "kind": "IntegerLiteral",
       "offset": 494,
       "length": 2,
       "value": "-1"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/Exif\/Model\/AcuantCVMLMetaData.swift",
+      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/Exif\/Model\/AcuantCVMLMetaData.swift",
       "kind": "IntegerLiteral",
       "offset": 573,
       "length": 2,
       "value": "-1"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/Exif\/Model\/AcuantCVMLMetaData.swift",
+      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/Exif\/Model\/AcuantCVMLMetaData.swift",
       "kind": "IntegerLiteral",
       "offset": 603,
       "length": 2,
       "value": "-1"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/Exif\/Model\/AcuantCVMLMetaData.swift",
+      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/Exif\/Model\/AcuantCVMLMetaData.swift",
       "kind": "IntegerLiteral",
       "offset": 682,
       "length": 2,
       "value": "-1"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/Exif\/Model\/AcuantCVMLMetaData.swift",
+      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/Exif\/Model\/AcuantCVMLMetaData.swift",
       "kind": "IntegerLiteral",
       "offset": 708,
       "length": 2,
       "value": "-1"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/Exif\/Model\/AcuantCVMLMetaData.swift",
+      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/Exif\/Model\/AcuantCVMLMetaData.swift",
       "kind": "IntegerLiteral",
       "offset": 738,
       "length": 2,
       "value": "-1"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/Exif\/Model\/AcuantCVMLMetaData.swift",
+      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/Exif\/Model\/AcuantCVMLMetaData.swift",
       "kind": "BooleanLiteral",
       "offset": 816,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/Exif\/Model\/AcuantCVMLMetaData.swift",
+      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/Exif\/Model\/AcuantCVMLMetaData.swift",
       "kind": "IntegerLiteral",
       "offset": 845,
       "length": 2,
       "value": "-1"
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/Exif\/Model\/AcuantCVMLMetaData.swift",
+      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/Exif\/Model\/AcuantCVMLMetaData.swift",
       "kind": "StringLiteral",
       "offset": 877,
       "length": 2,
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/federiconicoli\/Workspace\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/Exif\/Model\/AcuantCVMLMetaData.swift",
+      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantImagePreparation\/AcuantImagePreparation\/Exif\/Model\/AcuantCVMLMetaData.swift",
       "kind": "IntegerLiteral",
       "offset": 907,
       "length": 2,

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="I0c-68-3Fo">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="I0c-68-3Fo">
     <device id="retina6_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -394,14 +394,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Passport_placement_Overlay" translatesAutoresizingMaskIntoConstraints="NO" id="qVz-u9-ebP" userLabel="Captured Image View">
+                                <rect key="frame" x="20" y="178.33333333333331" width="388" height="218.33333333333331"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="qVz-u9-ebP" secondAttribute="height" multiplier="16:9" id="WDP-pW-Y00"/>
+                                </constraints>
+                            </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="auP-f5-MtD">
-                                <rect key="frame" x="20" y="278.33333333333331" width="388" height="150"/>
+                                <rect key="frame" x="20" y="416.66666666666669" width="388" height="150.00000000000006"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="fy8-DN-kET">
                                         <rect key="frame" x="0.0" y="0.0" width="388" height="50"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Passport #" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rav-Dj-AdA">
-                                                <rect key="frame" x="0.0" y="14.999999999999998" width="82" height="20.333333333333329"/>
+                                                <rect key="frame" x="0.0" y="14.666666666666627" width="82" height="20.333333333333329"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -417,7 +423,7 @@
                                         <rect key="frame" x="0.0" y="50" width="388" height="50"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Expiry (yyMMdd)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4is-7Z-HaC">
-                                                <rect key="frame" x="0.0" y="14.999999999999998" width="130" height="20.333333333333329"/>
+                                                <rect key="frame" x="0.0" y="14.666666666666627" width="130" height="20.333333333333329"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -430,10 +436,10 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="Huf-eX-747">
-                                        <rect key="frame" x="0.0" y="100" width="388" height="50"/>
+                                        <rect key="frame" x="0.0" y="99.999999999999943" width="388" height="50"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DOB (yyMMdd)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YCi-Ml-Nxt">
-                                                <rect key="frame" x="0.0" y="14.999999999999998" width="118.33333333333333" height="20.333333333333329"/>
+                                                <rect key="frame" x="0.0" y="14.666666666666741" width="118.33333333333333" height="20.333333333333329"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -453,7 +459,7 @@
                                 </constraints>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap screen to begin echip" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lOl-mh-qQ2">
-                                <rect key="frame" x="116.33333333333333" y="528.33333333333337" width="195.66666666666669" height="20.333333333333371"/>
+                                <rect key="frame" x="116.33333333333333" y="586.66666666666663" width="195.66666666666669" height="20.333333333333371"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -465,7 +471,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BCJ-sH-6M3">
-                                <rect key="frame" x="214" y="166.33333333333334" width="0.0" height="59"/>
+                                <rect key="frame" x="214" y="166.33333333333334" width="0.0" height="0.0"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -481,12 +487,8 @@
                                 <variation key="heightClass=regular-widthClass=regular" constant="100"/>
                             </constraint>
                             <constraint firstItem="auP-f5-MtD" firstAttribute="centerX" secondItem="UrH-ry-3u9" secondAttribute="centerX" id="CyJ-LT-Hlu"/>
-                            <constraint firstItem="auP-f5-MtD" firstAttribute="top" secondItem="9Oc-oM-2WG" secondAttribute="bottom" constant="120" id="FBa-P1-zA3">
-                                <variation key="heightClass=compact-widthClass=compact" constant="85"/>
-                                <variation key="heightClass=compact-widthClass=regular" constant="100"/>
-                            </constraint>
-                            <constraint firstItem="auP-f5-MtD" firstAttribute="top" secondItem="BCJ-sH-6M3" secondAttribute="bottom" constant="53" id="H4q-J6-7pB"/>
-                            <constraint firstItem="lOl-mh-qQ2" firstAttribute="top" secondItem="auP-f5-MtD" secondAttribute="bottom" constant="100" id="KMV-tn-JeT">
+                            <constraint firstItem="qVz-u9-ebP" firstAttribute="leading" secondItem="UrH-ry-3u9" secondAttribute="leading" constant="20" id="JLP-A9-iMJ"/>
+                            <constraint firstItem="lOl-mh-qQ2" firstAttribute="top" secondItem="auP-f5-MtD" secondAttribute="bottom" constant="20" id="KMV-tn-JeT">
                                 <variation key="heightClass=compact-widthClass=compact" constant="15"/>
                                 <variation key="heightClass=compact-widthClass=regular" constant="30"/>
                             </constraint>
@@ -496,12 +498,15 @@
                                 <variation key="heightClass=regular-widthClass=compact" constant="20"/>
                                 <variation key="heightClass=regular-widthClass=regular" constant="100"/>
                             </constraint>
+                            <constraint firstItem="qVz-u9-ebP" firstAttribute="top" secondItem="9Oc-oM-2WG" secondAttribute="bottom" constant="20" id="QDQ-eF-BoH"/>
                             <constraint firstItem="9Oc-oM-2WG" firstAttribute="top" secondItem="UrH-ry-3u9" secondAttribute="top" constant="91" id="QxW-Xa-R9L">
                                 <variation key="heightClass=compact" constant="40"/>
                             </constraint>
                             <constraint firstItem="9Oc-oM-2WG" firstAttribute="centerX" secondItem="UrH-ry-3u9" secondAttribute="centerX" id="Rpu-u1-K8e"/>
+                            <constraint firstItem="UrH-ry-3u9" firstAttribute="trailing" secondItem="qVz-u9-ebP" secondAttribute="trailing" constant="20" id="SyY-tQ-Q6u"/>
                             <constraint firstItem="BCJ-sH-6M3" firstAttribute="top" secondItem="9Oc-oM-2WG" secondAttribute="bottom" constant="8" symbolic="YES" id="Tes-MI-k6S"/>
                             <constraint firstItem="lOl-mh-qQ2" firstAttribute="centerX" secondItem="UrH-ry-3u9" secondAttribute="centerX" id="U7P-y4-Xsx"/>
+                            <constraint firstItem="auP-f5-MtD" firstAttribute="top" secondItem="qVz-u9-ebP" secondAttribute="bottom" constant="20" id="ZDW-Tl-x3k"/>
                             <constraint firstItem="BCJ-sH-6M3" firstAttribute="centerX" secondItem="UrH-ry-3u9" secondAttribute="centerX" id="arO-rv-ijk"/>
                         </constraints>
                     </view>
@@ -509,6 +514,7 @@
                     <navigationItem key="navigationItem" id="6bu-TA-2Bh"/>
                     <connections>
                         <outlet property="assistanceLabel" destination="BCJ-sH-6M3" id="Lc9-57-BNH"/>
+                        <outlet property="capturedImageView" destination="qVz-u9-ebP" id="CUv-bT-ihK"/>
                         <outlet property="dobTextView" destination="OWJ-5K-byC" id="EPX-RG-b7g"/>
                         <outlet property="expiryTextView" destination="7Hm-Wu-Dm5" id="TkQ-ZJ-2Oq"/>
                         <outlet property="passportNumberTextView" destination="IUI-i8-2bg" id="B3X-Ld-Rgh"/>
@@ -751,11 +757,12 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Passport_placement_Overlay" width="447.33334350585938" height="246.66667175292969"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemGreenColor">
-            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

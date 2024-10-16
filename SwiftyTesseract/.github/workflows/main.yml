@@ -1,0 +1,43 @@
+# Disabling tests for now until the Swift Package Manager fixes for tests
+# are bundled with an available version of Xcode.
+name: CI
+
+on: 
+  push:
+    paths:
+    - "**.swift"
+    - "**.modulemap"
+    - ".github/workflows/*.yml"
+  pull_request:
+    paths:
+    - "**.swift"
+    - "**.modulemap"
+    - ".github/workflows/*.yml"
+
+jobs:
+  test-macos:
+    runs-on: macOS-latest
+    steps:
+    - uses: actions/checkout@v1
+    - name: Install SwiftLint
+      run: |
+        curl -LO https://github.com/realm/SwiftLint/releases/download/0.39.2/portable_swiftlint.zip
+        unzip portable_swiftlint.zip
+        mv swiftlint /usr/local/bin
+        rm portable_swiftlint.zip LICENSE
+    - name: Switch to Xcode 12.4
+      run: sudo xcode-select --switch /Applications/Xcode_12.4.app/Contents/Developer
+    - name: Lint
+      run: swiftlint
+    - name: Run Tests
+      run: swift test
+
+  test-linux:
+    runs-on: ubuntu-latest
+    container: swift:5.3-focal
+    steps:
+    - uses: actions/checkout@v2
+    - name: Install Dependencies
+      run: apt-get update && apt-get install -yq libtesseract-dev libleptonica-dev
+    - name: Run Tests
+      run: swift test

@@ -6,7 +6,7 @@
 	<dict>
 		<key>Headers/AcuantDocumentProcessing-Swift.h</key>
 		<data>
-		FIhHGJSLBbAjAof2YzhzBhXlqwc=
+		DxLafv+aqFbcvxhTQLIv1m03YXM=
 		</data>
 		<key>Headers/AssureIDSDK.h</key>
 		<data>
@@ -14,47 +14,47 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		cTKjvi0JRRtC98wfo7a1NV3RGFM=
+		yS3OBdhm+7CSSrizee1vqBGLDc4=
 		</data>
 		<key>Modules/AcuantDocumentProcessing.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
 		<data>
-		P8x3Cqq2CIC81shg2wXeHCUPozU=
+		r62WlpPbSY+Ih/UdtKDEwvC7WUo=
 		</data>
 		<key>Modules/AcuantDocumentProcessing.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		HvTn9Yh0c3fEejmorh7LomwJElc=
+		VfzlO1lSh9F8NBw8DOU8Cuj5DZI=
 		</data>
 		<key>Modules/AcuantDocumentProcessing.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		gk0jdZkvcCYc46DuSmnr6MEKOzU=
+		THZQerYdN4zRAKiEarZITY+qXFU=
 		</data>
 		<key>Modules/AcuantDocumentProcessing.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		HvTn9Yh0c3fEejmorh7LomwJElc=
+		VfzlO1lSh9F8NBw8DOU8Cuj5DZI=
 		</data>
 		<key>Modules/AcuantDocumentProcessing.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		Jhvdjaiwbu+18EtJp//XxNc5ipU=
+		5DBCdUKS3jr3rw9sWQo9oJP7yqM=
 		</data>
 		<key>Modules/AcuantDocumentProcessing.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<data>
-		P8x3Cqq2CIC81shg2wXeHCUPozU=
+		r62WlpPbSY+Ih/UdtKDEwvC7WUo=
 		</data>
 		<key>Modules/AcuantDocumentProcessing.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		oZ84h1fnBN4a8n9/pnrZoLFFZ4w=
+		BSLvaVh9td4qyhUtc0kZ16mN9NI=
 		</data>
 		<key>Modules/AcuantDocumentProcessing.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		1wrkVhOzRI+LP2RB8xYi36Ba9kU=
+		JOqyAnE2IR9BN65aEe3Nw+ZZW40=
 		</data>
 		<key>Modules/AcuantDocumentProcessing.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		oZ84h1fnBN4a8n9/pnrZoLFFZ4w=
+		BSLvaVh9td4qyhUtc0kZ16mN9NI=
 		</data>
 		<key>Modules/AcuantDocumentProcessing.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		Z9k24+AiBBib+62x9AF8Sbt1cMc=
+		qEUoG26IObTKZtRzF93GFPt2dbY=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -71,7 +71,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			RgOqJMIFZwa9IshOnXXS8CTWFCUneyqHtLNLhe8F2iw=
+			n2kfP6KL37133PJNWdVw79fn5bFp3izbKYGVPco99KY=
 			</data>
 		</dict>
 		<key>Headers/AssureIDSDK.h</key>
@@ -85,70 +85,70 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			4OIuEW3ylnfvXb5s/K4uoUTUv1cbE10G6+yjx7fI/t4=
+			UStWdtQko/RLHa53hGbb1XMS3IcIGxIQ18aes7T7N7o=
 			</data>
 		</dict>
 		<key>Modules/AcuantDocumentProcessing.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			yEGuhHcX2uPe61cmAkaG4k1ci4QspDWazMzPQS0kuPk=
+			lNcnTWkhYj7o/4QMWCIy7+ALkicF6pamoPfxwnfnPOA=
 			</data>
 		</dict>
 		<key>Modules/AcuantDocumentProcessing.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			/kmmz+6inxC7wsgo0rIt//shNZ3zdfnI06tAlIcQQ/0=
+			iNrOhWeQ4meLS+tgz2EIFEqo/sdJJCtzmVhG2ntibKI=
 			</data>
 		</dict>
 		<key>Modules/AcuantDocumentProcessing.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			yEGuhHcX2uPe61cmAkaG4k1ci4QspDWazMzPQS0kuPk=
+			lNcnTWkhYj7o/4QMWCIy7+ALkicF6pamoPfxwnfnPOA=
 			</data>
 		</dict>
 		<key>Modules/AcuantDocumentProcessing.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			ntBy+ePo3CmGXV5egf1nGk/1FxCHiJ+GbJxyhOTsOkI=
+			1aaB1FBbZzaWzql46JqvVCCnQ1WVe1ie7CarrALzDIw=
 			</data>
 		</dict>
 		<key>Modules/AcuantDocumentProcessing.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			4OIuEW3ylnfvXb5s/K4uoUTUv1cbE10G6+yjx7fI/t4=
+			UStWdtQko/RLHa53hGbb1XMS3IcIGxIQ18aes7T7N7o=
 			</data>
 		</dict>
 		<key>Modules/AcuantDocumentProcessing.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			xNB1WAbhZK2feMs/IOimiztxGszoTqpCwpcc+M2LBZ8=
+			cun0U9KS1r4kXCPAz4uiaOda6KYn+bZqZ/b8p5CQXHM=
 			</data>
 		</dict>
 		<key>Modules/AcuantDocumentProcessing.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			ARyk3mn+MV1jQSrv3Xehl3A6CXycw6Q277xD9m3hrcY=
+			ZjHFwQMQLv2NMIjqo0Owg/63dI5VS/3H1Wuw3kZsZbE=
 			</data>
 		</dict>
 		<key>Modules/AcuantDocumentProcessing.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			xNB1WAbhZK2feMs/IOimiztxGszoTqpCwpcc+M2LBZ8=
+			cun0U9KS1r4kXCPAz4uiaOda6KYn+bZqZ/b8p5CQXHM=
 			</data>
 		</dict>
 		<key>Modules/AcuantDocumentProcessing.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			S5xOE1allsMYvcABWp7xbgleRBNnTrSoSNqetGAqKbc=
+			Z+Tpl4CKgYfzHDlzAeZMJ4WgxmGtfPPbw0ReSkV1HhI=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

@@ -1,6 +1,6 @@
-# Acuant iOS SDK v11.6.4
+# Acuant iOS SDK v11.6.5
 
-**April 2024**
+**October 2024**
 
 See [https://github.com/Acuant/iOSSDKV11/releases](https://github.com/Acuant/iOSSDKV11/releases) for release notes.
 
@@ -107,7 +107,7 @@ The SDK includes the following modules:
 		platform :ios, '11'
 		use_frameworks! # important
 		
-		pod 'AcuantiOSSDKV11', '~> 11.6.1' #for all packages
+		pod 'AcuantiOSSDKV11', '~> 11.6.5' #for all packages
 		
  Alternatively, use the following to add **independent** modules in the podfile:
 		
@@ -494,21 +494,23 @@ AcuantCamera is best used in portrait mode. Lock the orientation of the app befo
 
     ```swift
     public class AcuantMrzResult {
-      public var surName: String = ""
-      public var givenName: String = ""
-      public var country: String = ""
-      public var passportNumber: String = ""
-      public var nationality: String = ""
-      public var dob: String = ""
-      public var gender: String = ""
-      public var passportExpiration: String = ""
-      public var personalDocNumber: String = ""
-      public var threeLineMrz: Bool = false
-      public var checkSumResult1: Bool = false
-      public var checkSumResult2: Bool = false
-      public var checkSumResult3: Bool = false
-      public var checkSumResult4: Bool = false
-      public var checkSumResult5: Bool = false
+	    public var surName: String = ""
+	    public var givenName: String = ""
+	    public var country: String = ""
+	    public var passportNumber: String = ""
+	    public var nationality: String = ""
+	    public var dob: String = ""
+	    public var gender: String = ""
+	    public var passportExpiration: String = ""
+	    public var personalDocNumber: String = ""
+	    public var optional1: String = ""
+	    public var checkSumResult1: Bool = false
+	    public var checkSumResult2: Bool = false
+	    public var checkSumResult3: Bool = false
+	    public var checkSumResult4: Bool = false
+	    public var checkSumResult5: Bool = false
+	    public var threeLineMrz: Bool = false
+	    public var capturedImage: UIImage? = nil
     }
     ```
 

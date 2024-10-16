@@ -47,10 +47,11 @@
 		AA1728C02673CDDF00E3E2CB /* AcuantImagePreparation.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = AA1728AA2673CDDE00E3E2CB /* AcuantImagePreparation.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		AAD8A20C26DD94C1007920C2 /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD8A20B26DD94C1007920C2 /* AlertView.swift */; };
 		AAD8A20E26DD9515007920C2 /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD8A20D26DD9515007920C2 /* BaseNavigationController.swift */; };
+		AC358BC02CB8516A00F0498A /* libtesseract.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = D943D3292A20255B003B7F35 /* libtesseract.xcframework */; };
+		AC358BC12CB8516A00F0498A /* libtesseract.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D943D3292A20255B003B7F35 /* libtesseract.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C229E7B62224520700FFAC6F /* AcuantConfig.plist in Resources */ = {isa = PBXBuildFile; fileRef = C229E7B52224520700FFAC6F /* AcuantConfig.plist */; };
 		C2AD3AAA2273B8F200088F0A /* AcuantCamera.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C208049D2226E049004FA5BE /* AcuantCamera.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C2B08D5922C6AF31003F2CBE /* FaceLivenessCameraController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B08D5822C6AF31003F2CBE /* FaceLivenessCameraController.swift */; };
-		D943D32A2A20255C003B7F35 /* libtesseract.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = D943D3292A20255B003B7F35 /* libtesseract.xcframework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -95,6 +96,7 @@
 				AA1728C02673CDDF00E3E2CB /* AcuantImagePreparation.xcframework in Embed Frameworks */,
 				AA08D0A4287DEBAB00C5A336 /* OpenSSL.xcframework in Embed Frameworks */,
 				AA1728B02673CDDE00E3E2CB /* AcuantPassiveLiveness.xcframework in Embed Frameworks */,
+				AC358BC12CB8516A00F0498A /* libtesseract.xcframework in Embed Frameworks */,
 				83248A8423ECB05D00A264F2 /* AcuantFaceCapture.framework in Embed Frameworks */,
 				AA1728B22673CDDF00E3E2CB /* AcuantFaceMatch.xcframework in Embed Frameworks */,
 				C2AD3AAA2273B8F200088F0A /* AcuantCamera.framework in Embed Frameworks */,
@@ -131,7 +133,7 @@
 		83576FF5243555310091454C /* tessdata */ = {isa = PBXFileReference; lastKnownFileType = folder; name = tessdata; path = Assets.xcassets/tessdata; sourceTree = "<group>"; };
 		8381E903248EFD93003FB763 /* SampleApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SampleApp.entitlements; sourceTree = "<group>"; };
 		83C977F522C69D9A00FC8C53 /* CheckConnection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckConnection.swift; sourceTree = "<group>"; };
-		AA08D0A2287DEBAB00C5A336 /* OpenSSL.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = OpenSSL.xcframework; path = ../EmbeddedFrameworks/OpenSSL.xcframework; sourceTree = "<group>"; };
+		AA08D0A2287DEBAB00C5A336 /* OpenSSL.xcframework */ = {isa = PBXFileReference; expectedSignature = "AppleDeveloperProgram:67RAULRX93:Marcin Krzyzanowski"; lastKnownFileType = wrapper.xcframework; name = OpenSSL.xcframework; path = ../EmbeddedFrameworks/OpenSSL.xcframework; sourceTree = "<group>"; };
 		AA1728A02673CDC900E3E2CB /* MrzHelpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MrzHelpViewController.swift; path = SampleApp/MrzHelpViewController.swift; sourceTree = "<group>"; };
 		AA1728A22673CDDE00E3E2CB /* AcuantPassiveLiveness.xcframework */ = {isa = PBXFileReference; expectedSignature = "AppleDeveloperProgram:E67326HC5Q:Acuant Inc."; lastKnownFileType = wrapper.xcframework; name = AcuantPassiveLiveness.xcframework; path = ../EmbeddedFrameworks/AcuantPassiveLiveness.xcframework; sourceTree = "<group>"; };
 		AA1728A32673CDDE00E3E2CB /* AcuantFaceMatch.xcframework */ = {isa = PBXFileReference; expectedSignature = "AppleDeveloperProgram:E67326HC5Q:Acuant Inc."; lastKnownFileType = wrapper.xcframework; name = AcuantFaceMatch.xcframework; path = ../EmbeddedFrameworks/AcuantFaceMatch.xcframework; sourceTree = "<group>"; };
@@ -153,11 +155,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D943D32A2A20255C003B7F35 /* libtesseract.xcframework in Frameworks */,
 				AA1728B72673CDDF00E3E2CB /* AcuantEchipReader.xcframework in Frameworks */,
 				AA1728BF2673CDDF00E3E2CB /* AcuantImagePreparation.xcframework in Frameworks */,
 				AA08D0A3287DEBAB00C5A336 /* OpenSSL.xcframework in Frameworks */,
 				AA1728AF2673CDDE00E3E2CB /* AcuantPassiveLiveness.xcframework in Frameworks */,
+				AC358BC02CB8516A00F0498A /* libtesseract.xcframework in Frameworks */,
 				838DEB5124356128004B5DE3 /* AcuantCamera.framework in Frameworks */,
 				AA1728B12673CDDF00E3E2CB /* AcuantFaceMatch.xcframework in Frameworks */,
 				83248A8323ECB05D00A264F2 /* AcuantFaceCapture.framework in Frameworks */,

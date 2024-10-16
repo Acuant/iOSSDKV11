@@ -3,7 +3,7 @@ Pod::Spec.new do |s|
     s.swift_versions = ['5.5.2']
     s.ios.deployment_target = '11.0'
     s.name         = "AcuantiOSSDKV11"
-    s.version      = "11.6.4"
+    s.version      = "11.6.5"
     s.summary      = "Acuant's latest SDK with most advanced image capture technology and optimized user workflow  "
     s.description  = "Acuant's latest SDK with most advanced image capture technology and optimized user workflow.
 
@@ -72,7 +72,7 @@ Pod::Spec.new do |s|
         acuantEchip.ios.vendored_frameworks = "EmbeddedFrameworks/AcuantEchipReader.xcframework"
         
         acuantEchip.dependency "#{s.name}/AcuantCommon"
-        acuantEchip.dependency 'OpenSSL-Universal', '1.1.1400'
+        acuantEchip.dependency 'OpenSSL-Universal', '1.1.2301'
     end
     
     s.subspec 'AcuantFaceCapture' do |acuantFaceCapture|

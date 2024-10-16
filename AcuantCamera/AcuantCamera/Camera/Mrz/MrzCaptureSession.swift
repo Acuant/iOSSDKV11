@@ -195,7 +195,7 @@ extension MrzCaptureSession: AVCaptureVideoDataOutputSampleBufferDelegate {
             scaledPoints = getScaledPoints(points: croppedFrame.points, frameSize: frame.size)
             previousPoints = croppedFrame.points
         }
-
+        result?.capturedImage = frame
         delegate?.onCaptured(state: state, result: result, points: scaledPoints)
         cropping = false
     }

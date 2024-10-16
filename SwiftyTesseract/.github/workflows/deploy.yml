@@ -1,0 +1,24 @@
+name: Docs
+
+on:
+  push:
+    tags:
+      - '*'
+
+jobs:
+  docs:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v1
+    - name: Generate Docs
+      uses: SwiftDocOrg/swift-doc@master
+      with:
+        inputs: Sources/SwiftyTesseract
+        module-name: SwiftyTesseract
+        output: "Docs"
+    - name: Publish Docs to Wiki
+      uses: SwiftDocOrg/github-wiki-publish-action@v1
+      with:
+        path: "Docs"
+      env:
+        GH_PERSONAL_ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
