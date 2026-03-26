@@ -1,6 +1,7 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.10 (swiftlang-5.10.0.13 clang-1500.3.9.4)
-// swift-module-flags: -target x86_64-apple-ios11.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-bare-slash-regex -module-name AcuantDocumentProcessing
+// swift-compiler-version: Apple Swift version 6.2.1 effective-5.10 (swiftlang-6.2.1.4.8 clang-1700.4.4.1)
+// swift-module-flags: -target x86_64-apple-ios11.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-experimental-feature DebugDescriptionMacro -enable-bare-slash-regex -module-name AcuantDocumentProcessing
+// swift-module-flags-ignorable: -no-verify-emitted-module-interface -formal-cxx-interoperability-mode=off -interface-compiler-version 6.2.1
 import AcuantCommon
 import Foundation
 import Swift
@@ -17,7 +18,9 @@ import _SwiftConcurrencyShims
 }
 @objc public enum ClassificationMode : Swift.Int, Swift.Codable {
   case automatic, manual
+  #if compiler(>=5.3) && $NonescapableTypes
   public init?(rawValue: Swift.Int)
+  #endif
   public typealias RawValue = Swift.Int
   public var rawValue: Swift.Int {
     get
@@ -25,9 +28,11 @@ import _SwiftConcurrencyShims
 }
 @objc @objcMembers public class Classification : ObjectiveC.NSObject, Swift.Decodable {
   @objc final public let unparsedMode: Swift.Int
+  #if compiler(>=5.3) && $NonescapableTypes
   public var mode: AcuantDocumentProcessing.ClassificationMode? {
     get
   }
+  #endif
   @objc final public let orientationChanged: Swift.Bool
   @objc final public let presentationChanged: Swift.Bool
   @objc final public let classificationDetails: AcuantDocumentProcessing.ClassificationDetails?
@@ -88,13 +93,17 @@ import _SwiftConcurrencyShims
   required public init(from decoder: any Swift.Decoder) throws
 }
 @objc public protocol CreateInstanceDelegate {
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc func instanceCreated(instanceId: Swift.String?, error: AcuantCommon.AcuantError?)
+  #endif
 }
 @objc public protocol DeleteDelegate {
   @objc func instanceDeleted(success: Swift.Bool)
 }
 @objc public protocol DocumentClassificationDelegate {
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc func documentClassified(success: Swift.Bool, classification: AcuantDocumentProcessing.Classification?, error: AcuantCommon.AcuantError?)
+  #endif
 }
 @objc @objcMembers public class DocumentAlert : ObjectiveC.NSObject, Swift.Decodable {
   @objc final public let id: Swift.String
@@ -105,16 +114,20 @@ import _SwiftConcurrencyShims
   @objc final public let key: Swift.String?
   @objc final public let name: Swift.String?
   @objc final public let unparsedResult: Swift.Int
+  #if compiler(>=5.3) && $NonescapableTypes
   public var result: AcuantDocumentProcessing.AuthenticationResult? {
     get
   }
+  #endif
   @objc final public let model: Swift.String?
   @objc deinit
   required public init(from decoder: any Swift.Decoder) throws
 }
 @objc public enum DocumentElement : Swift.Int, Swift.Decodable {
   case unknown, none, photo, data, substrate, overlay
+  #if compiler(>=5.3) && $NonescapableTypes
   public init?(rawValue: Swift.Int)
+  #endif
   public typealias RawValue = Swift.Int
   public var rawValue: Swift.Int {
     get
@@ -123,9 +136,11 @@ import _SwiftConcurrencyShims
 @objc @objcMembers public class DocumentRegion : ObjectiveC.NSObject, Swift.Decodable {
   @objc final public let id: Swift.String?
   @objc final public let unparsedDocumentElement: Swift.Int
+  #if compiler(>=5.3) && $NonescapableTypes
   public var documentElement: AcuantDocumentProcessing.DocumentElement? {
     get
   }
+  #endif
   @objc final public let imageReference: Swift.String
   @objc final public let key: Swift.String?
   @objc final public let rectangle: AcuantDocumentProcessing.Rectangle?
@@ -134,7 +149,9 @@ import _SwiftConcurrencyShims
 }
 @objc public enum DocumentProcessMode : Swift.Int, Swift.Codable {
   case `default`, captureData, authenticate, barcode
+  #if compiler(>=5.3) && $NonescapableTypes
   public init?(rawValue: Swift.Int)
+  #endif
   public typealias RawValue = Swift.Int
   public var rawValue: Swift.Int {
     get
@@ -145,7 +162,9 @@ import _SwiftConcurrencyShims
   public var name: Swift.String {
     get
   }
+  #if compiler(>=5.3) && $NonescapableTypes
   public init?(rawValue: Swift.Int)
+  #endif
   public typealias RawValue = Swift.Int
   public var rawValue: Swift.Int {
     get
@@ -154,19 +173,25 @@ import _SwiftConcurrencyShims
 @objc @objcMembers public class IDResult : AcuantDocumentProcessing.ProcessingResult, Swift.Decodable {
   @objc final public let instanceID: Swift.String
   @objc final public let unparsedAuthenticationSensitivity: Swift.Int
+  #if compiler(>=5.3) && $NonescapableTypes
   public var authenticationSensitivity: AcuantDocumentProcessing.AuthenticationSensitivity? {
     get
   }
+  #endif
   @objc final public let engineVersion: Swift.String?
   @objc final public let libraryVersion: Swift.String?
   @objc final public let unparsedProcessMode: Swift.Int
+  #if compiler(>=5.3) && $NonescapableTypes
   public var processMode: AcuantDocumentProcessing.DocumentProcessMode? {
     get
   }
+  #endif
   @objc public var unparsedResult: Swift.Int
+  #if compiler(>=5.3) && $NonescapableTypes
   public var result: AcuantDocumentProcessing.AuthenticationResult? {
     get
   }
+  #endif
   @objc final public let subscription: AcuantDocumentProcessing.Subscription?
   @objc final public let biographic: AcuantDocumentProcessing.Biographic?
   @objc final public let classification: AcuantDocumentProcessing.Classification?
@@ -177,19 +202,25 @@ import _SwiftConcurrencyShims
   @objc final public let images: [AcuantDocumentProcessing.DocumentImage]?
   @objc final public let regions: [AcuantDocumentProcessing.DocumentRegion]?
   @objc final public let unparsedTamperResult: Swift.Int
+  #if compiler(>=5.3) && $NonescapableTypes
   public var tamperResult: AcuantDocumentProcessing.AuthenticationResult? {
     get
   }
+  #endif
   @objc final public let unparsedTamperSensitivity: Swift.Int
+  #if compiler(>=5.3) && $NonescapableTypes
   public var tamperSensitivity: AcuantDocumentProcessing.TamperSensitivity? {
     get
   }
+  #endif
   @objc deinit
   required public init(from decoder: any Swift.Decoder) throws
 }
 @objc public enum GenderType : Swift.Int, Swift.Decodable {
   case unspecified, male, female, unknown
+  #if compiler(>=5.3) && $NonescapableTypes
   public init?(rawValue: Swift.Int)
+  #endif
   public typealias RawValue = Swift.Int
   public var rawValue: Swift.Int {
     get
@@ -201,9 +232,11 @@ import _SwiftConcurrencyShims
   @objc final public let expirationDate: Swift.String?
   @objc final public let fullName: Swift.String?
   @objc final public let unparsedGender: Swift.Int
+  #if compiler(>=5.3) && $NonescapableTypes
   public var gender: AcuantDocumentProcessing.GenderType? {
     get
   }
+  #endif
   @objc public var photo: Swift.String?
   @objc deinit
   required public init(from decoder: any Swift.Decoder) throws
@@ -211,7 +244,9 @@ import _SwiftConcurrencyShims
 public class EvaluatedImageData {
   final public let imageBytes: Foundation.NSData
   final public let barcodeString: Swift.String?
+  #if compiler(>=5.3) && $NonescapableTypes
   public init(imageBytes: Foundation.NSData, barcodeString: Swift.String?)
+  #endif
   @objc deinit
 }
 @objc @objcMembers public class PlanCode : ObjectiveC.NSObject, Swift.Decodable {
@@ -221,7 +256,9 @@ public class EvaluatedImageData {
 }
 @objc public enum AuthenticationSensitivity : Swift.Int, Swift.Codable {
   case normal, high, low
+  #if compiler(>=5.3) && $NonescapableTypes
   public init?(rawValue: Swift.Int)
+  #endif
   public typealias RawValue = Swift.Int
   public var rawValue: Swift.Int {
     get
@@ -229,7 +266,9 @@ public class EvaluatedImageData {
 }
 @objc public enum TamperSensitivity : Swift.Int, Swift.Codable {
   case normal, high, low
+  #if compiler(>=5.3) && $NonescapableTypes
   public init?(rawValue: Swift.Int)
+  #endif
   public typealias RawValue = Swift.Int
   public var rawValue: Swift.Int {
     get
@@ -264,7 +303,9 @@ public class EvaluatedImageData {
   case voterIdentification
   case military
   case consularIdentification
+  #if compiler(>=5.3) && $NonescapableTypes
   public init?(rawValue: Swift.Int)
+  #endif
   public typealias RawValue = Swift.Int
   public var rawValue: Swift.Int {
     get
@@ -272,7 +313,9 @@ public class EvaluatedImageData {
 }
 @objc public enum DocumentDataType : Swift.Int, Swift.Decodable {
   case barcode2D, machineReadableZone, magneticStripe
+  #if compiler(>=5.3) && $NonescapableTypes
   public init?(rawValue: Swift.Int)
+  #endif
   public typealias RawValue = Swift.Int
   public var rawValue: Swift.Int {
     get
@@ -280,7 +323,9 @@ public class EvaluatedImageData {
 }
 @objc public enum IssuerType : Swift.Int, Swift.Decodable {
   case unknown, country, stateProvince, tribal, municipality, business, other
+  #if compiler(>=5.3) && $NonescapableTypes
   public init?(rawValue: Swift.Int)
+  #endif
   public typealias RawValue = Swift.Int
   public var rawValue: Swift.Int {
     get
@@ -288,7 +333,9 @@ public class EvaluatedImageData {
 }
 @objc public enum DocumentSize : Swift.Int, Swift.Decodable {
   case unknown, id1, id2, id3, letter, checkCurrency, custom
+  #if compiler(>=5.3) && $NonescapableTypes
   public init?(rawValue: Swift.Int)
+  #endif
   public typealias RawValue = Swift.Int
   public var rawValue: Swift.Int {
     get
@@ -297,9 +344,11 @@ public class EvaluatedImageData {
 @objc @objcMembers public class DocumentType : ObjectiveC.NSObject, Swift.Decodable {
   @objc final public let id: Swift.String
   @objc final public let unparsedDocumentClass: Swift.Int
+  #if compiler(>=5.3) && $NonescapableTypes
   public var documentClass: AcuantDocumentProcessing.DocumentClass? {
     get
   }
+  #endif
   @objc final public let classCode: Swift.String?
   @objc final public let className: Swift.String?
   @objc final public let countryCode: Swift.String?
@@ -310,15 +359,19 @@ public class EvaluatedImageData {
   @objc final public let issuerCode: Swift.String?
   @objc final public let issuerName: Swift.String?
   @objc final public let unparsedIssuerType: Swift.Int
+  #if compiler(>=5.3) && $NonescapableTypes
   public var issuerType: AcuantDocumentProcessing.IssuerType? {
     get
   }
+  #endif
   @objc final public let keesingCode: Swift.String?
   @objc final public let name: Swift.String?
   @objc final public let unparsedSize: Swift.Int
+  #if compiler(>=5.3) && $NonescapableTypes
   public var size: AcuantDocumentProcessing.DocumentSize? {
     get
   }
+  #endif
   final public let referenceDocumentDataTypes: [AcuantDocumentProcessing.DocumentDataType]?
   final public let documentDataTypes: [AcuantDocumentProcessing.DocumentDataType]?
   @objc final public let supportedImages: [AcuantDocumentProcessing.DocumentImageType]
@@ -327,7 +380,9 @@ public class EvaluatedImageData {
 }
 @objc public enum LightSource : Swift.Int, Swift.Decodable {
   case white, nearInfrared, ultravioletA, coaxialWhite, coaxialNearInfrared
+  #if compiler(>=5.3) && $NonescapableTypes
   public init?(rawValue: Swift.Int)
+  #endif
   public typealias RawValue = Swift.Int
   public var rawValue: Swift.Int {
     get
@@ -335,7 +390,9 @@ public class EvaluatedImageData {
 }
 @objc public enum DocumentSide : Swift.Int, Swift.Decodable {
   case front, back
+  #if compiler(>=5.3) && $NonescapableTypes
   public init?(rawValue: Swift.Int)
+  #endif
   public typealias RawValue = Swift.Int
   public var rawValue: Swift.Int {
     get
@@ -343,13 +400,17 @@ public class EvaluatedImageData {
 }
 @objc @objcMembers public class DocumentImageType : ObjectiveC.NSObject, Swift.Decodable {
   @objc final public let unparsedLight: Swift.Int
+  #if compiler(>=5.3) && $NonescapableTypes
   public var light: AcuantDocumentProcessing.LightSource? {
     get
   }
+  #endif
   @objc final public let unparsedSide: Swift.Int
+  #if compiler(>=5.3) && $NonescapableTypes
   public var side: AcuantDocumentProcessing.DocumentSide? {
     get
   }
+  #endif
   @objc deinit
   required public init(from decoder: any Swift.Decoder) throws
 }
@@ -358,13 +419,17 @@ public class EvaluatedImageData {
   @objc final public let horizontalResolution: Swift.Int
   @objc final public let verticalResolution: Swift.Int
   @objc final public let unparsedSide: Swift.Int
+  #if compiler(>=5.3) && $NonescapableTypes
   public var side: AcuantDocumentProcessing.DocumentSide? {
     get
   }
+  #endif
   @objc final public let unparsedLight: Swift.Int
+  #if compiler(>=5.3) && $NonescapableTypes
   public var light: AcuantDocumentProcessing.LightSource? {
     get
   }
+  #endif
   @objc final public let isCropped: Swift.Bool
   @objc final public let isTampered: Swift.Bool
   final public let glareMetric: Swift.UInt8?
@@ -385,7 +450,9 @@ public class EvaluatedImageData {
 }
 @objc public enum DocumentDataSource : Swift.Int, Swift.Codable {
   case none, barcode1D, barcode2D, contactlessChip, machineReadableZone, magneticStripe, visualInspectionZone, other
+  #if compiler(>=5.3) && $NonescapableTypes
   public init?(rawValue: Swift.Int)
+  #endif
   public typealias RawValue = Swift.Int
   public var rawValue: Swift.Int {
     get
@@ -394,9 +461,11 @@ public class EvaluatedImageData {
 @objc @objcMembers public class DocumentField : ObjectiveC.NSObject, Swift.Decodable {
   @objc final public let id: Swift.String
   @objc final public let unparsedDataSource: Swift.Int
+  #if compiler(>=5.3) && $NonescapableTypes
   public var dataSource: AcuantDocumentProcessing.DocumentDataSource? {
     get
   }
+  #endif
   @objc final public let fieldDescription: Swift.String?
   @objc final public let isImage: Swift.Bool
   @objc final public let key: Swift.String?
@@ -446,9 +515,11 @@ public class EvaluatedImageData {
 @objc @objcMembers public class Subscription : ObjectiveC.NSObject, Swift.Decodable {
   @objc final public let id: Swift.String
   @objc final public let unparsedDocumentProcessMode: Swift.Int
+  #if compiler(>=5.3) && $NonescapableTypes
   public var documentProcessMode: AcuantDocumentProcessing.DocumentProcessMode? {
     get
   }
+  #endif
   @objc final public let isActive: Swift.Bool
   @objc final public let isDevelopment: Swift.Bool
   @objc final public let isTrial: Swift.Bool
@@ -471,7 +542,9 @@ public class EvaluatedImageData {
 }
 @objc public enum SensorType : Swift.Int, Swift.Codable {
   case unknown, camera, scanner, mobile
+  #if compiler(>=5.3) && $NonescapableTypes
   public init?(rawValue: Swift.Int)
+  #endif
   public typealias RawValue = Swift.Int
   public var rawValue: Swift.Int {
     get
@@ -481,9 +554,11 @@ public class EvaluatedImageData {
   @objc final public let manufacturer: Swift.String?
   @objc final public let model: Swift.String?
   @objc final public let unparsedSensorType: Swift.Int
+  #if compiler(>=5.3) && $NonescapableTypes
   public var sensorType: AcuantDocumentProcessing.SensorType? {
     get
   }
+  #endif
   @objc deinit
   public func encode(to encoder: any Swift.Encoder) throws
   required public init(from decoder: any Swift.Decoder) throws
@@ -495,7 +570,9 @@ public class EvaluatedImageData {
   @objc deinit
 }
 @objc public protocol UploadImageDelegate {
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc func imageUploaded(error: AcuantCommon.AcuantError?, classification: AcuantDocumentProcessing.Classification?)
+  #endif
 }
 extension AcuantDocumentProcessing.ClassificationMode : Swift.Equatable {}
 extension AcuantDocumentProcessing.ClassificationMode : Swift.Hashable {}

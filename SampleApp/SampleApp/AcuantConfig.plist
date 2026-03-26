@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-<plist version="1.0">
+<plist version="1.0">
 <dict>
 	<key>acuant_username</key>
-	<string>*****</string>
+	<string>xxxxxx</string>
 	<key>acuant_password</key>
-	<string>*****</string>
+	<string>xxxxxx</string>
 	<key>acuant_subscription</key>
-	<string>*****</string>
+	<string>xxxxxx</string>
 	<key>frm_endpoint</key>
-	<string>*****</string>
+	<string>xxxxxx</string>
 	<key>passive_liveness_endpoint</key>
-	<string>*****</string>
+	<string>xxxxxx</string>
 	<key>med_endpoint</key>
-	<string>*****</string>
+	<string>xxxxxx</string>
 	<key>assureid_endpoint</key>
-	<string>*****</string>
+	<string>xxxxxx</string>
 	<key>acas_endpoint</key>
-	<string>*****</string>
+	<string>xxxxxx</string>
 	<key>ozone_endpoint</key>
-	<string>*****</string>
+	<string>xxxxxx</string>
 </dict>
 </plist>

@@ -1,6 +1,7 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.10 (swiftlang-5.10.0.13 clang-1500.3.9.4)
-// swift-module-flags: -target arm64-apple-ios11.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-bare-slash-regex -module-name AcuantCommon
+// swift-compiler-version: Apple Swift version 6.2.1 effective-5.10 (swiftlang-6.2.1.4.8 clang-1700.4.4.1)
+// swift-module-flags: -target arm64-apple-ios11.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-experimental-feature DebugDescriptionMacro -enable-bare-slash-regex -module-name AcuantCommon
+// swift-module-flags-ignorable: -no-verify-emitted-module-interface -formal-cxx-interoperability-mode=off -interface-compiler-version 6.2.1
 import Foundation
 import Swift
 import UIKit
@@ -8,11 +9,15 @@ import _Concurrency
 import _StringProcessing
 import _SwiftConcurrencyShims
 public protocol IAcuantInitializer {
+  #if compiler(>=5.3) && $NonescapableTypes
   func initialize(packages: [any AcuantCommon.IAcuantPackage], callback: @escaping (AcuantCommon.AcuantError?) -> ()) -> Foundation.URLSessionTask?
+  #endif
 }
 public class AcuantInitializer : AcuantCommon.IAcuantInitializer {
   public init()
+  #if compiler(>=5.3) && $NonescapableTypes
   public func initialize(packages: [any AcuantCommon.IAcuantPackage], callback: @escaping (AcuantCommon.AcuantError?) -> ()) -> Foundation.URLSessionTask?
+  #endif
   @objc deinit
 }
 @_hasMissingDesignatedInitializers public class SecureAuthorizations {
@@ -33,7 +38,9 @@ public class AcuantInitializer : AcuantCommon.IAcuantInitializer {
 @objc public enum DeleteType : Swift.Int {
   case ID
   case MedicalCard
+  #if compiler(>=5.3) && $NonescapableTypes
   public init?(rawValue: Swift.Int)
+  #endif
   public typealias RawValue = Swift.Int
   public var rawValue: Swift.Int {
     get
@@ -49,15 +56,23 @@ public class AcuantInitializer : AcuantCommon.IAcuantInitializer {
   @objc public var points: [CoreFoundation.CGPoint]
   @objc public var isPassport: Swift.Bool
   @objc public class func newInstance() -> AcuantCommon.Image
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc public class func newInstance(image: UIKit.UIImage, data: Foundation.NSMutableData?) -> AcuantCommon.Image
+  #endif
   @objc override dynamic public init()
   @objc deinit
 }
 @_hasMissingDesignatedInitializers public class AcuantJwtParser {
+  #if compiler(>=5.3) && $NonescapableTypes
   public func parseToken(jwtToken: Swift.String) -> AcuantCommon.AcuantJwtToken?
+  #endif
   public func decode(jwtToken jwt: Swift.String) -> [Swift.String : Any]
+  #if compiler(>=5.3) && $NonescapableTypes
   public func base64UrlDecode(_ value: Swift.String) -> Foundation.Data?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   public func decodeJWTPart(_ value: Swift.String) -> [Swift.String : Any]?
+  #endif
   @objc deinit
 }
 public protocol IAcuantPackage {
@@ -67,7 +82,9 @@ public protocol IAcuantPackage {
   @objc public var errorCode: Swift.Int
   @objc public var errorDescription: Swift.String?
   @objc override dynamic public init()
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc public init(errorCode: Swift.Int = 0, errorDescription: Swift.String?)
+  #endif
   @objc public class func newInstance() -> AcuantCommon.AcuantError
   @objc deinit
 }
@@ -108,19 +125,41 @@ public protocol IAcuantPackage {
 }
 @objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objcMembers public class Credential : ObjectiveC.NSObject {
   public class func authorization() -> AcuantCommon.SecureAuthorizations
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc public class func username() -> Swift.String?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc public class func password() -> Swift.String?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc public class func subscription() -> Swift.String?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc public class func endpoints() -> AcuantCommon.Endpoints?
+  #endif
   @objc public class func removeToken() -> Swift.Bool
   @objc public class func setToken(token: Swift.String) -> Swift.Bool
+  #if compiler(>=5.3) && $NonescapableTypes
   public class func getToken() -> AcuantCommon.AcuantJwtToken?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc public class func isCredentialValid(endpoint: Swift.String?) -> Swift.Bool
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc public class func getAcuantAuthHeader() -> Swift.String?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc public class func getBasicAuthHeader() -> Swift.String?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc public class func setUsername(username: Swift.String!)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc public class func setPassword(password: Swift.String!)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc public class func setSubscription(subscription: Swift.String!)
+  #endif
   @objc public class func setEndpoints(endpoints: AcuantCommon.Endpoints)
   public class func setAuthorzation(auth: AcuantCommon.SecureAuthorizations)
   @objc deinit
@@ -169,7 +208,9 @@ public protocol IAcuantPackage {
   case Default
   case DataCapture
   case Authentication
+  #if compiler(>=5.3) && $NonescapableTypes
   public init?(rawValue: Swift.Int)
+  #endif
   public typealias RawValue = Swift.Int
   public var rawValue: Swift.Int {
     get
@@ -180,16 +221,20 @@ public protocol IAcuantPackage {
   @objc public var idEndpoint: Swift.String?
   @objc public var passiveLivenessEndpoint: Swift.String?
   @objc public var healthInsuranceEndpoint: Swift.String?
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc @AcuantCommon.HasValidDomain public var acasEndpoint: Swift.String? {
     @objc get
     @objc set
     _modify
   }
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc @AcuantCommon.HasValidDomain public var ozoneEndpoint: Swift.String? {
     @objc get
     @objc set
     _modify
   }
+  #endif
   @objc public class func newInstance() -> AcuantCommon.Endpoints
   @objc override dynamic public init()
   @objc deinit
@@ -197,10 +242,12 @@ public protocol IAcuantPackage {
 @propertyWrapper public struct HasValidDomain {
   public init()
   public init(endpoint: Swift.String)
+  #if compiler(>=5.3) && $NonescapableTypes
   public var wrappedValue: Swift.String? {
     get
     set
   }
+  #endif
 }
 @objc @_inheritsConvenienceInitializers @objcMembers public class Utils : ObjectiveC.NSObject {
   @objc public static var SENT_IMAGE_QUALITY_JPEG_COMPRESSION: CoreFoundation.CGFloat

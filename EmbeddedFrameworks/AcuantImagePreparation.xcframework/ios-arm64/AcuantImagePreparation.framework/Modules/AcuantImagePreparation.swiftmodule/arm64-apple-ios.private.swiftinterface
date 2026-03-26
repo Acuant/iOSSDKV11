@@ -1,6 +1,7 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.10 (swiftlang-5.10.0.13 clang-1500.3.9.4)
-// swift-module-flags: -target arm64-apple-ios11.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-bare-slash-regex -module-name AcuantImagePreparation
+// swift-compiler-version: Apple Swift version 6.2.1 effective-5.10 (swiftlang-6.2.1.4.8 clang-1700.4.4.1)
+// swift-module-flags: -target arm64-apple-ios11.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-experimental-feature DebugDescriptionMacro -enable-bare-slash-regex -module-name AcuantImagePreparation
+// swift-module-flags-ignorable: -no-verify-emitted-module-interface -formal-cxx-interoperability-mode=off -interface-compiler-version 6.2.1
 import AVFoundation
 import AcuantCommon
 @_exported import AcuantImagePreparation
@@ -23,7 +24,9 @@ public class CameraMetaData : Swift.Codable {
   @objc deinit
 }
 @objc public protocol InitializationDelegate {
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc func initializationFinished(error: AcuantCommon.AcuantError?)
+  #endif
 }
 @_hasMissingDesignatedInitializers public class AcuantImage {
   final public let image: UIKit.UIImage
@@ -35,20 +38,30 @@ public class CameraMetaData : Swift.Codable {
   @objc deinit
 }
 @objc @_inheritsConvenienceInitializers @objcMembers public class ImagePreparation : ObjectiveC.NSObject {
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc public class func initialize(delegate: (any AcuantImagePreparation.InitializationDelegate)?)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc public class func resize(image: UIKit.UIImage, targetWidth: Swift.Int) -> UIKit.UIImage?
+  #endif
   @objc public class func crop(data: AcuantImagePreparation.CroppingData) -> AcuantCommon.Image
   public class func createCameraImage(image: UIKit.UIImage, data: AcuantImagePreparation.CameraMetaData) -> AcuantCommon.Image
+  #if compiler(>=5.3) && $NonescapableTypes
   public class func evaluateImage(data: AcuantImagePreparation.CroppingData, callback: @escaping (AcuantImagePreparation.AcuantImage?, AcuantCommon.AcuantError?) -> ())
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @available(*, deprecated, message: "Please initialize CroppingData with the Image from the camera and pass that as data: instead of image:.")
   public class func evaluateImage(image: UIKit.UIImage, callback: @escaping (AcuantImagePreparation.AcuantImage?, AcuantCommon.AcuantError?) -> ())
+  #endif
   @objc public class func cropMrz(detectData: AcuantImagePreparation.DetectData) -> AcuantCommon.Image
   @objc public class func cropMrz(data: AcuantImagePreparation.CroppingData) -> AcuantCommon.Image
   @objc public class func detect(detectData: AcuantImagePreparation.DetectData) -> AcuantCommon.Image
   @objc public class func detect(data: AcuantImagePreparation.CroppingData) -> AcuantCommon.Image
   @objc public class func sharpness(image: UIKit.UIImage) -> Swift.Int
   @objc public class func glare(image: UIKit.UIImage) -> Swift.Int
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc public class func sign(image: UIKit.UIImage) -> Foundation.Data?
+  #endif
   @objc override dynamic public init()
   @objc deinit
 }

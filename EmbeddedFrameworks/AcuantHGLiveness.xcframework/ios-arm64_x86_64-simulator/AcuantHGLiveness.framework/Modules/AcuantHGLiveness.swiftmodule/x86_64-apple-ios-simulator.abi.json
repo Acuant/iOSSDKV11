@@ -1,8 +1,8 @@
 {
   "ABIRoot": {
     "kind": "Root",
-    "name": "TopLevel",
-    "printedName": "TopLevel",
+    "name": "AcuantHGLiveness",
+    "printedName": "AcuantHGLiveness",
     "children": [
       {
         "kind": "Import",
@@ -126,6 +126,20 @@
           "ObjectiveC.NSObject"
         ],
         "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
           {
             "kind": "Conformance",
             "name": "Equatable",
@@ -571,6 +585,20 @@
         "conformances": [
           {
             "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
             "name": "Equatable",
             "printedName": "Equatable",
             "usr": "s:SQ",
@@ -660,6 +688,22 @@
         "declAttributes": [
           "AccessControl",
           "ObjC"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          }
         ]
       },
       {
@@ -966,6 +1010,20 @@
           "ObjectiveC.NSObject"
         ],
         "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
           {
             "kind": "Conformance",
             "name": "Equatable",
@@ -1532,6 +1590,20 @@
           "ObjectiveC.NSObject"
         ],
         "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
           {
             "kind": "Conformance",
             "name": "Equatable",
@@ -2216,6 +2288,20 @@
         "conformances": [
           {
             "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
             "name": "Equatable",
             "printedName": "Equatable",
             "usr": "s:SQ",
@@ -2457,6 +2543,20 @@
         "conformances": [
           {
             "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
             "name": "Equatable",
             "printedName": "Equatable",
             "usr": "s:SQ",
@@ -2575,6 +2675,22 @@
         "declAttributes": [
           "AccessControl",
           "ObjC"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          }
         ]
       },
       {
@@ -2599,200 +2715,186 @@
   },
   "ConstValues": [
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantHGLiveness\/AcuantHGLiveness\/HGLivenessDelegate.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantHGLiveness\/AcuantHGLiveness\/HGLivenessDelegate.swift",
       "kind": "IntegerLiteral",
       "offset": 239,
       "length": 14,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantHGLiveness\/AcuantHGLiveness\/HGLivenessDelegate.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantHGLiveness\/AcuantHGLiveness\/HGLivenessDelegate.swift",
       "kind": "IntegerLiteral",
       "offset": 263,
       "length": 10,
       "value": "2"
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantHGLiveness\/AcuantHGLiveness\/HGLivenessDelegate.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantHGLiveness\/AcuantHGLiveness\/HGLivenessDelegate.swift",
       "kind": "IntegerLiteral",
       "offset": 283,
       "length": 12,
       "value": "3"
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantHGLiveness\/AcuantHGLiveness\/HGLivenessDelegate.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantHGLiveness\/AcuantHGLiveness\/HGLivenessDelegate.swift",
       "kind": "IntegerLiteral",
       "offset": 305,
       "length": 18,
       "value": "4"
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantHGLiveness\/AcuantHGLiveness\/HGLivenessDelegate.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantHGLiveness\/AcuantHGLiveness\/HGLivenessDelegate.swift",
       "kind": "IntegerLiteral",
       "offset": 333,
       "length": 17,
       "value": "5"
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantHGLiveness\/AcuantHGLiveness\/HGLivenessDelegate.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantHGLiveness\/AcuantHGLiveness\/HGLivenessDelegate.swift",
       "kind": "IntegerLiteral",
       "offset": 360,
       "length": 14,
       "value": "6"
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantHGLiveness\/AcuantHGLiveness\/HGLivenessDelegate.swift",
-      "kind": "IntegerLiteral",
-      "offset": 239,
-      "length": 14,
-      "value": "1"
-    },
-    {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantHGLiveness\/AcuantHGLiveness\/HGLivenessDelegate.swift",
-      "kind": "IntegerLiteral",
-      "offset": 263,
-      "length": 10,
-      "value": "2"
-    },
-    {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantHGLiveness\/AcuantHGLiveness\/HGLivenessDelegate.swift",
-      "kind": "IntegerLiteral",
-      "offset": 283,
-      "length": 12,
-      "value": "3"
-    },
-    {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantHGLiveness\/AcuantHGLiveness\/HGLivenessDelegate.swift",
-      "kind": "IntegerLiteral",
-      "offset": 305,
-      "length": 18,
-      "value": "4"
-    },
-    {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantHGLiveness\/AcuantHGLiveness\/HGLivenessDelegate.swift",
-      "kind": "IntegerLiteral",
-      "offset": 333,
-      "length": 17,
-      "value": "5"
-    },
-    {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantHGLiveness\/AcuantHGLiveness\/HGLivenessDelegate.swift",
-      "kind": "IntegerLiteral",
-      "offset": 360,
-      "length": 14,
-      "value": "6"
-    },
-    {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantHGLiveness\/AcuantHGLiveness\/FaceCaptureSession.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantHGLiveness\/AcuantHGLiveness\/FaceCaptureSession.swift",
       "kind": "BooleanLiteral",
       "offset": 540,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantHGLiveness\/AcuantHGLiveness\/FaceCaptureSession.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantHGLiveness\/AcuantHGLiveness\/FaceCaptureSession.swift",
       "kind": "IntegerLiteral",
       "offset": 577,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantHGLiveness\/AcuantHGLiveness\/FaceCaptureSession.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantHGLiveness\/AcuantHGLiveness\/FaceCaptureSession.swift",
       "kind": "IntegerLiteral",
       "offset": 612,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantHGLiveness\/AcuantHGLiveness\/FaceCaptureSession.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantHGLiveness\/AcuantHGLiveness\/FaceCaptureSession.swift",
       "kind": "IntegerLiteral",
       "offset": 692,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantHGLiveness\/AcuantHGLiveness\/FaceCaptureSession.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantHGLiveness\/AcuantHGLiveness\/FaceCaptureSession.swift",
       "kind": "IntegerLiteral",
       "offset": 745,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantHGLiveness\/AcuantHGLiveness\/FaceCaptureSession.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantHGLiveness\/AcuantHGLiveness\/FaceCaptureSession.swift",
       "kind": "IntegerLiteral",
       "offset": 751,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantHGLiveness\/AcuantHGLiveness\/FaceCaptureSession.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantHGLiveness\/AcuantHGLiveness\/FaceCaptureSession.swift",
       "kind": "IntegerLiteral",
       "offset": 789,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantHGLiveness\/AcuantHGLiveness\/FaceCaptureSession.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantHGLiveness\/AcuantHGLiveness\/FaceCaptureSession.swift",
       "kind": "IntegerLiteral",
       "offset": 840,
       "length": 2,
       "value": "15"
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantHGLiveness\/AcuantHGLiveness\/FaceCaptureSession.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantHGLiveness\/AcuantHGLiveness\/FaceCaptureSession.swift",
       "kind": "IntegerLiteral",
       "offset": 900,
       "length": 1,
       "value": "8"
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantHGLiveness\/AcuantHGLiveness\/FaceCaptureSession.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantHGLiveness\/AcuantHGLiveness\/FaceCaptureSession.swift",
       "kind": "StringLiteral",
       "offset": 954,
       "length": 31,
       "value": "\"com.acuant.hg-capture-session\""
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantHGLiveness\/AcuantHGLiveness\/LiveFaceDetails.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantHGLiveness\/AcuantHGLiveness\/LiveFaceDetails.swift",
       "kind": "IntegerLiteral",
       "offset": 268,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantHGLiveness\/AcuantHGLiveness\/LiveFaceDetails.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantHGLiveness\/AcuantHGLiveness\/LiveFaceDetails.swift",
       "kind": "IntegerLiteral",
       "offset": 301,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantHGLiveness\/AcuantHGLiveness\/LiveFaceDetails.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantHGLiveness\/AcuantHGLiveness\/LiveFaceDetails.swift",
       "kind": "IntegerLiteral",
       "offset": 329,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantHGLiveness\/AcuantHGLiveness\/LiveFaceDetails.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantHGLiveness\/AcuantHGLiveness\/LiveFaceDetails.swift",
       "kind": "IntegerLiteral",
       "offset": 357,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantHGLiveness\/AcuantHGLiveness\/LiveFaceDetails.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantHGLiveness\/AcuantHGLiveness\/LiveFaceDetails.swift",
       "kind": "BooleanLiteral",
       "offset": 1022,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantHGLiveness\/AcuantHGLiveness\/HGLivenessResult.swift",
-      "kind": "StringLiteral",
-      "offset": 191,
-      "length": 16,
-      "value": "\"AcuantHGLiveness.HGLivenessResult\""
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantHGLiveness\/AcuantHGLiveness\/UIImageExtn.swift",
+      "kind": "BooleanLiteral",
+      "offset": 619,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantHGLiveness\/AcuantHGLiveness\/UIImageExtn.swift",
+      "kind": "IntegerLiteral",
+      "offset": 777,
+      "length": 1,
+      "value": "2"
+    },
+    {
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantHGLiveness\/AcuantHGLiveness\/UIImageExtn.swift",
+      "kind": "IntegerLiteral",
+      "offset": 798,
+      "length": 1,
+      "value": "2"
+    },
+    {
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantHGLiveness\/AcuantHGLiveness\/UIImageExtn.swift",
+      "kind": "IntegerLiteral",
+      "offset": 936,
+      "length": 1,
+      "value": "2"
+    },
+    {
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantHGLiveness\/AcuantHGLiveness\/UIImageExtn.swift",
+      "kind": "IntegerLiteral",
+      "offset": 960,
+      "length": 1,
+      "value": "2"
     }
   ]
 }

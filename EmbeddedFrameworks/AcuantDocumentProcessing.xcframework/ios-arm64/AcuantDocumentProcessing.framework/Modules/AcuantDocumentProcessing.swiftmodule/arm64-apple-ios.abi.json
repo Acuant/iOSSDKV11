@@ -1,8 +1,8 @@
 {
   "ABIRoot": {
     "kind": "Root",
-    "name": "TopLevel",
-    "printedName": "TopLevel",
+    "name": "AcuantDocumentProcessing",
+    "printedName": "AcuantDocumentProcessing",
     "children": [
       {
         "kind": "Import",
@@ -327,6 +327,20 @@
         "conformances": [
           {
             "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
             "name": "Equatable",
             "printedName": "Equatable",
             "usr": "s:SQ",
@@ -556,6 +570,20 @@
         ],
         "enumRawTypeName": "Int",
         "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
           {
             "kind": "Conformance",
             "name": "Equatable",
@@ -1001,6 +1029,20 @@
             "printedName": "Decodable",
             "usr": "s:Se",
             "mangledName": "$sSe"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
           },
           {
             "kind": "Conformance",
@@ -3891,6 +3933,20 @@
           },
           {
             "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
             "name": "Equatable",
             "printedName": "Equatable",
             "usr": "s:SQ",
@@ -4299,6 +4355,20 @@
           },
           {
             "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
             "name": "Equatable",
             "printedName": "Equatable",
             "usr": "s:SQ",
@@ -4432,6 +4502,22 @@
         "declAttributes": [
           "AccessControl",
           "ObjC"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          }
         ]
       },
       {
@@ -4513,6 +4599,22 @@
         "declAttributes": [
           "AccessControl",
           "ObjC"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          }
         ]
       },
       {
@@ -4605,6 +4707,22 @@
         "declAttributes": [
           "AccessControl",
           "ObjC"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          }
         ]
       },
       {
@@ -5293,6 +5411,20 @@
           },
           {
             "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
             "name": "Equatable",
             "printedName": "Equatable",
             "usr": "s:SQ",
@@ -5710,6 +5842,20 @@
         ],
         "enumRawTypeName": "Int",
         "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
           {
             "kind": "Conformance",
             "name": "Equatable",
@@ -6167,6 +6313,20 @@
           },
           {
             "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
             "name": "Equatable",
             "printedName": "Equatable",
             "usr": "s:SQ",
@@ -6478,6 +6638,20 @@
         ],
         "enumRawTypeName": "Int",
         "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
           {
             "kind": "Conformance",
             "name": "Equatable",
@@ -6904,6 +7078,20 @@
         ],
         "enumRawTypeName": "Int",
         "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
           {
             "kind": "Conformance",
             "name": "Equatable",
@@ -8436,6 +8624,20 @@
           },
           {
             "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
             "name": "Equatable",
             "printedName": "Equatable",
             "usr": "s:SQ",
@@ -8747,6 +8949,20 @@
         ],
         "enumRawTypeName": "Int",
         "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
           {
             "kind": "Conformance",
             "name": "Equatable",
@@ -9321,6 +9537,20 @@
           },
           {
             "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
             "name": "Equatable",
             "printedName": "Equatable",
             "usr": "s:SQ",
@@ -9545,6 +9775,22 @@
         "moduleName": "AcuantDocumentProcessing",
         "declAttributes": [
           "AccessControl"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          }
         ]
       },
       {
@@ -9678,6 +9924,20 @@
             "printedName": "Decodable",
             "usr": "s:Se",
             "mangledName": "$sSe"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
           },
           {
             "kind": "Conformance",
@@ -9970,6 +10230,20 @@
         "conformances": [
           {
             "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
             "name": "Equatable",
             "printedName": "Equatable",
             "usr": "s:SQ",
@@ -10231,6 +10505,20 @@
         ],
         "enumRawTypeName": "Int",
         "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
           {
             "kind": "Conformance",
             "name": "Equatable",
@@ -10935,6 +11223,20 @@
           "ObjectiveC.NSObject"
         ],
         "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
           {
             "kind": "Conformance",
             "name": "Equatable",
@@ -11783,6 +12085,20 @@
         "conformances": [
           {
             "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
             "name": "Equatable",
             "printedName": "Equatable",
             "usr": "s:SQ",
@@ -12037,6 +12353,20 @@
         ],
         "enumRawTypeName": "Int",
         "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
           {
             "kind": "Conformance",
             "name": "Equatable",
@@ -12459,6 +12789,20 @@
         "conformances": [
           {
             "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
             "name": "Equatable",
             "printedName": "Equatable",
             "usr": "s:SQ",
@@ -12877,6 +13221,20 @@
         ],
         "enumRawTypeName": "Int",
         "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
           {
             "kind": "Conformance",
             "name": "Equatable",
@@ -14300,6 +14658,20 @@
           },
           {
             "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
             "name": "Equatable",
             "printedName": "Equatable",
             "usr": "s:SQ",
@@ -14654,6 +15026,20 @@
         "conformances": [
           {
             "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
             "name": "Equatable",
             "printedName": "Equatable",
             "usr": "s:SQ",
@@ -14867,6 +15253,20 @@
         ],
         "enumRawTypeName": "Int",
         "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
           {
             "kind": "Conformance",
             "name": "Equatable",
@@ -15179,6 +15579,20 @@
             "printedName": "Decodable",
             "usr": "s:Se",
             "mangledName": "$sSe"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
           },
           {
             "kind": "Conformance",
@@ -16021,6 +16435,20 @@
           },
           {
             "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
             "name": "Equatable",
             "printedName": "Equatable",
             "usr": "s:SQ",
@@ -16465,6 +16893,20 @@
             "printedName": "Decodable",
             "usr": "s:Se",
             "mangledName": "$sSe"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
           },
           {
             "kind": "Conformance",
@@ -16994,6 +17436,20 @@
         ],
         "enumRawTypeName": "Int",
         "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
           {
             "kind": "Conformance",
             "name": "Equatable",
@@ -17788,6 +18244,20 @@
           },
           {
             "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
             "name": "Equatable",
             "printedName": "Equatable",
             "usr": "s:SQ",
@@ -18105,6 +18575,20 @@
           },
           {
             "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
             "name": "Equatable",
             "printedName": "Equatable",
             "usr": "s:SQ",
@@ -18240,6 +18724,22 @@
         "declAttributes": [
           "AccessControl",
           "ObjC"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          }
         ]
       },
       {
@@ -18558,6 +19058,20 @@
           "ObjectiveC.NSObject"
         ],
         "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
           {
             "kind": "Conformance",
             "name": "Equatable",
@@ -19289,6 +19803,20 @@
           },
           {
             "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
             "name": "Equatable",
             "printedName": "Equatable",
             "usr": "s:SQ",
@@ -19828,6 +20356,20 @@
           },
           {
             "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
             "name": "Equatable",
             "printedName": "Equatable",
             "usr": "s:SQ",
@@ -20077,6 +20619,20 @@
           },
           {
             "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
             "name": "Equatable",
             "printedName": "Equatable",
             "usr": "s:SQ",
@@ -20323,6 +20879,20 @@
             "printedName": "Decodable",
             "usr": "s:Se",
             "mangledName": "$sSe"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
           },
           {
             "kind": "Conformance",
@@ -20654,6 +21224,20 @@
         ],
         "enumRawTypeName": "Int",
         "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
           {
             "kind": "Conformance",
             "name": "Equatable",
@@ -21061,6 +21645,20 @@
           },
           {
             "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
             "name": "Equatable",
             "printedName": "Equatable",
             "usr": "s:SQ",
@@ -21316,6 +21914,20 @@
         "conformances": [
           {
             "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
             "name": "Equatable",
             "printedName": "Equatable",
             "usr": "s:SQ",
@@ -21449,6 +22061,22 @@
         "declAttributes": [
           "AccessControl",
           "ObjC"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          }
         ]
       }
     ],
@@ -21456,3406 +22084,1768 @@
   },
   "ConstValues": [
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/Classification.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/Classification.swift",
       "kind": "IntegerLiteral",
       "offset": 138,
       "length": 6,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/Classification.swift",
-      "kind": "IntegerLiteral",
-      "offset": 138,
-      "length": 6,
-      "value": "1"
-    },
-    {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/Classification.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/Classification.swift",
       "kind": "StringLiteral",
       "offset": 603,
       "length": 6,
       "value": "\"Mode\""
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/Classification.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/Classification.swift",
       "kind": "StringLiteral",
       "offset": 644,
       "length": 20,
       "value": "\"OrientationChanged\""
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/Classification.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/Classification.swift",
       "kind": "StringLiteral",
       "offset": 700,
       "length": 21,
       "value": "\"PresentationChanged\""
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/Classification.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/Classification.swift",
       "kind": "StringLiteral",
       "offset": 759,
       "length": 23,
       "value": "\"ClassificationDetails\""
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/Classification.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/Classification.swift",
       "kind": "StringLiteral",
       "offset": 803,
       "length": 6,
       "value": "\"Type\""
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/Classification.swift",
-      "kind": "StringLiteral",
-      "offset": 603,
-      "length": 6,
-      "value": "\"Mode\""
-    },
-    {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/Classification.swift",
-      "kind": "StringLiteral",
-      "offset": 644,
-      "length": 20,
-      "value": "\"OrientationChanged\""
-    },
-    {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/Classification.swift",
-      "kind": "StringLiteral",
-      "offset": 700,
-      "length": 21,
-      "value": "\"PresentationChanged\""
-    },
-    {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/Classification.swift",
-      "kind": "StringLiteral",
-      "offset": 759,
-      "length": 23,
-      "value": "\"ClassificationDetails\""
-    },
-    {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/Classification.swift",
-      "kind": "StringLiteral",
-      "offset": 803,
-      "length": 6,
-      "value": "\"Type\""
-    },
-    {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/WebAPI\/ConnectUploadBarcodeStringWS.swift",
-      "kind": "StringLiteral",
-      "offset": 212,
-      "length": 28,
-      "value": "\"AcuantDocumentProcessing.ConnectUploadBarcodeStringWS\""
-    },
-    {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/HealthInsuranceCardResult.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/HealthInsuranceCardResult.swift",
       "kind": "StringLiteral",
       "offset": 1768,
       "length": 9,
       "value": "\"CopayEr\""
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/HealthInsuranceCardResult.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/HealthInsuranceCardResult.swift",
       "kind": "StringLiteral",
       "offset": 1801,
       "length": 9,
       "value": "\"CopayOv\""
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/HealthInsuranceCardResult.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/HealthInsuranceCardResult.swift",
       "kind": "StringLiteral",
       "offset": 1834,
       "length": 9,
       "value": "\"CopaySp\""
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/HealthInsuranceCardResult.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/HealthInsuranceCardResult.swift",
       "kind": "StringLiteral",
       "offset": 1867,
       "length": 9,
       "value": "\"CopayUc\""
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/HealthInsuranceCardResult.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/HealthInsuranceCardResult.swift",
       "kind": "StringLiteral",
       "offset": 1901,
       "length": 10,
       "value": "\"Coverage\""
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/HealthInsuranceCardResult.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/HealthInsuranceCardResult.swift",
       "kind": "StringLiteral",
       "offset": 1940,
       "length": 14,
       "value": "\"ContractCode\""
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/HealthInsuranceCardResult.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/HealthInsuranceCardResult.swift",
       "kind": "StringLiteral",
       "offset": 1982,
       "length": 13,
       "value": "\"DateOfBirth\""
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/HealthInsuranceCardResult.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/HealthInsuranceCardResult.swift",
       "kind": "StringLiteral",
       "offset": 2022,
       "length": 12,
       "value": "\"Deductible\""
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/HealthInsuranceCardResult.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/HealthInsuranceCardResult.swift",
       "kind": "StringLiteral",
       "offset": 2064,
       "length": 15,
       "value": "\"EffectiveDate\""
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/HealthInsuranceCardResult.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/HealthInsuranceCardResult.swift",
       "kind": "StringLiteral",
       "offset": 2104,
       "length": 10,
       "value": "\"Employer\""
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/HealthInsuranceCardResult.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/HealthInsuranceCardResult.swift",
       "kind": "StringLiteral",
       "offset": 2145,
       "length": 16,
       "value": "\"ExpirationDate\""
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/HealthInsuranceCardResult.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/HealthInsuranceCardResult.swift",
       "kind": "StringLiteral",
       "offset": 2187,
       "length": 11,
       "value": "\"FirstName\""
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/HealthInsuranceCardResult.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/HealthInsuranceCardResult.swift",
       "kind": "StringLiteral",
       "offset": 2224,
       "length": 11,
       "value": "\"GroupName\""
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/HealthInsuranceCardResult.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/HealthInsuranceCardResult.swift",
       "kind": "StringLiteral",
       "offset": 2263,
       "length": 13,
       "value": "\"GroupNumber\""
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/HealthInsuranceCardResult.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/HealthInsuranceCardResult.swift",
       "kind": "StringLiteral",
       "offset": 2305,
       "length": 14,
       "value": "\"IssuerNumber\""
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/HealthInsuranceCardResult.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/HealthInsuranceCardResult.swift",
       "kind": "StringLiteral",
       "offset": 2344,
       "length": 10,
       "value": "\"LastName\""
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/HealthInsuranceCardResult.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/HealthInsuranceCardResult.swift",
       "kind": "StringLiteral",
       "offset": 2379,
       "length": 10,
       "value": "\"MemberId\""
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/HealthInsuranceCardResult.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/HealthInsuranceCardResult.swift",
       "kind": "StringLiteral",
       "offset": 2416,
       "length": 12,
       "value": "\"MemberName\""
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/HealthInsuranceCardResult.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/HealthInsuranceCardResult.swift",
       "kind": "StringLiteral",
       "offset": 2455,
       "length": 12,
       "value": "\"MiddleName\""
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/HealthInsuranceCardResult.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/HealthInsuranceCardResult.swift",
       "kind": "StringLiteral",
       "offset": 2494,
       "length": 12,
       "value": "\"NamePrefix\""
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/HealthInsuranceCardResult.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/HealthInsuranceCardResult.swift",
       "kind": "StringLiteral",
       "offset": 2533,
       "length": 12,
       "value": "\"NameSuffix\""
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/HealthInsuranceCardResult.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/HealthInsuranceCardResult.swift",
       "kind": "StringLiteral",
       "offset": 2567,
       "length": 7,
       "value": "\"Other\""
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/HealthInsuranceCardResult.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/HealthInsuranceCardResult.swift",
       "kind": "StringLiteral",
       "offset": 2598,
       "length": 9,
       "value": "\"PayerId\""
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/HealthInsuranceCardResult.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/HealthInsuranceCardResult.swift",
       "kind": "StringLiteral",
       "offset": 2633,
       "length": 11,
       "value": "\"PlanAdmin\""
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/HealthInsuranceCardResult.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/HealthInsuranceCardResult.swift",
       "kind": "StringLiteral",
       "offset": 2673,
       "length": 14,
       "value": "\"PlanProvider\""
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/HealthInsuranceCardResult.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/HealthInsuranceCardResult.swift",
       "kind": "StringLiteral",
       "offset": 2712,
       "length": 10,
       "value": "\"PlanType\""
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/HealthInsuranceCardResult.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/HealthInsuranceCardResult.swift",
       "kind": "StringLiteral",
       "offset": 2744,
       "length": 7,
       "value": "\"RxBin\""
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/HealthInsuranceCardResult.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/HealthInsuranceCardResult.swift",
       "kind": "StringLiteral",
       "offset": 2775,
       "length": 9,
       "value": "\"RxGroup\""
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/HealthInsuranceCardResult.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/HealthInsuranceCardResult.swift",
       "kind": "StringLiteral",
       "offset": 2805,
       "length": 6,
       "value": "\"RxId\""
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/HealthInsuranceCardResult.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/HealthInsuranceCardResult.swift",
       "kind": "StringLiteral",
       "offset": 2833,
       "length": 7,
       "value": "\"RxPcn\""
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/HealthInsuranceCardResult.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/HealthInsuranceCardResult.swift",
       "kind": "StringLiteral",
       "offset": 2873,
       "length": 12,
       "value": "\"FrontImage\""
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/HealthInsuranceCardResult.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/HealthInsuranceCardResult.swift",
       "kind": "StringLiteral",
       "offset": 2917,
       "length": 11,
       "value": "\"BackImage\""
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/HealthInsuranceCardResult.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/HealthInsuranceCardResult.swift",
       "kind": "StringLiteral",
       "offset": 2954,
       "length": 13,
       "value": "\"ListAddress\""
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/HealthInsuranceCardResult.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/HealthInsuranceCardResult.swift",
       "kind": "StringLiteral",
       "offset": 2994,
       "length": 15,
       "value": "\"ListTelephone\""
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/HealthInsuranceCardResult.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/HealthInsuranceCardResult.swift",
       "kind": "StringLiteral",
       "offset": 3032,
       "length": 11,
       "value": "\"ListEmail\""
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/HealthInsuranceCardResult.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/HealthInsuranceCardResult.swift",
       "kind": "StringLiteral",
       "offset": 3064,
       "length": 9,
       "value": "\"ListWeb\""
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/HealthInsuranceCardResult.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/HealthInsuranceCardResult.swift",
       "kind": "StringLiteral",
       "offset": 3099,
       "length": 14,
       "value": "\"ListPlanCode\""
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/HealthInsuranceCardResult.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/HealthInsuranceCardResult.swift",
       "kind": "StringLiteral",
       "offset": 3143,
       "length": 15,
       "value": "\"TransactionId\""
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/HealthInsuranceCardResult.swift",
-      "kind": "StringLiteral",
-      "offset": 1768,
-      "length": 9,
-      "value": "\"CopayEr\""
-    },
-    {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/HealthInsuranceCardResult.swift",
-      "kind": "StringLiteral",
-      "offset": 1801,
-      "length": 9,
-      "value": "\"CopayOv\""
-    },
-    {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/HealthInsuranceCardResult.swift",
-      "kind": "StringLiteral",
-      "offset": 1834,
-      "length": 9,
-      "value": "\"CopaySp\""
-    },
-    {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/HealthInsuranceCardResult.swift",
-      "kind": "StringLiteral",
-      "offset": 1867,
-      "length": 9,
-      "value": "\"CopayUc\""
-    },
-    {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/HealthInsuranceCardResult.swift",
-      "kind": "StringLiteral",
-      "offset": 1901,
-      "length": 10,
-      "value": "\"Coverage\""
-    },
-    {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/HealthInsuranceCardResult.swift",
-      "kind": "StringLiteral",
-      "offset": 1940,
-      "length": 14,
-      "value": "\"ContractCode\""
-    },
-    {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/HealthInsuranceCardResult.swift",
-      "kind": "StringLiteral",
-      "offset": 1982,
-      "length": 13,
-      "value": "\"DateOfBirth\""
-    },
-    {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/HealthInsuranceCardResult.swift",
-      "kind": "StringLiteral",
-      "offset": 2022,
-      "length": 12,
-      "value": "\"Deductible\""
-    },
-    {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/HealthInsuranceCardResult.swift",
-      "kind": "StringLiteral",
-      "offset": 2064,
-      "length": 15,
-      "value": "\"EffectiveDate\""
-    },
-    {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/HealthInsuranceCardResult.swift",
-      "kind": "StringLiteral",
-      "offset": 2104,
-      "length": 10,
-      "value": "\"Employer\""
-    },
-    {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/HealthInsuranceCardResult.swift",
-      "kind": "StringLiteral",
-      "offset": 2145,
-      "length": 16,
-      "value": "\"ExpirationDate\""
-    },
-    {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/HealthInsuranceCardResult.swift",
-      "kind": "StringLiteral",
-      "offset": 2187,
-      "length": 11,
-      "value": "\"FirstName\""
-    },
-    {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/HealthInsuranceCardResult.swift",
-      "kind": "StringLiteral",
-      "offset": 2224,
-      "length": 11,
-      "value": "\"GroupName\""
-    },
-    {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/HealthInsuranceCardResult.swift",
-      "kind": "StringLiteral",
-      "offset": 2263,
-      "length": 13,
-      "value": "\"GroupNumber\""
-    },
-    {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/HealthInsuranceCardResult.swift",
-      "kind": "StringLiteral",
-      "offset": 2305,
-      "length": 14,
-      "value": "\"IssuerNumber\""
-    },
-    {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/HealthInsuranceCardResult.swift",
-      "kind": "StringLiteral",
-      "offset": 2344,
-      "length": 10,
-      "value": "\"LastName\""
-    },
-    {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/HealthInsuranceCardResult.swift",
-      "kind": "StringLiteral",
-      "offset": 2379,
-      "length": 10,
-      "value": "\"MemberId\""
-    },
-    {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/HealthInsuranceCardResult.swift",
-      "kind": "StringLiteral",
-      "offset": 2416,
-      "length": 12,
-      "value": "\"MemberName\""
-    },
-    {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/HealthInsuranceCardResult.swift",
-      "kind": "StringLiteral",
-      "offset": 2455,
-      "length": 12,
-      "value": "\"MiddleName\""
-    },
-    {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/HealthInsuranceCardResult.swift",
-      "kind": "StringLiteral",
-      "offset": 2494,
-      "length": 12,
-      "value": "\"NamePrefix\""
-    },
-    {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/HealthInsuranceCardResult.swift",
-      "kind": "StringLiteral",
-      "offset": 2533,
-      "length": 12,
-      "value": "\"NameSuffix\""
-    },
-    {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/HealthInsuranceCardResult.swift",
-      "kind": "StringLiteral",
-      "offset": 2567,
-      "length": 7,
-      "value": "\"Other\""
-    },
-    {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/HealthInsuranceCardResult.swift",
-      "kind": "StringLiteral",
-      "offset": 2598,
-      "length": 9,
-      "value": "\"PayerId\""
-    },
-    {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/HealthInsuranceCardResult.swift",
-      "kind": "StringLiteral",
-      "offset": 2633,
-      "length": 11,
-      "value": "\"PlanAdmin\""
-    },
-    {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/HealthInsuranceCardResult.swift",
-      "kind": "StringLiteral",
-      "offset": 2673,
-      "length": 14,
-      "value": "\"PlanProvider\""
-    },
-    {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/HealthInsuranceCardResult.swift",
-      "kind": "StringLiteral",
-      "offset": 2712,
-      "length": 10,
-      "value": "\"PlanType\""
-    },
-    {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/HealthInsuranceCardResult.swift",
-      "kind": "StringLiteral",
-      "offset": 2744,
-      "length": 7,
-      "value": "\"RxBin\""
-    },
-    {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/HealthInsuranceCardResult.swift",
-      "kind": "StringLiteral",
-      "offset": 2775,
-      "length": 9,
-      "value": "\"RxGroup\""
-    },
-    {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/HealthInsuranceCardResult.swift",
-      "kind": "StringLiteral",
-      "offset": 2805,
-      "length": 6,
-      "value": "\"RxId\""
-    },
-    {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/HealthInsuranceCardResult.swift",
-      "kind": "StringLiteral",
-      "offset": 2833,
-      "length": 7,
-      "value": "\"RxPcn\""
-    },
-    {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/HealthInsuranceCardResult.swift",
-      "kind": "StringLiteral",
-      "offset": 2873,
-      "length": 12,
-      "value": "\"FrontImage\""
-    },
-    {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/HealthInsuranceCardResult.swift",
-      "kind": "StringLiteral",
-      "offset": 2917,
-      "length": 11,
-      "value": "\"BackImage\""
-    },
-    {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/HealthInsuranceCardResult.swift",
-      "kind": "StringLiteral",
-      "offset": 2954,
-      "length": 13,
-      "value": "\"ListAddress\""
-    },
-    {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/HealthInsuranceCardResult.swift",
-      "kind": "StringLiteral",
-      "offset": 2994,
-      "length": 15,
-      "value": "\"ListTelephone\""
-    },
-    {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/HealthInsuranceCardResult.swift",
-      "kind": "StringLiteral",
-      "offset": 3032,
-      "length": 11,
-      "value": "\"ListEmail\""
-    },
-    {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/HealthInsuranceCardResult.swift",
-      "kind": "StringLiteral",
-      "offset": 3064,
-      "length": 9,
-      "value": "\"ListWeb\""
-    },
-    {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/HealthInsuranceCardResult.swift",
-      "kind": "StringLiteral",
-      "offset": 3099,
-      "length": 14,
-      "value": "\"ListPlanCode\""
-    },
-    {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/HealthInsuranceCardResult.swift",
-      "kind": "StringLiteral",
-      "offset": 3143,
-      "length": 15,
-      "value": "\"TransactionId\""
-    },
-    {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/HealthInsuranceCardResult.swift",
-      "kind": "StringLiteral",
-      "offset": 218,
-      "length": 25,
-      "value": "\"AcuantDocumentProcessing.HealthInsuranceCardResult\""
-    },
-    {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DeviceInfo.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DeviceInfo.swift",
       "kind": "StringLiteral",
       "offset": 366,
       "length": 26,
       "value": "\"HasContactlessChipReader\""
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DeviceInfo.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DeviceInfo.swift",
       "kind": "StringLiteral",
       "offset": 432,
       "length": 25,
       "value": "\"HasMagneticStripeReader\""
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DeviceInfo.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DeviceInfo.swift",
       "kind": "StringLiteral",
       "offset": 486,
       "length": 14,
       "value": "\"SerialNumber\""
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DeviceInfo.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DeviceInfo.swift",
       "kind": "StringLiteral",
       "offset": 521,
       "length": 6,
       "value": "\"Type\""
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DeviceInfo.swift",
-      "kind": "StringLiteral",
-      "offset": 366,
-      "length": 26,
-      "value": "\"HasContactlessChipReader\""
-    },
-    {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DeviceInfo.swift",
-      "kind": "StringLiteral",
-      "offset": 432,
-      "length": 25,
-      "value": "\"HasMagneticStripeReader\""
-    },
-    {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DeviceInfo.swift",
-      "kind": "StringLiteral",
-      "offset": 486,
-      "length": 14,
-      "value": "\"SerialNumber\""
-    },
-    {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DeviceInfo.swift",
-      "kind": "StringLiteral",
-      "offset": 521,
-      "length": 6,
-      "value": "\"Type\""
-    },
-    {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DeviceInfo.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DeviceInfo.swift",
       "kind": "BooleanLiteral",
       "offset": 577,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DeviceInfo.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DeviceInfo.swift",
       "kind": "BooleanLiteral",
       "offset": 625,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DeviceInfo.swift",
-      "kind": "StringLiteral",
-      "offset": 91,
-      "length": 10,
-      "value": "\"AcuantDocumentProcessing.DeviceInfo\""
-    },
-    {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/WebAPI\/ConnectClassifyImageWS.swift",
-      "kind": "StringLiteral",
-      "offset": 210,
-      "length": 22,
-      "value": "\"AcuantDocumentProcessing.ConnectClassifyImageWS\""
-    },
-    {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentAlert.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentAlert.swift",
       "kind": "StringLiteral",
       "offset": 709,
       "length": 4,
       "value": "\"Id\""
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentAlert.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentAlert.swift",
       "kind": "StringLiteral",
       "offset": 737,
       "length": 9,
       "value": "\"Actions\""
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentAlert.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentAlert.swift",
       "kind": "StringLiteral",
       "offset": 780,
       "length": 13,
       "value": "\"Description\""
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentAlert.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentAlert.swift",
       "kind": "StringLiteral",
       "offset": 821,
       "length": 13,
       "value": "\"Disposition\""
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentAlert.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentAlert.swift",
       "kind": "StringLiteral",
       "offset": 862,
       "length": 13,
       "value": "\"Information\""
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentAlert.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentAlert.swift",
       "kind": "StringLiteral",
       "offset": 895,
       "length": 5,
       "value": "\"Key\""
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentAlert.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentAlert.swift",
       "kind": "StringLiteral",
       "offset": 921,
       "length": 6,
       "value": "\"Name\""
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentAlert.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentAlert.swift",
       "kind": "StringLiteral",
       "offset": 958,
       "length": 8,
       "value": "\"Result\""
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentAlert.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentAlert.swift",
       "kind": "StringLiteral",
       "offset": 988,
       "length": 7,
       "value": "\"Model\""
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentAlert.swift",
-      "kind": "StringLiteral",
-      "offset": 709,
-      "length": 4,
-      "value": "\"Id\""
-    },
-    {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentAlert.swift",
-      "kind": "StringLiteral",
-      "offset": 737,
-      "length": 9,
-      "value": "\"Actions\""
-    },
-    {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentAlert.swift",
-      "kind": "StringLiteral",
-      "offset": 780,
-      "length": 13,
-      "value": "\"Description\""
-    },
-    {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentAlert.swift",
-      "kind": "StringLiteral",
-      "offset": 821,
-      "length": 13,
-      "value": "\"Disposition\""
-    },
-    {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentAlert.swift",
-      "kind": "StringLiteral",
-      "offset": 862,
-      "length": 13,
-      "value": "\"Information\""
-    },
-    {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentAlert.swift",
-      "kind": "StringLiteral",
-      "offset": 895,
-      "length": 5,
-      "value": "\"Key\""
-    },
-    {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentAlert.swift",
-      "kind": "StringLiteral",
-      "offset": 921,
-      "length": 6,
-      "value": "\"Name\""
-    },
-    {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentAlert.swift",
-      "kind": "StringLiteral",
-      "offset": 958,
-      "length": 8,
-      "value": "\"Result\""
-    },
-    {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentAlert.swift",
-      "kind": "StringLiteral",
-      "offset": 988,
-      "length": 7,
-      "value": "\"Model\""
-    },
-    {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/WebAPI\/ConnectInstanceWS.swift",
-      "kind": "StringLiteral",
-      "offset": 213,
-      "length": 17,
-      "value": "\"AcuantDocumentProcessing.ConnectInstanceWS\""
-    },
-    {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentRegion.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentRegion.swift",
       "kind": "IntegerLiteral",
       "offset": 248,
       "length": 4,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentRegion.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentRegion.swift",
       "kind": "IntegerLiteral",
       "offset": 254,
       "length": 5,
       "value": "2"
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentRegion.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentRegion.swift",
       "kind": "IntegerLiteral",
       "offset": 261,
       "length": 4,
       "value": "3"
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentRegion.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentRegion.swift",
       "kind": "IntegerLiteral",
       "offset": 267,
       "length": 9,
       "value": "4"
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentRegion.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentRegion.swift",
       "kind": "IntegerLiteral",
       "offset": 278,
       "length": 7,
       "value": "5"
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentRegion.swift",
-      "kind": "IntegerLiteral",
-      "offset": 248,
-      "length": 4,
-      "value": "1"
-    },
-    {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentRegion.swift",
-      "kind": "IntegerLiteral",
-      "offset": 254,
-      "length": 5,
-      "value": "2"
-    },
-    {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentRegion.swift",
-      "kind": "IntegerLiteral",
-      "offset": 261,
-      "length": 4,
-      "value": "3"
-    },
-    {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentRegion.swift",
-      "kind": "IntegerLiteral",
-      "offset": 267,
-      "length": 9,
-      "value": "4"
-    },
-    {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentRegion.swift",
-      "kind": "IntegerLiteral",
-      "offset": 278,
-      "length": 7,
-      "value": "5"
-    },
-    {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentRegion.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentRegion.swift",
       "kind": "StringLiteral",
       "offset": 710,
       "length": 4,
       "value": "\"Id\""
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentRegion.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentRegion.swift",
       "kind": "StringLiteral",
       "offset": 754,
       "length": 17,
       "value": "\"DocumentElement\""
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentRegion.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentRegion.swift",
       "kind": "StringLiteral",
       "offset": 802,
       "length": 16,
       "value": "\"ImageReference\""
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentRegion.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentRegion.swift",
       "kind": "StringLiteral",
       "offset": 838,
       "length": 5,
       "value": "\"Key\""
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentRegion.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentRegion.swift",
       "kind": "StringLiteral",
       "offset": 869,
       "length": 11,
       "value": "\"Rectangle\""
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentRegion.swift",
-      "kind": "StringLiteral",
-      "offset": 710,
-      "length": 4,
-      "value": "\"Id\""
-    },
-    {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentRegion.swift",
-      "kind": "StringLiteral",
-      "offset": 754,
-      "length": 17,
-      "value": "\"DocumentElement\""
-    },
-    {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentRegion.swift",
-      "kind": "StringLiteral",
-      "offset": 802,
-      "length": 16,
-      "value": "\"ImageReference\""
-    },
-    {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentRegion.swift",
-      "kind": "StringLiteral",
-      "offset": 838,
-      "length": 5,
-      "value": "\"Key\""
-    },
-    {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentRegion.swift",
-      "kind": "StringLiteral",
-      "offset": 869,
-      "length": 11,
-      "value": "\"Rectangle\""
-    },
-    {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/IDResult.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/IDResult.swift",
       "kind": "IntegerLiteral",
       "offset": 246,
       "length": 11,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/IDResult.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/IDResult.swift",
       "kind": "IntegerLiteral",
       "offset": 259,
       "length": 12,
       "value": "2"
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/IDResult.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/IDResult.swift",
       "kind": "IntegerLiteral",
       "offset": 273,
       "length": 7,
       "value": "3"
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/IDResult.swift",
-      "kind": "IntegerLiteral",
-      "offset": 246,
-      "length": 11,
-      "value": "1"
-    },
-    {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/IDResult.swift",
-      "kind": "IntegerLiteral",
-      "offset": 259,
-      "length": 12,
-      "value": "2"
-    },
-    {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/IDResult.swift",
-      "kind": "IntegerLiteral",
-      "offset": 273,
-      "length": 7,
-      "value": "3"
-    },
-    {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/IDResult.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/IDResult.swift",
       "kind": "IntegerLiteral",
       "offset": 359,
       "length": 6,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/IDResult.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/IDResult.swift",
       "kind": "IntegerLiteral",
       "offset": 367,
       "length": 6,
       "value": "2"
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/IDResult.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/IDResult.swift",
       "kind": "IntegerLiteral",
       "offset": 375,
       "length": 7,
       "value": "3"
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/IDResult.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/IDResult.swift",
       "kind": "IntegerLiteral",
       "offset": 384,
       "length": 7,
       "value": "4"
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/IDResult.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/IDResult.swift",
       "kind": "IntegerLiteral",
       "offset": 393,
       "length": 9,
       "value": "5"
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/IDResult.swift",
-      "kind": "IntegerLiteral",
-      "offset": 359,
-      "length": 6,
-      "value": "1"
-    },
-    {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/IDResult.swift",
-      "kind": "IntegerLiteral",
-      "offset": 367,
-      "length": 6,
-      "value": "2"
-    },
-    {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/IDResult.swift",
-      "kind": "IntegerLiteral",
-      "offset": 375,
-      "length": 7,
-      "value": "3"
-    },
-    {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/IDResult.swift",
-      "kind": "IntegerLiteral",
-      "offset": 384,
-      "length": 7,
-      "value": "4"
-    },
-    {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/IDResult.swift",
-      "kind": "IntegerLiteral",
-      "offset": 393,
-      "length": 9,
-      "value": "5"
-    },
-    {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/IDResult.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/IDResult.swift",
       "kind": "StringLiteral",
       "offset": 2203,
       "length": 12,
       "value": "\"InstanceId\""
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/IDResult.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/IDResult.swift",
       "kind": "StringLiteral",
       "offset": 2265,
       "length": 27,
       "value": "\"AuthenticationSensitivity\""
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/IDResult.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/IDResult.swift",
       "kind": "StringLiteral",
       "offset": 2322,
       "length": 15,
       "value": "\"EngineVersion\""
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/IDResult.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/IDResult.swift",
       "kind": "StringLiteral",
       "offset": 2368,
       "length": 16,
       "value": "\"LibraryVersion\""
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/IDResult.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/IDResult.swift",
       "kind": "StringLiteral",
       "offset": 2420,
       "length": 13,
       "value": "\"ProcessMode\""
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/IDResult.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/IDResult.swift",
       "kind": "StringLiteral",
       "offset": 2464,
       "length": 8,
       "value": "\"Result\""
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/IDResult.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/IDResult.swift",
       "kind": "StringLiteral",
       "offset": 2509,
       "length": 14,
       "value": "\"TamperResult\""
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/IDResult.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/IDResult.swift",
       "kind": "StringLiteral",
       "offset": 2565,
       "length": 19,
       "value": "\"TamperSensitivity\""
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/IDResult.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/IDResult.swift",
       "kind": "StringLiteral",
       "offset": 2613,
       "length": 14,
       "value": "\"Subscription\""
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/IDResult.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/IDResult.swift",
       "kind": "StringLiteral",
       "offset": 2654,
       "length": 12,
       "value": "\"Biographic\""
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/IDResult.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/IDResult.swift",
       "kind": "StringLiteral",
       "offset": 2697,
       "length": 16,
       "value": "\"Classification\""
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/IDResult.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/IDResult.swift",
       "kind": "StringLiteral",
       "offset": 2736,
       "length": 8,
       "value": "\"Device\""
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/IDResult.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/IDResult.swift",
       "kind": "StringLiteral",
       "offset": 2767,
       "length": 8,
       "value": "\"Alerts\""
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/IDResult.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/IDResult.swift",
       "kind": "StringLiteral",
       "offset": 2802,
       "length": 12,
       "value": "\"DataFields\""
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/IDResult.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/IDResult.swift",
       "kind": "StringLiteral",
       "offset": 2837,
       "length": 8,
       "value": "\"Fields\""
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/IDResult.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/IDResult.swift",
       "kind": "StringLiteral",
       "offset": 2868,
       "length": 8,
       "value": "\"Images\""
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/IDResult.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/IDResult.swift",
       "kind": "StringLiteral",
       "offset": 2900,
       "length": 9,
       "value": "\"Regions\""
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/IDResult.swift",
-      "kind": "StringLiteral",
-      "offset": 2203,
-      "length": 12,
-      "value": "\"InstanceId\""
-    },
-    {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/IDResult.swift",
-      "kind": "StringLiteral",
-      "offset": 2265,
-      "length": 27,
-      "value": "\"AuthenticationSensitivity\""
-    },
-    {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/IDResult.swift",
-      "kind": "StringLiteral",
-      "offset": 2322,
-      "length": 15,
-      "value": "\"EngineVersion\""
-    },
-    {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/IDResult.swift",
-      "kind": "StringLiteral",
-      "offset": 2368,
-      "length": 16,
-      "value": "\"LibraryVersion\""
-    },
-    {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/IDResult.swift",
-      "kind": "StringLiteral",
-      "offset": 2420,
-      "length": 13,
-      "value": "\"ProcessMode\""
-    },
-    {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/IDResult.swift",
-      "kind": "StringLiteral",
-      "offset": 2464,
-      "length": 8,
-      "value": "\"Result\""
-    },
-    {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/IDResult.swift",
-      "kind": "StringLiteral",
-      "offset": 2509,
-      "length": 14,
-      "value": "\"TamperResult\""
-    },
-    {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/IDResult.swift",
-      "kind": "StringLiteral",
-      "offset": 2565,
-      "length": 19,
-      "value": "\"TamperSensitivity\""
-    },
-    {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/IDResult.swift",
-      "kind": "StringLiteral",
-      "offset": 2613,
-      "length": 14,
-      "value": "\"Subscription\""
-    },
-    {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/IDResult.swift",
-      "kind": "StringLiteral",
-      "offset": 2654,
-      "length": 12,
-      "value": "\"Biographic\""
-    },
-    {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/IDResult.swift",
-      "kind": "StringLiteral",
-      "offset": 2697,
-      "length": 16,
-      "value": "\"Classification\""
-    },
-    {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/IDResult.swift",
-      "kind": "StringLiteral",
-      "offset": 2736,
-      "length": 8,
-      "value": "\"Device\""
-    },
-    {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/IDResult.swift",
-      "kind": "StringLiteral",
-      "offset": 2767,
-      "length": 8,
-      "value": "\"Alerts\""
-    },
-    {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/IDResult.swift",
-      "kind": "StringLiteral",
-      "offset": 2802,
-      "length": 12,
-      "value": "\"DataFields\""
-    },
-    {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/IDResult.swift",
-      "kind": "StringLiteral",
-      "offset": 2837,
-      "length": 8,
-      "value": "\"Fields\""
-    },
-    {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/IDResult.swift",
-      "kind": "StringLiteral",
-      "offset": 2868,
-      "length": 8,
-      "value": "\"Images\""
-    },
-    {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/IDResult.swift",
-      "kind": "StringLiteral",
-      "offset": 2900,
-      "length": 9,
-      "value": "\"Regions\""
-    },
-    {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/Biographic.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/Biographic.swift",
       "kind": "IntegerLiteral",
       "offset": 135,
       "length": 4,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/Biographic.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/Biographic.swift",
       "kind": "IntegerLiteral",
       "offset": 141,
       "length": 6,
       "value": "2"
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/Biographic.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/Biographic.swift",
       "kind": "IntegerLiteral",
       "offset": 149,
       "length": 7,
       "value": "3"
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/Biographic.swift",
-      "kind": "IntegerLiteral",
-      "offset": 135,
-      "length": 4,
-      "value": "1"
-    },
-    {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/Biographic.swift",
-      "kind": "IntegerLiteral",
-      "offset": 141,
-      "length": 6,
-      "value": "2"
-    },
-    {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/Biographic.swift",
-      "kind": "IntegerLiteral",
-      "offset": 149,
-      "length": 7,
-      "value": "3"
-    },
-    {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/Biographic.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/Biographic.swift",
       "kind": "StringLiteral",
       "offset": 571,
       "length": 5,
       "value": "\"Age\""
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/Biographic.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/Biographic.swift",
       "kind": "StringLiteral",
       "offset": 602,
       "length": 11,
       "value": "\"BirthDate\""
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/Biographic.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/Biographic.swift",
       "kind": "StringLiteral",
       "offset": 644,
       "length": 16,
       "value": "\"ExpirationDate\""
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/Biographic.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/Biographic.swift",
       "kind": "StringLiteral",
       "offset": 685,
       "length": 10,
       "value": "\"FullName\""
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/Biographic.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/Biographic.swift",
       "kind": "StringLiteral",
       "offset": 726,
       "length": 8,
       "value": "\"Gender\""
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/Biographic.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/Biographic.swift",
       "kind": "StringLiteral",
       "offset": 756,
       "length": 7,
       "value": "\"Photo\""
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/Biographic.swift",
-      "kind": "StringLiteral",
-      "offset": 571,
-      "length": 5,
-      "value": "\"Age\""
-    },
-    {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/Biographic.swift",
-      "kind": "StringLiteral",
-      "offset": 602,
-      "length": 11,
-      "value": "\"BirthDate\""
-    },
-    {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/Biographic.swift",
-      "kind": "StringLiteral",
-      "offset": 644,
-      "length": 16,
-      "value": "\"ExpirationDate\""
-    },
-    {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/Biographic.swift",
-      "kind": "StringLiteral",
-      "offset": 685,
-      "length": 10,
-      "value": "\"FullName\""
-    },
-    {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/Biographic.swift",
-      "kind": "StringLiteral",
-      "offset": 726,
-      "length": 8,
-      "value": "\"Gender\""
-    },
-    {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/Biographic.swift",
-      "kind": "StringLiteral",
-      "offset": 756,
-      "length": 7,
-      "value": "\"Photo\""
-    },
-    {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/PlanCode.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/PlanCode.swift",
       "kind": "StringLiteral",
       "offset": 327,
       "length": 10,
       "value": "\"PlanCode\""
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/PlanCode.swift",
-      "kind": "StringLiteral",
-      "offset": 327,
-      "length": 10,
-      "value": "\"PlanCode\""
-    },
-    {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Constants.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Constants.swift",
       "kind": "FloatLiteral",
       "offset": 245,
       "length": 4,
       "value": "60.0"
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/IdOptions.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/IdOptions.swift",
       "kind": "IntegerLiteral",
       "offset": 241,
       "length": 4,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/IdOptions.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/IdOptions.swift",
       "kind": "IntegerLiteral",
       "offset": 247,
       "length": 3,
       "value": "2"
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/IdOptions.swift",
-      "kind": "IntegerLiteral",
-      "offset": 241,
-      "length": 4,
-      "value": "1"
-    },
-    {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/IdOptions.swift",
-      "kind": "IntegerLiteral",
-      "offset": 247,
-      "length": 3,
-      "value": "2"
-    },
-    {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/IdOptions.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/IdOptions.swift",
       "kind": "IntegerLiteral",
       "offset": 323,
       "length": 4,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/IdOptions.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/IdOptions.swift",
       "kind": "IntegerLiteral",
       "offset": 329,
       "length": 3,
       "value": "2"
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/IdOptions.swift",
-      "kind": "IntegerLiteral",
-      "offset": 323,
-      "length": 4,
-      "value": "1"
-    },
-    {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/IdOptions.swift",
-      "kind": "IntegerLiteral",
-      "offset": 329,
-      "length": 3,
-      "value": "2"
-    },
-    {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/IdOptions.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/IdOptions.swift",
       "kind": "BooleanLiteral",
       "offset": 467,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/IdOptions.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/IdOptions.swift",
       "kind": "BooleanLiteral",
       "offset": 507,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentType.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentType.swift",
       "kind": "IntegerLiteral",
       "offset": 252,
       "length": 8,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentType.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentType.swift",
       "kind": "IntegerLiteral",
       "offset": 270,
       "length": 4,
       "value": "2"
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentType.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentType.swift",
       "kind": "IntegerLiteral",
       "offset": 284,
       "length": 14,
       "value": "3"
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentType.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentType.swift",
       "kind": "IntegerLiteral",
       "offset": 308,
       "length": 18,
       "value": "4"
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentType.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentType.swift",
       "kind": "IntegerLiteral",
       "offset": 336,
       "length": 6,
       "value": "5"
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentType.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentType.swift",
       "kind": "IntegerLiteral",
       "offset": 352,
       "length": 8,
       "value": "6"
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentType.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentType.swift",
       "kind": "IntegerLiteral",
       "offset": 370,
       "length": 17,
       "value": "7"
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentType.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentType.swift",
       "kind": "IntegerLiteral",
       "offset": 397,
       "length": 14,
       "value": "8"
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentType.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentType.swift",
       "kind": "IntegerLiteral",
       "offset": 421,
       "length": 16,
       "value": "9"
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentType.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentType.swift",
       "kind": "IntegerLiteral",
       "offset": 447,
       "length": 19,
       "value": "10"
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentType.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentType.swift",
       "kind": "IntegerLiteral",
       "offset": 476,
       "length": 5,
       "value": "11"
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentType.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentType.swift",
       "kind": "IntegerLiteral",
       "offset": 491,
       "length": 13,
       "value": "12"
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentType.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentType.swift",
       "kind": "IntegerLiteral",
       "offset": 514,
       "length": 20,
       "value": "13"
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentType.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentType.swift",
       "kind": "IntegerLiteral",
       "offset": 544,
       "length": 19,
       "value": "14"
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentType.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentType.swift",
       "kind": "IntegerLiteral",
       "offset": 573,
       "length": 8,
       "value": "15"
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentType.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentType.swift",
       "kind": "IntegerLiteral",
       "offset": 591,
       "length": 22,
       "value": "16"
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentType.swift",
-      "kind": "IntegerLiteral",
-      "offset": 252,
-      "length": 8,
-      "value": "1"
-    },
-    {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentType.swift",
-      "kind": "IntegerLiteral",
-      "offset": 270,
-      "length": 4,
-      "value": "2"
-    },
-    {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentType.swift",
-      "kind": "IntegerLiteral",
-      "offset": 284,
-      "length": 14,
-      "value": "3"
-    },
-    {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentType.swift",
-      "kind": "IntegerLiteral",
-      "offset": 308,
-      "length": 18,
-      "value": "4"
-    },
-    {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentType.swift",
-      "kind": "IntegerLiteral",
-      "offset": 336,
-      "length": 6,
-      "value": "5"
-    },
-    {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentType.swift",
-      "kind": "IntegerLiteral",
-      "offset": 352,
-      "length": 8,
-      "value": "6"
-    },
-    {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentType.swift",
-      "kind": "IntegerLiteral",
-      "offset": 370,
-      "length": 17,
-      "value": "7"
-    },
-    {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentType.swift",
-      "kind": "IntegerLiteral",
-      "offset": 397,
-      "length": 14,
-      "value": "8"
-    },
-    {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentType.swift",
-      "kind": "IntegerLiteral",
-      "offset": 421,
-      "length": 16,
-      "value": "9"
-    },
-    {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentType.swift",
-      "kind": "IntegerLiteral",
-      "offset": 447,
-      "length": 19,
-      "value": "10"
-    },
-    {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentType.swift",
-      "kind": "IntegerLiteral",
-      "offset": 476,
-      "length": 5,
-      "value": "11"
-    },
-    {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentType.swift",
-      "kind": "IntegerLiteral",
-      "offset": 491,
-      "length": 13,
-      "value": "12"
-    },
-    {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentType.swift",
-      "kind": "IntegerLiteral",
-      "offset": 514,
-      "length": 20,
-      "value": "13"
-    },
-    {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentType.swift",
-      "kind": "IntegerLiteral",
-      "offset": 544,
-      "length": 19,
-      "value": "14"
-    },
-    {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentType.swift",
-      "kind": "IntegerLiteral",
-      "offset": 573,
-      "length": 8,
-      "value": "15"
-    },
-    {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentType.swift",
-      "kind": "IntegerLiteral",
-      "offset": 591,
-      "length": 22,
-      "value": "16"
-    },
-    {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentType.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentType.swift",
       "kind": "IntegerLiteral",
       "offset": 690,
       "length": 19,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentType.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentType.swift",
       "kind": "IntegerLiteral",
       "offset": 711,
       "length": 14,
       "value": "2"
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentType.swift",
-      "kind": "IntegerLiteral",
-      "offset": 690,
-      "length": 19,
-      "value": "1"
-    },
-    {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentType.swift",
-      "kind": "IntegerLiteral",
-      "offset": 711,
-      "length": 14,
-      "value": "2"
-    },
-    {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentType.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentType.swift",
       "kind": "IntegerLiteral",
       "offset": 794,
       "length": 7,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentType.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentType.swift",
       "kind": "IntegerLiteral",
       "offset": 803,
       "length": 13,
       "value": "2"
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentType.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentType.swift",
       "kind": "IntegerLiteral",
       "offset": 818,
       "length": 6,
       "value": "3"
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentType.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentType.swift",
       "kind": "IntegerLiteral",
       "offset": 826,
       "length": 12,
       "value": "4"
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentType.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentType.swift",
       "kind": "IntegerLiteral",
       "offset": 840,
       "length": 8,
       "value": "5"
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentType.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentType.swift",
       "kind": "IntegerLiteral",
       "offset": 850,
       "length": 5,
       "value": "6"
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentType.swift",
-      "kind": "IntegerLiteral",
-      "offset": 794,
-      "length": 7,
-      "value": "1"
-    },
-    {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentType.swift",
-      "kind": "IntegerLiteral",
-      "offset": 803,
-      "length": 13,
-      "value": "2"
-    },
-    {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentType.swift",
-      "kind": "IntegerLiteral",
-      "offset": 818,
-      "length": 6,
-      "value": "3"
-    },
-    {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentType.swift",
-      "kind": "IntegerLiteral",
-      "offset": 826,
-      "length": 12,
-      "value": "4"
-    },
-    {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentType.swift",
-      "kind": "IntegerLiteral",
-      "offset": 840,
-      "length": 8,
-      "value": "5"
-    },
-    {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentType.swift",
-      "kind": "IntegerLiteral",
-      "offset": 850,
-      "length": 5,
-      "value": "6"
-    },
-    {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentType.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentType.swift",
       "kind": "IntegerLiteral",
       "offset": 926,
       "length": 3,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentType.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentType.swift",
       "kind": "IntegerLiteral",
       "offset": 931,
       "length": 3,
       "value": "2"
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentType.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentType.swift",
       "kind": "IntegerLiteral",
       "offset": 936,
       "length": 3,
       "value": "3"
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentType.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentType.swift",
       "kind": "IntegerLiteral",
       "offset": 941,
       "length": 6,
       "value": "4"
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentType.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentType.swift",
       "kind": "IntegerLiteral",
       "offset": 949,
       "length": 13,
       "value": "5"
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentType.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentType.swift",
       "kind": "IntegerLiteral",
       "offset": 964,
       "length": 6,
       "value": "6"
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentType.swift",
-      "kind": "IntegerLiteral",
-      "offset": 926,
-      "length": 3,
-      "value": "1"
-    },
-    {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentType.swift",
-      "kind": "IntegerLiteral",
-      "offset": 931,
-      "length": 3,
-      "value": "2"
-    },
-    {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentType.swift",
-      "kind": "IntegerLiteral",
-      "offset": 936,
-      "length": 3,
-      "value": "3"
-    },
-    {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentType.swift",
-      "kind": "IntegerLiteral",
-      "offset": 941,
-      "length": 6,
-      "value": "4"
-    },
-    {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentType.swift",
-      "kind": "IntegerLiteral",
-      "offset": 949,
-      "length": 13,
-      "value": "5"
-    },
-    {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentType.swift",
-      "kind": "IntegerLiteral",
-      "offset": 964,
-      "length": 6,
-      "value": "6"
-    },
-    {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentType.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentType.swift",
       "kind": "StringLiteral",
       "offset": 2096,
       "length": 4,
       "value": "\"Id\""
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentType.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentType.swift",
       "kind": "StringLiteral",
       "offset": 2138,
       "length": 7,
       "value": "\"Class\""
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentType.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentType.swift",
       "kind": "StringLiteral",
       "offset": 2171,
       "length": 11,
       "value": "\"ClassCode\""
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentType.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentType.swift",
       "kind": "StringLiteral",
       "offset": 2208,
       "length": 11,
       "value": "\"ClassName\""
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentType.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentType.swift",
       "kind": "StringLiteral",
       "offset": 2247,
       "length": 13,
       "value": "\"CountryCode\""
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentType.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentType.swift",
       "kind": "StringLiteral",
       "offset": 2294,
       "length": 19,
       "value": "\"GeographicRegions\""
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentType.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentType.swift",
       "kind": "StringLiteral",
       "offset": 2339,
       "length": 11,
       "value": "\"IsGeneric\""
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentType.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentType.swift",
       "kind": "StringLiteral",
       "offset": 2372,
       "length": 7,
       "value": "\"Issue\""
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentType.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentType.swift",
       "kind": "StringLiteral",
       "offset": 2405,
       "length": 11,
       "value": "\"IssueType\""
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentType.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentType.swift",
       "kind": "StringLiteral",
       "offset": 2443,
       "length": 12,
       "value": "\"IssuerCode\""
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentType.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentType.swift",
       "kind": "StringLiteral",
       "offset": 2483,
       "length": 12,
       "value": "\"IssuerName\""
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentType.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentType.swift",
       "kind": "StringLiteral",
       "offset": 2530,
       "length": 12,
       "value": "\"IssuerType\""
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentType.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentType.swift",
       "kind": "StringLiteral",
       "offset": 2570,
       "length": 13,
       "value": "\"KeesingCode\""
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentType.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentType.swift",
       "kind": "StringLiteral",
       "offset": 2604,
       "length": 6,
       "value": "\"Name\""
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentType.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentType.swift",
       "kind": "StringLiteral",
       "offset": 2639,
       "length": 6,
       "value": "\"Size\""
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentType.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentType.swift",
       "kind": "StringLiteral",
       "offset": 2677,
       "length": 17,
       "value": "\"SupportedImages\""
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentType.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentType.swift",
       "kind": "StringLiteral",
       "offset": 2737,
       "length": 28,
       "value": "\"ReferenceDocumentDataTypes\""
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentType.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentType.swift",
       "kind": "StringLiteral",
       "offset": 2799,
       "length": 19,
       "value": "\"DocumentDataTypes\""
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentType.swift",
-      "kind": "StringLiteral",
-      "offset": 2096,
-      "length": 4,
-      "value": "\"Id\""
-    },
-    {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentType.swift",
-      "kind": "StringLiteral",
-      "offset": 2138,
-      "length": 7,
-      "value": "\"Class\""
-    },
-    {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentType.swift",
-      "kind": "StringLiteral",
-      "offset": 2171,
-      "length": 11,
-      "value": "\"ClassCode\""
-    },
-    {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentType.swift",
-      "kind": "StringLiteral",
-      "offset": 2208,
-      "length": 11,
-      "value": "\"ClassName\""
-    },
-    {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentType.swift",
-      "kind": "StringLiteral",
-      "offset": 2247,
-      "length": 13,
-      "value": "\"CountryCode\""
-    },
-    {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentType.swift",
-      "kind": "StringLiteral",
-      "offset": 2294,
-      "length": 19,
-      "value": "\"GeographicRegions\""
-    },
-    {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentType.swift",
-      "kind": "StringLiteral",
-      "offset": 2339,
-      "length": 11,
-      "value": "\"IsGeneric\""
-    },
-    {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentType.swift",
-      "kind": "StringLiteral",
-      "offset": 2372,
-      "length": 7,
-      "value": "\"Issue\""
-    },
-    {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentType.swift",
-      "kind": "StringLiteral",
-      "offset": 2405,
-      "length": 11,
-      "value": "\"IssueType\""
-    },
-    {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentType.swift",
-      "kind": "StringLiteral",
-      "offset": 2443,
-      "length": 12,
-      "value": "\"IssuerCode\""
-    },
-    {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentType.swift",
-      "kind": "StringLiteral",
-      "offset": 2483,
-      "length": 12,
-      "value": "\"IssuerName\""
-    },
-    {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentType.swift",
-      "kind": "StringLiteral",
-      "offset": 2530,
-      "length": 12,
-      "value": "\"IssuerType\""
-    },
-    {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentType.swift",
-      "kind": "StringLiteral",
-      "offset": 2570,
-      "length": 13,
-      "value": "\"KeesingCode\""
-    },
-    {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentType.swift",
-      "kind": "StringLiteral",
-      "offset": 2604,
-      "length": 6,
-      "value": "\"Name\""
-    },
-    {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentType.swift",
-      "kind": "StringLiteral",
-      "offset": 2639,
-      "length": 6,
-      "value": "\"Size\""
-    },
-    {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentType.swift",
-      "kind": "StringLiteral",
-      "offset": 2677,
-      "length": 17,
-      "value": "\"SupportedImages\""
-    },
-    {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentType.swift",
-      "kind": "StringLiteral",
-      "offset": 2737,
-      "length": 28,
-      "value": "\"ReferenceDocumentDataTypes\""
-    },
-    {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentType.swift",
-      "kind": "StringLiteral",
-      "offset": 2799,
-      "length": 19,
-      "value": "\"DocumentDataTypes\""
-    },
-    {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentImageType.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentImageType.swift",
       "kind": "IntegerLiteral",
       "offset": 245,
       "length": 12,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentImageType.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentImageType.swift",
       "kind": "IntegerLiteral",
       "offset": 259,
       "length": 12,
       "value": "2"
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentImageType.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentImageType.swift",
       "kind": "IntegerLiteral",
       "offset": 273,
       "length": 12,
       "value": "3"
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentImageType.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentImageType.swift",
       "kind": "IntegerLiteral",
       "offset": 287,
       "length": 19,
       "value": "4"
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentImageType.swift",
-      "kind": "IntegerLiteral",
-      "offset": 245,
-      "length": 12,
-      "value": "1"
-    },
-    {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentImageType.swift",
-      "kind": "IntegerLiteral",
-      "offset": 259,
-      "length": 12,
-      "value": "2"
-    },
-    {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentImageType.swift",
-      "kind": "IntegerLiteral",
-      "offset": 273,
-      "length": 12,
-      "value": "3"
-    },
-    {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentImageType.swift",
-      "kind": "IntegerLiteral",
-      "offset": 287,
-      "length": 19,
-      "value": "4"
-    },
-    {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentImageType.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentImageType.swift",
       "kind": "IntegerLiteral",
       "offset": 375,
       "length": 4,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentImageType.swift",
-      "kind": "IntegerLiteral",
-      "offset": 375,
-      "length": 4,
-      "value": "1"
-    },
-    {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentImageType.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentImageType.swift",
       "kind": "StringLiteral",
       "offset": 778,
       "length": 7,
       "value": "\"Light\""
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentImageType.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentImageType.swift",
       "kind": "StringLiteral",
       "offset": 814,
       "length": 6,
       "value": "\"Side\""
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentImageType.swift",
-      "kind": "StringLiteral",
-      "offset": 778,
-      "length": 7,
-      "value": "\"Light\""
-    },
-    {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentImageType.swift",
-      "kind": "StringLiteral",
-      "offset": 814,
-      "length": 6,
-      "value": "\"Side\""
-    },
-    {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentImage.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentImage.swift",
       "kind": "StringLiteral",
       "offset": 861,
       "length": 4,
       "value": "\"Id\""
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentImage.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentImage.swift",
       "kind": "StringLiteral",
       "offset": 902,
       "length": 22,
       "value": "\"HorizontalResolution\""
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentImage.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentImage.swift",
       "kind": "StringLiteral",
       "offset": 959,
       "length": 20,
       "value": "\"VerticalResolution\""
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentImage.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentImage.swift",
       "kind": "StringLiteral",
       "offset": 1008,
       "length": 6,
       "value": "\"Side\""
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentImage.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentImage.swift",
       "kind": "StringLiteral",
       "offset": 1044,
       "length": 7,
       "value": "\"Light\""
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentImage.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentImage.swift",
       "kind": "StringLiteral",
       "offset": 1077,
       "length": 11,
       "value": "\"IsCropped\""
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentImage.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentImage.swift",
       "kind": "StringLiteral",
       "offset": 1115,
       "length": 12,
       "value": "\"IsTampered\""
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentImage.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentImage.swift",
       "kind": "StringLiteral",
       "offset": 1155,
       "length": 13,
       "value": "\"GlareMetric\""
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentImage.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentImage.swift",
       "kind": "StringLiteral",
       "offset": 1200,
       "length": 17,
       "value": "\"SharpnessMetric\""
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentImage.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentImage.swift",
       "kind": "StringLiteral",
       "offset": 1242,
       "length": 10,
       "value": "\"MimeType\""
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentImage.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentImage.swift",
       "kind": "StringLiteral",
       "offset": 1272,
       "length": 5,
       "value": "\"Uri\""
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentImage.swift",
-      "kind": "StringLiteral",
-      "offset": 861,
-      "length": 4,
-      "value": "\"Id\""
-    },
-    {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentImage.swift",
-      "kind": "StringLiteral",
-      "offset": 902,
-      "length": 22,
-      "value": "\"HorizontalResolution\""
-    },
-    {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentImage.swift",
-      "kind": "StringLiteral",
-      "offset": 959,
-      "length": 20,
-      "value": "\"VerticalResolution\""
-    },
-    {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentImage.swift",
-      "kind": "StringLiteral",
-      "offset": 1008,
-      "length": 6,
-      "value": "\"Side\""
-    },
-    {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentImage.swift",
-      "kind": "StringLiteral",
-      "offset": 1044,
-      "length": 7,
-      "value": "\"Light\""
-    },
-    {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentImage.swift",
-      "kind": "StringLiteral",
-      "offset": 1077,
-      "length": 11,
-      "value": "\"IsCropped\""
-    },
-    {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentImage.swift",
-      "kind": "StringLiteral",
-      "offset": 1115,
-      "length": 12,
-      "value": "\"IsTampered\""
-    },
-    {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentImage.swift",
-      "kind": "StringLiteral",
-      "offset": 1155,
-      "length": 13,
-      "value": "\"GlareMetric\""
-    },
-    {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentImage.swift",
-      "kind": "StringLiteral",
-      "offset": 1200,
-      "length": 17,
-      "value": "\"SharpnessMetric\""
-    },
-    {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentImage.swift",
-      "kind": "StringLiteral",
-      "offset": 1242,
-      "length": 10,
-      "value": "\"MimeType\""
-    },
-    {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentImage.swift",
-      "kind": "StringLiteral",
-      "offset": 1272,
-      "length": 5,
-      "value": "\"Uri\""
-    },
-    {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/Address.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/Address.swift",
       "kind": "StringLiteral",
       "offset": 451,
       "length": 13,
       "value": "\"FullAddress\""
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/Address.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/Address.swift",
       "kind": "StringLiteral",
       "offset": 487,
       "length": 8,
       "value": "\"Street\""
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/Address.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/Address.swift",
       "kind": "StringLiteral",
       "offset": 516,
       "length": 6,
       "value": "\"City\""
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/Address.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/Address.swift",
       "kind": "StringLiteral",
       "offset": 544,
       "length": 7,
       "value": "\"State\""
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/Address.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/Address.swift",
       "kind": "StringLiteral",
       "offset": 571,
       "length": 5,
       "value": "\"Zip\""
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/Address.swift",
-      "kind": "StringLiteral",
-      "offset": 451,
-      "length": 13,
-      "value": "\"FullAddress\""
-    },
-    {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/Address.swift",
-      "kind": "StringLiteral",
-      "offset": 487,
-      "length": 8,
-      "value": "\"Street\""
-    },
-    {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/Address.swift",
-      "kind": "StringLiteral",
-      "offset": 516,
-      "length": 6,
-      "value": "\"City\""
-    },
-    {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/Address.swift",
-      "kind": "StringLiteral",
-      "offset": 544,
-      "length": 7,
-      "value": "\"State\""
-    },
-    {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/Address.swift",
-      "kind": "StringLiteral",
-      "offset": 571,
-      "length": 5,
-      "value": "\"Zip\""
-    },
-    {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentSettings.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentSettings.swift",
       "kind": "IntegerLiteral",
       "offset": 239,
       "length": 3,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentSettings.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentSettings.swift",
       "kind": "IntegerLiteral",
       "offset": 244,
       "length": 3,
       "value": "2"
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentSettings.swift",
-      "kind": "IntegerLiteral",
-      "offset": 239,
-      "length": 3,
-      "value": "1"
-    },
-    {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentSettings.swift",
-      "kind": "IntegerLiteral",
-      "offset": 244,
-      "length": 3,
-      "value": "2"
-    },
-    {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentSettings.swift",
-      "kind": "IntegerLiteral",
-      "offset": 239,
-      "length": 3,
-      "value": "1"
-    },
-    {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentSettings.swift",
-      "kind": "IntegerLiteral",
-      "offset": 244,
-      "length": 3,
-      "value": "2"
-    },
-    {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentSettings.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentSettings.swift",
       "kind": "IntegerLiteral",
       "offset": 302,
       "length": 9,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentSettings.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentSettings.swift",
       "kind": "IntegerLiteral",
       "offset": 313,
       "length": 6,
       "value": "2"
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentSettings.swift",
-      "kind": "IntegerLiteral",
-      "offset": 302,
-      "length": 9,
-      "value": "1"
-    },
-    {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentSettings.swift",
-      "kind": "IntegerLiteral",
-      "offset": 313,
-      "length": 6,
-      "value": "2"
-    },
-    {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentSettings.swift",
-      "kind": "IntegerLiteral",
-      "offset": 302,
-      "length": 9,
-      "value": "1"
-    },
-    {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentSettings.swift",
-      "kind": "IntegerLiteral",
-      "offset": 313,
-      "length": 6,
-      "value": "2"
-    },
-    {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentSettings.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentSettings.swift",
       "kind": "StringLiteral",
       "offset": 820,
       "length": 27,
       "value": "\"AuthenticationSensitivity\""
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentSettings.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentSettings.swift",
       "kind": "StringLiteral",
       "offset": 882,
       "length": 20,
       "value": "\"ClassificationMode\""
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentSettings.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentSettings.swift",
       "kind": "StringLiteral",
       "offset": 925,
       "length": 8,
       "value": "\"Device\""
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentSettings.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentSettings.swift",
       "kind": "StringLiteral",
       "offset": 975,
       "length": 27,
       "value": "\"ImageCroppingExpectedSize\""
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentSettings.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentSettings.swift",
       "kind": "StringLiteral",
       "offset": 1036,
       "length": 19,
       "value": "\"ImageCroppingMode\""
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentSettings.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentSettings.swift",
       "kind": "StringLiteral",
       "offset": 1083,
       "length": 13,
       "value": "\"ProcessMode\""
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentSettings.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentSettings.swift",
       "kind": "StringLiteral",
       "offset": 1127,
       "length": 16,
       "value": "\"SubscriptionId\""
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentSettings.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentSettings.swift",
       "kind": "StringLiteral",
       "offset": 1177,
       "length": 19,
       "value": "\"TamperSensitivity\""
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentSettings.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentSettings.swift",
       "kind": "StringLiteral",
       "offset": 1224,
       "length": 13,
       "value": "\"CountryCode\""
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentSettings.swift",
-      "kind": "StringLiteral",
-      "offset": 820,
-      "length": 27,
-      "value": "\"AuthenticationSensitivity\""
-    },
-    {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentSettings.swift",
-      "kind": "StringLiteral",
-      "offset": 882,
-      "length": 20,
-      "value": "\"ClassificationMode\""
-    },
-    {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentSettings.swift",
-      "kind": "StringLiteral",
-      "offset": 925,
-      "length": 8,
-      "value": "\"Device\""
-    },
-    {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentSettings.swift",
-      "kind": "StringLiteral",
-      "offset": 975,
-      "length": 27,
-      "value": "\"ImageCroppingExpectedSize\""
-    },
-    {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentSettings.swift",
-      "kind": "StringLiteral",
-      "offset": 1036,
-      "length": 19,
-      "value": "\"ImageCroppingMode\""
-    },
-    {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentSettings.swift",
-      "kind": "StringLiteral",
-      "offset": 1083,
-      "length": 13,
-      "value": "\"ProcessMode\""
-    },
-    {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentSettings.swift",
-      "kind": "StringLiteral",
-      "offset": 1127,
-      "length": 16,
-      "value": "\"SubscriptionId\""
-    },
-    {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentSettings.swift",
-      "kind": "StringLiteral",
-      "offset": 1177,
-      "length": 19,
-      "value": "\"TamperSensitivity\""
-    },
-    {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentSettings.swift",
-      "kind": "StringLiteral",
-      "offset": 1224,
-      "length": 13,
-      "value": "\"CountryCode\""
-    },
-    {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/WebAPI\/ConnectHealthCardDataWS.swift",
-      "kind": "StringLiteral",
-      "offset": 209,
-      "length": 23,
-      "value": "\"AcuantDocumentProcessing.ConnectHealthCardDataWS\""
-    },
-    {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentField.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentField.swift",
       "kind": "IntegerLiteral",
       "offset": 245,
       "length": 9,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentField.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentField.swift",
       "kind": "IntegerLiteral",
       "offset": 256,
       "length": 9,
       "value": "2"
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentField.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentField.swift",
       "kind": "IntegerLiteral",
       "offset": 267,
       "length": 15,
       "value": "3"
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentField.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentField.swift",
       "kind": "IntegerLiteral",
       "offset": 284,
       "length": 19,
       "value": "4"
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentField.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentField.swift",
       "kind": "IntegerLiteral",
       "offset": 305,
       "length": 14,
       "value": "5"
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentField.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentField.swift",
       "kind": "IntegerLiteral",
       "offset": 321,
       "length": 20,
       "value": "6"
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentField.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentField.swift",
       "kind": "IntegerLiteral",
       "offset": 343,
       "length": 5,
       "value": "7"
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentField.swift",
-      "kind": "IntegerLiteral",
-      "offset": 245,
-      "length": 9,
-      "value": "1"
-    },
-    {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentField.swift",
-      "kind": "IntegerLiteral",
-      "offset": 256,
-      "length": 9,
-      "value": "2"
-    },
-    {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentField.swift",
-      "kind": "IntegerLiteral",
-      "offset": 267,
-      "length": 15,
-      "value": "3"
-    },
-    {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentField.swift",
-      "kind": "IntegerLiteral",
-      "offset": 284,
-      "length": 19,
-      "value": "4"
-    },
-    {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentField.swift",
-      "kind": "IntegerLiteral",
-      "offset": 305,
-      "length": 14,
-      "value": "5"
-    },
-    {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentField.swift",
-      "kind": "IntegerLiteral",
-      "offset": 321,
-      "length": 20,
-      "value": "6"
-    },
-    {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentField.swift",
-      "kind": "IntegerLiteral",
-      "offset": 343,
-      "length": 5,
-      "value": "7"
-    },
-    {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentField.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentField.swift",
       "kind": "StringLiteral",
       "offset": 930,
       "length": 4,
       "value": "\"Id\""
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentField.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentField.swift",
       "kind": "StringLiteral",
       "offset": 969,
       "length": 12,
       "value": "\"DataSource\""
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentField.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentField.swift",
       "kind": "StringLiteral",
       "offset": 1014,
       "length": 13,
       "value": "\"Description\""
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentField.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentField.swift",
       "kind": "StringLiteral",
       "offset": 1051,
       "length": 9,
       "value": "\"IsImage\""
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentField.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentField.swift",
       "kind": "StringLiteral",
       "offset": 1080,
       "length": 5,
       "value": "\"Key\""
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentField.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentField.swift",
       "kind": "StringLiteral",
       "offset": 1106,
       "length": 6,
       "value": "\"Name\""
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentField.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentField.swift",
       "kind": "StringLiteral",
       "offset": 1144,
       "length": 17,
       "value": "\"RegionReference\""
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentField.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentField.swift",
       "kind": "StringLiteral",
       "offset": 1182,
       "length": 6,
       "value": "\"Type\""
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentField.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentField.swift",
       "kind": "StringLiteral",
       "offset": 1210,
       "length": 7,
       "value": "\"Value\""
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentField.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentField.swift",
       "kind": "StringLiteral",
       "offset": 1252,
       "length": 21,
       "value": "\"DataFieldReferences\""
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentField.swift",
-      "kind": "StringLiteral",
-      "offset": 930,
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/WebAPI\/ConnectUploadImageWS.swift",
+      "kind": "FloatLiteral",
+      "offset": 6697,
+      "length": 6,
+      "value": "2024.0"
+    },
+    {
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/WebAPI\/ConnectUploadImageWS.swift",
+      "kind": "FloatLiteral",
+      "offset": 6782,
       "length": 4,
-      "value": "\"Id\""
+      "value": "1.42"
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentField.swift",
-      "kind": "StringLiteral",
-      "offset": 969,
-      "length": 12,
-      "value": "\"DataSource\""
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/WebAPI\/ConnectUploadImageWS.swift",
+      "kind": "FloatLiteral",
+      "offset": 6824,
+      "length": 3,
+      "value": "5.0"
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentField.swift",
-      "kind": "StringLiteral",
-      "offset": 1014,
-      "length": 13,
-      "value": "\"Description\""
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/WebAPI\/ConnectUploadImageWS.swift",
+      "kind": "FloatLiteral",
+      "offset": 7124,
+      "length": 3,
+      "value": "1.0"
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentField.swift",
-      "kind": "StringLiteral",
-      "offset": 1051,
-      "length": 9,
-      "value": "\"IsImage\""
-    },
-    {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentField.swift",
-      "kind": "StringLiteral",
-      "offset": 1080,
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/WebAPI\/ConnectUploadImageWS.swift",
+      "kind": "FloatLiteral",
+      "offset": 7151,
       "length": 5,
-      "value": "\"Key\""
+      "value": "100.0"
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentField.swift",
-      "kind": "StringLiteral",
-      "offset": 1106,
-      "length": 6,
-      "value": "\"Name\""
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/WebAPI\/ConnectUploadImageWS.swift",
+      "kind": "FloatLiteral",
+      "offset": 7201,
+      "length": 3,
+      "value": "1.0"
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentField.swift",
-      "kind": "StringLiteral",
-      "offset": 1144,
-      "length": 17,
-      "value": "\"RegionReference\""
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/WebAPI\/ConnectUploadImageWS.swift",
+      "kind": "FloatLiteral",
+      "offset": 7228,
+      "length": 5,
+      "value": "100.0"
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentField.swift",
-      "kind": "StringLiteral",
-      "offset": 1182,
-      "length": 6,
-      "value": "\"Type\""
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/WebAPI\/ConnectUploadImageWS.swift",
+      "kind": "IntegerLiteral",
+      "offset": 7302,
+      "length": 4,
+      "value": "2952"
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentField.swift",
-      "kind": "StringLiteral",
-      "offset": 1210,
-      "length": 7,
-      "value": "\"Value\""
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/WebAPI\/ConnectUploadImageWS.swift",
+      "kind": "IntegerLiteral",
+      "offset": 7471,
+      "length": 1,
+      "value": "2"
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentField.swift",
-      "kind": "StringLiteral",
-      "offset": 1252,
-      "length": 21,
-      "value": "\"DataFieldReferences\""
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/WebAPI\/ConnectUploadImageWS.swift",
+      "kind": "IntegerLiteral",
+      "offset": 8442,
+      "length": 1,
+      "value": "0"
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/WebAPI\/ConnectUploadImageWS.swift",
-      "kind": "StringLiteral",
-      "offset": 205,
-      "length": 20,
-      "value": "\"AcuantDocumentProcessing.ConnectUploadImageWS\""
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/WebAPI\/ConnectUploadImageWS.swift",
+      "kind": "IntegerLiteral",
+      "offset": 8448,
+      "length": 1,
+      "value": "0"
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentDataField.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/WebAPI\/ConnectUploadImageWS.swift",
+      "kind": "BooleanLiteral",
+      "offset": 8562,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/WebAPI\/ConnectUploadImageWS.swift",
+      "kind": "FloatLiteral",
+      "offset": 8569,
+      "length": 3,
+      "value": "1.0"
+    },
+    {
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentDataField.swift",
       "kind": "StringLiteral",
       "offset": 641,
       "length": 4,
       "value": "\"Id\""
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentDataField.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentDataField.swift",
       "kind": "StringLiteral",
       "offset": 672,
       "length": 12,
       "value": "\"DataSource\""
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentDataField.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentDataField.swift",
       "kind": "StringLiteral",
       "offset": 716,
       "length": 13,
       "value": "\"Description\""
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentDataField.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentDataField.swift",
       "kind": "StringLiteral",
       "offset": 753,
       "length": 9,
       "value": "\"IsImage\""
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentDataField.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentDataField.swift",
       "kind": "StringLiteral",
       "offset": 782,
       "length": 5,
       "value": "\"Key\""
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentDataField.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentDataField.swift",
       "kind": "StringLiteral",
       "offset": 820,
       "length": 18,
       "value": "\"RegionOfInterest\""
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentDataField.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentDataField.swift",
       "kind": "StringLiteral",
       "offset": 870,
       "length": 17,
       "value": "\"RegionReference\""
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentDataField.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentDataField.swift",
       "kind": "StringLiteral",
       "offset": 915,
       "length": 13,
       "value": "\"Reliability\""
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentDataField.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentDataField.swift",
       "kind": "StringLiteral",
       "offset": 949,
       "length": 6,
       "value": "\"Type\""
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentDataField.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentDataField.swift",
       "kind": "StringLiteral",
       "offset": 977,
       "length": 7,
       "value": "\"Value\""
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentDataField.swift",
-      "kind": "StringLiteral",
-      "offset": 641,
-      "length": 4,
-      "value": "\"Id\""
-    },
-    {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentDataField.swift",
-      "kind": "StringLiteral",
-      "offset": 672,
-      "length": 12,
-      "value": "\"DataSource\""
-    },
-    {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentDataField.swift",
-      "kind": "StringLiteral",
-      "offset": 716,
-      "length": 13,
-      "value": "\"Description\""
-    },
-    {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentDataField.swift",
-      "kind": "StringLiteral",
-      "offset": 753,
-      "length": 9,
-      "value": "\"IsImage\""
-    },
-    {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentDataField.swift",
-      "kind": "StringLiteral",
-      "offset": 782,
-      "length": 5,
-      "value": "\"Key\""
-    },
-    {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentDataField.swift",
-      "kind": "StringLiteral",
-      "offset": 820,
-      "length": 18,
-      "value": "\"RegionOfInterest\""
-    },
-    {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentDataField.swift",
-      "kind": "StringLiteral",
-      "offset": 870,
-      "length": 17,
-      "value": "\"RegionReference\""
-    },
-    {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentDataField.swift",
-      "kind": "StringLiteral",
-      "offset": 915,
-      "length": 13,
-      "value": "\"Reliability\""
-    },
-    {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentDataField.swift",
-      "kind": "StringLiteral",
-      "offset": 949,
-      "length": 6,
-      "value": "\"Type\""
-    },
-    {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DocumentDataField.swift",
-      "kind": "StringLiteral",
-      "offset": 977,
-      "length": 7,
-      "value": "\"Value\""
-    },
-    {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/Subscription.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/Subscription.swift",
       "kind": "StringLiteral",
       "offset": 557,
       "length": 4,
       "value": "\"Id\""
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/Subscription.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/Subscription.swift",
       "kind": "StringLiteral",
       "offset": 605,
       "length": 21,
       "value": "\"DocumentProcessMode\""
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/Subscription.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/Subscription.swift",
       "kind": "StringLiteral",
       "offset": 651,
       "length": 10,
       "value": "\"IsActive\""
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/Subscription.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/Subscription.swift",
       "kind": "StringLiteral",
       "offset": 691,
       "length": 15,
       "value": "\"IsDevelopment\""
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/Subscription.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/Subscription.swift",
       "kind": "StringLiteral",
       "offset": 730,
       "length": 9,
       "value": "\"IsTrial\""
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/Subscription.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/Subscription.swift",
       "kind": "StringLiteral",
       "offset": 760,
       "length": 6,
       "value": "\"Name\""
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/Subscription.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/Subscription.swift",
       "kind": "StringLiteral",
       "offset": 791,
       "length": 10,
       "value": "\"StorePII\""
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/Subscription.swift",
-      "kind": "StringLiteral",
-      "offset": 557,
-      "length": 4,
-      "value": "\"Id\""
-    },
-    {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/Subscription.swift",
-      "kind": "StringLiteral",
-      "offset": 605,
-      "length": 21,
-      "value": "\"DocumentProcessMode\""
-    },
-    {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/Subscription.swift",
-      "kind": "StringLiteral",
-      "offset": 651,
-      "length": 10,
-      "value": "\"IsActive\""
-    },
-    {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/Subscription.swift",
-      "kind": "StringLiteral",
-      "offset": 691,
-      "length": 15,
-      "value": "\"IsDevelopment\""
-    },
-    {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/Subscription.swift",
-      "kind": "StringLiteral",
-      "offset": 730,
-      "length": 9,
-      "value": "\"IsTrial\""
-    },
-    {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/Subscription.swift",
-      "kind": "StringLiteral",
-      "offset": 760,
-      "length": 6,
-      "value": "\"Name\""
-    },
-    {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/Subscription.swift",
-      "kind": "StringLiteral",
-      "offset": 791,
-      "length": 10,
-      "value": "\"StorePII\""
-    },
-    {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/LabelValuePair.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/LabelValuePair.swift",
       "kind": "StringLiteral",
       "offset": 367,
       "length": 7,
       "value": "\"Label\""
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/LabelValuePair.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/LabelValuePair.swift",
       "kind": "StringLiteral",
       "offset": 396,
       "length": 7,
       "value": "\"Value\""
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/LabelValuePair.swift",
-      "kind": "StringLiteral",
-      "offset": 367,
-      "length": 7,
-      "value": "\"Label\""
-    },
-    {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/LabelValuePair.swift",
-      "kind": "StringLiteral",
-      "offset": 396,
-      "length": 7,
-      "value": "\"Value\""
-    },
-    {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/ClassificationDetails.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/ClassificationDetails.swift",
       "kind": "StringLiteral",
       "offset": 389,
       "length": 7,
       "value": "\"Front\""
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/ClassificationDetails.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/ClassificationDetails.swift",
       "kind": "StringLiteral",
       "offset": 417,
       "length": 6,
       "value": "\"Back\""
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/ClassificationDetails.swift",
-      "kind": "StringLiteral",
-      "offset": 389,
-      "length": 7,
-      "value": "\"Front\""
-    },
-    {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/ClassificationDetails.swift",
-      "kind": "StringLiteral",
-      "offset": 417,
-      "length": 6,
-      "value": "\"Back\""
-    },
-    {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/WebAPI\/ConnectDataWS.swift",
-      "kind": "StringLiteral",
-      "offset": 186,
-      "length": 13,
-      "value": "\"AcuantDocumentProcessing.ConnectDataWS\""
-    },
-    {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DeviceType.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DeviceType.swift",
       "kind": "IntegerLiteral",
       "offset": 237,
       "length": 6,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DeviceType.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DeviceType.swift",
       "kind": "IntegerLiteral",
       "offset": 245,
       "length": 7,
       "value": "2"
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DeviceType.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DeviceType.swift",
       "kind": "IntegerLiteral",
       "offset": 254,
       "length": 6,
       "value": "3"
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DeviceType.swift",
-      "kind": "IntegerLiteral",
-      "offset": 237,
-      "length": 6,
-      "value": "1"
-    },
-    {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DeviceType.swift",
-      "kind": "IntegerLiteral",
-      "offset": 245,
-      "length": 7,
-      "value": "2"
-    },
-    {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DeviceType.swift",
-      "kind": "IntegerLiteral",
-      "offset": 254,
-      "length": 6,
-      "value": "3"
-    },
-    {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DeviceType.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DeviceType.swift",
       "kind": "StringLiteral",
       "offset": 601,
       "length": 14,
       "value": "\"Manufacturer\""
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DeviceType.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DeviceType.swift",
       "kind": "StringLiteral",
       "offset": 637,
       "length": 7,
       "value": "\"Model\""
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DeviceType.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DeviceType.swift",
       "kind": "StringLiteral",
       "offset": 679,
       "length": 12,
       "value": "\"SensorType\""
-    },
-    {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DeviceType.swift",
-      "kind": "StringLiteral",
-      "offset": 601,
-      "length": 14,
-      "value": "\"Manufacturer\""
-    },
-    {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DeviceType.swift",
-      "kind": "StringLiteral",
-      "offset": 637,
-      "length": 7,
-      "value": "\"Model\""
-    },
-    {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DeviceType.swift",
-      "kind": "StringLiteral",
-      "offset": 679,
-      "length": 12,
-      "value": "\"SensorType\""
-    },
-    {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantDocumentProcessing\/AcuantDocumentProcessing\/Models\/DeviceType.swift",
-      "kind": "StringLiteral",
-      "offset": 290,
-      "length": 10,
-      "value": "\"AcuantDocumentProcessing.DeviceType\""
     }
   ]
 }

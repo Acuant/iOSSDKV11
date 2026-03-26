@@ -1,4 +1,4 @@
-# Acuant iOS SDK v11.6.5
+# Acuant iOS SDK v11.6.6
 
 **October 2024**
 

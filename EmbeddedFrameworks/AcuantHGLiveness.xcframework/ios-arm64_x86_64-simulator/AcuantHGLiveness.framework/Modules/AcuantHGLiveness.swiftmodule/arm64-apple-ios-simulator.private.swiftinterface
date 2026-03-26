@@ -1,6 +1,7 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.10 (swiftlang-5.10.0.13 clang-1500.3.9.4)
-// swift-module-flags: -target arm64-apple-ios11.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-bare-slash-regex -module-name AcuantHGLiveness
+// swift-compiler-version: Apple Swift version 6.2.1 effective-5.10 (swiftlang-6.2.1.4.8 clang-1700.4.4.1)
+// swift-module-flags: -target arm64-apple-ios11.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-experimental-feature DebugDescriptionMacro -enable-bare-slash-regex -module-name AcuantHGLiveness
+// swift-module-flags-ignorable: -no-verify-emitted-module-interface -formal-cxx-interoperability-mode=off -interface-compiler-version 6.2.1
 import AVFoundation
 import AcuantCommon
 import Foundation
@@ -10,7 +11,9 @@ import _Concurrency
 import _StringProcessing
 import _SwiftConcurrencyShims
 @objc @_inheritsConvenienceInitializers @objcMembers public class HGLiveness : ObjectiveC.NSObject {
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc public class func getFaceCaptureSession(delegate: (any AcuantHGLiveness.AcuantHGLiveFaceCaptureDelegate)?, captureDevice: AVFoundation.AVCaptureDevice?) -> AcuantHGLiveness.FaceCaptureSession
+  #endif
   @objc override dynamic public init()
   @objc deinit
 }
@@ -22,18 +25,26 @@ import _SwiftConcurrencyShims
   case FACE_GOOD_DISTANCE
   case FACE_NOT_IN_FRAME
   case FACE_HAS_ANGLE
+  #if compiler(>=5.3) && $NonescapableTypes
   public init?(rawValue: Swift.Int)
+  #endif
   public typealias RawValue = Swift.Int
   public var rawValue: Swift.Int {
     get
   }
 }
 @objc public protocol HGLivenessDelegate {
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc func liveFaceCaptured(result: AcuantHGLiveness.HGLivenessResult?)
+  #endif
 }
 @objc @_inheritsConvenienceInitializers @objcMembers public class FaceCaptureSession : AVFoundation.AVCaptureSession {
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc public class func getFaceCaptureSession(delegate: (any AcuantHGLiveness.AcuantHGLiveFaceCaptureDelegate)?, captureDevice: AVFoundation.AVCaptureDevice?) -> AcuantHGLiveness.FaceCaptureSession
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc public func start(completion: (() -> Swift.Void)? = nil)
+  #endif
   @objc public func stop()
   @objc public func resume()
   @objc override dynamic public init()
@@ -73,7 +84,9 @@ extension AcuantHGLiveness.FaceCaptureSession : AVFoundation.AVCaptureVideoDataO
   @objc deinit
 }
 @objc public protocol AcuantHGLiveFaceCaptureDelegate {
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc func liveFaceDetailsCaptured(liveFaceDetails: AcuantHGLiveness.LiveFaceDetails?, faceType: AcuantHGLiveness.AcuantFaceType)
+  #endif
 }
 extension AcuantHGLiveness.AcuantFaceType : Swift.Equatable {}
 extension AcuantHGLiveness.AcuantFaceType : Swift.Hashable {}

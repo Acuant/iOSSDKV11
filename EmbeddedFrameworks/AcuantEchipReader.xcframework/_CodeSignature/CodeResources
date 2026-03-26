@@ -6,11 +6,11 @@
 	<dict>
 		<key>ios-arm64/AcuantEchipReader.framework/AcuantEchipReader</key>
 		<data>
-		PIqianqqj1GnWcvh39PAtDy/t+A=
+		JLZ8EDDoTIpc9mQscjcZLHLbsyU=
 		</data>
 		<key>ios-arm64/AcuantEchipReader.framework/Headers/AcuantEchipReader-Swift.h</key>
 		<data>
-		2WBnJDB9yGu+3RBHdhiHXPgIVEE=
+		CkAqzMPq1lNyYat3o7HXLgz0ZCY=
 		</data>
 		<key>ios-arm64/AcuantEchipReader.framework/Headers/AcuantEchipReader.h</key>
 		<data>
@@ -18,23 +18,23 @@
 		</data>
 		<key>ios-arm64/AcuantEchipReader.framework/Info.plist</key>
 		<data>
-		yS0R32n30GJeOwmA+qqQ4LNmirM=
+		frADMKFghEMXydZqwfW5nLJKLz8=
 		</data>
 		<key>ios-arm64/AcuantEchipReader.framework/Modules/AcuantEchipReader.swiftmodule/arm64-apple-ios.abi.json</key>
 		<data>
-		cOthT1uJdYLc4958BSBLb4JFpoI=
+		D88mhZ8nWQ4Qh6T1MRo14QplNWA=
 		</data>
 		<key>ios-arm64/AcuantEchipReader.framework/Modules/AcuantEchipReader.swiftmodule/arm64-apple-ios.private.swiftinterface</key>
 		<data>
-		79iih6HB1WVtE7AQsAF5VwDNYtU=
+		e3zushHmKpYCu8t0oLchMLM/aBk=
 		</data>
 		<key>ios-arm64/AcuantEchipReader.framework/Modules/AcuantEchipReader.swiftmodule/arm64-apple-ios.swiftdoc</key>
 		<data>
-		oC5FEC3xXr4fSEAJJt9H3w8kiys=
+		Hfq8icW9LU6uXgX14EWQogRNloc=
 		</data>
 		<key>ios-arm64/AcuantEchipReader.framework/Modules/AcuantEchipReader.swiftmodule/arm64-apple-ios.swiftinterface</key>
 		<data>
-		79iih6HB1WVtE7AQsAF5VwDNYtU=
+		e3zushHmKpYCu8t0oLchMLM/aBk=
 		</data>
 		<key>ios-arm64/AcuantEchipReader.framework/Modules/module.modulemap</key>
 		<data>
@@ -46,11 +46,11 @@
 		</data>
 		<key>ios-arm64_x86_64-simulator/AcuantEchipReader.framework/AcuantEchipReader</key>
 		<data>
-		sxJmc5xpKI5BYxb+Tn+s28tBW7U=
+		o0EfZHDIYS+00TF3I5EhR6nm1yY=
 		</data>
 		<key>ios-arm64_x86_64-simulator/AcuantEchipReader.framework/Headers/AcuantEchipReader-Swift.h</key>
 		<data>
-		2qwKa07+PYdbC6MIkrbUkHpxOSU=
+		IJDyFNujZ7DXfA16buI0MZkHuoI=
 		</data>
 		<key>ios-arm64_x86_64-simulator/AcuantEchipReader.framework/Headers/AcuantEchipReader.h</key>
 		<data>
@@ -58,39 +58,39 @@
 		</data>
 		<key>ios-arm64_x86_64-simulator/AcuantEchipReader.framework/Info.plist</key>
 		<data>
-		VV2gMIfvppTstxoiVRX75cUxn88=
+		MI9IIDGqBtOxa8/PI7LoF/vGre0=
 		</data>
 		<key>ios-arm64_x86_64-simulator/AcuantEchipReader.framework/Modules/AcuantEchipReader.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
 		<data>
-		cOthT1uJdYLc4958BSBLb4JFpoI=
+		D88mhZ8nWQ4Qh6T1MRo14QplNWA=
 		</data>
 		<key>ios-arm64_x86_64-simulator/AcuantEchipReader.framework/Modules/AcuantEchipReader.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		CVIPR6H1qxp+5GJgYwhI9gXWOl8=
+		tjb/H1sCsRpJI+I3NhUSe+zOS5U=
 		</data>
 		<key>ios-arm64_x86_64-simulator/AcuantEchipReader.framework/Modules/AcuantEchipReader.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		ZMdd1ehfeDemSob3MeTAPjVV92k=
+		53XMwjz1+nARTgnsqCWnSjJ1XAo=
 		</data>
 		<key>ios-arm64_x86_64-simulator/AcuantEchipReader.framework/Modules/AcuantEchipReader.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		CVIPR6H1qxp+5GJgYwhI9gXWOl8=
+		tjb/H1sCsRpJI+I3NhUSe+zOS5U=
 		</data>
 		<key>ios-arm64_x86_64-simulator/AcuantEchipReader.framework/Modules/AcuantEchipReader.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<data>
-		cOthT1uJdYLc4958BSBLb4JFpoI=
+		D88mhZ8nWQ4Qh6T1MRo14QplNWA=
 		</data>
 		<key>ios-arm64_x86_64-simulator/AcuantEchipReader.framework/Modules/AcuantEchipReader.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		KJSmCLd3w4ey4kHpOdRz0LmyKAw=
+		gpZ1bUzUbmw9oZvDbPiydz2JXUQ=
 		</data>
 		<key>ios-arm64_x86_64-simulator/AcuantEchipReader.framework/Modules/AcuantEchipReader.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		l6YfpgBX5Js/R0QVmvLrJ0M2z28=
+		reSKP7uYBO9RPWVV9fdiOg3iP0Q=
 		</data>
 		<key>ios-arm64_x86_64-simulator/AcuantEchipReader.framework/Modules/AcuantEchipReader.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		KJSmCLd3w4ey4kHpOdRz0LmyKAw=
+		gpZ1bUzUbmw9oZvDbPiydz2JXUQ=
 		</data>
 		<key>ios-arm64_x86_64-simulator/AcuantEchipReader.framework/Modules/module.modulemap</key>
 		<data>
@@ -102,7 +102,7 @@
 		</data>
 		<key>ios-arm64_x86_64-simulator/AcuantEchipReader.framework/_CodeSignature/CodeResources</key>
 		<data>
-		/6SoxRkD7SOdXW1enQSrZsu687Y=
+		Ch69d0VUsUjOuFa69nQw50KM5EY=
 		</data>
 	</dict>
 	<key>files2</key>
@@ -111,22 +111,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			PIqianqqj1GnWcvh39PAtDy/t+A=
+			JLZ8EDDoTIpc9mQscjcZLHLbsyU=
 			</data>
 			<key>hash2</key>
 			<data>
-			hQBuH1QNYE2TcG0p8lYYADK/M7HJei3QWpc9Jtvr6qA=
+			ty+fVkweprWdJYD/1I20ruAT5NEkGi65Xk167eADYZw=
 			</data>
 		</dict>
 		<key>ios-arm64/AcuantEchipReader.framework/Headers/AcuantEchipReader-Swift.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			2WBnJDB9yGu+3RBHdhiHXPgIVEE=
+			CkAqzMPq1lNyYat3o7HXLgz0ZCY=
 			</data>
 			<key>hash2</key>
 			<data>
-			vVf1TiFFdx8KusHyEPtFJ7RQSScJItRWiE1/gzXNSEw=
+			WiVivi+Duaew/2c3IOxhtORQ4mreBxdNZdP05u7IqTo=
 			</data>
 		</dict>
 		<key>ios-arm64/AcuantEchipReader.framework/Headers/AcuantEchipReader.h</key>
@@ -144,55 +144,55 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			yS0R32n30GJeOwmA+qqQ4LNmirM=
+			frADMKFghEMXydZqwfW5nLJKLz8=
 			</data>
 			<key>hash2</key>
 			<data>
-			oTzryQB9IB+9c8TkRzHThVEd0XZ7tHN16kv4B49G6tA=
+			gjOXgHtfPAXRpglFkjjtQTm+wS53L5CXDZ0Ydjq3XH0=
 			</data>
 		</dict>
 		<key>ios-arm64/AcuantEchipReader.framework/Modules/AcuantEchipReader.swiftmodule/arm64-apple-ios.abi.json</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			cOthT1uJdYLc4958BSBLb4JFpoI=
+			D88mhZ8nWQ4Qh6T1MRo14QplNWA=
 			</data>
 			<key>hash2</key>
 			<data>
-			1M9w8rCCJrFddf2o3zygZdoozMMTex25/xCDSvkGj5o=
+			AtcnzKt5MQtSUOiW9lPZvNX08XKsbQ/HfDFw/6MSzc0=
 			</data>
 		</dict>
 		<key>ios-arm64/AcuantEchipReader.framework/Modules/AcuantEchipReader.swiftmodule/arm64-apple-ios.private.swiftinterface</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			79iih6HB1WVtE7AQsAF5VwDNYtU=
+			e3zushHmKpYCu8t0oLchMLM/aBk=
 			</data>
 			<key>hash2</key>
 			<data>
-			S0M1k47E85WElAnl4d+pju6V0kKXyA1mQuFY64M3dsA=
+			wPna56/PCxiDGd3ISjoICP+uOYGIfOfC60grffS5Jc4=
 			</data>
 		</dict>
 		<key>ios-arm64/AcuantEchipReader.framework/Modules/AcuantEchipReader.swiftmodule/arm64-apple-ios.swiftdoc</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			oC5FEC3xXr4fSEAJJt9H3w8kiys=
+			Hfq8icW9LU6uXgX14EWQogRNloc=
 			</data>
 			<key>hash2</key>
 			<data>
-			TWkeO7n762MCYS0budfwl0V6dTFvztSqCOFm4QHdu2I=
+			uyYTEhbgCcA2qWm6mzZawOVfI5ltAgk2oa3in5JtSlY=
 			</data>
 		</dict>
 		<key>ios-arm64/AcuantEchipReader.framework/Modules/AcuantEchipReader.swiftmodule/arm64-apple-ios.swiftinterface</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			79iih6HB1WVtE7AQsAF5VwDNYtU=
+			e3zushHmKpYCu8t0oLchMLM/aBk=
 			</data>
 			<key>hash2</key>
 			<data>
-			S0M1k47E85WElAnl4d+pju6V0kKXyA1mQuFY64M3dsA=
+			wPna56/PCxiDGd3ISjoICP+uOYGIfOfC60grffS5Jc4=
 			</data>
 		</dict>
 		<key>ios-arm64/AcuantEchipReader.framework/Modules/module.modulemap</key>
@@ -221,22 +221,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			sxJmc5xpKI5BYxb+Tn+s28tBW7U=
+			o0EfZHDIYS+00TF3I5EhR6nm1yY=
 			</data>
 			<key>hash2</key>
 			<data>
-			tDyWRzVUuk7tXdzVA62Rox3c5BscyzcpU7BuG6ZHvgI=
+			aZ/SOA56TElxYB7ql3/Xq5DPxo/djL4s7CocBre8KbQ=
 			</data>
 		</dict>
 		<key>ios-arm64_x86_64-simulator/AcuantEchipReader.framework/Headers/AcuantEchipReader-Swift.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			2qwKa07+PYdbC6MIkrbUkHpxOSU=
+			IJDyFNujZ7DXfA16buI0MZkHuoI=
 			</data>
 			<key>hash2</key>
 			<data>
-			LuPpbbBnbaoRoRIp8SdiGKAjsmNUwYBd6ymjaDyrb+0=
+			bssWMM/ih/K81x6nyyVTM7d6xK6ZT0n2ueTBovYOtfc=
 			</data>
 		</dict>
 		<key>ios-arm64_x86_64-simulator/AcuantEchipReader.framework/Headers/AcuantEchipReader.h</key>
@@ -254,99 +254,99 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			VV2gMIfvppTstxoiVRX75cUxn88=
+			MI9IIDGqBtOxa8/PI7LoF/vGre0=
 			</data>
 			<key>hash2</key>
 			<data>
-			37dxrejcNYo6WM0Q/66UO1fAxFizmRF8+ua4OxtxCbE=
+			a9vUSHRU4rQ8jqjBlnl9vq0OxRF8j1xmHGKhxNHv0x8=
 			</data>
 		</dict>
 		<key>ios-arm64_x86_64-simulator/AcuantEchipReader.framework/Modules/AcuantEchipReader.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			cOthT1uJdYLc4958BSBLb4JFpoI=
+			D88mhZ8nWQ4Qh6T1MRo14QplNWA=
 			</data>
 			<key>hash2</key>
 			<data>
-			1M9w8rCCJrFddf2o3zygZdoozMMTex25/xCDSvkGj5o=
+			AtcnzKt5MQtSUOiW9lPZvNX08XKsbQ/HfDFw/6MSzc0=
 			</data>
 		</dict>
 		<key>ios-arm64_x86_64-simulator/AcuantEchipReader.framework/Modules/AcuantEchipReader.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			CVIPR6H1qxp+5GJgYwhI9gXWOl8=
+			tjb/H1sCsRpJI+I3NhUSe+zOS5U=
 			</data>
 			<key>hash2</key>
 			<data>
-			j8mkKKJUtCmWAHUns8VegSrxmRCm5s8yetjDVKU/u50=
+			AdaNVyE1zQSEPBt0roffPjLqqBnxn5ARrUxBbL6Ps0I=
 			</data>
 		</dict>
 		<key>ios-arm64_x86_64-simulator/AcuantEchipReader.framework/Modules/AcuantEchipReader.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			ZMdd1ehfeDemSob3MeTAPjVV92k=
+			53XMwjz1+nARTgnsqCWnSjJ1XAo=
 			</data>
 			<key>hash2</key>
 			<data>
-			gjpbaRKQ+loaKcA2it69a/ZVkYGBh/l69Ydpg+ny9CU=
+			jIW9TD9/qtJ+uWY9HHLw0c8k9/m00fwp7Fyxz4efK1Q=
 			</data>
 		</dict>
 		<key>ios-arm64_x86_64-simulator/AcuantEchipReader.framework/Modules/AcuantEchipReader.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			CVIPR6H1qxp+5GJgYwhI9gXWOl8=
+			tjb/H1sCsRpJI+I3NhUSe+zOS5U=
 			</data>
 			<key>hash2</key>
 			<data>
-			j8mkKKJUtCmWAHUns8VegSrxmRCm5s8yetjDVKU/u50=
+			AdaNVyE1zQSEPBt0roffPjLqqBnxn5ARrUxBbL6Ps0I=
 			</data>
 		</dict>
 		<key>ios-arm64_x86_64-simulator/AcuantEchipReader.framework/Modules/AcuantEchipReader.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			cOthT1uJdYLc4958BSBLb4JFpoI=
+			D88mhZ8nWQ4Qh6T1MRo14QplNWA=
 			</data>
 			<key>hash2</key>
 			<data>
-			1M9w8rCCJrFddf2o3zygZdoozMMTex25/xCDSvkGj5o=
+			AtcnzKt5MQtSUOiW9lPZvNX08XKsbQ/HfDFw/6MSzc0=
 			</data>
 		</dict>
 		<key>ios-arm64_x86_64-simulator/AcuantEchipReader.framework/Modules/AcuantEchipReader.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			KJSmCLd3w4ey4kHpOdRz0LmyKAw=
+			gpZ1bUzUbmw9oZvDbPiydz2JXUQ=
 			</data>
 			<key>hash2</key>
 			<data>
-			+V7Z6zOBGZz773v7VkwJz+Yu7c3BgrU2+BYW5Gkvpps=
+			PkgR3QBmBkGp694HUT1DzZxbiLm+0b79aSsxanPDX/k=
 			</data>
 		</dict>
 		<key>ios-arm64_x86_64-simulator/AcuantEchipReader.framework/Modules/AcuantEchipReader.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			l6YfpgBX5Js/R0QVmvLrJ0M2z28=
+			reSKP7uYBO9RPWVV9fdiOg3iP0Q=
 			</data>
 			<key>hash2</key>
 			<data>
-			7eRXTC/19E2u9XtuhrIGp3eZqFhTNj8Gnh7+VrJ9/Kc=
+			I9e7zF9eWLFe+NcMKj0Y/tXkfG+BpYpYPRjHZN5ITxw=
 			</data>
 		</dict>
 		<key>ios-arm64_x86_64-simulator/AcuantEchipReader.framework/Modules/AcuantEchipReader.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			KJSmCLd3w4ey4kHpOdRz0LmyKAw=
+			gpZ1bUzUbmw9oZvDbPiydz2JXUQ=
 			</data>
 			<key>hash2</key>
 			<data>
-			+V7Z6zOBGZz773v7VkwJz+Yu7c3BgrU2+BYW5Gkvpps=
+			PkgR3QBmBkGp694HUT1DzZxbiLm+0b79aSsxanPDX/k=
 			</data>
 		</dict>
 		<key>ios-arm64_x86_64-simulator/AcuantEchipReader.framework/Modules/module.modulemap</key>
@@ -375,11 +375,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			/6SoxRkD7SOdXW1enQSrZsu687Y=
+			Ch69d0VUsUjOuFa69nQw50KM5EY=
 			</data>
 			<key>hash2</key>
 			<data>
-			NRDRDZ7VXUlDL0HDweyvxnuXJ+abzLPFTPSV3pQoUtE=
+			v/wfwjMUJ6xK0x1OrTFJ2MMOkm+rOWscLYf4ijWJTgQ=
 			</data>
 		</dict>
 	</dict>

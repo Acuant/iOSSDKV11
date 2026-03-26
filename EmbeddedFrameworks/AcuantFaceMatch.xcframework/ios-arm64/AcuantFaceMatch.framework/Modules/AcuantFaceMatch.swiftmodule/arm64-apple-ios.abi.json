@@ -1,8 +1,8 @@
 {
   "ABIRoot": {
     "kind": "Root",
-    "name": "TopLevel",
-    "printedName": "TopLevel",
+    "name": "AcuantFaceMatch",
+    "printedName": "AcuantFaceMatch",
     "children": [
       {
         "kind": "Import",
@@ -67,6 +67,22 @@
         "declAttributes": [
           "AccessControl",
           "ObjC"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          }
         ]
       },
       {
@@ -591,6 +607,20 @@
           },
           {
             "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
             "name": "Equatable",
             "printedName": "Equatable",
             "usr": "s:SQ",
@@ -745,6 +775,20 @@
           "ObjectiveC.NSObject"
         ],
         "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
           {
             "kind": "Conformance",
             "name": "Equatable",
@@ -1114,6 +1158,20 @@
         "conformances": [
           {
             "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
             "name": "Equatable",
             "printedName": "Equatable",
             "usr": "s:SQ",
@@ -1168,67 +1226,39 @@
   },
   "ConstValues": [
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantFaceMatch\/AcuantFaceMatch\/FacialMatchResult.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantFaceMatch\/AcuantFaceMatch\/FacialMatchResult.swift",
       "kind": "BooleanLiteral",
       "offset": 269,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantFaceMatch\/AcuantFaceMatch\/FacialMatchResult.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantFaceMatch\/AcuantFaceMatch\/FacialMatchResult.swift",
       "kind": "IntegerLiteral",
       "offset": 341,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantFaceMatch\/AcuantFaceMatch\/FacialMatchResult.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantFaceMatch\/AcuantFaceMatch\/FacialMatchResult.swift",
       "kind": "StringLiteral",
       "offset": 453,
       "length": 9,
       "value": "\"IsMatch\""
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantFaceMatch\/AcuantFaceMatch\/FacialMatchResult.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantFaceMatch\/AcuantFaceMatch\/FacialMatchResult.swift",
       "kind": "StringLiteral",
       "offset": 492,
       "length": 15,
       "value": "\"TransactionId\""
     },
     {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantFaceMatch\/AcuantFaceMatch\/FacialMatchResult.swift",
+      "filePath": "\/Users\/wilmer.barrios\/dev\/mobile-sdk-v11-ios\/AcuantFaceMatch\/AcuantFaceMatch\/FacialMatchResult.swift",
       "kind": "StringLiteral",
       "offset": 529,
       "length": 7,
       "value": "\"Score\""
-    },
-    {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantFaceMatch\/AcuantFaceMatch\/FacialMatchResult.swift",
-      "kind": "StringLiteral",
-      "offset": 453,
-      "length": 9,
-      "value": "\"IsMatch\""
-    },
-    {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantFaceMatch\/AcuantFaceMatch\/FacialMatchResult.swift",
-      "kind": "StringLiteral",
-      "offset": 492,
-      "length": 15,
-      "value": "\"TransactionId\""
-    },
-    {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantFaceMatch\/AcuantFaceMatch\/FacialMatchResult.swift",
-      "kind": "StringLiteral",
-      "offset": 529,
-      "length": 7,
-      "value": "\"Score\""
-    },
-    {
-      "filePath": "\/Users\/wbarrios\/dev\/mobile-sdk-v11-ios\/AcuantFaceMatch\/AcuantFaceMatch\/FacialMatchData.swift",
-      "kind": "StringLiteral",
-      "offset": 188,
-      "length": 15,
-      "value": "\"AcuantFaceMatch.FacialMatchData\""
     }
   ]
 }
